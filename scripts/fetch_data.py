@@ -25,8 +25,9 @@ REPOS = [
 # 리포트 파일 매핑: { "repo/workflow_id": "repo내_경로" }
 # workflow ID는 첫 실행 후 workflows.json을 보고 업데이트하세요
 REPORT_MAP = {
-    'korean-market-bot/236541757': 'reports/latest_kr.json',
-    'korean-market-bot/236553677': 'reports/latest_us.json',
+    'korean-market-bot/236541757':      'reports/latest_kr.json',
+    'korean-market-bot/236553677':      'reports/latest_us.json',
+    'competitor-ai-tracker/237174445':  'reports/latest.json',
 }
 
 HEADERS = {
