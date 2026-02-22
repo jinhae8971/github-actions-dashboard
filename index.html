@@ -308,6 +308,87 @@
     text-align: center; color: var(--text2); font-size: 11px;
     margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--border);
   }
+
+  /* ── 모바일 반응형 ────────────────────────────────────────────────────────── */
+  @media (max-width: 640px) {
+    body { padding: 16px 12px; padding-bottom: calc(16px + env(safe-area-inset-bottom)); }
+
+    /* 헤더: 2줄로 쌓기 */
+    .header {
+      flex-wrap: wrap; gap: 10px;
+      margin-bottom: 20px; padding-bottom: 16px;
+    }
+    .header h1 { font-size: 17px; }
+    .header p  { font-size: 11px; }
+    .header-right { width: 100%; justify-content: space-between; }
+    .last-updated { font-size: 11px; }
+    .refresh-btn  { padding: 8px 14px; font-size: 12px; min-height: 36px; }
+
+    /* 요약 카드: 2×2 그리드 */
+    .summary {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px; margin-bottom: 20px;
+    }
+    .stat-card { padding: 14px 16px; }
+    .stat-card .val { font-size: 24px; }
+    .stat-card .lbl { font-size: 11px; }
+
+    /* 주간 캘린더: 가로 스크롤 */
+    .week-calendar { padding: 14px 16px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .week-grid { min-width: 460px; gap: 5px; }
+    .day-name  { font-size: 10px; margin-bottom: 6px; }
+    .day-event { font-size: 9px; padding: 2px 4px; }
+
+    /* 워크플로우 카드: 1열 풀 너비 */
+    .cards-grid { grid-template-columns: 1fr; gap: 12px; }
+    .wf-card:hover { transform: none; } /* 모바일에선 hover 효과 제거 */
+    .wf-card-header { padding: 12px 14px 10px; }
+    .wf-title { font-size: 13px; }
+    .wf-card-body   { padding: 12px 14px; }
+
+    /* 스케줄 칩: cron 아래 줄 바꿈 */
+    .schedule-chip { flex-wrap: wrap; gap: 4px 10px; padding: 8px 10px; }
+    .schedule-chip .cron { width: 100%; margin-top: 2px; }
+
+    /* 히스토리 바: 터치 툴팁 숨김 */
+    .h-bar .tooltip { display: none !important; }
+    .h-bar { height: 24px; border-radius: 3px; }
+
+    /* 카드 푸터: 세로 배치 */
+    .wf-card-footer {
+      padding: 10px 14px;
+      flex-direction: column; align-items: stretch; gap: 8px;
+    }
+    .wf-card-footer > div { justify-content: space-between; }
+    .run-link   { font-size: 12px; min-height: 32px; align-items: center; }
+    .report-btn { justify-content: center; min-height: 34px; }
+
+    /* 모달: 하단 시트 스타일 */
+    .modal-overlay { padding: 0; align-items: flex-end; }
+    .report-modal  {
+      border-radius: 16px 16px 0 0; max-height: 90vh;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    .modal-header { padding: 16px 18px 14px; }
+    .modal-title  { font-size: 14px; }
+    .modal-body   { padding: 16px 18px; }
+    .modal-close  { width: 34px; height: 34px; font-size: 18px; }
+
+    /* 토스트: 하단 중앙 */
+    .toast { left: 12px; right: 12px; bottom: 16px; font-size: 12px; }
+
+    /* 섹션 타이틀 */
+    .section-title { font-size: 10px; }
+
+    footer { font-size: 10px; margin-top: 24px; }
+  }
+
+  @media (max-width: 380px) {
+    body { padding: 12px 10px; }
+    .header h1 { font-size: 15px; }
+    .stat-card .val { font-size: 20px; }
+    .summary { gap: 8px; }
+  }
 </style>
 </head>
 <body>
