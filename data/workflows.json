@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-23T23:41:07.336198+00:00",
+  "updated_at": "2026-02-24T02:53:15.440056+00:00",
   "workflows": [
     {
       "repo": "dart-weekly-report",
@@ -301,6 +301,13 @@
       },
       "cron": "0 0 * * *",
       "runs": [
+        {
+          "run_number": 8,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-02-24T01:47:28Z",
+          "html_url": "https://github.com/jinhae8971/livebench-notify/actions/runs/22333080797"
+        },
         {
           "run_number": 7,
           "conclusion": "success",
