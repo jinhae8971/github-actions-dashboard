@@ -25,9 +25,14 @@ REPOS = [
 # 리포트 파일 매핑: { "repo/workflow_id": "repo내_경로" }
 # workflow ID는 첫 실행 후 workflows.json을 보고 업데이트하세요
 REPORT_MAP = {
-    'korean-market-bot/236541757':      'reports/latest_kr.json',
-    'korean-market-bot/236553677':      'reports/latest_us.json',
-    'competitor-ai-tracker/237174445':  'reports/latest.json',
+    'korean-market-bot/236541757':         'reports/latest_kr.json',
+    'korean-market-bot/236553677':         'reports/latest_us.json',
+    'competitor-ai-tracker/237174445':     'reports/latest.json',
+    'lgd-news-monitor/236856279':          'reports/latest.json',
+    'livebench-notify/236850987':          'reports/latest.json',
+    'dart-weekly-report/236632933':        'reports/latest.json',
+    'memory-price-tracker/236642604':      'reports/latest.json',
+    'realestate-permit-tracker/236653953': 'reports/latest.json',
 }
 
 HEADERS = {
