@@ -13,7 +13,6 @@ if not GH_TOKEN:
 GH_USER = 'jinhae8971'
 
 REPOS = [
-    'dart-weekly-report',
     'korean-market-bot',
     'lgd-news-monitor',
     'livebench-notify',
@@ -30,7 +29,6 @@ REPORT_MAP = {
     'competitor-ai-tracker/237174445':     'reports/latest.json',
     'lgd-news-monitor/236856279':          'reports/latest.json',
     'livebench-notify/236850987':          'reports/latest.json',
-    'dart-weekly-report/236632933':        'reports/latest.json',
     'memory-price-tracker/236642604':      'reports/latest.json',
     'realestate-permit-tracker/236653953': 'reports/latest.json',
 }
