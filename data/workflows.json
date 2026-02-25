@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-25T22:46:05.937146+00:00",
+  "updated_at": "2026-02-25T23:38:57.100840+00:00",
   "workflows": [
     {
       "repo": "korean-market-bot",
@@ -433,6 +433,13 @@
       "cron": "10 22 * * 0-4",
       "runs": [
         {
+          "run_number": 11,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-02-25T22:48:18Z",
+          "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22419378438"
+        },
+        {
           "run_number": 10,
           "conclusion": "success",
           "status": "completed",
@@ -473,13 +480,6 @@
           "status": "completed",
           "created_at": "2026-02-22T22:38:12Z",
           "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22286881284"
-        },
-        {
-          "run_number": 4,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-22T07:01:50Z",
-          "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22272448685"
         }
       ]
     }
