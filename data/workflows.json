@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-25T23:38:57.100840+00:00",
+  "updated_at": "2026-02-26T02:49:48.486347+00:00",
   "workflows": [
     {
       "repo": "korean-market-bot",
@@ -261,6 +261,13 @@
       "cron": "0 0 * * *",
       "runs": [
         {
+          "run_number": 10,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-02-26T01:45:22Z",
+          "html_url": "https://github.com/jinhae8971/livebench-notify/actions/runs/22424223957"
+        },
+        {
           "run_number": 9,
           "conclusion": "success",
           "status": "completed",
@@ -301,13 +308,6 @@
           "status": "completed",
           "created_at": "2026-02-21T04:28:55Z",
           "html_url": "https://github.com/jinhae8971/livebench-notify/actions/runs/22250318955"
-        },
-        {
-          "run_number": 3,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-21T01:58:31Z",
-          "html_url": "https://github.com/jinhae8971/livebench-notify/actions/runs/22248162756"
         }
       ]
     },
