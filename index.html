@@ -962,6 +962,13 @@ function renderCards(wfData) {
     return;
   }
 
+  // ── 정렬: 가동 중 먼저, 일시 정지 나중
+  wfData = [...wfData].sort((a, b) => {
+    const pa = isPaused(a.wf.id) ? 1 : 0;
+    const pb = isPaused(b.wf.id) ? 1 : 0;
+    return pa - pb;
+  });
+
   const REPO_ICONS = {
     'korean-market-bot':         '📊',
     'dart-weekly-report':        '🗂',
