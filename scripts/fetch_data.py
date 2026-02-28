@@ -19,6 +19,7 @@ REPOS = [
     'memory-price-tracker',
     'realestate-permit-tracker',
     'competitor-ai-tracker',
+    'crypto-monitor',
 ]
 
 # 리포트 파일 매핑: { "repo/workflow_id": "repo내_경로" }
