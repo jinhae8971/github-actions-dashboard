@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-28T05:40:41.368362+00:00",
+  "updated_at": "2026-02-28T06:20:06.441052+00:00",
   "workflows": [
     {
       "repo": "korean-market-bot",
@@ -487,6 +487,26 @@
           "status": "completed",
           "created_at": "2026-02-23T22:55:38Z",
           "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22328383622"
+        }
+      ]
+    },
+    {
+      "repo": "crypto-monitor",
+      "wf": {
+        "id": 239770946,
+        "name": "🪙 Crypto Monitor (TGE/Airdrop)",
+        "path": ".github/workflows/crypto_monitor.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/crypto-monitor/blob/main/.github/workflows/crypto_monitor.yml"
+      },
+      "cron": "0 0 * * *",
+      "runs": [
+        {
+          "run_number": 1,
+          "conclusion": null,
+          "status": "in_progress",
+          "created_at": "2026-02-28T06:19:49Z",
+          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/22515114883"
         }
       ]
     }
