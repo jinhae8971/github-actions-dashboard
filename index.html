@@ -637,6 +637,12 @@
     <div class="settings-section">
       <h3>⏸ 현재 일시 정지된 작업</h3>
       <p>일시 정지 중인 워크플로우 목록입니다. 여기서 개별 재가동할 수 있습니다.</p>
+      <button id="syncNowBtn" onclick="syncNow()" style="
+        margin-bottom:10px; padding:7px 14px; border-radius:8px; border:1px solid var(--border);
+        background:var(--bg3); color:var(--text1); font-size:12px; cursor:pointer; display:flex;
+        align-items:center; gap:6px;">
+        ☁️ 지금 기기 간 동기화
+      </button>
       <div class="pause-list" id="pauseList">
         <div style="font-size:12px;color:var(--text2)">일시 정지된 작업 없음</div>
       </div>
@@ -691,18 +697,27 @@ function utf8ToBase64(str) {
   return btoa(binary);
 }
 
-// repo의 paused.json을 읽어 pausedMap을 덮어씀 (기기 간 공유)
+// repo의 paused.json과 localStorage를 합쳐서 pausedMap 완성 후 자동 업로드
 async function loadPausedStateFromRepo() {
   try {
     const resp = await fetch(`./${PAUSE_REPO_PATH}?_=${Date.now()}`);
     if (!resp.ok) return;
     const data = await resp.json();
     const repoPaused = data.paused || {};
-    // repo 파일이 비어 있지 않을 때만 덮어씀 (초기 빈 파일은 무시)
-    if (Object.keys(repoPaused).length > 0) {
-      Object.keys(pausedMap).forEach(id => { if (!repoPaused[id]) delete pausedMap[id]; });
-      Object.assign(pausedMap, repoPaused);
-      try { localStorage.setItem(PAUSE_KEY, JSON.stringify(pausedMap)); } catch(e) {}
+
+    // 합치기: localStorage(현재 기기) + repo(다른 기기) → 합집합
+    const merged = { ...repoPaused, ...pausedMap };
+    const hasNewLocal = Object.keys(merged).some(id => !repoPaused[id]);
+
+    // pausedMap 및 localStorage 업데이트
+    Object.keys(pausedMap).forEach(id => delete pausedMap[id]);
+    Object.assign(pausedMap, merged);
+    try { localStorage.setItem(PAUSE_KEY, JSON.stringify(pausedMap)); } catch(e) {}
+
+    // 토큰 있고 로컬에 새 항목 있으면 → 자동으로 repo에 업로드 (동기화)
+    if (hasNewLocal && githubToken) {
+      await savePausedStateToRepo();
+      console.log('[paused.json] 로컬 상태 자동 업로드 완료');
     }
   } catch(e) {
     console.log('[paused.json] 로드 실패, localStorage 사용:', e);
@@ -854,6 +869,22 @@ function setTokenStatus(type, msg) {
   const el = document.getElementById('tokenStatus');
   el.className = `token-status ${type}`;
   el.textContent = msg;
+}
+
+async function syncNow() {
+  const btn = document.getElementById('syncNowBtn');
+  btn.textContent = '⏳ 동기화 중...';
+  btn.disabled = true;
+  try {
+    await loadPausedStateFromRepo();
+    renderCards(allWorkflows);
+    refreshPauseList();
+    btn.textContent = '✅ 동기화 완료!';
+    setTimeout(() => { btn.textContent = '☁️ 지금 기기 간 동기화'; btn.disabled = false; }, 2000);
+  } catch(e) {
+    btn.textContent = '❌ 실패 (재시도)';
+    setTimeout(() => { btn.textContent = '☁️ 지금 기기 간 동기화'; btn.disabled = false; }, 2000);
+  }
 }
 
 function refreshPauseList() {
