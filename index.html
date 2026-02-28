@@ -102,11 +102,37 @@
   }
 
   /* ── 주간 캘린더 ── */
+  .cal-scroll-wrap {
+    position: relative;
+    margin-bottom: 28px;
+  }
+  /* 모바일에서 오른쪽에 더 있다는 fade 힌트 (데스크톱에선 숨김) */
+  .cal-scroll-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 40px; height: 100%;
+    background: linear-gradient(to right, transparent, var(--bg2));
+    pointer-events: none;
+    border-radius: 0 12px 12px 0;
+    opacity: 0;
+    transition: opacity .25s;
+  }
+
   .week-calendar {
     background: var(--bg2); border: 1px solid var(--border);
     border-radius: 12px; padding: 18px 20px;
-    margin-bottom: 28px;
+    /* 커스텀 스크롤바 (Firefox) */
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
   }
+  /* 커스텀 스크롤바 (Chrome/Safari/Edge) */
+  .week-calendar::-webkit-scrollbar { height: 4px; }
+  .week-calendar::-webkit-scrollbar-track { background: transparent; }
+  .week-calendar::-webkit-scrollbar-thumb {
+    background: var(--border); border-radius: 4px;
+  }
+  .week-calendar::-webkit-scrollbar-thumb:hover { background: var(--text2); }
   .timeline-header {
     display: flex; align-items: center;
     margin-bottom: 16px; gap: 10px;
@@ -455,6 +481,10 @@
     .stat-card { padding: 14px 16px; }
     .stat-card .val { font-size: 24px; }
     .stat-card .lbl { font-size: 11px; }
+
+    /* 주간 캘린더: 가로 스크롤 */
+    .cal-scroll-wrap::after { opacity: 1; }           /* 모바일에서 fade 힌트 표시 */
+    .cal-scroll-wrap.at-end::after { opacity: 0; }   /* 끝까지 스크롤 시 힌트 숨김 */
     .week-calendar { padding: 14px 16px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .week-grid { min-width: 460px; gap: 5px; }
     .day-name  { font-size: 10px; margin-bottom: 6px; }
@@ -526,8 +556,10 @@
 
 <!-- 주간 스케줄 캘린더 -->
 <div class="section-title">📅 주간 실행 스케줄</div>
-<div class="week-calendar" id="weekCalendar">
-  <div style="color:var(--text2);font-size:13px">로딩 중...</div>
+<div class="cal-scroll-wrap" id="calScrollWrap">
+  <div class="week-calendar" id="weekCalendar" onscroll="updateCalFade(this)">
+    <div style="color:var(--text2);font-size:13px">로딩 중...</div>
+  </div>
 </div>
 
 <!-- 워크플로우 카드 -->
@@ -954,6 +986,29 @@ function renderWeekCalendar(wfData) {
       `).join('')}
     </div>
   `;
+
+  // ── 오늘 컬럼으로 자동 스크롤 (모바일 전용) ─────────────────────────────────
+  setTimeout(() => {
+    const cal = document.getElementById('weekCalendar');
+    const todayEl = cal.querySelector('.day-name.today');
+    if (todayEl && cal.scrollWidth > cal.clientWidth) {
+      const col = todayEl.closest('.day-col');
+      if (col) {
+        // 오늘 컬럼이 뷰포트 중앙에 오도록 스크롤
+        const targetScroll = col.offsetLeft - (cal.clientWidth / 2) + (col.offsetWidth / 2);
+        cal.scrollTo({ left: Math.max(0, targetScroll), behavior: 'smooth' });
+      }
+    }
+    updateCalFade(cal);
+  }, 80);
+}
+
+// ── 캘린더 fade 힌트 업데이트 ──────────────────────────────────────────────────
+function updateCalFade(el) {
+  const wrap = document.getElementById('calScrollWrap');
+  if (!wrap) return;
+  const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+  wrap.classList.toggle('at-end', atEnd);
 }
 
 function renderCards(wfData) {
