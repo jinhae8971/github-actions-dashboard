@@ -63,6 +63,15 @@
   .refresh-btn.loading svg { animation: spin .8s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
 
+  /* ── 설정 버튼 ── */
+  .settings-btn {
+    background: var(--bg3); border: 1px solid var(--border);
+    color: var(--text2); padding: 7px 10px; border-radius: 8px;
+    cursor: pointer; font-size: 16px; display: flex; align-items: center;
+    transition: background .15s, color .15s;
+  }
+  .settings-btn:hover { background: var(--border); color: var(--text); }
+
   /* ── 요약 카드 ── */
   .summary {
     display: grid;
@@ -82,6 +91,7 @@
   .val.red   { color: var(--red); }
   .val.blue  { color: var(--blue); }
   .val.purple{ color: var(--purple); }
+  .val.yellow{ color: var(--yellow); }
 
   /* ── 섹션 타이틀 ── */
   .section-title {
@@ -126,6 +136,12 @@
   .day-event.daily   { background: rgba(88,166,255,.15); color: #58a6ff; border-left: 2px solid #58a6ff; }
   .day-event.weekly  { background: rgba(188,140,255,.15); color: #bc8cff; border-left: 2px solid #bc8cff; }
   .day-event.weekend { background: rgba(210,153,34,.15);  color: #d29922; border-left: 2px solid #d29922; }
+  /* 일시 정지된 캘린더 이벤트 */
+  .day-event.is-paused-cal {
+    opacity: 0.38;
+    text-decoration: line-through;
+    filter: grayscale(0.7);
+  }
 
   /* ── 워크플로우 카드 그리드 ── */
   .cards-grid {
@@ -138,9 +154,29 @@
     border: 1px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
-    transition: border-color .15s, transform .15s;
+    transition: border-color .15s, transform .15s, opacity .2s;
   }
   .wf-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+
+  /* ── 일시 정지된 카드 상태 ── */
+  .wf-card.is-paused { border-color: var(--yellow) !important; }
+  .wf-card.is-paused:hover { border-color: var(--yellow) !important; transform: none; }
+  .wf-card.is-paused .wf-card-header {
+    background: rgba(210,153,34,.06);
+  }
+  .wf-card.is-paused .wf-card-body {
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  /* 일시 정지 오버레이 배너 */
+  .paused-banner {
+    background: rgba(210,153,34,.12); border: 1px solid rgba(210,153,34,.35);
+    border-radius: 7px; padding: 7px 12px; margin-bottom: 12px;
+    font-size: 11px; color: var(--yellow);
+    display: flex; align-items: center; gap: 6px;
+  }
+
   .wf-card-header {
     padding: 16px 18px 14px;
     border-bottom: 1px solid var(--border);
@@ -158,6 +194,7 @@
   .badge.failure { background: var(--red-dim);   color: var(--red); }
   .badge.pending { background: var(--yellow-dim); color: var(--yellow); }
   .badge.loading { background: var(--bg3); color: var(--text2); }
+  .badge.paused  { background: var(--yellow-dim); color: var(--yellow); }
   .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
   .badge.success .dot { animation: pulse-green 2s infinite; }
   @keyframes pulse-green {
@@ -220,6 +257,102 @@
   }
   .report-btn:hover { background: #1c2a3a; border-color: var(--blue); }
   .report-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+  /* ── 일시 정지 버튼 ── */
+  .pause-btn {
+    background: var(--bg3); border: 1px solid var(--border);
+    color: var(--text2); padding: 5px 12px; border-radius: 8px;
+    cursor: pointer; font-size: 11px; font-weight: 600;
+    display: flex; align-items: center; gap: 5px;
+    transition: all .15s;
+    white-space: nowrap;
+  }
+  .pause-btn:hover {
+    background: rgba(210,153,34,.1);
+    border-color: var(--yellow);
+    color: var(--yellow);
+  }
+  .pause-btn.is-paused {
+    background: rgba(210,153,34,.15);
+    border-color: var(--yellow);
+    color: var(--yellow);
+  }
+  .pause-btn.is-paused:hover {
+    background: rgba(210,153,34,.25);
+    border-color: #f0b429;
+    color: #f0b429;
+  }
+  .pause-btn.loading-state {
+    opacity: 0.6; cursor: wait;
+    pointer-events: none;
+  }
+
+  /* ── 설정 모달 ── */
+  .settings-modal {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 14px; width: 100%; max-width: 500px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.6);
+    animation: slideUp .2s ease;
+  }
+  .settings-section { padding: 20px 22px; }
+  .settings-section + .settings-section { border-top: 1px solid var(--border); }
+  .settings-section h3 {
+    font-size: 13px; font-weight: 600; margin-bottom: 4px;
+  }
+  .settings-section p {
+    font-size: 11px; color: var(--text2); margin-bottom: 12px; line-height: 1.6;
+  }
+  .token-input {
+    width: 100%;
+    background: var(--bg3); border: 1px solid var(--border);
+    color: var(--text); padding: 9px 12px; border-radius: 8px;
+    font-size: 12px; font-family: monospace;
+    outline: none; transition: border-color .15s;
+  }
+  .token-input:focus { border-color: var(--blue); }
+  .token-input::placeholder { color: var(--text2); }
+  .settings-actions {
+    display: flex; gap: 8px; margin-top: 12px;
+  }
+  .settings-save-btn {
+    background: var(--accent); border: 1px solid transparent;
+    color: white; padding: 8px 18px; border-radius: 8px;
+    cursor: pointer; font-size: 12px; font-weight: 600;
+    transition: background .15s;
+  }
+  .settings-save-btn:hover { background: #2ea043; }
+  .settings-clear-btn {
+    background: var(--bg3); border: 1px solid var(--border);
+    color: var(--text2); padding: 8px 14px; border-radius: 8px;
+    cursor: pointer; font-size: 12px;
+    transition: background .15s;
+  }
+  .settings-clear-btn:hover { background: var(--border); color: var(--text); }
+  .token-status {
+    font-size: 11px; margin-top: 8px;
+    padding: 6px 10px; border-radius: 6px;
+    display: none;
+  }
+  .token-status.ok  { background: var(--green-dim); color: var(--green); display: block; }
+  .token-status.err { background: var(--red-dim); color: var(--red); display: block; }
+  .token-status.info { background: var(--bg3); color: var(--text2); display: block; }
+
+  /* 일시 정지 목록 */
+  .pause-list { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+  .pause-list-item {
+    background: var(--bg3); border: 1px solid var(--yellow);
+    border-radius: 7px; padding: 8px 12px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px;
+  }
+  .pause-list-item-name { color: var(--yellow); font-weight: 600; }
+  .pause-list-item-resume {
+    background: transparent; border: 1px solid var(--border);
+    color: var(--text2); padding: 3px 9px; border-radius: 6px;
+    cursor: pointer; font-size: 11px;
+    transition: all .15s;
+  }
+  .pause-list-item-resume:hover { border-color: var(--green); color: var(--green); }
 
   /* ── 리포트 모달 ── */
   .modal-overlay {
@@ -309,80 +442,48 @@
     margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--border);
   }
 
-  /* ── 모바일 반응형 ────────────────────────────────────────────────────────── */
+  /* ── 모바일 반응형 ── */
   @media (max-width: 640px) {
     body { padding: 16px 12px; padding-bottom: calc(16px + env(safe-area-inset-bottom)); }
-
-    /* 헤더: 2줄로 쌓기 */
-    .header {
-      flex-wrap: wrap; gap: 10px;
-      margin-bottom: 20px; padding-bottom: 16px;
-    }
+    .header { flex-wrap: wrap; gap: 10px; margin-bottom: 20px; padding-bottom: 16px; }
     .header h1 { font-size: 17px; }
     .header p  { font-size: 11px; }
     .header-right { width: 100%; justify-content: space-between; }
     .last-updated { font-size: 11px; }
     .refresh-btn  { padding: 8px 14px; font-size: 12px; min-height: 36px; }
-
-    /* 요약 카드: 2×2 그리드 */
-    .summary {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px; margin-bottom: 20px;
-    }
+    .summary { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
     .stat-card { padding: 14px 16px; }
     .stat-card .val { font-size: 24px; }
     .stat-card .lbl { font-size: 11px; }
-
-    /* 주간 캘린더: 가로 스크롤 */
     .week-calendar { padding: 14px 16px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .week-grid { min-width: 460px; gap: 5px; }
     .day-name  { font-size: 10px; margin-bottom: 6px; }
     .day-event { font-size: 9px; padding: 2px 4px; }
-
-    /* 워크플로우 카드: 1열 풀 너비 */
     .cards-grid { grid-template-columns: 1fr; gap: 12px; }
-    .wf-card:hover { transform: none; } /* 모바일에선 hover 효과 제거 */
+    .wf-card:hover { transform: none; }
     .wf-card-header { padding: 12px 14px 10px; }
     .wf-title { font-size: 13px; }
     .wf-card-body   { padding: 12px 14px; }
-
-    /* 스케줄 칩: cron 아래 줄 바꿈 */
     .schedule-chip { flex-wrap: wrap; gap: 4px 10px; padding: 8px 10px; }
     .schedule-chip .cron { width: 100%; margin-top: 2px; }
-
-    /* 히스토리 바: 터치 툴팁 숨김 */
     .h-bar .tooltip { display: none !important; }
     .h-bar { height: 24px; border-radius: 3px; }
-
-    /* 카드 푸터: 세로 배치 */
-    .wf-card-footer {
-      padding: 10px 14px;
-      flex-direction: column; align-items: stretch; gap: 8px;
-    }
+    .wf-card-footer { padding: 10px 14px; flex-direction: column; align-items: stretch; gap: 8px; }
     .wf-card-footer > div { justify-content: space-between; }
     .run-link   { font-size: 12px; min-height: 32px; align-items: center; }
     .report-btn { justify-content: center; min-height: 34px; }
-
-    /* 모달: 하단 시트 스타일 */
+    .pause-btn  { justify-content: center; min-height: 34px; }
     .modal-overlay { padding: 0; align-items: flex-end; }
-    .report-modal  {
-      border-radius: 16px 16px 0 0; max-height: 90vh;
-      padding-bottom: env(safe-area-inset-bottom);
-    }
+    .report-modal  { border-radius: 16px 16px 0 0; max-height: 90vh; padding-bottom: env(safe-area-inset-bottom); }
     .modal-header { padding: 16px 18px 14px; }
     .modal-title  { font-size: 14px; }
     .modal-body   { padding: 16px 18px; }
     .modal-close  { width: 34px; height: 34px; font-size: 18px; }
-
-    /* 토스트: 하단 중앙 */
     .toast { left: 12px; right: 12px; bottom: 16px; font-size: 12px; }
-
-    /* 섹션 타이틀 */
     .section-title { font-size: 10px; }
-
     footer { font-size: 10px; margin-top: 24px; }
+    .settings-modal { border-radius: 16px 16px 0 0; }
   }
-
   @media (max-width: 380px) {
     body { padding: 12px 10px; }
     .header h1 { font-size: 15px; }
@@ -404,6 +505,7 @@
   </div>
   <div class="header-right">
     <span class="last-updated" id="lastUpdated">—</span>
+    <button class="settings-btn" onclick="openSettings()" title="설정 (GitHub 토큰 · 일시 정지 관리)">⚙</button>
     <button class="refresh-btn" id="refreshBtn" onclick="loadAll()">
       <svg id="refreshIcon" width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
         <path d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
@@ -468,14 +570,51 @@
   </div>
 </div>
 
+<!-- 설정 모달 -->
+<div class="modal-overlay" id="settingsModal" onclick="handleSettingsClick(event)">
+  <div class="settings-modal" id="settingsModalBox">
+    <div class="modal-header">
+      <div class="modal-header-left">
+        <div class="modal-title">⚙ 대시보드 설정</div>
+        <div class="modal-meta"><span>GitHub 토큰 · 일시 정지 관리</span></div>
+      </div>
+      <button class="modal-close" onclick="closeSettings()" title="닫기">✕</button>
+    </div>
+
+    <!-- GitHub 토큰 설정 -->
+    <div class="settings-section">
+      <h3>🔑 GitHub Personal Access Token</h3>
+      <p>
+        워크플로우를 실제로 일시 정지/재가동하려면 <code>workflow</code> 스코프가 있는 PAT가 필요합니다.<br>
+        토큰은 이 브라우저에만 저장되며 외부로 전송되지 않습니다.
+      </p>
+      <input class="token-input" id="tokenInput" type="password"
+        placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+        autocomplete="off" spellcheck="false" />
+      <div class="settings-actions">
+        <button class="settings-save-btn" onclick="saveToken()">저장 &amp; 연결 확인</button>
+        <button class="settings-clear-btn" onclick="clearToken()">토큰 삭제</button>
+      </div>
+      <div class="token-status" id="tokenStatus"></div>
+    </div>
+
+    <!-- 일시 정지 목록 -->
+    <div class="settings-section">
+      <h3>⏸ 현재 일시 정지된 작업</h3>
+      <p>일시 정지 중인 워크플로우 목록입니다. 여기서 개별 재가동할 수 있습니다.</p>
+      <div class="pause-list" id="pauseList">
+        <div style="font-size:12px;color:var(--text2)">일시 정지된 작업 없음</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer>
   GitHub Actions Dashboard · jinhae8971 · 매시간 자동 갱신
 </footer>
 
 <script>
 // ── 설정 ─────────────────────────────────────────────────────────────────────
-// 리포트 파일 경로 (GitHub Actions가 data/reports/ 에 저장한 정적 파일)
-// 워크플로우 ID는 data/workflows.json을 확인 후 업데이트하세요
 const REPORT_FILE_MAP = {
   '236541757': './data/reports/korean-market-bot_236541757.json',
   '236553677': './data/reports/korean-market-bot_236553677.json',
@@ -485,6 +624,165 @@ const REPORT_FILE_MAP = {
   '236642604': './data/reports/memory-price-tracker_236642604.json',
   '236653953': './data/reports/realestate-permit-tracker_236653953.json',
 };
+
+const OWNER = 'jinhae8971';
+
+// ── 일시 정지 상태 (localStorage) ────────────────────────────────────────────
+const PAUSE_KEY = 'gh_dashboard_paused_v2';
+const TOKEN_KEY = 'gh_dashboard_token';
+
+// { wfId: { repo, name } }
+let pausedMap = {};
+try { pausedMap = JSON.parse(localStorage.getItem(PAUSE_KEY) || '{}'); } catch(e) { pausedMap = {}; }
+
+let githubToken = localStorage.getItem(TOKEN_KEY) || '';
+
+function isPaused(wfId) { return !!pausedMap[String(wfId)]; }
+
+function savePauseState() {
+  try { localStorage.setItem(PAUSE_KEY, JSON.stringify(pausedMap)); } catch(e) {}
+}
+
+// ── GitHub API 호출 ────────────────────────────────────────────────────────
+async function githubApiCall(path, method = 'PUT') {
+  if (!githubToken) return { ok: false, reason: 'no-token' };
+  const resp = await fetch(`https://api.github.com${path}`, {
+    method,
+    headers: {
+      'Authorization': `token ${githubToken}`,
+      'Accept': 'application/vnd.github+json',
+      'X-GitHub-Api-Version': '2022-11-28',
+    },
+  });
+  return { ok: resp.status === 204 || resp.status === 200, status: resp.status };
+}
+
+async function disableWorkflow(repo, wfId) {
+  return githubApiCall(`/repos/${OWNER}/${repo}/actions/workflows/${wfId}/disable`);
+}
+async function enableWorkflow(repo, wfId) {
+  return githubApiCall(`/repos/${OWNER}/${repo}/actions/workflows/${wfId}/enable`);
+}
+
+// ── 일시 정지 토글 ────────────────────────────────────────────────────────
+async function togglePause(repo, wfId, wfName) {
+  const id = String(wfId);
+  const btn = document.getElementById(`pbtn-${id}`);
+  if (btn) btn.classList.add('loading-state');
+
+  if (isPaused(id)) {
+    // ── 재가동 ──
+    const result = await enableWorkflow(repo, wfId);
+    if (result.reason === 'no-token') {
+      // 토큰 없음: UI 상태만 변경
+      toast(`▶ ${wfName} 재가동 (UI 전용 — 토큰 없음)`, false);
+    } else if (!result.ok) {
+      toast(`❌ GitHub API 오류 (${result.status}) — UI만 재가동됨`, true);
+    } else {
+      toast(`▶ ${wfName} 재가동 완료`);
+    }
+    delete pausedMap[id];
+  } else {
+    // ── 일시 정지 ──
+    const result = await disableWorkflow(repo, wfId);
+    if (result.reason === 'no-token') {
+      toast(`⏸ ${wfName} 일시 정지 (UI 전용 — 설정에서 토큰 등록 시 실제 적용)`, false);
+    } else if (!result.ok) {
+      toast(`❌ GitHub API 오류 (${result.status}) — UI만 일시 정지됨`, true);
+    } else {
+      toast(`⏸ ${wfName} 일시 정지 완료`);
+    }
+    pausedMap[id] = { repo, name: wfName };
+  }
+
+  savePauseState();
+  if (btn) btn.classList.remove('loading-state');
+  renderCards(allWorkflows);
+  renderWeekCalendar(allWorkflows);
+  renderSummary(allWorkflows);
+}
+
+// ── 설정 모달 ─────────────────────────────────────────────────────────────
+function openSettings() {
+  document.getElementById('tokenInput').value = githubToken ? '••••••••••••••••••••' : '';
+  refreshPauseList();
+  document.getElementById('settingsModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeSettings() {
+  document.getElementById('settingsModal').classList.remove('open');
+  document.body.style.overflow = '';
+  document.getElementById('tokenStatus').className = 'token-status';
+}
+function handleSettingsClick(e) {
+  if (e.target === document.getElementById('settingsModal')) closeSettings();
+}
+
+async function saveToken() {
+  const raw = document.getElementById('tokenInput').value.trim();
+  if (!raw || raw === '••••••••••••••••••••') {
+    setTokenStatus('info', '⚠ 새 토큰을 입력해 주세요.');
+    return;
+  }
+  githubToken = raw;
+  localStorage.setItem(TOKEN_KEY, githubToken);
+  setTokenStatus('info', '⏳ 연결 확인 중...');
+
+  // 인증 테스트
+  try {
+    const resp = await fetch('https://api.github.com/user', {
+      headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github+json' }
+    });
+    if (resp.ok) {
+      const data = await resp.json();
+      setTokenStatus('ok', `✅ 연결 성공! (${data.login})`);
+    } else {
+      setTokenStatus('err', `❌ 인증 실패 (HTTP ${resp.status}) — 토큰을 확인해 주세요.`);
+    }
+  } catch(e) {
+    setTokenStatus('err', `❌ 네트워크 오류: ${e.message}`);
+  }
+}
+
+function clearToken() {
+  githubToken = '';
+  localStorage.removeItem(TOKEN_KEY);
+  document.getElementById('tokenInput').value = '';
+  setTokenStatus('info', '토큰이 삭제되었습니다.');
+}
+
+function setTokenStatus(type, msg) {
+  const el = document.getElementById('tokenStatus');
+  el.className = `token-status ${type}`;
+  el.textContent = msg;
+}
+
+function refreshPauseList() {
+  const list = document.getElementById('pauseList');
+  const ids = Object.keys(pausedMap);
+  if (!ids.length) {
+    list.innerHTML = '<div style="font-size:12px;color:var(--text2)">일시 정지된 작업 없음</div>';
+    return;
+  }
+  list.innerHTML = ids.map(id => {
+    const { repo, name } = pausedMap[id];
+    return `
+      <div class="pause-list-item">
+        <div>
+          <div class="pause-list-item-name">⏸ ${name}</div>
+          <div style="font-size:10px;color:var(--text2);margin-top:2px">${repo}</div>
+        </div>
+        <button class="pause-list-item-resume" onclick="resumeFromSettings('${repo}','${id}','${name.replace(/'/g,"\\'")}')">
+          ▶ 재가동
+        </button>
+      </div>`;
+  }).join('');
+}
+
+async function resumeFromSettings(repo, wfId, wfName) {
+  await togglePause(repo, wfId, wfName);
+  refreshPauseList();
+}
 
 // ── 유틸리티 ─────────────────────────────────────────────────────────────────
 function parseCron(cron) {
@@ -547,7 +845,6 @@ async function loadAll() {
   btn.classList.add('loading');
 
   try {
-    // 캐시 방지를 위해 타임스탬프 쿼리 파라미터 추가
     const resp = await fetch('./data/workflows.json?_=' + Date.now());
     if (!resp.ok) throw new Error(`데이터 파일을 불러올 수 없습니다 (HTTP ${resp.status})`);
     const data = await resp.json();
@@ -557,7 +854,6 @@ async function loadAll() {
     renderWeekCalendar(allWorkflows);
     renderCards(allWorkflows);
 
-    // 파일의 updated_at 기준으로 갱신 시각 표시
     const updatedKST = new Date(data.updated_at).toLocaleString('ko-KR', {
       timeZone: 'Asia/Seoul',
       year: 'numeric', month: '2-digit', day: '2-digit',
@@ -567,7 +863,6 @@ async function loadAll() {
     toast('✅ 데이터 갱신 완료');
 
   } catch(e) {
-    // 데이터 파일이 아직 없는 경우 안내 메시지
     document.getElementById('cardsGrid').innerHTML = `
       <div class="empty" style="grid-column:1/-1">
         <div style="font-size:32px;margin-bottom:12px">⚙️</div>
@@ -591,22 +886,31 @@ async function loadAll() {
 
 // ── 렌더링 함수들 ─────────────────────────────────────────────────────────────
 function renderSummary(wfData) {
+  const pausedCount  = Object.keys(pausedMap).length;
+  const activeData   = wfData.filter(d => !isPaused(d.wf.id));
   const total        = wfData.length;
-  const successCount = wfData.filter(d => d.runs[0]?.conclusion === 'success').length;
-  const failCount    = wfData.filter(d => d.runs[0]?.conclusion === 'failure').length;
+  const successCount = activeData.filter(d => d.runs[0]?.conclusion === 'success').length;
+  const failCount    = activeData.filter(d => d.runs[0]?.conclusion === 'failure').length;
 
-  const nowKST  = new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Seoul'}));
+  const nowKST   = new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Seoul'}));
   const todayDow = nowKST.getDay();
-  const todayRun = wfData.filter(d => {
+  const todayRun = activeData.filter(d => {
     if (!d.cron) return false;
     return parseCron(d.cron).activeDays.includes(todayDow);
   }).length;
+
+  const pausedCard = pausedCount > 0
+    ? `<div class="stat-card" style="border-color:var(--yellow)">
+        <div class="val yellow">${pausedCount}</div>
+        <div class="lbl">일시 정지 중</div>
+       </div>`
+    : `<div class="stat-card"><div class="val purple">${todayRun}</div><div class="lbl">오늘 실행 예정</div></div>`;
 
   document.getElementById('summaryCards').innerHTML = `
     <div class="stat-card"><div class="val blue">${total}</div><div class="lbl">전체 워크플로우</div></div>
     <div class="stat-card"><div class="val green">${successCount}</div><div class="lbl">최근 성공</div></div>
     <div class="stat-card"><div class="val ${failCount>0?'red':'green'}">${failCount}</div><div class="lbl">최근 실패</div></div>
-    <div class="stat-card"><div class="val purple">${todayRun}</div><div class="lbl">오늘 실행 예정</div></div>
+    ${pausedCard}
   `;
 }
 
@@ -619,9 +923,13 @@ function renderWeekCalendar(wfData) {
   wfData.forEach(({wf, cron}) => {
     if (!cron) return;
     const { activeDays, timeStr, type } = parseCron(cron);
+    const paused = isPaused(wf.id);
     activeDays.forEach(d => {
       const cls = type==='daily' ? 'daily' : (d===0||d===6) ? 'weekend' : 'weekly';
-      dayEvents[d].push({ label: wf.name.replace(/^[^\w가-힣]+/,'').substring(0,14), time: timeStr, cls });
+      dayEvents[d].push({
+        label: wf.name.replace(/^[^\w가-힣]+/,'').substring(0,14),
+        time: timeStr, cls, paused
+      });
     });
   });
 
@@ -636,7 +944,10 @@ function renderWeekCalendar(wfData) {
           <div class="day-name ${i===todayDow?'today':''}">${day}${i===todayDow?' ●':''}</div>
           <div class="day-events">
             ${dayEvents[i].map(ev => `
-              <div class="day-event ${ev.cls}">${ev.time}<br>${ev.label}</div>
+              <div class="day-event ${ev.cls}${ev.paused?' is-paused-cal':''}"
+                   title="${ev.paused ? '⏸ 일시 정지됨' : ''}">
+                ${ev.time}<br>${ev.label}${ev.paused ? ' ⏸' : ''}
+              </div>
             `).join('') || '<div style="font-size:10px;color:var(--border);padding:4px 0">—</div>'}
           </div>
         </div>
@@ -661,19 +972,22 @@ function renderCards(wfData) {
   };
 
   const cards = wfData.map(({ repo, wf, cron, runs }) => {
-    const last = runs[0];
+    const last       = runs[0];
+    const paused     = isPaused(wf.id);
     const conclusion = last?.conclusion || (last?.status === 'in_progress' ? 'running' : 'pending');
-    const badgeMap = {
+    const badgeMap   = {
       success:   '<span class="badge success"><span class="dot"></span>성공</span>',
       failure:   '<span class="badge failure"><span class="dot"></span>실패</span>',
       running:   '<span class="badge pending"><span class="dot"></span>실행 중</span>',
       pending:   '<span class="badge loading">대기 중</span>',
       cancelled: '<span class="badge loading">취소됨</span>',
     };
-    const badge    = badgeMap[conclusion] || `<span class="badge loading">${conclusion}</span>`;
+    const badge    = paused
+      ? '<span class="badge paused">⏸ 일시 정지</span>'
+      : (badgeMap[conclusion] || `<span class="badge loading">${conclusion}</span>`);
     const schedule = cron ? parseCron(cron) : null;
     const icon     = REPO_ICONS[repo] || '⚙️';
-    const runUrl   = last?.html_url || `https://github.com/jinhae8971/${repo}/actions`;
+    const runUrl   = last?.html_url || `https://github.com/${OWNER}/${repo}/actions`;
 
     const historyBars = Array.from({length:7}, (_,i) => {
       const run = runs[6-i];
@@ -685,7 +999,6 @@ function renderCards(wfData) {
       return `<div class="h-bar ${c}"><div class="tooltip">#${run.run_number} ${c}<br>${dt}</div></div>`;
     }).join('');
 
-    // 리포트 버튼: REPORT_FILE_MAP에 있는 워크플로우만 표시
     const hasReport = REPORT_FILE_MAP[String(wf.id)];
     const reportBtn = hasReport ? `
       <button class="report-btn" id="rbtn-${repo}-${wf.id}"
@@ -696,8 +1009,17 @@ function renderCards(wfData) {
         최근 리포트
       </button>` : '';
 
+    const pauseBtnLabel = paused
+      ? `<svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor"><path d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"/></svg> 재가동`
+      : `<svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor"><path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5m4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5"/></svg> 일시 정지`;
+
+    const pausedBanner = paused ? `
+      <div class="paused-banner">
+        ⏸ 이 워크플로우는 현재 일시 정지 중입니다. 재가동 버튼을 누르면 다시 실행됩니다.
+      </div>` : '';
+
     return `
-      <div class="wf-card">
+      <div class="wf-card ${paused ? 'is-paused' : ''}">
         <div class="wf-card-header">
           <div>
             <div class="wf-title">${icon} ${wf.name}</div>
@@ -711,6 +1033,7 @@ function renderCards(wfData) {
           ${badge}
         </div>
         <div class="wf-card-body">
+          ${pausedBanner}
           ${schedule ? `
             <div class="schedule-chip">
               <span>🕐</span>
@@ -727,8 +1050,12 @@ function renderCards(wfData) {
             </svg>
             Actions 보기
           </a>
-          <div style="display:flex;align-items:center;gap:10px">
+          <div style="display:flex;align-items:center;gap:8px">
             ${reportBtn}
+            <button class="pause-btn ${paused ? 'is-paused' : ''}" id="pbtn-${wf.id}"
+              onclick="togglePause('${repo}','${wf.id}','${wf.name.replace(/'/g,"\\'")}')">
+              ${pauseBtnLabel}
+            </button>
             <span class="run-ago">마지막: ${last ? timeAgo(last.created_at) : '—'}</span>
           </div>
         </div>
@@ -738,7 +1065,7 @@ function renderCards(wfData) {
   document.getElementById('cardsGrid').innerHTML = cards.join('');
 }
 
-// ── 리포트 모달 (정적 파일 기반) ─────────────────────────────────────────────
+// ── 리포트 모달 ──────────────────────────────────────────────────────────────
 async function openReport(repo, wfId, wfName) {
   const modal = document.getElementById('reportModal');
   const body  = document.getElementById('modalBody');
@@ -801,14 +1128,16 @@ function closeReportModal() {
 function handleModalClick(e) {
   if (e.target === document.getElementById('reportModal')) closeReportModal();
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeReportModal(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeReportModal(); closeSettings(); }
+});
 
 function toast(msg, isErr = false) {
   const el = document.getElementById('toast');
   document.getElementById('toastMsg').textContent = msg;
   el.style.borderColor = isErr ? 'var(--red)' : 'var(--green)';
   el.classList.add('show');
-  setTimeout(() => el.classList.remove('show'), 3500);
+  setTimeout(() => el.classList.remove('show'), 3800);
 }
 
 // 초기 로드 + 5분마다 자동 갱신
