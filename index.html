@@ -501,8 +501,11 @@
     .wf-card-footer { padding: 10px 14px; flex-direction: column; align-items: stretch; gap: 8px; }
     .wf-card-footer > div { justify-content: space-between; }
     .run-link   { font-size: 12px; min-height: 32px; align-items: center; }
-    .report-btn { justify-content: center; min-height: 34px; }
-    .pause-btn  { justify-content: center; min-height: 34px; }
+    /* 버튼 영역: wrap 허용해서 좁은 화면에서 줄 바꿈 */
+    .wf-card-footer > div { flex-wrap: wrap; gap: 6px; }
+    .report-btn { justify-content: center; min-height: 34px; flex: 1; min-width: 88px; }
+    .pause-btn  { justify-content: center; min-height: 34px; flex: 1; min-width: 88px; }
+    .run-ago    { width: 100%; text-align: right; font-size: 11px; }
     .modal-overlay { padding: 0; align-items: flex-end; }
     .report-modal  { border-radius: 16px 16px 0 0; max-height: 90vh; padding-bottom: env(safe-area-inset-bottom); }
     .modal-header { padding: 16px 18px 14px; }
@@ -869,6 +872,25 @@ function timeAgo(dateStr) {
   return `${Math.floor(diff/86400)}일 전`;
 }
 
+// ── wf.state 기반 일시 정지 상태 동기화 ──────────────────────────────────────
+// workflows.json은 매시간 GitHub Actions로 갱신되므로 실제 GitHub 상태가 반영됨
+// → 어느 기기/브라우저에서 접속해도 항상 올바른 일시정지 상태를 표시
+function syncPauseStateFromJson(wfData) {
+  let changed = false;
+  wfData.forEach(({ repo, wf }) => {
+    const id = String(wf.id);
+    const disabledOnGitHub = wf.state === 'disabled_manually' || wf.state === 'disabled_inactivity';
+    if (disabledOnGitHub && !pausedMap[id]) {
+      pausedMap[id] = { repo, name: wf.name };  // GitHub에서 비활성화 → UI에 반영
+      changed = true;
+    } else if (!disabledOnGitHub && pausedMap[id]) {
+      delete pausedMap[id];                       // GitHub에서 재활성화 → UI에서 제거
+      changed = true;
+    }
+  });
+  if (changed) savePauseState();
+}
+
 // ── 데이터 로드 (정적 JSON 파일) ──────────────────────────────────────────────
 let allWorkflows = [];
 
@@ -882,6 +904,7 @@ async function loadAll() {
     const data = await resp.json();
 
     allWorkflows = data.workflows || [];
+    syncPauseStateFromJson(allWorkflows);  // ← GitHub 실제 상태로 pausedMap 동기화
     renderSummary(allWorkflows);
     renderWeekCalendar(allWorkflows);
     renderCards(allWorkflows);
