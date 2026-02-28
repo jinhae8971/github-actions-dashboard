@@ -539,6 +539,13 @@
   <div class="header-right">
     <span class="last-updated" id="lastUpdated">—</span>
     <button class="settings-btn" onclick="openSettings()" title="설정 (GitHub 토큰 · 일시 정지 관리)">⚙</button>
+    <button class="refresh-btn" id="fetchBtn" onclick="fetchLatestData()" title="GitHub Actions를 실행해 최신 데이터 수집">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M1.5 1.5A.5.5 0 0 1 2 1h4a.5.5 0 0 1 0 1H3.707l2.147 2.146a.5.5 0 1 1-.708.708L3 2.707V4.5a.5.5 0 0 1-1 0v-3zm9 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V12.293l-2.146 2.147a.5.5 0 0 1-.708-.708L13.293 11.5H11.5a.5.5 0 0 1-.5-.5z"/>
+        <path d="M8 1a7 7 0 1 0 4.95 11.95.5.5 0 1 0-.707-.707A6 6 0 1 1 8 2v1z"/>
+      </svg>
+      데이터 갱신
+    </button>
     <button class="refresh-btn" id="refreshBtn" onclick="loadAll()">
       <svg id="refreshIcon" width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
         <path d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
@@ -965,6 +972,39 @@ function timeAgo(dateStr) {
   if (diff < 3600)  return `${Math.floor(diff/60)}분 전`;
   if (diff < 86400) return `${Math.floor(diff/3600)}시간 전`;
   return `${Math.floor(diff/86400)}일 전`;
+}
+
+// ── GitHub Actions 수동 데이터 갱신 ──────────────────────────────────────────
+const UPDATE_WF_ID = 237170745;  // Update Dashboard Data 워크플로우 ID
+
+async function fetchLatestData() {
+  const btn = document.getElementById('fetchBtn');
+  if (!githubToken) {
+    toast('⚙ 설정에서 GitHub 토큰을 먼저 입력해주세요.', true);
+    return;
+  }
+  btn.disabled = true;
+  btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" class="spin"><path d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/><path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/></svg> 수집 중…`;
+  try {
+    // 워크플로우 실행 트리거
+    const triggerResp = await fetch(
+      `https://api.github.com/repos/${PAUSE_REPO_FULL}/actions/workflows/${UPDATE_WF_ID}/dispatches`,
+      { method: 'POST', headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' }, body: JSON.stringify({ ref: 'main' }) }
+    );
+    if (!triggerResp.ok) throw new Error(`trigger failed: ${triggerResp.status}`);
+    toast('🚀 데이터 수집 시작됨 — 약 30~60초 후 새로고침하세요');
+
+    // 30초 후 자동으로 새로고침
+    setTimeout(async () => {
+      await loadAll();
+      btn.disabled = false;
+      btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M1.5 1.5A.5.5 0 0 1 2 1h4a.5.5 0 0 1 0 1H3.707l2.147 2.146a.5.5 0 1 1-.708.708L3 2.707V4.5a.5.5 0 0 1-1 0v-3zm9 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V12.293l-2.146 2.147a.5.5 0 0 1-.708-.708L13.293 11.5H11.5a.5.5 0 0 1-.5-.5z"/><path d="M8 1a7 7 0 1 0 4.95 11.95.5.5 0 1 0-.707-.707A6 6 0 1 1 8 2v1z"/></svg> 데이터 갱신`;
+    }, 35000);
+  } catch(e) {
+    toast('❌ 갱신 실패: ' + e.message, true);
+    btn.disabled = false;
+    btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M1.5 1.5A.5.5 0 0 1 2 1h4a.5.5 0 0 1 0 1H3.707l2.147 2.146a.5.5 0 1 1-.708.708L3 2.707V4.5a.5.5 0 0 1-1 0v-3zm9 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V12.293l-2.146 2.147a.5.5 0 0 1-.708-.708L13.293 11.5H11.5a.5.5 0 0 1-.5-.5z"/><path d="M8 1a7 7 0 1 0 4.95 11.95.5.5 0 1 0-.707-.707A6 6 0 1 1 8 2v1z"/></svg> 데이터 갱신`;
+  }
 }
 
 // ── wf.state 기반 일시 정지 상태 동기화 ──────────────────────────────────────
