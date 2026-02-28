@@ -676,6 +676,70 @@ function isPaused(wfId) { return !!pausedMap[String(wfId)]; }
 
 function savePauseState() {
   try { localStorage.setItem(PAUSE_KEY, JSON.stringify(pausedMap)); } catch(e) {}
+  savePausedStateToRepo();  // 토큰 있으면 repo에도 동기화 (기기 간 공유)
+}
+
+// ── Cross-device 일시정지 상태 동기화 (data/paused.json) ──────────────────
+const PAUSE_REPO_PATH = 'data/paused.json';
+const PAUSE_REPO_FULL = 'jinhae8971/github-actions-dashboard';
+
+// UTF-8 문자열 → base64 (한글 포함 안전)
+function utf8ToBase64(str) {
+  const bytes = new TextEncoder().encode(str);
+  let binary = '';
+  bytes.forEach(b => binary += String.fromCharCode(b));
+  return btoa(binary);
+}
+
+// repo의 paused.json을 읽어 pausedMap을 덮어씀 (기기 간 공유)
+async function loadPausedStateFromRepo() {
+  try {
+    const resp = await fetch(`./${PAUSE_REPO_PATH}?_=${Date.now()}`);
+    if (!resp.ok) return;
+    const data = await resp.json();
+    const repoPaused = data.paused || {};
+    // repo 파일이 비어 있지 않을 때만 덮어씀 (초기 빈 파일은 무시)
+    if (Object.keys(repoPaused).length > 0) {
+      Object.keys(pausedMap).forEach(id => { if (!repoPaused[id]) delete pausedMap[id]; });
+      Object.assign(pausedMap, repoPaused);
+      try { localStorage.setItem(PAUSE_KEY, JSON.stringify(pausedMap)); } catch(e) {}
+    }
+  } catch(e) {
+    console.log('[paused.json] 로드 실패, localStorage 사용:', e);
+  }
+}
+
+// pausedMap을 repo에 커밋 (토큰 필요)
+async function savePausedStateToRepo() {
+  if (!githubToken) return;
+  try {
+    const content = JSON.stringify({ updated_at: new Date().toISOString(), paused: pausedMap }, null, 2);
+    const b64 = utf8ToBase64(content);
+    // 현재 파일 SHA 가져오기 (업데이트에 필요)
+    let sha = null;
+    try {
+      const r = await fetch(
+        `https://api.github.com/repos/${PAUSE_REPO_FULL}/contents/${PAUSE_REPO_PATH}`,
+        { headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github+json' } }
+      );
+      if (r.ok) sha = (await r.json()).sha;
+    } catch(e) {}
+    const body = { message: 'chore: sync pause state', content: b64, ...(sha ? { sha } : {}) };
+    await fetch(
+      `https://api.github.com/repos/${PAUSE_REPO_FULL}/contents/${PAUSE_REPO_PATH}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Authorization': `token ${githubToken}`,
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      }
+    );
+  } catch(e) {
+    console.error('[paused.json] 저장 실패:', e);
+  }
 }
 
 // ── GitHub API 호출 ────────────────────────────────────────────────────────
@@ -873,8 +937,8 @@ function timeAgo(dateStr) {
 }
 
 // ── wf.state 기반 일시 정지 상태 동기화 ──────────────────────────────────────
-// workflows.json은 매시간 GitHub Actions로 갱신되므로 실제 GitHub 상태가 반영됨
-// → 어느 기기/브라우저에서 접속해도 항상 올바른 일시정지 상태를 표시
+// GitHub에서 실제로 비활성화된 워크플로우는 pausedMap에 추가 (추가만, 삭제 안 함)
+// 삭제는 사용자가 직접 "재가동" 버튼을 누를 때만 수행
 function syncPauseStateFromJson(wfData) {
   let changed = false;
   wfData.forEach(({ repo, wf }) => {
@@ -883,10 +947,9 @@ function syncPauseStateFromJson(wfData) {
     if (disabledOnGitHub && !pausedMap[id]) {
       pausedMap[id] = { repo, name: wf.name };  // GitHub에서 비활성화 → UI에 반영
       changed = true;
-    } else if (!disabledOnGitHub && pausedMap[id]) {
-      delete pausedMap[id];                       // GitHub에서 재활성화 → UI에서 제거
-      changed = true;
     }
+    // active 상태여도 pausedMap에서 자동 삭제하지 않음
+    // (UI 일시정지 상태는 사용자가 명시적으로 재가동 버튼 누를 때만 해제)
   });
   if (changed) savePauseState();
 }
@@ -904,7 +967,8 @@ async function loadAll() {
     const data = await resp.json();
 
     allWorkflows = data.workflows || [];
-    syncPauseStateFromJson(allWorkflows);  // ← GitHub 실제 상태로 pausedMap 동기화
+    await loadPausedStateFromRepo();       // ← repo 파일로 기기 간 동기화 (우선)
+    syncPauseStateFromJson(allWorkflows);  // ← GitHub 실제 비활성화 상태 추가 반영
     renderSummary(allWorkflows);
     renderWeekCalendar(allWorkflows);
     renderCards(allWorkflows);
