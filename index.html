@@ -1226,11 +1226,14 @@ function renderCards(wfData) {
     return;
   }
 
-  // ── 정렬: 가동 중 먼저, 일시 정지 나중
+  // ── 정렬: 1순위 활성/정지, 2순위 최근 실행 시간(내림차순)
   wfData = [...wfData].sort((a, b) => {
     const pa = isPaused(a.wf.id) ? 1 : 0;
     const pb = isPaused(b.wf.id) ? 1 : 0;
-    return pa - pb;
+    if (pa !== pb) return pa - pb;
+    const ta = a.runs[0] ? new Date(a.runs[0].created_at).getTime() : 0;
+    const tb = b.runs[0] ? new Date(b.runs[0].created_at).getTime() : 0;
+    return tb - ta;
   });
 
   const REPO_ICONS = {
