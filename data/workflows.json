@@ -1,35 +1,10 @@
 {
-  "updated_at": "2026-03-01T02:30:30.013434+00:00",
+  "updated_at": "2026-03-01T02:31:27.561039+00:00",
   "orchestrator": {
     "version": "2.0",
-    "enforced_at": "2026-03-01T02:30:30.013434+00:00",
+    "enforced_at": "2026-03-01T02:31:27.561039+00:00",
     "paused_intent": 4,
-    "enforcement_log": [
-      {
-        "action": "disabled",
-        "repo": "lgd-news-monitor",
-        "wf_id": "236856279",
-        "name": "LGD News Monitor & Fact-Check"
-      },
-      {
-        "action": "disabled",
-        "repo": "livebench-notify",
-        "wf_id": "236850987",
-        "name": "LiveBench Leaderboard Notify"
-      },
-      {
-        "action": "disabled",
-        "repo": "realestate-permit-tracker",
-        "wf_id": "236653953",
-        "name": "재개발/재건축 주간 인허가 리포트"
-      },
-      {
-        "action": "disabled",
-        "repo": "competitor-ai-tracker",
-        "wf_id": "237174445",
-        "name": "Competitor AI R&D Tracker"
-      }
-    ]
+    "enforcement_log": []
   },
   "workflows": [
     {
