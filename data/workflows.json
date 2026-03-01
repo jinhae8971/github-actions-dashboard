@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-03-01T14:34:33.609125+00:00",
+  "updated_at": "2026-03-01T15:31:08.957088+00:00",
   "orchestrator": {
     "version": "2.0",
-    "enforced_at": "2026-03-01T14:34:33.609125+00:00",
+    "enforced_at": "2026-03-01T15:31:08.957088+00:00",
     "paused_intent": 5,
     "enforcement_log": []
   },
@@ -815,6 +815,130 @@
           "status": "completed",
           "created_at": "2026-03-01T12:56:52Z",
           "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22543877382"
+        }
+      ]
+    },
+    {
+      "repo": "etf-strategist",
+      "wf": {
+        "id": 240142776,
+        "name": "ETF 매매전략가 — 매일 09:00 KST",
+        "path": ".github/workflows/etf-strategist.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/etf-strategist/blob/main/.github/workflows/etf-strategist.yml"
+      },
+      "cron": "0 0 * * *",
+      "runs": [
+        {
+          "run_number": 27,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T15:15:48Z",
+          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546243754"
+        },
+        {
+          "run_number": 8,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T15:13:35Z",
+          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546204742"
+        },
+        {
+          "run_number": 26,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T15:12:42Z",
+          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546188292"
+        },
+        {
+          "run_number": 25,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T15:05:39Z",
+          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546057978"
+        },
+        {
+          "run_number": 7,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T15:03:14Z",
+          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546012582"
+        },
+        {
+          "run_number": 24,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T15:03:14Z",
+          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546012569"
+        },
+        {
+          "run_number": 23,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T14:33:26Z",
+          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22545502393"
+        }
+      ]
+    },
+    {
+      "repo": "etf-strategist",
+      "wf": {
+        "id": 240143137,
+        "name": "pages-build-deployment",
+        "path": "dynamic/pages/pages-build-deployment",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/etf-strategist/actions/workflows/pages/pages-build-deployment"
+      },
+      "cron": null,
+      "runs": [
+        {
+          "run_number": 27,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T15:15:48Z",
+          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546243754"
+        },
+        {
+          "run_number": 8,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T15:13:35Z",
+          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546204742"
+        },
+        {
+          "run_number": 26,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T15:12:42Z",
+          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546188292"
+        },
+        {
+          "run_number": 25,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T15:05:39Z",
+          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546057978"
+        },
+        {
+          "run_number": 7,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T15:03:14Z",
+          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546012582"
+        },
+        {
+          "run_number": 24,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T15:03:14Z",
+          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546012569"
+        },
+        {
+          "run_number": 23,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T14:33:26Z",
+          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22545502393"
         }
       ]
     }
