@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-01T15:41:31.002457+00:00",
+  "updated_at": "2026-03-01T16:40:11.673876+00:00",
   "orchestrator": {
     "version": "2.0",
-    "enforced_at": "2026-03-01T15:41:31.002457+00:00",
-    "paused_intent": 5,
+    "enforced_at": "2026-03-01T16:40:11.673876+00:00",
+    "paused_intent": 7,
     "enforcement_log": []
   },
   "workflows": [
@@ -75,7 +75,7 @@
         "id": 236636495,
         "name": "🗂 주간 국내 공시 리포트",
         "path": ".github/workflows/dart-weekly-report.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/korean-market-bot/blob/main/.github/workflows/dart-weekly-report.yml"
       },
       "cron": "0 22 * * 5",
@@ -824,7 +824,7 @@
         "id": 240142776,
         "name": "ETF 매매전략가 — 매일 09:00 KST",
         "path": ".github/workflows/etf-strategist.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/etf-strategist/blob/main/.github/workflows/etf-strategist.yml"
       },
       "cron": "0 0 * * *",
