@@ -1415,11 +1415,7 @@ async function openReport(repo, wfId, wfName) {
       const pagesHref = reportFile && reportFile.includes('korean-stock-agent')
         ? PAGES_URL_MAP['korean-stock-agent'] : null;
 
-      body.innerHTML = `<div class="report-content" style="font-size:13px;line-height:1.5">
-        <div style="font-size:14px;font-weight:700;margin-bottom:2px">
-          ${v.investment_weather_icon||'⛅'} ${decoded.date} &nbsp;<span style="color:${changeClr}">${kospi.close?.toLocaleString()||'—'} (${changeSign}${changePct}%)</span>
-        </div>
-        <div style="color:var(--text2);font-size:11px;margin-bottom:8px">KOSPI ${changeSign}${kospi.change?.toFixed(2)||''} &nbsp;|&nbsp; ${v.investment_weather_kr||''}</div>
+      body.innerHTML = `<div class="report-content" style="font-size:13px;line-height:1.5;white-space:normal"><div style="font-size:14px;font-weight:700;margin-bottom:2px">${v.investment_weather_icon||'⛅'} ${decoded.date} &nbsp;<span style="color:${changeClr}">${kospi.close?.toLocaleString()||'—'} (${changeSign}${changePct}%)</span></div><div style="color:var(--text2);font-size:11px;margin-bottom:8px">KOSPI ${changeSign}${kospi.change?.toFixed(2)||''} &nbsp;|&nbsp; ${v.investment_weather_kr||''}</div>
         <hr style="border:none;border-top:1px solid var(--border);margin:0 0 8px">
         <div style="margin-bottom:6px">
           <span style="font-size:16px;font-weight:800;color:${stanceColor[v.final_stance]||'#9ca3af'}">${v.final_stance}</span>
