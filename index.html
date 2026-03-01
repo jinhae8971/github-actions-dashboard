@@ -202,16 +202,6 @@
     font-size: 11px; color: var(--yellow);
     display: flex; align-items: center; gap: 6px;
   }
-  /* 오케스트레이터 동기화 대기 배너 */
-  .paused-banner.pending-sync {
-    background: rgba(180,120,20,.18); border-color: rgba(251,191,36,.5);
-    color: #fbbf24;
-  }
-  .badge.pending-sync {
-    background: #78350f; color: #fde68a;
-    font-size: 10px; padding: 2px 8px; border-radius: 20px;
-    font-weight: 600; letter-spacing: .3px;
-  }
 
   .wf-card-header {
     padding: 16px 18px 14px;
@@ -273,13 +263,7 @@
   .wf-card-footer {
     padding: 10px 18px;
     border-top: 1px solid var(--border);
-    display: flex; flex-direction: column; gap: 7px;
-  }
-  .wf-card-footer-top {
     display: flex; justify-content: space-between; align-items: center;
-  }
-  .wf-card-footer-btns {
-    display: flex; align-items: center; gap: 7px; flex-wrap: wrap;
   }
   .run-link {
     font-size: 11px; color: var(--blue);
@@ -514,13 +498,14 @@
     .schedule-chip .cron { width: 100%; margin-top: 2px; }
     .h-bar .tooltip { display: none !important; }
     .h-bar { height: 24px; border-radius: 3px; }
-    .wf-card-footer { padding: 10px 14px; gap: 6px; }
-    .wf-card-footer-top { gap: 6px; }
+    .wf-card-footer { padding: 10px 14px; flex-direction: column; align-items: stretch; gap: 8px; }
+    .wf-card-footer > div { justify-content: space-between; }
     .run-link   { font-size: 12px; min-height: 32px; align-items: center; }
-    .wf-card-footer-btns { gap: 6px; flex-wrap: wrap; }
-    .report-btn { justify-content: center; min-height: 32px; flex: 1; min-width: 84px; }
-    .pause-btn  { justify-content: center; min-height: 32px; flex: 1; min-width: 84px; }
-    .run-ago    { font-size: 11px; }
+    /* 버튼 영역: wrap 허용해서 좁은 화면에서 줄 바꿈 */
+    .wf-card-footer > div { flex-wrap: wrap; gap: 6px; }
+    .report-btn { justify-content: center; min-height: 34px; flex: 1; min-width: 88px; }
+    .pause-btn  { justify-content: center; min-height: 34px; flex: 1; min-width: 88px; }
+    .run-ago    { width: 100%; text-align: right; font-size: 11px; }
     .modal-overlay { padding: 0; align-items: flex-end; }
     .report-modal  { border-radius: 16px 16px 0 0; max-height: 90vh; padding-bottom: env(safe-area-inset-bottom); }
     .modal-header { padding: 16px 18px 14px; }
@@ -680,27 +665,12 @@
 // ── 설정 ─────────────────────────────────────────────────────────────────────
 const REPORT_FILE_MAP = {
   '236541757': './data/reports/korean-market-bot_236541757.json',
-  '236636495': './data/reports/korean-market-bot_236636495.json',
   '236553677': './data/reports/korean-market-bot_236553677.json',
   '237174445': './data/reports/competitor-ai-tracker_237174445.json',
   '236856279': './data/reports/lgd-news-monitor_236856279.json',
   '236850987': './data/reports/livebench-notify_236850987.json',
   '236642604': './data/reports/memory-price-tracker_236642604.json',
   '236653953': './data/reports/realestate-permit-tracker_236653953.json',
-  '240094820': './data/reports/korean-stock-agent_240094820.json',
-  '240126478': './data/reports/us-market-agent_240126478.json',
-};
-
-// 레포 이름 기반 리포트 파일 매핑 (워크플로우 ID가 없는 신규 레포 대응)
-const REPO_REPORT_MAP = {
-  'kospi-peak-detector': './data/reports/kospi-peak-detector_latest.json',
-};
-
-// GitHub Pages 연동 레포 매핑 (repo → pages URL)
-const PAGES_URL_MAP = {
-  'korean-stock-agent':       'https://jinhae8971.github.io/korean-stock-agent/',
-  'us-market-agent':          'https://jinhae8971.github.io/us-market-agent/',
-  'github-actions-dashboard': 'https://jinhae8971.github.io/github-actions-dashboard/',
 };
 
 const OWNER = 'jinhae8971';
@@ -715,8 +685,7 @@ try { pausedMap = JSON.parse(localStorage.getItem(PAUSE_KEY) || '{}'); } catch(e
 
 let githubToken = localStorage.getItem(TOKEN_KEY) || '';
 
-function isPaused(wfId)          { return !!pausedMap[String(wfId)]; }
-function isPendingDisable(wfId) { return !!(pausedMap[String(wfId)]?.pendingDisable); }
+function isPaused(wfId) { return !!pausedMap[String(wfId)]; }
 
 function savePauseState() {
   try { localStorage.setItem(PAUSE_KEY, JSON.stringify(pausedMap)); } catch(e) {}
@@ -1038,40 +1007,22 @@ async function fetchLatestData() {
   }
 }
 
-// ── wf.state 기반 일시 정지 상태 동기화 (오케스트레이터 연동) ────────────────────
-// paused.json = 의도(intent) | workflows.json wf.state = GitHub 실제 상태
-// 오케스트레이터가 매시간 intent → 실제 상태로 강제 적용함
+// ── wf.state 기반 일시 정지 상태 동기화 ──────────────────────────────────────
+// GitHub에서 실제로 비활성화된 워크플로우는 pausedMap에 추가 (추가만, 삭제 안 함)
+// 삭제는 사용자가 직접 "재가동" 버튼을 누를 때만 수행
 function syncPauseStateFromJson(wfData) {
-  let intentChanged = false;   // paused.json 업데이트 필요 여부
-
+  let changed = false;
   wfData.forEach(({ repo, wf }) => {
-    const id           = String(wf.id);
-    const disabledOnGH = wf.state === 'disabled_manually' || wf.state === 'disabled_inactivity';
-    const inPausedMap  = !!pausedMap[id];
-
-    if (disabledOnGH && !inPausedMap) {
-      // GitHub에서 실제 비활성화 → pausedMap에 추가 (intent도 갱신)
-      pausedMap[id] = { repo, name: wf.name };
-      intentChanged = true;
-
-    } else if (!disabledOnGH && inPausedMap) {
-      // ⚠️ 핵심 수정: GitHub에서 아직 활성 상태지만 일시정지 의도가 있음
-      // → 오케스트레이터가 다음 실행 시 실제로 비활성화할 예정
-      // → UI에 "동기화 대기중" 표시 (paused.json intent는 유지)
-      if (!pausedMap[id].pendingDisable) {
-        pausedMap[id] = { ...pausedMap[id], pendingDisable: true };
-        try { localStorage.setItem(PAUSE_KEY, JSON.stringify(pausedMap)); } catch(e) {}
-      }
-
-    } else if (disabledOnGH && inPausedMap && pausedMap[id].pendingDisable) {
-      // 오케스트레이터가 실제 비활성화 완료 → pendingDisable 플래그 제거
-      delete pausedMap[id].pendingDisable;
-      try { localStorage.setItem(PAUSE_KEY, JSON.stringify(pausedMap)); } catch(e) {}
+    const id = String(wf.id);
+    const disabledOnGitHub = wf.state === 'disabled_manually' || wf.state === 'disabled_inactivity';
+    if (disabledOnGitHub && !pausedMap[id]) {
+      pausedMap[id] = { repo, name: wf.name };  // GitHub에서 비활성화 → UI에 반영
+      changed = true;
     }
+    // active 상태여도 pausedMap에서 자동 삭제하지 않음
+    // (UI 일시정지 상태는 사용자가 명시적으로 재가동 버튼 누를 때만 해제)
   });
-
-  // intent 변경 시에만 paused.json 업데이트
-  if (intentChanged) savePauseState();
+  if (changed) savePauseState();
 }
 
 // ── 데이터 로드 (정적 JSON 파일) ──────────────────────────────────────────────
@@ -1086,9 +1037,7 @@ async function loadAll() {
     if (!resp.ok) throw new Error(`데이터 파일을 불러올 수 없습니다 (HTTP ${resp.status})`);
     const data = await resp.json();
 
-    allWorkflows = (data.workflows || []).filter(
-      d => d.wf.name !== 'pages-build-deployment'
-    );
+    allWorkflows = data.workflows || [];
     await loadPausedStateFromRepo();       // ← repo 파일로 기기 간 동기화 (우선)
     syncPauseStateFromJson(allWorkflows);  // ← GitHub 실제 비활성화 상태 추가 반영
     renderSummary(allWorkflows);
@@ -1226,14 +1175,11 @@ function renderCards(wfData) {
     return;
   }
 
-  // ── 정렬: 1순위 활성/정지, 2순위 최근 실행 시간(내림차순)
+  // ── 정렬: 가동 중 먼저, 일시 정지 나중
   wfData = [...wfData].sort((a, b) => {
     const pa = isPaused(a.wf.id) ? 1 : 0;
     const pb = isPaused(b.wf.id) ? 1 : 0;
-    if (pa !== pb) return pa - pb;
-    const ta = a.runs[0] ? new Date(a.runs[0].created_at).getTime() : 0;
-    const tb = b.runs[0] ? new Date(b.runs[0].created_at).getTime() : 0;
-    return tb - ta;
+    return pa - pb;
   });
 
   const REPO_ICONS = {
@@ -1243,11 +1189,16 @@ function renderCards(wfData) {
     'livebench-notify':          '🏆',
     'memory-price-tracker':      '💾',
     'realestate-permit-tracker': '🏗',
-    'kospi-peak-detector':       '📈',
-    'competitor-ai-tracker':     '🤖',
-    'crypto-monitor':            '🪙',
     'korean-stock-agent':        '🇰🇷',
     'us-market-agent':           '🇺🇸',
+    'etf-strategist':            '📈',
+  };
+
+  // GitHub Pages 대시보드 URL 맵
+  const PAGES_URL_MAP = {
+    'korean-stock-agent': 'https://jinhae8971.github.io/korean-stock-agent/',
+    'us-market-agent':    'https://jinhae8971.github.io/us-market-agent/',
+    'etf-strategist':     'https://jinhae8971.github.io/etf-strategist/',
   };
 
   const cards = wfData.map(({ repo, wf, cron, runs }) => {
@@ -1261,12 +1212,9 @@ function renderCards(wfData) {
       pending:   '<span class="badge loading">대기 중</span>',
       cancelled: '<span class="badge loading">취소됨</span>',
     };
-    const pending  = isPendingDisable(wf.id);
-    const badge    = pending
-      ? '<span class="badge pending-sync">⏳ 동기화 대기</span>'
-      : paused
-        ? '<span class="badge paused">⏸ 일시 정지</span>'
-        : (badgeMap[conclusion] || `<span class="badge loading">${conclusion}</span>`);
+    const badge    = paused
+      ? '<span class="badge paused">⏸ 일시 정지</span>'
+      : (badgeMap[conclusion] || `<span class="badge loading">${conclusion}</span>`);
     const schedule = cron ? parseCron(cron) : null;
     const icon     = REPO_ICONS[repo] || '⚙️';
     const runUrl   = last?.html_url || `https://github.com/${OWNER}/${repo}/actions`;
@@ -1281,7 +1229,7 @@ function renderCards(wfData) {
       return `<div class="h-bar ${c}"><div class="tooltip">#${run.run_number} ${c}<br>${dt}</div></div>`;
     }).join('');
 
-    const hasReport = REPORT_FILE_MAP[String(wf.id)] || REPO_REPORT_MAP[repo];
+    const hasReport = REPORT_FILE_MAP[String(wf.id)];
     const reportBtn = hasReport ? `
       <button class="report-btn" id="rbtn-${repo}-${wf.id}"
         onclick="openReport('${repo}','${wf.id}','${wf.name.replace(/'/g,"\\'")}')">
@@ -1295,25 +1243,22 @@ function renderCards(wfData) {
     const pagesBtn = pagesUrl ? `
       <a class="report-btn" href="${pagesUrl}" target="_blank" style="text-decoration:none">
         <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+          <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
         </svg>
-        GitHub Pages
+        대시보드
       </a>` : '';
 
     const pauseBtnLabel = paused
       ? `<svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor"><path d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"/></svg> 재가동`
       : `<svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor"><path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5m4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5"/></svg> 일시 정지`;
 
-    const pausedBanner = pending ? `
-      <div class="paused-banner pending-sync">
-        ⏳ 오케스트레이터가 곧 이 워크플로우를 중단시킵니다. (최대 1시간 이내 자동 적용)
-      </div>` : paused ? `
+    const pausedBanner = paused ? `
       <div class="paused-banner">
         ⏸ 이 워크플로우는 현재 일시 정지 중입니다. 재가동 버튼을 누르면 다시 실행됩니다.
       </div>` : '';
 
     return `
-      <div class="wf-card ${(paused || pending) ? 'is-paused' : ''}">
+      <div class="wf-card ${paused ? 'is-paused' : ''}">
         <div class="wf-card-header">
           <div>
             <div class="wf-title">${icon} ${wf.name}</div>
@@ -1338,22 +1283,20 @@ function renderCards(wfData) {
           <div class="history-bars">${historyBars}</div>
         </div>
         <div class="wf-card-footer">
-          <div class="wf-card-footer-top">
-            <a class="run-link" href="${runUrl}" target="_blank">
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
-                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-              </svg>
-              Actions 보기
-            </a>
-            <span class="run-ago">마지막: ${last ? timeAgo(last.created_at) : '—'}</span>
-          </div>
-          <div class="wf-card-footer-btns">
-            ${reportBtn}
+          <a class="run-link" href="${runUrl}" target="_blank">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+            Actions 보기
+          </a>
+          <div style="display:flex;align-items:center;gap:8px">
             ${pagesBtn}
+            ${reportBtn}
             <button class="pause-btn ${paused ? 'is-paused' : ''}" id="pbtn-${wf.id}"
               onclick="togglePause('${repo}','${wf.id}','${wf.name.replace(/'/g,"\\'")}')">
               ${pauseBtnLabel}
             </button>
+            <span class="run-ago">마지막: ${last ? timeAgo(last.created_at) : '—'}</span>
           </div>
         </div>
       </div>`;
@@ -1376,7 +1319,7 @@ async function openReport(repo, wfId, wfName) {
   const btn = document.getElementById(`rbtn-${repo}-${wfId}`);
   if (btn) btn.disabled = true;
 
-  const reportFile = REPORT_FILE_MAP[String(wfId)] || REPO_REPORT_MAP[repo];
+  const reportFile = REPORT_FILE_MAP[String(wfId)];
 
   try {
     const resp = await fetch(reportFile + '?_=' + Date.now());
@@ -1392,74 +1335,6 @@ async function openReport(repo, wfId, wfName) {
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
 
     const decoded = await resp.json();
-
-    // ── Korean Stock Agent 전용 렌더러 (핵심 요약) ──────────────────
-    if (decoded.verdict) {
-      const v     = decoded.verdict;
-      const md    = decoded.market_data || {};
-      const kospi = md.kospi || {};
-      const ts    = decoded.generated_at || decoded.date || '';
-      const kstTs2 = ts
-        ? new Date(ts).toLocaleString('ko-KR', {
-            timeZone:'Asia/Seoul', year:'numeric', month:'2-digit',
-            day:'2-digit', hour:'2-digit', minute:'2-digit'
-          }) + ' KST'
-        : decoded.date || '—';
-      document.getElementById('modalTimestamp').textContent = kstTs2;
-
-      const stanceColor = { BUY:'#22c55e', HOLD:'#f59e0b', SELL:'#ef4444' };
-      const changeSign  = (kospi.change||0) >= 0 ? '+' : '';
-      const changePct   = kospi.change_pct != null ? kospi.change_pct.toFixed(2) : '—';
-      const changeClr   = (kospi.change||0) >= 0 ? '#22c55e' : '#ef4444';
-
-      // 에이전트 스탠스 한 줄
-      const votes     = v.stance_votes || {};
-      const votesLine = Object.entries(votes)
-        .map(([n,s]) => `<b style="color:${stanceColor[s]||'#9ca3af'}">${n} ${s}</b>`)
-        .join(' &nbsp;·&nbsp; ');
-
-      // 섹터/리스크/액션 한 줄씩
-      const lineList = (items, icon) =>
-        (items||[]).map(i => `<div style="padding:2px 0;color:var(--text2)">${icon} ${i}</div>`).join('');
-
-      // GitHub Pages 링크 (PAGES_URL_MAP에서 repo로 조회)
-      // repo는 openReport 호출 시 전달되지 않으므로 wfId로 역탐색
-      const pagesLink = Object.entries(PAGES_URL_MAP).find(([r]) =>
-        Object.values(REPORT_FILE_MAP).some(f => f.includes(r) &&
-          reportFile && reportFile.includes(r))
-      );
-      // 간단하게 korean-stock-agent 포함 여부로 판단
-      const pagesHref = reportFile && reportFile.includes('korean-stock-agent')
-        ? PAGES_URL_MAP['korean-stock-agent'] : null;
-
-      body.innerHTML = `<div class="report-content" style="font-size:13px;line-height:1.5;white-space:normal"><div style="font-size:14px;font-weight:700;margin-bottom:2px">${v.investment_weather_icon||'⛅'} ${decoded.date} &nbsp;<span style="color:${changeClr}">${kospi.close?.toLocaleString()||'—'} (${changeSign}${changePct}%)</span></div><div style="color:var(--text2);font-size:11px;margin-bottom:8px">KOSPI ${changeSign}${kospi.change?.toFixed(2)||''} &nbsp;|&nbsp; ${v.investment_weather_kr||''}</div>
-        <hr style="border:none;border-top:1px solid var(--border);margin:0 0 8px">
-        <div style="margin-bottom:6px">
-          <span style="font-size:16px;font-weight:800;color:${stanceColor[v.final_stance]||'#9ca3af'}">${v.final_stance}</span>
-          <span style="font-size:11px;color:var(--text2);margin-left:6px">신뢰도 ${v.confidence_score}%</span>
-          <span style="font-size:11px;margin-left:10px">${votesLine}</span>
-        </div>
-        <div style="font-size:12px;color:var(--text1);line-height:1.6;margin-bottom:8px">${v.summary||''}</div>
-        <hr style="border:none;border-top:1px solid var(--border);margin:0 0 8px">
-        <div style="margin-bottom:5px"><b style="font-size:11px">📈 주도 섹터</b>${lineList(v.top_sectors,'·')}</div>
-        <div style="margin-bottom:5px"><b style="font-size:11px">⚠️ 리스크</b>${lineList(v.risk_factors,'!')}</div>
-        <div style="margin-bottom:10px"><b style="font-size:11px">🎯 액션 플랜</b>${lineList(v.action_items,'→')}</div>
-
-        ${pagesHref ? `
-        <hr style="border:none;border-top:1px solid var(--border);margin:0 0 12px">
-        <a href="${pagesHref}" target="_blank"
-          style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;
-            border-radius:6px;background:#1c2a3a;border:1px solid var(--blue);
-            color:var(--blue);font-size:12px;font-weight:600;text-decoration:none">
-          <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-          </svg>
-          GitHub Pages — 전체 리포트 보기 →
-        </a>` : ''}
-      </div>`;
-      return;
-    }
-    // ── 기존 형식 렌더러 ─────────────────────────────────────────────
     const kstTs   = decoded.timestamp
       ? new Date(decoded.timestamp).toLocaleString('ko-KR', {
           timeZone: 'Asia/Seoul',
