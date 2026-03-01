@@ -20,6 +20,7 @@ REPOS = [
     'realestate-permit-tracker',
     'competitor-ai-tracker',
     'crypto-monitor',
+    'gmail-auto-cleanup',       # ← 2026-03-01 추가
 ]
 
 # 리포트 파일 매핑: { "repo/workflow_id": "repo내_경로" }
