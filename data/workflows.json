@@ -1,5 +1,36 @@
 {
-  "updated_at": "2026-02-28T23:31:14.382567+00:00",
+  "updated_at": "2026-03-01T02:30:30.013434+00:00",
+  "orchestrator": {
+    "version": "2.0",
+    "enforced_at": "2026-03-01T02:30:30.013434+00:00",
+    "paused_intent": 4,
+    "enforcement_log": [
+      {
+        "action": "disabled",
+        "repo": "lgd-news-monitor",
+        "wf_id": "236856279",
+        "name": "LGD News Monitor & Fact-Check"
+      },
+      {
+        "action": "disabled",
+        "repo": "livebench-notify",
+        "wf_id": "236850987",
+        "name": "LiveBench Leaderboard Notify"
+      },
+      {
+        "action": "disabled",
+        "repo": "realestate-permit-tracker",
+        "wf_id": "236653953",
+        "name": "재개발/재건축 주간 인허가 리포트"
+      },
+      {
+        "action": "disabled",
+        "repo": "competitor-ai-tracker",
+        "wf_id": "237174445",
+        "name": "Competitor AI R&D Tracker"
+      }
+    ]
+  },
   "workflows": [
     {
       "repo": "korean-market-bot",
@@ -193,7 +224,7 @@
         "id": 236856279,
         "name": "LGD News Monitor & Fact-Check",
         "path": ".github/workflows/monitor.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/lgd-news-monitor/blob/main/.github/workflows/monitor.yml"
       },
       "cron": "30 21 * * *",
@@ -255,11 +286,18 @@
         "id": 236850987,
         "name": "LiveBench Leaderboard Notify",
         "path": ".github/workflows/livebench.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/livebench-notify/blob/main/.github/workflows/livebench.yml"
       },
       "cron": "0 0 * * *",
       "runs": [
+        {
+          "run_number": 13,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T01:55:34Z",
+          "html_url": "https://github.com/jinhae8971/livebench-notify/actions/runs/22533638201"
+        },
         {
           "run_number": 12,
           "conclusion": "success",
@@ -301,13 +339,6 @@
           "status": "completed",
           "created_at": "2026-02-23T01:49:56Z",
           "html_url": "https://github.com/jinhae8971/livebench-notify/actions/runs/22290174690"
-        },
-        {
-          "run_number": 6,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-22T01:48:57Z",
-          "html_url": "https://github.com/jinhae8971/livebench-notify/actions/runs/22268327475"
         }
       ]
     },
@@ -379,7 +410,7 @@
         "id": 236653953,
         "name": "재개발/재건축 주간 인허가 리포트",
         "path": ".github/workflows/realestate-weekly.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/realestate-permit-tracker/blob/main/.github/workflows/realestate-weekly.yml"
       },
       "cron": "0 23 * * 6",
@@ -441,7 +472,7 @@
         "id": 237174445,
         "name": "Competitor AI R&D Tracker",
         "path": ".github/workflows/competitor-ai-tracker.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/blob/main/.github/workflows/competitor-ai-tracker.yml"
       },
       "cron": "10 22 * * 0-4",
@@ -508,6 +539,13 @@
       },
       "cron": "0 0 * * *",
       "runs": [
+        {
+          "run_number": 4,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T01:17:11Z",
+          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/22533058629"
+        },
         {
           "run_number": 3,
           "conclusion": "success",
