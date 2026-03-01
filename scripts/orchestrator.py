@@ -48,6 +48,7 @@ REPOS = [
     'competitor-ai-tracker',
     'crypto-monitor',
     'kospi-peak-detector',
+    'gmail-auto-cleanup',       # ← 2026-03-01 추가
 ]
 
 # 워크플로우 ID → 리포트 파일 매핑
