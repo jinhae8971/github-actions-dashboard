@@ -1360,6 +1360,120 @@ async function openReport(repo, wfId, wfName) {
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
 
     const decoded = await resp.json();
+
+    // ── Korean Stock Agent 전용 렌더러 ──────────────────────────────
+    if (decoded.verdict) {
+      const v  = decoded.verdict;
+      const md = decoded.market_data || {};
+      const kospi = md.kospi || {};
+      const ts = decoded.generated_at || decoded.date || '';
+      const kstTs2 = ts
+        ? new Date(ts).toLocaleString('ko-KR', {
+            timeZone: 'Asia/Seoul', year:'numeric', month:'2-digit',
+            day:'2-digit', hour:'2-digit', minute:'2-digit'
+          }) + ' KST'
+        : decoded.date || '—';
+      document.getElementById('modalTimestamp').textContent = kstTs2;
+
+      const stanceColor = { BUY:'#22c55e', HOLD:'#f59e0b', SELL:'#ef4444' };
+      const stanceBg    = { BUY:'#052e16', HOLD:'#431407', SELL:'#450a0a' };
+
+      // 에이전트 스탠스 뱃지
+      const votes = v.stance_votes || {};
+      const votesHtml = Object.entries(votes).map(([name, s]) => `
+        <span style="display:inline-flex;align-items:center;gap:4px;padding:3px 8px;
+          border-radius:99px;font-size:11px;font-weight:600;
+          background:${stanceBg[s]||'#1a1a2e'};color:${stanceColor[s]||'#9ca3af'};
+          border:1px solid ${stanceColor[s]||'#374151'}">
+          ${name} ${s}
+        </span>`).join('');
+
+      // 에이전트 분석 카드
+      const agents = (decoded.debate?.phase1_reports || []);
+      const agentCards = agents.map(a => `
+        <div style="border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:8px">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+            <span style="font-size:18px">${a.avatar||'🤖'}</span>
+            <div>
+              <div style="font-size:12px;font-weight:700">${a.agent_name} <span style="color:var(--text2);font-weight:400">${a.role}</span></div>
+              <span style="font-size:10px;padding:1px 7px;border-radius:99px;
+                background:${stanceBg[a.stance]||'#1a1a2e'};color:${stanceColor[a.stance]||'#9ca3af'};
+                border:1px solid ${stanceColor[a.stance]||'#374151'};font-weight:600">
+                ${a.stance} ${a.confidence_score}%
+              </span>
+            </div>
+          </div>
+          <p style="font-size:11px;color:var(--text2);line-height:1.6;margin:0 0 6px">${a.analysis}</p>
+          ${(a.key_points||[]).map(p=>`<div style="font-size:10px;color:#6ee7b7;padding:2px 0">▸ ${p}</div>`).join('')}
+        </div>`).join('');
+
+      // 리스크·액션·섹터 리스트
+      const listHtml = (items, icon) =>
+        (items||[]).map(i=>`<div style="font-size:11px;padding:3px 0;color:var(--text2)">
+          <span style="margin-right:4px">${icon}</span>${i}</div>`).join('');
+
+      const changeSign = kospi.change >= 0 ? '+' : '';
+      const changePct  = kospi.change_pct != null ? kospi.change_pct.toFixed(2) : '—';
+      const changeClr  = (kospi.change||0) >= 0 ? '#22c55e' : '#ef4444';
+
+      body.innerHTML = `<div class="report-content" style="font-size:13px">
+
+        <!-- 시황 헤더 -->
+        <div style="display:flex;align-items:center;justify-content:space-between;
+          padding:10px 14px;border-radius:8px;background:var(--card2);margin-bottom:12px">
+          <div>
+            <div style="font-size:11px;color:var(--text2)">${decoded.date} KOSPI</div>
+            <div style="font-size:20px;font-weight:700">
+              ${kospi.close?.toLocaleString() || '—'}
+              <span style="font-size:13px;color:${changeClr};margin-left:6px">
+                ${changeSign}${kospi.change?.toFixed(2)||''} (${changeSign}${changePct}%)
+              </span>
+            </div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-size:32px">${v.investment_weather_icon||'⛅'}</div>
+            <div style="font-size:10px;color:var(--text2)">${v.investment_weather_kr||''}</div>
+          </div>
+        </div>
+
+        <!-- 최종 판정 -->
+        <div style="padding:12px 14px;border-radius:8px;
+          background:${stanceBg[v.final_stance]||'#1a1a2e'};
+          border:1px solid ${stanceColor[v.final_stance]||'#374151'};margin-bottom:12px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+            <span style="font-size:22px;font-weight:800;
+              color:${stanceColor[v.final_stance]||'#9ca3af'}">${v.final_stance}</span>
+            <span style="font-size:12px;color:var(--text2)">신뢰도 ${v.confidence_score}%</span>
+          </div>
+          <p style="font-size:12px;color:var(--text1);line-height:1.7;margin:0 0 10px">${v.summary||''}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px">${votesHtml}</div>
+        </div>
+
+        <!-- 주도섹터 / 리스크 / 액션 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+          <div style="padding:10px 12px;border-radius:8px;background:var(--card2)">
+            <div style="font-size:11px;font-weight:700;margin-bottom:6px">📈 주도 섹터</div>
+            ${listHtml(v.top_sectors,'·')}
+          </div>
+          <div style="padding:10px 12px;border-radius:8px;background:var(--card2)">
+            <div style="font-size:11px;font-weight:700;margin-bottom:6px">⚠️ 리스크</div>
+            ${listHtml(v.risk_factors,'!')}
+          </div>
+        </div>
+        <div style="padding:10px 12px;border-radius:8px;background:var(--card2);margin-bottom:14px">
+          <div style="font-size:11px;font-weight:700;margin-bottom:6px">🎯 액션 플랜</div>
+          ${listHtml(v.action_items,'→')}
+        </div>
+
+        <!-- 에이전트 개별 분석 -->
+        <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:8px">
+          ── 에이전트 분석 ──
+        </div>
+        ${agentCards}
+      </div>`;
+      return;
+    }
+    // ── 기존 형식 렌더러 ─────────────────────────────────────────────
     const kstTs   = decoded.timestamp
       ? new Date(decoded.timestamp).toLocaleString('ko-KR', {
           timeZone: 'Asia/Seoul',
