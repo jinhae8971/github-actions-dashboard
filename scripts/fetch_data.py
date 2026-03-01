@@ -21,6 +21,7 @@ REPOS = [
     'competitor-ai-tracker',
     'crypto-monitor',
     'gmail-auto-cleanup',       # ← 2026-03-01 추가
+    'korean-stock-agent',       # ← 2026-03-01 추가 (4-agent 멀티에이전트 주식 분석)
 ]
 
 # 리포트 파일 매핑: { "repo/workflow_id": "repo내_경로" }
@@ -34,6 +35,7 @@ REPORT_MAP = {
     'memory-price-tracker/236642604':      'reports/latest.json',
     'realestate-permit-tracker/236653953': 'reports/latest.json',
     'crypto-monitor/239770946':            'reports/latest.json',
+    'korean-stock-agent/240094820':        'docs/data/daily_report.json',  # ← 4-agent AI 주식 분석
 }
 
 HEADERS = {
