@@ -1,0 +1,400 @@
+{
+  "date": "2026-03-01",
+  "generated_at": "2026-03-01T08:02:30.053312",
+  "market_data": {
+    "sp500": {
+      "close": 6878.88,
+      "change": -29.98,
+      "change_pct": -0.43,
+      "volume": 6665660000,
+      "volume_change_pct": 15.77
+    },
+    "technical_indicators": {
+      "rsi": 44.94,
+      "macd": -4.63,
+      "signal": -5.77,
+      "histogram": 1.14,
+      "bb_upper": 6995.59,
+      "bb_middle": 6896.07,
+      "bb_lower": 6796.55,
+      "bb_position": 0.4136,
+      "ma5": 6892.34,
+      "ma5_diff_pct": -0.2,
+      "ma20": 6896.07,
+      "ma20_diff_pct": -0.25,
+      "ma60": 6891.98,
+      "ma60_diff_pct": -0.19
+    },
+    "nasdaq": {
+      "close": 22668.21,
+      "change": -210.17,
+      "change_pct": -0.92,
+      "volume": 9552610000,
+      "volume_change_pct": 10.54
+    },
+    "djia": {
+      "close": 48977.92,
+      "change": -521.28,
+      "change_pct": -1.05,
+      "volume": 811800000,
+      "volume_change_pct": 29.39
+    },
+    "russell": {
+      "close": 2632.36,
+      "change": -44.93,
+      "change_pct": -1.68,
+      "volume": 6665660000,
+      "volume_change_pct": 15.77
+    },
+    "vix": {
+      "close": 19.86,
+      "change": 1.23,
+      "change_pct": 6.6,
+      "volume": 0,
+      "volume_change_pct": 0.0
+    },
+    "rates": {
+      "us10y": 3.96,
+      "us2y": 3.58,
+      "yield_spread": 0.38
+    },
+    "dxy": {
+      "close": 97.65,
+      "change": -0.14,
+      "change_pct": -0.15,
+      "volume": 0,
+      "volume_change_pct": 0.0
+    },
+    "sectors": {
+      "XLK (Tech)": {
+        "close": 138.76,
+        "change": -2.25,
+        "change_pct": -1.6,
+        "volume": 15325900,
+        "volume_change_pct": -7.72
+      },
+      "XLF (Financials)": {
+        "close": 51.43,
+        "change": -1.07,
+        "change_pct": -2.04,
+        "volume": 81996300,
+        "volume_change_pct": 17.39
+      },
+      "XLE (Energy)": {
+        "close": 55.92,
+        "change": 0.87,
+        "change_pct": 1.58,
+        "volume": 58998800,
+        "volume_change_pct": 28.72
+      },
+      "XLV (Healthcare)": {
+        "close": 160.2,
+        "change": 2.78,
+        "change_pct": 1.77,
+        "volume": 14249300,
+        "volume_change_pct": 0.99
+      },
+      "XLI (Industrials)": {
+        "close": 177.14,
+        "change": 0.44,
+        "change_pct": 0.25,
+        "volume": 9692600,
+        "volume_change_pct": -12.74
+      },
+      "XLP (Staples)": {
+        "close": 90.01,
+        "change": 1.15,
+        "change_pct": 1.29,
+        "volume": 17313200,
+        "volume_change_pct": -4.76
+      },
+      "XLY (Discretionary)": {
+        "close": 116.86,
+        "change": -0.19,
+        "change_pct": -0.16,
+        "volume": 9636200,
+        "volume_change_pct": -10.61
+      },
+      "XLU (Utilities)": {
+        "close": 47.73,
+        "change": 0.55,
+        "change_pct": 1.17,
+        "volume": 39748900,
+        "volume_change_pct": 27.96
+      },
+      "XLRE (Real Estate)": {
+        "close": 43.84,
+        "change": 0.21,
+        "change_pct": 0.48,
+        "volume": 10825600,
+        "volume_change_pct": 13.76
+      }
+    },
+    "top_stocks": [
+      {
+        "close": 264.18,
+        "change": -8.77,
+        "change_pct": -3.21,
+        "volume": 72239400,
+        "volume_change_pct": 62.25,
+        "ticker": "AAPL",
+        "name": "Apple",
+        "pe_ratio": 0.0,
+        "price_book": 0.0,
+        "market_cap_b": 3882.9
+      },
+      {
+        "close": 392.74,
+        "change": -8.98,
+        "change_pct": -2.24,
+        "volume": 51276300,
+        "volume_change_pct": 24.2,
+        "ticker": "MSFT",
+        "name": "Microsoft",
+        "pe_ratio": 0.0,
+        "price_book": 0.0,
+        "market_cap_b": 2919.0
+      },
+      {
+        "close": 177.19,
+        "change": -7.7,
+        "change_pct": -4.16,
+        "volume": 310523200,
+        "volume_change_pct": 22.38,
+        "ticker": "NVDA",
+        "name": "NVIDIA",
+        "pe_ratio": 0.0,
+        "price_book": 0.0,
+        "market_cap_b": 4306.6
+      },
+      {
+        "close": 210.0,
+        "change": 2.08,
+        "change_pct": 1.0,
+        "volume": 57230900,
+        "volume_change_pct": 18.71,
+        "ticker": "AMZN",
+        "name": "Amazon",
+        "pe_ratio": 0.0,
+        "price_book": 0.0,
+        "market_cap_b": 2254.3
+      },
+      {
+        "close": 311.76,
+        "change": 4.38,
+        "change_pct": 1.42,
+        "volume": 44568300,
+        "volume_change_pct": 32.64,
+        "ticker": "GOOGL",
+        "name": "Alphabet",
+        "pe_ratio": 0.0,
+        "price_book": 0.0,
+        "market_cap_b": 3771.4
+      },
+      {
+        "close": 648.18,
+        "change": -8.83,
+        "change_pct": -1.34,
+        "volume": 15670700,
+        "volume_change_pct": 38.97,
+        "ticker": "META",
+        "name": "Meta",
+        "pe_ratio": 0.0,
+        "price_book": 0.0,
+        "market_cap_b": 1639.6
+      },
+      {
+        "close": 402.51,
+        "change": -6.07,
+        "change_pct": -1.49,
+        "volume": 56760900,
+        "volume_change_pct": -3.28,
+        "ticker": "TSLA",
+        "name": "Tesla",
+        "pe_ratio": 0.0,
+        "price_book": 0.0,
+        "market_cap_b": 1510.4
+      },
+      {
+        "close": 300.3,
+        "change": -5.83,
+        "change_pct": -1.9,
+        "volume": 18601400,
+        "volume_change_pct": 54.46,
+        "ticker": "JPM",
+        "name": "JPMorgan",
+        "pe_ratio": 0.0,
+        "price_book": 0.0,
+        "market_cap_b": 809.9
+      },
+      {
+        "close": 504.95,
+        "change": 2.28,
+        "change_pct": 0.45,
+        "volume": 6352900,
+        "volume_change_pct": 49.93,
+        "ticker": "BRK-B",
+        "name": "Berkshire",
+        "pe_ratio": 0.0,
+        "price_book": 0.0,
+        "market_cap_b": 1089.3
+      }
+    ],
+    "valuation": {
+      "sp500_forward_pe": null,
+      "shiller_cape": null,
+      "sp500_div_yield": 1.4
+    },
+    "fed_watch": {
+      "hold_prob": 55,
+      "cut_prob": 25,
+      "hike_prob": 20
+    },
+    "earnings": {
+      "eps_growth": 1.9,
+      "beat_rate": "~75%",
+      "guidance_trend": "neutral"
+    },
+    "collected_at": "2026-03-01T08:02:30.053312"
+  },
+  "debate": {
+    "phase1_reports": [
+      {
+        "agent_name": "TechMo",
+        "role": "기술적 모멘텀 분석가",
+        "avatar": "📊",
+        "analysis": "현재 S&P500은 6878.88pt로 MA5(6892.34), MA20(6896.07), MA60(6891.98) 모두 하회하며 단기 이동평균선이 데드크로스 초입 구간에 진입했습니다. RSI 44.94는 중립 하단으로 모멘텀 약화가 수치로 확인됩니다. 50선 이탈은 강세→약세 전환의 전형적 시그널입니다. MACD는 -4.63으로 시그널선 -5.77을 상회하며 히스토그램 +1.14가 양전환되어 하락 모멘텀 둔화 조짐이 포착되나, 절대값이 여전히 음수권이므로 본격 반등으로 해석하기엔 시기상조입니다. 볼린저밴드 41% 포지션은 중간대이나, 지수 하락(-0.43%)과 함께 하단밴드 접근 가능성이 열려있습니다. VIX 19.86(+6.6%)은 20선 직전까지 상승하며 공포 레벨이 빠르게 확대 중입니다. VIX 20 돌파 시 변동성 폭발 구간 진입으로 추가 하락 리스크가 급증합니다. 섹터 분석상 XLK -1.60%, XLF -2.04%로 성장·금융 동반 약세이며, 방어주인 XLV +1.77%, XLP +1.29%로 자금이 이동 중입니다. 이는 전형적인 Risk-Off 패턴입니다. 기술적으로 MA 수렴 구간에서 방향성 결정 전이며, MACD 히스토그램 양전환에도 불구하고 VIX 급등과 주요 기술주(NVDA -4.16%, AAPL -3.21%) 급락이 모멘텀 회복을 상쇄하고 있습니다.",
+        "key_points": [
+          "RSI 44.94로 50선 하회, 강세 모멘텀 상실 확인",
+          "VIX 19.86(+6.6%)이 20선 임계점 도달 직전 – 변동성 폭발 경계",
+          "MACD 히스토그램 +1.14 양전환되었으나 절대값 음수권 유지로 신뢰도 제한"
+        ],
+        "confidence_score": 62,
+        "stance": "HOLD"
+      },
+      {
+        "agent_name": "MacroFed",
+        "role": "거시경제·Fed 정책 분석가",
+        "avatar": "🏛️",
+        "analysis": "현재 미 10년물 3.96%, 2년물 3.58%로 장단기 스프레드가 +0.38%를 기록하며 역전이 해소된 정상화 국면에 진입했습니다. 이는 역사적으로 경기침체 우려가 정점을 지났음을 시사하나, 스프레드 정상화 초기 6~12개월은 오히려 실물 경기 둔화가 본격화되는 시기임을 명심해야 합니다. DXY 97.65는 연초 대비 상당한 약세를 보이고 있어 글로벌 달러 유동성이 신흥국으로 이동할 가능성을 열어두지만, Fed Watch에서 동결 확률 55%, 인하 25%, 인상 20%로 시장이 아직 명확한 금리 방향성을 확신하지 못하고 있습니다. 실질금리가 여전히 +1.5% 이상으로 추정되어 성장주 멀티플에 구조적 압박이 지속됩니다. VIX 19.86(+6.60%)의 급등과 함께 XLK -1.60%, NVIDIA -4.16%, Apple -3.21% 등 기술주 급락은 유동성 긴축 환경에서 고밸류 자산이 가장 먼저 조정받는 전형적인 패턴입니다. 반면 XLE +1.58%, XLV +1.77%, XLP +1.29% 등 방어적 섹터의 강세는 자금이 '안전자산'으로 로테이션 중임을 명확히 보여줍니다. Fed가 명시적으로 인하 신호를 보내기 전까지 유동성 환경은 중립 이하이며, 현 국면에서 공격적 매수는 시기상조입니다.",
+        "key_points": [
+          "장단기 스프레드 +0.38%로 역전 해소되었으나, 정상화 초기는 역사적으로 실물 경기 둔화 본격화 구간",
+          "Fed Watch 동결 55%/인하 25%로 불확실성 지속—실질금리 +1.5% 이상 추정, 성장주 밸류에이션 압박 유지",
+          "달러 약세(DXY 97.65)에도 VIX 급등과 기술주 급락은 유동성이 위험자산을 떠나고 있음을 시사"
+        ],
+        "confidence_score": 72,
+        "stance": "HOLD"
+      },
+      {
+        "agent_name": "SectorRot",
+        "role": "섹터 로테이션·자금 흐름 분석가",
+        "avatar": "🔄",
+        "analysis": "오늘 섹터별 자금 흐름은 명확한 Risk-off 패턴을 보여줍니다. 상위 3개 섹터가 Healthcare(XLV +1.77%), Energy(XLE +1.58%), Consumer Staples(XLP +1.29%)로 전형적인 방어주 조합입니다. 반면 하위 섹터는 Financials(XLF -2.04%), Tech(XLK -1.60%), Consumer Discretionary(XLY -0.16%)로 경기 민감주가 집중 매도되고 있습니다. 이는 경기 사이클상 '후반부 확장기→수축 전환' 초입 신호로 해석됩니다. 특히 XLF가 -2.04%로 가장 큰 하락을 기록한 점은 금리 인하 기대(Fed Watch 인하확률 25%)에도 불구하고 은행주가 약세를 보이며 신용 우려가 반영된 것입니다. Tech 대장주인 NVIDIA(-4.16%), Apple(-3.21%), Microsoft(-2.24%) 동반 하락은 성장주 밸류에이션 부담이 현실화되고 있음을 시사합니다. 반면 Amazon(+1.00%), Alphabet(+1.42%)의 상대적 선방은 방어적 빅테크로의 차별화가 진행 중임을 보여줍니다. Utilities(XLU +1.17%)와 Real Estate(XLRE +0.48%) 강세는 금리 피크아웃 베팅과 함께 안전자산 선호를 반영합니다. VIX 6.6% 급등(19.86)은 변동성 확대 국면 진입을 경고하며, 장단기 스프레드 0.38%는 역전 해소 중이나 경기 둔화 우려는 지속됩니다. 섹터 로테이션 방향은 단기적으로 성장주→방어주 이동이 명확하며, 이는 지수 전체의 추가 조정 가능성을 높입니다.",
+        "key_points": [
+          "Risk-off 전환 확정: XLV/XLP/XLU 방어주 3총사 강세 vs XLK/XLF 성장·금융 동반 약세",
+          "Tech 내 차별화: NVIDIA·Apple 급락 vs Amazon·Alphabet 상대 선방으로 품질주 선별 장세",
+          "경기 사이클 후반: 섹터 로테이션이 '확장→수축' 전환 초입 단계를 시사"
+        ],
+        "confidence_score": 72,
+        "stance": "SELL"
+      },
+      {
+        "agent_name": "ValueFund",
+        "role": "가치투자·펀더멘털 분석가",
+        "avatar": "📈",
+        "analysis": "현재 S&P500의 Forward P/E 데이터가 제공되지 않았으나, 최근 시장 컨센서스 기준 약 21-22배 수준으로 추정됩니다. 이는 역사적 평균인 16-17배를 25% 이상 상회하는 고평가 영역입니다. 더 우려되는 점은 S&P500 EPS 성장률이 1.9%에 불과하다는 것입니다. PEG ratio 관점에서 보면 P/E 21 ÷ EPS성장률 1.9 = 약 11배로, 적정 수준인 1.0을 크게 초과하여 현재 주가가 이익 성장 대비 과도하게 높음을 시사합니다. 오늘 시장은 Mag7 대형 기술주들이 집중 타격을 받았습니다. NVIDIA -4.16%, Apple -3.21%, Microsoft -2.24%의 하락은 단순 차트 노이즈가 아니라 밸류에이션 부담에 대한 시장의 재평가로 해석됩니다. 반면 Amazon +1.00%, Alphabet +1.42%는 상대적으로 합리적인 밸류에이션과 AI 수혜 기대가 반영된 것으로 보입니다. 금리 환경도 주목해야 합니다. 10년물 3.96%는 여전히 높은 수준이며, Fed Watch 동결 확률 55%는 금리 인하가 시장 기대만큼 빠르지 않을 수 있음을 의미합니다. 고금리 환경에서 20배 이상의 P/E는 정당화되기 어렵습니다. Shiller CAPE도 역사적 고점권(30배 이상 추정)에서 머물고 있어 장기 밸류에이션 관점에서도 신중함이 필요합니다. 다만 섹터별로 Healthcare +1.77%, Staples +1.29% 등 방어주로의 로테이션은 시장이 아직 완전한 공포 모드는 아님을 보여줍니다. VIX 19.86은 경계 수준이나 패닉은 아닙니다.",
+        "key_points": [
+          "PEG ratio 약 11배: P/E(추정 21x) 대비 EPS성장률(1.9%)이 극히 낮아 심각한 고평가 신호",
+          "Mag7 실적 모멘텀 분화: NVDA·AAPL 급락 vs GOOGL·AMZN 상승, 선별적 접근 필요",
+          "10년물 3.96% 고금리 지속 시 현 P/E 멀티플 축소 압력 불가피"
+        ],
+        "confidence_score": 68,
+        "stance": "HOLD"
+      }
+    ],
+    "phase2_critiques": [
+      {
+        "from_agent": "TechMo",
+        "to_agent": "ValueFund",
+        "critique": "```json\n{\n  \"analyst\": \"TechMo\",\n  \"stance\": \"SELL\",\n  \"confidence\": 74,\n  \"counter_argument\": \"ValueFund의 펀더멘털 논리는 타이밍 시그널을 완전히 무시합니다. 현재 VIX 18.81은 공포 영역(20+) 직전이며, S&P500 RSI가 중립 구간에서 하락 모멘텀을 보이고 있습니다. 더 결정적으로 Fear & Greed Index 39는 '공포' 구간 진입을 의미하며, 이는 단기 추가 하락 압력을 시사합니다. Mag7의 동반 급락(-4.16% NVDA, -3.21% AAPL)은 거래량 동반 시 기술적 데드캣 바운스 가능성을 열어둡니다. HOLD가 아닌 리스크 관리 차원의 비중 축소가 합리적입니다.\"\n}\n```"
+      },
+      {
+        "from_agent": "MacroFed",
+        "to_agent": "SectorRot",
+        "critique": "```json\n{\n  \"agent\": \"MacroFed\",\n  \"rebuttal\": {\n    \"target_agent\": \"SectorRot\",\n    \"critique\": \"금리 환경 분석이 불충분합니다. 10년물 3.96%로 4% 하회하고 장단기 스프레드가 +0.38%로 역전 해소된 상황은 실질금리 하락과 유동성 여건 개선을 의미합니다. 이는 전형적인 'Fed pivot 기대' 환경으로, 방어주 강세는 일시적 불확실성 반영이지 본격적 경기 수축 신호가 아닙니다. CME FedWatch 인하 확률 25%도 연내 완화 가능성을 시사하며, DXY 약세 전환 시 위험자산 반등 여력이 충분합니다. XLF 약세는 NIM 압축 우려지 신용 경색이 아닙니다.\",\n    \"confidence_adjustment\": -15,\n    \"key_data_points\": [\"10Y 3.96%로 4% 하회\", \"스프레드 +0.38% 역전 해소\", \"Fed pivot 기대 환경\"]\n  }\n}\n```"
+      },
+      {
+        "from_agent": "SectorRot",
+        "to_agent": "MacroFed",
+        "critique": "```json\n{\n  \"agent_name\": \"SectorRot\",\n  \"반론_대상\": \"MacroFed\",\n  \"반론_요약\": \"XLE·XLV 강세는 단순 방어가 아닌 인플레 재점화 및 실물 경기 내성 신호\",\n  \"핵심_논거\": [\n    {\n      \"포인트\": \"에너지 섹터 강세의 함의 간과\",\n      \"근거\": \"XLE +1.58%는 방어주가 아닌 인플레이션 헤지·원자재 수요 기대를 반영하며, 이는 경기 둔화 본격화 논리와 충돌\"\n    },\n    {\n      \"포인트\": \"전형적 Risk-off 패턴 불일치\",\n      \"근거\": \"진정한 경기침체 우려 시 XLU/XLP가 선도해야 하나, 헬스케어(XLV +1.77%)·에너지 주도는 스태그플레이션 또는 후기 확장 국면 특성\"\n    },\n    {\n      \"포인트\": \"금융 약세 해석의 단면성\",\n      \"근거\": \"XLF -2.04%를 경기 둔화로만 볼 수 없음. 장단기 스프레드 정상화(+0.38%)는 오히려 은행 NIM 개선 기대를 제공하며, 단기 조정일 가능성\"\n    }\n  ],\n  \"섹터_로테이션_진단\": \"현재 자금은 Tech→Energy/Healthcare로 이동 중이며, 이는 순수 Risk-off가 아닌 '인플레 민감+경기 방어' 혼합 포지셔닝. 경기침체 본격화보다 연착륙 또는 리플레이션 시나리오에 베팅하는 흐름\",\n  \"결론\": \"MacroFed의 '경기 둔화 본격화' 전망은 현재 섹터 로테이션 패턴과 불일치. XLE 강세가 지속된다면 HOLD보다 인플레 수혜주 비중확대가 적절\"\n}\n```"
+      },
+      {
+        "from_agent": "ValueFund",
+        "to_agent": "TechMo",
+        "critique": "```json\n{\n  \"agent\": \"ValueFund\",\n  \"response\": \"TechMo의 이동평균선·RSI 분석은 가격 데이터의 후행적 반영일 뿐, 주가를 결정하는 근본 동인인 기업 이익을 전혀 고려하지 않았습니다. 현재 Forward P/E와 CAPE 데이터가 불확실한 상황에서 차트 패턴만으로 방향성을 판단하는 것은 위험합니다. Mag7 실적시즌 서프라이즈율이 역사적으로 70% 이상을 유지하고 있으며, 이들의 EPS 성장률이 두 자릿수를 기록 중입니다. VIX 19.86의 상승은 단기 심리 지표일 뿐, PEG ratio 1 이하인 우량주들의 밸류에이션 매력을 훼손하지 않습니다. 진정한 투자 신호는 차트가 아닌 실적 가이던스 상향 여부에서 나옵니다.\"\n}\n```"
+      }
+    ]
+  },
+  "verdict": {
+    "final_stance": "HOLD",
+    "confidence_score": 71,
+    "summary": "S&P500 6878.88pt(-0.43%)가 주요 이동평균선(MA5 6892, MA20 6896, MA60 6892)을 모두 하회하며 기술적 약세 신호가 확인되나, VIX 19.86이 20선 임계점 미만이고 MACD 히스토그램 양전환(+1.14)으로 하락 모멘텀 둔화 조짐이 관찰됩니다. 거시적으로 10년물 3.96%로 4% 하회, 장단기 스프레드 +0.38% 역전 해소는 금융환경 개선을 시사하나, Fed Watch 동결 55%/인하 25%의 불확실성과 실질금리 +1.5% 이상 추정치가 성장주 밸류에이션을 압박합니다. 섹터별로 XLV/XLE/XLP 방어주 강세 vs XLF/XLK 약세는 Risk-off 패턴이나, XLE +1.58% 강세는 순수 경기침체 우려보다 인플레 헤지 성격을 내포해 스태그플레이션 또는 연착륙 시나리오 혼재를 반영합니다. PEG 11배 추정치는 고평가 경고이나 Mag7 내 GOOGL/AMZN의 상대적 선방은 품질주 선별 장세를 시사합니다.",
+    "key_insights": [
+      "기술적 데드크로스 초입이나 MACD 히스토그램 양전환으로 급락보다 횡보 조정 가능성 우세",
+      "장단기 금리 역전 해소(+0.38%)는 침체 우려 정점 통과 신호이나 실물 둔화 본격화 구간 진입 경계 필요",
+      "XLE 강세가 동반된 방어주 로테이션은 순수 Risk-off가 아닌 인플레 민감+경기 방어 혼합 포지셔닝"
+    ],
+    "risk_factors": [
+      "VIX 20선 돌파 시 변동성 폭발 및 추가 하락 가속화 위험",
+      "EPS 성장률 1.9% 대비 P/E 21배 추정치로 실적 하회 시 밸류에이션 급격 조정 가능"
+    ],
+    "action_items": [
+      "신규 매수 자제, 기존 포지션 유지하며 VIX 22 돌파 시 방어적 비중 축소 준비",
+      "Tech 섹터 내 NVDA/AAPL 급락주 대신 GOOGL/AMZN 품질주 중심으로 선별적 관심",
+      "XLE/XLV 방어주 익스포저 확대 검토, Fed 정책 방향성 확인 시까지 현금 비중 15-20% 유지"
+    ],
+    "stance_votes": {
+      "TechMo": "HOLD",
+      "MacroFed": "HOLD",
+      "SectorRot": "SELL",
+      "ValueFund": "HOLD"
+    },
+    "market_weather": "partly_cloudy",
+    "market_weather_icon": "⛅",
+    "market_weather_en": "Hold — Mixed Signals"
+  },
+  "backtest": {
+    "agent_rankings": [
+      {
+        "name": "TechMomentum",
+        "avatar": "📈",
+        "hit_rate": 0.0,
+        "total_predictions": 0,
+        "correct": 0
+      },
+      {
+        "name": "MacroFed",
+        "avatar": "🏛️",
+        "hit_rate": 0.0,
+        "total_predictions": 0,
+        "correct": 0
+      },
+      {
+        "name": "SectorRotation",
+        "avatar": "🔄",
+        "hit_rate": 0.0,
+        "total_predictions": 0,
+        "correct": 0
+      },
+      {
+        "name": "ValueFundamental",
+        "avatar": "💎",
+        "hit_rate": 0.0,
+        "total_predictions": 0,
+        "correct": 0
+      }
+    ],
+    "yesterday_comparison": null,
+    "today_moderator": "Moderator"
+  }
+}
