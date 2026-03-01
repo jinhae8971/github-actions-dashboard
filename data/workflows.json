@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-01T02:32:39.257998+00:00",
+  "updated_at": "2026-03-01T03:19:50.468114+00:00",
   "orchestrator": {
     "version": "2.0",
-    "enforced_at": "2026-03-01T02:32:39.257998+00:00",
-    "paused_intent": 4,
+    "enforced_at": "2026-03-01T03:19:50.468114+00:00",
+    "paused_intent": 5,
     "enforcement_log": []
   },
   "workflows": [
@@ -509,7 +509,7 @@
         "id": 239770946,
         "name": "🪙 Crypto Monitor (TGE/Airdrop)",
         "path": ".github/workflows/crypto_monitor.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/crypto-monitor/blob/main/.github/workflows/crypto_monitor.yml"
       },
       "cron": "0 0 * * *",
