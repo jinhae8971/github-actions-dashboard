@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-01T11:29:23.973921+00:00",
+  "updated_at": "2026-03-01T13:04:53.700119+00:00",
   "orchestrator": {
     "version": "2.0",
     "enforced_at": "2026-03-01T11:29:23.973921+00:00",
@@ -719,6 +719,40 @@
           "status": "completed",
           "created_at": "2026-03-01T10:53:16Z",
           "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22541886923"
+        }
+      ]
+    },
+    {
+      "repo": "us-market-agent",
+      "wf": {
+        "id": 240126478,
+        "name": "US Market Agent — Daily Report",
+        "path": ".github/workflows/main.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/us-market-agent/actions/workflows/main.yml"
+      },
+      "cron": "0 23 * * 0-4",
+      "runs": [
+        {
+          "run_number": 2,
+          "conclusion": null,
+          "status": "in_progress",
+          "created_at": "2026-03-01T13:04:27Z",
+          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22544001199"
+        },
+        {
+          "run_number": 1,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T13:01:57Z",
+          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22543960373"
+        },
+        {
+          "run_number": 1,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T12:56:52Z",
+          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22543877382"
         }
       ]
     }
