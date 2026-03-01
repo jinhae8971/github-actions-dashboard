@@ -684,6 +684,11 @@ const REPORT_FILE_MAP = {
   '236653953': './data/reports/realestate-permit-tracker_236653953.json',
 };
 
+// 레포 이름 기반 리포트 파일 매핑 (워크플로우 ID가 없는 신규 레포 대응)
+const REPO_REPORT_MAP = {
+  'kospi-peak-detector': './data/reports/kospi-peak-detector_latest.json',
+};
+
 const OWNER = 'jinhae8971';
 
 // ── 일시 정지 상태 (localStorage) ────────────────────────────────────────────
@@ -1219,6 +1224,9 @@ function renderCards(wfData) {
     'livebench-notify':          '🏆',
     'memory-price-tracker':      '💾',
     'realestate-permit-tracker': '🏗',
+    'kospi-peak-detector':       '📈',
+    'competitor-ai-tracker':     '🤖',
+    'crypto-monitor':            '🪙',
   };
 
   const cards = wfData.map(({ repo, wf, cron, runs }) => {
@@ -1252,7 +1260,7 @@ function renderCards(wfData) {
       return `<div class="h-bar ${c}"><div class="tooltip">#${run.run_number} ${c}<br>${dt}</div></div>`;
     }).join('');
 
-    const hasReport = REPORT_FILE_MAP[String(wf.id)];
+    const hasReport = REPORT_FILE_MAP[String(wf.id)] || REPO_REPORT_MAP[repo];
     const reportBtn = hasReport ? `
       <button class="report-btn" id="rbtn-${repo}-${wf.id}"
         onclick="openReport('${repo}','${wf.id}','${wf.name.replace(/'/g,"\\'")}')">
@@ -1335,7 +1343,7 @@ async function openReport(repo, wfId, wfName) {
   const btn = document.getElementById(`rbtn-${repo}-${wfId}`);
   if (btn) btn.disabled = true;
 
-  const reportFile = REPORT_FILE_MAP[String(wfId)];
+  const reportFile = REPORT_FILE_MAP[String(wfId)] || REPO_REPORT_MAP[repo];
 
   try {
     const resp = await fetch(reportFile + '?_=' + Date.now());

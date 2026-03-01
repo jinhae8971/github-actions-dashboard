@@ -21,7 +21,7 @@ orchestrator.py — GitHub Actions 대시보드 오케스트레이터
               │ 감시 & 제어
     ┌─────────▼─────────┐    ┌─────────────────┐
     │  Worker Repos      │    │  Dashboard       │
-    │  (9개 워크플로우)   │    │  (index.html)    │
+      (10개 워크플로우)  │    │  (index.html)    ││
     │  실제 작업 수행     │    │  • paused.json   │
     └───────────────────┘    │  • workflows.json │
                              └─────────────────┘
@@ -47,6 +47,7 @@ REPOS = [
     'realestate-permit-tracker',
     'competitor-ai-tracker',
     'crypto-monitor',
+    'kospi-peak-detector',
 ]
 
 # 워크플로우 ID → 리포트 파일 매핑
@@ -60,6 +61,7 @@ REPORT_MAP = {
     'memory-price-tracker/236642604':      'reports/latest.json',
     'realestate-permit-tracker/236653953': 'reports/latest.json',
     'crypto-monitor/239770946':            'reports/latest.json',
+    'kospi-peak-detector/latest': 'reports/latest.json',
 }
 
 HEADERS = {
