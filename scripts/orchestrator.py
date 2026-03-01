@@ -51,6 +51,7 @@ REPOS = [
     'gmail-auto-cleanup',       # ← 2026-03-01 추가
     'korean-stock-agent',       # ← 2026-03-01 추가 (4-agent AI 주식 분석)
     'us-market-agent',          # ← 2026-03-01 추가 (4-agent AI 미국 주식 분석)
+    'etf-strategist',          # ← 2026-03-01 추가 (ETF 매매전략가)
 ]
 
 # 워크플로우 ID → 리포트 파일 매핑
@@ -67,6 +68,7 @@ REPORT_MAP = {
     'kospi-peak-detector/latest':          'reports/latest.json',
     'korean-stock-agent/240094820':        'docs/data/daily_report.json',  # ← 4-agent AI 주식 분석
     'us-market-agent/240126478':           'docs/data/daily_report.json',  # ← 4-agent AI 미국 주식 분석
+    'etf-strategist/240142776':           'docs/data/daily_report.json',  # ← ETF 매매전략가
 }
 
 HEADERS = {
