@@ -50,6 +50,7 @@ REPOS = [
     'kospi-peak-detector',
     'gmail-auto-cleanup',       # ← 2026-03-01 추가
     'korean-stock-agent',       # ← 2026-03-01 추가 (4-agent AI 주식 분석)
+    'us-market-agent',          # ← 2026-03-01 추가 (4-agent AI 미국 주식 분석)
 ]
 
 # 워크플로우 ID → 리포트 파일 매핑
@@ -65,6 +66,7 @@ REPORT_MAP = {
     'crypto-monitor/239770946':            'reports/latest.json',
     'kospi-peak-detector/latest':          'reports/latest.json',
     'korean-stock-agent/240094820':        'docs/data/daily_report.json',  # ← 4-agent AI 주식 분석
+    'us-market-agent/240126478':           'docs/data/daily_report.json',  # ← 4-agent AI 미국 주식 분석
 }
 
 HEADERS = {
