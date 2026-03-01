@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-03-01T05:21:34.259238+00:00",
+  "updated_at": "2026-03-01T05:29:31.954561+00:00",
   "orchestrator": {
     "version": "2.0",
-    "enforced_at": "2026-03-01T05:21:34.259238+00:00",
+    "enforced_at": "2026-03-01T05:29:31.954561+00:00",
     "paused_intent": 5,
     "enforcement_log": []
   },
@@ -541,6 +541,26 @@
           "status": "completed",
           "created_at": "2026-02-28T06:19:49Z",
           "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/22515114883"
+        }
+      ]
+    },
+    {
+      "repo": "kospi-peak-detector",
+      "wf": {
+        "id": 240033808,
+        "name": "📈 코스피 고점 판독기",
+        "path": ".github/workflows/kospi-peak-detector.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/kospi-peak-detector/blob/main/.github/workflows/kospi-peak-detector.yml"
+      },
+      "cron": "0 8 * * *",
+      "runs": [
+        {
+          "run_number": 1,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T05:27:57Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/22536790698"
         }
       ]
     }
