@@ -49,6 +49,7 @@ REPOS = [
     'crypto-monitor',
     'kospi-peak-detector',
     'gmail-auto-cleanup',       # ← 2026-03-01 추가
+    'korean-stock-agent',       # ← 2026-03-01 추가 (4-agent AI 주식 분석)
 ]
 
 # 워크플로우 ID → 리포트 파일 매핑
@@ -62,7 +63,8 @@ REPORT_MAP = {
     'memory-price-tracker/236642604':      'reports/latest.json',
     'realestate-permit-tracker/236653953': 'reports/latest.json',
     'crypto-monitor/239770946':            'reports/latest.json',
-    'kospi-peak-detector/latest': 'reports/latest.json',
+    'kospi-peak-detector/latest':          'reports/latest.json',
+    'korean-stock-agent/240094820':        'docs/data/daily_report.json',  # ← 4-agent AI 주식 분석
 }
 
 HEADERS = {
