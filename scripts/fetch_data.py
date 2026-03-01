@@ -19,25 +19,26 @@ REPOS = [
     'memory-price-tracker',
     'realestate-permit-tracker',
     'competitor-ai-tracker',
-    'crypto-monitor',
     'gmail-auto-cleanup',       # ← 2026-03-01 추가
-    'korean-stock-agent',       # ← 2026-03-01 추가 (4-agent 멀티에이전트 주식 분석)
-    'us-market-agent',          # ← 2026-03-01 추가 (4-agent 멀티에이전트 미국 주식 분석)
+    'korean-stock-agent',       # ← 2026-03-01 추가 (Multi-Agent KR Stock)
+    'us-market-agent',          # ← 2026-03-01 추가 (Multi-Agent US Stock)
+    'etf-strategist',           # ← 2026-03-01 추가 (ETF 매매전략가)
 ]
 
 # 리포트 파일 매핑: { "repo/workflow_id": "repo내_경로" }
+# workflow ID는 첫 실행 후 workflows.json을 보고 업데이트하세요
 REPORT_MAP = {
     'korean-market-bot/236541757':         'reports/latest_kr.json',
-    'korean-market-bot/236636495':         'reports/latest_weekly.json',
     'korean-market-bot/236553677':         'reports/latest_us.json',
     'competitor-ai-tracker/237174445':     'reports/latest.json',
     'lgd-news-monitor/236856279':          'reports/latest.json',
     'livebench-notify/236850987':          'reports/latest.json',
     'memory-price-tracker/236642604':      'reports/latest.json',
     'realestate-permit-tracker/236653953': 'reports/latest.json',
-    'crypto-monitor/239770946':            'reports/latest.json',
-    'korean-stock-agent/240094820':        'docs/data/daily_report.json',  # ← 4-agent AI 주식 분석
-    'us-market-agent/240126478':           'docs/data/daily_report.json',  # ← 4-agent AI 미국 주식 분석
+    # Multi-Agent 시스템 (GitHub Pages 대시보드 별도 운영)
+    'korean-stock-agent/240094820':        'docs/data/daily_report.json',
+    'us-market-agent/240126478':           'docs/data/daily_report.json',
+    'etf-strategist/240142776':            'docs/data/daily_report.json',  # ← ETF 매매전략가
 }
 
 HEADERS = {
