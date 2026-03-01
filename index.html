@@ -538,47 +538,6 @@
     .stat-card .val { font-size: 20px; }
     .summary { gap: 8px; }
   }
-
-  /* ── sort chip ── */
-  .sort-chip {
-    font-size: 10px; color: var(--blue);
-    background: rgba(88,166,255,.1);
-    border: 1px solid rgba(88,166,255,.25);
-    padding: 2px 9px; border-radius: 20px;
-    font-weight: 500; letter-spacing: 0;
-    text-transform: none; white-space: nowrap;
-  }
-
-  /* ── 태블릿 (900px 이하): 카드 2열 고정 ── */
-  @media (max-width: 900px) and (min-width: 641px) {
-    .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  }
-
-  /* ── 모바일 추가 개선 (640px 이하) ── */
-  @media (max-width: 640px) {
-    /* 헤더 버튼 아이콘 텍스트 숨김 */
-    .refresh-btn .btn-label { display: none; }
-    .refresh-btn { padding: 8px 10px; gap: 0; }
-
-    /* sort chip 모바일 */
-    .sort-chip { font-size: 9px; padding: 2px 7px; }
-
-    /* 카드 footer 버튼 3개 균등 분배 */
-    .wf-card-footer-btns { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; }
-    .report-btn, .pause-btn { min-width: 0; font-size: 11px; padding: 7px 4px; }
-    .report-btn svg, .pause-btn svg { flex-shrink: 0; }
-
-    /* 카드 상단 타이틀 줄임 처리 */
-    .wf-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
-  }
-
-  /* ── 소형 모바일 추가 (380px 이하) ── */
-  @media (max-width: 380px) {
-    .wf-card-footer-btns { grid-template-columns: 1fr 1fr; }
-    .pause-btn { grid-column: span 2; }
-    .wf-title { max-width: 160px; }
-  }
-
 </style>
 </head>
 <body>
@@ -600,14 +559,14 @@
         <path d="M1.5 1.5A.5.5 0 0 1 2 1h4a.5.5 0 0 1 0 1H3.707l2.147 2.146a.5.5 0 1 1-.708.708L3 2.707V4.5a.5.5 0 0 1-1 0v-3zm9 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V12.293l-2.146 2.147a.5.5 0 0 1-.708-.708L13.293 11.5H11.5a.5.5 0 0 1-.5-.5z"/>
         <path d="M8 1a7 7 0 1 0 4.95 11.95.5.5 0 1 0-.707-.707A6 6 0 1 1 8 2v1z"/>
       </svg>
-      <span class="btn-label">데이터 갱신</span>
+      데이터 갱신
     </button>
     <button class="refresh-btn" id="refreshBtn" onclick="loadAll()">
       <svg id="refreshIcon" width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
         <path d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
         <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
       </svg>
-      <span class="btn-label">새로고침</span>
+      새로고침
     </button>
   </div>
 </div>
@@ -629,10 +588,7 @@
 </div>
 
 <!-- 워크플로우 카드 -->
-<div class="section-title" style="justify-content:space-between">
-  <span>🔧 워크플로우 상세</span>
-  <span class="sort-chip">🕐 최근 실행 순</span>
-</div>
+<div class="section-title">🔧 워크플로우 상세</div>
 <div class="cards-grid" id="cardsGrid">
   <div class="wf-card" style="padding:20px">
     <div class="skeleton" style="height:16px;width:60%;margin-bottom:10px"></div>
@@ -1130,7 +1086,9 @@ async function loadAll() {
     if (!resp.ok) throw new Error(`데이터 파일을 불러올 수 없습니다 (HTTP ${resp.status})`);
     const data = await resp.json();
 
-    allWorkflows = data.workflows || [];
+    allWorkflows = (data.workflows || []).filter(
+      d => d.wf.name !== 'pages-build-deployment'
+    );
     await loadPausedStateFromRepo();       // ← repo 파일로 기기 간 동기화 (우선)
     syncPauseStateFromJson(allWorkflows);  // ← GitHub 실제 비활성화 상태 추가 반영
     renderSummary(allWorkflows);
@@ -1268,14 +1226,11 @@ function renderCards(wfData) {
     return;
   }
 
-  // ── 정렬: 1순위 활성/정지, 2순위 최근 실행 시간(내림차순)
+  // ── 정렬: 가동 중 먼저, 일시 정지 나중
   wfData = [...wfData].sort((a, b) => {
     const pa = isPaused(a.wf.id) ? 1 : 0;
     const pb = isPaused(b.wf.id) ? 1 : 0;
-    if (pa !== pb) return pa - pb;
-    const ta = a.runs[0] ? new Date(a.runs[0].created_at).getTime() : 0;
-    const tb = b.runs[0] ? new Date(b.runs[0].created_at).getTime() : 0;
-    return tb - ta;  // 가장 최근 실행이 위로
+    return pa - pb;
   });
 
   const REPO_ICONS = {
