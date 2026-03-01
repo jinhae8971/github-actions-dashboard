@@ -690,6 +690,11 @@ const REPO_REPORT_MAP = {
   'kospi-peak-detector': './data/reports/kospi-peak-detector_latest.json',
 };
 
+// GitHub Pages 연동 레포 매핑 (repo → pages URL)
+const PAGES_URL_MAP = {
+  'korean-stock-agent': 'https://jinhae8971.github.io/korean-stock-agent/',
+};
+
 const OWNER = 'jinhae8971';
 
 // ── 일시 정지 상태 (localStorage) ────────────────────────────────────────────
@@ -1271,6 +1276,15 @@ function renderCards(wfData) {
         최근 리포트
       </button>` : '';
 
+    const pagesUrl = PAGES_URL_MAP[repo];
+    const pagesBtn = pagesUrl ? `
+      <a class="report-btn" href="${pagesUrl}" target="_blank" style="text-decoration:none">
+        <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+        GitHub Pages
+      </a>` : '';
+
     const pauseBtnLabel = paused
       ? `<svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor"><path d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"/></svg> 재가동`
       : `<svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor"><path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5m4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5"/></svg> 일시 정지`;
@@ -1317,6 +1331,7 @@ function renderCards(wfData) {
           </a>
           <div style="display:flex;align-items:center;gap:8px">
             ${reportBtn}
+            ${pagesBtn}
             <button class="pause-btn ${paused ? 'is-paused' : ''}" id="pbtn-${wf.id}"
               onclick="togglePause('${repo}','${wf.id}','${wf.name.replace(/'/g,"\\'")}')">
               ${pauseBtnLabel}
@@ -1361,115 +1376,87 @@ async function openReport(repo, wfId, wfName) {
 
     const decoded = await resp.json();
 
-    // ── Korean Stock Agent 전용 렌더러 ──────────────────────────────
+    // ── Korean Stock Agent 전용 렌더러 (핵심 요약) ──────────────────
     if (decoded.verdict) {
-      const v  = decoded.verdict;
-      const md = decoded.market_data || {};
+      const v     = decoded.verdict;
+      const md    = decoded.market_data || {};
       const kospi = md.kospi || {};
-      const ts = decoded.generated_at || decoded.date || '';
+      const ts    = decoded.generated_at || decoded.date || '';
       const kstTs2 = ts
         ? new Date(ts).toLocaleString('ko-KR', {
-            timeZone: 'Asia/Seoul', year:'numeric', month:'2-digit',
+            timeZone:'Asia/Seoul', year:'numeric', month:'2-digit',
             day:'2-digit', hour:'2-digit', minute:'2-digit'
           }) + ' KST'
         : decoded.date || '—';
       document.getElementById('modalTimestamp').textContent = kstTs2;
 
       const stanceColor = { BUY:'#22c55e', HOLD:'#f59e0b', SELL:'#ef4444' };
-      const stanceBg    = { BUY:'#052e16', HOLD:'#431407', SELL:'#450a0a' };
+      const changeSign  = (kospi.change||0) >= 0 ? '+' : '';
+      const changePct   = kospi.change_pct != null ? kospi.change_pct.toFixed(2) : '—';
+      const changeClr   = (kospi.change||0) >= 0 ? '#22c55e' : '#ef4444';
 
-      // 에이전트 스탠스 뱃지
-      const votes = v.stance_votes || {};
-      const votesHtml = Object.entries(votes).map(([name, s]) => `
-        <span style="display:inline-flex;align-items:center;gap:4px;padding:3px 8px;
-          border-radius:99px;font-size:11px;font-weight:600;
-          background:${stanceBg[s]||'#1a1a2e'};color:${stanceColor[s]||'#9ca3af'};
-          border:1px solid ${stanceColor[s]||'#374151'}">
-          ${name} ${s}
-        </span>`).join('');
+      // 에이전트 스탠스 한 줄
+      const votes     = v.stance_votes || {};
+      const votesLine = Object.entries(votes)
+        .map(([n,s]) => `<b style="color:${stanceColor[s]||'#9ca3af'}">${n} ${s}</b>`)
+        .join(' &nbsp;·&nbsp; ');
 
-      // 에이전트 분석 카드
-      const agents = (decoded.debate?.phase1_reports || []);
-      const agentCards = agents.map(a => `
-        <div style="border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:8px">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-            <span style="font-size:18px">${a.avatar||'🤖'}</span>
-            <div>
-              <div style="font-size:12px;font-weight:700">${a.agent_name} <span style="color:var(--text2);font-weight:400">${a.role}</span></div>
-              <span style="font-size:10px;padding:1px 7px;border-radius:99px;
-                background:${stanceBg[a.stance]||'#1a1a2e'};color:${stanceColor[a.stance]||'#9ca3af'};
-                border:1px solid ${stanceColor[a.stance]||'#374151'};font-weight:600">
-                ${a.stance} ${a.confidence_score}%
-              </span>
-            </div>
-          </div>
-          <p style="font-size:11px;color:var(--text2);line-height:1.6;margin:0 0 6px">${a.analysis}</p>
-          ${(a.key_points||[]).map(p=>`<div style="font-size:10px;color:#6ee7b7;padding:2px 0">▸ ${p}</div>`).join('')}
-        </div>`).join('');
+      // 섹터/리스크/액션 한 줄씩
+      const lineList = (items, icon) =>
+        (items||[]).map(i => `<div style="padding:2px 0;color:var(--text2)">${icon} ${i}</div>`).join('');
 
-      // 리스크·액션·섹터 리스트
-      const listHtml = (items, icon) =>
-        (items||[]).map(i=>`<div style="font-size:11px;padding:3px 0;color:var(--text2)">
-          <span style="margin-right:4px">${icon}</span>${i}</div>`).join('');
+      // GitHub Pages 링크 (PAGES_URL_MAP에서 repo로 조회)
+      // repo는 openReport 호출 시 전달되지 않으므로 wfId로 역탐색
+      const pagesLink = Object.entries(PAGES_URL_MAP).find(([r]) =>
+        Object.values(REPORT_FILE_MAP).some(f => f.includes(r) &&
+          reportFile && reportFile.includes(r))
+      );
+      // 간단하게 korean-stock-agent 포함 여부로 판단
+      const pagesHref = reportFile && reportFile.includes('korean-stock-agent')
+        ? PAGES_URL_MAP['korean-stock-agent'] : null;
 
-      const changeSign = kospi.change >= 0 ? '+' : '';
-      const changePct  = kospi.change_pct != null ? kospi.change_pct.toFixed(2) : '—';
-      const changeClr  = (kospi.change||0) >= 0 ? '#22c55e' : '#ef4444';
+      body.innerHTML = `<div class="report-content" style="font-size:13px;line-height:1.8">
 
-      body.innerHTML = `<div class="report-content" style="font-size:13px">
+        <div style="font-size:15px;font-weight:700;margin-bottom:4px">
+          ${v.investment_weather_icon||'⛅'} ${decoded.date} &nbsp;
+          <span style="color:${changeClr}">${kospi.close?.toLocaleString()||'—'}
+            (${changeSign}${changePct}%)</span>
+        </div>
+        <div style="color:var(--text2);font-size:11px;margin-bottom:12px">
+          KOSPI ${changeSign}${kospi.change?.toFixed(2)||''} &nbsp;|&nbsp; ${v.investment_weather_kr||''}
+        </div>
+        <hr style="border:none;border-top:1px solid var(--border);margin:0 0 12px">
 
-        <!-- 시황 헤더 -->
-        <div style="display:flex;align-items:center;justify-content:space-between;
-          padding:10px 14px;border-radius:8px;background:var(--card2);margin-bottom:12px">
-          <div>
-            <div style="font-size:11px;color:var(--text2)">${decoded.date} KOSPI</div>
-            <div style="font-size:20px;font-weight:700">
-              ${kospi.close?.toLocaleString() || '—'}
-              <span style="font-size:13px;color:${changeClr};margin-left:6px">
-                ${changeSign}${kospi.change?.toFixed(2)||''} (${changeSign}${changePct}%)
-              </span>
-            </div>
-          </div>
-          <div style="text-align:center">
-            <div style="font-size:32px">${v.investment_weather_icon||'⛅'}</div>
-            <div style="font-size:10px;color:var(--text2)">${v.investment_weather_kr||''}</div>
-          </div>
+        <div style="margin-bottom:10px">
+          <span style="font-size:18px;font-weight:800;color:${stanceColor[v.final_stance]||'#9ca3af'}">
+            ${v.final_stance}</span>
+          <span style="font-size:12px;color:var(--text2);margin-left:6px">신뢰도 ${v.confidence_score}%</span>
+          <div style="font-size:11px;margin-top:6px">${votesLine}</div>
         </div>
 
-        <!-- 최종 판정 -->
-        <div style="padding:12px 14px;border-radius:8px;
-          background:${stanceBg[v.final_stance]||'#1a1a2e'};
-          border:1px solid ${stanceColor[v.final_stance]||'#374151'};margin-bottom:12px">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-            <span style="font-size:22px;font-weight:800;
-              color:${stanceColor[v.final_stance]||'#9ca3af'}">${v.final_stance}</span>
-            <span style="font-size:12px;color:var(--text2)">신뢰도 ${v.confidence_score}%</span>
-          </div>
-          <p style="font-size:12px;color:var(--text1);line-height:1.7;margin:0 0 10px">${v.summary||''}</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px">${votesHtml}</div>
+        <div style="font-size:12px;color:var(--text1);line-height:1.7;margin-bottom:12px">
+          ${v.summary||''}
         </div>
+        <hr style="border:none;border-top:1px solid var(--border);margin:0 0 10px">
 
-        <!-- 주도섹터 / 리스크 / 액션 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
-          <div style="padding:10px 12px;border-radius:8px;background:var(--card2)">
-            <div style="font-size:11px;font-weight:700;margin-bottom:6px">📈 주도 섹터</div>
-            ${listHtml(v.top_sectors,'·')}
-          </div>
-          <div style="padding:10px 12px;border-radius:8px;background:var(--card2)">
-            <div style="font-size:11px;font-weight:700;margin-bottom:6px">⚠️ 리스크</div>
-            ${listHtml(v.risk_factors,'!')}
-          </div>
-        </div>
-        <div style="padding:10px 12px;border-radius:8px;background:var(--card2);margin-bottom:14px">
-          <div style="font-size:11px;font-weight:700;margin-bottom:6px">🎯 액션 플랜</div>
-          ${listHtml(v.action_items,'→')}
-        </div>
+        <div style="margin-bottom:8px"><b style="font-size:11px">📈 주도 섹터</b><br>
+          ${lineList(v.top_sectors,'·')}</div>
+        <div style="margin-bottom:8px"><b style="font-size:11px">⚠️ 리스크</b><br>
+          ${lineList(v.risk_factors,'!')}</div>
+        <div style="margin-bottom:14px"><b style="font-size:11px">🎯 액션 플랜</b><br>
+          ${lineList(v.action_items,'→')}</div>
 
-        <!-- 에이전트 개별 분석 -->
-        <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:8px">
-          ── 에이전트 분석 ──
-        </div>
-        ${agentCards}
+        ${pagesHref ? `
+        <hr style="border:none;border-top:1px solid var(--border);margin:0 0 12px">
+        <a href="${pagesHref}" target="_blank"
+          style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;
+            border-radius:6px;background:#1c2a3a;border:1px solid var(--blue);
+            color:var(--blue);font-size:12px;font-weight:600;text-decoration:none">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+          GitHub Pages — 전체 리포트 보기 →
+        </a>` : ''}
       </div>`;
       return;
     }
