@@ -202,6 +202,16 @@
     font-size: 11px; color: var(--yellow);
     display: flex; align-items: center; gap: 6px;
   }
+  /* 오케스트레이터 동기화 대기 배너 */
+  .paused-banner.pending-sync {
+    background: rgba(180,120,20,.18); border-color: rgba(251,191,36,.5);
+    color: #fbbf24;
+  }
+  .badge.pending-sync {
+    background: #78350f; color: #fde68a;
+    font-size: 10px; padding: 2px 8px; border-radius: 20px;
+    font-weight: 600; letter-spacing: .3px;
+  }
 
   .wf-card-header {
     padding: 16px 18px 14px;
@@ -686,7 +696,8 @@ try { pausedMap = JSON.parse(localStorage.getItem(PAUSE_KEY) || '{}'); } catch(e
 
 let githubToken = localStorage.getItem(TOKEN_KEY) || '';
 
-function isPaused(wfId) { return !!pausedMap[String(wfId)]; }
+function isPaused(wfId)          { return !!pausedMap[String(wfId)]; }
+function isPendingDisable(wfId) { return !!(pausedMap[String(wfId)]?.pendingDisable); }
 
 function savePauseState() {
   try { localStorage.setItem(PAUSE_KEY, JSON.stringify(pausedMap)); } catch(e) {}
@@ -1008,22 +1019,40 @@ async function fetchLatestData() {
   }
 }
 
-// ── wf.state 기반 일시 정지 상태 동기화 ──────────────────────────────────────
-// GitHub에서 실제로 비활성화된 워크플로우는 pausedMap에 추가 (추가만, 삭제 안 함)
-// 삭제는 사용자가 직접 "재가동" 버튼을 누를 때만 수행
+// ── wf.state 기반 일시 정지 상태 동기화 (오케스트레이터 연동) ────────────────────
+// paused.json = 의도(intent) | workflows.json wf.state = GitHub 실제 상태
+// 오케스트레이터가 매시간 intent → 실제 상태로 강제 적용함
 function syncPauseStateFromJson(wfData) {
-  let changed = false;
+  let intentChanged = false;   // paused.json 업데이트 필요 여부
+
   wfData.forEach(({ repo, wf }) => {
-    const id = String(wf.id);
-    const disabledOnGitHub = wf.state === 'disabled_manually' || wf.state === 'disabled_inactivity';
-    if (disabledOnGitHub && !pausedMap[id]) {
-      pausedMap[id] = { repo, name: wf.name };  // GitHub에서 비활성화 → UI에 반영
-      changed = true;
+    const id           = String(wf.id);
+    const disabledOnGH = wf.state === 'disabled_manually' || wf.state === 'disabled_inactivity';
+    const inPausedMap  = !!pausedMap[id];
+
+    if (disabledOnGH && !inPausedMap) {
+      // GitHub에서 실제 비활성화 → pausedMap에 추가 (intent도 갱신)
+      pausedMap[id] = { repo, name: wf.name };
+      intentChanged = true;
+
+    } else if (!disabledOnGH && inPausedMap) {
+      // ⚠️ 핵심 수정: GitHub에서 아직 활성 상태지만 일시정지 의도가 있음
+      // → 오케스트레이터가 다음 실행 시 실제로 비활성화할 예정
+      // → UI에 "동기화 대기중" 표시 (paused.json intent는 유지)
+      if (!pausedMap[id].pendingDisable) {
+        pausedMap[id] = { ...pausedMap[id], pendingDisable: true };
+        try { localStorage.setItem(PAUSE_KEY, JSON.stringify(pausedMap)); } catch(e) {}
+      }
+
+    } else if (disabledOnGH && inPausedMap && pausedMap[id].pendingDisable) {
+      // 오케스트레이터가 실제 비활성화 완료 → pendingDisable 플래그 제거
+      delete pausedMap[id].pendingDisable;
+      try { localStorage.setItem(PAUSE_KEY, JSON.stringify(pausedMap)); } catch(e) {}
     }
-    // active 상태여도 pausedMap에서 자동 삭제하지 않음
-    // (UI 일시정지 상태는 사용자가 명시적으로 재가동 버튼 누를 때만 해제)
   });
-  if (changed) savePauseState();
+
+  // intent 변경 시에만 paused.json 업데이트
+  if (intentChanged) savePauseState();
 }
 
 // ── 데이터 로드 (정적 JSON 파일) ──────────────────────────────────────────────
@@ -1203,9 +1232,12 @@ function renderCards(wfData) {
       pending:   '<span class="badge loading">대기 중</span>',
       cancelled: '<span class="badge loading">취소됨</span>',
     };
-    const badge    = paused
-      ? '<span class="badge paused">⏸ 일시 정지</span>'
-      : (badgeMap[conclusion] || `<span class="badge loading">${conclusion}</span>`);
+    const pending  = isPendingDisable(wf.id);
+    const badge    = pending
+      ? '<span class="badge pending-sync">⏳ 동기화 대기</span>'
+      : paused
+        ? '<span class="badge paused">⏸ 일시 정지</span>'
+        : (badgeMap[conclusion] || `<span class="badge loading">${conclusion}</span>`);
     const schedule = cron ? parseCron(cron) : null;
     const icon     = REPO_ICONS[repo] || '⚙️';
     const runUrl   = last?.html_url || `https://github.com/${OWNER}/${repo}/actions`;
@@ -1234,13 +1266,16 @@ function renderCards(wfData) {
       ? `<svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor"><path d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"/></svg> 재가동`
       : `<svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor"><path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5m4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5"/></svg> 일시 정지`;
 
-    const pausedBanner = paused ? `
+    const pausedBanner = pending ? `
+      <div class="paused-banner pending-sync">
+        ⏳ 오케스트레이터가 곧 이 워크플로우를 중단시킵니다. (최대 1시간 이내 자동 적용)
+      </div>` : paused ? `
       <div class="paused-banner">
         ⏸ 이 워크플로우는 현재 일시 정지 중입니다. 재가동 버튼을 누르면 다시 실행됩니다.
       </div>` : '';
 
     return `
-      <div class="wf-card ${paused ? 'is-paused' : ''}">
+      <div class="wf-card ${(paused || pending) ? 'is-paused' : ''}">
         <div class="wf-card-header">
           <div>
             <div class="wf-title">${icon} ${wf.name}</div>
