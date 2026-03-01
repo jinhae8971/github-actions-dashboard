@@ -704,7 +704,9 @@ function utf8ToBase64(str) {
   return btoa(binary);
 }
 
-// repo의 paused.json과 localStorage를 합쳐서 pausedMap 완성 후 자동 업로드
+// paused.json(repo)을 마스터 소스로 로드 — localStorage 완전 교체
+// [버그수정] 이전 merge 로직({...repoPaused,...pausedMap})은 stale localStorage가
+// 재가동된 워크플로우를 다시 일시정지 상태로 되돌리는 원인이었음
 async function loadPausedStateFromRepo() {
   try {
     const resp = await fetch(`./${PAUSE_REPO_PATH}?_=${Date.now()}`);
@@ -712,22 +714,14 @@ async function loadPausedStateFromRepo() {
     const data = await resp.json();
     const repoPaused = data.paused || {};
 
-    // 합치기: localStorage(현재 기기) + repo(다른 기기) → 합집합
-    const merged = { ...repoPaused, ...pausedMap };
-    const hasNewLocal = Object.keys(merged).some(id => !repoPaused[id]);
-
-    // pausedMap 및 localStorage 업데이트
+    // repo를 마스터 소스로: localStorage stale 데이터를 repo 상태로 완전 교체
     Object.keys(pausedMap).forEach(id => delete pausedMap[id]);
-    Object.assign(pausedMap, merged);
+    Object.assign(pausedMap, repoPaused);
     try { localStorage.setItem(PAUSE_KEY, JSON.stringify(pausedMap)); } catch(e) {}
 
-    // 토큰 있고 로컬에 새 항목 있으면 → 자동으로 repo에 업로드 (동기화)
-    if (hasNewLocal && githubToken) {
-      await savePausedStateToRepo();
-      console.log('[paused.json] 로컬 상태 자동 업로드 완료');
-    }
+    console.log('[paused.json] repo 상태 로드 완료 —', Object.keys(repoPaused).length, '개 일시정지');
   } catch(e) {
-    console.log('[paused.json] 로드 실패, localStorage 사용:', e);
+    console.log('[paused.json] 로드 실패, localStorage 유지:', e);
   }
 }
 
@@ -1175,11 +1169,15 @@ function renderCards(wfData) {
     return;
   }
 
-  // ── 정렬: 가동 중 먼저, 일시 정지 나중
+  // ── 정렬: ① 가동 중 먼저 / 일시 정지 나중, ② 같은 그룹 내 최근 실행 순
   wfData = [...wfData].sort((a, b) => {
     const pa = isPaused(a.wf.id) ? 1 : 0;
     const pb = isPaused(b.wf.id) ? 1 : 0;
-    return pa - pb;
+    if (pa !== pb) return pa - pb;
+    // 같은 그룹 내: 가장 최근 실행(runs[0].created_at) 기준 내림차순
+    const ta = a.runs[0]?.created_at ? new Date(a.runs[0].created_at).getTime() : 0;
+    const tb = b.runs[0]?.created_at ? new Date(b.runs[0].created_at).getTime() : 0;
+    return tb - ta;
   });
 
   const REPO_ICONS = {

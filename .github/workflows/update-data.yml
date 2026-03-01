@@ -48,12 +48,17 @@ jobs:
         run: |
           git config user.name  "orchestrator[bot]"
           git config user.email "orchestrator[bot]@users.noreply.github.com"
-          git add data/
+          # orchestrator가 수정하는 파일만 스테이지
+          # paused.json은 브라우저(사용자)가 관리 — 절대 건드리지 않음
+          git add data/workflows.json
+          git add data/reports/ 2>/dev/null || true
           # 변경이 있을 때만 커밋
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 스킵"
           else
             TIMESTAMP=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
             git commit -m "chore(orchestrator): enforce states & update data ${TIMESTAMP}"
+            # 브라우저가 paused.json을 커밋했을 경우 non-fast-forward 방지
+            git pull --rebase origin main
             git push
           fi
