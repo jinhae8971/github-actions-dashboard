@@ -1,18 +1,28 @@
-name: Update Dashboard Data
+name: Orchestrator — Enforce & Update Dashboard
+
+# ────────────────────────────────────────────────────────────────────
+# 역할: 오케스트레이터 워크플로우
+#   1. paused.json(의도)을 읽어 워커 워크플로우 상태 강제 적용
+#      - 일시정지 의도 + GitHub active  → disable API 호출
+#      - 활성 의도    + GitHub disabled → enable  API 호출
+#   2. 모든 워크플로우 현황 수집 → workflows.json 갱신
+#   3. 최근 리포트 파일 수집 → data/reports/ 갱신
+# ────────────────────────────────────────────────────────────────────
 
 on:
   schedule:
     # 매시간 5분에 실행 (KST 기준 매시간 14분)
     - cron: '5 * * * *'
-  workflow_dispatch:   # 수동 실행 허용
+  workflow_dispatch:   # 수동 실행 허용 (즉시 동기화 필요 시)
 
 permissions:
   contents: write      # data/ 폴더에 커밋하기 위한 권한
 
 jobs:
-  update:
+  orchestrate:
+    name: "오케스트레이터 — 상태 강제 적용 + 데이터 갱신"
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15    # 강제 적용 API 호출 포함으로 여유 있게 설정
 
     steps:
       - name: Checkout repository
@@ -27,20 +37,23 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Fetch GitHub Actions data
+      - name: "[Step 1-5] Run Orchestrator"
         env:
+          # GH_PAT: 워커 레포 워크플로우 enable/disable 권한 필요
+          # 필요 scope: repo, workflow
           GH_PAT: ${{ secrets.GH_PAT }}
-        run: python scripts/fetch_data.py
+        run: python scripts/orchestrator.py
 
       - name: Commit and push data
         run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name  "orchestrator[bot]"
+          git config user.email "orchestrator[bot]@users.noreply.github.com"
           git add data/
-          # 변경이 있을 때만 커밋 (불필요한 커밋 방지)
+          # 변경이 있을 때만 커밋
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 스킵"
           else
-            git commit -m "chore: update workflow data $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+            TIMESTAMP=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+            git commit -m "chore(orchestrator): enforce states & update data ${TIMESTAMP}"
             git push
           fi
