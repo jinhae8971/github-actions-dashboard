@@ -1032,6 +1032,8 @@ async function loadAll() {
     const data = await resp.json();
 
     allWorkflows = data.workflows || [];
+    // pages-build-deployment는 모니터링 불필요 — 대시보드에서 제거
+    allWorkflows = allWorkflows.filter(d => d.wf.name !== 'pages-build-deployment');
     await loadPausedStateFromRepo();       // ← repo 파일로 기기 간 동기화 (우선)
     syncPauseStateFromJson(allWorkflows);  // ← GitHub 실제 비활성화 상태 추가 반영
     renderSummary(allWorkflows);
