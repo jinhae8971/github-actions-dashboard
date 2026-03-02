@@ -1140,6 +1140,9 @@ function renderWeekCalendar(wfData) {
     });
   });
 
+  // 각 요일별 이벤트를 시간 오름차순으로 정렬
+  dayEvents.forEach(events => events.sort((a, b) => a.time.localeCompare(b.time)));
+
   document.getElementById('weekCalendar').innerHTML = `
     <div class="timeline-header">
       <h2>📅 주간 실행 캘린더</h2>
@@ -1216,9 +1219,10 @@ function renderCards(wfData) {
 
   // GitHub Pages 대시보드 URL 맵
   const PAGES_URL_MAP = {
-    'korean-stock-agent': 'https://jinhae8971.github.io/korean-stock-agent/',
-    'us-market-agent':    'https://jinhae8971.github.io/us-market-agent/',
-    'etf-strategist':     'https://jinhae8971.github.io/etf-strategist/',
+    'korean-stock-agent':  'https://jinhae8971.github.io/korean-stock-agent/',
+    'us-market-agent':     'https://jinhae8971.github.io/us-market-agent/',
+    'etf-strategist':      'https://jinhae8971.github.io/etf-strategist/',
+    'kospi-peak-detector': 'https://jinhae8971.github.io/kospi-peak-detector/',
   };
 
   const cards = wfData.map(({ repo, wf, cron, runs }) => {
