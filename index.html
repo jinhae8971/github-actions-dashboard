@@ -556,6 +556,21 @@
   </div>
 </div>
 
+<!-- GH_PAT 경고 배너 (오케스트레이터에 PAT 없을 때 표시) -->
+<div id="patWarningBanner" style="display:none; align-items:center; gap:12px;
+  background:#3d2c0a; border:1px solid #d29922; border-radius:10px;
+  padding:12px 18px; margin-bottom:20px; font-size:13px; color:#d29922;">
+  <span style="font-size:18px">&#9888;</span>
+  <div>
+    <strong>GH_PAT 시크릿이 만료되었거나 설정되지 않았습니다.</strong><br>
+    <span style="color:#8b949e">일부 private 저장소의 워크플로우가 표시되지 않습니다. 
+    GitHub Settings → Secrets에서 <code style="background:#21262d;padding:1px 5px;border-radius:4px">GH_PAT</code>를 갱신해 주세요.
+    (필요 scope: <code style="background:#21262d;padding:1px 5px;border-radius:4px">repo, workflow</code>)</span>
+  </div>
+  <button onclick="document.getElementById('patWarningBanner').style.display='none'"
+    style="margin-left:auto;background:none;border:none;color:#8b949e;cursor:pointer;font-size:18px;line-height:1">&times;</button>
+</div>
+
 <!-- 요약 통계 -->
 <div class="summary" id="summaryCards">
   <div class="stat-card"><div class="val blue skeleton" style="height:28px;width:40px">&nbsp;</div><div class="lbl">전체 워크플로우</div></div>
@@ -1039,6 +1054,11 @@ async function loadAll() {
     renderSummary(allWorkflows);
     renderWeekCalendar(allWorkflows);
     renderCards(allWorkflows);
+
+    // GH_PAT 없을 때 경고 배너 표시
+    const hasPat = data.orchestrator?.has_pat !== false;  // 기본값 true (하위 호환)
+    const patBanner = document.getElementById('patWarningBanner');
+    if (patBanner) patBanner.style.display = hasPat ? 'none' : 'flex';
 
     const updatedKST = new Date(data.updated_at).toLocaleString('ko-KR', {
       timeZone: 'Asia/Seoul',
