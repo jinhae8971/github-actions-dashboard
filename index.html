@@ -4,35 +4,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GitHub Actions 대시보드</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.min.css" />
 <style>
   :root {
-    --bg: #0d1117;
-    --bg2: #161b22;
-    --bg3: #21262d;
-    --border: #30363d;
-    --text: #e6edf3;
-    --text2: #8b949e;
-    --green: #3fb950;
-    --green-dim: #1a4226;
-    --red: #f85149;
-    --red-dim: #3d1a19;
-    --yellow: #d29922;
-    --yellow-dim: #3d2c0a;
-    --blue: #58a6ff;
-    --purple: #bc8cff;
-    --cyan: #39d353;
-    --accent: #238636;
+    --bg: #fafbfc;
+    --surface: #ffffff;
+    --border: #e5e7eb;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --text-tertiary: #9ca3af;
+    --success: #059669;
+    --success-light: #ecfdf5;
+    --error: #dc2626;
+    --error-light: #fef2f2;
+    --warning: #d97706;
+    --warning-light: #fffbeb;
+    --info: #ea580c;
+    --info-light: #fff7ed;
+    --primary: #2563eb;
+    --primary-light: #dbeafe;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
+
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
     background: var(--bg);
-    color: var(--text);
+    color: var(--text-primary);
     min-height: 100vh;
     padding: 24px;
   }
 
-  /* ── 헤더 ── */
+  /* ── Header ── */
   .header {
     display: flex;
     align-items: center;
@@ -41,482 +45,751 @@
     padding-bottom: 20px;
     border-bottom: 1px solid var(--border);
   }
+
   .header-left { display: flex; align-items: center; gap: 14px; }
+
   .logo {
     width: 42px; height: 42px;
-    background: linear-gradient(135deg, #238636, #2ea043);
-    border-radius: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
     font-size: 22px;
   }
-  .header h1 { font-size: 22px; font-weight: 700; }
-  .header p  { font-size: 13px; color: var(--text2); margin-top: 2px; }
+
+  .header h1 { font-size: 22px; font-weight: 600; color: var(--text-primary); }
+  .header p { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+
   .header-right { display: flex; align-items: center; gap: 10px; }
-  .last-updated { font-size: 12px; color: var(--text2); }
+
+  .last-updated { font-size: 12px; color: var(--text-secondary); }
+
   .refresh-btn {
-    background: var(--bg3); border: 1px solid var(--border);
-    color: var(--text); padding: 7px 16px; border-radius: 8px;
-    cursor: pointer; font-size: 13px; display: flex; align-items: center; gap: 6px;
-    transition: background .15s;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 7px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s;
   }
-  .refresh-btn:hover { background: var(--border); }
-  .refresh-btn.loading svg { animation: spin .8s linear infinite; }
+
+  .refresh-btn:hover {
+    background: var(--bg);
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .refresh-btn.loading svg { animation: spin 0.8s linear infinite; }
+
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* ── 설정 버튼 ── */
+  /* ── Settings Button ── */
   .settings-btn {
-    background: var(--bg3); border: 1px solid var(--border);
-    color: var(--text2); padding: 7px 10px; border-radius: 8px;
-    cursor: pointer; font-size: 16px; display: flex; align-items: center;
-    transition: background .15s, color .15s;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 7px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: all 0.15s;
   }
-  .settings-btn:hover { background: var(--border); color: var(--text); }
 
-  /* ── 요약 카드 ── */
+  .settings-btn:hover {
+    background: var(--bg);
+    color: var(--text-primary);
+    border-color: var(--primary);
+  }
+
+  /* ── Summary Cards ── */
   .summary {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 14px;
     margin-bottom: 28px;
   }
+
   .stat-card {
-    background: var(--bg2);
+    background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 18px 20px;
+    box-shadow: var(--shadow-sm);
   }
-  .stat-card .val { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
-  .stat-card .lbl { font-size: 12px; color: var(--text2); }
-  .val.green { color: var(--green); }
-  .val.red   { color: var(--red); }
-  .val.blue  { color: var(--blue); }
-  .val.purple{ color: var(--purple); }
-  .val.yellow{ color: var(--yellow); }
 
-  /* ── 섹션 타이틀 ── */
+  .stat-card .val { font-size: 28px; font-weight: 600; margin-bottom: 4px; }
+  .stat-card .lbl { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .val.green { color: var(--success); }
+  .val.red { color: var(--error); }
+  .val.blue { color: var(--primary); }
+  .val.purple { color: var(--primary); }
+  .val.yellow { color: var(--warning); }
+
+  /* ── Section Title ── */
   .section-title {
-    font-size: 11px; font-weight: 600;
-    display: flex; align-items: center; gap: 8px;
-    margin-bottom: 14px; color: var(--text2);
-    text-transform: uppercase; letter-spacing: .05em;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
-  /* ── 주간 캘린더 ── */
+  /* ── Week Calendar ── */
   .cal-scroll-wrap {
     position: relative;
     margin-bottom: 28px;
   }
-  /* 모바일에서 오른쪽에 더 있다는 fade 힌트 (데스크톱에선 숨김) */
+
   .cal-scroll-wrap::after {
     content: '';
     position: absolute;
-    top: 0; right: 0;
-    width: 40px; height: 100%;
-    background: linear-gradient(to right, transparent, var(--bg2));
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, var(--bg));
     pointer-events: none;
-    border-radius: 0 12px 12px 0;
+    border-radius: 0 8px 8px 0;
     opacity: 0;
-    transition: opacity .25s;
+    transition: opacity 0.25s;
   }
 
   .week-calendar {
-    background: var(--bg2); border: 1px solid var(--border);
-    border-radius: 12px; padding: 18px 20px;
-    /* 커스텀 스크롤바 (Firefox) */
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+    box-shadow: var(--shadow-sm);
     scrollbar-width: thin;
     scrollbar-color: var(--border) transparent;
   }
-  /* 커스텀 스크롤바 (Chrome/Safari/Edge) */
+
   .week-calendar::-webkit-scrollbar { height: 4px; }
   .week-calendar::-webkit-scrollbar-track { background: transparent; }
   .week-calendar::-webkit-scrollbar-thumb {
-    background: var(--border); border-radius: 4px;
+    background: var(--border);
+    border-radius: 4px;
   }
-  .week-calendar::-webkit-scrollbar-thumb:hover { background: var(--text2); }
+  .week-calendar::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
+
   .timeline-header {
-    display: flex; align-items: center;
-    margin-bottom: 16px; gap: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 10px;
   }
-  .timeline-header h2 { font-size: 15px; font-weight: 600; }
-  .timeline-subtitle { font-size: 12px; color: var(--text2); }
+
+  .timeline-header h2 { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+  .timeline-subtitle { font-size: 12px; color: var(--text-secondary); }
+
   .week-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 8px;
     margin-top: 14px;
   }
+
   .day-col { text-align: center; }
+
   .day-name {
-    font-size: 11px; color: var(--text2);
-    margin-bottom: 8px; font-weight: 600;
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-weight: 600;
     text-transform: uppercase;
   }
-  .day-name.today { color: var(--blue); }
+
+  .day-name.today { color: var(--primary); }
+
   .day-events { display: flex; flex-direction: column; gap: 4px; min-height: 40px; }
+
   .day-event {
-    font-size: 10px; padding: 3px 6px;
-    border-radius: 5px; text-align: left;
-    cursor: default; line-height: 1.3;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 5px;
+    text-align: left;
+    cursor: default;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-left: 2px solid var(--primary);
   }
-  .day-event.daily   { background: rgba(88,166,255,.15); color: #58a6ff; border-left: 2px solid #58a6ff; }
-  .day-event.weekly  { background: rgba(188,140,255,.15); color: #bc8cff; border-left: 2px solid #bc8cff; }
-  .day-event.weekend { background: rgba(210,153,34,.15);  color: #d29922; border-left: 2px solid #d29922; }
-  /* 일시 정지된 캘린더 이벤트 */
+
+  .day-event.daily { background: var(--primary-light); color: var(--primary); border-left: 2px solid var(--primary); }
+  .day-event.weekly { background: var(--primary-light); color: var(--primary); border-left: 2px solid var(--primary); }
+  .day-event.weekend { background: var(--warning-light); color: var(--warning); border-left: 2px solid var(--warning); }
+
   .day-event.is-paused-cal {
     opacity: 0.38;
     text-decoration: line-through;
     filter: grayscale(0.7);
   }
 
-  /* ── 워크플로우 카드 그리드 ── */
+  /* ── Workflow Cards Grid ── */
   .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 16px;
   }
+
   .wf-card {
-    background: var(--bg2);
+    background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
-    transition: border-color .15s, transform .15s, opacity .2s;
-  }
-  .wf-card:hover { border-color: var(--blue); transform: translateY(-2px); }
-
-  /* ── 일시 정지된 카드 상태 ── */
-  .wf-card.is-paused { border-color: var(--yellow) !important; }
-  .wf-card.is-paused:hover { border-color: var(--yellow) !important; transform: none; }
-  .wf-card.is-paused .wf-card-header {
-    background: rgba(210,153,34,.06);
-  }
-  .wf-card.is-paused .wf-card-body {
-    opacity: 0.55;
-    pointer-events: none;
+    transition: all 0.15s;
+    box-shadow: var(--shadow-sm);
   }
 
-  /* 일시 정지 오버레이 배너 */
+  .wf-card:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1); }
+
+  /* ── Paused Card State ── */
+  .wf-card.is-paused { border-color: var(--warning); }
+  .wf-card.is-paused:hover { border-color: var(--warning); }
+  .wf-card.is-paused .wf-card-header { background: var(--warning-light); }
+  .wf-card.is-paused .wf-card-body { opacity: 0.55; pointer-events: none; }
+
+  /* ── Paused Banner ── */
   .paused-banner {
-    background: rgba(210,153,34,.12); border: 1px solid rgba(210,153,34,.35);
-    border-radius: 7px; padding: 7px 12px; margin-bottom: 12px;
-    font-size: 11px; color: var(--yellow);
-    display: flex; align-items: center; gap: 6px;
+    background: var(--warning-light);
+    border: 1px solid var(--warning);
+    border-radius: 7px;
+    padding: 7px 12px;
+    margin-bottom: 12px;
+    font-size: 11px;
+    color: var(--warning);
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
 
   .wf-card-header {
     padding: 16px 18px 14px;
     border-bottom: 1px solid var(--border);
-    display: flex; justify-content: space-between; align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
   }
-  .wf-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
-  .wf-repo  { font-size: 11px; color: var(--blue); display: flex; align-items: center; gap: 4px; }
+
+  .wf-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; color: var(--text-primary); }
+  .wf-repo { font-size: 11px; color: var(--primary); display: flex; align-items: center; gap: 4px; }
+
   .badge {
-    padding: 3px 10px; border-radius: 20px;
-    font-size: 11px; font-weight: 600;
-    display: flex; align-items: center; gap: 4px;
-    white-space: nowrap; flex-shrink: 0;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
-  .badge.success { background: var(--green-dim); color: var(--green); }
-  .badge.failure { background: var(--red-dim);   color: var(--red); }
-  .badge.pending { background: var(--yellow-dim); color: var(--yellow); }
-  .badge.loading { background: var(--bg3); color: var(--text2); }
-  .badge.paused  { background: var(--yellow-dim); color: var(--yellow); }
+
+  .badge.success { background: var(--success-light); color: var(--success); }
+  .badge.failure { background: var(--error-light); color: var(--error); }
+  .badge.pending { background: var(--warning-light); color: var(--warning); }
+  .badge.loading { background: var(--bg); color: var(--text-secondary); border: 1px solid var(--border); }
+  .badge.paused { background: var(--warning-light); color: var(--warning); }
+
   .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
   .badge.success .dot { animation: pulse-green 2s infinite; }
+
   @keyframes pulse-green {
-    0%,100% { opacity:1; } 50% { opacity:.4; }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
   }
 
   .wf-card-body { padding: 14px 18px; }
+
   .schedule-chip {
-    background: var(--bg3); border: 1px solid var(--border);
-    border-radius: 8px; padding: 8px 12px;
-    font-size: 12px; display: flex; gap: 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 12px;
+    display: flex;
+    gap: 12px;
     margin-bottom: 12px;
   }
-  .schedule-chip .kst { color: var(--text); font-weight: 600; }
-  .schedule-chip .cron { color: var(--text2); font-family: monospace; font-size: 11px; }
 
-  /* 히스토리 바 */
-  .history-label { font-size: 11px; color: var(--text2); margin-bottom: 6px; }
-  .history-bars  { display: flex; gap: 4px; }
+  .schedule-chip .kst { color: var(--text-primary); font-weight: 600; }
+  .schedule-chip .cron { color: var(--text-secondary); font-family: monospace; font-size: 11px; }
+
+  /* ── History Bars ── */
+  .history-label { font-size: 11px; color: var(--text-secondary); margin-bottom: 6px; }
+  .history-bars { display: flex; gap: 4px; }
+
   .h-bar {
-    flex: 1; height: 28px; border-radius: 4px;
-    position: relative; cursor: pointer;
-    transition: opacity .15s;
+    flex: 1;
+    height: 28px;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    transition: opacity 0.15s;
   }
-  .h-bar:hover { opacity: .75; }
-  .h-bar.success { background: var(--green); }
-  .h-bar.failure { background: var(--red); }
-  .h-bar.skipped { background: var(--bg3); border: 1px solid var(--border); }
+
+  .h-bar:hover { opacity: 0.75; }
+  .h-bar.success { background: var(--success); }
+  .h-bar.failure { background: var(--error); }
+  .h-bar.skipped { background: var(--bg); border: 1px solid var(--border); }
   .h-bar.loading { background: var(--border); animation: shimmer 1.2s infinite; }
-  @keyframes shimmer { 0%,100% { opacity:.4; } 50% { opacity:1; } }
+
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
   .h-bar .tooltip {
     display: none;
-    position: absolute; bottom: 34px; left: 50%; transform: translateX(-50%);
-    background: var(--bg); border: 1px solid var(--border);
-    padding: 5px 8px; border-radius: 6px; white-space: nowrap;
-    font-size: 11px; z-index: 10;
+    position: absolute;
+    bottom: 34px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 5px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 11px;
+    z-index: 10;
+    color: var(--text-primary);
   }
+
   .h-bar:hover .tooltip { display: block; }
 
   .wf-card-footer {
     padding: 10px 18px;
     border-top: 1px solid var(--border);
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
+
   .run-link {
-    font-size: 11px; color: var(--blue);
-    text-decoration: none; display: flex; align-items: center; gap: 4px;
+    font-size: 11px;
+    color: var(--primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
+
   .run-link:hover { text-decoration: underline; }
-  .run-ago { font-size: 11px; color: var(--text2); }
+  .run-ago { font-size: 11px; color: var(--text-secondary); }
 
-  /* ── 최근 리포트 버튼 ── */
+  /* ── Report Button ── */
   .report-btn {
-    background: var(--bg3); border: 1px solid var(--border);
-    color: var(--blue); padding: 5px 12px; border-radius: 8px;
-    cursor: pointer; font-size: 11px; font-weight: 600;
-    display: flex; align-items: center; gap: 5px;
-    transition: background .15s, border-color .15s;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--primary);
+    padding: 5px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.15s;
     white-space: nowrap;
   }
-  .report-btn:hover { background: #1c2a3a; border-color: var(--blue); }
-  .report-btn:disabled { opacity: .5; cursor: not-allowed; }
 
-  /* ── 일시 정지 버튼 ── */
+  .report-btn:hover { background: var(--primary-light); border-color: var(--primary); }
+  .report-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  /* ── Pause Button ── */
   .pause-btn {
-    background: var(--bg3); border: 1px solid var(--border);
-    color: var(--text2); padding: 5px 12px; border-radius: 8px;
-    cursor: pointer; font-size: 11px; font-weight: 600;
-    display: flex; align-items: center; gap: 5px;
-    transition: all .15s;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 5px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.15s;
     white-space: nowrap;
   }
+
   .pause-btn:hover {
-    background: rgba(210,153,34,.1);
-    border-color: var(--yellow);
-    color: var(--yellow);
+    background: var(--warning-light);
+    border-color: var(--warning);
+    color: var(--warning);
   }
+
   .pause-btn.is-paused {
-    background: rgba(210,153,34,.15);
-    border-color: var(--yellow);
-    color: var(--yellow);
+    background: var(--warning-light);
+    border-color: var(--warning);
+    color: var(--warning);
   }
+
   .pause-btn.is-paused:hover {
-    background: rgba(210,153,34,.25);
-    border-color: #f0b429;
-    color: #f0b429;
+    background: var(--warning);
+    color: var(--surface);
   }
+
   .pause-btn.loading-state {
-    opacity: 0.6; cursor: wait;
+    opacity: 0.6;
+    cursor: wait;
     pointer-events: none;
   }
 
-  /* ── 설정 모달 ── */
+  /* ── Settings Modal ── */
   .settings-modal {
-    background: var(--bg2); border: 1px solid var(--border);
-    border-radius: 14px; width: 100%; max-width: 500px;
-    box-shadow: 0 20px 60px rgba(0,0,0,.6);
-    animation: slideUp .2s ease;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.2s ease;
   }
+
   .settings-section { padding: 20px 22px; }
   .settings-section + .settings-section { border-top: 1px solid var(--border); }
+
   .settings-section h3 {
-    font-size: 13px; font-weight: 600; margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--text-primary);
   }
+
   .settings-section p {
-    font-size: 11px; color: var(--text2); margin-bottom: 12px; line-height: 1.6;
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    line-height: 1.6;
   }
+
   .token-input {
     width: 100%;
-    background: var(--bg3); border: 1px solid var(--border);
-    color: var(--text); padding: 9px 12px; border-radius: 8px;
-    font-size: 12px; font-family: monospace;
-    outline: none; transition: border-color .15s;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-family: monospace;
+    outline: none;
+    transition: border-color 0.15s;
   }
-  .token-input:focus { border-color: var(--blue); }
-  .token-input::placeholder { color: var(--text2); }
+
+  .token-input:focus { border-color: var(--primary); }
+  .token-input::placeholder { color: var(--text-tertiary); }
+
   .settings-actions {
-    display: flex; gap: 8px; margin-top: 12px;
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
   }
+
   .settings-save-btn {
-    background: var(--accent); border: 1px solid transparent;
-    color: white; padding: 8px 18px; border-radius: 8px;
-    cursor: pointer; font-size: 12px; font-weight: 600;
-    transition: background .15s;
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.15s;
   }
-  .settings-save-btn:hover { background: #2ea043; }
+
+  .settings-save-btn:hover { background: #1d4ed8; border-color: #1d4ed8; }
+
   .settings-clear-btn {
-    background: var(--bg3); border: 1px solid var(--border);
-    color: var(--text2); padding: 8px 14px; border-radius: 8px;
-    cursor: pointer; font-size: 12px;
-    transition: background .15s;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.15s;
   }
-  .settings-clear-btn:hover { background: var(--border); color: var(--text); }
+
+  .settings-clear-btn:hover { background: var(--bg); color: var(--text-primary); border-color: var(--primary); }
+
   .token-status {
-    font-size: 11px; margin-top: 8px;
-    padding: 6px 10px; border-radius: 6px;
+    font-size: 11px;
+    margin-top: 8px;
+    padding: 6px 10px;
+    border-radius: 6px;
     display: none;
   }
-  .token-status.ok  { background: var(--green-dim); color: var(--green); display: block; }
-  .token-status.err { background: var(--red-dim); color: var(--red); display: block; }
-  .token-status.info { background: var(--bg3); color: var(--text2); display: block; }
 
-  /* 일시 정지 목록 */
+  .token-status.ok { background: var(--success-light); color: var(--success); display: block; }
+  .token-status.err { background: var(--error-light); color: var(--error); display: block; }
+  .token-status.info { background: var(--bg); color: var(--text-secondary); display: block; border: 1px solid var(--border); }
+
+  /* ── Pause List ── */
   .pause-list { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+
   .pause-list-item {
-    background: var(--bg3); border: 1px solid var(--yellow);
-    border-radius: 7px; padding: 8px 12px;
-    display: flex; justify-content: space-between; align-items: center;
+    background: var(--bg);
+    border: 1px solid var(--warning);
+    border-radius: 7px;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 12px;
   }
-  .pause-list-item-name { color: var(--yellow); font-weight: 600; }
-  .pause-list-item-resume {
-    background: transparent; border: 1px solid var(--border);
-    color: var(--text2); padding: 3px 9px; border-radius: 6px;
-    cursor: pointer; font-size: 11px;
-    transition: all .15s;
-  }
-  .pause-list-item-resume:hover { border-color: var(--green); color: var(--green); }
 
-  /* ── 리포트 모달 ── */
+  .pause-list-item-name { color: var(--warning); font-weight: 600; }
+
+  .pause-list-item-resume {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 3px 9px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 11px;
+    transition: all 0.15s;
+  }
+
+  .pause-list-item-resume:hover { border-color: var(--success); color: var(--success); }
+
+  /* ── Report Modal ── */
   .modal-overlay {
-    display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,.7); backdrop-filter: blur(4px);
-    z-index: 2000; align-items: center; justify-content: center;
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
     padding: 24px;
   }
-  .modal-overlay.open { display: flex; animation: fadeIn .2s ease; }
-  @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+  .modal-overlay.open { display: flex; animation: fadeIn 0.2s ease; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 
   .report-modal {
-    background: var(--bg2); border: 1px solid var(--border);
-    border-radius: 14px; width: 100%; max-width: 780px;
-    max-height: 85vh; display: flex; flex-direction: column;
-    box-shadow: 0 20px 60px rgba(0,0,0,.6);
-    animation: slideUp .2s ease;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 780px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.2s ease;
   }
+
   .modal-header {
     padding: 18px 22px 16px;
     border-bottom: 1px solid var(--border);
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-shrink: 0;
   }
+
   .modal-header-left { display: flex; flex-direction: column; gap: 4px; }
-  .modal-title { font-size: 15px; font-weight: 700; }
-  .modal-meta  { font-size: 11px; color: var(--text2); display: flex; gap: 14px; }
+  .modal-title { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+  .modal-meta { font-size: 11px; color: var(--text-secondary); display: flex; gap: 14px; }
+
   .modal-close {
-    width: 30px; height: 30px; border-radius: 8px;
-    background: var(--bg3); border: 1px solid var(--border);
-    color: var(--text); cursor: pointer; font-size: 16px;
-    display: flex; align-items: center; justify-content: center;
-    transition: background .15s;
-  }
-  .modal-close:hover { background: var(--border); }
-  .modal-body {
-    padding: 20px 22px; overflow-y: auto; flex: 1;
-    scrollbar-width: thin; scrollbar-color: var(--border) transparent;
-  }
-  .report-content {
-    font-size: 13px; line-height: 1.7;
-    white-space: pre-wrap; word-break: break-word;
-    color: var(--text); font-family: 'Noto Sans KR', -apple-system, sans-serif;
-  }
-  .report-content b  { font-weight: 700; }
-  .report-content a  { color: var(--blue); text-decoration: none; }
-  .report-content a:hover { text-decoration: underline; }
-  .report-content hr { border: none; border-top: 1px solid var(--border); margin: 12px 0; }
-  .modal-empty {
-    text-align: center; padding: 48px 0;
-    color: var(--text2); font-size: 13px; line-height: 2;
-  }
-  .modal-loading {
-    display: flex; flex-direction: column; align-items: center;
-    gap: 14px; padding: 48px 0; color: var(--text2); font-size: 13px;
-  }
-  .spin-ring {
-    width: 36px; height: 36px; border-radius: 50%;
-    border: 3px solid var(--border); border-top-color: var(--blue);
-    animation: spin .8s linear infinite;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
   }
 
-  /* ── 스켈레톤 ── */
+  .modal-close:hover { background: var(--surface); border-color: var(--primary); color: var(--primary); }
+
+  .modal-body {
+    padding: 20px 22px;
+    overflow-y: auto;
+    flex: 1;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  .report-content {
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: var(--text-primary);
+    font-family: 'Pretendard', -apple-system, sans-serif;
+  }
+
+  .report-content b { font-weight: 700; }
+  .report-content a { color: var(--primary); text-decoration: none; }
+  .report-content a:hover { text-decoration: underline; }
+  .report-content hr { border: none; border-top: 1px solid var(--border); margin: 12px 0; }
+
+  .modal-empty {
+    text-align: center;
+    padding: 48px 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .modal-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 48px 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+  }
+
+  .spin-ring {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 3px solid var(--border);
+    border-top-color: var(--primary);
+    animation: spin 0.8s linear infinite;
+  }
+
+  /* ── Skeleton ── */
   .skeleton {
-    background: linear-gradient(90deg, var(--bg3) 25%, var(--border) 50%, var(--bg3) 75%);
+    background: linear-gradient(90deg, var(--bg) 25%, var(--border) 50%, var(--bg) 75%);
     background-size: 200% 100%;
     animation: skel 1.4s infinite;
     border-radius: 4px;
   }
-  @keyframes skel { 0%{background-position:200%}100%{background-position:-200%} }
-  .empty { text-align: center; padding: 60px; color: var(--text2); font-size: 14px; }
 
-  /* ── 토스트 ── */
-  .toast {
-    position: fixed; bottom: 24px; right: 24px;
-    background: var(--bg2); border: 1px solid var(--border);
-    border-radius: 10px; padding: 12px 18px;
-    font-size: 13px; z-index: 1000;
-    display: none; align-items: center; gap: 10px;
-    box-shadow: 0 8px 32px rgba(0,0,0,.4);
+  @keyframes skel {
+    0% { background-position: 200%; }
+    100% { background-position: -200%; }
   }
-  .toast.show { display: flex; animation: slideUp .3s ease; }
-  @keyframes slideUp { from{transform:translateY(20px);opacity:0} to{transform:translateY(0);opacity:1} }
+
+  .empty {
+    text-align: center;
+    padding: 60px;
+    color: var(--text-secondary);
+    font-size: 14px;
+  }
+
+  /* ── Toast ── */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 13px;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    color: var(--text-primary);
+  }
+
+  .toast.show { display: flex; animation: slideUp 0.3s ease; }
+
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
 
   footer {
-    text-align: center; color: var(--text2); font-size: 11px;
-    margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 11px;
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
   }
 
-  /* ── 모바일 반응형 ── */
+  /* ── Mobile Responsive ── */
   @media (max-width: 640px) {
     body { padding: 16px 12px; padding-bottom: calc(16px + env(safe-area-inset-bottom)); }
+
     .header { flex-wrap: wrap; gap: 10px; margin-bottom: 20px; padding-bottom: 16px; }
     .header h1 { font-size: 17px; }
-    .header p  { font-size: 11px; }
+    .header p { font-size: 11px; }
     .header-right { width: 100%; justify-content: space-between; }
     .last-updated { font-size: 11px; }
-    .refresh-btn  { padding: 8px 14px; font-size: 12px; min-height: 36px; }
+    .refresh-btn { padding: 8px 14px; font-size: 12px; min-height: 36px; }
+
     .summary { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
     .stat-card { padding: 14px 16px; }
     .stat-card .val { font-size: 24px; }
     .stat-card .lbl { font-size: 11px; }
 
-    /* 주간 캘린더: 가로 스크롤 */
-    .cal-scroll-wrap::after { opacity: 1; }           /* 모바일에서 fade 힌트 표시 */
-    .cal-scroll-wrap.at-end::after { opacity: 0; }   /* 끝까지 스크롤 시 힌트 숨김 */
+    .cal-scroll-wrap::after { opacity: 1; }
+    .cal-scroll-wrap.at-end::after { opacity: 0; }
     .week-calendar { padding: 14px 16px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .week-grid { min-width: 460px; gap: 5px; }
-    .day-name  { font-size: 10px; margin-bottom: 6px; }
+    .day-name { font-size: 10px; margin-bottom: 6px; }
     .day-event { font-size: 9px; padding: 2px 4px; }
+
     .cards-grid { grid-template-columns: 1fr; gap: 12px; }
-    .wf-card:hover { transform: none; }
+    .wf-card:hover { box-shadow: var(--shadow-sm); }
     .wf-card-header { padding: 12px 14px 10px; }
     .wf-title { font-size: 13px; }
-    .wf-card-body   { padding: 12px 14px; }
+    .wf-card-body { padding: 12px 14px; }
     .schedule-chip { flex-wrap: wrap; gap: 4px 10px; padding: 8px 10px; }
     .schedule-chip .cron { width: 100%; margin-top: 2px; }
     .h-bar .tooltip { display: none !important; }
     .h-bar { height: 24px; border-radius: 3px; }
     .wf-card-footer { padding: 10px 14px; flex-direction: column; align-items: stretch; gap: 8px; }
     .wf-card-footer > div { justify-content: space-between; }
-    .run-link   { font-size: 12px; min-height: 32px; align-items: center; }
-    /* 버튼 영역: wrap 허용해서 좁은 화면에서 줄 바꿈 */
+    .run-link { font-size: 12px; min-height: 32px; align-items: center; }
     .wf-card-footer > div { flex-wrap: wrap; gap: 6px; }
     .report-btn { justify-content: center; min-height: 34px; flex: 1; min-width: 88px; }
-    .pause-btn  { justify-content: center; min-height: 34px; flex: 1; min-width: 88px; }
-    .run-ago    { width: 100%; text-align: right; font-size: 11px; }
+    .pause-btn { justify-content: center; min-height: 34px; flex: 1; min-width: 88px; }
+    .run-ago { width: 100%; text-align: right; font-size: 11px; }
+
     .modal-overlay { padding: 0; align-items: flex-end; }
-    .report-modal  { border-radius: 16px 16px 0 0; max-height: 90vh; padding-bottom: env(safe-area-inset-bottom); }
+    .report-modal { border-radius: 16px 16px 0 0; max-height: 90vh; padding-bottom: env(safe-area-inset-bottom); }
     .modal-header { padding: 16px 18px 14px; }
-    .modal-title  { font-size: 14px; }
-    .modal-body   { padding: 16px 18px; }
-    .modal-close  { width: 34px; height: 34px; font-size: 18px; }
+    .modal-title { font-size: 14px; }
+    .modal-body { padding: 16px 18px; }
+    .modal-close { width: 34px; height: 34px; font-size: 18px; }
+
     .toast { left: 12px; right: 12px; bottom: 16px; font-size: 12px; }
     .section-title { font-size: 10px; }
     footer { font-size: 10px; margin-top: 24px; }
     .settings-modal { border-radius: 16px 16px 0 0; }
   }
+
   @media (max-width: 380px) {
     body { padding: 12px 10px; }
     .header h1 { font-size: 15px; }
@@ -527,7 +800,7 @@
 </head>
 <body>
 
-<!-- 헤더 -->
+<!-- Header -->
 <div class="header">
   <div class="header-left">
     <div class="logo">⚙️</div>
@@ -556,22 +829,22 @@
   </div>
 </div>
 
-<!-- GH_PAT 경고 배너 (오케스트레이터에 PAT 없을 때 표시) -->
+<!-- GH_PAT Warning Banner -->
 <div id="patWarningBanner" style="display:none; align-items:center; gap:12px;
-  background:#3d2c0a; border:1px solid #d29922; border-radius:10px;
-  padding:12px 18px; margin-bottom:20px; font-size:13px; color:#d29922;">
+  background:#fffbeb; border:1px solid #d97706; border-radius:8px;
+  padding:12px 18px; margin-bottom:20px; font-size:13px; color:#d97706;">
   <span style="font-size:18px">&#9888;</span>
   <div>
     <strong>GH_PAT 시크릿이 만료되었거나 설정되지 않았습니다.</strong><br>
-    <span style="color:#8b949e">일부 private 저장소의 워크플로우가 표시되지 않습니다. 
-    GitHub Settings → Secrets에서 <code style="background:#21262d;padding:1px 5px;border-radius:4px">GH_PAT</code>를 갱신해 주세요.
-    (필요 scope: <code style="background:#21262d;padding:1px 5px;border-radius:4px">repo, workflow</code>)</span>
+    <span style="color:#6b7280">일부 private 저장소의 워크플로우가 표시되지 않습니다.
+    GitHub Settings → Secrets에서 <code style="background:#f3f4f6;padding:1px 5px;border-radius:4px">GH_PAT</code>를 갱신해 주세요.
+    (필요 scope: <code style="background:#f3f4f6;padding:1px 5px;border-radius:4px">repo, workflow</code>)</span>
   </div>
   <button onclick="document.getElementById('patWarningBanner').style.display='none'"
-    style="margin-left:auto;background:none;border:none;color:#8b949e;cursor:pointer;font-size:18px;line-height:1">&times;</button>
+    style="margin-left:auto;background:none;border:none;color:#6b7280;cursor:pointer;font-size:18px;line-height:1">&times;</button>
 </div>
 
-<!-- 요약 통계 -->
+<!-- Summary Stats -->
 <div class="summary" id="summaryCards">
   <div class="stat-card"><div class="val blue skeleton" style="height:28px;width:40px">&nbsp;</div><div class="lbl">전체 워크플로우</div></div>
   <div class="stat-card"><div class="val green skeleton" style="height:28px;width:40px">&nbsp;</div><div class="lbl">성공</div></div>
@@ -579,15 +852,15 @@
   <div class="stat-card"><div class="val purple skeleton" style="height:28px;width:40px">&nbsp;</div><div class="lbl">오늘 실행 예정</div></div>
 </div>
 
-<!-- 주간 스케줄 캘린더 -->
+<!-- Weekly Schedule Calendar -->
 <div class="section-title">📅 주간 실행 스케줄</div>
 <div class="cal-scroll-wrap" id="calScrollWrap">
   <div class="week-calendar" id="weekCalendar" onscroll="updateCalFade(this)">
-    <div style="color:var(--text2);font-size:13px">로딩 중...</div>
+    <div style="color:var(--text-secondary);font-size:13px">로딩 중...</div>
   </div>
 </div>
 
-<!-- 워크플로우 카드 -->
+<!-- Workflow Cards -->
 <div class="section-title">🔧 워크플로우 상세</div>
 <div class="cards-grid" id="cardsGrid">
   <div class="wf-card" style="padding:20px">
@@ -602,10 +875,10 @@
   </div>
 </div>
 
-<!-- 토스트 -->
+<!-- Toast -->
 <div class="toast" id="toast"><span id="toastMsg"></span></div>
 
-<!-- 리포트 모달 -->
+<!-- Report Modal -->
 <div class="modal-overlay" id="reportModal" onclick="handleModalClick(event)">
   <div class="report-modal" id="reportModalBox">
     <div class="modal-header">
@@ -613,7 +886,7 @@
         <div class="modal-title" id="modalTitle">최근 리포트</div>
         <div class="modal-meta">
           <span id="modalTimestamp">—</span>
-          <span id="modalRepo" style="color:var(--blue)">—</span>
+          <span id="modalRepo" style="color:var(--primary)">—</span>
         </div>
       </div>
       <button class="modal-close" onclick="closeReportModal()" title="닫기">✕</button>
@@ -627,7 +900,7 @@
   </div>
 </div>
 
-<!-- 설정 모달 -->
+<!-- Settings Modal -->
 <div class="modal-overlay" id="settingsModal" onclick="handleSettingsClick(event)">
   <div class="settings-modal" id="settingsModalBox">
     <div class="modal-header">
@@ -638,7 +911,7 @@
       <button class="modal-close" onclick="closeSettings()" title="닫기">✕</button>
     </div>
 
-    <!-- GitHub 토큰 설정 -->
+    <!-- GitHub Token Settings -->
     <div class="settings-section">
       <h3>🔑 GitHub Personal Access Token</h3>
       <p>
@@ -655,18 +928,18 @@
       <div class="token-status" id="tokenStatus"></div>
     </div>
 
-    <!-- 일시 정지 목록 -->
+    <!-- Paused List -->
     <div class="settings-section">
       <h3>⏸ 현재 일시 정지된 작업</h3>
       <p>일시 정지 중인 워크플로우 목록입니다. 여기서 개별 재가동할 수 있습니다.</p>
       <button id="syncNowBtn" onclick="syncNow()" style="
         margin-bottom:10px; padding:7px 14px; border-radius:8px; border:1px solid var(--border);
-        background:var(--bg3); color:var(--text1); font-size:12px; cursor:pointer; display:flex;
+        background:var(--surface); color:var(--text-primary); font-size:12px; cursor:pointer; display:flex;
         align-items:center; gap:6px;">
         ☁️ 지금 기기 간 동기화
       </button>
       <div class="pause-list" id="pauseList">
-        <div style="font-size:12px;color:var(--text2)">일시 정지된 작업 없음</div>
+        <div style="font-size:12px;color:var(--text-secondary)">일시 정지된 작업 없음</div>
       </div>
     </div>
   </div>
@@ -677,7 +950,7 @@
 </footer>
 
 <script>
-// ── 설정 ─────────────────────────────────────────────────────────────────────
+// ── Configuration ─────────────────────────────────────────────────────────────────────
 const REPORT_FILE_MAP = {
   '236541757': './data/reports/korean-market-bot_236541757.json',
   '236553677': './data/reports/korean-market-bot_236553677.json',
@@ -690,7 +963,7 @@ const REPORT_FILE_MAP = {
 
 const OWNER = 'jinhae8971';
 
-// ── 일시 정지 상태 (localStorage) ────────────────────────────────────────────
+// ── Pause State (localStorage) ────────────────────────────────────────────
 const PAUSE_KEY = 'gh_dashboard_paused_v2';
 const TOKEN_KEY = 'gh_dashboard_token';
 
@@ -704,14 +977,14 @@ function isPaused(wfId) { return !!pausedMap[String(wfId)]; }
 
 function savePauseState() {
   try { localStorage.setItem(PAUSE_KEY, JSON.stringify(pausedMap)); } catch(e) {}
-  savePausedStateToRepo();  // 토큰 있으면 repo에도 동기화 (기기 간 공유)
+  savePausedStateToRepo();  // Sync to repo if token available
 }
 
-// ── Cross-device 일시정지 상태 동기화 (data/paused.json) ──────────────────
+// ── Cross-device Pause State Sync (data/paused.json) ──────────────────
 const PAUSE_REPO_PATH = 'data/paused.json';
 const PAUSE_REPO_FULL = 'jinhae8971/github-actions-dashboard';
 
-// UTF-8 문자열 → base64 (한글 포함 안전)
+// UTF-8 string → base64 (safe for Korean)
 function utf8ToBase64(str) {
   const bytes = new TextEncoder().encode(str);
   let binary = '';
@@ -719,9 +992,7 @@ function utf8ToBase64(str) {
   return btoa(binary);
 }
 
-// paused.json(repo)을 마스터 소스로 로드 — localStorage 완전 교체
-// [버그수정] 이전 merge 로직({...repoPaused,...pausedMap})은 stale localStorage가
-// 재가동된 워크플로우를 다시 일시정지 상태로 되돌리는 원인이었음
+// Load paused.json from repo — replace localStorage completely
 async function loadPausedStateFromRepo() {
   try {
     const resp = await fetch(`./${PAUSE_REPO_PATH}?_=${Date.now()}`);
@@ -729,24 +1000,24 @@ async function loadPausedStateFromRepo() {
     const data = await resp.json();
     const repoPaused = data.paused || {};
 
-    // repo를 마스터 소스로: localStorage stale 데이터를 repo 상태로 완전 교체
+    // Use repo as master source: replace stale localStorage with repo state
     Object.keys(pausedMap).forEach(id => delete pausedMap[id]);
     Object.assign(pausedMap, repoPaused);
     try { localStorage.setItem(PAUSE_KEY, JSON.stringify(pausedMap)); } catch(e) {}
 
-    console.log('[paused.json] repo 상태 로드 완료 —', Object.keys(repoPaused).length, '개 일시정지');
+    console.log('[paused.json] repo state loaded —', Object.keys(repoPaused).length, 'paused');
   } catch(e) {
-    console.log('[paused.json] 로드 실패, localStorage 유지:', e);
+    console.log('[paused.json] load failed, localStorage kept:', e);
   }
 }
 
-// pausedMap을 repo에 커밋 (토큰 필요)
+// Save pausedMap to repo (requires token)
 async function savePausedStateToRepo() {
   if (!githubToken) return;
   try {
     const content = JSON.stringify({ updated_at: new Date().toISOString(), paused: pausedMap }, null, 2);
     const b64 = utf8ToBase64(content);
-    // 현재 파일 SHA 가져오기 (업데이트에 필요)
+    // Get current file SHA (required for update)
     let sha = null;
     try {
       const r = await fetch(
@@ -769,11 +1040,11 @@ async function savePausedStateToRepo() {
       }
     );
   } catch(e) {
-    console.error('[paused.json] 저장 실패:', e);
+    console.error('[paused.json] save failed:', e);
   }
 }
 
-// ── GitHub API 호출 ────────────────────────────────────────────────────────
+// ── GitHub API Calls ────────────────────────────────────────────────────
 async function githubApiCall(path, method = 'PUT') {
   if (!githubToken) return { ok: false, reason: 'no-token' };
   const resp = await fetch(`https://api.github.com${path}`, {
@@ -794,17 +1065,16 @@ async function enableWorkflow(repo, wfId) {
   return githubApiCall(`/repos/${OWNER}/${repo}/actions/workflows/${wfId}/enable`);
 }
 
-// ── 일시 정지 토글 ────────────────────────────────────────────────────────
+// ── Pause Toggle ────────────────────────────────────────────────────
 async function togglePause(repo, wfId, wfName) {
   const id = String(wfId);
   const btn = document.getElementById(`pbtn-${id}`);
   if (btn) btn.classList.add('loading-state');
 
   if (isPaused(id)) {
-    // ── 재가동 ──
+    // Resume
     const result = await enableWorkflow(repo, wfId);
     if (result.reason === 'no-token') {
-      // 토큰 없음: UI 상태만 변경
       toast(`▶ ${wfName} 재가동 (UI 전용 — 토큰 없음)`, false);
     } else if (!result.ok) {
       toast(`❌ GitHub API 오류 (${result.status}) — UI만 재가동됨`, true);
@@ -813,7 +1083,7 @@ async function togglePause(repo, wfId, wfName) {
     }
     delete pausedMap[id];
   } else {
-    // ── 일시 정지 ──
+    // Pause
     const result = await disableWorkflow(repo, wfId);
     if (result.reason === 'no-token') {
       toast(`⏸ ${wfName} 일시 정지 (UI 전용 — 설정에서 토큰 등록 시 실제 적용)`, false);
@@ -832,7 +1102,7 @@ async function togglePause(repo, wfId, wfName) {
   renderSummary(allWorkflows);
 }
 
-// ── 설정 모달 ─────────────────────────────────────────────────────────────
+// ── Settings Modal ─────────────────────────────────────────────────────
 function openSettings() {
   document.getElementById('tokenInput').value = githubToken ? '••••••••••••••••••••' : '';
   refreshPauseList();
@@ -858,7 +1128,7 @@ async function saveToken() {
   localStorage.setItem(TOKEN_KEY, githubToken);
   setTokenStatus('info', '⏳ 연결 확인 중...');
 
-  // 인증 테스트
+  // Test authentication
   try {
     const resp = await fetch('https://api.github.com/user', {
       headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github+json' }
@@ -907,7 +1177,7 @@ function refreshPauseList() {
   const list = document.getElementById('pauseList');
   const ids = Object.keys(pausedMap);
   if (!ids.length) {
-    list.innerHTML = '<div style="font-size:12px;color:var(--text2)">일시 정지된 작업 없음</div>';
+    list.innerHTML = '<div style="font-size:12px;color:var(--text-secondary)">일시 정지된 작업 없음</div>';
     return;
   }
   list.innerHTML = ids.map(id => {
@@ -916,7 +1186,7 @@ function refreshPauseList() {
       <div class="pause-list-item">
         <div>
           <div class="pause-list-item-name">⏸ ${name}</div>
-          <div style="font-size:10px;color:var(--text2);margin-top:2px">${repo}</div>
+          <div style="font-size:10px;color:var(--text-secondary);margin-top:2px">${repo}</div>
         </div>
         <button class="pause-list-item-resume" onclick="resumeFromSettings('${repo}','${id}','${name.replace(/'/g,"\\'")}')">
           ▶ 재가동
@@ -930,7 +1200,7 @@ async function resumeFromSettings(repo, wfId, wfName) {
   refreshPauseList();
 }
 
-// ── 유틸리티 ─────────────────────────────────────────────────────────────────
+// ── Utilities ─────────────────────────────────────────────────────────────
 function parseCron(cron) {
   const parts = cron.trim().split(/\s+/);
   if (parts.length < 5) return { kst: cron, type: 'unknown', days: [] };
@@ -983,8 +1253,8 @@ function timeAgo(dateStr) {
   return `${Math.floor(diff/86400)}일 전`;
 }
 
-// ── GitHub Actions 수동 데이터 갱신 ──────────────────────────────────────────
-const UPDATE_WF_ID = 237170745;  // Update Dashboard Data 워크플로우 ID
+// ── GitHub Actions Manual Data Update ──────────────────────────────────
+const UPDATE_WF_ID = 237170745;  // Update Dashboard Data workflow ID
 
 async function fetchLatestData() {
   const btn = document.getElementById('fetchBtn');
@@ -995,7 +1265,7 @@ async function fetchLatestData() {
   btn.disabled = true;
   btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" class="spin"><path d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/><path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/></svg> 수집 중…`;
   try {
-    // 워크플로우 실행 트리거
+    // Trigger workflow
     const triggerResp = await fetch(
       `https://api.github.com/repos/${PAUSE_REPO_FULL}/actions/workflows/${UPDATE_WF_ID}/dispatches`,
       { method: 'POST', headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' }, body: JSON.stringify({ ref: 'main' }) }
@@ -1003,7 +1273,7 @@ async function fetchLatestData() {
     if (!triggerResp.ok) throw new Error(`trigger failed: ${triggerResp.status}`);
     toast('🚀 데이터 수집 시작됨 — 약 30~60초 후 새로고침하세요');
 
-    // 30초 후 자동으로 새로고침
+    // Auto refresh after 30s
     setTimeout(async () => {
       await loadAll();
       btn.disabled = false;
@@ -1016,25 +1286,21 @@ async function fetchLatestData() {
   }
 }
 
-// ── wf.state 기반 일시 정지 상태 동기화 ──────────────────────────────────────
-// GitHub에서 실제로 비활성화된 워크플로우는 pausedMap에 추가 (추가만, 삭제 안 함)
-// 삭제는 사용자가 직접 "재가동" 버튼을 누를 때만 수행
+// ── Sync Pause State from JSON ──────────────────────────────────────────
 function syncPauseStateFromJson(wfData) {
   let changed = false;
   wfData.forEach(({ repo, wf }) => {
     const id = String(wf.id);
     const disabledOnGitHub = wf.state === 'disabled_manually' || wf.state === 'disabled_inactivity';
     if (disabledOnGitHub && !pausedMap[id]) {
-      pausedMap[id] = { repo, name: wf.name };  // GitHub에서 비활성화 → UI에 반영
+      pausedMap[id] = { repo, name: wf.name };  // Reflect GitHub disabled state
       changed = true;
     }
-    // active 상태여도 pausedMap에서 자동 삭제하지 않음
-    // (UI 일시정지 상태는 사용자가 명시적으로 재가동 버튼 누를 때만 해제)
   });
   if (changed) savePauseState();
 }
 
-// ── 데이터 로드 (정적 JSON 파일) ──────────────────────────────────────────────
+// ── Data Load (static JSON files) ──────────────────────────────────────
 let allWorkflows = [];
 
 async function loadAll() {
@@ -1047,16 +1313,16 @@ async function loadAll() {
     const data = await resp.json();
 
     allWorkflows = data.workflows || [];
-    // pages-build-deployment는 모니터링 불필요 — 대시보드에서 제거
+    // Filter out pages-build-deployment
     allWorkflows = allWorkflows.filter(d => d.wf.name !== 'pages-build-deployment');
-    await loadPausedStateFromRepo();       // ← repo 파일로 기기 간 동기화 (우선)
-    syncPauseStateFromJson(allWorkflows);  // ← GitHub 실제 비활성화 상태 추가 반영
+    await loadPausedStateFromRepo();       // Load from repo first (cross-device sync)
+    syncPauseStateFromJson(allWorkflows);  // Then sync GitHub actual disabled state
     renderSummary(allWorkflows);
     renderWeekCalendar(allWorkflows);
     renderCards(allWorkflows);
 
-    // GH_PAT 없을 때 경고 배너 표시
-    const hasPat = data.orchestrator?.has_pat !== false;  // 기본값 true (하위 호환)
+    // Show GH_PAT warning if missing
+    const hasPat = data.orchestrator?.has_pat !== false;  // Default true
     const patBanner = document.getElementById('patWarningBanner');
     if (patBanner) patBanner.style.display = hasPat ? 'none' : 'flex';
 
@@ -1073,7 +1339,7 @@ async function loadAll() {
       <div class="empty" style="grid-column:1/-1">
         <div style="font-size:32px;margin-bottom:12px">⚙️</div>
         <div style="font-size:14px;margin-bottom:8px">데이터를 불러오는 중이에요</div>
-        <div style="font-size:12px;color:var(--text2)">
+        <div style="font-size:12px;color:var(--text-secondary)">
           GitHub Actions가 처음 실행되면 자동으로 데이터가 생성됩니다.<br>
           잠시 후 새로고침해 주세요.
         </div>
@@ -1090,7 +1356,7 @@ async function loadAll() {
   }
 }
 
-// ── 렌더링 함수들 ─────────────────────────────────────────────────────────────
+// ── Render Functions ─────────────────────────────────────────────────────
 function renderSummary(wfData) {
   const pausedCount  = Object.keys(pausedMap).length;
   const activeData   = wfData.filter(d => !isPaused(d.wf.id));
@@ -1106,7 +1372,7 @@ function renderSummary(wfData) {
   }).length;
 
   const pausedCard = pausedCount > 0
-    ? `<div class="stat-card" style="border-color:var(--yellow)">
+    ? `<div class="stat-card" style="border-color:var(--warning)">
         <div class="val yellow">${pausedCount}</div>
         <div class="lbl">일시 정지 중</div>
        </div>`
@@ -1130,7 +1396,7 @@ function renderWeekCalendar(wfData) {
     if (!cron) return;
     const { activeDays, timeStr, type } = parseCron(cron);
     const paused = isPaused(wf.id);
-    if (paused) return;  // 일시정지 작업은 캘린더에서 완전히 제외
+    if (paused) return;  // Exclude paused from calendar
     activeDays.forEach(d => {
       const cls = type==='daily' ? 'daily' : (d===0||d===6) ? 'weekend' : 'weekly';
       dayEvents[d].push({
@@ -1140,7 +1406,7 @@ function renderWeekCalendar(wfData) {
     });
   });
 
-  // 각 요일별 이벤트를 시간 오름차순으로 정렬
+  // Sort events by time
   dayEvents.forEach(events => events.sort((a, b) => a.time.localeCompare(b.time)));
 
   document.getElementById('weekCalendar').innerHTML = `
@@ -1164,14 +1430,13 @@ function renderWeekCalendar(wfData) {
     </div>
   `;
 
-  // ── 오늘 컬럼으로 자동 스크롤 (모바일 전용) ─────────────────────────────────
+  // Auto-scroll to today (mobile only)
   setTimeout(() => {
     const cal = document.getElementById('weekCalendar');
     const todayEl = cal.querySelector('.day-name.today');
     if (todayEl && cal.scrollWidth > cal.clientWidth) {
       const col = todayEl.closest('.day-col');
       if (col) {
-        // 오늘 컬럼이 뷰포트 중앙에 오도록 스크롤
         const targetScroll = col.offsetLeft - (cal.clientWidth / 2) + (col.offsetWidth / 2);
         cal.scrollTo({ left: Math.max(0, targetScroll), behavior: 'smooth' });
       }
@@ -1180,7 +1445,7 @@ function renderWeekCalendar(wfData) {
   }, 80);
 }
 
-// ── 캘린더 fade 힌트 업데이트 ──────────────────────────────────────────────────
+// ── Update Calendar Fade Hint ──────────────────────────────────────────
 function updateCalFade(el) {
   const wrap = document.getElementById('calScrollWrap');
   if (!wrap) return;
@@ -1194,12 +1459,11 @@ function renderCards(wfData) {
     return;
   }
 
-  // ── 정렬: ① 가동 중 먼저 / 일시 정지 나중, ② 같은 그룹 내 최근 실행 순
+  // Sort: ① Active first / Paused last, ② Within group by recent execution
   wfData = [...wfData].sort((a, b) => {
     const pa = isPaused(a.wf.id) ? 1 : 0;
     const pb = isPaused(b.wf.id) ? 1 : 0;
     if (pa !== pb) return pa - pb;
-    // 같은 그룹 내: 가장 최근 실행(runs[0].created_at) 기준 내림차순
     const ta = a.runs[0]?.created_at ? new Date(a.runs[0].created_at).getTime() : 0;
     const tb = b.runs[0]?.created_at ? new Date(b.runs[0].created_at).getTime() : 0;
     return tb - ta;
@@ -1217,7 +1481,7 @@ function renderCards(wfData) {
     'etf-strategist':            '📈',
   };
 
-  // GitHub Pages 대시보드 URL 맵
+  // GitHub Pages Dashboard URL Map
   const PAGES_URL_MAP = {
     'korean-stock-agent':  'https://jinhae8971.github.io/korean-stock-agent/',
     'us-market-agent':     'https://jinhae8971.github.io/us-market-agent/',
@@ -1329,7 +1593,7 @@ function renderCards(wfData) {
   document.getElementById('cardsGrid').innerHTML = cards.join('');
 }
 
-// ── 리포트 모달 ──────────────────────────────────────────────────────────────
+// ── Report Modal ──────────────────────────────────────────────────────
 async function openReport(repo, wfId, wfName) {
   const modal = document.getElementById('reportModal');
   const body  = document.getElementById('modalBody');
@@ -1351,7 +1615,7 @@ async function openReport(repo, wfId, wfName) {
       body.innerHTML = `
         <div class="modal-empty">
           📭 아직 저장된 리포트가 없습니다.<br>
-          <span style="font-size:12px;color:var(--text2)">워크플로우가 다음에 실행되면 자동으로 저장됩니다.</span>
+          <span style="font-size:12px;color:var(--text-secondary)">워크플로우가 다음에 실행되면 자동으로 저장됩니다.</span>
         </div>`;
       document.getElementById('modalTimestamp').textContent = '데이터 없음';
       return;
@@ -1377,7 +1641,7 @@ async function openReport(repo, wfId, wfName) {
     body.innerHTML = `
       <div class="modal-empty">
         ❌ 리포트를 불러올 수 없습니다.<br>
-        <span style="font-size:12px;color:var(--text2)">${err.message}</span>
+        <span style="font-size:12px;color:var(--text-secondary)">${err.message}</span>
       </div>`;
     document.getElementById('modalTimestamp').textContent = '오류';
   } finally {
@@ -1399,12 +1663,12 @@ document.addEventListener('keydown', e => {
 function toast(msg, isErr = false) {
   const el = document.getElementById('toast');
   document.getElementById('toastMsg').textContent = msg;
-  el.style.borderColor = isErr ? 'var(--red)' : 'var(--green)';
+  el.style.borderColor = isErr ? 'var(--error)' : 'var(--success)';
   el.classList.add('show');
   setTimeout(() => el.classList.remove('show'), 3800);
 }
 
-// 초기 로드 + 5분마다 자동 갱신
+// Initial load + auto refresh every 5 minutes
 loadAll();
 setInterval(loadAll, 5 * 60 * 1000);
 </script>
