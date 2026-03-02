@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-03-02T04:55:42.716060+00:00",
+  "updated_at": "2026-03-02T06:00:28.154250+00:00",
   "orchestrator": {
     "version": "2.1",
-    "enforced_at": "2026-03-02T04:55:42.716060+00:00",
+    "enforced_at": "2026-03-02T06:00:28.154250+00:00",
     "has_pat": true,
     "paused_intent": 7,
     "enforcement_log": []
@@ -680,6 +680,13 @@
       "cron": "0 23 * * 0-4",
       "runs": [
         {
+          "run_number": 15,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-02T05:21:17Z",
+          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22562565475"
+        },
+        {
           "run_number": 14,
           "conclusion": "success",
           "status": "completed",
@@ -720,13 +727,6 @@
           "status": "completed",
           "created_at": "2026-03-02T03:47:40Z",
           "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22560554514"
-        },
-        {
-          "run_number": 9,
-          "conclusion": "cancelled",
-          "status": "completed",
-          "created_at": "2026-03-02T03:47:39Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22560554170"
         }
       ]
     },
