@@ -1130,11 +1130,12 @@ function renderWeekCalendar(wfData) {
     if (!cron) return;
     const { activeDays, timeStr, type } = parseCron(cron);
     const paused = isPaused(wf.id);
+    if (paused) return;  // 일시정지 작업은 캘린더에서 완전히 제외
     activeDays.forEach(d => {
       const cls = type==='daily' ? 'daily' : (d===0||d===6) ? 'weekend' : 'weekly';
       dayEvents[d].push({
         label: wf.name.replace(/^[^\w가-힣]+/,'').substring(0,14),
-        time: timeStr, cls, paused
+        time: timeStr, cls
       });
     });
   });
@@ -1150,9 +1151,8 @@ function renderWeekCalendar(wfData) {
           <div class="day-name ${i===todayDow?'today':''}">${day}${i===todayDow?' ●':''}</div>
           <div class="day-events">
             ${dayEvents[i].map(ev => `
-              <div class="day-event ${ev.cls}${ev.paused?' is-paused-cal':''}"
-                   title="${ev.paused ? '⏸ 일시 정지됨' : ''}">
-                ${ev.time}<br>${ev.label}${ev.paused ? ' ⏸' : ''}
+              <div class="day-event ${ev.cls}">
+                ${ev.time}<br>${ev.label}
               </div>
             `).join('') || '<div style="font-size:10px;color:var(--border);padding:4px 0">—</div>'}
           </div>
