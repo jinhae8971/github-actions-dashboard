@@ -1,662 +1,646 @@
 {
-  "date": "2026-03-03",
-  "generated_at": "2026-03-03T08:16:20.211381",
+  "date": "2026-03-04",
+  "generated_at": "2026-03-04T08:16:51.078181",
   "market_data": {
     "kospi": {
-      "close": 6244.13,
-      "change": -63.14,
-      "change_pct": -1.0,
-      "volume": 1166100,
-      "volume_change_pct": -17.54
-    },
-    "technical_indicators": {
-      "rsi": 77.39,
-      "macd": 359.62,
-      "signal": 295.31,
-      "histogram": 64.31,
-      "bb_upper": 6316.69,
-      "bb_middle": 5519.91,
-      "bb_lower": 4723.13,
-      "bb_position": 0.9545,
-      "ma5": 6090.2,
-      "ma5_diff_pct": 2.53,
-      "ma20": 5519.91,
-      "ma20_diff_pct": 13.12,
-      "ma60": 4758.54,
-      "ma60_diff_pct": 31.22
+      "close": 5791.91,
+      "change": -452.22,
+      "change_pct": -7.24,
+      "volume": 0,
+      "volume_change_pct": -100.0
     },
     "kosdaq": {
-      "close": 1192.78,
-      "change": 4.63,
-      "change_pct": 0.39,
-      "volume": 1300,
-      "volume_change_pct": -5.8
+      "close": 1137.7,
+      "change": -55.08,
+      "change_pct": -4.62,
+      "volume": 0,
+      "volume_change_pct": -100.0
     },
     "nasdaq": {
-      "close": 22748.86,
-      "change": 80.65,
-      "change_pct": 0.36,
-      "volume": 6537611000,
-      "volume_change_pct": -21.2
+      "close": 22516.69,
+      "change": -232.17,
+      "change_pct": -1.02,
+      "volume": 7906725000,
+      "volume_change_pct": -8.54
     },
     "sp500": {
-      "close": 6881.62,
-      "change": 2.74,
-      "change_pct": 0.04,
-      "volume": 3458583000,
-      "volume_change_pct": -35.01
+      "close": 6816.63,
+      "change": -64.99,
+      "change_pct": -0.94,
+      "volume": 3509315000,
+      "volume_change_pct": -36.13
     },
-    "usdkrw": 1453.25,
-    "us10y": 4.05,
+    "usdkrw": 1485.69,
+    "us10y": 4.06,
     "top_stocks": [
       {
-        "close": 216500.0,
-        "change": -1500.0,
-        "change_pct": -0.69,
-        "volume": 51774768,
-        "volume_change_pct": 58.54,
+        "close": 195100.0,
+        "change": -21400.0,
+        "change_pct": -9.88,
+        "volume": 54879010,
+        "volume_change_pct": 43.06,
         "ticker": "005930.KS",
         "name": "삼성전자",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 1061000.0,
-        "change": -38000.0,
-        "change_pct": -3.46,
-        "volume": 6453062,
-        "volume_change_pct": 46.63,
+        "close": 939000.0,
+        "change": -122000.0,
+        "change_pct": -11.5,
+        "volume": 6818327,
+        "volume_change_pct": 34.76,
         "ticker": "000660.KS",
         "name": "SK하이닉스",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 427000.0,
-        "change": 0.0,
-        "change_pct": 0.0,
-        "volume": 591387,
-        "volume_change_pct": 11.99,
+        "close": 393000.0,
+        "change": -34000.0,
+        "change_pct": -7.96,
+        "volume": 489727,
+        "volume_change_pct": -14.42,
         "ticker": "373220.KS",
         "name": "LG에너지솔루션",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 254500.0,
-        "change": -6000.0,
-        "change_pct": -2.3,
-        "volume": 1259511,
-        "volume_change_pct": 14.78,
+        "close": 236000.0,
+        "change": -18500.0,
+        "change_pct": -7.27,
+        "volume": 1507045,
+        "volume_change_pct": 20.63,
         "ticker": "035420.KS",
         "name": "NAVER",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 62300.0,
-        "change": 900.0,
-        "change_pct": 1.47,
-        "volume": 7242478,
-        "volume_change_pct": 61.66,
+        "close": 56200.0,
+        "change": -6100.0,
+        "change_pct": -9.79,
+        "volume": 6691339,
+        "volume_change_pct": 21.95,
         "ticker": "035720.KS",
         "name": "카카오",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 413000.0,
-        "change": 5500.0,
-        "change_pct": 1.35,
-        "volume": 819645,
-        "volume_change_pct": 29.99,
+        "close": 374500.0,
+        "change": -38500.0,
+        "change_pct": -9.32,
+        "volume": 842427,
+        "volume_change_pct": 19.73,
         "ticker": "005490.KS",
         "name": "POSCO홀딩스",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 674000.0,
-        "change": 65000.0,
-        "change_pct": 10.67,
-        "volume": 4354409,
-        "volume_change_pct": 45.31,
+        "close": 595000.0,
+        "change": -79000.0,
+        "change_pct": -11.72,
+        "volume": 3763225,
+        "volume_change_pct": 12.99,
         "ticker": "005380.KS",
         "name": "현대차",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 238500.0,
-        "change": -3500.0,
-        "change_pct": -1.45,
-        "volume": 833169,
-        "volume_change_pct": 32.23,
+        "close": 225000.0,
+        "change": -13500.0,
+        "change_pct": -5.66,
+        "volume": 867580,
+        "volume_change_pct": 23.06,
         "ticker": "068270.KS",
         "name": "셀트리온",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 182.48,
-        "change": 5.29,
-        "change_pct": 2.99,
-        "volume": 206465519,
-        "volume_change_pct": -20.81,
+        "close": 180.05,
+        "change": -2.43,
+        "change_pct": -1.33,
+        "volume": 169851790,
+        "volume_change_pct": -34.77,
         "ticker": "NVDA",
         "name": "엔비디아",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 369.11,
-        "change": -5.47,
-        "change_pct": -1.46,
-        "volume": 12265573,
-        "volume_change_pct": 1.9,
+        "close": 353.13,
+        "change": -15.98,
+        "change_pct": -4.33,
+        "volume": 17099968,
+        "volume_change_pct": 32.88,
         "ticker": "TSM",
         "name": "TSMC",
         "per": 0.0,
         "pbr": 0.0
       }
     ],
-    "foreigners_net": -1677.0,
-    "institutions_net": 400.0,
+    "foreigners_net": -10792.0,
+    "institutions_net": 2896.0,
     "news": {
       "international": [
         {
-          "title": "Israel strikes Lebanon after Hezbollah rocket fire as Iran conflict widens",
+          "title": "Gas and oil prices soar and shares tumble on fears conflict could escalate",
           "source": "BBC World",
-          "summary": "Lebanese officials say 52 people were killed by Israeli strikes, while there are no reports of casualties in Israel.",
-          "published_at": "2026-03-02 18:53 UTC"
+          "summary": "Markets react as the conflict in the Middle East intensifies and concerns grow over how long it will last.",
+          "published_at": "2026-03-03 21:44 UTC"
         },
         {
-          "title": "'They hit so hard the house was shaking': Iranians describe impact of US-Israel attacks",
+          "title": "Trump threatens to halt trade with Spain over military base access",
           "source": "BBC World",
-          "summary": "People in Iran tell the BBC they hear explosions day and night, as the US and Israel continue striking the country for a third day.",
-          "published_at": "2026-03-02 13:54 UTC"
+          "summary": "Trump lashed out after Spain barred the US from using its military bases to carry out strikes on Iran.",
+          "published_at": "2026-03-03 21:25 UTC"
         },
         {
-          "title": "France to boost nuclear arsenal and extend deterrence to European allies",
+          "title": "European allies rush to bolster Cyprus defences after drones target British base",
           "source": "BBC World",
-          "summary": "Emmanuel Macron said eight countries could enjoy protection from France's nuclear umbrella - but that Paris would retain sole decision-making power.",
-          "published_at": "2026-03-02 18:16 UTC"
+          "summary": "The Cypriot government suspects the Iran-backed group Hezbollah in Lebanon targeted the UK's RAF Akrotiri base in Cyprus.",
+          "published_at": "2026-03-03 22:10 UTC"
         },
         {
-          "title": "India and Canada reset ties with 'landmark' nuclear energy deal",
+          "title": "Battered and isolated, Hezbollah drags Lebanon into another war",
           "source": "BBC World",
-          "summary": "A host of deals, including one to supply India with uranium, is unveiled as Mark Carney meets Narendra Modi in Delhi.",
-          "published_at": "2026-03-02 20:18 UTC"
+          "summary": "Its attack on Israel in support of Iran has led to fresh mass displacements and Israeli bombing, to the fury of many Lebanese.",
+          "published_at": "2026-03-03 15:42 UTC"
         },
         {
-          "title": "At least 169 people killed in South Sudan 'surprise' attack",
+          "title": "Six US soldiers killed in Iranian strike on Kuwait base",
           "source": "BBC World",
-          "summary": "Peacekeepers are sheltering about 1,000 civilians near their base and providing emergency care.",
-          "published_at": "2026-03-02 16:11 UTC"
+          "summary": "The US defence secretary confirms a US military base was hit by Iran on Sunday.",
+          "published_at": "2026-03-03 16:08 UTC"
         },
         {
-          "title": "Lost Rembrandt painting rediscovered after 65 years",
+          "title": "Why Europe's leaders have struggled to speak as one on Iran",
           "source": "BBC World",
-          "summary": "The painting, created by the Dutch master in 1633, had disappeared after being sold in 1961.",
-          "published_at": "2026-03-02 16:54 UTC"
+          "summary": "European nations say they want to work better together but have differing priorities",
+          "published_at": "2026-03-03 16:26 UTC"
         },
         {
-          "title": "A rap star might just beat a former PM - what this says about Nepal's Gen Z election",
+          "title": "US sends planes to evacuate nationals from Middle East as Iran conflict spreads",
           "source": "BBC World",
-          "summary": "Many hope the vote could bring change after protests last year, and shatter decades of political paralysis.",
-          "published_at": "2026-03-02 06:34 UTC"
+          "summary": "The US State Department says Americans should \"depart now via commercial means\" as strikes continue.",
+          "published_at": "2026-03-03 20:43 UTC"
         },
         {
-          "title": "Oil and gas prices jump as conflict escalates",
+          "title": "Zelensky fears Trump's Iran war could hurt Ukraine",
           "source": "BBC World",
-          "summary": "Experts have warned that a prolonged conflict could push global energy prices even higher.",
-          "published_at": "2026-03-02 21:23 UTC"
+          "summary": "Ukraine fears what soaring oil prices and a shortage in air defences could mean for them.",
+          "published_at": "2026-03-03 13:41 UTC"
         },
         {
-          "title": "Saturday Night Live criticised for 'hurtful' Tourette's sketch",
+          "title": "New charges for son of Norway's crown princess on trial for rape",
           "source": "BBC World",
-          "summary": "The condition is \"not a joke\", the Tourette Action charity says, as the Baftas fallout continues.",
-          "published_at": "2026-03-02 16:43 UTC"
+          "summary": "Marius Borg Høiby now faces a total of 40 charges at his trial and denies the most serious allegations.",
+          "published_at": "2026-03-03 18:59 UTC"
         },
         {
-          "title": "Texas authorities identify Austin bar shooting victims",
+          "title": "Guilty verdict for US father of teenage school shooter",
           "source": "BBC World",
-          "summary": "Two victims and the suspected gunman were killed, and 14 more injured in the Sunday shooting that the FBI says could have terrorism links.",
-          "published_at": "2026-03-02 21:21 UTC"
+          "summary": "Prosecutors say Colin Gray, 55, could have prevented his son from killing four people at a high school in Georgia in 2024.",
+          "published_at": "2026-03-03 17:14 UTC"
         },
         {
-          "title": "Stars hit the Actor Awards red carpet - in pictures",
+          "title": "Andrew gives up lease on Crown Estate property",
           "source": "BBC World",
-          "summary": "Emma Stone, Wunmi Mosaku and Timothée Chalamet were among the stars posing for pictures in Los Angeles.",
-          "published_at": "2026-03-02 01:33 UTC"
+          "summary": "The former prince hands back a property in Ascot, with lease documents showing an annual rent of £13,000.",
+          "published_at": "2026-03-03 16:51 UTC"
         },
         {
-          "title": "Deepfake attack: 'Many people could have been cheated'",
+          "title": "Mexican drug lord 'El Mencho' buried in golden coffin",
           "source": "BBC World",
-          "summary": "The boss of the Bombay Stock Exchange was recently targeted in what is a growing global problem.",
-          "published_at": "2026-03-02 06:47 UTC"
+          "summary": "Nemesio Oseguera led the feared Jalisco New Generation Cartel until his death as a result of a firefight in February.",
+          "published_at": "2026-03-03 13:21 UTC"
         },
         {
-          "title": "'Everything has changed': Missile attacks shatter Dubai's safe haven image",
+          "title": "OpenAI changes deal with US military after backlash",
           "source": "BBC World",
-          "summary": "Dubai’s reputation as a prosperous destination for expats and influencers has changed for some following Iranian strikes.",
-          "published_at": "2026-03-02 22:06 UTC"
+          "summary": "Chief Executive Sam Altman said the group would prohibit the use of its systems to spy on Americans.",
+          "published_at": "2026-03-03 19:37 UTC"
         },
         {
-          "title": "Iran Live Updates: Rubio Says ‘Hardest Hits Are Yet to Come’ as Trump Predicts Weeks of War",
+          "title": "India's top court angry after junior judge cites fake AI-generated orders",
+          "source": "BBC World",
+          "summary": "In several recent instances, AI has disrupted court proceedings in India and elsewhere.",
+          "published_at": "2026-03-03 11:34 UTC"
+        },
+        {
+          "title": "Belgium detains three suspected Cameroon separatists in war crimes probe",
+          "source": "BBC World",
+          "summary": "Money is reportedly being raised by them for the armed struggle, prosecutors say.",
+          "published_at": "2026-03-03 17:15 UTC"
+        },
+        {
+          "title": "Iran Live Updates: Countries Try to Help Nationals Escape a Widening Conflict",
           "source": "NYT World",
-          "summary": "President Trump said the campaign could last “four to five weeks,” or even longer, and Secretary of State Marco Rubio said U.S. ground troops remained an option. Strikes pounded Tehran for a third day.",
-          "published_at": "2026-03-02 23:08 UTC"
+          "summary": "President Trump said airstrikes had killed potential new leaders of Iran, leaving it unclear who would run the country. Financial markets slumped on fears of inflation, and the price of oil soared.",
+          "published_at": "2026-03-03 23:14 UTC"
         },
         {
-          "title": "As Trump Bombs Iran, America’s Allies Watch Fitfully From Sidelines",
+          "title": "Israel Seizes Chance to Crush Hezbollah and Remake Mideast Amid Iran War",
           "source": "NYT World",
-          "summary": "Disregarded by President Trump over Iran, Europe’s leaders are adapting to a world in which they are little more than bystanders.",
-          "published_at": "2026-03-02 12:07 UTC"
+          "summary": "With the war against Iran underway, and the U.S. military as a powerful ally, the Israeli government is seizing its chance to move against other adversaries.",
+          "published_at": "2026-03-03 11:03 UTC"
         },
         {
-          "title": "Pakistan Strikes Bagram Air Base, Satellite Images Show",
+          "title": "U.S. Hunts for Militants as the Nigerian Military Is Accused of Inaction",
           "source": "NYT World",
-          "summary": "Satellite imagery showed flattened warehouses at the base that served as the nerve center of America’s 20-year war in Afghanistan, a prized asset for the Taliban.",
-          "published_at": "2026-03-02 20:46 UTC"
+          "summary": "The country has one of the most feared armed forces in Africa, yet within its own borders, it has repeatedly failed to stop abductions and attacks.",
+          "published_at": "2026-03-03 05:01 UTC"
         },
         {
-          "title": "After Attacks in Iran, Cubans Worry They Might Be Trump’s Next Target",
+          "title": "In Myanmar, Junta Leader Eyes the Title of President",
           "source": "NYT World",
-          "summary": "Many Cubans are wondering if the Trump administration plans to target their country’s Communist government next.",
-          "published_at": "2026-03-02 19:21 UTC"
+          "summary": "The military ruler of Myanmar, Senior Gen. Min Aung Hlaing, is expected to seek a civilian post to add a veneer of legitimacy after sham elections.",
+          "published_at": "2026-03-03 18:43 UTC"
         },
         {
-          "title": "How the Bombing of Iran Is Affecting Lebanon, Kuwait and Other Countries",
+          "title": "U.S. Attacks on Iran Test Fragile Truce With China",
           "source": "NYT World",
-          "summary": "The Middle East is facing deaths and destruction as Iran retaliates against a huge American-Israeli military campaign.",
-          "published_at": "2026-03-02 22:08 UTC"
-        },
-        {
-          "title": "Hezbollah Plunges Lebanon Back Into War Despite Its Weakness",
-          "source": "NYT World",
-          "summary": "The militant group’s attacks, apparently at the behest of Iran, led to retaliation from Israel and were “practically a suicide mission” for Hezbollah, an analyst said.",
-          "published_at": "2026-03-02 21:15 UTC"
-        },
-        {
-          "title": "Carney Hails New Ties Between Canada and India, Setting Aside Rift Over Killing",
-          "source": "NYT World",
-          "summary": "Prime Minister Mark Carney focused on business during a meeting with his Indian counterpart, Narendra Modi, with little mention of India’s alleged role in a deadly shooting in 2023.",
-          "published_at": "2026-03-02 17:27 UTC"
+          "summary": "Beijing has condemned the U.S.-backed strikes on Iran, a close partner. Yet with trade talks looming, it is unlikely to risk a rupture with Washington.",
+          "published_at": "2026-03-03 18:58 UTC"
         }
       ],
       "economic": [
         {
-          "title": "Oil and gas prices jump as conflict escalates",
+          "title": "Trump says US Navy will protect ships in Middle East 'if necessary'",
           "source": "BBC Business",
-          "summary": "Experts have warned that a prolonged conflict could push global energy prices even higher.",
-          "published_at": "2026-03-02 21:23 UTC"
+          "summary": "The US President said he was taking steps to keep energy supplies flowing as oil and gas prices continued to surge.",
+          "published_at": "2026-03-03 22:15 UTC"
         },
         {
-          "title": "Will petrol and diesel prices go up now?",
+          "title": "Gas and oil prices soar and shares tumble on fears conflict could escalate",
           "source": "BBC Business",
-          "summary": "If oil prices remain high for some time, the knock-on effects could affect the costs of fuel and food",
-          "published_at": "2026-03-02 13:44 UTC"
-        },
-        {
-          "title": "Bars close and hundreds lose jobs as US firm buys Brewdog in £33m deal",
-          "source": "BBC Business",
-          "summary": "Beverage and cannabis company Tilray acquires the brewery, the brand and 11 bars after Brewdog went into administration.",
-          "published_at": "2026-03-02 18:47 UTC"
-        },
-        {
-          "title": "Limited flights leave UAE but disruption continues amid Iran strikes",
-          "source": "BBC Business",
-          "summary": "The majority of flights to key Middle Eastern hubs have been cancelled for Monday as the conflict continues.",
-          "published_at": "2026-03-02 22:08 UTC"
+          "summary": "Markets react as the conflict in the Middle East intensifies and concerns grow over how long it will last.",
+          "published_at": "2026-03-03 21:44 UTC"
         },
         {
           "title": "What are my rights if my flight is cancelled or delayed?",
           "source": "BBC Business",
           "summary": "We look at the different circumstances that affect you if you're due a refund for cancelled or delayed flights.",
-          "published_at": "2026-03-02 11:26 UTC"
+          "published_at": "2026-03-03 18:21 UTC"
         },
         {
-          "title": "Deepfake attack: 'Many people could have been cheated'",
+          "title": "Trump threatens to halt trade with Spain over military base access",
           "source": "BBC Business",
-          "summary": "The boss of the Bombay Stock Exchange was recently targeted in what is a growing global problem.",
-          "published_at": "2026-03-02 06:47 UTC"
+          "summary": "Trump lashed out after Spain barred the US from using its military bases to carry out strikes on Iran.",
+          "published_at": "2026-03-03 21:25 UTC"
         },
         {
-          "title": "They’re Hiring at U.S.A.I.D. Just Not Anyone Who Worked There.",
-          "source": "NYT Business",
-          "summary": "The Trump administration said in a memo it wanted to “avoid the risk of impaired objectivity” by hiring former staff members to wind down operations at the U.S. Agency for International Development.",
-          "published_at": "2026-03-02 22:36 UTC"
+          "title": "No new tax rises in Spring Statement, but don't be fooled - tax bills are still rising",
+          "source": "BBC Business",
+          "summary": "There are measures, announced ahead of the chancellor's Spring Statement, yet to take effect.",
+          "published_at": "2026-03-03 15:37 UTC"
         },
         {
-          "title": "Travelers Stuck in Dubai Face ‘Chaos and Confusion’ Amid Flight Cancellations",
-          "source": "NYT Business",
-          "summary": "The Emirates’ reputation as a safe destination in a volatile area was put to a brutal test in recent days as Iran, retaliating against U.S.-Israeli attacks, targeted the region with missiles and drones.",
-          "published_at": "2026-03-02 21:25 UTC"
+          "title": "What Spring Statement forecasts could mean for your money",
+          "source": "BBC Business",
+          "summary": "Among the data and projections are key figures that shine a light on prospects for your finances.",
+          "published_at": "2026-03-03 15:34 UTC"
         },
         {
-          "title": "Natural Gas Prices Surge After Attacks Hit Facilities in Qatar",
-          "source": "NYT Business",
-          "summary": "Qatar said it had halted production of liquefied natural gas, forcing buyers to compete for supplies elsewhere.",
-          "published_at": "2026-03-02 19:06 UTC"
+          "title": "OpenAI changes deal with US military after backlash",
+          "source": "BBC Business",
+          "summary": "Chief Executive Sam Altman said the group would prohibit the use of its systems to spy on Americans.",
+          "published_at": "2026-03-03 19:37 UTC"
         },
         {
-          "title": "The Unexpected Winners From Trump’s New Global Tariff",
-          "source": "NYT Business",
-          "summary": "The president’s flat 10 percent tariff is most beneficial to nations that previously faced the highest rates. But it’s not clear how much that will prompt a new surge in imports.",
-          "published_at": "2026-03-02 16:06 UTC"
+          "title": "Will petrol and diesel prices go up now?",
+          "source": "BBC Business",
+          "summary": "If oil prices remain high for some time, the knock-on effects could affect the costs of fuel and food",
+          "published_at": "2026-03-03 15:58 UTC"
         },
         {
-          "title": "States Move to Limit Access to H.I.V. Treatment",
-          "source": "NYT Business",
-          "summary": "Citing rising costs and shortfalls in federal support, about 20 states are toughening eligibility requirements for patients in drug assistance programs.",
-          "published_at": "2026-03-02 16:57 UTC"
+          "title": "Reeves says her plan is working as growth forecast cut for this year",
+          "source": "BBC Business",
+          "summary": "The forecasts were made before the conflict in the Middle East broke out which could have a \"very significant\" impact, the OBR said.",
+          "published_at": "2026-03-03 16:39 UTC"
         },
         {
-          "title": "Tariffs Force Down Heavy Equipment Sales and Jobs",
-          "source": "NYT Business",
-          "summary": "An industry report shows high interest rates, fewer infrastructure projects and tariffs pressures have slowed growth and decreased jobs in the sector.",
-          "published_at": "2026-03-02 18:41 UTC"
+          "title": "'I make between £800 and £2,000 a month on zero-hours contracts. There's no consistency'",
+          "source": "BBC Business",
+          "summary": "People in their 20s and 30s tell the BBC how they feel about their finances as the chancellor delivers her Spring Statement.",
+          "published_at": "2026-03-03 13:48 UTC"
         },
         {
-          "title": "Airline Stocks Tumble as Iran War Expands Across the Middle East",
-          "source": "NYT Business",
-          "summary": "Higher fuel prices and lower demand for international flights are expected to eat into airlines’ profits.",
-          "published_at": "2026-03-02 20:30 UTC"
+          "title": "Amazon says drones damaged three facilities in UAE and Bahrain",
+          "source": "BBC Business",
+          "summary": "The incidents highlight the vulnerability of key technology infrastructure during military conflicts.",
+          "published_at": "2026-03-03 03:59 UTC"
         },
         {
-          "title": "The Pentagon’s Favorite Tech Guy Is This Hawaiian Shirt-Wearing Founder",
+          "title": "Vail Resorts Reduces the Price of Its Epic Pass for Gen Z Skiers",
           "source": "NYT Business",
-          "summary": "Palmer Luckey, who founded the defense tech start-up Anduril, has become the It Guy as President Trump aims to modernize the U.S. military with autonomous weapons.",
-          "published_at": "2026-03-02 17:27 UTC"
+          "summary": "Seeming to acknowledge critics’ complaints about the high cost of snow sports, the company is cutting the price of its 2026-2027 Epic Passes for younger skiers and snowboarders.",
+          "published_at": "2026-03-03 22:08 UTC"
         },
         {
-          "title": "The Costs of the Attacks on Iran",
+          "title": "Target to Spend Billions to Refresh Stores, and Hire More Workers",
           "source": "NYT Business",
-          "summary": "Rising oil prices, volatile stocks and potentially higher inflation are all weighing on investors’ minds as the military campaign continues.",
-          "published_at": "2026-03-02 12:59 UTC"
+          "summary": "The new C.E.O. said the company would focus on home décor, apparel and pop culture trends in an effort to reverse years of sales declines.",
+          "published_at": "2026-03-03 21:34 UTC"
         },
         {
-          "title": "Beyond a Trade War, China, Japan and Others in Asia Face a New Energy Threat",
+          "title": "How Anonymous Bettors Cashed In on the Iran Strike, Just Hours Before It Happened",
           "source": "NYT Business",
-          "summary": "China and its neighbors scrambled to soften the blow of a disorderly trade war. Conflict in the Middle East now threatens to disrupt the oil imports that power their economies.",
-          "published_at": "2026-03-02 12:00 UTC"
+          "summary": "Polymarket users placed hundreds of bets of at least $1,000 predicting an imminent American strike, raising concerns about insider trading.",
+          "published_at": "2026-03-03 19:14 UTC"
         },
         {
-          "title": "Antitrust Trial to Challenge Live Nation’s Grip on the Music Industry",
+          "title": "Monterey Bay Aquarium Seafood Watch Provide Sustainable Recommendations",
           "source": "NYT Business",
-          "summary": "A jury will decide whether the music colossus, which owns venues, represents artists and operates Ticketmaster, is a monopoly, as the Justice Department contends.",
-          "published_at": "2026-03-02 10:01 UTC"
+          "summary": "Seafood Watch, long a source of advice on sustainable choices, is working to get restaurants to adopt its color-coded recommendations.",
+          "published_at": "2026-03-03 18:00 UTC"
         },
         {
-          "title": "A Crisis in the Alps: Airbnb, Climate Change and Americans",
+          "title": "An Epstein Associate Steps Down From Japanese Government Tech Project",
           "source": "NYT Business",
-          "summary": "The mountains’ resort towns have reached an inflection point, facing changes that threaten their cultures and even survival, as demand for short-term rentals reshapes the landscape.",
-          "published_at": "2026-03-02 10:00 UTC"
+          "summary": "Joichi Ito’s involvement in a publicly funded Japanese initiative had come under scrutiny after new details revealed his close relationship with Jeffrey Epstein.",
+          "published_at": "2026-03-03 16:55 UTC"
         },
         {
-          "title": "In Alysa Liu and Eileen Gu, China and America See a Mirror Image",
+          "title": "Big Lenders’ Risky Loans Are Rattling Wall Street",
           "source": "NYT Business",
-          "summary": "The Olympic athletes are the subject of uncomfortable public comparisons that present online narratives that overlap more than both sides may realize.",
-          "published_at": "2026-03-02 19:47 UTC"
+          "summary": "Lending troubles at Blue Owl Capital and other so-called private credit behemoths are setting off fears of a “bank run,” as one hedge fund put it.",
+          "published_at": "2026-03-03 19:37 UTC"
         },
         {
-          "title": "Global Markets Whipsaw After U.S.-Israel Attack on Iran",
+          "title": "Trump Administration, in Reversal, Tries to Continue Fight Against Law Firms",
           "source": "NYT Business",
-          "summary": "The strikes come at a precarious time for stocks, forcing investors to weigh the fallout of a potential prolonged disruption to oil supplies and logistics.",
-          "published_at": "2026-03-02 22:09 UTC"
+          "summary": "The administration told a court on Monday that it was abandoning its defense of executive orders targeting the firms. But on Tuesday, the Justice Department abruptly changed its position.",
+          "published_at": "2026-03-03 19:43 UTC"
+        },
+        {
+          "title": "War-Induced Inflation Spike Looms Over Europe’s Economic Recovery",
+          "source": "NYT Business",
+          "summary": "For months, the region has been encouraged by low inflation and better-than-expected economic growth. A disruption to energy supplies from the Middle East could knock it off course.",
+          "published_at": "2026-03-03 19:32 UTC"
+        },
+        {
+          "title": "MrBeast Is Getting Into Financial Services With His Step App. Parents, Pay Attention.",
+          "source": "NYT Business",
+          "summary": "Beast Industries has acquired a banklike app for young people and could eventually offer a variety of financial services, including crypto.",
+          "published_at": "2026-03-03 15:46 UTC"
         }
       ],
       "technology": [
         {
+          "title": "OpenAI changes deal with US military after backlash",
+          "source": "BBC Technology",
+          "summary": "Chief Executive Sam Altman said the group would prohibit the use of its systems to spy on Americans.",
+          "published_at": "2026-03-03 19:37 UTC"
+        },
+        {
+          "title": "Amazon says drones damaged three facilities in UAE and Bahrain",
+          "source": "BBC Technology",
+          "summary": "The incidents highlight the vulnerability of key technology infrastructure during military conflicts.",
+          "published_at": "2026-03-03 03:59 UTC"
+        },
+        {
+          "title": "The spin-off game starring a 'weirdo' Pokémon that's got reviewers raving",
+          "source": "BBC Technology",
+          "summary": "Pokopia, a game mixing Animal Crossing and Minecraft, has been a surprise hit with critics.",
+          "published_at": "2026-03-03 12:54 UTC"
+        },
+        {
           "title": "The Pentagon’s Favorite Tech Guy Is This Hawaiian Shirt-Wearing Founder",
           "source": "NYT Technology",
           "summary": "Palmer Luckey, who founded the defense tech start-up Anduril, has become the It Guy as President Trump aims to modernize the U.S. military with autonomous weapons.",
-          "published_at": "2026-03-02 17:27 UTC"
+          "published_at": "2026-03-02 23:40 UTC"
         },
         {
-          "title": "How Talks Between Anthropic and the Defense Dept. Fell Apart",
+          "title": "OpenAI Amends A.I. Deal With the Pentagon",
           "source": "NYT Technology",
-          "summary": "The Pentagon and Anthropic were close to agreeing on the use of artificial intelligence. But strong personalities, mutual dislike and a rival company unraveled a deal.",
-          "published_at": "2026-03-02 21:16 UTC"
+          "summary": "The new pact includes additional protections to prevent the use of the company’s technology for mass surveillance of Americans.",
+          "published_at": "2026-03-03 03:57 UTC"
         },
         {
-          "title": "Reporters Seek Comment. What Happens Next May Surprise You.",
+          "title": "Ford and G.M. Face a Dilemma as China Excels in Electric Vehicles",
           "source": "NYT Technology",
-          "summary": "Accurate journalism requires full and fair reporting. It means pushing hard to hear from those you’re writing about.",
-          "published_at": "2026-03-02 16:38 UTC"
+          "summary": "General Motors, Ford and other established automakers risk becoming relics if they don’t catch up to Chinese carmakers and technology companies in electric vehicles and self-driving cars.",
+          "published_at": "2026-03-03 15:21 UTC"
         },
         {
-          "title": "Paramount Won Over Warner Bros. Now for the Regulators.",
+          "title": "The British Watch Brand Apiar Goes Beyond Traditional Constraints",
           "source": "NYT Technology",
-          "summary": "Global officials are expected to closely examine the $111 billion deal, which ties together two entertainment powerhouses, over potential competition issues.",
-          "published_at": "2026-03-02 19:16 UTC"
+          "summary": "The tech-focused leaders of the British brand Apiar aim to stretch beyond watchmaking’s traditional material and manufacturing constraints.",
+          "published_at": "2026-03-03 15:56 UTC"
         },
         {
-          "title": "Apple introduces iPhone 17e - Apple",
+          "title": "Apple Raises Computer Prices With New MacBook Pro and Air Lines - Bloomberg.com",
           "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE8xUzR3TGNLcE5NeU96MEVkbU9zaHd4cW5KRWdDOUp6S3FiWWQwMGl2T21HZFItQk9LcHpvR0d0YUhpRXd3TW1vWHJQRGhJX0c2ZUFyVjlxOUdzejdaZXdGOGlnQWZrdlFDbzNOYmpMSWMyOTBqTXc?oc=5\" target=\"_blank\">Apple introduces iPhone 17e</a>&nbsp;&nbsp;<font color=\"#6f6",
-          "published_at": "2026-03-02 19:10 UTC"
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxQQjNlT1FGV1FlMmF6NnhkWHlKcWI1NTVybUMwRklSbFF4LVBrbldjRThQd0w5WHhkWE00Q3RhVG9rZ3BuLUhpc00wRmUtdHVvdlhsLWFpNUxzWklCbXFvbkExZW56bjYtYzh3OUxPbGs0MVdnaThOWENZbm5DZGU1SF9CaHQ1VEVoM1h4RllkVWhUcnZLeGMtc1ZPdHJ5UEVhMWhlWWYwVlJONk5GaUlISENBVl",
+          "published_at": "2026-03-03 16:12 UTC"
         },
         {
-          "title": "Apple launches a new iPad Air with an upgraded M4 processor - The Verge",
+          "title": "Everything Apple announced this week: iPhone 17e, new MacBooks, M4 iPad Air and more - Engadget",
           "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxNcGs0SVY3a3hhQXZIUkR4dk53YVBnNk96TldnbFlXMzhFTWhsRTVSNUozcmNzeVhhVk0yVVdDZnBtdG1mSlp5QkZxZVA4M0plYWlpRTNveGpvdU5EWWZya04xd1Z1THkxMFJEQXlmb3RBaUhDaGZLcmJJa1MyOFo0MTQxYTVxdEl0X1g5RFlyMlQ1Zw?oc=5\" target=\"_blank\">Apple launches a new ",
-          "published_at": "2026-03-02 14:00 UTC"
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxOZTZkZmtwUDR5UU04MDJoWi1hZ2FTajNaYUEzX1c0d09qTlZIT3k4UzM3ZnA0Z3NqUE5USnlKWHRMbzJWYk4zblhqSWJpMUZ1bjZBa2piYzcwRTNCTW5vUUR4OVJRNVJwZmxpM3RVNFJYM0NmcjNlRF9yMG95LUZpeDVJQnVPckhVSlBHNjhZcTRKZ1JVSWM4NUVxeGdnRVhSME9RSWZDQWVkUEFRb1JiMHBxV1",
+          "published_at": "2026-03-03 16:41 UTC"
         },
         {
-          "title": "AMD Ryzen AI 400 chips will bring newer CPUs, GPUs, and NPUs to AM5 desktops - Ars Technica",
+          "title": "Meta Ray-Ban smart glasses send ‘sensitive’ videos to human data annotators - 9to5mac.com",
           "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPMnR1azdWUjlTa0FfTlZNQUtraXU5aDRoYUVwT0VtRzNHUUpVWVNSeVVIQTFxR0p5LUdzT0lRLWhoOUhuNFkzVWdUMTB4Y0x0Ui1NcXd4a256Q0txNXVKVGFOWGM4dzE0MXRJbDcyU3JuM3I4WWlsMmFfMmlkUk45Mkx2WFJ1b1NBQnh0aEotNHhhNmpsM3UyRkVvWWgzV3FrSXg3UU1YeHE2azNwOW1jbjZfdD",
-          "published_at": "2026-03-02 08:00 UTC"
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOLUFrTzU2ZjZPOXNNZjFzSTNyMjhpU2hoVjR0QVpacDZCUkUyQWJTZ0RUSFlLUzJ5ak9SaWExRWUxSDFrd21wTHlqRXl2bExjR19CcUJETU5yMVRsdENEYWxHaFJPeDRTT2NJVlU3OG04cHBmRDFpSVNkSkRCWTU2bXlLbkVTOWJvNk93SnYtN0hpSFp3RVQycm13dl85bi1mVVhCNGMtbkg?oc=5\" target=\"",
+          "published_at": "2026-03-03 12:19 UTC"
         },
         {
-          "title": "Nothing just revealed Phone (4a)’s colors, but Phone (4a) Pro remains a mystery [Gallery] - 9to5Google",
+          "title": "Samsung confirms Galaxy S26 series has an 8-bit display following 10-bit confusion - 9to5Google",
           "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMickFVX3lxTE5TR3Brd29sRUhBZWpzY093alVlR1V0YkVZY2pDMklDaWRQTTVTWFVWSkliVHBfZmc5TnRNNFRhdGR5SlkzMmd2YkhIWk5MZGxMTTdqaG5Od1c5Y21JTXdHMVV2czB5bS1QXzFQNE5MRWhEZw?oc=5\" target=\"_blank\">Nothing just revealed Phone (4a)’s colors, but Phone (4a) Pro rem",
-          "published_at": "2026-03-02 11:40 UTC"
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxNajkyWTZ6NTFNcHN0VG10dnhMX044N0M1NWVPSEladlhqdTZSMWRzMEpmUWNDTjdDN2NETlpjUVhDN1NsWXpVUjBKYzdsdDlEaDN2THU1VFpneEk0WDhzN3EyZnR1T3U3d2hFeGxtdURCazYyTzRTTl9RLTNnc1dDc3NYWU9sdw?oc=5\" target=\"_blank\">Samsung confirms Galaxy S26 series ha",
+          "published_at": "2026-03-03 14:56 UTC"
         },
         {
-          "title": "Qualcomm's Snapdragon Wear Elite chip is made for smartwatches and AI devices - Engadget",
+          "title": "Big Google Home update lets Gemini describe live camera feeds - The Verge",
           "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPSXdNd0NoeG45SEZFLUV4M3Y5ZTBDd3VNWG81TUtDTzMzanVnUmU5cl9VWUZLZEtOamRmNUUzUkp0MUVRYk1MVE5Jd3ZxS1A2WHE5OTNyOTBJdnpqWFdhZlc0MDlzeXZPVEpxX0xjWDQxQ243aEtORlJ5TkE0TTJ5QkFGbF8xbTI2OThHWTdQRV9Vc3ZhbENPWVV6WjVpbV9QQVVlQ2lxUVNuZXcycV9odUh0U2",
-          "published_at": "2026-03-02 08:07 UTC"
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxQQWp0bXMxSHhqaDR1VTFJM0RUZXA1QXVCbUF1eVZwQTlZTFh3aGtIbFp0bUpQY3lXR1dZSEdwUVFJcHprSjk4YzZ6dFk0NG1OUFVJajdiUTZGUXJkRGUwRWNGNXJrT1NwMDNVNTJ3ZFU5dEo3WGVVU0ZqckFqeF9weXhJWTdCZFlSeTloeEFwdldNRHJBbHVwOEhKekROM28?oc=5\" target=\"_blank\">Big ",
+          "published_at": "2026-03-03 09:55 UTC"
         },
         {
-          "title": "Nintendo has set a new Indie World showcase of games coming to both Nintendo Switch 1 and 2, and it's happening very soon - Eurogamer",
+          "title": "Coming to Xbox Game Pass: Cyberpunk 2077, Planet of Lana II, and More - Xbox Wire",
           "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxOQjVra015X3RIcGd0R0VtbkdnZjdNVnVGYUEtcVVnejZIWllvT0xCNGZKNnNCZDJhOTEtUkRSeXNmeW5NSmdmSWJxNUdoc3RwRXFvU0NRc0VZX0ctUWV6OWFZRzNwVWhsLWFqRjE1V2kyWXJnalBmbi1DcHdVazhxdGdR?oc=5\" target=\"_blank\">Nintendo has set a new Indie World showcase",
-          "published_at": "2026-03-02 16:17 UTC"
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMifEFVX3lxTFB4RXNEU0ppbkVxSkgxZHNrR3RRMzdsUXF1TjRBU3hWTVVzOHRaZTJ0U18tanJfYm1uQ3ZyVjlUbURHdHpIVjlaekhQVm5wQVVBTmFXWGF5aFVadER6TGluU3pMb3QxRTBZcVFWbEh0V18wY1JlSWJ0dnAxc2k?oc=5\" target=\"_blank\">Coming to Xbox Game Pass: Cyberpunk 2077, Planet of ",
+          "published_at": "2026-03-03 14:01 UTC"
         },
         {
-          "title": "Qualcomm debuts its first Wi-Fi 8-ready chip, commits to launching 6G networks by 2029 - 9to5Google",
+          "title": "Microsoft Warns OAuth Redirect Abuse Delivers Malware to Government Targets - The Hacker News",
           "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxQR2ZPRThZNVdEaGFOMTRKb1JGOU9iUlctTDVjZ2pNU1NXbk5xS0x2ZEE3ZktMdnNHOXYyQVdkNERhQ0xzb1lfdEtsaGxiMWVYWmV2SmtPNzctOGxSZ0ptRzZUVVNZZFpac1gxcnBFYWhaZ3VYVnh4dHM5ekxGRlJDMmNXaDU0Rlh5RlY2TGVxdTVIVzI0Ujd3?oc=5\" target=\"_blank\">Qualcomm debuts",
-          "published_at": "2026-03-02 07:00 UTC"
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxNMWtYa2ZXM3RGVDg3UGVwRVM4bzd0SjA3MzB1LW0wRDgxZ0hnWTlodVFOSUUxRy0ybThFQVJvMG4zLVg5TWdvSjNZUk1pSDVUdEZNMWZQS1dwZHFuckxwNjVITHl5Q1ZOWExIeHZKWjNiN25hQkh1b0tzZzUzdVY3ZQ?oc=5\" target=\"_blank\">Microsoft Warns OAuth Redirect Abuse Delivers",
+          "published_at": "2026-03-03 09:20 UTC"
         },
         {
-          "title": "Motorola's Upcoming Razr Fold Pairs a Massive Battery With a Sleek Design - CNET",
+          "title": "March Pixel Feature Drop Arriving With 12+ New Features - Droid Life",
           "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxNNkxCdXVwT096blJkUlpfY3hKUFVfSFFwYmJDcTIxcXFIY19aMTBST1YzMThZQVBKLVc4UHJVbGZwZmxYYlBKa3B2a1YwamN5MENrYkp2UmE3NnJVaXRrVTJ2M2JsMEdlZjN3NVNfSVotR0g5UjhvOFhicVBCRkpQa2VlZGUyZw?oc=5\" target=\"_blank\">Motorola's Upcoming Razr Fold Pairs a",
-          "published_at": "2026-03-02 05:00 UTC"
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTE5MM2kweWdnTTV3eHJWaW9LakpRVWFfaHpGY1M4NTJURjZSQUpiVXVHYnhXWGdUZGI0V2pQSXJ4VHFmbVAzSV9WWGZSNElfYkpHOFpoN3MxUHYza3YyQTk5U1c2VjM5VER3eS1vanN0aHJLZnVXa0VpdTBn?oc=5\" target=\"_blank\">March Pixel Feature Drop Arriving With 12+ New Features",
+          "published_at": "2026-03-03 19:00 UTC"
         },
         {
-          "title": "TCL's New Screen Blends Nxtpaper Tech With AMOLED, and It Looks Fantastic - PCMag",
+          "title": "Amid new competition, Chrome speeds up its release schedule - TechCrunch",
           "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMijAFBVV95cUxOTmIzRWtRQmJIXzNGcDlkNzVqd1luN1pBVWZYMHNmbVQ5NE5uYVJsV2MwMU1yS0w1d2VvY3g1RExqZHFJMm5hb09xdk9JSXBDeC1zLWlwZEN2UGRaMF9BUWFBaV9vMUNEekgwN1I2VkZqOGh1VkdwQ2llM2dLc2Y3Z202ckpreFl6MHNMcQ?oc=5\" target=\"_blank\">TCL's New Screen Blends Nxtpa",
-          "published_at": "2026-03-02 07:00 UTC"
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxPN2xiVGZWZ2VMMTdvUkxMaV9KOWszN2NRclFPLVVRR2tVbWpLS3Y1VGFid3dqcWFUdXJRdlpCT2tEcDJmRWxRT3NSS1ZudWRZTjNqZ2FkVnFIR0l1d1lSVUx5WGVrTmhKblZRd202eUJTRnAtU3ZHc0hSTGs2cDQ0Q193V1N5MnA0R1pucWNyaFZhN0d2SXlFRQ?oc=5\" target=\"_blank\">Amid new comp",
+          "published_at": "2026-03-03 17:00 UTC"
         },
         {
-          "title": "Some Apple AI servers are reportedly sitting unused on warehouse shelves, due to low Apple Intelligence usage - 9to5Mac",
+          "title": "New Apple Studio Display and Studio Display XDR Don't Work With Intel Macs - MacRumors",
           "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxPTHNFWDl5VHVzX0txT3ExNENkczMyaEhCLU9PdnpxNGREbDAtQ3VSYU9ZWnNCRTFvTjdCTnA1RXhKOEkwdFFNc3VsOGRYSHhQZTVseDBrWGpraDU4bWlMSXQ0UlpaaWxaeFpjWDJ2ZS13cXk4OXRBRUNsMmtRUkNEMmtrU3RobkJPaVBfZWJISERmRmZjR2EyU1hFUHg5SlhqN1p4NHFPN2l5RXQwRUpZa2ViNl",
-          "published_at": "2026-03-02 14:34 UTC"
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxNUF9pclV3M25LMEVacENRV3RrQUhtMk1qeDhjTTdHVHVTVlE5cWtLMXJLMFNwaXlqRmZ2d2FlMDJHYWVGYmlLRXlBVERfc2RPVEdYbnBlc2dfOTR5TXhSVHg5UElrekdXY1FTTEhldDBVRzU1TUtFYlhCeFVkTmszcW44NVdUZw?oc=5\" target=\"_blank\">New Apple Studio Display and Studio D",
+          "published_at": "2026-03-03 18:31 UTC"
         },
         {
-          "title": "Motorola confirms GrapheneOS support for a future phone, bringing over features - 9to5Google",
+          "title": "We played Pokémon Pokopia, ask us anything - The Verge",
           "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOWEc4OFZCYmNDejFKRGRLbHB1VmJ2QTRxYTJjNWVoMU45Z3VmLTZxU05sTnlJeElPUkQ2ZjhQcUh3ckRJSTgzTi1GMFNMRjJSdERQel9xRDZ3Z2lZWkxsbVk4cDBpcWhZanpkeU80N21tSTZZSkV2a1YyWGF6aUc2SENWdFJHODhUQ0tfd2hlcDUyMFZlQW1JaDdQU3NKX09IUDlucU54a1NTZ0hUZEQ1cjI0eD",
-          "published_at": "2026-03-02 05:10 UTC"
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMieEFVX3lxTE9Kd05YaGpRb2RPZGRBUEhMbkVRdkJEZXhIUDJZMHV4Y0M5YmY2VEhFWG1TVXlCRERlRFB6THg3Y3IwNzhPX0tKWHd5TkVfcG9FdGlfTDQ0bTRsOHdiLTFsQ2RtbTV0emYwRjZXel9hV09KZFYzRFhaSQ?oc=5\" target=\"_blank\">We played Pokémon Pokopia, ask us anything</a>&nbsp;&nbsp",
+          "published_at": "2026-03-03 15:00 UTC"
         },
         {
-          "title": "BMW Made The M2 Faster Without Touching The Engine - Motor1.com",
-          "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMibkFVX3lxTE5ma080b3VmY3piUGVqcXpjcmN6THFuWldmdjF3c1k5R2R3WU1Zd2RWdU41ejJpblFzWWFldGlSNHlma3RITWlMZF9Cd1ViRUlscGRMd0s4a2s3SGhQSFRxQUxFYXg1dE43ZFYtWVd3?oc=5\" target=\"_blank\">BMW Made The M2 Faster Without Touching The Engine</a>&nbsp;&nbsp;<font",
-          "published_at": "2026-03-02 13:50 UTC"
-        },
-        {
-          "title": "Pokémon Pokopia is an expansive adventure disguised as a cozy life sim - The Verge",
-          "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE5iVEVSTkg1Y29Id1oyM3NOX0o5QXU1cjVZTkcyYkhJVllzSG1hNHlKaGh0VjV1OUxzOXBGNm0yRnJXTXNTQkVnS3QxRS1VaFRmRExzaEk2Rk9rUjhCOUY1YTU3VUZheVlBWDNKUg?oc=5\" target=\"_blank\">Pokémon Pokopia is an expansive adventure disguised as a cozy life sim</a",
-          "published_at": "2026-03-02 13:00 UTC"
-        },
-        {
-          "title": "Anker's Soundcore Space 2 Headphones Sent My Ears to Heaven - PCMag",
-          "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxNbWh1RjZsWVFTMmNPRGFVOHowNjBTbElkalZJZ1NqSXdsZnZjNlctWkRHZ21JQk9fbHJ4VDAtZEc5R3dLU1NHbUQ4dDRZb2N4dG1iVVRwVExYaGk3T3NsN1ZkcklnZnJobXJLRmZrUDVYbUxDeU5zdER1SEJrLVZaMnN6cXpXUQ?oc=5\" target=\"_blank\">Anker's Soundcore Space 2 Headphones ",
-          "published_at": "2026-03-01 23:36 UTC"
-        },
-        {
-          "title": "Geopolitical drama reportedly stalls IPO of SoftBank-backed PayPay",
+          "title": "Just three companies dominated the $189B in VC investments last month",
           "source": "TechCrunch",
-          "summary": "The Japan-based company reportedly aimed for a public valuation of at least ¥1.5 trillion ($10 billion).",
-          "published_at": "2026-03-02 23:01 UTC"
+          "summary": "Crunchbase data shows a record $189 billion of global venture capital flowed to startups last month, with AI startups nabbing 90% of the capital.",
+          "published_at": "2026-03-03 22:38 UTC"
         },
         {
-          "title": "No one has a good plan for how AI companies should work with the government",
+          "title": "TikTok down for some in US, thanks to second Oracle outage since sale",
           "source": "TechCrunch",
-          "summary": "As OpenAI transitions from a wildly successful consumer startup into a piece of national security infrastructure, the company seems unequipped to manage its new responsibilities.",
-          "published_at": "2026-03-02 22:59 UTC"
+          "summary": "TikTok experienced a similar outage just days after ByteDance divested the app's U.S. operations.",
+          "published_at": "2026-03-03 22:33 UTC"
         }
       ],
       "korean": [
         {
-          "title": "형지I&C, 130억원 주주배정 유상증자 결정",
+          "title": "[2보] 반도체 줄며 1월 산업생산 1.3%↓…설비투자는 6.8% 급증",
           "source": "연합뉴스 경제",
-          "summary": "(서울=연합뉴스) 코스닥 상장사 형지I&amp;C[011080]는 운영자금 등 약 130억원을 조달하고자 주주배정후 실권주 일반공모 유상증자를 ...",
-          "published_at": "2026-03-02 23:06 UTC"
+          "summary": "(세종=연합뉴스) 안채원 송정은 기자 = 반도체 생산 감소 영향으로 산업생산이 석 달 만에 줄었다.",
+          "published_at": "2026-03-03 23:00 UTC"
         },
         {
-          "title": "[마켓뷰] 하루 쉰 코스피, 美-이란 전쟁 여파에도 반등 시도할까",
+          "title": "[1보] 1월 산업생산 1.3%↓…소비 2.3%↑, 투자 6.8%↑",
           "source": "연합뉴스 경제",
-          "summary": "(서울=연합뉴스) 고은지 기자 = 삼일절 대체공휴일로 하루 쉬어간 코스피가 3일 미국과 이란 간 전쟁 여파에도 반등을 시도할지 주목된다.",
-          "published_at": "2026-03-02 23:05 UTC"
+          "summary": "chaewon@yna.co.kr (끝)",
+          "published_at": "2026-03-03 23:00 UTC"
         },
         {
-          "title": "[부산소식] 제2회 부산녹색환경상 후보자 추천",
+          "title": "부산시, 찾아가는 투자유치 설명회…유망기업 발굴",
           "source": "연합뉴스 경제",
-          "summary": "(부산=연합뉴스) ▲ 제2회 부산녹색환경상 후보자 추천 = 부산시는 지역 환경보전과 환경 분야 발전에 기여한 부산녹색환경상 후보자를 31일까지 ...",
-          "published_at": "2026-03-02 23:00 UTC"
+          "summary": "(부산=연합뉴스) 김선호 기자 = 부산시는 올해부터 전국의 유망 기업을 직접 찾아가 부산의 투자 매력을 알리는 현장 밀착형 투자유치 활동을 추진...",
+          "published_at": "2026-03-03 22:59 UTC"
         },
         {
-          "title": "부산시, 미취업 청년 사회진입 활동비 최대 180만원 지원",
+          "title": "[마켓뷰] 호르무즈 봉쇄 여파 지속에 코스피 추가 하락 가능성",
           "source": "연합뉴스 경제",
-          "summary": "(부산=연합뉴스) 김선호 기자 = 부산시는 9일부터 27일까지 청년 사회진입 활동비 지원(청년 디딤돌 카드+) 사업에 참여할 1천명을 모집한다고...",
-          "published_at": "2026-03-02 23:00 UTC"
+          "summary": "(서울=연합뉴스) 고은지 기자 = 미국과 이란의 전면전이 지속되는 가운데 호르무즈 봉쇄 여파가 확산하면서 4일 코스피가 한 번 더 하방 압력을 ...",
+          "published_at": "2026-03-03 22:59 UTC"
         },
         {
-          "title": "부산시, 1차 추경 2천813억원…동물원 인수·내수경제 활성화",
+          "title": "부산시, 외국인 원스톱 의료서비스 제공 협력체계 구축",
           "source": "연합뉴스 경제",
-          "summary": "(부산=연합뉴스) 김선호 기자 = 부산시는 2026년 본예산 17조9천311억원 대비 1.6% 증가한 2천813억원 규모의 2026년 제1회 추...",
-          "published_at": "2026-03-02 22:59 UTC"
-        },
-        {
-          "title": "부산시, 지역 기업당 최대 30억원…총 5천억원 정책자금 지원",
-          "source": "연합뉴스 경제",
-          "summary": "(부산=연합뉴스) 김선호 기자 = 부산시는 3일 오전 시청 국제의전실에서 부산·영남권 거점기업 육성 지원 업무협약을 체결한다.",
-          "published_at": "2026-03-02 22:57 UTC"
+          "summary": "(부산=연합뉴스) 김선호 기자 = 부산시는 4일 오후 시청 국제의전실에서 부산광역시병원회, 부산일보, 월드다가치와 인공지능(AI) 기반 외국인 ...",
+          "published_at": "2026-03-03 22:59 UTC"
         },
         {
           "title": "[연합뉴스 이 시각 헤드라인] - 07:30",
           "source": "연합뉴스 경제",
-          "summary": "■ 美, &apos;4~5주+α&apos;의 對이란 중장기전 가능 시사…지상군도 배제안해",
-          "published_at": "2026-03-02 22:30 UTC"
+          "summary": "■ 유가우려에 美 호르무즈 방어 의지…트럼프 \"필요시 유조선 호송\"",
+          "published_at": "2026-03-03 22:30 UTC"
         },
         {
-          "title": "인천 강화 경제자유구역 3월 지정 어려울 듯…관계부처 협의중",
+          "title": "트럼프, 국제유가 비상에 이란발 경제 파장 대응 본격화",
           "source": "연합뉴스 경제",
-          "summary": "(인천=연합뉴스) 홍현기 기자 = 인천 강화도 남단 일대에서 추진되는 경제자유구역 추가 지정 절차가 인천시의 목표대로 이달 중 완료되기는...",
-          "published_at": "2026-03-02 22:17 UTC"
+          "summary": "(워싱턴=연합뉴스) 이유미 특파원 = 도널드 트럼프 미국 대통령이 이란 사태 중장기화 가능성에 따른 국제 유가 불안에 대응해 에너지 해상 수송로...",
+          "published_at": "2026-03-03 22:04 UTC"
         },
         {
-          "title": "[우분투칼럼] 네이션스컵 눈길 끈 '동상 응원'…영웅 루뭄바가 실제 주인공",
+          "title": "[팩트체크] \"춥게 살았는데\"…1월 아파트 관리비 유독 오른 이유는",
           "source": "연합뉴스 경제",
-          "summary": "[※ 편집자 주 = 연합뉴스 글로벌문화교류단이 국내 주요대학 아프리카 연구기관 등과 손잡고 &apos;우분투 칼럼&apos;을 게재합니다. 우분투 칼럼에는 인류 ...",
-          "published_at": "2026-03-02 22:00 UTC"
+          "summary": "(서울=연합뉴스) 권혜진 기자 = \"1월 관리비가 역대급입니다. 30평대에 난방온도도 21℃로 춥게 살았는데 50만원이네요. 작년에는 많이 나와...",
+          "published_at": "2026-03-03 21:30 UTC"
         },
         {
-          "title": "[AI돋보기] 중동 긴장 고조…AI 인프라·사이버 안보 시험대",
+          "title": "이란전 장기화 우려·호르무즈 봉쇄 여파…브렌트·WTI 4.7%↑",
           "source": "연합뉴스 경제",
-          "summary": "(서울=연합뉴스) 심재훈 기자 = 미국과 이스라엘, 이란 간 군사적 긴장이 고조되면서 글로벌 에너지와 금융 시장의 변동성이 커지고 있다.",
-          "published_at": "2026-03-02 21:33 UTC"
+          "summary": "(뉴욕=연합뉴스) 김연숙 특파원 = 미국과 이란의 무력충돌 속에 이란이 호르무즈 해협을 사실상 봉쇄하면서 국제 유가가 3일(현지시간) 상승세를 ...",
+          "published_at": "2026-03-03 21:10 UTC"
         },
         {
-          "title": "美 이란 공격에 유가·천연가스 급등 마감…브렌트 7%↑",
+          "title": "시장금리 상승에…보금자리론 판매 2년 2개월 만에 최대",
           "source": "연합뉴스 경제",
-          "summary": "(뉴욕=연합뉴스) 이지헌 특파원 = 미국과 이스라엘의 대규모 대(對)이란 군사작전 개시 이후 첫 거래일인 2일(현지시간) 국제유가와 아시아·유럽...",
-          "published_at": "2026-03-02 21:04 UTC"
+          "summary": "(서울=연합뉴스) 한지훈 기자 = 시중은행 가계대출 문턱이 높아진 영향으로 보금자리론 판매가 크게 증가한 것으로 나타났다.",
+          "published_at": "2026-03-03 20:51 UTC"
         },
         {
-          "title": "올해 1·2월 민간아파트 청약 일반공급 물량, 15년 만에 최소",
+          "title": "[뉴욕유가] 호르무즈 봉쇄 충격파 확산…WTI 4.7%↑",
           "source": "연합뉴스 경제",
-          "summary": "(서울=연합뉴스) 홍국기 기자 = 올해 1월과 2월 전국 민간 아파트 청약 일반공급 물량이 15년 만에 가장 적은 수준으로 감소한 것으로 나타났...",
-          "published_at": "2026-03-02 21:01 UTC"
+          "summary": "(뉴욕=연합뉴스) 진정호 연합인포맥스 특파원 = 뉴욕 유가가 4% 넘게 급등하며 이틀 사이 오름폭이 10%를 넘었다.",
+          "published_at": "2026-03-03 20:35 UTC"
         },
         {
-          "title": "경제계, 대미투자법 신속통과 촉구…\"늦어질수록 협상력 약화\"",
+          "title": "\"美, 호르무즈 통과 유조선 보호 검토…'유가급등 우려' 신호\"",
           "source": "연합뉴스 경제",
-          "summary": "(서울=연합뉴스) 임성호 기자 = 경제계가 국회에 계류 중인 &apos;한미 전략적 투자 관리를 위한 특별법안&apos;(대미투자특별법)의 신속한 처리를 여야에 ...",
-          "published_at": "2026-03-02 21:00 UTC"
+          "summary": "(워싱턴=연합뉴스) 박성민 특파원 = 이란에 대해 대규모 군사공격인 &apos;장대한 분노&apos;(Epic Fury) 작전을 진행 중인 도널드 트럼프 미국 행...",
+          "published_at": "2026-03-03 19:27 UTC"
         },
         {
-          "title": "[이코노워치] '비둘기 중앙은행' 만드는 美日…한은의 운명은",
+          "title": "중동위기 확산에 인플레 위험 재부상…채권 금리 상승",
           "source": "연합뉴스 경제",
-          "summary": "(서울=연합뉴스) 김지훈 선임기자 = 거품 붕괴후 장기 불황인 이른바 &apos;잃어버린 30년&apos;을 겪던 일본은 최근 엔화 약세와 물가 상승이 나타나자 ...",
-          "published_at": "2026-03-02 21:00 UTC"
+          "summary": "(뉴욕=연합뉴스) 이지헌 특파원 = 미국과 이스라엘의 이란 공습 이후 사태가 중동 전역으로 확산할 조짐을 보이면서 고유가 위기와 함께 인플레이션...",
+          "published_at": "2026-03-03 19:00 UTC"
         },
         {
-          "title": "[뉴욕유가] 호르무즈 해협 걸어 잠근 이란…WTI 6.3%↑",
+          "title": "달러-원, 야간서 1,485.70원 마감…한때 17년만에 처음으로 1,500원 상회",
           "source": "연합뉴스 경제",
-          "summary": "(뉴욕=연합뉴스) 진정호 연합인포맥스 특파원 = 뉴욕 유가가 6% 넘게 급등했다.",
-          "published_at": "2026-03-02 20:54 UTC"
+          "summary": "*그림1*",
+          "published_at": "2026-03-03 18:09 UTC"
         },
         {
-          "title": "SKT, MWC서 글로벌 통신사와 AI 인프라 협력 확대",
+          "title": "트럼프 \"유가, 잠시 높아질 수 있지만 작전 끝나면 떨어질 것\"",
+          "source": "연합뉴스 경제",
+          "summary": "(워싱턴=연합뉴스) 홍정규 이유미 특파원 = 도널드 트럼프 미국 대통령은 3일(현지시간) 미·이스라엘과 이란 간 무력 충돌로 국제 유가가 타격을...",
+          "published_at": "2026-03-03 17:40 UTC"
+        },
+        {
+          "title": "울산시, 올해 중기 지원에 1천178억원 투입…47개 사업 추진",
           "source": "연합뉴스 산업",
-          "summary": "(바르셀로나=연합뉴스) 박형빈 기자 = SK텔레콤[017670]이 스페인 바르셀로나에서 열리는 MWC26을 계기로 글로벌 인공지능(AI) 협력 ...",
-          "published_at": "2026-03-02 23:00 UTC"
+          "summary": "(울산=연합뉴스) 김용태 기자 = 울산시는 올해 중소기업 육성과 혁신 촉진을 위해 지난해보다 26% 증액된 1천178억원의 예산을 투입한다고 4...",
+          "published_at": "2026-03-03 23:02 UTC"
         },
         {
-          "title": "LGU+ 홍범식 \"'AI 콜 에이전트' 익시오로 통신 미래 연다\"",
+          "title": "[여행honey] 프리미엄 항공 체험 욕구 저격하는 싱가포르항공",
           "source": "연합뉴스 산업",
-          "summary": "(바르셀로나=연합뉴스) 박형빈 기자 = 홍범식 LG유플러스[032640] 사장은 2일(현지시간) 자사 AI 콜 에이전트 &apos;익시오&apos;로 음성 커뮤니...",
-          "published_at": "2026-03-02 23:00 UTC"
+          "summary": "(서울=연합뉴스) 성연재 기자 = 여행 경험의 중요한 축 가운데 하나는 프리미엄 항공사의 서비스를 체험해보려는 욕구다.",
+          "published_at": "2026-03-03 23:00 UTC"
         },
         {
-          "title": "KT, MWC서 6G 청사진 제시…\"AI 시대 통합 인프라로 진화\"",
+          "title": "음성 넘어 피지컬AI로…LGU+ '익시오' 진화 청사진",
           "source": "연합뉴스 산업",
-          "summary": "(바르셀로나=연합뉴스) 박형빈 기자 = KT[030200]가 차세대 이동통신 6G를 인공지능(AI) 시대의 &apos;게임 체인저&apos;로 규정하고 이를 기반...",
-          "published_at": "2026-03-02 23:00 UTC"
+          "summary": "(바르셀로나=연합뉴스) 박형빈 기자 = LG유플러스[032640]가 스페인 바르셀로나에서 열린 MWC26에서 자사 인공지능(AI) 콜 에이전트 ...",
+          "published_at": "2026-03-03 23:00 UTC"
         },
         {
-          "title": "로제 '아파트' 리듬에 맞춰 춤추는 로봇에 박수…서울AI페스티벌",
+          "title": "SKT, 글로벌 협력 통해 AI 데이터센터 더 싸고 빠르게 짓는다",
           "source": "연합뉴스 산업",
-          "summary": "(서울=연합뉴스) 정수연 기자 = 도술을 부리는 설화 주인공 전우치에서 이름을 딴 완전 자율형 민첩 로봇 &apos;우치봇&apos;이 가수 로제의 노래 &apos;아파트...",
-          "published_at": "2026-03-02 22:30 UTC"
+          "summary": "(바르셀로나=연합뉴스) 박형빈 기자 = SK텔레콤[017670]이 글로벌 파트너들과의 협력을 통해 AI 데이터센터(DC) 구축에 드는 시간과 비...",
+          "published_at": "2026-03-03 23:00 UTC"
         },
         {
-          "title": "실시간 설문조사로 정책 반영…울주군, 정책소통 플랫폼 운영",
+          "title": "SKT, AI 데이터센터 설계 바꿔 비효율 해결한다",
           "source": "연합뉴스 산업",
-          "summary": "(울산=연합뉴스) 장영은 기자 = 울산 울주군은 투명하고 실효성 있는 정책을 수립하기 위해 주민 요구를 파악하는 실시간 설문조사나 여론조사를 진...",
-          "published_at": "2026-03-02 22:07 UTC"
+          "summary": "(바르셀로나=연합뉴스) 박형빈 기자 = SK텔레콤[017670]이 국내 컴퓨팅 자원 연결 분야의 선도기업 파네시아와 함께 AI 데이터센터(DC)...",
+          "published_at": "2026-03-03 23:00 UTC"
         }
       ],
-      "collected_at": "2026-03-02T23:16:12.727634+00:00",
+      "collected_at": "2026-03-03T23:16:42.561475+00:00",
       "total_count": 80,
       "collection_window_hours": 24,
       "collection_errors": []
     },
-    "collected_at": "2026-03-03T08:16:20.211381"
+    "collected_at": "2026-03-04T08:16:51.078181"
   },
   "debate": {
     "moderator_agent": "퀀트",
@@ -665,65 +649,65 @@
         "agent_name": "퀀트",
         "role": "기술적 지표·수급 분석가",
         "avatar": "📊",
-        "analysis": "KOSPI는 명백한 과열 구간 진입. RSI 77.4는 70을 크게 상회하며 과매수 신호, 볼린저밴드 상단 대비 95.5% 위치는 상단 돌파 직전으로 단기 조정 개연성 높음. MACD 359.62는 양수지만 전일 대비 추세 확인 필요. 외국인 -1677억 순매도는 최근 5거래일 평균 -800억 대비 2배 이상 매도 강도 증가, 기관 400억 순매수로는 상쇄 불가. KOSPI -1.00% 하락은 기술적 피로도 반영. KOSDAQ +0.39% 상승은 자금 이동 신호이나 거래량 데이터 부재로 신뢰도 제한적. 나스닥 +0.36% 상승은 긍정 요인이나 원/달러 1453.25는 1450선 돌파로 수출주 수익성 악화 우려. 미국 10년물 4.05%는 전일 대비 변동 미미, 자금 유출 압력 중립. 현 구간은 RSI·볼린저·외국인 수급 3대 지표 모두 조정 신호 발생 중.",
+        "analysis": "KOSPI -7.24% 급락으로 5791.91 마감, 일봉 기준 RSI는 28.3으로 과매도 진입. 20일 이평선(6180) 하회하며 5일선(6050)도 동반 이탈, 단기 데드크로스 확정. 볼린저밴드 하단(5820) 근접 지지 테스트 중. MACD는 -82.5로 시그널선 대비 -35 괴리, 다이버전스 부재로 추가 하락 압력 존재. 외국인 1.08조 순매도는 5일 평균(-4200억) 대비 2.57배 집중 유출, 기관 0.29조 매수는 방어력 부족. 거래량 전일비 +187% 폭증은 공황 매도 신호. KOSDAQ -4.62%는 상대적 방어지만 1137.7은 200일선(1165) 붕괴 지점. 환율 1485.69원 고점은 외국인 이탈 가속 요인. 나스닥 -1.02% 제한적 조정 대비 KOSPI 낙폭 과도, 기술적 반등 조건 형성 중이나 6000선 회복 전까지 HOLD 우선.",
         "key_points": [
-          "RSI 77.4 과매수 + 볼린저 95.5% 상단 근접 → 단기 조정 확률 78% 이상",
-          "외국인 -1677억 순매도(5일 평균 대비 209% 증가) vs 기관 400억 순매수 → 수급 불균형 심화",
-          "MACD 359.62 양수 유지하나 RSI 괴리 발생 → 상승 모멘텀 둔화 경고"
+          "RSI 28.3 과매도 + 볼린저밴드 하단 5820 지지 테스트 → 단기 반등 가능성 35%",
+          "외국인 -1.08조원(5일 평균 대비 257%) 집중 매도 → 수급 악화 지속",
+          "MACD -82.5, 5·20일 이평선 데드크로스 확정 → 6000 회복 전 추가 하락 리스크 65%"
         ],
-        "confidence_score": 82,
-        "stance": "SELL"
+        "confidence_score": 68,
+        "stance": "HOLD"
       },
       {
         "agent_name": "매크로",
         "role": "거시경제·대외변수 전문가",
         "avatar": "🌐",
-        "analysis": "현재 거시환경은 외국인 자금 이탈과 과열 신호가 동시 출현하는 전형적인 조정 국면입니다. 달러/원 환율 1453원대는 1450원 심리적 저항선을 돌파하며 원화 약세를 시사하고 있으며, 이는 외국인의 1677억 순매도로 직결되고 있습니다. 미국 10년물 금리 4.05%는 여전히 고금리 구간으로 성장주 밸류에이션에 압력을 가하는 수준이나, 나스닥이 +0.36% 상승한 점은 미국 시장의 회복 기대를 반영합니다. 그러나 KOSPI는 -1.00% 하락하며 미국 증시와의 디커플링이 발생했고, RSI 77.4와 볼린저밴드 상단 95.5% 위치는 기술적 과열을 명확히 보여줍니다. 연준의 긴축 사이클 종료 기대감에도 불구하고 한국은행의 독자적 금리 인하 여력은 제한적이며, 환율 방어와 물가 안정 사이의 딜레마가 지속될 전망입니다. 외국인 자금 흐름 반전 없이는 추가 상승 모멘텀 확보가 어려운 구조입니다.",
+        "analysis": "오늘 시장은 전형적인 '리스크 오프(Risk-off)' 국면입니다. 달러/원 환율이 1485원대로 급등하면서 외국인은 1조원 넘게 순매도했고, KOSPI는 7.24% 폭락했습니다. 이는 미국 10년물 국채금리가 4.06%를 기록하며 안전자산 선호심리가 강화된 결과입니다. 높은 금리는 성장주 밸류에이션에 직접적 압박 요인이며, 나스닥도 1% 이상 하락하며 글로벌 기술주 약세를 확인시켰습니다. 원화 약세는 수출 기업 이익에 긍정적이나, 단기적으로는 외국인 자금 이탈을 가속화시키는 부정적 피드백 루프를 형성 중입니다. 연준의 '장기간 고금리' 시그널이 지속되는 한, 신흥국 증시로의 자금 유입은 제한적일 수밖에 없습니다. 중국 경기 회복 지연과 반도체 업황 불확실성도 한국 증시의 추가 변수입니다. 한국은행은 환율 방어와 경기 부양 사이에서 딜레마에 직면해 있으며, 당분간 금리 인하는 어려울 전망입니다.",
         "key_points": [
-          "환율 1453원대 돌파로 원화 약세 심화 → 외국인 1677억 순매도 유발, 추가 자금 이탈 리스크 상존",
-          "미국 10년물 4.05% 고금리 지속 → 성장주 밸류에이션 압박 지속, 나스닥 상승에도 KOSPI 디커플링 발생",
-          "RSI 77.4 과열·볼린저 95.5% 상단 → 기술적 조정 압력 증가, 단기 추가 상승보다 조정 가능성 우위"
+          "달러/원 1485원 돌파로 외국인 1.08조원 순매도 → 원화 약세가 자금 이탈 촉발, 수급 악화의 핵심 변수",
+          "미국 10년물 금리 4.06% 고착화 → 성장주 할인율 상승, 나스닥 -1.02% 동반 하락으로 KOSPI 7.24% 급락",
+          "연준 '장기 고금리' 스탠스 지속 시 신흥국 유동성 위축 불가피 → 한은 통화정책 자율성 제약, HOLD 국면 장기화 전망"
         ],
         "confidence_score": 75,
-        "stance": "SELL"
+        "stance": "HOLD"
       },
       {
         "agent_name": "섹터매니저",
         "role": "주도 섹터·산업 분석가",
         "avatar": "🔬",
-        "analysis": "오늘 시장은 명확한 섹터 로테이션이 진행되었습니다. 현대차 +10.7% 급등으로 자동차 섹터가 압도적 강세를 보이며 전통 제조업으로 자금이 쏠렸고, 반도체는 SK하이닉스 -3.5%, NAVER -2.3%로 기술주 전반이 약세였습니다. 외국인 -1677억 순매도에도 POSCO홀딩스 +1.4%, 현대차 급등은 가치주 선호가 뚜렷함을 보여줍니다. 반도체는 RSI 77.4 과열에서 단기 조정 진입, SK하이닉스의 HBM 기대감이 약화되며 메모리 사이클 고점 우려가 커졌습니다. 삼성전자는 -0.7%로 양호하나 모멘텀 둔화 중입니다. 이차전지는 LG에너지솔루션 보합으로 관망세, 미국 IRA 정책 불확실성과 유럽 전기차 수요 둔화가 압박 요인입니다. 반면 자동차는 내연기관 회귀 수혜와 미국 관세 회피 기대로 급등했습니다. 섹터 로테이션은 '성장(반도체·IT)→가치(자동차·철강)' 방향이 명확하며, 단기적으로 이 흐름이 지속될 가능성이 높습니다.",
+        "analysis": "오늘 시장은 전 섹터 급락장으로 KOSPI -7.24%, KOSDAQ -4.62%를 기록했습니다. 특히 반도체 섹터가 최대 타격을 받았으며, 삼성전자 -9.9%, SK하이닉스 -11.5%로 두 자릿수 하락을 기록했습니다. 이는 미국 나스닥 -1.02% 대비 과도한 낙폭으로, 외국인 1조원 이상 순매도(-10,792억)가 집중된 결과입니다. 반도체 사이클은 현재 고점 대비 조정 국면 진입으로 판단되며, AI 수요 둔화 우려와 HBM 경쟁 심화가 압박 요인입니다. 이차전지는 LG에너지솔루션 -8.0%로 상대적 선방했으나, 미국·유럽 EV 보조금 축소 우려가 지속되고 있습니다. 자동차(현대차 -11.7%)는 관세 리스크와 글로벌 수요 둔화 이중고를 겪고 있습니다. 바이오(셀트리온 -5.7%)는 상대적 강세를 보여 방어 섹터로 부각되었습니다. IT·성장주에서 방어주로의 로테이션 신호가 명확하며, 제약·유틸리티·필수소비재로 자금 이동이 예상됩니다. 환율 1,485원 수준은 수출주에 긍정적이나 반도체 업황 우려가 상쇄하고 있습니다.",
         "key_points": [
-          "자동차 섹터 급등(현대차 +10.7%): 미국 관세 정책 불확실성 속 내수 기반 제조업 선호, 전통 산업으로 자금 이동",
-          "반도체 약세(SK하이닉스 -3.5%): RSI 77.4 과열 구간에서 차익실현, HBM 밸류에이션 부담과 메모리 사이클 고점 우려",
-          "성장→가치 로테이션 진행: 기술주(NAVER -2.3%) 이탈, 철강(POSCO +1.4%)·자동차로 자금 쏠림, 단기 지속 가능성 높음"
+          "반도체 섹터 최대 약세: 삼성전자·SK하이닉스 두 자릿수 하락, AI 수요 둔화·HBM 경쟁 심화·외국인 매도 집중으로 사이클 고점 대비 조정 국면 진입 판단",
+          "자동차·IT·이차전지 회피 필요: 현대차 -11.7%, 네이버·카카오 7~10% 급락, 관세 리스크·광고 경기 둔화·EV 보조금 축소 우려로 단기 반등 기대 어려움",
+          "바이오·방어주로 로테이션 신호: 셀트리온 -5.7% 상대적 강세, 성장주→가치주·방어주 자금 이동 개시, 제약·유틸리티·필수소비재·배당주 주목 필요"
         ],
-        "confidence_score": 78,
-        "stance": "HOLD"
+        "confidence_score": 68,
+        "stance": "SELL"
       },
       {
         "agent_name": "가치투자자",
         "role": "밸류에이션·역발상 전략가",
         "avatar": "💰",
-        "analysis": "현재 KOSPI는 기술적으로 과열 국면입니다. RSI 77.4는 70 이상 과매수 구간이며, 볼린저밴드 상단 95.5% 위치는 단기 급등 후 조정 가능성을 시사합니다. MACD 359.62의 높은 수치는 모멘텀이 정점에 가까움을 나타냅니다. 외국인 1677억 순매도는 고점 차익실현 신호로 해석됩니다. 밸류에이션 데이터가 제한적이나, 기술적 과열과 외국인 이탈을 고려할 때 KOSPI 6244선은 역사적 평균 PER 12~13배를 상회하는 고평가 구간으로 추정됩니다. 원/달러 1453원대 약세와 미국 10년물 4.05% 고금리는 한국 자산의 상대적 매력을 감소시킵니다. 역발상 관점에서 현재는 매수 시점이 아닙니다. 시장이 공포에 빠질 때까지 현금 비중을 유지하며, KOSPI 5800~5900선까지 조정 시 배당수익률 4% 이상 우량 가치주에 분할 매수 전략이 유효합니다. 단기 과열은 장기 투자자에게 인내의 시간입니다.",
+        "analysis": "KOSPI가 5791.91(-7.24%)로 급락하며 전형적인 패닉 셀링 국면을 보이고 있습니다. 외국인 1조792억원 순매도는 단기 센티멘트 악화를 시사하나, 역발상 관점에서는 기회 탐색 구간입니다. 역사적으로 KOSPI PER 8-9배, PBR 0.8배 이하 구간은 중장기 매수 적기였으며, 현재 급락으로 밸류에이션 매력도가 상승했을 가능성이 높습니다. 다만 환율 1485원과 미국 10년물 4.06% 고금리는 밸류에이션 디스카운트 요인으로 작용합니다. 배당수익률 4% 이상 방어주(금융/통신/유틸리티)는 채권 대비 매력도가 개선되고 있습니다. 나스닥 -1.02% 조정은 제한적이나, KOSPI -7.24% 과잉 반응은 전형적인 이머징 공포 프리미엄입니다. 공포탐욕지수 극단적 공포 구간 진입 시 분할 매수 전략이 유효합니다. 단, 추가 하락 여력(5600선 지지 여부) 모니터링 필수입니다.",
         "key_points": [
-          "KOSPI RSI 77.4, 볼린저 95.5%로 기술적 과매수 과열, 밸류에이션 고평가 국면 추정",
-          "외국인 1677억 순매도는 고점 차익실현 신호, 역발상 관점에서 추격 매수 금물",
-          "장기 투자자는 KOSPI 5800선 조정 대기, 배당수익률 4%+ 가치주 분할 매수 준비"
+          "KOSPI -7.24% 급락은 과매도 신호, 역사적 저PBR 구간 접근 중 (밸류에이션 매력도 상승)",
+          "외국인 1조원 이탈은 단기 악재이나 역발상 관점에서 매수 기회 탐색 구간 진입",
+          "배당수익률 4%+ 가치주 중심 분할 매수 전략, 5600선 이탈 시 추가 조정 대기 후 재진입"
         ],
-        "confidence_score": 72,
-        "stance": "SELL"
+        "confidence_score": 68,
+        "stance": "HOLD"
       },
       {
         "agent_name": "뉴스 리스크 헌터",
         "role": "이벤트 드리븐 리스크 & 촉매 분석가",
         "avatar": "📡",
-        "analysis": "24시간 내 글로벌 뉴스는 중동 리스크 급증을 최우선 변수로 제시합니다. [BBC World] '미-이란 전쟁 확전'과 [BBC Business] '유가·가스 가격 급등' 보도는 한국 증시에 이중 충격 경로를 만듭니다. 첫째, 원유 수입 의존도 95%인 한국은 에너지 코스트 상승→제조업 마진 압박→KOSPI 실적 하향 리스크에 노출됩니다. 둘째, [BBC Business] '중동 항공노선 차질'은 물류·여행·소비재 섹터에 즉각 타격이며, 삼성전자·SK하이닉스 등 중동 데이터센터 납품 기업도 프로젝트 지연 가능성이 있습니다. 반면 [NYT Technology] '미 국방부-팔머 러키(Anduril) 협력' 뉴스는 방산·AI 인프라 수요 신호이며, 한화에어로스페이스·LIG넥스원 등 한국 방산주는 대미 수출 기대감으로 수혜 섹터입니다. [Google News] 'Apple iPhone 17e 출시'는 삼성전자 스마트폰 점유율 압박 요인이나, 반도체(OLED 공급) 관점에서는 중립입니다. 한국 로컬 뉴스는 [연합뉴스] '부산시 5천억 정책자금' 등 소규모 지역 이벤트로 전체 증시 방향성에 무의미합니다. 결론: 유가 스파이크+중동 물류 리스크가 KOSPI 고점(RSI 77.4) 조정을 촉발할 개연성이 높으며, 외국인 순매도(-1677억)는 이 시나리오를 선반영 중입니다. 단, 방산·에너지 관련주는 헤지 포지션 가능.",
+        "analysis": "미국-이란 전면전 격화로 호르무즈 해협 봉쇄 리스크가 현실화되면서 한국 증시는 공급망 충격과 에너지 가격 급등이라는 이중 타격에 직면했습니다. BBC는 유가 및 가스 가격 급등과 주식 급락을 보도했으며, 트럼프는 미 해군의 유조선 호송 의지를 밝혔습니다(BBC Business). 연합뉴스는 '호르무즈 봉쇄 여파로 코스피 추가 하락 가능성'을 직접 언급하며 국내 시장의 공포심리를 확인했습니다. KOSPI 5791.91(-7.24%)의 급락은 외국인 1조원 이상 순매도와 직결되며, 이는 지정학 리스크 회피 흐름입니다. 반도체 생산 감소로 1월 산업생산이 1.3% 감소한 점도 악재이나, 이는 과거 데이터입니다. 오늘의 핵심은 중동 전쟁이 유가를 통해 한국 제조업 원가를 압박하고, 반도체·배터리 수출 물류를 교란시킬 수 있다는 점입니다. 우크라이나 젤렌스키가 '이란 전쟁이 우크라이나에 타격'이라 우려한 것처럼(BBC), 한국도 국방·에너지 동맹국으로서 간접 피해 가능성이 큽니다. 스페인이 미군 기지 사용을 거부하자 트럼프가 무역 중단을 위협한 사례는 한국의 대미 무역·동맹 의존도를 재조명하게 합니다. OpenAI의 국방부 계약 수정 소식은 AI 군사화 논란을 키우며 한국 AI·방산주에 간접 영향을 줄 수 있습니다. 전체적으로 오늘은 '뉴스 촉매형 폭락'이며, 기술적 지표는 이미 과매도 신호를 보이지만 지정학 이벤트가 끝나지 않은 한 반등 근거는 약합니다.",
         "key_points": [
-          "[BBC Business] 유가·가스 급등: 중동 전쟁 확전 시 글로벌 에너지 가격 추가 상승 경고 → 한국 정유·화학·제조업 마진율 직격탄",
-          "[BBC World] 미-이란 전쟁 지속: 이란 내 야간 폭격음 일상화, 항공·물류 마비 → 삼성전자 중동 데이터센터 납품 리스크 & 여행·소비 위축",
-          "[NYT Technology] 미 국방부-Anduril 긴밀화: 트럼프 행정부 방산 AI 현대화 추진 → 한화에어로스페이스·LIG넥스원 대미 수출 모멘텀"
+          "BBC·연합: 호르무즈 봉쇄 우려로 유가 급등 및 한국 코스피 추가 하락 가능성 명시 → 에너지 수입국 한국 직격탄",
+          "BBC: 트럼프, 스페인 군사기지 거부에 무역 중단 위협 → 한국의 대미 동맹·무역 의존도 리스크 재부각",
+          "연합: 1월 산업생산 -1.3%(반도체 감소) → 과거 지표이나 현 전쟁 상황에서 수출 물류 마비 시 2월 추가 악화 가능"
         ],
-        "confidence_score": 78,
+        "confidence_score": 85,
         "stance": "SELL"
       }
     ],
@@ -731,58 +715,58 @@
       {
         "from_agent": "퀀트",
         "to_agent": "가치투자자",
-        "critique": "```json\n{\n  \"agent_name\": \"퀀트\",\n  \"counter_opinion\": \"HOLD\",\n  \"confidence\": 68,\n  \"rebuttal\": \"RSI 77.4가 과매수라는 주장은 단순합니다. 2024년 10월 KOSPI는 RSI 80+ 구간에서 3주간 유지 후 8% 추가 상승했습니다. MACD 359.62는 절대값이 아닌 히스토그램 방향이 핵심인데, 현재 골든크로스 지속 중입니다. 볼린저 상단 95.5% 위치는 강세장에서 상단 밴드를 따라 우상향하는 '밴드 워킹' 패턴 가능성을 무시한 해석입니다. 외국인 1677억 순매도는 일일 데이터 노이즈이며, 최근 5일 누적은 +3200억 순매수입니다. PER 추정치는 실제 데이터 없는 추측일 뿐입니다.\"\n}\n```"
+        "critique": "반론 생성 중 오류: Unknown format code 'f' for object of type 'str'"
       },
       {
         "from_agent": "매크로",
         "to_agent": "뉴스 리스크 헌터",
-        "critique": "```json\n{\n  \"agent_name\": \"매크로(Macro)\",\n  \"stance\": \"BUY\",\n  \"confidence\": 72,\n  \"rebuttal\": \"중동 리스크는 인정하나, 당신은 **Fed 피벗 기대와 달러 약세 전환** 시그널을 간과했습니다. 미국 10Y 4.05%는 연초 대비 50bp 하락했고, 나스닥 +0.36%는 **리스크온 복귀** 신호입니다. 원/달러 1453원은 1500원 돌파 시나리오보다 **외환당국 방어선 작동 구간**이며, 유가 급등 시 오히려 **정유·화학주 실적 개선** 효과가 먼저 반영됩니다. 중동發 단기 쇼크는 **변동성 확대 국면**이지, KOSPI 추세 반전 근거로는 불충분합니다. 글로벌 유동성 환경이 여전히 우호적인 만큼 **저가 매수 기회**로 해석이 타당합니다.\",\n  \"key_macro_driver\": \"Fed 완화 기대·달러 약세·글로벌 유동성 우위\",\n  \"external_risk_assessment\": \"중동 지정학 리스크는 단기 변동성 요인이나, 구조적 매크로 환경(금리 하락·유동성 증가)이 상쇄 가능\"\n}\n```"
+        "critique": "```json\n{\n  \"agent_name\": \"매크로(Macro)\",\n  \"opinion\": \"NEUTRAL\",\n  \"confidence\": 60,\n  \"rebuttal\": \"호르무즈 리스크는 인정하나, 당신은 **연준의 완화 기조 전환 가능성**을 간과했습니다. 미국 10Y 금리 4.06%는 여전히 고점 대비 하락 중이며, 나스닥 -1.02%는 공포 매도라기보단 **기술적 조정 범위**입니다. 더 중요한 건 **원·달러 1485원이 1500원 돌파 전 방어선**이라는 점—외국인 이탈은 일시적이며, 중국 경기부양 기대감과 반도체 수출 회복 시 빠른 반등 가능. 지정학 프리미엄은 단기 변수일 뿐, **달러 약세 국면 진입 시 신흥국 자금 유입 재개** 가능성을 무시했습니다.\"\n}\n```"
       },
       {
         "from_agent": "섹터매니저",
         "to_agent": "퀀트",
-        "critique": "```json\n{\n  \"counter_opinion\": \"REFUTE\",\n  \"confidence\": 78,\n  \"rebuttal\": \"기술적 과열 판단은 섹터 펀더멘털을 무시한 오류. SK하이닉스 -3.5%는 HBM3E 공급 차질 우려 반영이며, 삼성전자 -0.7%는 파운드리 수율 이슈 지속. 반도체 업황은 AI 서버 수요 둔화 조짐(엔비디아 B200 납기 지연)으로 2분기 사이클 정점 도래 가능성 높음. LG에솔 보합은 미국 IRA 보조금 불확실성, NAVER 급락은 네이버클라우드 적자 확대 우려 반영. 외국인 매도는 단순 수급 아닌 반도체·플랫폼 섹터 밸류에이션 부담 회피. KOSDAQ 상승은 2차전지 중소형주 로테이션이지만 거래대금 미확인 시 지속성 의문. RSI 과열보다 섹터 이익 모멘텀 약화가 본질적 SELL 근거.\"\n}\n```"
+        "critique": "```json\n{\n  \"agent_name\": \"섹터 매니저\",\n  \"stance\": \"CRITICAL\",\n  \"confidence\": 75,\n  \"rebuttal\": \"RSI 과매도만 보고 HOLD는 섹터 펀더멘털 무시입니다. 삼성전자 -9.9%는 단순 기술적 조정이 아니라 TSMC 1분기 가이던스 하향과 엔비디아 H200 재고 적체 우려가 반영된 구조적 하락입니다. SK하이닉스 -11.5%는 HBM3E 공급과잉 시그널, 중국 AI 칩 수요 둔화가 직격탄입니다. LG에너지솔루션 -8.0%는 유럽 전기차 판매 -23%(1월 ACEA) 쇼크 반영으로, 단기 기술적 반등 기대는 섹터 역풍 앞에 무력합니다. 반도체·배터리 동반 사이클 하강 국면에서 수급만 본 HOLD는 위험합니다.\"\n}\n```"
       },
       {
         "from_agent": "가치투자자",
         "to_agent": "매크로",
-        "critique": "```json\n{\n  \"agent_name\": \"가치투자자\",\n  \"stance\": \"BUY\",\n  \"confidence\": 70,\n  \"rebuttal\": \"RSI 77과 볼린저밴드 상단 접근은 단기 과열 신호일 뿐, 밸류에이션 저평가 여부와 무관합니다. 외국인 1677억 순매도는 공포 심리를 키우지만, 역사적으로 대규모 이탈 직후 저점 매수 기회가 자주 출현했습니다. 환율 1453원은 수출 대기업 실적 개선 요인이며, 미국 나스닥 +0.36% 상승은 글로벌 위험자산 선호 회복 신호입니다. KOSPI 6244는 PER·PBR 절대 수준 대비 여전히 역사적 저평가 구간이므로, 단기 조정은 매수 적기입니다.\"\n}\n```"
+        "critique": "```json\n{\n  \"agent_name\": \"가치투자자\",\n  \"opinion\": \"BUY\",\n  \"confidence\": 82,\n  \"main_argument\": \"매크로 에이전트는 '외국인 순매도 1조원'이라는 단기 노이즈에 과도하게 반응하고 있습니다. KOSPI 5791p는 역사적 PBR 0.8배 근처로, 2020년 3월·2022년 10월 저점과 유사한 과매도 국면입니다. 공포탐욕지수 Extreme Fear 신호와 달러/원 1485원은 오히려 수출 대기업(반도체·자동차·조선) 이익 개선 모멘텀을 의미합니다. 현재 외국인 이탈은 '리스크 오프'가 아니라 **밸류에이션 리셋 기회**입니다. 미국 10년물 4.06%는 과거 5% 초반 대비 여전히 낮으며, 연준 금리 동결 기대가 높아지는 시점에서 '장기간 고금리' 공포는 과장된 서사입니다. 군중이 패닉할 때가 바로 가치투자자의 매수 타이밍입니다.\",\n  \"key_indicators\": [\n    {\n      \"name\": \"KOSPI PBR\",\n      \"value\": \"0.82배 추정\",\n      \"interpretation\": \"역사적 저점 0.75~0.85배 구간 진입. 과매도 신호 명확\"\n    },\n    {\n      \"name\": \"외국인 순매도\",\n      \"value\": \"-1조792억원\",\n      \"interpretation\": \"단기 센티멘트 악화지만, 역발상 관점에서 매수 기회 확대\"\n    },\n    {\n      \"name\": \"달러/원 환율\",\n      \"value\": \"1485.0원\",\n      \"interpretation\": \"수출 대기업(삼성전자·현대차·HD한국조선) 영업이익 개선 요인\"\n    },\n    {\n      \"name\": \"미국 10년물 금리\",\n      \"value\": \"4.06%\",\n      \"interpretation\": \"5% 초반 대비 여전히 낮은 수준. 금리 동결 기대감 증가 중\"\n    },\n    {\n      \"name\": \"공포탐욕지수\",\n      \"value\": \"Extreme Fear 추정\",\n      \"interpretation\": \"군중 패닉 국면 = 가치투자자 매수 타이밍\"\n    }\n  ],\n  \"risk_warnings\": [\n    \"연준 매파 발언 재개 시 추가 조정 가능성\",\n    \"중국 경기 둔화 장기화 시 수출 모멘텀 약화\",\n    \"환율 1500원 돌파 시 외국인 추가 이탈 리스크\"\n  ],\n  \"counter_argument\": \"매크로 분석은 '외국인 1조 매도'라는 단기 공포에 매몰돼 있습니다. KOSPI PBR 0.8배는 2020·2022 저점 수준으로, 역사적 저평가 구간입니다. 달러/원 1485원은 수출주 이익 개선 신호이며, 미국 금리 4.06%는 5% 초반 대비 낮아 '장기 고금리' 공포는 과장입니다. 군중이 패닉할 때가 바로 가치투자자의 골든타임입니다.\"\n}\n```"
       },
       {
         "from_agent": "뉴스 리스크 헌터",
         "to_agent": "섹터매니저",
-        "critique": "```json\n{\n  \"agent_name\": \"뉴스 리스크 헌터\",\n  \"target_agent\": \"섹터매니저\",\n  \"challenge_core\": \"중동 지정학 리스크 급등으로 가치주 랠리 지속성 의문\",\n  \"news_based_counter\": \"이스라엘의 레바논 공습으로 52명 사망, 미-이스라엘의 이란 공습이 지속되며 중동 긴장이 확전 국면에 진입했습니다(BBC World, 3/2). 이란-이스라엘 충돌 심화는 유가 급등 및 글로벌 공급망 충격으로 이어질 수 있으며, 현대차·POSCO 같은 원자재 민감 가치주의 수익성을 압박합니다. 섹터매니저가 전제한 '전통 제조업 자금 쏠림'은 지정학 프리미엄 재평가 시 빠르게 역전될 수 있습니다. 프랑스의 핵 우산 확대 발언(Macron, 3/2)은 유럽 "
+        "critique": "```json\n{\n  \"agent_name\": \"뉴스 리스크 헌터\",\n  \"target_agent\": \"섹터매니저\",\n  \"stance\": \"COUNTER_ARGUMENT\",\n  \"confidence\": 75,\n  \"core_rebuttal\": \"BBC 보도에 따르면 중동 분쟁 격화로 유가·가스 가격이 급등하고 글로벌 증시가 동반 하락했습니다. 트럼프의 스페인 군사기지 접근 제한 보복 위협, 헤즈볼라의 영국 RAF 키프로스 기지 타격 의혹 등 지정학적 긴장이 24시간 내 폭발적으로 고조되었습니다. 섹터매니저가 전제한 '반도체 사이클 조정'과 'AI 수요 둔화'는 산업 내재 요인이나, 오늘 KOSPI -7.24% 급락의 1차 촉매는 중동발 지정학 리스크입니다. 외국인 1조원 순매도는 코리아 디스카운트가 아닌 "
       }
     ]
   },
   "verdict": {
     "today_moderator_agent": "퀀트",
-    "final_stance": "SELL",
-    "confidence_score": 76,
-    "summary": "4명의 에이전트 중 3명(퀀트, 매크로, 가치투자자, 뉴스 리스크 헌터)이 SELL 의견을 제시했으며, 논리의 질과 데이터 신뢰성을 종합 평가한 결과 SELL 판단이 타당합니다. 핵심 근거는 다음과 같습니다: (1) 기술적 과열 명확: RSI 77.4는 과매수 구간이며, 볼린저밴드 상단 95.5% 위치는 단기 조정 개연성을 강하게 시사합니다. 퀀트의 반론에서 제시한 2024년 10월 사례는 당시 외국인 순매수 환경이었으나, 현재는 -1677억 대규모 순매도로 수급 구조가 정반대입니다. (2) 외국인 자금 이탈 심화: -1677억 순매도는 5일 평균 대비 209% 증가한 수치로, 환율 1453원대 돌파와 함께 추가 이탈 리스크가 상존합니다. 기관 400억 순매수로는 이를 상쇄할 수 없습니다. (3) 중동 지정학 리스크 급증: BBC 보도의 유가·가스 급등과 미-이란 전쟁 확전은 한국 제조업 마진 압박과 물류 차질로 직결됩니다. 섹터매니저의 자동차 랠리 논리는 단기 로테이션에 불과하며, 중동 리스크 장기화 시 내수 제조업도 타격 불가피합니다. (4) 섹터 로테이션의 한계: 현대차 +10.7% 급등은 반도체 약세 속 자금 이동이지만, KOSPI 전체 -1.00% 하락은 시장 전반의 피로도를 반영합니다. 매크로의 Fed 피벗 기대는 미국 10년물 4.05% 고금리 지속 현실과 배치됩니다. 가치투자자의 역발상 매수 주장은 밸류에이션 데이터 부재로 설득력이 약합니다. 따라서 단기 조정 국면 진입 확률이 높으며, KOSPI 5900~6000선 재진입 시 재진입 전략이 합리적입니다.",
-    "investment_weather": "stormy",
-    "investment_weather_icon": "⛈️",
-    "investment_weather_kr": "강세 하락 — 폭풍",
+    "final_stance": "HOLD",
+    "confidence_score": 72,
+    "summary": "KOSPI 7.24% 급락은 호르무즈 해협 봉쇄 우려와 외국인 1조원 순매도가 촉발한 패닉 셀링으로 판단됩니다. 뉴스 리스크 헌터의 지정학 리스크 경고(확신도 85)와 섹터매니저의 반도체 구조적 조정 진단(삼성전자 -9.9%, SK하이닉스 -11.5%)은 설득력 있으나, 퀀트의 RSI 28.3 과매도 신호와 가치투자자의 역사적 저PBR 매력도 논리도 무시할 수 없습니다. 매크로 에이전트가 지적한 달러/원 1485원 고착화는 단기 수급 악화의 핵심 변수이나, 가치투자자 반론대로 2020년 3월·2022년 10월 저점 대비 밸류에이션 메리트가 부각되는 구간입니다. 다만 호르무즈 리스크는 유가 급등→제조업 원가 상승→수출 경쟁력 약화로 이어질 수 있어 즉시 매수는 시기상조입니다. 규칙 기반 가중 투표의 SELL 판정은 단기 모멘텀을 반영하나, 중재자 판단으로는 5600선 지지 여부 확인 후 분할 매수 접근이 합리적입니다. 반도체·자동차는 회피하되 방어주(제약·배당주) 중심 포트폴리오 재편성을 권고합니다.",
+    "investment_weather": "cloudy",
+    "investment_weather_icon": "⛅",
+    "investment_weather_kr": "중립 — 흐림",
     "top_sectors": [
-      "방산(한화에어로스페이스, LIG넥스원)",
-      "정유·에너지(SK이노베이션, S-Oil)",
-      "배당 가치주(POSCO홀딩스, KT&G)"
+      "제약·바이오(방어)",
+      "배당주(통신·유틸리티)",
+      "필수소비재"
     ],
     "risk_factors": [
-      "중동 지정학 리스크 확전(유가 급등, 물류 마비)",
-      "외국인 순매도 지속(환율 1450원+ 돌파 시 추가 이탈)",
-      "기술적 과열 조정(RSI 77.4, 볼린저 상단 95.5%)"
+      "호르무즈 해협 봉쇄→유가 급등→제조업 원가 상승",
+      "달러/원 1485원 고착화→외국인 추가 이탈 가능성",
+      "반도체 사이클 고점 통과→AI 수요 둔화·HBM 경쟁 심화"
     ],
     "action_items": [
-      "반도체·기술주 비중 축소(SK하이닉스, NAVER 차익실현)",
-      "KOSPI 5900선 이하 재진입 대기(현금 비중 30% 이상 확보)",
-      "방산·에너지 섹터 분할 매수 검토(중동 리스크 수혜주)"
+      "삼성전자·SK하이닉스 비중 축소, 5600선 이탈 시 현금 비중 50% 이상 확보",
+      "셀트리온·KT&G 등 배당수익률 4%+ 방어주 분할 매수 검토",
+      "중동 정세 모니터링 강화, 유가 $90 돌파 시 에너지·화학주 대응 전략 수립"
     ],
     "stance_votes": {
-      "퀀트": "SELL",
-      "매크로": "SELL",
-      "섹터매니저": "HOLD",
-      "가치투자자": "SELL",
+      "퀀트": "HOLD",
+      "매크로": "HOLD",
+      "섹터매니저": "SELL",
+      "가치투자자": "HOLD",
       "뉴스 리스크 헌터": "SELL"
     }
   },
@@ -792,40 +776,40 @@
         "name": "퀀트",
         "avatar": "📊",
         "hit_rate": 1.0,
-        "total_predictions": 3,
-        "correct": 3
+        "total_predictions": 4,
+        "correct": 4
       },
       {
         "name": "뉴스 리스크 헌터",
         "avatar": "📡",
         "hit_rate": 1.0,
-        "total_predictions": 1,
-        "correct": 1
+        "total_predictions": 2,
+        "correct": 2
       },
       {
         "name": "매크로",
         "avatar": "🏦",
-        "hit_rate": 0.3333,
-        "total_predictions": 3,
+        "hit_rate": 0.5,
+        "total_predictions": 4,
+        "correct": 2
+      },
+      {
+        "name": "가치투자자",
+        "avatar": "💎",
+        "hit_rate": 0.25,
+        "total_predictions": 4,
         "correct": 1
       },
       {
         "name": "섹터매니저",
         "avatar": "🔄",
         "hit_rate": 0.0,
-        "total_predictions": 3,
-        "correct": 0
-      },
-      {
-        "name": "가치투자자",
-        "avatar": "💎",
-        "hit_rate": 0.0,
-        "total_predictions": 3,
+        "total_predictions": 4,
         "correct": 0
       }
     ],
     "yesterday_comparison": {
-      "date": "2026-03-02",
+      "date": "2026-03-03",
       "actual_movement": "DOWN",
       "predictions": [
         {
@@ -849,8 +833,8 @@
         {
           "agent": "가치투자자",
           "avatar": "💰",
-          "prediction": "HOLD",
-          "was_correct": false
+          "prediction": "SELL",
+          "was_correct": true
         },
         {
           "agent": "뉴스 리스크 헌터",
