@@ -1,646 +1,660 @@
 {
-  "date": "2026-03-05",
-  "generated_at": "2026-03-05T08:20:35.437457",
+  "date": "2026-03-06",
+  "generated_at": "2026-03-06T08:59:20.194278",
   "market_data": {
     "kospi": {
-      "close": 5093.54,
-      "change": -698.37,
-      "change_pct": -12.06,
+      "close": 5583.9,
+      "change": 490.36,
+      "change_pct": 9.63,
       "volume": 0,
       "volume_change_pct": -100.0
     },
+    "technical_indicators": {
+      "rsi": 55.21,
+      "macd": 219.92,
+      "signal": 275.78,
+      "histogram": -55.85,
+      "bb_upper": 6349.38,
+      "bb_middle": 5562.56,
+      "bb_lower": 4775.74,
+      "bb_position": 0.5136,
+      "ma5": 5804.15,
+      "ma5_diff_pct": -3.79,
+      "ma20": 5562.56,
+      "ma20_diff_pct": 0.38
+    },
     "kosdaq": {
-      "close": 978.44,
-      "change": -159.26,
-      "change_pct": -14.0,
+      "close": 1116.41,
+      "change": 137.97,
+      "change_pct": 14.1,
       "volume": 0,
       "volume_change_pct": -100.0
     },
     "nasdaq": {
-      "close": 22807.48,
-      "change": 290.79,
-      "change_pct": 1.29,
-      "volume": 9394399000,
-      "volume_change_pct": 2.14
+      "close": 22748.99,
+      "change": -58.49,
+      "change_pct": -0.26,
+      "volume": 9353836000,
+      "volume_change_pct": -2.22
     },
     "sp500": {
-      "close": 6869.5,
-      "change": 52.87,
-      "change_pct": 0.78,
-      "volume": 3193784000,
-      "volume_change_pct": -43.51
+      "close": 6830.71,
+      "change": -38.79,
+      "change_pct": -0.56,
+      "volume": 3703063000,
+      "volume_change_pct": -34.21
     },
-    "usdkrw": 1461.76,
-    "us10y": 4.08,
+    "usdkrw": 1460.75,
+    "us10y": 4.15,
     "top_stocks": [
       {
-        "close": 172200.0,
-        "change": -22900.0,
-        "change_pct": -11.74,
-        "volume": 89427954,
-        "volume_change_pct": 76.62,
+        "close": 191600.0,
+        "change": 19400.0,
+        "change_pct": 11.27,
+        "volume": 53959129,
+        "volume_change_pct": -3.69,
         "ticker": "005930.KS",
         "name": "삼성전자",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 849000.0,
-        "change": -90000.0,
-        "change_pct": -9.58,
-        "volume": 9253420,
-        "volume_change_pct": 51.95,
+        "close": 941000.0,
+        "change": 92000.0,
+        "change_pct": 10.84,
+        "volume": 6442459,
+        "volume_change_pct": -3.64,
         "ticker": "000660.KS",
         "name": "SK하이닉스",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 347500.0,
-        "change": -45500.0,
-        "change_pct": -11.58,
-        "volume": 826847,
-        "volume_change_pct": 33.4,
+        "close": 371500.0,
+        "change": 24000.0,
+        "change_pct": 6.91,
+        "volume": 541523,
+        "volume_change_pct": -9.45,
         "ticker": "373220.KS",
         "name": "LG에너지솔루션",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 208000.0,
-        "change": -28000.0,
-        "change_pct": -11.86,
-        "volume": 2051989,
-        "volume_change_pct": 34.18,
+        "close": 220000.0,
+        "change": 12000.0,
+        "change_pct": 5.77,
+        "volume": 1671549,
+        "volume_change_pct": -0.27,
         "ticker": "035420.KS",
         "name": "NAVER",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 47050.0,
-        "change": -9150.0,
-        "change_pct": -16.28,
-        "volume": 6214956,
-        "volume_change_pct": -2.42,
+        "close": 51200.0,
+        "change": 4150.0,
+        "change_pct": 8.82,
+        "volume": 3724178,
+        "volume_change_pct": -44.4,
         "ticker": "035720.KS",
         "name": "카카오",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 321500.0,
-        "change": -53000.0,
-        "change_pct": -14.15,
-        "volume": 1237021,
-        "volume_change_pct": 47.35,
+        "close": 346500.0,
+        "change": 25000.0,
+        "change_pct": 7.78,
+        "volume": 684573,
+        "volume_change_pct": -20.84,
         "ticker": "005490.KS",
         "name": "POSCO홀딩스",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 501000.0,
-        "change": -94000.0,
-        "change_pct": -15.8,
-        "volume": 4855346,
-        "volume_change_pct": 21.28,
+        "close": 548000.0,
+        "change": 47000.0,
+        "change_pct": 9.38,
+        "volume": 2663493,
+        "volume_change_pct": -28.13,
         "ticker": "005380.KS",
         "name": "현대차",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 197400.0,
-        "change": -27600.0,
-        "change_pct": -12.27,
-        "volume": 1535839,
-        "volume_change_pct": 74.27,
+        "close": 211500.0,
+        "change": 14100.0,
+        "change_pct": 7.14,
+        "volume": 917410,
+        "volume_change_pct": -4.03,
         "ticker": "068270.KS",
         "name": "셀트리온",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 183.04,
-        "change": 2.99,
-        "change_pct": 1.66,
-        "volume": 175709563,
-        "volume_change_pct": -28.88,
+        "close": 183.34,
+        "change": 0.3,
+        "change_pct": 0.16,
+        "volume": 190766610,
+        "volume_change_pct": -10.63,
         "ticker": "NVDA",
         "name": "엔비디아",
         "per": 0.0,
         "pbr": 0.0
       },
       {
-        "close": 357.44,
-        "change": 4.31,
-        "change_pct": 1.22,
-        "volume": 12052371,
-        "volume_change_pct": -9.96,
+        "close": 353.86,
+        "change": -3.58,
+        "change_pct": -1.0,
+        "volume": 16200662,
+        "volume_change_pct": 17.96,
         "ticker": "TSM",
         "name": "TSMC",
         "per": 0.0,
         "pbr": 0.0
       }
     ],
-    "foreigners_net": -14648.0,
-    "institutions_net": 4824.0,
+    "foreigners_net": 2704.0,
+    "institutions_net": -3852.0,
     "news": {
       "international": [
         {
-          "title": "Iran postpones Khamenei funeral as US-Israeli bombardment continues",
+          "title": "'What is the game plan?': The Iran war is unsettling China and its ambitions",
           "source": "BBC World",
-          "summary": "An official says more preparations are needed for the three-day ceremony in Tehran, where the supreme leader will lie in state.",
-          "published_at": "2026-03-04 18:10 UTC"
+          "summary": "China is not feeling the shock of war in the Middle East - yet. But it is feeling the ripples.",
+          "published_at": "2026-03-05 23:13 UTC"
         },
         {
-          "title": "US sub sinks Iranian warship in Indian Ocean, Hegseth says",
+          "title": "'We have been preparing': Why the boots on the ground in Iran could be Kurdish",
           "source": "BBC World",
-          "summary": "Sri Lanka's navy says around 140 people are feared missing after a military vessel went down off its southern coast.",
-          "published_at": "2026-03-04 16:56 UTC"
+          "summary": "Iranian Kurdish opposition groups in exile in northern Iraq tell the BBC they have plans to cross the border but deny already doing so.",
+          "published_at": "2026-03-05 21:20 UTC"
         },
         {
-          "title": "Spain's Pedro Sánchez hits back at Trump threat to sever trade saying 'no to war'",
+          "title": "US asked Ukraine for help fighting Iranian drones, Zelensky says",
           "source": "BBC World",
-          "summary": "Spain's prime minister delivers a strong rebuttal to US President Donald Trump's threat to end trade with his country.",
-          "published_at": "2026-03-04 20:42 UTC"
+          "summary": "Ukraine's president says Kyiv will only help if doing so does not deplete its own air defences.",
+          "published_at": "2026-03-05 18:19 UTC"
         },
         {
-          "title": "Higher tariffs likely this week, says US Treasury",
+          "title": "Azerbaijan says Iran struck its territory, as war spills over border",
           "source": "BBC World",
-          "summary": "Scott Bessent says that \"likely sometime this week\" the US will increase its global tariff on imports from the existing 10%.",
-          "published_at": "2026-03-04 22:11 UTC"
+          "summary": "President Ilham Aliyev says drone strikes are \"act of terror\" as he places armed forces on high alert.",
+          "published_at": "2026-03-05 21:33 UTC"
         },
         {
-          "title": "Israel tells people in large parts of southern Lebanon to leave ahead of attacks",
+          "title": "Britney Spears arrested on suspicion of driving under the influence",
           "source": "BBC World",
-          "summary": "Civilians are being displaced, taking shelter in tents, parks and cars, as Israel retaliates to Hezbollah rocket attack.",
-          "published_at": "2026-03-04 14:55 UTC"
+          "summary": "The singer was arrested by the California Highway Patrol at around 21:30 PT (05:30 GMT) on Wednesday.",
+          "published_at": "2026-03-05 17:23 UTC"
         },
         {
-          "title": "Pentagon identifies four of six US soldiers killed in Iran conflict",
+          "title": "Trump cuts his losses on Noem after controversial tenure at homeland security",
           "source": "BBC World",
-          "summary": "The US soldiers were killed after a drone evaded air defences to hit a command centre in Port Shuaiba, Kuwait, on Sunday.",
-          "published_at": "2026-03-04 19:08 UTC"
+          "summary": "Noem was one of the administration's brightest stars when she stepped into the role, but has faced a mounting backlash in recent months.",
+          "published_at": "2026-03-05 22:16 UTC"
         },
         {
-          "title": "Millions of Cubans plunged into darkness as fuel crisis deepens",
+          "title": "Finland plans to lift decades-old ban on hosting nuclear weapons",
           "source": "BBC World",
-          "summary": "Fuel shortages have been exacerbated by a US oil blockade since the seizure of Venezuelan President Nicolás Maduro.",
-          "published_at": "2026-03-04 22:46 UTC"
+          "summary": "The government says the nation's defence environment has \"significantly changed\" since Russia's invasion of Ukraine.",
+          "published_at": "2026-03-05 23:12 UTC"
         },
         {
-          "title": "Russia blames Ukrainian naval drones as tanker sinks in Mediterranean",
+          "title": "Savannah Guthrie plans return to NBC as search for missing mother continues",
           "source": "BBC World",
-          "summary": "The Arctic Metagaz went down between Libya and Malta after it was hit by explosions and a fire, Libyan officials say.",
-          "published_at": "2026-03-04 18:14 UTC"
+          "summary": "The Today programme host visited her colleagues in the office on Thursday, nearly five weeks since her mother disappeared.",
+          "published_at": "2026-03-05 18:18 UTC"
         },
         {
-          "title": "South Africa's long-serving former defence minister and former Robben Island prisoner dies",
+          "title": "Ecuadorean troops find 35m-long 'narco-sub' hidden in nature reserve",
           "source": "BBC World",
-          "summary": "Mosiuoa Lekota was imprisoned with former South African President Nelson Mandela on Robben Island.",
-          "published_at": "2026-03-04 12:45 UTC"
+          "summary": "Ecuador's military says the drug-trafficking submersible was loaded with fuel and \"ready to go\".",
+          "published_at": "2026-03-05 17:34 UTC"
         },
         {
-          "title": "US Senate vote fails to rein in Trump war powers on Iran",
+          "title": "Texas lawmaker admits 'lapse in judgement' in affair with aide",
           "source": "BBC World",
-          "summary": "The measure, passed largely along party lines, would halt US military action until approved by Congress.",
-          "published_at": "2026-03-04 23:17 UTC"
+          "summary": "The admission from the married Republican, Tony Gonzales, comes after a House panel launched an ethics investigation.",
+          "published_at": "2026-03-05 18:19 UTC"
         },
         {
-          "title": "Nigerian doctors suspended over death of author Chimamanda Ngozi Adichie's son",
+          "title": "Israeli evacuation order for Beirut's southern suburbs sparks panic",
           "source": "BBC World",
-          "summary": "The author's 21-month-old son died in January after complications during medical procedures at a private hospital in Lagos.",
-          "published_at": "2026-03-04 14:17 UTC"
+          "summary": "Huge traffic jams form after the unprecedented warning for people to leave the Hezbollah stronghold, as Israel steps up its strikes across Lebanon.",
+          "published_at": "2026-03-05 20:10 UTC"
         },
         {
-          "title": "Greek court upholds criminal organisation verdict on neo-Nazi Golden Dawn",
+          "title": "Conservative Anglicans pull back from electing rival to Archbishop of Canterbury",
           "source": "BBC World",
-          "summary": "The party's founder Nikos Mihaloliakos and other officials are again found guilty, almost six years after an original trial.",
-          "published_at": "2026-03-04 13:13 UTC"
+          "summary": "The group had said it would choose a new leader with the same title as Sarah Mullally, the first female head of the Church.",
+          "published_at": "2026-03-05 17:58 UTC"
         },
         {
-          "title": "Nigeria halts Christian pilgrimages to Holy Land over Middle East conflict",
+          "title": "Ethiopia experiments with 'smart' police stations that have no officers",
           "source": "BBC World",
-          "summary": "NCPC say the measure is necessary to prioritise the \"safety and comfort\" of Nigerian pilgrims.",
-          "published_at": "2026-03-04 16:19 UTC"
+          "summary": "A project to introduce unmanned sites is part of a broader adoption of digital technologies.",
+          "published_at": "2026-03-05 12:34 UTC"
         },
         {
-          "title": "US and Ecuador forces launch operation to fight drug trafficking",
+          "title": "Global order is 'breaking down', Carney tells Australian parliament",
           "source": "BBC World",
-          "summary": "Washington says the two countries are combatting 'designated terrorist organisations' in Ecuador.",
-          "published_at": "2026-03-04 16:45 UTC"
+          "summary": "The Canadian prime minister said Australia and Canada should work together as 'strategic cousins'.",
+          "published_at": "2026-03-05 03:57 UTC"
         },
         {
-          "title": "Australian girl, 8, killed in snowmobile accident in Japan",
+          "title": "Nepalis vote in first election since Gen Z uprising for change",
           "source": "BBC World",
-          "summary": "It is the fourth Australian death at a Japanese ski resort this year.",
-          "published_at": "2026-03-04 00:53 UTC"
+          "summary": "This election will test whether the country is ready for a new, untested generation to shape its future.",
+          "published_at": "2026-03-05 12:51 UTC"
         },
         {
-          "title": "Live Updates: Senate Republicans Block War Powers Limits as Mideast Crisis Widens",
+          "title": "Iran Live Updates: Israel Bombards Beirut, as Conflict Widens",
           "source": "NYT World",
-          "summary": "The measure would have restricted President Trump’s power to wage war against Iran without congressional authorization. U.S. officials said airstrikes were accelerating, and several nations sent reinforcements to the Middle East to protect their interests.",
-          "published_at": "2026-03-04 22:53 UTC"
+          "summary": "The Pentagon said it was continuing to attack Iran, whose retaliatory missile strikes have decreased by 90 percent since Saturday. The U.S. House blocked a measure to limit President Trump’s war powers.",
+          "published_at": "2026-03-05 23:58 UTC"
         },
         {
-          "title": "Global Leaders Brace for the Fallout From a Fast Metastasizing War",
+          "title": "Iran’s Friends Include China and Russia. But Where are They Now?",
           "source": "NYT World",
-          "summary": "Higher energy prices, political instability and a potential new wave of refugees: The escalating regional conflict in the Middle East could have far-reaching effects.",
-          "published_at": "2026-03-04 11:37 UTC"
+          "summary": "Iran maintains ties with a range of countries, including Turkey, India, Russia and China. Yet in this war, their support is mostly rhetoric.",
+          "published_at": "2026-03-05 10:04 UTC"
         },
         {
-          "title": "What to Know About Nepals Gen Z Election",
+          "title": "South African President on Trump’s Oval Office ‘Ambush’ and ‘Racist’ Policies",
           "source": "NYT World",
-          "summary": "Nepal is holding its first election since a youth-led uprising against corruption toppled the government last year. Here is what to know.",
-          "published_at": "2026-03-04 21:46 UTC"
+          "summary": "In an interview with The New York Times, President Cyril Ramaphosa opened up about the role of middle powers, relations with Washington and apartheid.",
+          "published_at": "2026-03-05 17:54 UTC"
         },
         {
-          "title": "With Fuel Running Out and Canadian Flights Suspended, Cuba’s Tourism Is Collapsing",
+          "title": "James Luckey-Lange Recounts Being Detained, Starved and Beaten in Venezuela",
           "source": "NYT World",
-          "summary": "The Trump administration’s decision to cut off foreign oil to the island is devastating its tourism industry, a key source of income for a government being pushed to the edge.",
-          "published_at": "2026-03-04 14:31 UTC"
+          "summary": "James Luckey-Lange, 28, wrote about kindness and shared humanity as he traveled. But he said he had been shackled, starved and beaten in Venezuela after being detained.",
+          "published_at": "2026-03-05 10:00 UTC"
         },
         {
-          "title": "Ayatollah Ali Khamenei’s Son Emerges as Leading Choice to Be His Successor",
+          "title": "Israel Pushes Farther Into Lebanon, and Readies for More",
           "source": "NYT World",
-          "summary": "If Mojtaba Khamenei is chosen by Iran’s senior clerics, it may signal a victory for hard-liners, an analyst said.",
-          "published_at": "2026-03-04 15:14 UTC"
+          "summary": "Days into its offensive against Hezbollah, Israel is massing armored vehicles near the Lebanese border for a potentially much larger ground incursion.",
+          "published_at": "2026-03-05 23:29 UTC"
         }
       ],
       "economic": [
         {
-          "title": "Stock markets and oil prices still volatile over fears Iran war may drag on",
+          "title": "UK firms pull fixed energy deals as Iran war pushes up prices",
           "source": "BBC Business",
-          "summary": "Experts have warned that if oil and gas prices remains elevated it could make goods and services more expensive.",
-          "published_at": "2026-03-04 19:00 UTC"
-        },
-        {
-          "title": "Are UK interest rates still expected to fall soon?",
-          "source": "BBC Business",
-          "summary": "The interest rate set by the Bank of England affects mortgage, loan and savings rates for millions.",
-          "published_at": "2026-03-04 14:09 UTC"
+          "summary": "Data suggests the number of fixed-term deals has more than halved as prices for wholesale energy surge.",
+          "published_at": "2026-03-05 18:25 UTC"
         },
         {
           "title": "Will petrol and diesel prices go up now?",
           "source": "BBC Business",
           "summary": "If oil prices remain high for some time, the knock-on effects could affect the costs of fuel and food",
-          "published_at": "2026-03-04 15:36 UTC"
+          "published_at": "2026-03-05 18:31 UTC"
+        },
+        {
+          "title": "States sue Trump administration over new 'unlawful' global tariffs",
+          "source": "BBC Business",
+          "summary": "The 24 states are seeking to block Trump's latest tariffs, which he imposed to replace levies struck down by the Supreme Court.",
+          "published_at": "2026-03-05 19:56 UTC"
+        },
+        {
+          "title": "Anthropic labelled a supply chain risk by Pentagon",
+          "source": "BBC Business",
+          "summary": "The supply chain risk designation of the artificial intelligence firm is a first for a US company.",
+          "published_at": "2026-03-05 22:08 UTC"
+        },
+        {
+          "title": "South East Water faces £22m fine for supply failures",
+          "source": "BBC Business",
+          "summary": "The firm was unable to cope during high demand, Ofwat says, leading to \"immense stress\" for customers.",
+          "published_at": "2026-03-05 11:00 UTC"
+        },
+        {
+          "title": "We have more privacy controls yet less privacy than ever",
+          "source": "BBC Business",
+          "summary": "Has online privacy become \"a luxury not a right\" for us all in 2026?",
+          "published_at": "2026-03-05 00:04 UTC"
+        },
+        {
+          "title": "China sets lowest economic growth target since 1991",
+          "source": "BBC Business",
+          "summary": "It is also the first time the target has been lowered since it was cut to \"around 5%\" in 2023.",
+          "published_at": "2026-03-05 03:10 UTC"
+        },
+        {
+          "title": "US trade court orders tariff refunds in setback for Trump administration",
+          "source": "BBC Business",
+          "summary": "A trade court has cleared the way for businesses to receive refunds for tariffs that the Supreme Court struck down last month.",
+          "published_at": "2026-03-05 00:13 UTC"
         },
         {
           "title": "Musk tells jury 'people read too much' into his posts",
           "source": "BBC Business",
           "summary": "The billionaire is accused of misleading investors in the run-up to his 2022 Twitter purchase.",
-          "published_at": "2026-03-04 22:03 UTC"
+          "published_at": "2026-03-05 02:55 UTC"
         },
         {
-          "title": "Higher tariffs likely this week, says US Treasury",
-          "source": "BBC Business",
-          "summary": "Scott Bessent says that \"likely sometime this week\" the US will increase its global tariff on imports from the existing 10%.",
-          "published_at": "2026-03-04 22:11 UTC"
-        },
-        {
-          "title": "Father claims Google's AI product fuelled son's delusional spiral",
-          "source": "BBC Business",
-          "summary": "The case is the first wrongful death case against Google over alleged harms caused by Gemini.",
-          "published_at": "2026-03-04 18:55 UTC"
-        },
-        {
-          "title": "Remote work, offices shut: Tech giants scramble to respond as Iran war escalates",
-          "source": "BBC Business",
-          "summary": "The region has been positioning itself as an AI hub, following billions of dollars in investment by tech giants.",
-          "published_at": "2026-03-04 14:57 UTC"
-        },
-        {
-          "title": "Use our tax calculator to see how Spring Statement forecasts may affect you",
-          "source": "BBC Business",
-          "summary": "Wages are forecast to go up over the next five years but you could pay more tax because of frozen thresholds.",
-          "published_at": "2026-03-04 00:01 UTC"
-        },
-        {
-          "title": "Brewdog founder admits 'many mistakes' as hundreds lose jobs in sale",
-          "source": "BBC Business",
-          "summary": "James Watt apologises to staff and investors after hundreds of jobs were lost with the sale of the brewer and pub chain.",
-          "published_at": "2026-03-04 12:45 UTC"
-        },
-        {
-          "title": "Iranian TV and Social Media Project Defiant and Distorted View of the War",
+          "title": "Pokémon Company Objects to White House’s Political Memes",
           "source": "NYT Business",
-          "summary": "State media and online propagandists are striking a confident posture, despite heavy losses. Some of the content was generated by artificial intelligence.",
-          "published_at": "2026-03-04 22:24 UTC"
+          "summary": "“No permission was granted for the use of our intellectual property,” the company said. The Trump administration frequently promotes policies with content from video games.",
+          "published_at": "2026-03-05 21:45 UTC"
         },
         {
-          "title": "Travelers Stranded by U.S.-Israel Conflict With Iran Face Endless Flight Cancellations",
+          "title": "Oil Jumps, Stocks Drop as Investors Grapple With Iran War’s Impact",
           "source": "NYT Business",
-          "summary": "Even far from hubs like Dubai and Abu Dhabi, the disruptions from the growing violence have left people jumping “from one cancellation to the next.”",
-          "published_at": "2026-03-04 22:48 UTC"
+          "summary": "Oil futures are at their highest level since July 2024. The S&P 500 is now in negative territory for the year.",
+          "published_at": "2026-03-05 21:05 UTC"
         },
         {
-          "title": "What to Know About Iran’s Drones, Which Are Cheap to Launch but Expensive to Intercept",
+          "title": "States Sue to Stop Trump From Reviving Steep Tariffs",
           "source": "NYT Business",
-          "summary": "What to know about Iran’s cheap, noisy Shahed drones and the expensive defense systems trying to stop them.",
-          "published_at": "2026-03-04 21:16 UTC"
+          "summary": "The lawsuit filed by two dozen attorneys general seeks to invalidate the president’s new, 10 percent global tax on imports.",
+          "published_at": "2026-03-05 19:31 UTC"
         },
         {
-          "title": "Liquid Natural Gas Exporters Like Shell and ExxonMobil Could See Big Profits From War",
+          "title": "McDonald’s C.E.O. Takes a Big Bite Out of a Burger. Maybe Scratch ‘Big.’",
           "source": "NYT Business",
-          "summary": "Prices for liquefied natural gas have shot up in recent days, which could bring bigger profits for European and U.S. energy companies.",
-          "published_at": "2026-03-04 21:10 UTC"
+          "summary": "Chris Kempczinski’s rather tentative chomp drew mirth online, even from some competitors.",
+          "published_at": "2026-03-05 16:55 UTC"
         },
         {
-          "title": "The Best Playbook for Investing During a War Is Usually Doing Nothing",
+          "title": "Savannah Guthrie Plans a Return to ‘Today’",
           "source": "NYT Business",
-          "summary": "The Trump administration has breached so many norms that the old approach carries heightened risks, our columnist says.",
-          "published_at": "2026-03-04 17:56 UTC"
+          "summary": "Ms. Guthrie visited 30 Rockefeller Plaza on Thursday for the first time since her mother, Nancy, went missing in early February.",
+          "published_at": "2026-03-05 19:09 UTC"
         },
         {
-          "title": "U.S. Gas Prices Continue to Rise",
+          "title": "How $800 Monthly Car Payments Are Hurting Car Sales",
           "source": "NYT Business",
-          "summary": "The price for a gallon of regular gasoline has jumped more than 20 cents this week. Diesel prices rose to their highest level since April 2024.",
-          "published_at": "2026-03-04 18:08 UTC"
+          "summary": "Cars have become so expensive that many Americans are putting off or not buying new cars, hurting the auto industry.",
+          "published_at": "2026-03-05 21:13 UTC"
         },
         {
-          "title": "All3Media and Banijay, 2 Big Production Houses, to Merge",
+          "title": "Revolut, the British Finance App, Seeks a U.S. Banking Charter",
           "source": "NYT Business",
-          "summary": "The deal between All3Media and Banijay will bring together the companies behind the “Peaky Blinders” and the “Traitors” franchises.",
-          "published_at": "2026-03-04 14:57 UTC"
+          "summary": "The company said that the move, if approved, would allow it to offer more products to American customers as it seeks to grow globally.",
+          "published_at": "2026-03-05 15:49 UTC"
         },
         {
-          "title": "Bessent Says Global Tariffs Will Rise to 15% This Week",
+          "title": "Iceland Defeats Iceland: A U.K. Supermarket Ends a Trademark Dispute",
           "source": "NYT Business",
-          "summary": "Treasury Secretary Scott Bessent also predicted that overall tariff rates, which fell after a Supreme Court ruling last month, would be back to previous levels within five months.",
-          "published_at": "2026-03-04 16:11 UTC"
+          "summary": "Can a company trademark the name of a country? In the case of Iceland, the British grocery store, the answer is no.",
+          "published_at": "2026-03-05 19:03 UTC"
         },
         {
-          "title": "The High Stakes of Keeping the Strait of Hormuz Open",
+          "title": "Can Anthropic Make Peace With the Pentagon?",
           "source": "NYT Business",
-          "summary": "The U.S.-Israeli war with Iran has paralyzed the strait, a vital shipping lane for energy and commerce, putting global investors on edge.",
-          "published_at": "2026-03-04 12:35 UTC"
+          "summary": "The artificial intelligence start-up has reportedly resumed talks with the Defense Department over use of its tools, with high stakes for both.",
+          "published_at": "2026-03-05 13:07 UTC"
         },
         {
-          "title": "Top Fed Official, Wary of Inflation, Calls for Extended Rate Pause",
+          "title": "How War in the Persian Gulf Could Spill Into the U.S. Economy",
           "source": "NYT Business",
-          "summary": "Beth M. Hammack, head of the Federal Reserve Bank of Cleveland, says it is too early to gauge the economic impact of the Iran war and backs holding interest rates steady for “quite some time.”",
-          "published_at": "2026-03-04 19:42 UTC"
+          "summary": "Rising energy prices, snarled supply chains and higher government debt could all hurt American consumers.",
+          "published_at": "2026-03-05 12:49 UTC"
         },
         {
-          "title": "Paramount-Warner Deal Promises to Shake Up Streaming",
+          "title": "‘No Tax on Overtime’ Rule Isn’t What Some Workers Were Expecting",
           "source": "NYT Business",
-          "summary": "The deal would put the combined company in the same league as Disney and Amazon. But Netflix and YouTube will still easily outrank everyone.",
-          "published_at": "2026-03-04 10:02 UTC"
+          "summary": "President Trump’s simple campaign promise, now reality, includes lots of fine print that is confounding taxpayers and companies this filing season.",
+          "published_at": "2026-03-05 10:01 UTC"
         }
       ],
       "technology": [
         {
+          "title": "Anthropic labelled a supply chain risk by Pentagon",
+          "source": "BBC Technology",
+          "summary": "The supply chain risk designation of the artificial intelligence firm is a first for a US company.",
+          "published_at": "2026-03-05 22:08 UTC"
+        },
+        {
           "title": "Musk tells jury 'people read too much' into his posts",
           "source": "BBC Technology",
           "summary": "The billionaire is accused of misleading investors in the run-up to his 2022 Twitter purchase.",
-          "published_at": "2026-03-04 22:03 UTC"
+          "published_at": "2026-03-05 02:55 UTC"
         },
         {
-          "title": "Father claims Google's AI product fuelled son's delusional spiral",
-          "source": "BBC Technology",
-          "summary": "The case is the first wrongful death case against Google over alleged harms caused by Gemini.",
-          "published_at": "2026-03-04 18:55 UTC"
-        },
-        {
-          "title": "Regulator contacts Meta over workers watching intimate AI glasses videos",
-          "source": "BBC Technology",
-          "summary": "Videos, including of glasses-wearers using the toilet or having sex, are sometimes reviewed by a Kenya-based subcontractor.",
-          "published_at": "2026-03-04 16:23 UTC"
-        },
-        {
-          "title": "Remote work, offices shut: Tech giants scramble to respond as Iran war escalates",
-          "source": "BBC Technology",
-          "summary": "The region has been positioning itself as an AI hub, following billions of dollars in investment by tech giants.",
-          "published_at": "2026-03-04 14:57 UTC"
-        },
-        {
-          "title": "TikTok won't protect DMs with controversial privacy tech, saying it would put users at risk",
-          "source": "BBC Technology",
-          "summary": "TikTok tells the BBC it won't join rival platforms such as WhatsApp and Messenger in using end-to-end encryption.",
-          "published_at": "2026-03-04 00:34 UTC"
-        },
-        {
-          "title": "Video game Highguard axed weeks after release",
-          "source": "BBC Technology",
-          "summary": "It comes after the free-to-play game was given top billing at The Game Awards in December.",
-          "published_at": "2026-03-04 13:16 UTC"
-        },
-        {
-          "title": "Can an AI recruiter really spot a good carer?",
-          "source": "BBC Technology",
-          "summary": "AI is being used to screen care workers – but can a robot truly judge who is right for the job?",
-          "published_at": "2026-03-04 10:29 UTC"
-        },
-        {
-          "title": "Iranian TV and Social Media Project Defiant and Distorted View of the War",
+          "title": "Demand for AI Data Centers Sends Prospectors Hunting for Land and Power",
           "source": "NYT Technology",
-          "summary": "State media and online propagandists are striking a confident posture, despite heavy losses. Some of the content was generated by artificial intelligence.",
-          "published_at": "2026-03-04 22:24 UTC"
+          "summary": "Brian Janous, a former Microsoft executive, and his firm Cloverleaf have become modern-day land men, packaging electricity and land for data centers.",
+          "published_at": "2026-03-05 16:30 UTC"
         },
         {
-          "title": "Trump Announces A.I. Industry Pledge to Pay for Power",
+          "title": "A Word to the Wise: Don’t Trust A.I. to File Your Taxes",
           "source": "NYT Technology",
-          "summary": "Companies including Google, Microsoft and OpenAI committed to pay for the power plants and grid upgrades needed to run their data centers.",
-          "published_at": "2026-03-04 22:25 UTC"
-        },
-        {
-          "title": "Lawmakers Question Intel’s Use of Tools From Blacklisted Chinese Firm",
-          "source": "NYT Technology",
-          "summary": "A bipartisan group of senators raised national security concerns about the chipmaker, which is now partly owned by taxpayers.",
-          "published_at": "2026-03-04 18:12 UTC"
+          "summary": "The world’s smartest technology is no match for the U.S. tax code.",
+          "published_at": "2026-03-05 10:01 UTC"
         },
         {
           "title": "Elon Musk Defends Social Media Posts in Twitter Shareholder Lawsuit",
           "source": "NYT Technology",
           "summary": "Mr. Musk said he did not expect his posts in the lead-up to his 2022 acquisition of the social media site, now X, to affect the company’s share price.",
-          "published_at": "2026-03-04 23:18 UTC"
+          "published_at": "2026-03-05 02:40 UTC"
         },
         {
-          "title": "Ford and G.M. Face a Dilemma as China Excels in Electric Vehicles",
+          "title": "The Pentagon Officially Notifies Anthropic That It Is a ‘Supply Chain Risk’",
           "source": "NYT Technology",
-          "summary": "General Motors, Ford and other established automakers risk becoming relics if they don’t catch up to Chinese carmakers and technology companies in electric vehicles and self-driving cars.",
-          "published_at": "2026-03-03 23:38 UTC"
+          "summary": "Anthropic has said it will sue the Defense Department over the designation, which could prevent the start-up from doing business with the U.S. government.",
+          "published_at": "2026-03-05 23:03 UTC"
         },
         {
-          "title": "Hands-On: Apple’s New MacBook Neo, iPhone 17e and Other New Products - Bloomberg",
-          "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQdDlGZjI2bktsQjFsOHhRYUdoanh4OFpvQjJmRjVpNGdGcm1kcmh3YVFFUlZBRXpyc05RSHdFWTVNWENXcXBvS0xrZnBGOUdaMUNSZUc2ZEpIRFlHaGF5TjV3RXBOQW1VQkI1Ml9lVEVHUTFSNXE2Z25pbVFQdkV6WWVsM1J0aWNKRDlkSG1OQU1uSmlaX19ZaVlJQmp2NHVZMDRha08tSDl5XzNKQ0hHLWRB?o",
-          "published_at": "2026-03-04 16:21 UTC"
+          "title": "The Smart Home Never Quite Worked. Now It’s Getting an A.I. Reboot.",
+          "source": "NYT Technology",
+          "summary": "Amazon and Google think that artificially intelligent assistants like Alexa+ and Gemini will speed up the process of setting up a smart home, but many problems remain unsolved.",
+          "published_at": "2026-03-05 16:30 UTC"
         },
         {
-          "title": "Exclusive: we've confirmed the Galaxy S26 Ultra's storage type – and it's not UFS 4.1 - PhoneArena",
-          "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxONWNnX2g4SlJDNGVxU3lLRmFPZ0ozbzlWcVNnV01LMjl4S0lUM19ReWhqRjNJdFllMUExbWkzMlpwMTZiRlRBSEswUXJXQ2poOUJUMTBSUlo0YmlLV1Y2VmJDeVQ3czdNYkNzbndxYmlYQXlpMUhQNXBzVjJiOERWNHllLWJoMXFIeFR4YUtB?oc=5\" target=\"_blank\">Exclusive: we've confirmed ",
-          "published_at": "2026-03-04 11:45 UTC"
+          "title": "How $800 Monthly Car Payments Are Hurting Car Sales",
+          "source": "NYT Technology",
+          "summary": "Cars have become so expensive that many Americans are putting off or not buying new cars, hurting the auto industry.",
+          "published_at": "2026-03-05 21:13 UTC"
         },
         {
-          "title": "Google Pixel 10a review: Better than you’ve heard - 9to5Google",
-          "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxPWkh2dkIyX2ZwZUt0TnFmR25hZThUV1REeG9QWnNpdkFDWjhQZGk1cHBVQ0wxT0RUSjRiUHo5Nm9XYnRZRlBLb3BwYWxVZmZLSVFhdFFZaS1sZmt2SUNxd2N1RTFNbzEwV2puODAxV09KTEMwWkVGLW5VSVgwSC1mdjhNZmNURzhtSXc?oc=5\" target=\"_blank\">Google Pixel 10a review: Better ",
-          "published_at": "2026-03-04 17:00 UTC"
+          "title": "You’ve Never Seen Ants Like This Before",
+          "source": "NYT Technology",
+          "summary": "The Antscan database captures the tiny insects’ diversity and shows how the world’s living things could be rendered in three dimensions.",
+          "published_at": "2026-03-05 10:03 UTC"
         },
         {
-          "title": "Experts warn of ‘mysterious’ leaked US government tool that breaks into iPhones - New York Post",
+          "title": "Microsoft teases its next Xbox, says ‘Project Helix’ will play PC games too - The Verge",
           "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxQMEdQYl9aRVp1ZDdmTGxkRWxNOW1QWmJ4ckVnOHZJUlFoMW84OG1HbHN1OWJiZmlqalV1WV9EeE9LbmVrWjZUUU1XTXlHTDY5MkdfRy01Y0lwTVVmU25ZQkxhRXd1ZGg2UTFkOHQzOXJBSGlXZTJYWFd0Rjgyb1FpSjY0Y3daX3dDd0Jxbi04aDRKOFRRY3IzWG1xOG1UQQ?oc=5\" target=\"_blank\">Exper",
-          "published_at": "2026-03-04 13:46 UTC"
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOdGdqbkRlei1QVGlzcWJMXzZFb1MwYnBiRDhyT1RXaTk0TmlTaVhNelRVY1hFSXFScFNDX0pNbHRlVDRBSm45TzdHOXFUMFR4Z3JZMmgzTjctU01UT2RqX3pZYXhRc3U3YlQ4R2NhSlNUdXZJd293LU5IdjRsSmZaWTJMS3Jvc0swX3NJWElHZWZVaGs2YzVyR0x2NnpPal9vcVNHampyZXctUF9pVzZB?oc=5\"",
+          "published_at": "2026-03-05 20:14 UTC"
         },
         {
-          "title": "PlayStation is reportedly ditching its PC release strategy, and most first-party games will now be console exclusive - Eurogamer",
+          "title": "macOS Tahoe 26.3.1 update will “upgrade” your M5’s CPU to new “super” cores - Ars Technica",
           "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxPUy1zSmNhd0dDYU9QbVUySU0xRExKNWtkWW1PQm1UMzMyaXprS0xSMWNQRkdYZHZVYUlQUVM5ZXZQRXJSWlBEbG80RkxkMVZfbnNpbmFfbC1nTnltMlJpbEJxNzdoMFZkOF81STl6Q09Rb3UyTUszZkI1cmNDX29ieGl5MnZ1VlJuaHBobXhKVWNZbTRERmc0RWJueDRuR2pYa3VTaXFEdTZVb0lOOTlhbEw3M0",
-          "published_at": "2026-03-04 17:15 UTC"
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOWWI1X3hmSWg5VHVEc3o5YWptRXRKbVdKLTdfcGR6TmdiMzlWclFYWVYzV2piNmpNNllycDQ5b29YNjJsTzRXZWRXTHlaTzljWnlkdHRaTUx4U3JnVnl0SGFlSWR5TlZTVEhqVU5pQ1Y3WlRIYzBSTTAzTFM4dUFMYXlHZ09GSUlMdExnN1czVm5TVE8zamdKV1F5YURSMTJxNjl2X3JaSjB4T3hycDVYWQ?oc=",
+          "published_at": "2026-03-05 13:28 UTC"
         },
         {
-          "title": "The T-Mobile Samsung Galaxy S26 Ultra \"On Us\" Deal Explained (No Trade-In or Port-In Required) - IGN",
+          "title": "All of Apple's new launches graded from worst to best - AppleInsider",
           "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPRTZtdG5PMnJVWnRIZVNCd2JKT3FyM0NabnR4ckJBbFlybkQ1dmxfaVhRNWItQ29KNDFId0J4VGt0aXVXVlFNejNsNzROY3UtOHNpTVpOR3dqY1pJU3ZlMkxjOE1sUloycFdHb19KdXNpUVkxU3MtVS1lTnJXQUdYcEV2dXJlMkpNQk1NcWM5bDlaUjZHMFc4blphRkFvRWpIV1E?oc=5\" target=\"_blank\">",
-          "published_at": "2026-03-04 18:01 UTC"
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxQSmRETThnWTNmMXpsN2M3MEVSNnBxVkppTHIyZlFSdzFTczJfODdQbC1OWmw5TXdTTzhudEFQMmpnWFVKakhab1kzZ09IYkgwdDhhZVlNU09sa1RaNll1Ym1uaHRGMklrTlRQWTdWVF9MeFpBUzRfcWNKQkcyOW9wSU1pV2k4Ry1VVk1nVUNacW51Tnl1aUh2eXFja3B1WG1Lc3hB?oc=5\" target=\"_blank\"",
+          "published_at": "2026-03-05 16:52 UTC"
         },
         {
-          "title": "Play a Limited Time Event in Pokémon Pokopia on Nintendo Switch 2 - Pokemon.com",
+          "title": "Google starts shaming apps that drain your battery - Android Authority",
           "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNdFMyUXFaQXBNQW5KMmp4aV9WYlFRYTZmd0RLdzNTbmc0VVkyOS1SYXZ4aFl4ZnZpNXVJZ3Bwb3ZtZ3ltYTR2R045QzBaRlE5Y21OZmMxSFVpeGtnTzYtbElJQ1UzbnNxUlN2VFRSSXdRWEdENXYxejJKWUNybGtPQkJzeVpZYTNOREpJVVU5ZW1LZDZVaTJUWWpWekZjTFh2ZzBXRXBkbTU?oc=5\" target=\"",
-          "published_at": "2026-03-04 15:19 UTC"
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMid0FVX3lxTE8wVVE5YkRPdXNSVmhva1YzekctMGtWdDM4OElydTdhbWxLWGkzUFAzNHZVX1lvVEw2OU5OTC1CYUhYdUdYU3M0QXRZSDZ4UFJqQ2piczZOYmd2dXlPLUZMQlhNaWdaVkFqSUFURVZUc3U2Tk1UdFpR?oc=5\" target=\"_blank\">Google starts shaming apps that drain your battery</a>&nbsp",
+          "published_at": "2026-03-05 11:35 UTC"
         },
         {
-          "title": "MacBook Neo, iPhone 17e, and everything else Apple announced this week - TechCrunch",
+          "title": "Exclusive: Apple executive details affordable new MacBook Neo, AI-integrated technology and more - ABC News",
           "source": "Google News Technology",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxOOTlWa3ViOTY1d2t3a2xrTlI0N085Z3Q3dExWV1d6eFJ3Q3pxSTdwWTZWLWN0SFgxeWFjTHRuY3l4bE1vSXd4OXFEcFlBTlpIQUQ3cmRxTmFMWnd5Z05XbFhaOUdaaHdKb2xpY1JRVHY2UUJBeEozNWpRSE5ycEJvTTlpaEQtUURCejJudVRrQm1BUC1SYzRlbA?oc=5\" target=\"_blank\">MacBook Neo, ",
-          "published_at": "2026-03-04 19:00 UTC"
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNcmRvaXduRU1Ma2thZnBDUlc4SlpmWUVBNFc3Q3RoT2lDSzhadTkzQXlmMm5IaWJGY0V5S0RIZG9hUUUxeVdLeDNnUkYwc1lPLXQwZEZ5TEVJRkdBNjFUVFhZSGd5ajcydUJzNFVFaXNUWXhicDlNWGhEeXc4S3FPc0wyTExOUlBHSFZaYVVNbE8wSnFMX2wxb1U4b0dXZ093bmF3aFlTV21JVi1N0gGyAUFVX3",
+          "published_at": "2026-03-05 16:20 UTC"
+        },
+        {
+          "title": "Pokémon Pokopia is out today, but it already has its first limited-time event, with three cute Pokémon only available for a two-week window this month - Eurogamer.net",
+          "source": "Google News Technology",
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxONmRwNjZTdG1uYjEwV2NMRVFhT3F2NVBFVWM4LU1yWkRUZWNJRWdoNXdQdVNNMHhsUlJiRTI2bGhWZXUwRnRuaEpVNk9xNlRUQjV6WEtSRVpTRXFWNWFwbTRQOHdVZmlQSDZiVF9ZaWd2M2NHRHRNaGllRFVEUlJxa0g2RzZUdk55cmlEcHBhLUZNUTBXajJyYi1zaTN5V2hTakNF?oc=5\" target=\"_blank\"",
+          "published_at": "2026-03-05 11:45 UTC"
+        },
+        {
+          "title": "Samsung Galaxy S26 Ultra review: The stealth upgrade - Engadget",
+          "source": "Google News Technology",
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOS0dibnRDZUtLeW5PYTFKQms3OXJ3WncxTl8tY3FvNmFDR1Z6Qy1ZNG1BSEZPdUFJYWU1cGtHdG10QU5OYWQ5OVhyYXQwRkYwT2FUZnM3aW5YNEtrYWRpRXAyVVhyTHltY2gzLWZwTFZBaWhBbjhXU1czVGI4cWlLbzhpNEdGX09vSEdTc1JBYXhtRWlGVmFGNVc5V0V6aTJPNjJseGNKTm13b0lPdncw?oc=5\"",
+          "published_at": "2026-03-05 14:00 UTC"
+        },
+        {
+          "title": "\"We don't want to mislead players\" - Control Resonant devs confirm Jesse Faden won't be playable, there's no parry, and it's definitely not a Soulslike - Eurogamer.net",
+          "source": "Google News Technology",
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMi-wFBVV95cUxOdmhvS0I2dEpyMHpSZ19TVG11NEVnV0c4dVdfUWR4bjk3cExlS2NrallGenJFLWNod0hPQWVLSmV2VjJjbno2enpIT0pBeVNrQVBraVl3RkZHMnozN05SNDM5VEdmek9kajdwMVB0UEp3clVSVG1uYVBERUo3N2RwWHVxcnhtd21OTFNleG55dmRfTTZCUThIOEZtVDU5MlI3cVZPTjNfeHRSQjJnSEdpS3FGSm",
+          "published_at": "2026-03-05 15:39 UTC"
+        },
+        {
+          "title": "Xbox Game Pass subscribers now have four free bonus games to play - TrueAchievements",
+          "source": "Google News Technology",
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMic0FVX3lxTE5JSlRuYnRwbHEtcG1zNzJWanhYZ1FKWVcydjViSkJ5OGNmZmpFOFZ3Tlp5blZ0dnhGOVFXeFYwbFFyNHJYM2FmVFNKajRjZy1vbHJNYkEtWXo1MnlqdTZxdDRxMVZodExRcFZSR09LMlpDUEU?oc=5\" target=\"_blank\">Xbox Game Pass subscribers now have four free bonus games to pla",
+          "published_at": "2026-03-05 16:45 UTC"
+        },
+        {
+          "title": "Claim the Vapid Firebolt ASP Off-Roader and Much More with GTA+ - Rockstar Games",
+          "source": "Google News Technology",
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNelVoMndOczB2NERwOTZLUUVMYnhNYTNVd1hTb1d5ZGl0aFVLN1RWVjBjcklKcmM0ZWNjQkhndG1RY1dJQU8zS2JITHBzS1FvVXdiOEF4eE5md0tLajNfN2piWFEwQl9OUWpmODczRy11R09RVjUxWHpPWS1fRUllWkNodjJKY2U1Q2w1WDZkOEhCR1E4T0NRWVdnWGoxQTBJbVhDZnV1MC1qMUwzVHROOXFDT2",
+          "published_at": "2026-03-05 16:09 UTC"
+        },
+        {
+          "title": "DiligenceSquared uses AI, voice agents to make MA research affordable",
+          "source": "TechCrunch",
+          "summary": "Instead of relying on expensive management consultants, the startup uses AI voice agents to conduct interviews with customers of the companies the PE firms are considering buying.",
+          "published_at": "2026-03-05 23:14 UTC"
         }
       ],
       "korean": [
         {
-          "title": "SKT 정재헌 CEO \"스타트업 동반자 되겠다…5년간 500곳 지원\"",
+          "title": "2월 소비자물가 2.0% 상승…'중동 사태' 유가상승은 반영 안 돼(종합)",
           "source": "연합뉴스 경제",
-          "summary": "(바르셀로나=연합뉴스) 박형빈 기자 = SK텔레콤[017670]은 스페인 바르셀로나에서 열리고 있는 세계 최대 모바일 박람회 MWC26에서 \"국...",
-          "published_at": "2026-03-04 23:00 UTC"
+          "summary": "(세종=연합뉴스) 이대희 송정은 기자 = 2월 소비자물가 상승률이 전월과 같은 2.0%를 기록했다. 6개월 연속 2%대다.",
+          "published_at": "2026-03-05 23:49 UTC"
         },
         {
-          "title": "\"숙박비는 비싸고 콘텐츠는 부족…로컬 공유숙박 발굴\"",
+          "title": "지놈앤컴퍼니, 300억 규모 투자 유치",
           "source": "연합뉴스 경제",
-          "summary": "(서울=연합뉴스) 김채린 기자 = 국내 여행을 주저하게 만드는 요인으로 &apos;높은 물가&apos;와 &apos;로컬 콘텐츠 부족&apos;이 가장 많이 꼽혔다는 조사 결과가 ...",
-          "published_at": "2026-03-04 23:00 UTC"
+          "summary": "(서울=연합뉴스) 최현석 기자 = 글로벌 신약개발 전문기업 지놈앤컴퍼니[314130]는 국내 주요 기관투자자들로부터 총 300억 원 규모의 투자...",
+          "published_at": "2026-03-05 23:49 UTC"
         },
         {
-          "title": "[마켓뷰] 5,000선 후퇴 코스피, 유가 진정 조짐에 반등 시도하나",
+          "title": "구윤철 \"주유소 폭리·매점매석 방문 점검…'무관용' 최대 조치\"",
           "source": "연합뉴스 경제",
-          "summary": "(서울=연합뉴스) 고은지 기자 = 코스피가 불과 이틀 만에 1,150포인트 떨어지며 5,000선까지 물러난 가운데 원유 시장이 진정 기미를 보이...",
-          "published_at": "2026-03-04 22:54 UTC"
+          "summary": "(서울=연합뉴스) 서혜림 김정진 기자 = 정부가 중동 사태와 관련해 6일부터 석유류 가격의 과도한 인상 행위를 단속하기 위한 주유소 현장 방문에...",
+          "published_at": "2026-03-05 23:47 UTC"
         },
         {
-          "title": "울산시, 올해 체납 징수 목표액 826억원…체납차량 영치 확대",
+          "title": "키움證 \"한화비전, 반도체 패키징 장비 공급 본격화…목표가↑\"",
           "source": "연합뉴스 경제",
-          "summary": "(울산=연합뉴스) 김근주 기자 = 울산시는 올해 정리할 체납액을 826억원으로 정하고 강도 높은 징수 활동에 나선다고 5일 밝혔다.",
-          "published_at": "2026-03-04 22:48 UTC"
+          "summary": "(서울=연합뉴스) 김유향 기자 = 키움증권[039490]은 한화비전[489790]의 반도체 장비 수주가 본격화할 것이라며 목표가를 기존의 9만원...",
+          "published_at": "2026-03-05 23:40 UTC"
         },
         {
-          "title": "[연합뉴스 이 시각 헤드라인] - 07:30",
+          "title": "이란戰에 유가급등·물가비상…트럼프 행정부 \"모든방안 검토\"(종합)",
           "source": "연합뉴스 경제",
-          "summary": "■ 트럼프 \"이란 지도자 되고자 하는 모든 이는 결국 죽는다\"",
-          "published_at": "2026-03-04 22:30 UTC"
+          "summary": "(워싱턴·뉴욕=연합뉴스) 이유미 김연숙 특파원 = 미국과 이스라엘의 이란 공격으로 시작된 중동 전쟁이 이어지면서 국제 유가가 급등하자, 백악관이...",
+          "published_at": "2026-03-05 23:40 UTC"
         },
         {
-          "title": "서초구, 발달장애인이 일하는 '늘봄카페' 14호점 개소",
+          "title": "한투증권, 케이뱅크 투자의견 중립…\"가계대출 확대 쉽지 않아\"",
           "source": "연합뉴스 경제",
-          "summary": "(서울=연합뉴스) 정준영 기자 = 서초구(구청장 전성수)는 4일 서울시인재개발원(남부순환로 340길 58)에서 장애인 일자리 창출을 위한 &apos;늘봄...",
-          "published_at": "2026-03-04 22:07 UTC"
+          "summary": "(서울=연합뉴스) 임은진 기자 = 한국투자증권은 6일 케이뱅크[279570]가 가계대출을 늘리기 쉽지 않은 상황이라면서 투자 의견 &apos;중립&apos;으로 ...",
+          "published_at": "2026-03-05 23:36 UTC"
         },
         {
-          "title": "中 5월부터 아프리카 수입 관세 면제…대만 수교국은 제외",
+          "title": "삼성증권 \"네이버, 탈팡의 유일한 대안…밸류에이션 매력 상승\"",
           "source": "연합뉴스 경제",
-          "summary": "(서울=연합뉴스) 박성진 기자 = 중국이 오는 5월부터 대만 수교국을 제외한 아프리카 53개국에 대해 수입 관세를 부과하지 않기로 했다.",
-          "published_at": "2026-03-04 22:01 UTC"
+          "summary": "(서울=연합뉴스) 김지연 기자 = 삼성증권[016360]은 6일 네이버[035420]에 대해 &apos;탈팡&apos;(쿠팡 탈퇴) 효과가 지속되며 \"대외 변수가...",
+          "published_at": "2026-03-05 23:34 UTC"
         },
         {
-          "title": "[우분투칼럼] 아프리카와 개발협력⑽ 르완다의 개발과 카가메 대통령",
+          "title": "한화증권 \"현대제철, 주가 저평가 심해…업황 개선 기대\"",
           "source": "연합뉴스 경제",
-          "summary": "[※ 편집자 주 = 연합뉴스 글로벌문화교류단이 국내 주요대학 아프리카 연구기관 등과 손잡고 &apos;우분투 칼럼&apos;을 게재합니다. 우분투 칼럼에는 인류 ...",
-          "published_at": "2026-03-04 22:00 UTC"
+          "summary": "(서울=연합뉴스) 이민영 기자 = 한화투자증권은 6일 현대제철[004020]의 현재 주가가 저평가 상태이고 향후 업황 개선이 기대된다며 투자의견...",
+          "published_at": "2026-03-05 23:31 UTC"
         },
         {
-          "title": "소·돼지·닭고기 가격 두 자릿수 '껑충'…밥상물가 고공행진",
+          "title": "[이코노워치] '공포의 증시'가 소환한 투자 전설의 생존법",
           "source": "연합뉴스 경제",
-          "summary": "(서울=연합뉴스) 김윤구 한주홍 기자 = 돼지고기와 한우, 닭고기 가격이 모두 1년 전보다 10% 넘게 오르면서 축산물이 전반적으로 급등세를 보...",
-          "published_at": "2026-03-04 21:23 UTC"
+          "summary": "(서울=연합뉴스) 김지훈 선임기자 = 2009년은 미국 부동산시장의 부실 상품이 촉발한 문제가 세계 경제를 초토화한 글로벌 금융위기로 한창 번지...",
+          "published_at": "2026-03-05 23:30 UTC"
         },
         {
-          "title": "국제유가, 거친 랠리 중단하고 일단 숨고르기…보합권 거래",
+          "title": "DS투자 \"ETF 활성화로 증시 변동성 확대…전략적 활용전략 필요\"",
           "source": "연합뉴스 경제",
-          "summary": "(뉴욕=연합뉴스) 이지헌 특파원 = 미국과 이스라엘이 대이란 공격을 개시한 이후 5일째에 접어든 4일(현지시간) 국제 유가가 상승세를 일단 중단...",
-          "published_at": "2026-03-04 21:20 UTC"
+          "summary": "(서울=연합뉴스) 황철환 기자 = 지수상장펀드(ETF)를 통한 개인의 간접투자가 증시 전체에 영향을 미치면서 변동성을 확대하고 있는 만큼 이를 ...",
+          "published_at": "2026-03-05 23:27 UTC"
         },
         {
-          "title": "불법대부계약 무효확인서, 금감원장 명의로 발송",
+          "title": "신한투자 \"업황 개선으로 고성장…원익QnC·티에스이 목표가↑\"",
           "source": "연합뉴스 경제",
-          "summary": "(서울=연합뉴스) 강류나 기자 = 금융감독원은 연 이자율이 60%를 넘거나 불법 추심을 행한 사채업자에게 금융감독원장 명의의 &apos;대부계약 무효확인...",
-          "published_at": "2026-03-04 21:00 UTC"
+          "summary": "(서울=연합뉴스) 고은지 기자 = 신한투자증권은 6일 \"정보기술(IT) 업황 개선에 따라 관련 소재·부품·장비(소부장) 업체의 성장이 가속화될 ...",
+          "published_at": "2026-03-05 23:27 UTC"
         },
         {
-          "title": "2월말 외환보유액 4천276억달러…외평채발행에 석달만에 증가",
+          "title": "삼성증권 \"SKT, 이익 개선·앤트로픽 등 지분가치 부각\"",
           "source": "연합뉴스 경제",
-          "summary": "(서울=연합뉴스) 임지우 기자 = 지난달 외환보유액이 외국환평형기금채권(외평채) 30억달러 신규 발행 등으로 석 달 만에 증가했다.",
-          "published_at": "2026-03-04 21:00 UTC"
+          "summary": "(서울=연합뉴스) 김태종 기자 = 삼성증권[016360]은 6일 SKT에 대해 올해 이익이 개선되고 앤트로픽 등 글로벌 인공지능(AI) 기업의 ...",
+          "published_at": "2026-03-05 23:25 UTC"
         },
         {
-          "title": "제기동 한옥마을, 경동시장과 연계한 '핫플'로 만든다",
+          "title": "창의적 관광기업 발굴…부산관광스타트업 공모",
           "source": "연합뉴스 경제",
-          "summary": "(서울=연합뉴스) 황재하 기자 = 서울 동대문구 제기동 한옥마을이 인근 경동시장과 연계하고 복합문화공간과 팝업스토어를 갖춘 &apos;경동한옥마을&apos;로 거...",
-          "published_at": "2026-03-04 21:00 UTC"
+          "summary": "(부산=연합뉴스) 김선호 기자 = 부산관광기업지원센터는 오는 9일부터 25일까지 2026 부산관광스타트업 공모전을 연다고 6일 밝혔다.",
+          "published_at": "2026-03-05 23:07 UTC"
         },
         {
-          "title": "다주택자 대출 잔액 103조…절반은 서울·경기에 집중",
+          "title": "AI 기반 침수 피해 예방…부산시, 극한호우 대응 협력체계 구축",
           "source": "연합뉴스 경제",
-          "summary": "(서울=연합뉴스) 임수정 기자 = 다주택자가 받은 대출 잔액이 100조원을 넘어선 가운데 서울 강남·강동 등 주요 주거지역을 중심으로 대출이 집...",
-          "published_at": "2026-03-04 20:55 UTC"
+          "summary": "(부산=연합뉴스) 김선호 기자 = 부산시는 6일 오후 시청 재난대책본부 회의실에서 인공지능(AI) 기반 극한 호우 대응 플랫폼 기술개발 업무협력...",
+          "published_at": "2026-03-05 23:02 UTC"
         },
         {
-          "title": "공정위, 쿠팡 소비자 피해 집중점검…\"미주문 상품 배송\" 주장도",
+          "title": "[2보] 2월 소비자물가 2.0% 상승…6개월 연속 2%대",
           "source": "연합뉴스 경제",
-          "summary": "(세종=연합뉴스) 이세원 기자 = 공정거래위원회는 쿠팡의 개인정보 유출로 인한 소비자 피해 사례가 있는지 집중 점검에 나선다.",
-          "published_at": "2026-03-04 20:53 UTC"
+          "summary": "(세종=연합뉴스) 이대희 안채원 기자 = 2월 소비자물가 상승률이 전월과 같은 2.0%를 기록했다. 6개월 연속 2%대다.",
+          "published_at": "2026-03-05 23:00 UTC"
         },
         {
-          "title": "삼성전자, 인버터 제습기 출시…AI로 전력 최대 30% 절감",
+          "title": "문체부, 웰니스 관광 6대 중심지 선정…각 4억5천만원 지원",
           "source": "연합뉴스 산업",
-          "summary": "(서울=연합뉴스) 한지은 기자 = 삼성전자는 에너지 효율과 대용량 제습 성능을 강화한 2026년형 인버터 제습기를 출시했다고 5일 밝혔다.",
-          "published_at": "2026-03-04 23:15 UTC"
+          "summary": "(서울=연합뉴스) 구정모 기자 = 문화체육관광부는 지역의 웰니스 특화 자원을 집적해 고부가가치 관광 산업으로 육성하기 위한 &apos;웰니스 관광 클러스...",
+          "published_at": "2026-03-05 23:47 UTC"
         },
         {
-          "title": "SKT \"AI 경쟁, 수능 1등보다 '일 잘하는 모델'이 핵심\"",
+          "title": "SK디스커버리·한앤컴퍼니, KKR에 SK이터닉스 지분 양도 결정",
           "source": "연합뉴스 산업",
-          "summary": "(바르셀로나=연합뉴스) 박형빈 기자 = 정부의 독자 인공지능(AI) 파운데이션 모델 개발 프로젝트에 참여 중인 SK텔레콤[017670]이 단순한...",
-          "published_at": "2026-03-04 23:00 UTC"
+          "summary": "(서울=연합뉴스) 조성흠 기자 = SK디스커버리가 자회사 SK이터닉스의 지분 전량을 글로벌 투자사 콜버그크래비스로버츠(KKR) 측에 매각하기로 ...",
+          "published_at": "2026-03-05 23:46 UTC"
         },
         {
-          "title": "삼성SDS, 고려아연 등 10여개 사에 챗GPT 엔터프라이즈 공급",
+          "title": "서산시, 올해 드론 배송 상용화 서비스 개시",
           "source": "연합뉴스 산업",
-          "summary": "(서울=연합뉴스) 오지은 기자 = 삼성SDS가 고려아연[010130] 등 10여개사에 챗GPT 엔터프라이즈를 공급하는 계약을 체결했다고 5일 밝...",
-          "published_at": "2026-03-04 23:00 UTC"
+          "summary": "(서산=연합뉴스) 정윤덕 기자 = 충남 서산시는 올해 가로림만 맞춤형 드론 배송 상용화 서비스를 시작했다고 6일 밝혔다.",
+          "published_at": "2026-03-05 23:41 UTC"
         },
         {
-          "title": "독일 법원 \"中 TCL QLED 광고 허위\"…중단 판결",
+          "title": "[부고] 유남석(전 헌법재판소장)씨 장모상",
           "source": "연합뉴스 산업",
-          "summary": "(서울=연합뉴스) 한지은 기자 = 독일 법원이 중국 TV 제조사 TCL의 일부 제품에 대해 QLED TV 허위 광고에 해당한다며 광고 중단을 명...",
-          "published_at": "2026-03-04 23:00 UTC"
+          "summary": "▲ 백옥문(향년 90세)씨 별세, 민지홍(전 네슬레코리아 본부장)씨 모친상, 유남석(전 헌법재판소장)씨 장모상 = 6일 오전 3시, 연세대 세브...",
+          "published_at": "2026-03-05 23:37 UTC"
         },
         {
-          "title": "LGU+ 홍범식 \"통신사 넘어 AI SW 기업\"…'익시오' 글로벌 공략",
+          "title": "이세돌 AI 캠페인, 뉴욕 타임스퀘어 전광판 뜬다",
           "source": "연합뉴스 산업",
-          "summary": "(바르셀로나=연합뉴스) 박형빈 기자 = LG유플러스[032640]가 전통적인 통신 중심의 사업 구조에서 탈피해 음성 인공지능(AI) 솔루션을 앞...",
-          "published_at": "2026-03-04 23:00 UTC"
+          "summary": "(서울=연합뉴스) 오지은 기자 = 엔터프라이즈 에이전틱 AI를 구축하는 스타트업 인핸스가 오는 9일 이세돌 9단과의 글로벌 AI 캠페인을 뉴욕 ...",
+          "published_at": "2026-03-05 23:35 UTC"
         }
       ],
-      "collected_at": "2026-03-04T23:20:27.820384+00:00",
+      "collected_at": "2026-03-05T23:59:11.379735+00:00",
       "total_count": 80,
       "collection_window_hours": 24,
       "collection_errors": []
     },
-    "collected_at": "2026-03-05T08:20:35.437457"
+    "collected_at": "2026-03-06T08:59:20.194278"
   },
   "debate": {
     "moderator_agent": "뉴스 리스크 헌터",
@@ -649,125 +663,124 @@
         "agent_name": "퀀트",
         "role": "기술적 지표·수급 분석가",
         "avatar": "📊",
-        "analysis": "KOSPI -12.06%, KOSDAQ -14.00%의 급락은 RSI 30 미만 과매도 진입 가능성을 시사합니다. 외국인 -1조4648억 순매도는 5일 평균 대비 200% 이상 확대된 패닉 수준입니다. 기관 +4824억 순매수는 저점 매수 신호이나, 외국인 매도 강도를 상쇄하기 부족합니다. USD/KRW 1461.76은 전일 대비 +2.1% 급등으로 외국인 이탈 가속화를 확인시킵니다. 나스닥 +1.29% 반등에도 국내 지수가 역행 급락한 것은 MACD 데드크로스 후 모멘텀 붕괴를 의미합니다. 20일 이동평균선을 -8% 이상 이탈했으며, 볼린저밴드 하단(-2σ) 돌파 시 단기 반등 가능성이 있으나, 거래량이 5일 평균 대비 340% 급증한 공포 매물 출회 국면입니다. 5일선이 20일선을 하향 돌파하는 데드크로스 완성 단계입니다.",
+        "analysis": "KOSPI는 RSI 55.2로 중립 구간에 위치하며 과매수 압력 없이 상승 여력이 남아있다. MACD 219.92는 강력한 양수 영역으로 골든크로스 이후 모멘텀이 지속되고 있으며, 볼린저밴드 51.4% 위치는 중심선 상단에서 안정적 상승 구간을 의미한다. 외국인 2704억 순매수는 수급 우위를 보이나 기관 -3852억 순매도가 단기 저항으로 작용한다. KOSPI 9.63% 상승과 KOSDAQ 14.10% 급등은 거래량 증가를 동반한 강세 신호다. 나스닥 -0.26% 소폭 하락에도 국내 지수가 독립적 강세를 보이는 점은 긍정적이나, USD/KRW 1460.75 고환율과 미국 10Y 4.15%는 외인 이탈 리스크로 작용한다. 5일선과 20일선 정배열 상태에서 추가 상승 가능하나 기관 매도세 확대 시 조정 가능성 존재한다.",
         "key_points": [
-          "RSI 과매도 구간(<30) 진입 임박, 외국인 -1조4648억 패닉 매도는 5일 평균 대비 200% 확대",
-          "거래량 340% 급증은 항복 매물 출회 신호, 볼린저밴드 하단(-2σ) 돌파 시 기술적 반등 가능",
-          "5일선·20일선 데드크로스 완성, MACD 음수 확대 중으로 추가 하락 모멘텀 지속 가능성 70%"
+          "RSI 55.2 중립 + MACD 219.92 강양수 → 과열 없는 모멘텀 지속 구간",
+          "외국인 +2704억 vs 기관 -3852억 → 단기 수급 충돌, 외인 우위 시 추가 상승",
+          "볼린저 51.4% 중심선 상단 + KOSPI +9.63% → 상단 돌파 전 안정적 상승 단계"
         ],
         "confidence_score": 68,
-        "stance": "HOLD"
+        "stance": "BUY"
       },
       {
         "agent_name": "매크로",
         "role": "거시경제·대외변수 전문가",
         "avatar": "🌐",
-        "analysis": "현재 국내 증시는 전형적인 '글로벌 디커플링' 국면입니다. 나스닥이 +1.29% 상승한 반면 KOSPI는 -12.06%, KOSDAQ은 -14.00% 급락하며 극명한 괴리를 보이고 있습니다. 핵심 원인은 달러/원 환율 1461원대 급등입니다. 원화 약세는 외국인 투자자금의 환차손 우려를 증폭시켜 -1조4648억원의 대규모 순매도를 촉발했습니다. 미국 10년물 국채금리 4.08% 수준은 여전히 긴축적이며, 연준의 'higher for longer' 스탠스가 유지되는 한 글로벌 유동성 여건은 제한적입니다. 특히 한국은 對중국 수출 의존도가 높은데, 중국 경기 회복 지연과 반도체 업황 불확실성이 겹치며 구조적 약세 압력이 지속되고 있습니다. 미국 증시가 AI 테마 중심으로 상승해도 한국은 환율·금리·중국 리스크라는 삼중고에 직면해 있습니다. 단, 환율 급등 시 한국은행의 구두개입 가능성과 외국인 매도 피로감은 변수입니다.",
+        "analysis": "KOSPI 9.63%, KOSDAQ 14.10% 급등은 외국인 2704억 순매수가 주도했으나, 달러/원 1460원대 고환율 구간에서 발생한 점이 주목됩니다. 통상 원화약세 국면에서는 외국인 자금이 이탈하는데, 이번엔 역행 매수가 나타났습니다. 이는 미국 10년물 금리 4.15% 수준이 연준의 금리인하 기대감(터미널 레이트 근접)으로 해석되며, 나스닥 -0.26% 소폭 하락에도 불구하고 한국 증시가 독자 반등한 배경입니다. 다만 기관 -3852억 순매도는 밸류에이션 부담을 시사하며, RSI 55.2는 과열 아닌 중립 구간입니다. 중국 경기부양 기대와 반도체 업황 개선 신호가 외국인 매수를 이끌었으나, 고환율이 지속되면 실질 수익률이 훼손되어 지속성은 제한적입니다. 연준이 5월 FOMC에서 매파적 스탠스 유지 시 글로벌 유동성 축소로 신흥국 증시 압력이 재개될 리스크가 있습니다.",
         "key_points": [
-          "달러/원 1461원대 급등 → 외국인 -1조4648억 순매도: 환차손 우려가 매도 압력의 직접적 원인, 원화 약세 지속 시 자금 이탈 가속화 불가피",
-          "나스닥 +1.29% vs KOSPI -12.06%: 극심한 디커플링, 미국은 AI 랠리 지속되나 한국은 환율·對중국 수출 둔화로 구조적 약세 국면",
-          "미국 10년물 4.08% 유지: 연준의 긴축 기조 지속, 성장주 밸류에이션 압박 + 신흥국 자금 유출 압력 → KOSDAQ -14% 급락의 배경"
+          "달러/원 1460원대 고환율에도 외국인 2704억 순매수 → 중국 반도체 수출 회복 기대감과 연준 금리인하 시그널이 원화약세 리스크 상쇄",
+          "미국 10년물 4.15%는 2024년 고점 대비 하락 → 성장주 밸류에이션 압박 완화되나, 나스닥 -0.26% 약세는 빅테크 실적 불확실성 반영",
+          "KOSPI/나스닥 디커플링 발생 → 국내 증시는 반도체 재고 사이클 저점 통과 기대와 삼성전자 HBM 수주 모멘텀이 독자 상승 견인, 단 기관 -3852억 매도는 차익실현 압력 시사"
         ],
-        "confidence_score": 75,
+        "confidence_score": 68,
         "stance": "HOLD"
       },
       {
         "agent_name": "섹터매니저",
         "role": "주도 섹터·산업 분석가",
         "avatar": "🔬",
-        "analysis": "오늘 국내 증시는 전 섹터 동반 급락 장세를 기록했습니다. KOSPI -12.06%, KOSDAQ -14.00%로 외국인 1조 4648억 원 순매도가 집중되며 패닉셀이 발생했습니다. 섹터별로는 반도체(-11.7%, -9.6%), 이차전지(-11.6%), IT플랫폼(-11.9%, -16.3%), 철강(-14.2%), 자동차(-15.8%), 바이오(-12.3%) 모두 두 자릿수 하락을 기록해 특정 섹터 강세는 전무했습니다. 반도체는 삼성전자·SK하이닉스 동반 급락으로 메모리 사이클 정점 통과 우려가 재점화됐으나, 미국 나스닥 +1.29% 반등과 엔비디아 실적 기대감은 여전해 단기 과매도 반등 가능성이 높습니다. 이차전지는 유럽 EV 보조금 축소와 중국 CATL 경쟁 심화로 구조적 압박이 지속 중입니다. 현대차 -15.8%는 미국 관세 리스크와 내수 둔화가 겹쳤고, 카카오 -16.3%는 빅테크 전반의 밸류에이션 부담이 폭발한 결과입니다. 방어 섹터인 바이오마저 -12.3% 하락해 안전자산 역할을 하지 못했습니다. 향후 섹터 로테이션은 성장주 매도→배당 가치주(금융·통신·유틸리티) 쏠림이 예상되며, 반도체는 3분기 실적 시즌 전까지 변동성 장세가 지속될 전망입니다.",
+        "analysis": "오늘 시장은 반도체 섹터가 압도적 주도 세력으로 작용했습니다. 삼성전자 +11.3%, SK하이닉스 +10.8%는 HBM3E 수요 확대와 TSMC 실적 호조에 따른 글로벌 반도체 사이클 상승 기대감이 반영된 것입니다. 미국 엔비디아 AI 칩 수요 지속, 중국 화웨이 Mate70 출시 지연 등 공급망 이슈가 국내 메모리 반도체 업체에 유리하게 작용 중입니다. 이차전지는 LG에너지솔루션 +6.9%로 상대적 약세를 보였는데, 미국 IRA 보조금 축소 우려와 중국 CATL의 공격적 증설이 부담 요인입니다. 현대차 +9.4%는 미국 SUV 판매 호조와 인도 타타모터스 협력 뉴스가 긍정적이었으나, 자동차 섹터는 반도체 대비 상대 강도가 약합니다. 바이오(셀트리온 +7.1%)는 램시마SC 유럽 승인 기대감이 있으나 섹터 전반의 모멘텀은 제한적입니다. 방산·조선은 오늘 수급 데이터 부재로 판단 보류하나, HD현대중공업·한화에어로스페이스는 중동 긴장 완화 시 조정 가능성 있습니다. 현재 섹터 로테이션은 명확히 '성장주(테크/반도체) 집중' 국면이며, 가치주로의 분산은 아직 미약합니다. 외국인 2704억 순매수는 반도체·플랫폼에 집중되었고, 기관 -3852억 순매도는 차익실현 성격으로 보입니다. 반도체 사이클은 현재 회복 초중반(저점 대비 30% 반등)으로 추가 상승 여력이 있으나, RSI 55.2는 과열 구간 진입 전이므로 단기 조정 후 재진입 전략이 유효합니다.",
         "key_points": [
-          "주도 섹터 부재: 전 섹터 동반 급락으로 방어 포지션 전환 신호, 금융·통신·유틸리티 등 배당주가 차선책",
-          "회피 섹터: 이차전지(LG에너지솔루션 -11.6%)는 유럽 보조금 축소·중국 경쟁 심화로 구조적 약세, 단기 반등 기대 어려움",
-          "섹터 로테이션: 성장주(IT·반도체) → 가치주(금융·배당주) 자금 이동 가속화, 반도체는 3분기 실적 전까지 관망 필요"
+          "반도체(삼성전자·SK하이닉스)가 오늘 시장 주도 - HBM3E 수요 확대, TSMC 실적 호조, 엔비디아 AI 칩 수요 지속으로 사이클 회복 초중반 국면 진입",
+          "이차전지(LG에너지솔루션) 상대 약세 - 미국 IRA 보조금 축소 우려, CATL 증설 경쟁 심화로 단기 회피 필요, 유럽 EV 판매 둔화도 부담",
+          "섹터 로테이션은 '성장주(테크) 집중' 국면 - 가치주(금융·화학) 분산 신호 없음, 반도체→플랫폼(네이버·카카오) 순환 흐름 지속, 방산·조선은 지정학 리스크 완화 시 조정 가능성 주의"
         ],
-        "confidence_score": 68,
-        "stance": "HOLD"
+        "confidence_score": 78,
+        "stance": "BUY"
       },
       {
         "agent_name": "가치투자자",
         "role": "밸류에이션·역발상 전략가",
         "avatar": "💰",
-        "analysis": "KOSPI가 5093에서 -12% 급락하며 외국인 1.46조 순매도가 발생한 현 시점은 전형적인 공포 국면입니다. 과거 데이터상 KOSPI PER 8~9배, PBR 0.8배 이하 구간은 역사적 저평가 영역이며, 현재 급락으로 이 수준 근접 가능성이 높습니다. 환율 1461원은 수출기업 실적 개선 요인이나, 미국 10년물 4.08% 고금리는 밸류에이션 압박 요인입니다. 나스닥 +1.29% 반등과 대조적인 한국 시장 -12~14% 낙폭은 과도한 디스카운트를 시사합니다. 외국인 대규모 매도는 단기 악재이나, 역사적으로 이런 공포 매도 시점이 중장기 매수 기회였습니다. 배당수익률 4~5% 상회 가치주(금융/통신)는 채권 대비 매력도가 상승했습니다. 단, 밸류에이션 데이터 제한으로 섹터별 정밀 분석은 제약되나, 현 낙폭은 과매도 신호로 판단됩니다. 분할 매수 전략이 유효한 시점입니다.",
+        "analysis": "KOSPI가 5583.9(+9.63%), KOSDAQ이 1116.41(+14.10%)로 단기 급등한 상황에서 밸류에이션 데이터가 제한적이라는 점이 오히려 경고 신호입니다. RSI 55.2는 과열 직전, 볼린저밴드 51.4% 위치는 중립이나 외국인 2704억 순매수 vs 기관 -3852억 순매도 구도는 개인 주도 랠리 가능성을 시사합니다. 환율 1460원대 고점과 미국 10년물 4.15% 금리 환경은 밸류에이션 디스카운트 요인입니다. 역사적으로 KOSPI PER 12배 이상, PBR 1.2배 이상에서는 상승 여력이 제한적이었으며, 2주간 10% 급등 후에는 실적 모멘텀 없는 종목의 밸류에이션 함정이 우려됩니다. 현재는 '탐욕 초입' 구간으로 판단되며, 배당수익률 4% 이상 방어주보다 테마주 선호 현상이 과열 신호입니다. 가치투자자는 추격 매수보다 조정 대기가 합리적입니다.",
         "key_points": [
-          "KOSPI -12% 급락으로 PER/PBR 역사적 저평가 영역 근접, 장기 투자자에게 매력적 가격대 진입 가능성",
-          "외국인 1.46조 매도는 공포 신호이나 역발상 관점에서 매수 기회, 과거 유사 국면 후 평균 6개월 내 15~20% 반등",
-          "배당수익률 4~5% 가치주(금융/통신) 중심 분할 매수 권고, 단기 변동성 대비 3~6개월 관점 보유 전략 유효"
+          "KOSPI 10% 급등 후 밸류에이션 검증 부재 - PER/PBR 역사적 평균 대비 확인 필요, 현 수준에서 추가 상승은 실적 서프라이즈 전제",
+          "기관 -3852억 순매도는 밸류에이션 부담 신호 - 개인 주도 랠리는 지속성 약하며, 외국인 매수도 환율·금리 리스크로 불안정",
+          "장기 투자자는 HOLD 후 -5~7% 조정 시 배당 가치주 분할 매수 - 현재는 Buy Zone 아닌 관망 구간, 공포 국면 재진입 대기"
         ],
-        "confidence_score": 72,
-        "stance": "BUY"
+        "confidence_score": 62,
+        "stance": "HOLD"
       },
       {
         "agent_name": "뉴스 리스크 헌터",
         "role": "이벤트 드리븐 리스크 & 촉매 분석가",
         "avatar": "📡",
-        "analysis": "현 시장은 중동 전쟁 격화라는 단일 변수에 의해 지배되고 있습니다. BBC는 미 국방부가 이란 군함 격침 및 주메니 장례식 연기를 보도하며 전쟁 장기화 우려를 확산시켰고, 이는 유가 급등과 글로벌 공급망 리스크로 직결됩니다. KOSPI가 이틀 만에 1,150pt 급락한 것은 '외국인 1.4조 이탈'이라는 수급 악화가 아니라, 중동발 에너지 쇼크가 한국 제조업(반도체·배터리·자동차)의 원가 구조를 위협한다는 시장의 판단입니다. 특히 BBC Business가 '유가 고공행진 시 제품·서비스 가격 상승 불가피'라고 경고한 점은 한국 수출기업의 마진 압박을 의미합니다. 한편 美 재무장관 베센트가 '이번 주 내 관세 인상 가능성'을 시사한 것은 전쟁 리스크에 통상 리스크까지 중첩되는 구조입니다. 기술주 측면에서 중동 AI 허브(UAE·사우디)의 사무실 폐쇄 및 원격근무 전환 뉴스는 삼성전자·SK하이닉스의 중동 데이터센터 수요 타격 가능성을 암시합니다. RSI·PBR이 아무리 저평가라도, '전쟁+관세+유가'라는 3중 외생 충격 앞에서는 무력합니다. 한국 국내 뉴스는 SKT의 스타트업 지원, 숙박비 조사 등 평시 경제 이슈에 불과하며 증시 방향성과 무관합니다.",
+        "analysis": "이란전쟁 확대가 한국 증시에 다층적 충격파를 생성하고 있습니다. [BBC/연합뉴스] 아제르바이잔 영토 공격과 쿠르드 무장단체 국경 침투 준비 보도는 전쟁의 지리적 확산을 시사하며, 국제유가는 배럴당 90달러를 돌파했습니다. [연합뉴스] 한국 정부는 주유소 폭리 단속을 6일부터 시행하지만, 2월 CPI 2.0%는 중동사태 유가상승을 아직 반영하지 못한 수치입니다. 향후 3월 물가가 2.5%를 상회할 경우 한국은행 긴축 재개 리스크가 현실화됩니다. [BBC] 중국의 2026년 성장목표가 1991년 이후 최저치로 하향되면서 대중 수출 의존도 높은 한국 제조업(화학/철강/기계)에 수요 둔화 압력이 가중됩니다. 반면 [NYT] AI 데이터센터 전력 수요 급증 보도는 한국 전력기기/HBM 공급망에 중장기 수혜 시나리오를 제시합니다. [연합뉴스] 한화비전의 반도체 패키징 장비 수주 본격화와 네이버의 '탈팡' 효과는 개별 종목 모멘텀이나, 거시 헤드윈드(유가/중국 성장 둔화)가 지수 상승을 제약하는 구조입니다. 기술적 지표(RSI 55.2)는 중립이나, 뉴스 이벤트가 외국인 순매수(+2704억) 지속성을 위협합니다.",
         "key_points": [
-          "BBC: 미 잠수함이 인도양서 이란 군함 격침, 스리랑카 해역서 140명 실종 - 전쟁 격화로 유가 불안 지속, 한국 제조업 원가 리스크 급증",
-          "BBC Business: 美 재무장관 '이번 주 내 관세 인상 가능성' 시사 - 對한 관세 추가 상승 시 수출주(반도체·자동차) 이중타격 불가피",
-          "BBC Technology: 중동 전쟁 격화로 테크 거대기업들 중동 사무실 폐쇄·원격근무 - 삼성전자·SK하이닉스의 중동향 AI 반도체 수요 타격 우려"
+          "[BBC/연합뉴스] 이란전쟁 지리적 확산(아제르바이잔 피격, 쿠르드 국경 진입) → 유가 $90 돌파 → 한국 3월 CPI 2.5%+ 리스크 → 한은 긴축 재개 가능성",
+          "[BBC] 중국 경제성장 목표 1991년 이후 최저 하향 → 대중 수출 비중 높은 한국 화학/철강/기계 섹터 실적 가이던스 하향 압력",
+          "[NYT] AI 데이터센터 전력·부지 확보 경쟁 심화 → 한국 전력기기(LS일렉트릭)/HBM(SK하이닉스) 중장기 수혜, 단 단기 유가 충격이 밸류에이션 압박"
         ],
-        "confidence_score": 88,
-        "stance": "SELL"
+        "confidence_score": 72,
+        "stance": "HOLD"
       }
     ],
     "phase2_critiques": [
       {
         "from_agent": "퀀트",
         "to_agent": "가치투자자",
-        "critique": "반론 생성 중 오류: Unknown format code 'f' for object of type 'str'"
+        "critique": "{\n  \"agent_name\": \"퀀트\",\n  \"counter_opinion\": \"RSI 55.2를 '과열 직전'으로 해석하는 것은 통계적 오류입니다. 과매수 기준인 70 대비 14.8pt 여유가 있으며, MACD 219.92는 양의 모멘텀 지속을 나타냅니다. 볼린저밴드 51.36%는 중립이 아닌 상승 초입 신호입니다(상단 돌파 기준 80% 이상). 외국인/기관 순매도 차액 -1148억원은 거래대금 15조 대비 7.6%로 유의미한 수준이 아닙니다. PER/PBR 절대값만으로 천장을 판단하는 것은 2020년 코로나 이후 밸류에이션 체계 변화를 무시한 과거 편향입니다. 환율과 금리는 선행지표가 아닌 후행변수로, 기술적 모멘텀과 상관계수 -0.23에 불과합니다.\",\n  \"confidence\": 78,\n  \"key_indicators\": {\n    \"RSI_gap_to_overbought\": 14.8,\n    \"MACD_signal\": \"positive_momentum\",\n    \"bollinger_position\": 51.36,\n    \"trading_volume_impact\": \"7.6%\",\n    \"valuation_regime_shift\": \"post_2020\"\n  }\n}"
       },
       {
         "from_agent": "매크로",
         "to_agent": "뉴스 리스크 헌터",
-        "critique": "```json\n{\n  \"agent_name\": \"매크로(Macro)\",\n  \"stance\": \"BUY\",\n  \"confidence\": 72,\n  \"rebuttal\": \"중동 리스크를 과대평가하고 있습니다. 현재 브렌트유는 $62 수준으로 역사적 평균 이하이며, IEA는 2025년 공급과잉 전망을 유지 중입니다. 오히려 주목해야 할 변수는 **연준의 금리 동결 장기화**와 **달러 약세 반전 가능성**입니다. 미국 10Y 4.08%는 신흥국 자금 유출 압력을 의미하지만, 원/달러 1461원은 이미 과도한 프리미엄을 반영했습니다. 나스닥 +1.29% 반등은 글로벌 위험자산 선호 회복 신호이며, 한국 증시는 밸류에이션 메리트(PER 9배)로 외국인 재유입 가능성이 큽니다. 에너지 쇼크보다 **미중 반도체 긴장 완화**와 **중국 부양책 효과**가 KOSPI 방향성을 좌우할 것입니다.\"\n}\n```"
+        "critique": "리스크 헌터는 **원/달러 1460원 돌파의 파급력을 과소평가**했습니다. 연준 긴축 지속(10Y 4.15%)과 중국 성장 둔화가 맞물리면 외국인 매도는 가속화되고, 유가 90달러 돌파는 무역수지 악화로 환율 방어선을 무너뜨립니다. 한은 긴축 재개 시 국내 유동성 경색으로 **코스피 2400선 이탈 리스크**가 현실화됩니다."
       },
       {
         "from_agent": "섹터매니저",
         "to_agent": "퀀트",
-        "critique": "```json\n{\n  \"agent_name\": \"섹터 매니저\",\n  \"stance\": \"HOLD\",\n  \"confidence\": 68,\n  \"counterargument\": \"퀀트님의 과매도 진단은 맞지만, 반도체 사이클 관점이 빠졌습니다. 삼성전자 -11.7%는 D램 현물가 9주 연속 하락과 엔비디아 HBM3E 납품 지연 우려가 복합 작용한 결과입니다. SK하이닉스 -9.6%는 AI 수요 둔화 시그널이며, LG에너지솔루션 -11.6%는 GM·포드 전기차 판매 부진이 직격탄입니다. 기술적 반등 시도는 가능하나, 반도체·이차전지 두 축의 펀더멘털 약화가 지속되면 외국인 매도는 구조적으로 이어질 수밖에 없습니다. 섹터 모멘텀 회복 없이는 지수 반등도 제한적입니다.\",\n  \"key_points\": [\n    \"삼성전자 D램 현물가 9주 연속 하락 → HBM 납품 지연 우려 반영\",\n    \"SK하이닉스 하락은 AI 반도체 수요 둔화 시그널\",\n    \"LG에너지솔루션 -11.6%는 GM·포드 EV 판매 부진 직격탄\",\n    \"반도체·이차전지 펀더멘털 약화 → 외국인 매도 구조적 지속 가능성\",\n    \"섹터 모멘텀 회복 없이는 기술적 반등도 제한적\"\n  ],\n  \"sector_focus\": [\n    \"반도체: D램 현물가 하락 사이클, HBM 납품 지연\",\n    \"이차전지: 북미 EV 수요 둔화, 재고 누적\",\n    \"IT플랫폼(NAVER): 광고 수요 위축 + 외국인 차익실현\"\n  ],\n  \"supply_chain_risk\": \"엔비디아 HBM3E 납품 일정 지연 시 SK하이닉스 2Q 실적 하방 압력 / GM·포드 EV 생산 감축 시 LG에너지솔루션 수주 차질\",\n  \"rotation_signal\": \"반도체·이차전지 약세 → 방어주(유틸리티·필수소비재) 또는 금융주로 자금 이동 가능성\"\n}\n```"
+        "critique": "삼성전자·SK하이닉스 급등을 단순 모멘텀으로 해석하는 건 위험합니다. 반도체는 현재 재고조정 후반부로 DRAM 현물가는 여전히 계약가 대비 10~15% 할인 중이며, TSMC 1분기 가이던스는 전분기比 -16%로 하향됐습니다. LG에너지솔루션 역시 GM·포드 전기차 판매 둔화로 2분기 출하량 감소가 예상되는 상황입니다. 외국인 순매수 2704억은 선물 롤오버 수급일 가능성이 높아 지속성을 담보하기 어렵습니다. 섹터 펀더멘털 개선 없이 기술적 지표만으론 랠리 지속을 확신할 수 없습니다."
       },
       {
         "from_agent": "가치투자자",
         "to_agent": "매크로",
-        "critique": "```json\n{\n  \"agent_name\": \"가치투자자\",\n  \"opinion\": \"BUY\",\n  \"confidence\": 82,\n  \"rebuttal\": \"매크로 에이전트는 환율과 외국인 수급이라는 단기 노이즈에 과도하게 집중하고 있습니다. KOSPI -12.06%, KOSDAQ -14.00% 급락은 전형적인 공포 과잉 반응이며, 이런 국면에서 밸류에이션 관점의 기회가 열립니다. 역사적으로 외국인 대량 매도 후 3~6개월 내 반등 확률이 70%를 상회합니다. 현재 KOSPI PBR 0.8배 수준은 글로벌 신흥국 대비 저평가이며, 배당수익률 3% 이상 우량주는 채권 대비 매력도가 높습니다. 달러 강세는 수출 대기업 실적 개선 요인이기도 합니다. 군중이 공포에 빠진 지금이야말로 내재가치 대비 할인된 자산을 매집할 적기입니다.\"\n}\n```"
+        "critique": "매크로 에이전트는 외국인 순매수 2704억을 '독자 반등'으로 해석하나, 이는 단기 자금 흐름에 불과합니다. KOSPI 5583.9는 역사적 PER 12~13배 밴드 상단에 근접하며, 기관 -3852억 순매도는 밸류에이션 부담을 명확히 드러냅니다. 고환율(1460원대) 구간에서 외국인 매수는 캐리 트레이드 청산 지연일 뿐, 지속가능한 펀더멘털이 아닙니다. RSI 55.2를 '중립'으로 보는 시각은 2023년 저점 대비 30% 급등 후 조정 없는 과열을 간과한 것입니다. 공포탐욕지수가 중립 이상이면 역발상 매도 타이밍입니다."
       },
       {
         "from_agent": "뉴스 리스크 헌터",
         "to_agent": "섹터매니저",
-        "critique": "```json\n{\n  \"agent_name\": \"뉴스 리스크 헌터\",\n  \"target_agent\": \"섹터매니저\",\n  \"counter_argument\": \"BBC 보도에 따르면 미국 잠수함이 인도양에서 이란 군함을 격침시켰고, 하메네이 장례식이 연기되는 등 중동 지정학 리스크가 24시간 내 급격히 고조되었습니다. 스페인 총리가 트럼프의 무역 단절 위협에 '전쟁 반대' 선언을 하며 미-EU 통상갈등도 표면화되었습니다. 섹터매니저가 전제한 '나스닥 반등→국내 반도체 과매도 반등' 시나리오는 이란-미국 군사충돌과 미-EU 무역전쟁 리스크로 인한 글로벌 공급망 불확실성 급증으로 무효화됩니다. 중동 산유 및 해운로 차단 가능성은 원자재 가격 급등→제조업 마진 압박으로 연결되며, 외국인 매도는 지정학 회피 포지셔닝"
+        "critique": "{\n  \"agent_name\": \"뉴스 리스크 헌터\",\n  \"target_agent\": \"섹터매니저\",\n  \"counter_argument\": {\n    \"core_challenge\": \"반도체 섹터 주도론의 전제 붕괴\",\n    \"news_based_refutation\": \"BBC World 보도에 따르면 이란-중동 전쟁이 중국의 전략적 야심을 흔들고 있으며(2026-03-05 UTC), 쿠르드 무장세력의 이란 국경 진입 준비와 아제르바이잔에 대한 이란 공습이 확인되었습니다. 이는 중동 공급망 리스크를 의미하며, 중국 화웨이 공급망 지연이 '한국 반도체에 유리'하다는 귀하의 전제는 오히려 지정학적 불확실성으로 글로벌 IT 수요 자체가 위축될 가능성을 간과했습니다. 특히 우크라이나가 이란 드론 대응에 미국과"
       }
     ]
   },
   "verdict": {
     "today_moderator_agent": "뉴스 리스크 헌터",
     "final_stance": "HOLD",
-    "confidence_score": 71,
-    "summary": "KOSPI -12.06% 급락은 외국인 1.46조 패닉 매도와 환율 1461원대 급등이 복합 작용한 결과입니다. 가치투자자의 저평가 매수 논리는 설득력 있으나, 뉴스 리스크 헌터가 지적한 중동 전쟁 격화(BBC 이란 군함 격침 보도)와 미국 관세 추가 인상 가능성은 단기 변동성을 더욱 확대시킬 구조적 리스크입니다. 퀀트의 RSI 과매도 신호는 기술적 반등 가능성을 시사하나, 매크로가 강조한 나스닥 +1.29% vs KOSPI -12% 디커플링은 외국인 자금 이탈이 일회성이 아닌 구조적 현상임을 보여줍니다. 섹터매니저의 '주도 섹터 부재' 진단이 가장 핵심적입니다. 반도체(-11.7%)는 D램 현물가 9주 연속 하락, 이차전지(-11.6%)는 유럽 보조금 축소로 중장기 약세가 예상되며, 방어적 금융·통신 배당주조차 뚜렷한 매수세를 형성하지 못했습니다. 현 시점은 매수도 매도도 아닌 '관망 후 분할 진입' 국면입니다. 환율 1450원 안정화와 미국 10년물 금리 3.9% 하회 시그널 확인 전까지는 포지션 축소 및 현금 비중 40% 이상 유지를 권고합니다.",
+    "confidence_score": 64,
+    "summary": "가중 투표는 BUY를 제시하나, 논리의 질적 평가 결과 HOLD가 타당합니다. 퀀트의 기술적 분석(RSI 55.2, MACD 219.92)은 모멘텀 지속을 시사하나, 섹터매니저의 반론(DRAM 현물가 10~15% 할인, TSMC 가이던스 -16%)이 반도체 랠리의 지속가능성에 의문을 제기합니다. 매크로의 환율 1460원대 리스크 경고와 뉴스 헌터의 이란전쟁 확산(유가 $90 돌파→3월 CPI 2.5%+ 리스크)은 외부 변수의 심각성을 입증합니다. 가치투자자의 밸류에이션 부담 지적(KOSPI PER 밴드 상단 근접, 기관 -3852억 순매도)은 단기 과열 가능성을 뒷받침합니다. 외국인 2704억 순매수는 긍정적이나 기관 매도와 충돌하며, 개인 주도 랠리는 변동성 확대 요인입니다. 현 시점은 추격 매수보다 5~7% 조정 대기 후 분할 진입이 합리적입니다.",
     "investment_weather": "cloudy",
     "investment_weather_icon": "⛅",
     "investment_weather_kr": "중립 — 흐림",
     "top_sectors": [
-      "금융(배당 4%+ 은행주)",
-      "방산(중동 리스크 수혜)",
-      "방어적 통신·유틸리티"
+      "반도체(HBM)",
+      "전력기기"
     ],
     "risk_factors": [
-      "환율 1461원대 고착화 시 외국인 추가 이탈",
-      "중동 전쟁 격화로 유가 $70+ 돌파 시 제조업 원가 부담",
-      "미국 관세 추가 인상 시 반도체·자동차 수출주 이중타격"
+      "환율 1460원 고착화 시 외국인 이탈 가속",
+      "이란전쟁 확대→유가 $90+→한은 긴축 재개",
+      "중국 성장률 목표 하향→대중 수출 섹터 타격"
     ],
     "action_items": [
-      "현금 비중 40% 이상 유지, 환율 1450원 안정 시 반도체 대형주 분할 매수 검토",
-      "이차전지·IT플랫폼 ETF는 3분기 실적 시즌까지 전량 관망",
-      "KB금융·KT 등 배당수익률 4%+ 가치주 10~15% 비중 선제 확보"
+      "반도체 ETF 신규 매수 보류, 기존 포지션 50% 익절 후 재진입 대기",
+      "이차전지·중국 수출 의존 섹터(화학·철강) 비중 축소",
+      "달러/원 1440원 하회 시 분할 매수 시작, 그 전까지는 현금 비중 30% 이상 유지"
     ],
     "stance_votes": {
-      "퀀트": "HOLD",
+      "퀀트": "BUY",
       "매크로": "HOLD",
-      "섹터매니저": "HOLD",
-      "가치투자자": "BUY",
-      "뉴스 리스크 헌터": "SELL"
+      "섹터매니저": "BUY",
+      "가치투자자": "HOLD",
+      "뉴스 리스크 헌터": "HOLD"
     }
   },
   "backtest": {
@@ -775,42 +788,42 @@
       {
         "name": "뉴스 리스크 헌터",
         "avatar": "📡",
-        "hit_rate": 1.0,
-        "total_predictions": 3,
+        "hit_rate": 0.6,
+        "total_predictions": 5,
         "correct": 3
       },
       {
         "name": "퀀트",
         "avatar": "📊",
-        "hit_rate": 0.8,
-        "total_predictions": 5,
+        "hit_rate": 0.5714,
+        "total_predictions": 7,
         "correct": 4
+      },
+      {
+        "name": "가치투자자",
+        "avatar": "💎",
+        "hit_rate": 0.4286,
+        "total_predictions": 7,
+        "correct": 3
       },
       {
         "name": "매크로",
         "avatar": "🏦",
-        "hit_rate": 0.4,
-        "total_predictions": 5,
+        "hit_rate": 0.2857,
+        "total_predictions": 7,
         "correct": 2
       },
       {
         "name": "섹터매니저",
         "avatar": "🔄",
-        "hit_rate": 0.2,
-        "total_predictions": 5,
-        "correct": 1
-      },
-      {
-        "name": "가치투자자",
-        "avatar": "💎",
-        "hit_rate": 0.2,
-        "total_predictions": 5,
+        "hit_rate": 0.1429,
+        "total_predictions": 7,
         "correct": 1
       }
     ],
     "yesterday_comparison": {
-      "date": "2026-03-04",
-      "actual_movement": "DOWN",
+      "date": "2026-03-05",
+      "actual_movement": "UP",
       "predictions": [
         {
           "agent": "퀀트",
@@ -827,20 +840,20 @@
         {
           "agent": "섹터매니저",
           "avatar": "🔬",
-          "prediction": "SELL",
-          "was_correct": true
+          "prediction": "HOLD",
+          "was_correct": false
         },
         {
           "agent": "가치투자자",
           "avatar": "💰",
-          "prediction": "HOLD",
-          "was_correct": false
+          "prediction": "BUY",
+          "was_correct": true
         },
         {
           "agent": "뉴스 리스크 헌터",
           "avatar": "📡",
           "prediction": "SELL",
-          "was_correct": true
+          "was_correct": false
         }
       ]
     },
