@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-03-07T08:43:43.395168+00:00",
+  "updated_at": "2026-03-07T08:48:02.092358+00:00",
   "orchestrator": {
     "version": "2.1",
-    "enforced_at": "2026-03-07T08:43:43.395168+00:00",
+    "enforced_at": "2026-03-07T08:48:02.092358+00:00",
     "has_pat": true,
-    "paused_intent": 7,
+    "paused_intent": 10,
     "enforcement_log": []
   },
   "workflows": [
@@ -138,7 +138,7 @@
         "id": 236553677,
         "name": "🇺🇸 US Market Daily Report",
         "path": ".github/workflows/us-daily-report.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/korean-market-bot/blob/main/.github/workflows/us-daily-report.yml"
       },
       "cron": "0 22 * * 0-4",
@@ -616,7 +616,7 @@
         "state": "active",
         "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/blob/main/.github/workflows/gmail-cleanup.yml"
       },
-      "cron": "0 0 * * 1",
+      "cron": "0 0 * * *",
       "runs": [
         {
           "run_number": 2,
@@ -702,7 +702,7 @@
         "id": 240094820,
         "name": "Korean Stock Agent — Daily Report",
         "path": ".github/workflows/main.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/korean-stock-agent/blob/main/.github/workflows/main.yml"
       },
       "cron": "0 23 * * 0-4",
@@ -764,7 +764,7 @@
         "id": 240126478,
         "name": "US Market Agent — Daily Report",
         "path": ".github/workflows/main.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/us-market-agent/blob/main/.github/workflows/main.yml"
       },
       "cron": "0 23 * * 0-4",
