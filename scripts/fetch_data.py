@@ -37,6 +37,7 @@ REPORT_MAP = {
     'realestate-permit-tracker/236653953': 'reports/latest.json',
     # Multi-Agent 시스템 (GitHub Pages 대시보드 별도 운영)
     'korean-stock-agent/240094820':        'docs/data/daily_report.json',
+    'korean-stock-agent/242830429':        'docs/data/foreign_flow.json',   # ← 외국인 수급 모니터
     'us-market-agent/240126478':           'docs/data/daily_report.json',
     'etf-strategist/240142776':            'docs/data/daily_report.json',  # ← ETF 매매전략가
 }
