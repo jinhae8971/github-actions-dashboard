@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-03-07T08:48:02.092358+00:00",
+  "updated_at": "2026-03-07T09:38:39.214234+00:00",
   "orchestrator": {
     "version": "2.1",
-    "enforced_at": "2026-03-07T08:48:02.092358+00:00",
+    "enforced_at": "2026-03-07T09:38:39.214234+00:00",
     "has_pat": true,
-    "paused_intent": 10,
+    "paused_intent": 8,
     "enforcement_log": []
   },
   "workflows": [
@@ -138,7 +138,7 @@
         "id": 236553677,
         "name": "🇺🇸 US Market Daily Report",
         "path": ".github/workflows/us-daily-report.yml",
-        "state": "disabled_manually",
+        "state": "active",
         "html_url": "https://github.com/jinhae8971/korean-market-bot/blob/main/.github/workflows/us-daily-report.yml"
       },
       "cron": "0 22 * * 0-4",
@@ -510,7 +510,7 @@
         "id": 239770946,
         "name": "🪙 Crypto Monitor (TGE/Airdrop)",
         "path": ".github/workflows/crypto_monitor.yml",
-        "state": "disabled_manually",
+        "state": "active",
         "html_url": "https://github.com/jinhae8971/crypto-monitor/blob/main/.github/workflows/crypto_monitor.yml"
       },
       "cron": "0 0 * * *",
