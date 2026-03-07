@@ -1,5 +1,12 @@
 {
-  "updated_at": "2026-03-07T08:42:31.410534+00:00",
+  "updated_at": "2026-03-07T08:43:15.767511+00:00",
+  "orchestrator": {
+    "version": "2.1",
+    "enforced_at": "2026-03-07T08:43:15.767511+00:00",
+    "has_pat": true,
+    "paused_intent": 7,
+    "enforcement_log": []
+  },
   "workflows": [
     {
       "repo": "korean-market-bot",
@@ -498,6 +505,109 @@
       ]
     },
     {
+      "repo": "crypto-monitor",
+      "wf": {
+        "id": 239770946,
+        "name": "🪙 Crypto Monitor (TGE/Airdrop)",
+        "path": ".github/workflows/crypto_monitor.yml",
+        "state": "disabled_manually",
+        "html_url": "https://github.com/jinhae8971/crypto-monitor/blob/main/.github/workflows/crypto_monitor.yml"
+      },
+      "cron": "0 0 * * *",
+      "runs": [
+        {
+          "run_number": 4,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-01T01:17:11Z",
+          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/22533058629"
+        },
+        {
+          "run_number": 3,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-02-28T06:27:43Z",
+          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/22515243753"
+        },
+        {
+          "run_number": 2,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-02-28T06:24:20Z",
+          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/22515188230"
+        },
+        {
+          "run_number": 1,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-02-28T06:19:49Z",
+          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/22515114883"
+        }
+      ]
+    },
+    {
+      "repo": "kospi-peak-detector",
+      "wf": {
+        "id": 240033808,
+        "name": "📈 코스피 고점 판독기",
+        "path": ".github/workflows/kospi-peak-detector.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/kospi-peak-detector/blob/main/.github/workflows/kospi-peak-detector.yml"
+      },
+      "cron": "0 8 * * *",
+      "runs": [
+        {
+          "run_number": 7,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-07T08:26:07Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/22795576289"
+        },
+        {
+          "run_number": 9,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-07T08:25:35Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/22795569240"
+        },
+        {
+          "run_number": 8,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-03-06T08:32:33Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/22755543872"
+        },
+        {
+          "run_number": 6,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-05T08:36:20Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/22709402823"
+        },
+        {
+          "run_number": 7,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-05T08:35:50Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/22709385794"
+        },
+        {
+          "run_number": 5,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-04T08:34:22Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/22661417005"
+        },
+        {
+          "run_number": 6,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-04T08:33:52Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/22661401135"
+        }
+      ]
+    },
+    {
       "repo": "gmail-auto-cleanup",
       "wf": {
         "id": 239711242,
@@ -649,68 +759,6 @@
       ]
     },
     {
-      "repo": "korean-stock-agent",
-      "wf": {
-        "id": 240094857,
-        "name": "pages-build-deployment",
-        "path": "dynamic/pages/pages-build-deployment",
-        "state": "active",
-        "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/workflows/pages/pages-build-deployment"
-      },
-      "cron": null,
-      "runs": [
-        {
-          "run_number": 31,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-07T08:25:41Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22795570538"
-        },
-        {
-          "run_number": 30,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-07T08:21:13Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22795507762"
-        },
-        {
-          "run_number": 29,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-07T08:17:40Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22795456516"
-        },
-        {
-          "run_number": 28,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-07T08:14:13Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22795407183"
-        },
-        {
-          "run_number": 27,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-07T08:04:45Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22795266805"
-        },
-        {
-          "run_number": 26,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-06T00:04:25Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22742415421"
-        },
-        {
-          "run_number": 25,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-06T00:02:16Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22742355815"
-        }
-      ]
-    },
-    {
       "repo": "us-market-agent",
       "wf": {
         "id": 240126478,
@@ -773,68 +821,6 @@
       ]
     },
     {
-      "repo": "us-market-agent",
-      "wf": {
-        "id": 240127527,
-        "name": "pages-build-deployment",
-        "path": "dynamic/pages/pages-build-deployment",
-        "state": "active",
-        "html_url": "https://github.com/jinhae8971/us-market-agent/actions/workflows/pages/pages-build-deployment"
-      },
-      "cron": null,
-      "runs": [
-        {
-          "run_number": 21,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-05T23:53:53Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22742120025"
-        },
-        {
-          "run_number": 7,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-05T23:50:38Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22742027739"
-        },
-        {
-          "run_number": 20,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-04T23:33:00Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22694554798"
-        },
-        {
-          "run_number": 6,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-04T23:29:54Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22694455819"
-        },
-        {
-          "run_number": 19,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-03T23:30:41Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22647635702"
-        },
-        {
-          "run_number": 5,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-03T23:27:29Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22647542793"
-        },
-        {
-          "run_number": 18,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-02T23:29:26Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22600616714"
-        }
-      ]
-    },
-    {
       "repo": "etf-strategist",
       "wf": {
         "id": 240142776,
@@ -844,68 +830,6 @@
         "html_url": "https://github.com/jinhae8971/etf-strategist/blob/main/.github/workflows/etf-strategist.yml"
       },
       "cron": "0 0 * * *",
-      "runs": [
-        {
-          "run_number": 27,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T15:15:48Z",
-          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546243754"
-        },
-        {
-          "run_number": 8,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T15:13:35Z",
-          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546204742"
-        },
-        {
-          "run_number": 26,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T15:12:42Z",
-          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546188292"
-        },
-        {
-          "run_number": 25,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T15:05:39Z",
-          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546057978"
-        },
-        {
-          "run_number": 7,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T15:03:14Z",
-          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546012582"
-        },
-        {
-          "run_number": 24,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T15:03:14Z",
-          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546012569"
-        },
-        {
-          "run_number": 23,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T14:33:26Z",
-          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22545502393"
-        }
-      ]
-    },
-    {
-      "repo": "etf-strategist",
-      "wf": {
-        "id": 240143137,
-        "name": "pages-build-deployment",
-        "path": "dynamic/pages/pages-build-deployment",
-        "state": "active",
-        "html_url": "https://github.com/jinhae8971/etf-strategist/actions/workflows/pages/pages-build-deployment"
-      },
-      "cron": null,
       "runs": [
         {
           "run_number": 27,
