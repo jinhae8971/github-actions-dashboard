@@ -1006,7 +1006,7 @@ function utf8ToBase64(str) {
   return btoa(binary);
 }
 
-// Load paused.json from repo — replace localStorage (단, 최근 로컬 변경이 있으면 보호)
+// Load paused.json — 토큰 있으면 GitHub API에서, 없으면 로컬 유지
 async function loadPausedStateFromRepo() {
   try {
     // dirty 상태면 로컬 변경이 repo에 아직 반영 안 됐을 수 있으므로 스킵
@@ -1015,9 +1015,31 @@ async function loadPausedStateFromRepo() {
       return;
     }
 
-    const resp = await fetch(`./${PAUSE_REPO_PATH}?_=${Date.now()}`);
-    if (!resp.ok) return;
-    const data = await resp.json();
+    // 토큰 없으면 repo 동기화 불가 → localStorage가 유일한 소스이므로 덮어쓰지 않음
+    if (!githubToken) {
+      console.log('[paused.json] 토큰 없음 — localStorage 유지 (repo 덮어쓰기 스킵)');
+      return;
+    }
+
+    // 토큰 있으면 GitHub API로 최신 paused.json 직접 읽기 (Pages CDN 캐시 우회)
+    let data = null;
+    try {
+      const apiResp = await fetch(
+        `https://api.github.com/repos/${PAUSE_REPO_FULL}/contents/${PAUSE_REPO_PATH}`,
+        { headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.raw+json' } }
+      );
+      if (apiResp.ok) data = await apiResp.json();
+    } catch(e) {
+      console.log('[paused.json] API fetch failed, fallback to static file');
+    }
+
+    // API 실패 시 정적 파일 fallback
+    if (!data) {
+      const resp = await fetch(`./${PAUSE_REPO_PATH}?_=${Date.now()}`);
+      if (!resp.ok) return;
+      data = await resp.json();
+    }
+
     const repoPaused = data.paused || {};
 
     // Use repo as master source: replace stale localStorage with repo state
@@ -1091,29 +1113,35 @@ async function enableWorkflow(repo, wfId) {
 async function togglePause(repo, wfId, wfName) {
   const id = String(wfId);
   const btn = document.getElementById(`pbtn-${id}`);
+
+  // 토큰 없으면 실제 제어 불가 → 설정 안내
+  if (!githubToken) {
+    toast('🔑 설정(⚙️)에서 GitHub 토큰을 먼저 등록해 주세요', true);
+    openSettings();
+    return;
+  }
+
   if (btn) btn.classList.add('loading-state');
 
   if (isPaused(id)) {
     // Resume
     const result = await enableWorkflow(repo, wfId);
-    if (result.reason === 'no-token') {
-      toast(`▶ ${wfName} 재가동 (UI 전용 — 토큰 없음)`, false);
-    } else if (!result.ok) {
-      toast(`❌ GitHub API 오류 (${result.status}) — UI만 재가동됨`, true);
-    } else {
-      toast(`▶ ${wfName} 재가동 완료`);
+    if (!result.ok) {
+      toast(`❌ GitHub API 오류 (${result.status}) — 재가동 실패`, true);
+      if (btn) btn.classList.remove('loading-state');
+      return;
     }
+    toast(`▶ ${wfName} 재가동 완료`);
     delete pausedMap[id];
   } else {
     // Pause
     const result = await disableWorkflow(repo, wfId);
-    if (result.reason === 'no-token') {
-      toast(`⏸ ${wfName} 일시 정지 (UI 전용 — 설정에서 토큰 등록 시 실제 적용)`, false);
-    } else if (!result.ok) {
-      toast(`❌ GitHub API 오류 (${result.status}) — UI만 일시 정지됨`, true);
-    } else {
-      toast(`⏸ ${wfName} 일시 정지 완료`);
+    if (!result.ok) {
+      toast(`❌ GitHub API 오류 (${result.status}) — 일시 정지 실패`, true);
+      if (btn) btn.classList.remove('loading-state');
+      return;
     }
+    toast(`⏸ ${wfName} 일시 정지 완료`);
     pausedMap[id] = { repo, name: wfName };
   }
 
