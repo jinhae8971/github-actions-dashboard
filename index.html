@@ -966,18 +966,32 @@ const OWNER = 'jinhae8971';
 // ── Pause State (localStorage) ────────────────────────────────────────────
 const PAUSE_KEY = 'gh_dashboard_paused_v2';
 const TOKEN_KEY = 'gh_dashboard_token';
+const PAUSE_DIRTY_KEY = 'gh_dashboard_pause_dirty';
 
 // { wfId: { repo, name } }
 let pausedMap = {};
 try { pausedMap = JSON.parse(localStorage.getItem(PAUSE_KEY) || '{}'); } catch(e) { pausedMap = {}; }
 
 let githubToken = localStorage.getItem(TOKEN_KEY) || '';
+let pauseDirtyUntil = Number(localStorage.getItem(PAUSE_DIRTY_KEY) || '0');
 
 function isPaused(wfId) { return !!pausedMap[String(wfId)]; }
 
-function savePauseState() {
+function markPauseDirty() {
+  pauseDirtyUntil = Date.now() + 3 * 60 * 1000;  // 3분간 dirty
+  try { localStorage.setItem(PAUSE_DIRTY_KEY, String(pauseDirtyUntil)); } catch(e) {}
+}
+function isPauseDirty() { return Date.now() < pauseDirtyUntil; }
+function clearPauseDirty() {
+  pauseDirtyUntil = 0;
+  try { localStorage.removeItem(PAUSE_DIRTY_KEY); } catch(e) {}
+}
+
+async function savePauseState() {
   try { localStorage.setItem(PAUSE_KEY, JSON.stringify(pausedMap)); } catch(e) {}
-  savePausedStateToRepo();  // Sync to repo if token available
+  markPauseDirty();  // 저장 완료 전까지 repo 덮어쓰기 방지
+  const saved = await savePausedStateToRepo();
+  if (saved) clearPauseDirty();  // repo 저장 성공 시 dirty 해제
 }
 
 // ── Cross-device Pause State Sync (data/paused.json) ──────────────────
@@ -992,9 +1006,15 @@ function utf8ToBase64(str) {
   return btoa(binary);
 }
 
-// Load paused.json from repo — replace localStorage completely
+// Load paused.json from repo — replace localStorage (단, 최근 로컬 변경이 있으면 보호)
 async function loadPausedStateFromRepo() {
   try {
+    // dirty 상태면 로컬 변경이 repo에 아직 반영 안 됐을 수 있으므로 스킵
+    if (isPauseDirty()) {
+      console.log('[paused.json] local dirty — repo 덮어쓰기 스킵 (', Math.round((pauseDirtyUntil - Date.now())/1000), 's left)');
+      return;
+    }
+
     const resp = await fetch(`./${PAUSE_REPO_PATH}?_=${Date.now()}`);
     if (!resp.ok) return;
     const data = await resp.json();
@@ -1011,9 +1031,9 @@ async function loadPausedStateFromRepo() {
   }
 }
 
-// Save pausedMap to repo (requires token)
+// Save pausedMap to repo (requires token). Returns true if saved successfully.
 async function savePausedStateToRepo() {
-  if (!githubToken) return;
+  if (!githubToken) return false;
   try {
     const content = JSON.stringify({ updated_at: new Date().toISOString(), paused: pausedMap }, null, 2);
     const b64 = utf8ToBase64(content);
@@ -1027,7 +1047,7 @@ async function savePausedStateToRepo() {
       if (r.ok) sha = (await r.json()).sha;
     } catch(e) {}
     const body = { message: 'chore: sync pause state', content: b64, ...(sha ? { sha } : {}) };
-    await fetch(
+    const resp = await fetch(
       `https://api.github.com/repos/${PAUSE_REPO_FULL}/contents/${PAUSE_REPO_PATH}`,
       {
         method: 'PUT',
@@ -1039,8 +1059,10 @@ async function savePausedStateToRepo() {
         body: JSON.stringify(body),
       }
     );
+    return resp.ok || resp.status === 200 || resp.status === 201;
   } catch(e) {
     console.error('[paused.json] save failed:', e);
+    return false;
   }
 }
 
@@ -1095,7 +1117,8 @@ async function togglePause(repo, wfId, wfName) {
     pausedMap[id] = { repo, name: wfName };
   }
 
-  savePauseState();
+  // localStorage 즉시 저장 + repo 동기화 await (모바일 탭 전환 대비)
+  await savePauseState();
   if (btn) btn.classList.remove('loading-state');
   renderCards(allWorkflows);
   renderWeekCalendar(allWorkflows);
