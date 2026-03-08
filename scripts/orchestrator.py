@@ -62,6 +62,7 @@ REPOS = [
     'korean-stock-agent',
     'us-market-agent',
     'etf-strategist',
+    'kospi-strategy',
 ]
 
 # 워크플로우 ID → 리포트 파일 매핑
@@ -79,6 +80,7 @@ REPORT_MAP = {
     'korean-stock-agent/240094820':        'docs/data/daily_report.json',
     'us-market-agent/240126478':           'docs/data/daily_report.json',
     'etf-strategist/240142776':            'docs/data/daily_report.json',
+    'kospi-strategy/243217019':             'docs/data/daily_report.json',
 }
 
 HEADERS = {
