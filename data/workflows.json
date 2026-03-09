@@ -1,11 +1,18 @@
 {
-  "updated_at": "2026-03-09T10:03:12.545348+00:00",
+  "updated_at": "2026-03-09T10:58:58.111570+00:00",
   "orchestrator": {
     "version": "2.1",
-    "enforced_at": "2026-03-09T10:03:12.545348+00:00",
+    "enforced_at": "2026-03-09T10:58:58.111570+00:00",
     "has_pat": true,
     "paused_intent": 8,
-    "enforcement_log": []
+    "enforcement_log": [
+      {
+        "action": "enabled",
+        "repo": "gmail-auto-cleanup",
+        "wf_id": "239711242",
+        "name": "Gmail 자동 정리"
+      }
+    ]
   },
   "workflows": [
     {
@@ -516,6 +523,13 @@
       "cron": "30 9 * * 1-5",
       "runs": [
         {
+          "run_number": 5,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-09T10:25:50Z",
+          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/22849040286"
+        },
+        {
           "run_number": 4,
           "conclusion": "success",
           "status": "completed",
@@ -618,6 +632,61 @@
       },
       "cron": "30 9 * * 1-5",
       "runs": [
+        {
+          "run_number": 1,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-09T10:29:28Z",
+          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22849178189"
+        },
+        {
+          "run_number": 3,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-03-09T10:25:04Z",
+          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22849011958"
+        },
+        {
+          "run_number": 2,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-02T02:33:33Z",
+          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22559029483"
+        },
+        {
+          "run_number": 1,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-02-28T01:31:43Z",
+          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22510447721"
+        }
+      ]
+    },
+    {
+      "repo": "gmail-auto-cleanup",
+      "wf": {
+        "id": 243549929,
+        "name": "🔑 Gmail 토큰 재발급",
+        "path": ".github/workflows/renew-gmail-token.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/blob/main/.github/workflows/renew-gmail-token.yml"
+      },
+      "cron": null,
+      "runs": [
+        {
+          "run_number": 1,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-09T10:29:28Z",
+          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22849178189"
+        },
+        {
+          "run_number": 3,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-03-09T10:25:04Z",
+          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22849011958"
+        },
         {
           "run_number": 2,
           "conclusion": "success",
