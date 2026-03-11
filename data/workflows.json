@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-03-11T09:55:52.060589+00:00",
+  "updated_at": "2026-03-11T10:54:13.270779+00:00",
   "orchestrator": {
     "version": "2.1",
-    "enforced_at": "2026-03-11T09:55:52.060589+00:00",
+    "enforced_at": "2026-03-11T10:54:13.270779+00:00",
     "has_pat": true,
     "paused_intent": 8,
     "enforcement_log": []
@@ -516,6 +516,13 @@
       "cron": "30 9 * * 1-5",
       "runs": [
         {
+          "run_number": 8,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-11T10:08:47Z",
+          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/22947325855"
+        },
+        {
           "run_number": 7,
           "conclusion": "success",
           "status": "completed",
@@ -556,13 +563,6 @@
           "status": "completed",
           "created_at": "2026-02-28T06:24:20Z",
           "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/22515188230"
-        },
-        {
-          "run_number": 1,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-28T06:19:49Z",
-          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/22515114883"
         }
       ]
     },
@@ -640,6 +640,13 @@
       "cron": "30 9 * * 1-5",
       "runs": [
         {
+          "run_number": 5,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-03-11T10:08:21Z",
+          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22947309420"
+        },
+        {
           "run_number": 4,
           "conclusion": "failure",
           "status": "completed",
@@ -687,6 +694,13 @@
       },
       "cron": null,
       "runs": [
+        {
+          "run_number": 5,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-03-11T10:08:21Z",
+          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22947309420"
+        },
         {
           "run_number": 4,
           "conclusion": "failure",
