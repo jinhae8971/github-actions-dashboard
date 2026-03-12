@@ -1127,7 +1127,11 @@ async function togglePause(repo, wfId, wfName) {
     // Resume
     const result = await enableWorkflow(repo, wfId);
     if (!result.ok) {
-      toast(`❌ GitHub API 오류 (${result.status}) — 재가동 실패`, true);
+      const msg = result.status === 403
+        ? '🔑 토큰에 repo 권한이 없습니다. 설정에서 토큰을 재발급해 주세요.'
+        : `❌ GitHub API 오류 (${result.status}) — 재가동 실패`;
+      toast(msg, true);
+      if (result.status === 403) openSettings();
       if (btn) btn.classList.remove('loading-state');
       return;
     }
@@ -1137,7 +1141,11 @@ async function togglePause(repo, wfId, wfName) {
     // Pause
     const result = await disableWorkflow(repo, wfId);
     if (!result.ok) {
-      toast(`❌ GitHub API 오류 (${result.status}) — 일시 정지 실패`, true);
+      const msg = result.status === 403
+        ? '🔑 토큰에 repo 권한이 없습니다. 설정에서 토큰을 재발급해 주세요.'
+        : `❌ GitHub API 오류 (${result.status}) — 일시 정지 실패`;
+      toast(msg, true);
+      if (result.status === 403) openSettings();
       if (btn) btn.classList.remove('loading-state');
       return;
     }
@@ -1179,14 +1187,23 @@ async function saveToken() {
   localStorage.setItem(TOKEN_KEY, githubToken);
   setTokenStatus('info', '⏳ 연결 확인 중...');
 
-  // Test authentication
+  // Test authentication + scope check
   try {
     const resp = await fetch('https://api.github.com/user', {
       headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github+json' }
     });
     if (resp.ok) {
       const data = await resp.json();
-      setTokenStatus('ok', `✅ 연결 성공! (${data.login})`);
+      const scopes = (resp.headers.get('x-oauth-scopes') || '').toLowerCase();
+      const hasRepo = scopes.includes('repo');
+      if (hasRepo) {
+        setTokenStatus('ok', `✅ 연결 성공! (${data.login}) — repo 권한 확인됨`);
+      } else {
+        setTokenStatus('err',
+          `⚠️ 연결됨 (${data.login}) 그러나 repo 권한 없음!\n` +
+          `일시정지 기능에는 repo scope가 필요합니다.\n` +
+          `GitHub → Settings → Tokens에서 repo 체크 후 재발급해 주세요.`);
+      }
     } else {
       setTokenStatus('err', `❌ 인증 실패 (HTTP ${resp.status}) — 토큰을 확인해 주세요.`);
     }
