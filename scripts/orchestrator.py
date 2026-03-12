@@ -2,26 +2,26 @@
 orchestrator.py — GitHub Actions 대시보드 오케스트레이터
 =======================================================
 역할:
-  1. [Step 1] data/paused.json (의도 파일)를 읽어 일시정지 대상 파악
-  2. [Step 2] 각 워크플로우의 실제 GitHub 상태와 의도를 비교하여 강제 적용
-             - 의도: 정지 + 실제: active  →  GitHub API로 disable
-             - 의도: 활성 + 실제: disabled →  GitHub API로 enable
-  3. [Step 3] 강제 적용 후 모든 워크플로우 데이터 수집 (최신 상태 반영)
-  4. [Step 4] 리포트 파일 수집
-  5. [Step 5] data/workflows.json 저장 (오케스트레이터 실행 로그 포함)
+  1. [Step 1] 모든 워크플로우 데이터 수집 (GitHub 실제 상태)
+  2. [Step 2] GitHub 실제 상태 → paused.json 자동 동기화
+             - GitHub disabled_manually → paused.json에 추가
+             - GitHub active           → paused.json에서 제거
+             (대시보드/모바일에서 직접 GitHub API로 제어하므로,
+              GitHub 실제 상태를 항상 신뢰함)
+  3. [Step 3] 리포트 파일 수집
+  4. [Step 4] data/workflows.json 저장
 
 아키텍처:
   ┌──────────────────────────────────────────────┐
   │           오케스트레이터 (orchestrator.py)      │
-  │  • paused.json 의도 읽기                       │
-  │  • GitHub 실제 상태 확인                       │
-  │  • 불일치 시 강제 적용 (disable/enable API)    │
+  │  • GitHub 실제 상태 조회 (source of truth)    │
+  │  • paused.json 자동 동기화 (상태 기록)        │
   │  • workflows.json 갱신                         │
   └───────────┬──────────────────────────────────┘
-              │ 감시 & 제어
+              │ 조회 & 기록
     ┌─────────▼─────────┐    ┌─────────────────┐
     │  Worker Repos      │    │  Dashboard       │
-      (10개 워크플로우)  │    │  (index.html)    ││
+    │  (워크플로우)      │    │  (index.html)    │
     │  실제 작업 수행     │    │  • paused.json   │
     └───────────────────┘    │  • workflows.json │
                              └─────────────────┘
@@ -127,89 +127,74 @@ def load_paused_intent():
         return {}
 
 
-# ── Step 2: 상태 강제 적용 (오케스트레이터 핵심) ───────────────────────────
+# ── Step 2: GitHub 실제 상태 → paused.json 자동 동기화 ─────────────────────
 
-def enforce_workflow_states(paused_intent):
+def sync_paused_json(workflows):
     """
-    오케스트레이터 핵심 기능:
-    paused.json의 의도를 GitHub 실제 상태에 강제 적용.
+    GitHub 실제 상태를 source of truth로 하여 paused.json을 자동 갱신.
 
-    - 의도: 정지  + 실제: active   → GitHub API disable
-    - 의도: 활성  + 실제: disabled → GitHub API enable
-    - 의도 = 실제                  → 아무것도 하지 않음 (OK)
+    - disabled_manually → paused.json에 추가
+    - active            → paused.json에서 제거
+    - pages-build-deployment, 유틸리티 워크플로우(workflow_dispatch only) 제외
 
-    GH_PAT 없을 경우: 상태 강제 적용 스킵 (데이터 수집만 수행)
+    대시보드/모바일에서 직접 GitHub API로 disable/enable하므로,
+    GitHub의 실제 상태를 항상 신뢰한다.
 
     Returns:
-        list: 적용 로그 (변경 사항만 포함)
+        dict: sync_log (added, removed 목록)
     """
-    print('\n━━━ [오케스트레이터] 워크플로우 상태 강제 적용 ━━━')
+    print('\n━━━ [동기화] GitHub 실제 상태 → paused.json ━━━')
 
-    if not HAS_PAT:
-        print('  ⚠️  GH_PAT 없음 — 상태 강제 적용 스킵 (데이터 수집만 수행)')
-        print('  ℹ️  private 저장소 제어를 위해 GH_PAT 시크릿을 갱신해 주세요.')
-        return [{'action': 'skipped', 'reason': 'GH_PAT not set — enforcement skipped, data collection only'}]
+    # 기존 paused.json 로드
+    old_paused = load_paused_intent()
+    old_ids = set(old_paused.keys())
 
-    paused_ids = set(str(k) for k in paused_intent.keys())
-    enforcement_log = []
-    ok_count = 0
+    # GitHub 실제 상태에서 새 paused map 생성
+    new_paused = {}
+    for w in workflows:
+        wf = w['wf']
+        wf_id = str(wf['id'])
+        is_disabled = wf['state'] in ('disabled_manually', 'disabled_inactivity')
 
-    for repo in REPOS:
-        try:
-            wfs = gh_get(f'/repos/{GH_USER}/{repo}/actions/workflows')
-            for wf in wfs.get('workflows', []):
-                wf_id       = str(wf['id'])
-                should_pause = wf_id in paused_ids
-                is_disabled  = wf['state'] in ('disabled_manually', 'disabled_inactivity')
+        if is_disabled:
+            # 기존 paused.json에 있으면 기존 정보 유지, 없으면 새로 추가
+            if wf_id in old_paused:
+                new_paused[wf_id] = old_paused[wf_id]
+            else:
+                new_paused[wf_id] = {'repo': w['repo'], 'name': wf['name']}
 
-                if should_pause and not is_disabled:
-                    # ── 의도: 정지 / 실제: 활성 → 비활성화 ──
-                    status = gh_put(
-                        f'/repos/{GH_USER}/{repo}/actions/workflows/{wf_id}/disable'
-                    )
-                    if status == 204:
-                        msg = f'⏸ DISABLED  [{repo}] {wf["name"]}'
-                        print(f'  {msg}')
-                        enforcement_log.append({'action': 'disabled', 'repo': repo,
-                                                'wf_id': wf_id, 'name': wf['name']})
-                    else:
-                        msg = f'❌ FAIL_DISABLE [{repo}] {wf["name"]} (HTTP {status})'
-                        print(f'  {msg}')
-                        enforcement_log.append({'action': 'fail_disable', 'repo': repo,
-                                                'wf_id': wf_id, 'name': wf['name'],
-                                                'status': status})
+    new_ids = set(new_paused.keys())
 
-                elif not should_pause and is_disabled:
-                    # ── 의도: 활성 / 실제: 비활성 → 활성화 ──
-                    status = gh_put(
-                        f'/repos/{GH_USER}/{repo}/actions/workflows/{wf_id}/enable'
-                    )
-                    if status == 204:
-                        msg = f'▶ ENABLED   [{repo}] {wf["name"]}'
-                        print(f'  {msg}')
-                        enforcement_log.append({'action': 'enabled', 'repo': repo,
-                                                'wf_id': wf_id, 'name': wf['name']})
-                    else:
-                        msg = f'❌ FAIL_ENABLE [{repo}] {wf["name"]} (HTTP {status})'
-                        print(f'  {msg}')
-                        enforcement_log.append({'action': 'fail_enable', 'repo': repo,
-                                                'wf_id': wf_id, 'name': wf['name'],
-                                                'status': status})
+    added   = new_ids - old_ids
+    removed = old_ids - new_ids
 
-                else:
-                    # ── 상태 일치 ──
-                    icon = '⏸' if is_disabled else '▶'
-                    label = '일시정지' if is_disabled else '활성'
-                    print(f'  ✅ OK        [{repo}] {wf["name"]} ({icon} {label})')
-                    ok_count += 1
+    # 변경 로그
+    sync_log = {'added': [], 'removed': []}
 
-        except Exception as e:
-            print(f'  [오류] {repo}: {e}')
-            enforcement_log.append({'action': 'error', 'repo': repo, 'error': str(e)})
+    for wf_id in added:
+        info = new_paused[wf_id]
+        print(f'  ➕ 추가: [{info["repo"]}] {info["name"]} (모바일/외부에서 정지)')
+        sync_log['added'].append({'wf_id': wf_id, **info})
 
-    changed = len(enforcement_log)
-    print(f'\n  → 강제 적용 완료: 변경 {changed}건 / 일치 {ok_count}건')
-    return enforcement_log
+    for wf_id in removed:
+        info = old_paused[wf_id]
+        print(f'  ➖ 제거: [{info["repo"]}] {info["name"]} (모바일/외부에서 재가동)')
+        sync_log['removed'].append({'wf_id': wf_id, **info})
+
+    if not added and not removed:
+        print('  ✅ paused.json과 GitHub 실제 상태 일치 — 변경 없음')
+
+    # paused.json 저장
+    paused_data = {
+        'updated_at': datetime.now(timezone.utc).isoformat(),
+        'paused': new_paused,
+    }
+    with open('data/paused.json', 'w', encoding='utf-8') as f:
+        json.dump(paused_data, f, ensure_ascii=False, indent=2)
+
+    total = len(new_paused)
+    print(f'\n  → paused.json 갱신 완료: {total}개 일시정지 (추가 {len(added)} / 제거 {len(removed)})')
+    return sync_log
 
 
 # ── Step 3: 워크플로우 데이터 수집 ─────────────────────────────────────────
@@ -340,31 +325,32 @@ def main():
     print(f'  GH_PAT: {"✅ 설정됨" if HAS_PAT else "❌ 없음 (public 저장소만 수집)"}')
     print(f'{"="*55}')
 
-    # ── Step 1: 의도 파일 로드 ──
-    print('\n━━━ [Step 1] 일시정지 의도 파일 로드 ━━━')
-    paused_intent = load_paused_intent()
-    for wf_id, info in paused_intent.items():
-        print(f'  → [{info.get("repo","?")}] {info.get("name","?")} (ID:{wf_id})')
-
-    # ── Step 2: 오케스트레이터 — 상태 강제 적용 ──
-    enforcement_log = enforce_workflow_states(paused_intent)
-
-    # ── Step 3: 데이터 수집 (강제 적용 후 실제 상태 반영) ──
+    # ── Step 1: 워크플로우 데이터 수집 (GitHub 실제 상태) ──
     workflows = fetch_all_workflow_data()
 
-    # ── Step 4: 리포트 수집 ──
+    # ── Step 2: GitHub 실제 상태 → paused.json 자동 동기화 ──
+    sync_log = sync_paused_json(workflows)
+
+    # ── Step 3: 리포트 수집 ──
     fetch_all_reports()
 
-    # ── Step 5: 결과 저장 ──
+    # ── Step 4: 결과 저장 ──
     os.makedirs('data', exist_ok=True)
+
+    disabled_wfs = [
+        d for d in workflows
+        if d['wf']['state'] in ('disabled_manually', 'disabled_inactivity')
+    ]
+    active_wfs = [d for d in workflows if d['wf']['state'] == 'active']
+
     result = {
         'updated_at': ts.isoformat(),
         'orchestrator': {
-            'version':        '2.1',
-            'enforced_at':    ts.isoformat(),
+            'version':        '3.0',
+            'synced_at':      ts.isoformat(),
             'has_pat':        HAS_PAT,
-            'paused_intent':  len(paused_intent),
-            'enforcement_log': enforcement_log,
+            'paused_count':   len(disabled_wfs),
+            'sync_log':       sync_log,
         },
         'workflows': workflows,
     }
@@ -372,27 +358,13 @@ def main():
         json.dump(result, f, ensure_ascii=False, indent=2)
 
     # ── 최종 요약 ──
-    disabled_wfs = [
-        d for d in workflows
-        if d['wf']['state'] in ('disabled_manually', 'disabled_inactivity')
-    ]
-    active_wfs = [d for d in workflows if d['wf']['state'] == 'active']
     print(f'\n{"="*55}')
     print(f'✅ 오케스트레이터 완료')
     print(f'   GH_PAT: {"있음" if HAS_PAT else "없음 (public만)"}')
-    print(f'   강제 적용: {len(enforcement_log)}건')
+    print(f'   동기화: 추가 {len(sync_log["added"])}건 / 제거 {len(sync_log["removed"])}건')
     print(f'   활성 워크플로우: {len(active_wfs)}개')
     print(f'   일시정지 워크플로우: {len(disabled_wfs)}개')
     print(f'   총 {len(workflows)}개 → data/workflows.json 저장')
-
-    # 강제 적용 실패 건 경고 (PAT 있을 때만 실패로 처리)
-    if HAS_PAT:
-        failures = [e for e in enforcement_log if e.get('action', '').startswith('fail')]
-        if failures:
-            print(f'\n⚠️  강제 적용 실패 {len(failures)}건:')
-            for f in failures:
-                print(f'   - [{f["repo"]}] {f.get("name","?")} ({f["action"]})')
-            sys.exit(1)  # CI에서 실패 표시
 
 
 if __name__ == '__main__':
