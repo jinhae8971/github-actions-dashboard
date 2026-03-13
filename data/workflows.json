@@ -1,13 +1,19 @@
 {
-  "updated_at": "2026-03-13T21:43:11.265167+00:00",
+  "updated_at": "2026-03-13T22:37:53.839779+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-03-13T21:43:11.265167+00:00",
+    "synced_at": "2026-03-13T22:37:53.839779+00:00",
     "has_pat": true,
-    "paused_count": 13,
+    "paused_count": 12,
     "sync_log": {
       "added": [],
-      "removed": []
+      "removed": [
+        {
+          "wf_id": "240033808",
+          "repo": "kospi-peak-detector",
+          "name": "📈 코스피 고점 판독기"
+        }
+      ]
     }
   },
   "workflows": [
@@ -575,7 +581,7 @@
         "id": 240033808,
         "name": "📈 코스피 고점 판독기",
         "path": ".github/workflows/kospi-peak-detector.yml",
-        "state": "disabled_manually",
+        "state": "active",
         "html_url": "https://github.com/jinhae8971/kospi-peak-detector/blob/main/.github/workflows/kospi-peak-detector.yml"
       },
       "cron": "0 22 * * 6",
