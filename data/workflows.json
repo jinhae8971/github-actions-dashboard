@@ -1,17 +1,27 @@
 {
-  "updated_at": "2026-03-13T22:37:53.839779+00:00",
+  "updated_at": "2026-03-13T23:38:11.701463+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-03-13T22:37:53.839779+00:00",
+    "synced_at": "2026-03-13T23:38:11.701463+00:00",
     "has_pat": true,
-    "paused_count": 12,
+    "paused_count": 9,
     "sync_log": {
       "added": [],
       "removed": [
         {
-          "wf_id": "240033808",
-          "repo": "kospi-peak-detector",
-          "name": "📈 코스피 고점 판독기"
+          "wf_id": "240126478",
+          "repo": "us-market-agent",
+          "name": "US Market Agent — Daily Report"
+        },
+        {
+          "wf_id": "240094820",
+          "repo": "korean-stock-agent",
+          "name": "Korean Stock Agent — Daily Report"
+        },
+        {
+          "wf_id": "236642604",
+          "repo": "memory-price-tracker",
+          "name": "💾 메모리 가격 주간 리포트"
         }
       ]
     }
@@ -333,7 +343,7 @@
         "id": 236642604,
         "name": "💾 메모리 가격 주간 리포트",
         "path": ".github/workflows/memory-weekly-report.yml",
-        "state": "disabled_manually",
+        "state": "active",
         "html_url": "https://github.com/jinhae8971/memory-price-tracker/blob/main/.github/workflows/memory-weekly-report.yml"
       },
       "cron": "0 22 * * 6",
@@ -587,53 +597,53 @@
       "cron": "0 22 * * 6",
       "runs": [
         {
-          "run_number": 8,
+          "run_number": 13,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-03-07T23:04:51Z",
-          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/22809146302"
+          "created_at": "2026-03-13T23:32:31Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/23074752129"
         },
         {
-          "run_number": 7,
+          "run_number": 12,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-03-07T08:26:07Z",
-          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/22795576289"
+          "created_at": "2026-03-13T23:18:42Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/23074397835"
+        },
+        {
+          "run_number": 12,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-13T23:18:11Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/23074383884"
+        },
+        {
+          "run_number": 11,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-13T23:14:22Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/23074281618"
+        },
+        {
+          "run_number": 10,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-13T23:12:09Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/23074220929"
+        },
+        {
+          "run_number": 11,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-13T23:11:33Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/23074203958"
         },
         {
           "run_number": 9,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-03-07T08:25:35Z",
-          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/22795569240"
-        },
-        {
-          "run_number": 8,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-03-06T08:32:33Z",
-          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/22755543872"
-        },
-        {
-          "run_number": 6,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-05T08:36:20Z",
-          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/22709402823"
-        },
-        {
-          "run_number": 7,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-05T08:35:50Z",
-          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/22709385794"
-        },
-        {
-          "run_number": 5,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-04T08:34:22Z",
-          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/22661417005"
+          "created_at": "2026-03-13T22:40:30Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/23073369916"
         }
       ]
     },
@@ -704,6 +714,20 @@
       "cron": "0 8 * * 1-5",
       "runs": [
         {
+          "run_number": 37,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-13T23:26:20Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23074595137"
+        },
+        {
+          "run_number": 11,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-13T23:22:43Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23074501315"
+        },
+        {
           "run_number": 36,
           "conclusion": "success",
           "status": "completed",
@@ -737,20 +761,6 @@
           "status": "completed",
           "created_at": "2026-03-11T08:48:20Z",
           "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22944257168"
-        },
-        {
-          "run_number": 3,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-11T08:47:52Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22944240982"
-        },
-        {
-          "run_number": 33,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-10T08:50:15Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22894424414"
         }
       ]
     },
@@ -760,11 +770,25 @@
         "id": 240094820,
         "name": "Korean Stock Agent — Daily Report",
         "path": ".github/workflows/main.yml",
-        "state": "disabled_manually",
+        "state": "active",
         "html_url": "https://github.com/jinhae8971/korean-stock-agent/blob/main/.github/workflows/main.yml"
       },
       "cron": "0 23 * * 0-4",
       "runs": [
+        {
+          "run_number": 37,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-13T23:26:20Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23074595137"
+        },
+        {
+          "run_number": 11,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-13T23:22:43Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23074501315"
+        },
         {
           "run_number": 36,
           "conclusion": "success",
@@ -799,20 +823,6 @@
           "status": "completed",
           "created_at": "2026-03-11T08:48:20Z",
           "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22944257168"
-        },
-        {
-          "run_number": 3,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-11T08:47:52Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22944240982"
-        },
-        {
-          "run_number": 33,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-10T08:50:15Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22894424414"
         }
       ]
     },
@@ -822,11 +832,25 @@
         "id": 240126478,
         "name": "US Market Agent — Daily Report",
         "path": ".github/workflows/main.yml",
-        "state": "disabled_manually",
+        "state": "active",
         "html_url": "https://github.com/jinhae8971/us-market-agent/blob/main/.github/workflows/main.yml"
       },
       "cron": "0 23 * * 0-4",
       "runs": [
+        {
+          "run_number": 22,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-13T23:26:02Z",
+          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/23074588940"
+        },
+        {
+          "run_number": 8,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-13T23:22:48Z",
+          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/23074504092"
+        },
         {
           "run_number": 21,
           "conclusion": "success",
@@ -861,20 +885,6 @@
           "status": "completed",
           "created_at": "2026-03-03T23:30:41Z",
           "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22647635702"
-        },
-        {
-          "run_number": 5,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-03T23:27:29Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22647542793"
-        },
-        {
-          "run_number": 18,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-02T23:29:26Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22600616714"
         }
       ]
     },
