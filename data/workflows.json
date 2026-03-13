@@ -1,11 +1,20 @@
 {
-  "updated_at": "2026-03-11T23:35:48.694747+00:00",
+  "updated_at": "2026-03-13T20:47:54.027554+00:00",
   "orchestrator": {
-    "version": "2.1",
-    "enforced_at": "2026-03-11T23:35:48.694747+00:00",
+    "version": "3.0",
+    "synced_at": "2026-03-13T20:47:54.027554+00:00",
     "has_pat": true,
-    "paused_intent": 8,
-    "enforcement_log": []
+    "paused_count": 13,
+    "sync_log": {
+      "added": [],
+      "removed": [
+        {
+          "wf_id": "242830429",
+          "repo": "korean-stock-agent",
+          "name": "KOSPI Foreign Flow Monitor"
+        }
+      ]
+    }
   },
   "workflows": [
     {
@@ -14,7 +23,7 @@
         "id": 236541757,
         "name": "📊 한국 증시 일일 마감 리포트",
         "path": ".github/workflows/daily-report.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/korean-market-bot/blob/main/.github/workflows/daily-report.yml"
       },
       "cron": "0 8 * * 1-5",
@@ -138,7 +147,7 @@
         "id": 236553677,
         "name": "🇺🇸 US Market Daily Report",
         "path": ".github/workflows/us-daily-report.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/korean-market-bot/blob/main/.github/workflows/us-daily-report.yml"
       },
       "cron": "0 9 * * 1-5",
@@ -324,7 +333,7 @@
         "id": 236642604,
         "name": "💾 메모리 가격 주간 리포트",
         "path": ".github/workflows/memory-weekly-report.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/memory-price-tracker/blob/main/.github/workflows/memory-weekly-report.yml"
       },
       "cron": "0 22 * * 6",
@@ -516,6 +525,20 @@
       "cron": "30 9 * * 1-5",
       "runs": [
         {
+          "run_number": 10,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-13T10:04:31Z",
+          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/23045870087"
+        },
+        {
+          "run_number": 9,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-12T10:08:48Z",
+          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/22996726408"
+        },
+        {
           "run_number": 8,
           "conclusion": "success",
           "status": "completed",
@@ -549,20 +572,6 @@
           "status": "completed",
           "created_at": "2026-03-01T01:17:11Z",
           "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/22533058629"
-        },
-        {
-          "run_number": 3,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-28T06:27:43Z",
-          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/22515243753"
-        },
-        {
-          "run_number": 2,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-28T06:24:20Z",
-          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/22515188230"
         }
       ]
     },
@@ -572,7 +581,7 @@
         "id": 240033808,
         "name": "📈 코스피 고점 판독기",
         "path": ".github/workflows/kospi-peak-detector.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/kospi-peak-detector/blob/main/.github/workflows/kospi-peak-detector.yml"
       },
       "cron": "0 22 * * 6",
@@ -634,65 +643,10 @@
         "id": 239711242,
         "name": "Gmail 자동 정리",
         "path": ".github/workflows/gmail-cleanup.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/blob/main/.github/workflows/gmail-cleanup.yml"
       },
       "cron": "30 9 * * 1-5",
-      "runs": [
-        {
-          "run_number": 5,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-03-11T10:08:21Z",
-          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22947309420"
-        },
-        {
-          "run_number": 4,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-03-10T10:07:40Z",
-          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22897319367"
-        },
-        {
-          "run_number": 1,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-09T10:29:28Z",
-          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22849178189"
-        },
-        {
-          "run_number": 3,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-03-09T10:25:04Z",
-          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22849011958"
-        },
-        {
-          "run_number": 2,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-02T02:33:33Z",
-          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22559029483"
-        },
-        {
-          "run_number": 1,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-28T01:31:43Z",
-          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22510447721"
-        }
-      ]
-    },
-    {
-      "repo": "gmail-auto-cleanup",
-      "wf": {
-        "id": 243549929,
-        "name": "🔑 Gmail 토큰 재발급",
-        "path": ".github/workflows/renew-gmail-token.yml",
-        "state": "active",
-        "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/blob/main/.github/workflows/renew-gmail-token.yml"
-      },
-      "cron": null,
       "runs": [
         {
           "run_number": 5,
@@ -750,6 +704,34 @@
       "cron": "0 8 * * 1-5",
       "runs": [
         {
+          "run_number": 36,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-13T08:32:09Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23042684893"
+        },
+        {
+          "run_number": 5,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-13T08:31:33Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23042667925"
+        },
+        {
+          "run_number": 35,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-12T08:34:28Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22993255254"
+        },
+        {
+          "run_number": 4,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-12T08:33:58Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22993239159"
+        },
+        {
           "run_number": 34,
           "conclusion": "success",
           "status": "completed",
@@ -769,34 +751,6 @@
           "status": "completed",
           "created_at": "2026-03-10T08:50:15Z",
           "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22894424414"
-        },
-        {
-          "run_number": 2,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-10T08:49:43Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22894405745"
-        },
-        {
-          "run_number": 32,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-09T08:51:13Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22845531094"
-        },
-        {
-          "run_number": 1,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-09T08:50:39Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22845511980"
-        },
-        {
-          "run_number": 31,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-07T08:25:41Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22795570538"
         }
       ]
     },
@@ -812,6 +766,34 @@
       "cron": "0 23 * * 0-4",
       "runs": [
         {
+          "run_number": 36,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-13T08:32:09Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23042684893"
+        },
+        {
+          "run_number": 5,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-13T08:31:33Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23042667925"
+        },
+        {
+          "run_number": 35,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-12T08:34:28Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22993255254"
+        },
+        {
+          "run_number": 4,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-12T08:33:58Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22993239159"
+        },
+        {
           "run_number": 34,
           "conclusion": "success",
           "status": "completed",
@@ -831,34 +813,6 @@
           "status": "completed",
           "created_at": "2026-03-10T08:50:15Z",
           "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22894424414"
-        },
-        {
-          "run_number": 2,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-10T08:49:43Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22894405745"
-        },
-        {
-          "run_number": 32,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-09T08:51:13Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22845531094"
-        },
-        {
-          "run_number": 1,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-09T08:50:39Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22845511980"
-        },
-        {
-          "run_number": 31,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-07T08:25:41Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/22795570538"
         }
       ]
     },
@@ -998,6 +952,20 @@
       "cron": "0 12 * * 0-4",
       "runs": [
         {
+          "run_number": 7,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-12T13:15:27Z",
+          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/23003792075"
+        },
+        {
+          "run_number": 6,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-12T13:14:04Z",
+          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/23003736105"
+        },
+        {
           "run_number": 6,
           "conclusion": "success",
           "status": "completed",
@@ -1031,20 +999,6 @@
           "status": "completed",
           "created_at": "2026-03-09T13:17:41Z",
           "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/22855301134"
-        },
-        {
-          "run_number": 3,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-09T13:16:32Z",
-          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/22855256816"
-        },
-        {
-          "run_number": 3,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-08T12:59:34Z",
-          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/22821577165"
         }
       ]
     }
