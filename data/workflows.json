@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-03-20T07:08:40.237979+00:00",
+  "updated_at": "2026-03-20T08:54:48.581622+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-03-20T07:08:40.237979+00:00",
+    "synced_at": "2026-03-20T08:54:48.581622+00:00",
     "has_pat": true,
     "paused_count": 12,
     "sync_log": {
@@ -698,6 +698,20 @@
       "cron": "0 8 * * 1-5",
       "runs": [
         {
+          "run_number": 42,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-20T08:32:51Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23335064140"
+        },
+        {
+          "run_number": 10,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-20T08:32:23Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23335049872"
+        },
+        {
           "run_number": 41,
           "conclusion": "success",
           "status": "completed",
@@ -731,20 +745,6 @@
           "status": "completed",
           "created_at": "2026-03-17T08:42:35Z",
           "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23185676299"
-        },
-        {
-          "run_number": 7,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-17T08:42:02Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23185659691"
-        },
-        {
-          "run_number": 38,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-16T08:47:51Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23135233121"
         }
       ]
     },
@@ -760,6 +760,20 @@
       "cron": "0 23 * * 0-4",
       "runs": [
         {
+          "run_number": 42,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-20T08:32:51Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23335064140"
+        },
+        {
+          "run_number": 10,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-20T08:32:23Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23335049872"
+        },
+        {
           "run_number": 41,
           "conclusion": "success",
           "status": "completed",
@@ -793,20 +807,6 @@
           "status": "completed",
           "created_at": "2026-03-17T08:42:35Z",
           "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23185676299"
-        },
-        {
-          "run_number": 7,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-17T08:42:02Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23185659691"
-        },
-        {
-          "run_number": 38,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-16T08:47:51Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/23135233121"
         }
       ]
     },
