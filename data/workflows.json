@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-03-25T10:04:16.478987+00:00",
+  "updated_at": "2026-03-25T11:02:55.398304+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-03-25T10:04:16.478987+00:00",
+    "synced_at": "2026-03-25T11:02:55.398304+00:00",
     "has_pat": true,
     "paused_count": 12,
     "sync_log": {
@@ -519,6 +519,13 @@
       "cron": "30 9 * * 1-5",
       "runs": [
         {
+          "run_number": 18,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-03-25T10:26:57Z",
+          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/23536335297"
+        },
+        {
           "run_number": 17,
           "conclusion": "success",
           "status": "completed",
@@ -559,13 +566,6 @@
           "status": "completed",
           "created_at": "2026-03-17T10:26:47Z",
           "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/23189680407"
-        },
-        {
-          "run_number": 11,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-16T10:36:05Z",
-          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/23139446815"
         }
       ]
     },
