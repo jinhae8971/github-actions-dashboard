@@ -1,13 +1,19 @@
 {
-  "updated_at": "2026-03-25T17:14:20.248840+00:00",
+  "updated_at": "2026-03-25T19:08:41.215677+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-03-25T17:14:20.248840+00:00",
+    "synced_at": "2026-03-25T19:08:41.215677+00:00",
     "has_pat": true,
-    "paused_count": 12,
+    "paused_count": 11,
     "sync_log": {
       "added": [],
-      "removed": []
+      "removed": [
+        {
+          "wf_id": "237174445",
+          "repo": "competitor-ai-tracker",
+          "name": "Competitor AI R&D Tracker"
+        }
+      ]
     }
   },
   "workflows": [
@@ -442,68 +448,6 @@
           "status": "completed",
           "created_at": "2026-02-20T15:15:51Z",
           "html_url": "https://github.com/jinhae8971/realestate-permit-tracker/actions/runs/22229578070"
-        }
-      ]
-    },
-    {
-      "repo": "competitor-ai-tracker",
-      "wf": {
-        "id": 237174445,
-        "name": "Competitor AI R&D Tracker",
-        "path": ".github/workflows/competitor-ai-tracker.yml",
-        "state": "disabled_manually",
-        "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/blob/main/.github/workflows/competitor-ai-tracker.yml"
-      },
-      "cron": "10 22 * * 0-4",
-      "runs": [
-        {
-          "run_number": 12,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-26T22:49:05Z",
-          "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22464580515"
-        },
-        {
-          "run_number": 11,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-25T22:48:18Z",
-          "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22419378438"
-        },
-        {
-          "run_number": 10,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-24T22:48:17Z",
-          "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22373441613"
-        },
-        {
-          "run_number": 9,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-24T22:02:35Z",
-          "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22371979909"
-        },
-        {
-          "run_number": 8,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-23T23:32:18Z",
-          "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22329474752"
-        },
-        {
-          "run_number": 7,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-23T23:27:47Z",
-          "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22329341191"
-        },
-        {
-          "run_number": 6,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-02-23T22:55:38Z",
-          "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22328383622"
         }
       ]
     },
