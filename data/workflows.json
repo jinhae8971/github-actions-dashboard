@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-04-04T21:40:45.859436+00:00",
+  "updated_at": "2026-04-04T22:40:42.322178+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-04-04T21:40:45.859436+00:00",
+    "synced_at": "2026-04-04T22:40:42.322178+00:00",
     "has_pat": true,
     "paused_count": 12,
     "sync_log": {
@@ -581,6 +581,20 @@
       "cron": "0 22 * * 6",
       "runs": [
         {
+          "run_number": 20,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-04T22:18:22Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/23988763740"
+        },
+        {
+          "run_number": 17,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-04T22:17:48Z",
+          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/23988756207"
+        },
+        {
           "run_number": 19,
           "conclusion": "success",
           "status": "completed",
@@ -614,20 +628,6 @@
           "status": "completed",
           "created_at": "2026-03-14T22:16:04Z",
           "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/23097509649"
-        },
-        {
-          "run_number": 14,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-14T22:15:32Z",
-          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/23097502506"
-        },
-        {
-          "run_number": 16,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-13T23:55:25Z",
-          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/23075304603"
         }
       ]
     },
