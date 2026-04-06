@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-04-06T11:06:16.548928+00:00",
+  "updated_at": "2026-04-06T13:40:36.560332+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-04-06T11:06:16.548928+00:00",
+    "synced_at": "2026-04-06T13:40:36.560332+00:00",
     "has_pat": true,
     "paused_count": 12,
     "sync_log": {
@@ -946,6 +946,20 @@
       "cron": "0 12 * * 0-4",
       "runs": [
         {
+          "run_number": 25,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-06T12:59:24Z",
+          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/24032722218"
+        },
+        {
+          "run_number": 24,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-06T12:58:03Z",
+          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/24032682447"
+        },
+        {
           "run_number": 24,
           "conclusion": "success",
           "status": "completed",
@@ -979,20 +993,6 @@
           "status": "completed",
           "created_at": "2026-04-01T13:09:11Z",
           "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/23850242556"
-        },
-        {
-          "run_number": 21,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-01T13:07:53Z",
-          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/23850188831"
-        },
-        {
-          "run_number": 21,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-31T13:06:04Z",
-          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/23798862748"
         }
       ]
     }
