@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-04-14T14:07:46.593837+00:00",
+  "updated_at": "2026-04-14T16:17:47.394021+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-04-14T14:07:46.593837+00:00",
+    "synced_at": "2026-04-14T16:17:47.394021+00:00",
     "has_pat": true,
     "paused_count": 11,
     "sync_log": {
@@ -268,7 +268,7 @@
         "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/livebench-notify/blob/main/.github/workflows/livebench.yml"
       },
-      "cron": null,
+      "cron": "0 0 * * *",
       "runs": [
         {
           "run_number": 13,
