@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-04-14T12:04:46.767837+00:00",
+  "updated_at": "2026-04-14T14:07:46.593837+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-04-14T12:04:46.767837+00:00",
+    "synced_at": "2026-04-14T14:07:46.593837+00:00",
     "has_pat": true,
     "paused_count": 11,
     "sync_log": {
@@ -268,7 +268,7 @@
         "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/livebench-notify/blob/main/.github/workflows/livebench.yml"
       },
-      "cron": "0 0 * * *",
+      "cron": null,
       "runs": [
         {
           "run_number": 13,
@@ -946,6 +946,20 @@
       "cron": "0 12 * * 0-4",
       "runs": [
         {
+          "run_number": 31,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-14T13:16:20Z",
+          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/24401093749"
+        },
+        {
+          "run_number": 30,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-14T13:14:59Z",
+          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/24401028655"
+        },
+        {
           "run_number": 30,
           "conclusion": "success",
           "status": "completed",
@@ -979,20 +993,6 @@
           "status": "completed",
           "created_at": "2026-04-09T13:14:59Z",
           "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/24192181949"
-        },
-        {
-          "run_number": 27,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-09T13:13:37Z",
-          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/24192120789"
-        },
-        {
-          "run_number": 27,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-08T13:11:07Z",
-          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/24137146767"
         }
       ]
     }
