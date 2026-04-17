@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-04-17T11:59:02.033679+00:00",
+  "updated_at": "2026-04-17T13:52:15.650608+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-04-17T11:59:02.033679+00:00",
+    "synced_at": "2026-04-17T13:52:15.650608+00:00",
     "has_pat": true,
     "paused_count": 11,
     "sync_log": {
@@ -1008,6 +1008,13 @@
       "cron": "0 9 * * 0-4",
       "runs": [
         {
+          "run_number": 11,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T12:38:54Z",
+          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24565475721"
+        },
+        {
           "run_number": 10,
           "conclusion": "failure",
           "status": "completed",
@@ -1048,13 +1055,6 @@
           "status": "completed",
           "created_at": "2026-04-17T10:37:05Z",
           "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24560843829"
-        },
-        {
-          "run_number": 4,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-04-17T10:30:18Z",
-          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24560573817"
         }
       ]
     }
