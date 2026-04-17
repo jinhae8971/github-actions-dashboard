@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-04-17T07:24:21.250854+00:00",
+  "updated_at": "2026-04-17T07:40:18.872057+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-04-17T07:24:21.250854+00:00",
+    "synced_at": "2026-04-17T07:40:18.872057+00:00",
     "has_pat": true,
     "paused_count": 11,
     "sync_log": {
@@ -993,6 +993,26 @@
           "status": "completed",
           "created_at": "2026-04-13T13:15:42Z",
           "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/24345406340"
+        }
+      ]
+    },
+    {
+      "repo": "personal-terminal",
+      "wf": {
+        "id": 262221769,
+        "name": ".github/workflows/nightly-backfill.yml",
+        "path": ".github/workflows/nightly-backfill.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/personal-terminal/blob/main/.github/workflows/nightly-backfill.yml"
+      },
+      "cron": "0 9 * * 0-4",
+      "runs": [
+        {
+          "run_number": 1,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T07:39:55Z",
+          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24553785636"
         }
       ]
     }
