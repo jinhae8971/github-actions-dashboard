@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-04-17T10:20:47.808993+00:00",
+  "updated_at": "2026-04-17T11:59:02.033679+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-04-17T10:20:47.808993+00:00",
+    "synced_at": "2026-04-17T11:59:02.033679+00:00",
     "has_pat": true,
     "paused_count": 11,
     "sync_log": {
@@ -519,6 +519,13 @@
       "cron": "30 9 * * 1-5",
       "runs": [
         {
+          "run_number": 35,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-17T10:38:15Z",
+          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/24560889189"
+        },
+        {
           "run_number": 34,
           "conclusion": "success",
           "status": "completed",
@@ -559,13 +566,6 @@
           "status": "completed",
           "created_at": "2026-04-09T10:41:35Z",
           "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/24185925113"
-        },
-        {
-          "run_number": 28,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-08T10:37:14Z",
-          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/24131032541"
         }
       ]
     },
@@ -1008,25 +1008,53 @@
       "cron": "0 9 * * 0-4",
       "runs": [
         {
-          "run_number": 3,
+          "run_number": 10,
           "conclusion": "failure",
           "status": "completed",
-          "created_at": "2026-04-17T07:52:59Z",
-          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24554268618"
+          "created_at": "2026-04-17T11:51:05Z",
+          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24563610205"
         },
         {
-          "run_number": 2,
+          "run_number": 9,
           "conclusion": "failure",
           "status": "completed",
-          "created_at": "2026-04-17T07:52:58Z",
-          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24554268343"
+          "created_at": "2026-04-17T11:13:36Z",
+          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24562220739"
         },
         {
-          "run_number": 1,
+          "run_number": 8,
           "conclusion": "failure",
           "status": "completed",
-          "created_at": "2026-04-17T07:39:55Z",
-          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24553785636"
+          "created_at": "2026-04-17T11:00:50Z",
+          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24561741690"
+        },
+        {
+          "run_number": 7,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T10:53:40Z",
+          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24561471055"
+        },
+        {
+          "run_number": 6,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T10:47:56Z",
+          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24561253368"
+        },
+        {
+          "run_number": 5,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T10:37:05Z",
+          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24560843829"
+        },
+        {
+          "run_number": 4,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T10:30:18Z",
+          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24560573817"
         }
       ]
     }
