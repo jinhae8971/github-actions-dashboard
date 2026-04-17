@@ -63,6 +63,7 @@ REPOS = [
     'us-market-agent',
     'etf-strategist',
     'kospi-strategy',
+    'personal-terminal',
 ]
 
 # 워크플로우 ID → 리포트 파일 매핑
