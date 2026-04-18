@@ -64,9 +64,21 @@ REPOS = [
     'etf-strategist',
     'kospi-strategy',
     'personal-terminal',
+    # Global Market Brief ecosystem (2026-04 추가)
+    'crypto-research-agent',
+    'kospi-research-agent',
+    'sp500-research-agent',
+    'nasdaq-research-agent',
+    'dow30-research-agent',
+    'global-market-orchestrator',
 ]
 
 # 워크플로우 ID → 리포트 파일 매핑
+#
+# 표준 매핑: 리포트 파일의 상대경로를 지정
+# 특수 매핑: "index:<base_path>" 형식으로 시작하면 <base_path>/index.json을 먼저 읽고
+#            최신 date의 <base_path>/<date>.json을 가져옴
+#            (Global Market Brief 에이전트들이 사용하는 구조)
 REPORT_MAP = {
     'korean-market-bot/236541757':         'reports/latest_kr.json',
     'korean-market-bot/236636495':         'reports/latest_weekly.json',
@@ -82,6 +94,13 @@ REPORT_MAP = {
     'us-market-agent/240126478':           'docs/data/daily_report.json',
     'etf-strategist/240142776':            'docs/data/daily_report.json',
     'kospi-strategy/243217019':             'docs/data/daily_report.json',
+    # Global Market Brief ecosystem (index.json + <date>.json 패턴)
+    'crypto-research-agent/latest':        'index:docs/reports',
+    'kospi-research-agent/latest':         'index:docs/reports',
+    'sp500-research-agent/latest':         'index:docs/reports',
+    'nasdaq-research-agent/latest':        'index:docs/reports',
+    'dow30-research-agent/latest':         'index:docs/reports',
+    'global-market-orchestrator/latest':   'index:docs/reports',
 }
 
 HEADERS = {
@@ -289,10 +308,42 @@ def fetch_all_workflow_data():
 # ── Step 4: 리포트 파일 수집 ────────────────────────────────────────────────
 
 def fetch_report(repo, report_path):
+    """리포트 파일을 가져온다.
+
+    - 일반 경로: 해당 경로의 JSON을 직접 로드
+    - 'index:<base_path>' 패턴: <base_path>/index.json을 읽어 최신 date를 찾고
+      <base_path>/<latest_date>.json 을 로드 (Global Market Brief 에이전트 패턴)
+    """
     try:
-        data = gh_get(f'/repos/{GH_USER}/{repo}/contents/{report_path}')
-        raw  = base64.b64decode(data['content'].replace('\n', '')).decode('utf-8')
-        return json.loads(raw)
+        if report_path.startswith('index:'):
+            base_path = report_path[len('index:'):]
+            # 1) index.json 로드
+            index_data = gh_get(f'/repos/{GH_USER}/{repo}/contents/{base_path}/index.json')
+            raw_index  = base64.b64decode(index_data['content'].replace('\n', '')).decode('utf-8')
+            index_list = json.loads(raw_index)
+            if not isinstance(index_list, list) or not index_list:
+                print(f'  [report] {repo}/{base_path}/index.json: empty or invalid')
+                return None
+            # 2) 가장 최신 date 선택 (index.json은 내림차순 정렬된다고 가정)
+            latest = index_list[0]
+            latest_date = latest.get('date')
+            if not latest_date:
+                print(f'  [report] {repo}: no date in index.json[0]')
+                return None
+            # 3) <base_path>/<date>.json 로드
+            data = gh_get(f'/repos/{GH_USER}/{repo}/contents/{base_path}/{latest_date}.json')
+            raw  = base64.b64decode(data['content'].replace('\n', '')).decode('utf-8')
+            report = json.loads(raw)
+            # index.json의 메타데이터도 함께 반환 (narrative_tagline 등)
+            if isinstance(report, dict) and isinstance(latest, dict):
+                # index.json의 요약 필드를 report에 병합 (충돌 시 report 우선)
+                for k, v in latest.items():
+                    report.setdefault(k, v)
+            return report
+        else:
+            data = gh_get(f'/repos/{GH_USER}/{repo}/contents/{report_path}')
+            raw  = base64.b64decode(data['content'].replace('\n', '')).decode('utf-8')
+            return json.loads(raw)
     except Exception as e:
         print(f'  [report] {repo}/{report_path}: {e}')
         return None
@@ -370,3 +421,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
