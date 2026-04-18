@@ -1,33 +1,12 @@
 {
-  "updated_at": "2026-04-18T01:21:05.570217+00:00",
+  "updated_at": "2026-04-18T01:35:30.090364+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-04-18T01:21:05.570217+00:00",
+    "synced_at": "2026-04-18T01:35:30.090364+00:00",
     "has_pat": true,
     "paused_count": 15,
     "sync_log": {
-      "added": [
-        {
-          "wf_id": "236541757",
-          "repo": "korean-market-bot",
-          "name": "📊 한국 증시 일일 마감 리포트"
-        },
-        {
-          "wf_id": "243217019",
-          "repo": "kospi-strategy",
-          "name": "KOSPI Strategy — Daily Report"
-        },
-        {
-          "wf_id": "240033808",
-          "repo": "kospi-peak-detector",
-          "name": "📈 코스피 고점 판독기"
-        },
-        {
-          "wf_id": "262221769",
-          "repo": "personal-terminal",
-          "name": ".github/workflows/nightly-backfill.yml"
-        }
-      ],
+      "added": [],
       "removed": []
     }
   },
@@ -1401,9 +1380,16 @@
       "cron": "30 23 * * *",
       "runs": [
         {
+          "run_number": 9,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-18T01:29:17Z",
+          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24593807243"
+        },
+        {
           "run_number": 8,
-          "conclusion": null,
-          "status": "in_progress",
+          "conclusion": "success",
+          "status": "completed",
           "created_at": "2026-04-18T01:20:56Z",
           "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24593633748"
         },
@@ -1441,13 +1427,6 @@
           "status": "completed",
           "created_at": "2026-04-17T00:38:48Z",
           "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24541557038"
-        },
-        {
-          "run_number": 2,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-17T00:02:49Z",
-          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24540448698"
         }
       ]
     }
