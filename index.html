@@ -984,6 +984,17 @@ const REPORT_FILE_MAP = {
   '236653953': './data/reports/realestate-permit-tracker_236653953.json',
 };
 
+// Global Market Brief 에이전트는 워크플로우 ID가 매번 동일하지 않아도
+// repo 이름으로 매핑한다. render 시 workflow의 repo를 참조.
+const REPORT_FILE_MAP_BY_REPO = {
+  'crypto-research-agent':      './data/reports/crypto-research-agent_latest.json',
+  'kospi-research-agent':       './data/reports/kospi-research-agent_latest.json',
+  'sp500-research-agent':       './data/reports/sp500-research-agent_latest.json',
+  'nasdaq-research-agent':      './data/reports/nasdaq-research-agent_latest.json',
+  'dow30-research-agent':       './data/reports/dow30-research-agent_latest.json',
+  'global-market-orchestrator': './data/reports/global-market-orchestrator_latest.json',
+};
+
 const OWNER = 'jinhae8971';
 
 // ── Pause State (localStorage) ────────────────────────────────────────────
@@ -1615,6 +1626,13 @@ function renderCards(wfData) {
     'us-market-agent':     'https://jinhae8971.github.io/us-market-agent/',
     'etf-strategist':      'https://jinhae8971.github.io/etf-strategist/',
     'kospi-peak-detector': 'https://jinhae8971.github.io/kospi-peak-detector/',
+    // Global Market Brief ecosystem
+    'crypto-research-agent':      'https://jinhae8971.github.io/crypto-research-agent/',
+    'kospi-research-agent':       'https://jinhae8971.github.io/kospi-research-agent/',
+    'sp500-research-agent':       'https://jinhae8971.github.io/sp500-research-agent/',
+    'nasdaq-research-agent':      'https://jinhae8971.github.io/nasdaq-research-agent/',
+    'dow30-research-agent':       'https://jinhae8971.github.io/dow30-research-agent/',
+    'global-market-orchestrator': 'https://jinhae8971.github.io/global-market-orchestrator/',
   };
 
   const cards = wfData.map(({ repo, wf, cron, runs }) => {
@@ -1645,7 +1663,7 @@ function renderCards(wfData) {
       return `<div class="h-bar ${c}"><div class="tooltip">#${run.run_number} ${c}<br>${dt}</div></div>`;
     }).join('');
 
-    const hasReport = REPORT_FILE_MAP[String(wf.id)];
+    const hasReport = REPORT_FILE_MAP[String(wf.id)] || REPORT_FILE_MAP_BY_REPO[repo];
     const reportBtn = hasReport ? `
       <button class="report-btn" id="rbtn-${repo}-${wf.id}"
         onclick="openReport('${repo}','${wf.id}','${wf.name.replace(/'/g,"\\'")}')">
@@ -1735,7 +1753,9 @@ async function openReport(repo, wfId, wfName) {
   const btn = document.getElementById(`rbtn-${repo}-${wfId}`);
   if (btn) btn.disabled = true;
 
-  const reportFile = REPORT_FILE_MAP[String(wfId)];
+  // 워크플로우 ID 기반 매핑이 우선, 없으면 repo 기반 (GMB 에이전트)
+  const reportFile = REPORT_FILE_MAP[String(wfId)] || REPORT_FILE_MAP_BY_REPO[repo];
+  const isGMB = !!REPORT_FILE_MAP_BY_REPO[repo]; // Global Market Brief 에이전트 여부
 
   try {
     const resp = await fetch(reportFile + '?_=' + Date.now());
@@ -1751,7 +1771,22 @@ async function openReport(repo, wfId, wfName) {
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
 
     const decoded = await resp.json();
-    const kstTs   = decoded.timestamp
+
+    // ─── GMB 에이전트 리포트 렌더링 (decoded는 { date, narrative, top5/top_gainers ... } 구조) ───
+    if (isGMB) {
+      const date = decoded.date || '—';
+      const kstTs = date !== '—'
+        ? new Date(date + 'T00:00:00Z').toLocaleDateString('ko-KR', {
+            year: 'numeric', month: '2-digit', day: '2-digit'
+          })
+        : '—';
+      document.getElementById('modalTimestamp').textContent = kstTs;
+      body.innerHTML = `<div class="report-content">${renderGMBReport(decoded, repo)}</div>`;
+      return;
+    }
+
+    // ─── 기존 tracker 리포트 렌더링 ───
+    const kstTs = decoded.timestamp
       ? new Date(decoded.timestamp).toLocaleString('ko-KR', {
           timeZone: 'Asia/Seoul',
           year: 'numeric', month: '2-digit', day: '2-digit',
@@ -1775,6 +1810,84 @@ async function openReport(repo, wfId, wfName) {
   } finally {
     if (btn) btn.disabled = false;
   }
+}
+
+// Global Market Brief 에이전트의 JSON 리포트를 보기 좋게 렌더링
+function renderGMBReport(d, repo) {
+  const esc = (s) => String(s || '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+  let html = '';
+
+  // 1) Tagline (내러티브 요약)
+  const tagline = d.narrative_tagline || d.tagline || '';
+  if (tagline) {
+    html += `<p style="margin:0 0 16px;padding:12px;background:#f0f7ff;border-left:3px solid #2563eb;border-radius:4px;line-height:1.6">
+      <b>📝 내러티브 요약</b><br><span style="color:#334155">${esc(tagline)}</span>
+    </p>`;
+  }
+
+  // 2) 상승 Top (각 에이전트가 top5 또는 top_gainers 필드 사용)
+  const gainers = d.top5 || d.top_gainers || [];
+  if (gainers.length > 0) {
+    html += `<h3 style="margin:12px 0 6px;font-size:14px">🚀 Top Gainers</h3><ul style="padding-left:18px;margin:4px 0 12px">`;
+    gainers.slice(0, 5).forEach(g => {
+      const id = g.ticker || g.symbol || g.identifier || '?';
+      const name = g.name || id;
+      const chg = g.change_pct_nd ?? g.change_48h_pct ?? g.change_pct ?? 0;
+      const sign = chg >= 0 ? '+' : '';
+      const color = chg >= 0 ? '#059669' : '#dc2626';
+      html += `<li><code style="background:#f3f4f6;padding:1px 5px;border-radius:3px">${esc(id)}</code> ${esc(name)} <b style="color:${color}">${sign}${chg.toFixed(2)}%</b></li>`;
+    });
+    html += `</ul>`;
+  }
+
+  // 3) Narrative 상세 (각 에이전트 내부 narrative 객체)
+  const n = d.narrative || {};
+  if (n.current_narrative) {
+    html += `<h3 style="margin:12px 0 6px;font-size:14px">💡 현재 내러티브</h3><p style="line-height:1.6;margin:4px 0 12px">${esc(n.current_narrative)}</p>`;
+  }
+  if (n.hot_sectors && n.hot_sectors.length) {
+    html += `<p style="margin:4px 0"><b>🔥 Hot sectors:</b> ${n.hot_sectors.map(s => `<span style="background:#fef3c7;padding:1px 6px;margin:0 2px;border-radius:3px">${esc(s)}</span>`).join(' ')}</p>`;
+  }
+  if (n.cooling_sectors && n.cooling_sectors.length) {
+    html += `<p style="margin:4px 0"><b>❄️ Cooling sectors:</b> ${n.cooling_sectors.map(s => `<span style="background:#e0f2fe;padding:1px 6px;margin:0 2px;border-radius:3px">${esc(s)}</span>`).join(' ')}</p>`;
+  }
+  if (n.investment_insight) {
+    html += `<h3 style="margin:14px 0 6px;font-size:14px">🎯 투자 인사이트</h3><p style="line-height:1.6;margin:4px 0 12px;padding:10px;background:#f9fafb;border-radius:4px">${esc(n.investment_insight)}</p>`;
+  }
+  if (n.week_over_week_change) {
+    html += `<h3 style="margin:14px 0 6px;font-size:14px">📊 주간 변화</h3><p style="line-height:1.6;margin:4px 0 12px">${esc(n.week_over_week_change)}</p>`;
+  }
+
+  // 4) global-market-orchestrator 전용: risk_posture, agents 요약
+  if (repo === 'global-market-orchestrator') {
+    if (d.risk_posture) {
+      const colorMap = { 'Risk-On': '#059669', 'Neutral': '#6b7280', 'Risk-Off': '#dc2626' };
+      const c = colorMap[d.risk_posture] || '#6b7280';
+      html = `<p style="margin:0 0 12px"><b>Global Risk Posture:</b> <span style="background:${c};color:#fff;padding:2px 10px;border-radius:12px;font-weight:600">${esc(d.risk_posture)}</span></p>` + html;
+    }
+    const agents = d.agents || d.agent_reports || [];
+    if (agents.length > 0) {
+      html += `<h3 style="margin:14px 0 6px;font-size:14px">🌐 5개 시장 현황</h3><ul style="padding-left:18px;margin:4px 0 12px">`;
+      agents.forEach(a => {
+        const emoji = a.emoji || a.agent_emoji || '';
+        const label = a.label || a.agent_label || a.key || '?';
+        const date = a.date || '?';
+        const stale = a.is_stale ? '🟡 stale' : '🟢 fresh';
+        const tg = (a.top_gainer && a.top_gainer.name) || ((a.top_gainers || [])[0] && (a.top_gainers[0].name)) || 'n/a';
+        const tgChg = (a.top_gainer && a.top_gainer.change_pct) ?? ((a.top_gainers || [])[0] && (a.top_gainers[0].change_pct)) ?? 0;
+        html += `<li>${emoji} <b>${esc(label)}</b> — ${date} ${stale} / 상승 1위: ${esc(tg)} (+${tgChg.toFixed(2)}%)</li>`;
+      });
+      html += `</ul>`;
+    }
+  }
+
+  if (!html) {
+    html = '<p>리포트 데이터 없음</p>';
+  }
+
+  return html;
 }
 
 function closeReportModal() {
@@ -1802,3 +1915,4 @@ setInterval(loadAll, 5 * 60 * 1000);
 </script>
 </body>
 </html>
+
