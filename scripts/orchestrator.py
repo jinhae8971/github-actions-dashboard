@@ -71,6 +71,10 @@ REPOS = [
     'nasdaq-research-agent',
     'dow30-research-agent',
     'global-market-orchestrator',
+    # TrendSpider Free Clone ecosystem (2026-04 추가)
+    'trendline-detector',
+    'chart-analyzer',
+    'backtest-lab',
 ]
 
 # 워크플로우 ID → 리포트 파일 매핑
@@ -421,4 +425,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
