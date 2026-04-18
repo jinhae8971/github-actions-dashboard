@@ -1818,6 +1818,7 @@ function renderGMBReport(d, repo) {
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
   let html = '';
+  const isOrchestrator = (repo === 'global-market-orchestrator');
 
   // 1) Tagline (내러티브 요약)
   const tagline = d.narrative_tagline || d.tagline || '';
@@ -1827,59 +1828,113 @@ function renderGMBReport(d, repo) {
     </p>`;
   }
 
-  // 2) 상승 Top (각 에이전트가 top5 또는 top_gainers 필드 사용)
-  const gainers = d.top5 || d.top_gainers || [];
-  if (gainers.length > 0) {
-    html += `<h3 style="margin:12px 0 6px;font-size:14px">🚀 Top Gainers</h3><ul style="padding-left:18px;margin:4px 0 12px">`;
-    gainers.slice(0, 5).forEach(g => {
-      const id = g.ticker || g.symbol || g.identifier || '?';
-      const name = g.name || id;
-      const chg = g.change_pct_nd ?? g.change_48h_pct ?? g.change_pct ?? 0;
-      const sign = chg >= 0 ? '+' : '';
-      const color = chg >= 0 ? '#059669' : '#dc2626';
-      html += `<li><code style="background:#f3f4f6;padding:1px 5px;border-radius:3px">${esc(id)}</code> ${esc(name)} <b style="color:${color}">${sign}${chg.toFixed(2)}%</b></li>`;
-    });
-    html += `</ul>`;
+  // 2) Global Risk Posture (orchestrator만)
+  if (isOrchestrator && d.risk_posture) {
+    const colorMap = { 'Risk-On': '#059669', 'Neutral': '#6b7280', 'Risk-Off': '#dc2626' };
+    const c = colorMap[d.risk_posture] || '#6b7280';
+    html += `<p style="margin:0 0 12px"><b>🌐 Global Risk Posture:</b> <span style="background:${c};color:#fff;padding:3px 12px;border-radius:12px;font-weight:600">${esc(d.risk_posture)}</span></p>`;
   }
 
-  // 3) Narrative 상세 (각 에이전트 내부 narrative 객체)
-  const n = d.narrative || {};
-  if (n.current_narrative) {
-    html += `<h3 style="margin:12px 0 6px;font-size:14px">💡 현재 내러티브</h3><p style="line-height:1.6;margin:4px 0 12px">${esc(n.current_narrative)}</p>`;
-  }
-  if (n.hot_sectors && n.hot_sectors.length) {
-    html += `<p style="margin:4px 0"><b>🔥 Hot sectors:</b> ${n.hot_sectors.map(s => `<span style="background:#fef3c7;padding:1px 6px;margin:0 2px;border-radius:3px">${esc(s)}</span>`).join(' ')}</p>`;
-  }
-  if (n.cooling_sectors && n.cooling_sectors.length) {
-    html += `<p style="margin:4px 0"><b>❄️ Cooling sectors:</b> ${n.cooling_sectors.map(s => `<span style="background:#e0f2fe;padding:1px 6px;margin:0 2px;border-radius:3px">${esc(s)}</span>`).join(' ')}</p>`;
-  }
-  if (n.investment_insight) {
-    html += `<h3 style="margin:14px 0 6px;font-size:14px">🎯 투자 인사이트</h3><p style="line-height:1.6;margin:4px 0 12px;padding:10px;background:#f9fafb;border-radius:4px">${esc(n.investment_insight)}</p>`;
-  }
-  if (n.week_over_week_change) {
-    html += `<h3 style="margin:14px 0 6px;font-size:14px">📊 주간 변화</h3><p style="line-height:1.6;margin:4px 0 12px">${esc(n.week_over_week_change)}</p>`;
-  }
-
-  // 4) global-market-orchestrator 전용: risk_posture, agents 요약
-  if (repo === 'global-market-orchestrator') {
-    if (d.risk_posture) {
-      const colorMap = { 'Risk-On': '#059669', 'Neutral': '#6b7280', 'Risk-Off': '#dc2626' };
-      const c = colorMap[d.risk_posture] || '#6b7280';
-      html = `<p style="margin:0 0 12px"><b>Global Risk Posture:</b> <span style="background:${c};color:#fff;padding:2px 10px;border-radius:12px;font-weight:600">${esc(d.risk_posture)}</span></p>` + html;
+  // 3) 상승 Top (개별 에이전트만)
+  if (!isOrchestrator) {
+    const gainers = d.top5 || d.top_gainers || [];
+    if (gainers.length > 0) {
+      html += `<h3 style="margin:12px 0 6px;font-size:14px">🚀 Top Gainers</h3><ul style="padding-left:18px;margin:4px 0 12px">`;
+      gainers.slice(0, 5).forEach(g => {
+        const id = g.ticker || g.symbol || g.identifier || '?';
+        const name = g.name || id;
+        const chg = g.change_pct_nd ?? g.change_48h_pct ?? g.change_pct ?? 0;
+        const sign = chg >= 0 ? '+' : '';
+        const color = chg >= 0 ? '#059669' : '#dc2626';
+        html += `<li><code style="background:#f3f4f6;padding:1px 5px;border-radius:3px">${esc(id)}</code> ${esc(name)} <b style="color:${color}">${sign}${chg.toFixed(2)}%</b></li>`;
+      });
+      html += `</ul>`;
     }
+  }
+
+  // 4) Narrative 상세 — 에이전트별로 구조가 다름
+  const n = d.narrative || {};
+  if (isOrchestrator) {
+    // Orchestrator narrative: macro_regime, flow_summary, positioning_advice 등
+    if (n.macro_regime) {
+      html += `<h3 style="margin:12px 0 6px;font-size:14px">📊 매크로 체제 (Macro Regime)</h3><p style="line-height:1.6;margin:4px 0 12px">${esc(n.macro_regime)}</p>`;
+    }
+    if (n.flow_summary) {
+      html += `<h3 style="margin:12px 0 6px;font-size:14px">💰 자본 흐름</h3><p style="line-height:1.6;margin:4px 0 12px">${esc(n.flow_summary)}</p>`;
+    }
+    if (n.theme_convergence && n.theme_convergence.length) {
+      html += `<p style="margin:4px 0"><b>✨ Theme Convergence:</b> ${n.theme_convergence.map(s => `<span style="background:#fef3c7;padding:1px 6px;margin:0 2px;border-radius:3px">${esc(s)}</span>`).join(' ')}</p>`;
+    }
+    if (n.theme_divergence && n.theme_divergence.length) {
+      html += `<p style="margin:4px 0"><b>⚡ Theme Divergence:</b> ${n.theme_divergence.map(s => `<span style="background:#fde68a;padding:1px 6px;margin:0 2px;border-radius:3px">${esc(s)}</span>`).join(' ')}</p>`;
+    }
+    if (n.positioning_advice) {
+      html += `<h3 style="margin:14px 0 6px;font-size:14px">🎯 포지셔닝 가이드</h3><p style="line-height:1.6;margin:4px 0 12px;padding:10px;background:#f9fafb;border-radius:4px">${esc(n.positioning_advice)}</p>`;
+    }
+    if (n.week_over_week) {
+      html += `<h3 style="margin:14px 0 6px;font-size:14px">📅 주간 변화</h3><p style="line-height:1.6;margin:4px 0 12px">${esc(n.week_over_week)}</p>`;
+    }
+  } else {
+    // 개별 에이전트 narrative: current_narrative, hot_sectors 등
+    if (n.current_narrative) {
+      html += `<h3 style="margin:12px 0 6px;font-size:14px">💡 현재 내러티브</h3><p style="line-height:1.6;margin:4px 0 12px">${esc(n.current_narrative)}</p>`;
+    }
+    if (n.hot_sectors && n.hot_sectors.length) {
+      html += `<p style="margin:4px 0"><b>🔥 Hot sectors:</b> ${n.hot_sectors.map(s => `<span style="background:#fef3c7;padding:1px 6px;margin:0 2px;border-radius:3px">${esc(s)}</span>`).join(' ')}</p>`;
+    }
+    if (n.cooling_sectors && n.cooling_sectors.length) {
+      html += `<p style="margin:4px 0"><b>❄️ Cooling sectors:</b> ${n.cooling_sectors.map(s => `<span style="background:#e0f2fe;padding:1px 6px;margin:0 2px;border-radius:3px">${esc(s)}</span>`).join(' ')}</p>`;
+    }
+    if (n.investment_insight) {
+      html += `<h3 style="margin:14px 0 6px;font-size:14px">🎯 투자 인사이트</h3><p style="line-height:1.6;margin:4px 0 12px;padding:10px;background:#f9fafb;border-radius:4px">${esc(n.investment_insight)}</p>`;
+    }
+    if (n.week_over_week_change) {
+      html += `<h3 style="margin:14px 0 6px;font-size:14px">📊 주간 변화</h3><p style="line-height:1.6;margin:4px 0 12px">${esc(n.week_over_week_change)}</p>`;
+    }
+  }
+
+  // 5) Orchestrator: 5개 시장 요약 & Cross-market signals
+  if (isOrchestrator) {
     const agents = d.agents || d.agent_reports || [];
     if (agents.length > 0) {
       html += `<h3 style="margin:14px 0 6px;font-size:14px">🌐 5개 시장 현황</h3><ul style="padding-left:18px;margin:4px 0 12px">`;
       agents.forEach(a => {
         const emoji = a.emoji || a.agent_emoji || '';
-        const label = a.label || a.agent_label || a.key || '?';
+        const label = a.label || a.agent_label || a.key || a.agent_key || '?';
         const date = a.date || '?';
         const stale = a.is_stale ? '🟡 stale' : '🟢 fresh';
-        const tg = (a.top_gainer && a.top_gainer.name) || ((a.top_gainers || [])[0] && (a.top_gainers[0].name)) || 'n/a';
-        const tgChg = (a.top_gainer && a.top_gainer.change_pct) ?? ((a.top_gainers || [])[0] && (a.top_gainers[0].change_pct)) ?? 0;
-        html += `<li>${emoji} <b>${esc(label)}</b> — ${date} ${stale} / 상승 1위: ${esc(tg)} (+${tgChg.toFixed(2)}%)</li>`;
+        const tgObj = a.top_gainer || (a.top_gainers && a.top_gainers[0]);
+        let tgStr = '데이터 없음';
+        if (tgObj) {
+          const tgName = tgObj.name || '?';
+          const tgChg = tgObj.change_pct ?? 0;
+          const sign = tgChg >= 0 ? '+' : '';
+          tgStr = `${esc(tgName)} <b>${sign}${tgChg.toFixed(2)}%</b>`;
+        }
+        html += `<li style="margin:4px 0">${emoji} <b>${esc(label)}</b> — ${date} ${stale} / 상승 1위: ${tgStr}</li>`;
       });
       html += `</ul>`;
+    }
+
+    // Cross-market signals
+    const ca = d.cross_analysis || {};
+    if (ca.cross_market_signals && ca.cross_market_signals.length) {
+      html += `<h3 style="margin:14px 0 6px;font-size:14px">🔗 Cross-Market 시그널</h3><ul style="padding-left:18px;margin:4px 0 12px">`;
+      ca.cross_market_signals.slice(0, 5).forEach(s => {
+        const markets = (s.markets_involved || []).join(', ');
+        html += `<li style="margin:3px 0"><b>${esc(markets)}</b>: ${esc(s.signal || '')}</li>`;
+      });
+      html += `</ul>`;
+    }
+    if (ca.divergences && ca.divergences.length) {
+      html += `<h3 style="margin:14px 0 6px;font-size:14px">⚠️ 디버전스</h3><ul style="padding-left:18px;margin:4px 0 12px">`;
+      ca.divergences.slice(0, 5).forEach(d2 => {
+        html += `<li style="margin:3px 0">${esc(d2)}</li>`;
+      });
+      html += `</ul>`;
+    }
+    if (ca.global_insight) {
+      html += `<h3 style="margin:14px 0 6px;font-size:14px">🌍 글로벌 인사이트</h3><p style="line-height:1.6;margin:4px 0 12px;padding:10px;background:#f9fafb;border-radius:4px">${esc(ca.global_insight)}</p>`;
     }
   }
 
