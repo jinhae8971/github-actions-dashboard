@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-04-18T02:52:31.752838+00:00",
+  "updated_at": "2026-04-18T02:55:51.419742+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-04-18T02:52:31.752838+00:00",
+    "synced_at": "2026-04-18T02:55:51.419742+00:00",
     "has_pat": true,
     "paused_count": 15,
     "sync_log": {
@@ -1427,6 +1427,26 @@
           "status": "completed",
           "created_at": "2026-04-17T00:38:48Z",
           "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24541557038"
+        }
+      ]
+    },
+    {
+      "repo": "trendline-detector",
+      "wf": {
+        "id": 262632168,
+        "name": "CI",
+        "path": ".github/workflows/ci.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/trendline-detector/blob/main/.github/workflows/ci.yml"
+      },
+      "cron": "0 23 * * 0",
+      "runs": [
+        {
+          "run_number": 1,
+          "conclusion": null,
+          "status": "in_progress",
+          "created_at": "2026-04-18T02:55:39Z",
+          "html_url": "https://github.com/jinhae8971/trendline-detector/actions/runs/24595337607"
         }
       ]
     },
