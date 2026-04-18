@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-04-18T01:35:30.090364+00:00",
+  "updated_at": "2026-04-18T02:52:31.752838+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-04-18T01:35:30.090364+00:00",
+    "synced_at": "2026-04-18T02:52:31.752838+00:00",
     "has_pat": true,
     "paused_count": 15,
     "sync_log": {
@@ -1429,6 +1429,30 @@
           "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24541557038"
         }
       ]
+    },
+    {
+      "repo": "chart-analyzer",
+      "wf": {
+        "id": 262631015,
+        "name": "Daily Pipeline",
+        "path": ".github/workflows/daily_pipeline.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/chart-analyzer/blob/main/.github/workflows/daily_pipeline.yml"
+      },
+      "cron": "0 23 * * 1-5",
+      "runs": []
+    },
+    {
+      "repo": "backtest-lab",
+      "wf": {
+        "id": 262628164,
+        "name": "Weekly Backtest",
+        "path": ".github/workflows/weekly_backtest.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/backtest-lab/blob/main/.github/workflows/weekly_backtest.yml"
+      },
+      "cron": "0 23 * * 0",
+      "runs": []
     }
   ]
 }
