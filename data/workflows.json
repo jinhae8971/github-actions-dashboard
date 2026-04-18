@@ -1,12 +1,33 @@
 {
-  "updated_at": "2026-04-17T23:51:04.866122+00:00",
+  "updated_at": "2026-04-18T01:21:05.570217+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-04-17T23:51:04.866122+00:00",
+    "synced_at": "2026-04-18T01:21:05.570217+00:00",
     "has_pat": true,
-    "paused_count": 11,
+    "paused_count": 15,
     "sync_log": {
-      "added": [],
+      "added": [
+        {
+          "wf_id": "236541757",
+          "repo": "korean-market-bot",
+          "name": "📊 한국 증시 일일 마감 리포트"
+        },
+        {
+          "wf_id": "243217019",
+          "repo": "kospi-strategy",
+          "name": "KOSPI Strategy — Daily Report"
+        },
+        {
+          "wf_id": "240033808",
+          "repo": "kospi-peak-detector",
+          "name": "📈 코스피 고점 판독기"
+        },
+        {
+          "wf_id": "262221769",
+          "repo": "personal-terminal",
+          "name": ".github/workflows/nightly-backfill.yml"
+        }
+      ],
       "removed": []
     }
   },
@@ -17,7 +38,7 @@
         "id": 236541757,
         "name": "📊 한국 증시 일일 마감 리포트",
         "path": ".github/workflows/daily-report.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/korean-market-bot/blob/main/.github/workflows/daily-report.yml"
       },
       "cron": "0 8 * * 1-5",
@@ -575,7 +596,7 @@
         "id": 240033808,
         "name": "📈 코스피 고점 판독기",
         "path": ".github/workflows/kospi-peak-detector.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/kospi-peak-detector/blob/main/.github/workflows/kospi-peak-detector.yml"
       },
       "cron": "0 22 * * 6",
@@ -940,7 +961,7 @@
         "id": 243217019,
         "name": "KOSPI Strategy — Daily Report",
         "path": ".github/workflows/daily-strategy.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/kospi-strategy/blob/main/.github/workflows/daily-strategy.yml"
       },
       "cron": "0 12 * * 0-4",
@@ -1002,7 +1023,7 @@
         "id": 262221769,
         "name": ".github/workflows/nightly-backfill.yml",
         "path": ".github/workflows/nightly-backfill.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/personal-terminal/blob/main/.github/workflows/nightly-backfill.yml"
       },
       "cron": "0 9 * * 0-4",
@@ -1055,6 +1076,378 @@
           "status": "completed",
           "created_at": "2026-04-17T10:37:05Z",
           "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24560843829"
+        }
+      ]
+    },
+    {
+      "repo": "crypto-research-agent",
+      "wf": {
+        "id": 261744569,
+        "name": "Daily Crypto Research",
+        "path": ".github/workflows/daily.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/crypto-research-agent/blob/main/.github/workflows/daily.yml"
+      },
+      "cron": "0 22 * * *",
+      "runs": [
+        {
+          "run_number": 10,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-17T22:52:07Z",
+          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24590146341"
+        },
+        {
+          "run_number": 9,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-17T00:50:15Z",
+          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24541895618"
+        },
+        {
+          "run_number": 8,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-17T00:44:19Z",
+          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24541720431"
+        },
+        {
+          "run_number": 7,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-17T00:15:54Z",
+          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24540862655"
+        },
+        {
+          "run_number": 6,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-16T22:52:29Z",
+          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24538124158"
+        },
+        {
+          "run_number": 5,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-16T11:39:17Z",
+          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24508141396"
+        },
+        {
+          "run_number": 4,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-16T11:35:27Z",
+          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24507989280"
+        }
+      ]
+    },
+    {
+      "repo": "kospi-research-agent",
+      "wf": {
+        "id": 261744576,
+        "name": "Daily KOSPI Research",
+        "path": ".github/workflows/daily.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/kospi-research-agent/blob/main/.github/workflows/daily.yml"
+      },
+      "cron": "0 22 * * 0-4",
+      "runs": [
+        {
+          "run_number": 19,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-18T01:05:56Z",
+          "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24593305679"
+        },
+        {
+          "run_number": 18,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-18T00:29:53Z",
+          "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24592554291"
+        },
+        {
+          "run_number": 17,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-18T00:29:39Z",
+          "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24592549637"
+        },
+        {
+          "run_number": 16,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T01:12:51Z",
+          "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24542544533"
+        },
+        {
+          "run_number": 15,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T01:09:47Z",
+          "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24542456148"
+        },
+        {
+          "run_number": 14,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T01:05:59Z",
+          "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24542347428"
+        },
+        {
+          "run_number": 13,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T00:59:18Z",
+          "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24542155946"
+        }
+      ]
+    },
+    {
+      "repo": "sp500-research-agent",
+      "wf": {
+        "id": 261744581,
+        "name": "Daily S&P 500 Research",
+        "path": ".github/workflows/daily.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/sp500-research-agent/blob/main/.github/workflows/daily.yml"
+      },
+      "cron": "0 22 * * 0-4",
+      "runs": [
+        {
+          "run_number": 17,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-18T01:05:57Z",
+          "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24593306070"
+        },
+        {
+          "run_number": 16,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-18T00:29:54Z",
+          "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24592554669"
+        },
+        {
+          "run_number": 15,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T01:12:52Z",
+          "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24542545088"
+        },
+        {
+          "run_number": 14,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T01:09:48Z",
+          "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24542456619"
+        },
+        {
+          "run_number": 13,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T01:05:56Z",
+          "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24542345784"
+        },
+        {
+          "run_number": 12,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T00:59:14Z",
+          "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24542154400"
+        },
+        {
+          "run_number": 11,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-17T00:50:20Z",
+          "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24541898470"
+        }
+      ]
+    },
+    {
+      "repo": "nasdaq-research-agent",
+      "wf": {
+        "id": 261744653,
+        "name": "Daily NASDAQ-100 Research",
+        "path": ".github/workflows/daily.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/blob/main/.github/workflows/daily.yml"
+      },
+      "cron": "0 22 * * 0-4",
+      "runs": [
+        {
+          "run_number": 18,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-18T01:05:58Z",
+          "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24593306402"
+        },
+        {
+          "run_number": 17,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-18T00:29:55Z",
+          "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24592554997"
+        },
+        {
+          "run_number": 16,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T01:12:53Z",
+          "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24542545594"
+        },
+        {
+          "run_number": 15,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T01:09:49Z",
+          "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24542457106"
+        },
+        {
+          "run_number": 14,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T01:05:57Z",
+          "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24542346361"
+        },
+        {
+          "run_number": 13,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T00:59:15Z",
+          "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24542154950"
+        },
+        {
+          "run_number": 12,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-17T00:50:23Z",
+          "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24541899786"
+        }
+      ]
+    },
+    {
+      "repo": "dow30-research-agent",
+      "wf": {
+        "id": 261744669,
+        "name": "Daily Dow 30 Research",
+        "path": ".github/workflows/daily.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/dow30-research-agent/blob/main/.github/workflows/daily.yml"
+      },
+      "cron": "0 22 * * 0-4",
+      "runs": [
+        {
+          "run_number": 17,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-18T00:56:02Z",
+          "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24593098475"
+        },
+        {
+          "run_number": 16,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-18T00:29:56Z",
+          "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24592555293"
+        },
+        {
+          "run_number": 15,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T01:12:54Z",
+          "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24542546009"
+        },
+        {
+          "run_number": 14,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T01:09:50Z",
+          "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24542457632"
+        },
+        {
+          "run_number": 13,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T01:05:58Z",
+          "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24542346828"
+        },
+        {
+          "run_number": 12,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-17T00:59:16Z",
+          "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24542155469"
+        },
+        {
+          "run_number": 11,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-17T00:50:25Z",
+          "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24541901217"
+        }
+      ]
+    },
+    {
+      "repo": "global-market-orchestrator",
+      "wf": {
+        "id": 261744682,
+        "name": "Daily Global Orchestrator",
+        "path": ".github/workflows/daily.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/global-market-orchestrator/blob/main/.github/workflows/daily.yml"
+      },
+      "cron": "30 23 * * *",
+      "runs": [
+        {
+          "run_number": 8,
+          "conclusion": null,
+          "status": "in_progress",
+          "created_at": "2026-04-18T01:20:56Z",
+          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24593633748"
+        },
+        {
+          "run_number": 7,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-18T00:35:30Z",
+          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24592678901"
+        },
+        {
+          "run_number": 6,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-18T00:01:32Z",
+          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24591927338"
+        },
+        {
+          "run_number": 5,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-17T00:50:28Z",
+          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24541902576"
+        },
+        {
+          "run_number": 4,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-17T00:44:32Z",
+          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24541726628"
+        },
+        {
+          "run_number": 3,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-17T00:38:48Z",
+          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24541557038"
+        },
+        {
+          "run_number": 2,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-17T00:02:49Z",
+          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24540448698"
         }
       ]
     }
