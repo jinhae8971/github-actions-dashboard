@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-04-19T22:49:16.186874+00:00",
+  "updated_at": "2026-04-19T23:48:39.994180+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-04-19T22:49:16.186874+00:00",
+    "synced_at": "2026-04-19T23:48:39.994180+00:00",
     "has_pat": true,
     "paused_count": 15,
     "sync_log": {
@@ -1442,6 +1442,13 @@
       "cron": "0 23 * * 0",
       "runs": [
         {
+          "run_number": 2,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-19T23:41:25Z",
+          "html_url": "https://github.com/jinhae8971/trendline-detector/actions/runs/24641987220"
+        },
+        {
           "run_number": 1,
           "conclusion": "success",
           "status": "completed",
@@ -1472,7 +1479,15 @@
         "html_url": "https://github.com/jinhae8971/backtest-lab/blob/main/.github/workflows/weekly_backtest.yml"
       },
       "cron": "0 23 * * 0",
-      "runs": []
+      "runs": [
+        {
+          "run_number": 1,
+          "conclusion": "failure",
+          "status": "completed",
+          "created_at": "2026-04-19T23:39:07Z",
+          "html_url": "https://github.com/jinhae8971/backtest-lab/actions/runs/24641946583"
+        }
+      ]
     }
   ]
 }
