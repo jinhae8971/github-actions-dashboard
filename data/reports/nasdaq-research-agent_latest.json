@@ -1,140 +1,121 @@
 {
-  "date": "2026-04-17",
-  "generated_at": "2026-04-19T22:33:25.755839Z",
+  "date": "2026-04-20",
+  "generated_at": "2026-04-20T22:41:53.620214Z",
   "gainers": [
     {
-      "ticker": "MSTR",
-      "name": "MicroStrategy",
+      "ticker": "TEAM",
+      "name": "Atlassian",
       "sector": "Information Technology",
-      "close": 166.52000427246094,
+      "close": 71.4800033569336,
       "market_cap": 0.0,
-      "trading_value": 8663353090.278625,
-      "volume": 52025900,
-      "change_pct_1d": 11.803411805348096,
-      "change_pct_nd": 11.803411805348096,
+      "trading_value": 591525548.2999649,
+      "volume": 8275399,
+      "change_pct_1d": 6.782194128990786,
+      "change_pct_nd": 6.782194128990786,
       "price_n_days_ago": null,
-      "market_cap_rank": 68
-    },
-    {
-      "ticker": "ADI",
-      "name": "Analog Devices",
-      "sector": "Information Technology",
-      "close": 371.45001220703125,
-      "market_cap": 181343440077.1734,
-      "trading_value": 1948775344.0429688,
-      "volume": 5246400,
-      "change_pct_1d": 4.9887012501511645,
-      "change_pct_nd": 4.9887012501511645,
-      "price_n_days_ago": null,
-      "market_cap_rank": 27
+      "market_cap_rank": 100
     },
     {
       "ticker": "MRVL",
       "name": "Marvell Technology",
       "sector": "Information Technology",
-      "close": 139.69000244140625,
-      "market_cap": 122153074378.95782,
-      "trading_value": 3674866801.2268066,
-      "volume": 26307300,
-      "change_pct_1d": 4.738702523506568,
-      "change_pct_nd": 4.738702523506568,
+      "close": 147.83999633789062,
+      "market_cap": 129279903738.43826,
+      "trading_value": 5720342079.742767,
+      "volume": 38692791,
+      "change_pct_1d": 5.834343012416322,
+      "change_pct_nd": 5.834343012416322,
       "price_n_days_ago": null,
-      "market_cap_rank": 40
+      "market_cap_rank": 38
     },
     {
-      "ticker": "MPWR",
-      "name": "Monolithic Power Systems, Inc.",
-      "sector": "",
-      "close": 1468.3499755859375,
-      "market_cap": 0.0,
-      "trading_value": 933283244.4824219,
-      "volume": 635600,
-      "change_pct_1d": 4.672044985041534,
-      "change_pct_nd": 4.672044985041534,
+      "ticker": "ARM",
+      "name": "Arm Holdings",
+      "sector": "Information Technology",
+      "close": 175.10000610351562,
+      "market_cap": 185955955913.82486,
+      "trading_value": 1472242952.5184326,
+      "volume": 8408012,
+      "change_pct_1d": 5.020098716762622,
+      "change_pct_nd": 5.020098716762622,
       "price_n_days_ago": null,
-      "market_cap_rank": 62
+      "market_cap_rank": 28
     },
     {
-      "ticker": "DXCM",
-      "name": "Dexcom",
-      "sector": "Health Care",
-      "close": 63.97999954223633,
+      "ticker": "CHTR",
+      "name": "Charter Communications",
+      "sector": "Communication Services",
+      "close": 244.69000244140625,
       "market_cap": 0.0,
-      "trading_value": 500931406.41593933,
-      "volume": 7829500,
-      "change_pct_1d": 4.491262486623172,
-      "change_pct_nd": 4.491262486623172,
+      "trading_value": 535457579.2425537,
+      "volume": 2188310,
+      "change_pct_1d": 3.4105348198583254,
+      "change_pct_nd": 3.4105348198583254,
       "price_n_days_ago": null,
-      "market_cap_rank": 97
+      "market_cap_rank": 88
+    },
+    {
+      "ticker": "WDAY",
+      "name": "Workday",
+      "sector": "Information Technology",
+      "close": 127.94000244140625,
+      "market_cap": 0.0,
+      "trading_value": 753677538.3619995,
+      "volume": 5890867,
+      "change_pct_1d": 3.3190669059013427,
+      "change_pct_nd": 3.3190669059013427,
+      "price_n_days_ago": null,
+      "market_cap_rank": 91
     }
   ],
   "analyses": [
     {
-      "ticker": "MSTR",
-      "name": "MicroStrategy",
-      "pump_thesis": "비트코인 가격 강세에 연동된 레버리지 크립토 플레이로, 비트코인 보유량에 대한 NAV 프리미엄 재확대가 주가 급등을 견인했다.",
+      "ticker": "TEAM",
+      "name": "Atlassian",
+      "pump_thesis": "AI 기반 협업·개발자 도구 수요 회복 기대감 및 소프트웨어 섹터 전반의 멀티플 리레이팅 흐름에 편승한 상승으로 추정",
       "drivers": [
-        "비트코인 현물 가격 상승세에 따른 MicroStrategy의 BTC 보유 포트폴리오 가치 증가 — 회사는 수십만 BTC를 보유한 사실상의 비트코인 레버리지 ETF로 기능하며, BTC 가격 변동에 주가가 비선형적으로 반응",
-        "시장 전반의 리스크온(risk-on) 심리 강화와 크립토 레버리지 플레이에 대한 투기적 수요 집중 — 거래대금 86억 달러 이상, 거래량 5,200만 주 초과로 단기 모멘텀 트레이더 및 옵션 감마 스퀴즈 가능성 존재"
+        "나스닥 시장 전반의 AI 인프라 지출 확대 사이클이 개발자 생산성 툴(Jira, Confluence 등) 수요 증가 기대감으로 전이되며 소프트웨어 성장주 재평가 흐름 발생",
+        "금리 안정화 기대 속 고밸류에이션 성장주 섹터 전반에 걸친 자금 유입(섹터 로테이션), TEAM은 클라우드 전환 가속 및 AI 기능 탑재 로드맵 기대로 베타 수혜"
       ],
       "risks": [
-        "비트코인 가격 급락 시 주가 낙폭이 BTC 하락률을 대폭 상회하는 레버리지 역방향 리스크 — NAV 프리미엄이 빠르게 소멸될 수 있음",
-        "미국 SEC의 크립토 규제 강화 또는 회계·공시 기준 변경 시 BTC 보유 자산 평가에 대한 불확실성 증가 및 멀티플 급격한 압축 가능성"
+        "구체적인 실적 촉매 또는 뉴스 부재 상태에서의 상승으로, 매크로 금리 재상승 시 고PER 소프트웨어 밸류에이션 급격한 멀티플 압축 위험",
+        "Jira/Confluence의 엔터프라이즈 고객 갱신율 둔화 및 Microsoft Teams·GitHub Copilot 등 경쟁 플랫폼과의 경쟁 심화로 인한 매출 성장 디레이팅 리스크"
       ],
       "sector_tags": [
-        "Technology",
-        "Financials"
+        "Technology"
+      ],
+      "confidence": 0.42,
+      "news_used": []
+    },
+    {
+      "ticker": "MRVL",
+      "name": "Marvell Technology",
+      "pump_thesis": "AI 데이터센터용 커스텀 ASIC 및 고속 인터커넥트 수요 급증 사이클의 직접 수혜주로서 반도체 섹터 멀티플 리레이팅 강하게 반영",
+      "drivers": [
+        "나스닥 시장 내 AI 데이터센터 인프라 확장 사이클이 커스텀 ASIC(구글 TPU, 아마존 Trainium 등) 설계 및 고속 이더넷·광통신 반도체 수요 급증으로 이어지며 MRVL의 핵심 사업부 재평가",
+        "대형 클라우드 업체들의 자체 AI 가속기 투자 확대 기조 지속 확인으로 MRVL의 커스텀 실리콘 수주 파이프라인 확대 기대감 강화, 거래대금 57억 달러 수준의 강한 수급 모멘텀"
+      ],
+      "risks": [
+        "커스텀 ASIC 사업 매출의 소수 하이퍼스케일러(구글·아마존) 집중도가 높아 고객 설계 변경 또는 내재화 심화 시 급격한 매출 변동성 노출",
+        "현재 주가가 AI 수혜 기대를 상당 부분 선반영한 고밸류에이션 상태로, 미국채 10년물 금리 재상승 시 성장주 멀티플 압축 직격탄 가능성"
+      ],
+      "sector_tags": [
+        "Technology"
       ],
       "confidence": 0.72,
       "news_used": []
     },
     {
-      "ticker": "ADI",
-      "name": "Analog Devices",
-      "pump_thesis": "AI 데이터센터 인프라 확장에 따른 아날로그 반도체 수요 재평가로, 섹터 전반의 멀티플 리레이팅이 주가 상승을 이끌었다.",
+      "ticker": "ARM",
+      "name": "Arm Holdings",
+      "pump_thesis": "AI 엣지·데이터센터 칩 설계 라이선스 수요 확대 기대감과 반도체 섹터 전반의 AI 멀티플 리레이팅 흐름에 동반 상승",
       "drivers": [
-        "AI 데이터센터 구축 가속화에 따른 전력 관리·신호 처리·산업용 아날로그 반도체 수요 증가 기대 — 시장 내러티브가 아날로그 반도체 기업을 AI 인프라 수혜주로 재분류하며 밸류에이션 재평가 진행 중",
-        "반도체 섹터 전반의 센티먼트 개선 및 동종 업체(MRVL, MPWR 등) 동반 상승 — 섹터 로테이션 수혜와 기관 자금 유입이 거래대금 약 19억 달러로 확인됨"
+        "AI 추론용 엣지 디바이스 및 데이터센터 서버 CPU(Neoverse 등) 채택 확대로 ARM 아키텍처 로열티·라이선스 매출 성장 가시성 향상, AI 인프라 수혜 반도체 섹터 재평가 흐름 수혜",
+        "NVIDIA, Qualcomm, Apple 등 주요 고객사들의 ARM 기반 AI 칩 설계 확대 기조가 지속 확인되며 ARM의 플랫폼 생태계 지배력 강화 기대감 투자심리 반영"
       ],
       "risks": [
-        "미국 국채 금리 재상승 시 고밸류에이션 성장주 전반의 멀티플 압축 위험 — ADI는 높은 P/E로 거래되어 금리 민감도가 큼",
-        "산업·자동차 최종 수요 사이클 둔화 지속 시 아날로그 반도체 업사이클 회복 지연 리스크 — 재고 조정 국면이 예상보다 길어질 가능성"
-      ],
-      "sector_tags": [
-        "Technology"
-      ],
-      "confidence": 0.68,
-      "news_used": []
-    },
-    {
-      "ticker": "MRVL",
-      "name": "Marvell Technology",
-      "pump_thesis": "AI 데이터센터향 커스텀 ASIC 및 고속 네트워킹 반도체 수혜주로의 재평가가 강한 주가 상승 모멘텀을 만들었다.",
-      "drivers": [
-        "하이퍼스케일러(AWS, Google, Meta 등)의 AI 인프라 투자 확대에 따른 커스텀 ASIC 및 고속 이더넷 칩 수요 급증 기대 — Marvell은 주요 클라우드 고객의 맞춤형 AI 칩 파트너로 포지셔닝되어 있어 직접 수혜",
-        "반도체 섹터 내 AI 관련 종목 전반의 동반 강세(ADI, MPWR와 함께 상승) — 거래대금 37억 달러, 거래량 2,630만 주로 기관 매수세가 유입된 것으로 판단"
-      ],
-      "risks": [
-        "고객 집중 위험 — 소수의 하이퍼스케일러 고객 의존도가 높아, 주요 고객의 ASIC 전략 변경 또는 인소싱 확대 시 매출 충격이 클 수 있음",
-        "NVIDIA, Broadcom 등 강력한 경쟁자와의 AI 칩 시장 내 점유율 경쟁 심화로 인한 ASP(평균판매가격) 압력 및 마진 훼손 가능성"
-      ],
-      "sector_tags": [
-        "Technology"
-      ],
-      "confidence": 0.73,
-      "news_used": []
-    },
-    {
-      "ticker": "MPWR",
-      "name": "Monolithic Power Systems, Inc.",
-      "pump_thesis": "AI 데이터센터의 전력 효율 수요 급증에 따른 전력관리 반도체 섹터 재평가로 동반 강세를 기록했다.",
-      "drivers": [
-        "AI GPU/ASIC 클러스터의 대규모 전력 소비 증가에 따른 고효율 전력관리 IC(PMIC) 수요 확대 기대 — MPWR는 데이터센터 서버 전원 공급 장치에 핵심 부품을 공급하며 AI 인프라 투자의 직접 수혜주로 부각",
-        "아날로그·전력관리 반도체 섹터 전반의 멀티플 리레이팅 흐름에 동참 — ADI, MRVL과 함께 섹터 로테이션 수혜를 받으며 거래대금 9억 달러 이상 기록"
-      ],
-      "risks": [
-        "MPWR는 이미 높은 밸류에이션(P/E 프리미엄)에 거래 중으로, 금리 상승 또는 AI 투자 사이클 기대 후퇴 시 멀티플 급격한 압축 리스크 존재",
-        "Texas Instruments, Infineon 등 대형 아날로그 경쟁사들의 전력관리 시장 공세 강화 및 고객사 공급업체 다변화 전략으로 인한 점유율 희석 위험"
+        "ARM 주가 밸류에이션이 반도체 섹터 중에서도 최고 수준의 PER을 기록 중으로, 금리 상승 또는 AI 지출 사이클 둔화 신호 시 밸류에이션 충격 가장 클 수 있음",
+        "RISC-V 오픈소스 아키텍처의 빠른 성장이 장기적으로 ARM 라이선스 모델의 경쟁 우위를 잠식할 수 있는 구조적 리스크 상존"
       ],
       "sector_tags": [
         "Technology"
@@ -143,69 +124,88 @@
       "news_used": []
     },
     {
-      "ticker": "DXCM",
-      "name": "Dexcom",
-      "pump_thesis": "헬스케어 섹터 내 당뇨병 관리 디바이스 수요 회복 기대 및 기술주 전반의 리스크온 심리 확산으로 반등세를 보였다.",
+      "ticker": "CHTR",
+      "name": "Charter Communications",
+      "pump_thesis": "금리 안정화 기대감에 따른 고레버리지 케이블/통신 섹터 밸류에이션 회복 및 방어적 섹터 로테이션 수혜로 추정",
       "drivers": [
-        "연속혈당측정기(CGM) 시장에서의 Dexcom 제품 경쟁력 유지 및 GLP-1 계열 비만·당뇨 치료제 보급 확대에 따른 CGM 동반 수요 증가 기대 — GLP-1 복용 환자의 혈당 모니터링 수요가 증가하는 구조적 수혜 테마",
-        "NASDAQ 기술주 전반의 리스크온 랠리에 동반한 헬스케어 성장주의 반등 — 연초 이후 부진했던 DXCM의 밸류에이션 매력도 부각 및 저가 매수 유입"
+        "미국 국채 금리 안정화 기대감이 부채 부담이 큰 케이블 통신사(CHTR 순부채 규모 상당)의 이자비용 전망 개선으로 이어지며 밸류에이션 디스카운트 해소 흐름",
+        "나스닥 성장주 강세 장세에서 통신 인프라 업체에 대한 상대적 저평가 인식 및 배당·현금흐름 중심 자금의 부분적 섹터 로테이션 수혜 가능성"
       ],
       "risks": [
-        "Abbott FreeStyle Libre 시리즈 등 경쟁 CGM 제품의 시장 점유율 공세 지속 및 가격 경쟁 심화로 인한 매출 성장 둔화 위험",
-        "미국 메디케어·보험사의 CGM 급여 기준 변경 또는 GLP-1 치료 확산으로 인슐린 의존 당뇨 환자 수 감소 시 핵심 고객군 축소 가능성"
+        "T-Mobile 등 고정무선통신(FWA) 서비스의 공격적 가격 경쟁으로 케이블 브로드밴드 가입자 이탈 가속화 리스크",
+        "막대한 레버리지(순부채/EBITDA 비율 높음) 구조상 금리 재상승 시 재융자 비용 급증 및 잉여현금흐름 압박으로 주가 멀티플 재차 압축 가능성"
       ],
       "sector_tags": [
-        "Healthcare"
+        "Communication Services"
       ],
-      "confidence": 0.52,
+      "confidence": 0.45,
+      "news_used": []
+    },
+    {
+      "ticker": "WDAY",
+      "name": "Workday",
+      "pump_thesis": "AI 기반 HR·ERP SaaS 수요 회복 및 엔터프라이즈 소프트웨어 섹터 전반의 금리 안정화 멀티플 리레이팅 수혜",
+      "drivers": [
+        "AI 에이전트 및 자동화 기능이 탑재된 엔터프라이즈 HCM·재무관리 플랫폼 수요 회복 기대감이 Workday의 구독 매출 성장률 재가속 가능성으로 투자심리에 반영",
+        "금리 안정화 국면에서 높은 잔여계약가치(RPO) 기반의 예측 가능한 SaaS 현금흐름 모델이 재평가되며, 성장주 섹터 전반의 멀티플 확장 흐름에 동반 상승"
+      ],
+      "risks": [
+        "SAP, Oracle 등 기존 ERP 강자들의 클라우드 전환 가속 및 AI 기능 내재화로 인한 Workday 시장점유율 방어 비용 증가 및 경쟁 심화",
+        "기업 IT 예산 긴축 기조 지속 시 대규모 엔터프라이즈 계약 지연·축소 가능성 및 거시경제 둔화에 따른 신규 고객 확보 속도 저하 리스크"
+      ],
+      "sector_tags": [
+        "Technology"
+      ],
+      "confidence": 0.48,
       "news_used": []
     }
   ],
   "narrative": {
-    "current_narrative": "나스닥 시장은 현재 AI 데이터센터 인프라 확장 사이클을 핵심 동력으로 삼아 반도체(아날로그·커스텀 ASIC·전력관리) 섹터의 멀티플 리레이팅을 강하게 보상하고 있으며, 이와 동시에 비트코인 강세에 연동된 크립토 레버리지 플레이도 수급 모멘텀을 유지하고 있다.",
+    "current_narrative": "나스닥 시장은 현재 AI 데이터센터 인프라 수혜 반도체(커스텀 ASIC, 고속 인터커넥트, 전력관리)와 엔터프라이즈 SaaS 멀티플 리레이팅에 집중적으로 보상을 부여하고 있으며, 금리 안정화 기대감이 성장주 전반의 밸류에이션 회복을 지지하고 있다.",
     "hot_sectors": [
-      "AI 데이터센터 인프라 반도체 (아날로그·커스텀 ASIC·전력관리)",
-      "크립토/비트코인 레버리지 (MSTR 중심)",
-      "Technology (광의의 IT 섹터 전반 리레이팅)"
+      "AI 데이터센터 반도체 (커스텀 ASIC·고속 인터커넥트: MRVL, ARM, ADI)",
+      "엔터프라이즈 SaaS·개발자 도구 멀티플 리레이팅 (TEAM, WDAY)",
+      "AI 엣지·칩 설계 라이선스 (ARM Holdings)",
+      "전력관리 반도체 (AI 인프라 전력 수요 연동)"
     ],
     "cooling_sectors": [
-      "헬스케어 (DXCM 반등세 있으나 신뢰도 낮고 테마 연속성 부재)",
-      "순수 SaaS·소프트웨어 (상위 게이너 명단에서 완전히 부재)"
+      "크립토 레버리지 플레이 (MSTR — 전일 급등 이후 오늘 톱게이너 목록에서 이탈)",
+      "헬스케어·의료기기 (DXCM — 전일 등장 후 오늘 부재, 리스크온 확산 수혜 일회성으로 판단)"
     ],
-    "investment_insight": "AI 인프라 반도체(MRVL, ADI, MPWR) 비중 확대 포지션을 유지하되, 이틀 연속 동일 종목군 강세라는 점에서 단기 과열 및 차익 실현 압력을 경계해야 한다. MSTR은 비트코인 현물 ETF 수급과 BTC 가격 모멘텀이 꺾이는 시점이 핵심 청산 시그널이므로 BTC 가격 추이를 병행 모니터링할 필요가 있다. 헬스케어(DXCM)는 신뢰도 0.52 수준의 기술적 반등에 불과해 테마성 매수보다는 관망이 적절하며, 소프트웨어·SaaS 섹터 부재가 길어질수록 AI 하드웨어 사이클 집중도가 심화되어 매크로 충격 시 변동성이 확대될 리스크를 염두에 두어야 한다.",
-    "week_over_week_change": "직전일(2026-04-17) 대비 동일한 5개 종목이 상위 게이너 자리를 유지하며 테마 연속성이 매우 강하게 확인됐다. MRVL의 신뢰도가 0.78→0.73으로 소폭 하락한 반면 ADI는 0.65→0.68로 상승해 아날로그 반도체 수요 재평가 기대가 더욱 확산되는 양상이다. MSTR은 이틀 연속 최상위 게이너를 유지하며 비트코인 상승 모멘텀이 지속됨을 시사한다."
+    "investment_insight": "현 국면에서 AI 데이터센터 직접 수혜 반도체(MRVL, MSTR 제외 순수 반도체)와 AI 통합 엔터프라이즈 SaaS(WDAY, TEAM)를 오버웨이트하는 포지션이 유효하다. 금리 안정화 기대가 SaaS 멀티플 회복의 핵심 트리거인 만큼, 미국 10년물 실질금리가 재차 상승 전환하거나 Fed 인사의 매파적 발언이 나올 경우 즉각적인 멀티플 압축 리스크를 경계해야 한다. 크립토 연동 고레버리지 플레이와 방어적 헬스케어는 현 로테이션 국면에서 비중 축소를 권고하며, MRVL의 연속 등장이 깨지는 시점이 AI 반도체 모멘텀 소진의 조기 경고 신호가 될 것이다.",
+    "week_over_week_change": "전일 대비 크립토 연동 레버리지 플레이(MSTR)와 헬스케어(DXCM)가 톱게이너 목록에서 이탈한 반면, AI 반도체(MRVL 연속 등장)의 모멘텀은 유지되고 신규로 엔터프라이즈 SaaS(TEAM, WDAY)와 칩 설계 라이선스(ARM)가 상위권에 진입하며 순수 AI 인프라+소프트웨어 리레이팅으로 로테이션이 심화되고 있다."
   },
-  "narrative_tagline": "나스닥 시장은 현재 AI 데이터센터 인프라 확장 사이클을 핵심 동력으로 삼아 반도체(아날로그·커스텀 ASIC·전력관리) 섹터의 멀티플 리레이팅을 강하게 보상하고 있으며, 이와 동시에 비트코인 강세에 연동된 크립토 레버리지 플레이도 수급 모멘텀을 유지하",
+  "narrative_tagline": "나스닥 시장은 현재 AI 데이터센터 인프라 수혜 반도체(커스텀 ASIC, 고속 인터커넥트, 전력관리)와 엔터프라이즈 SaaS 멀티플 리레이팅에 집중적으로 보상을 부여하고 있으며, 금리 안정화 기대감이 성장주 전반의 밸류에이션 회복을 지지하고 있다.",
   "top5": [
     {
-      "ticker": "MSTR",
-      "name": "MicroStrategy",
+      "ticker": "TEAM",
+      "name": "Atlassian",
       "sector": "Information Technology",
-      "change_pct_nd": 11.8
-    },
-    {
-      "ticker": "ADI",
-      "name": "Analog Devices",
-      "sector": "Information Technology",
-      "change_pct_nd": 4.99
+      "change_pct_nd": 6.78
     },
     {
       "ticker": "MRVL",
       "name": "Marvell Technology",
       "sector": "Information Technology",
-      "change_pct_nd": 4.74
+      "change_pct_nd": 5.83
     },
     {
-      "ticker": "MPWR",
-      "name": "Monolithic Power Systems, Inc.",
-      "sector": "",
-      "change_pct_nd": 4.67
+      "ticker": "ARM",
+      "name": "Arm Holdings",
+      "sector": "Information Technology",
+      "change_pct_nd": 5.02
     },
     {
-      "ticker": "DXCM",
-      "name": "Dexcom",
-      "sector": "Health Care",
-      "change_pct_nd": 4.49
+      "ticker": "CHTR",
+      "name": "Charter Communications",
+      "sector": "Communication Services",
+      "change_pct_nd": 3.41
+    },
+    {
+      "ticker": "WDAY",
+      "name": "Workday",
+      "sector": "Information Technology",
+      "change_pct_nd": 3.32
     }
   ]
 }
