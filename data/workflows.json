@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-04-21T21:54:28.054374+00:00",
+  "updated_at": "2026-04-21T22:51:41.723327+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-04-21T21:54:28.054374+00:00",
+    "synced_at": "2026-04-21T22:51:41.723327+00:00",
     "has_pat": true,
     "paused_count": 15,
     "sync_log": {
@@ -1070,6 +1070,13 @@
       "cron": "0 22 * * *",
       "runs": [
         {
+          "run_number": 14,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-21T22:47:39Z",
+          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24750425801"
+        },
+        {
           "run_number": 13,
           "conclusion": "success",
           "status": "completed",
@@ -1110,13 +1117,6 @@
           "status": "completed",
           "created_at": "2026-04-17T00:44:19Z",
           "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24541720431"
-        },
-        {
-          "run_number": 7,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-17T00:15:54Z",
-          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24540862655"
         }
       ]
     },
@@ -1131,6 +1131,13 @@
       },
       "cron": "0 22 * * 0-4",
       "runs": [
+        {
+          "run_number": 22,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-21T22:40:02Z",
+          "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24750149431"
+        },
         {
           "run_number": 21,
           "conclusion": "success",
@@ -1172,13 +1179,6 @@
           "status": "completed",
           "created_at": "2026-04-17T01:12:51Z",
           "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24542544533"
-        },
-        {
-          "run_number": 15,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-04-17T01:09:47Z",
-          "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24542456148"
         }
       ]
     },
@@ -1193,6 +1193,13 @@
       },
       "cron": "0 22 * * 0-4",
       "runs": [
+        {
+          "run_number": 20,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-21T22:35:49Z",
+          "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24749998340"
+        },
         {
           "run_number": 19,
           "conclusion": "success",
@@ -1234,13 +1241,6 @@
           "status": "completed",
           "created_at": "2026-04-17T01:09:48Z",
           "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24542456619"
-        },
-        {
-          "run_number": 13,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-04-17T01:05:56Z",
-          "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24542345784"
         }
       ]
     },
@@ -1255,6 +1255,13 @@
       },
       "cron": "0 22 * * 0-4",
       "runs": [
+        {
+          "run_number": 21,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-21T22:35:50Z",
+          "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24749998546"
+        },
         {
           "run_number": 20,
           "conclusion": "success",
@@ -1296,13 +1303,6 @@
           "status": "completed",
           "created_at": "2026-04-17T01:09:49Z",
           "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24542457106"
-        },
-        {
-          "run_number": 14,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-04-17T01:05:57Z",
-          "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24542346361"
         }
       ]
     },
@@ -1317,6 +1317,13 @@
       },
       "cron": "0 22 * * 0-4",
       "runs": [
+        {
+          "run_number": 20,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-21T22:39:12Z",
+          "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24750119789"
+        },
         {
           "run_number": 19,
           "conclusion": "success",
@@ -1358,13 +1365,6 @@
           "status": "completed",
           "created_at": "2026-04-17T01:09:50Z",
           "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24542457632"
-        },
-        {
-          "run_number": 13,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-04-17T01:05:58Z",
-          "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24542346828"
         }
       ]
     },
