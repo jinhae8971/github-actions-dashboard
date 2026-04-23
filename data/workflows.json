@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-04-22T23:54:54.006704+00:00",
+  "updated_at": "2026-04-23T03:38:53.590192+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-04-22T23:54:54.006704+00:00",
+    "synced_at": "2026-04-23T03:38:53.590192+00:00",
     "has_pat": true,
     "paused_count": 15,
     "sync_log": {
@@ -1380,6 +1380,13 @@
       "cron": "30 23 * * *",
       "runs": [
         {
+          "run_number": 14,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-23T00:06:34Z",
+          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24809162941"
+        },
+        {
           "run_number": 13,
           "conclusion": "success",
           "status": "completed",
@@ -1420,13 +1427,6 @@
           "status": "completed",
           "created_at": "2026-04-18T01:20:56Z",
           "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24593633748"
-        },
-        {
-          "run_number": 7,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-18T00:35:30Z",
-          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24592678901"
         }
       ]
     },
