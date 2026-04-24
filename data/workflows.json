@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-04-24T21:55:34.382607+00:00",
+  "updated_at": "2026-04-24T22:52:24.972721+00:00",
   "orchestrator": {
     "version": "3.0",
-    "synced_at": "2026-04-24T21:55:34.382607+00:00",
+    "synced_at": "2026-04-24T22:52:24.972721+00:00",
     "has_pat": true,
     "paused_count": 15,
     "sync_log": {
@@ -1070,6 +1070,13 @@
       "cron": "0 22 * * *",
       "runs": [
         {
+          "run_number": 17,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-24T22:49:37Z",
+          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24915367366"
+        },
+        {
           "run_number": 16,
           "conclusion": "success",
           "status": "completed",
@@ -1110,13 +1117,6 @@
           "status": "completed",
           "created_at": "2026-04-18T22:44:08Z",
           "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24615580070"
-        },
-        {
-          "run_number": 10,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-17T22:52:07Z",
-          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24590146341"
         }
       ]
     },
