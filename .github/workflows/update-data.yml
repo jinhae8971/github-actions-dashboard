@@ -15,8 +15,11 @@ on:
     # Data commits created by this workflow do not match these paths, so this will not loop.
     paths:
       - '.github/workflows/update-data.yml'
+      - 'config/systems.yaml'
       - 'scripts/orchestrator.py'
+      - 'scripts/ops_health.py'
       - 'scripts/patch_dashboard_ui.py'
+      - 'scripts/patch_ops_health_ui.py'
 
 permissions:
   contents: write
@@ -38,7 +41,7 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests pyyaml
 
       - name: Run orchestrator
         env:
@@ -47,8 +50,13 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: python scripts/orchestrator.py
 
+      - name: Enrich operations health
+        run: python scripts/ops_health.py
+
       - name: Patch dashboard UI
-        run: python scripts/patch_dashboard_ui.py
+        run: |
+          python scripts/patch_dashboard_ui.py
+          python scripts/patch_ops_health_ui.py
 
       - name: Commit and push data
         run: |
