@@ -1,0 +1,207 @@
+version: 1
+owner: jinhae8971
+defaults:
+  expected_state: active
+  freshness_sla_hours: 30
+
+systems:
+  - id: crypto-monitor
+    label: Crypto Monitor
+    group: core
+    role: producer
+    repo: crypto-monitor
+    schedule_kst: "18:30 weekdays"
+    telegram_policy: weekday
+    freshness_sla_hours: 80
+    dashboard_url: "https://jinhae8971.github.io/crypto-monitor/"
+    reports:
+      - key: crypto-monitor/239770946
+        path: reports/latest.json
+
+  - id: korean-stock-agent
+    label: KOSPI Foreign Flow
+    group: core
+    role: producer
+    repo: korean-stock-agent
+    schedule_kst: "17:00 weekdays"
+    telegram_policy: weekday
+    freshness_sla_hours: 80
+    dashboard_url: "https://jinhae8971.github.io/korean-stock-agent/"
+    exclude_workflows:
+      - .github/workflows/main.yml
+    reports:
+      - key: korean-stock-agent/242830429
+        path: docs/data/foreign_flow.json
+
+  - id: crypto-research-agent
+    label: Daily Crypto Research
+    group: global-market
+    role: producer
+    repo: crypto-research-agent
+    schedule_kst: "06:00 daily"
+    telegram_policy: saturday_0600_kst
+    freshness_sla_hours: 30
+    dashboard_url: "https://jinhae8971.github.io/crypto-research-agent/"
+    exclude_workflows:
+      - .github/workflows/daily.yml
+    reports:
+      - key: crypto-research-agent/latest
+        path: index:docs/reports
+
+  - id: kospi-research-agent
+    label: Daily KOSPI Research
+    group: global-market
+    role: producer
+    repo: kospi-research-agent
+    schedule_kst: "06:00 daily"
+    telegram_policy: saturday_0600_kst
+    freshness_sla_hours: 30
+    dashboard_url: "https://jinhae8971.github.io/kospi-research-agent/"
+    exclude_workflows:
+      - .github/workflows/daily.yml
+    reports:
+      - key: kospi-research-agent/latest
+        path: index:docs/reports
+
+  - id: sp500-research-agent
+    label: Daily S&P 500 Research
+    group: global-market
+    role: producer
+    repo: sp500-research-agent
+    schedule_kst: "06:00 daily"
+    telegram_policy: saturday_0600_kst
+    freshness_sla_hours: 30
+    dashboard_url: "https://jinhae8971.github.io/sp500-research-agent/"
+    exclude_workflows:
+      - .github/workflows/daily.yml
+    reports:
+      - key: sp500-research-agent/latest
+        path: index:docs/reports
+
+  - id: nasdaq-research-agent
+    label: Daily NASDAQ-100 Research
+    group: global-market
+    role: producer
+    repo: nasdaq-research-agent
+    schedule_kst: "06:00 daily"
+    telegram_policy: saturday_0600_kst
+    freshness_sla_hours: 30
+    dashboard_url: "https://jinhae8971.github.io/nasdaq-research-agent/"
+    exclude_workflows:
+      - .github/workflows/daily.yml
+    reports:
+      - key: nasdaq-research-agent/latest
+        path: index:docs/reports
+
+  - id: dow30-research-agent
+    label: Daily Dow 30 Research
+    group: global-market
+    role: producer
+    repo: dow30-research-agent
+    schedule_kst: "06:00 daily"
+    telegram_policy: saturday_0600_kst
+    freshness_sla_hours: 30
+    dashboard_url: "https://jinhae8971.github.io/dow30-research-agent/"
+    exclude_workflows:
+      - .github/workflows/daily.yml
+    reports:
+      - key: dow30-research-agent/latest
+        path: index:docs/reports
+
+  - id: global-market-orchestrator
+    label: Daily Global Orchestrator
+    group: global-market
+    role: hub
+    repo: global-market-orchestrator
+    schedule_kst: "07:00 daily"
+    telegram_policy: daily_0700_kst
+    freshness_sla_hours: 30
+    dependency_min_fresh: 4
+    depends_on:
+      - crypto-research-agent
+      - kospi-research-agent
+      - sp500-research-agent
+      - nasdaq-research-agent
+      - dow30-research-agent
+    dashboard_url: "https://jinhae8971.github.io/global-market-orchestrator/"
+    exclude_workflows:
+      - .github/workflows/daily.yml
+    reports:
+      - key: global-market-orchestrator/latest
+        path: index:docs/reports
+
+  - id: crypto-cycle-intelligence
+    label: Crypto Cycle Intelligence
+    group: cycle-intelligence
+    role: producer
+    repo: crypto-cycle-intelligence
+    schedule_kst: "06:00 daily"
+    telegram_policy: saturday_0600_kst
+    freshness_sla_hours: 30
+    dashboard_url: "https://jinhae8971.github.io/crypto-cycle-intelligence/"
+    reports:
+      - key: crypto-cycle-intelligence/latest
+        path: data/latest.json
+
+  - id: ai-semi-cycle-intelligence
+    label: AI/Semi Cycle Intelligence
+    group: cycle-intelligence
+    role: producer
+    repo: ai-semi-cycle-intelligence
+    schedule_kst: "06:00 daily"
+    telegram_policy: saturday_0600_kst
+    freshness_sla_hours: 30
+    dashboard_url: "https://jinhae8971.github.io/ai-semi-cycle-intelligence/"
+    reports:
+      - key: ai-semi-cycle-intelligence/latest
+        path: data/latest.json
+
+  - id: cycle-intelligence-hub
+    label: Cycle Intelligence Hub
+    group: cycle-intelligence
+    role: hub
+    repo: cycle-intelligence-hub
+    schedule_kst: "07:00 daily"
+    telegram_policy: daily_0700_kst
+    freshness_sla_hours: 30
+    dependency_min_fresh: 2
+    depends_on:
+      - crypto-cycle-intelligence
+      - ai-semi-cycle-intelligence
+    dashboard_url: "https://jinhae8971.github.io/cycle-intelligence-hub/"
+    reports:
+      - key: cycle-intelligence-hub/latest
+        path: data/hub_summary.json
+
+  - id: trendline-detector
+    label: Trendline Detector
+    group: trendspider-clone
+    role: tool
+    repo: trendline-detector
+    schedule_kst: "08:00 Sunday"
+    telegram_policy: silent
+    expected_state: paused
+    freshness_sla_hours: 240
+    dashboard_url: "https://github.com/jinhae8971/trendline-detector"
+
+  - id: chart-analyzer
+    label: Chart Analyzer
+    group: trendspider-clone
+    role: tool
+    repo: chart-analyzer
+    schedule_kst: "08:00 weekdays"
+    telegram_policy: silent
+    expected_state: paused
+    freshness_sla_hours: 120
+    dashboard_url: "https://github.com/jinhae8971/chart-analyzer"
+
+  - id: backtest-lab
+    label: Backtest Lab
+    group: trendspider-clone
+    role: tool
+    repo: backtest-lab
+    schedule_kst: "08:00 Sunday"
+    telegram_policy: silent
+    expected_state: paused
+    freshness_sla_hours: 240
+    dashboard_url: "https://github.com/jinhae8971/backtest-lab"
