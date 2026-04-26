@@ -46,10 +46,66 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: python scripts/orchestrator.py
 
+      - name: Normalize dashboard UI labels
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+
+          text = text.replace(
+              'GitHub Actions Dashboard · jinhae8971 · 매시간 자동 갱신',
+              'GitHub Actions Dashboard · jinhae8971 · 매일 07:30 KST 자동 갱신',
+          )
+
+          def insert_after_once(src, marker, addition):
+              if addition.strip() in src:
+                  return src
+              if marker not in src:
+                  raise SystemExit(f'marker not found: {marker}')
+              return src.replace(marker, marker + addition, 1)
+
+          text = insert_after_once(
+              text,
+              "  'global-market-orchestrator': './data/reports/global-market-orchestrator_latest.json',\n",
+              "  'crypto-cycle-intelligence': './data/reports/crypto-cycle-intelligence_latest.json',\n"
+              "  'ai-semi-cycle-intelligence': './data/reports/ai-semi-cycle-intelligence_latest.json',\n"
+              "  'cycle-intelligence-hub': './data/reports/cycle-intelligence-hub_latest.json',\n",
+          )
+
+          text = insert_after_once(
+              text,
+              "    'etf-strategist':            '📈',\n",
+              "    'crypto-monitor':            '🪙',\n"
+              "    'crypto-research-agent':     '🚀',\n"
+              "    'kospi-research-agent':      '🇰🇷',\n"
+              "    'sp500-research-agent':      '🇺🇸',\n"
+              "    'nasdaq-research-agent':     '💻',\n"
+              "    'dow30-research-agent':      '🏛️',\n"
+              "    'global-market-orchestrator':'🌐',\n"
+              "    'crypto-cycle-intelligence': '₿',\n"
+              "    'ai-semi-cycle-intelligence':'🤖',\n"
+              "    'cycle-intelligence-hub':    '🏛️',\n",
+          )
+
+          text = insert_after_once(
+              text,
+              "    'global-market-orchestrator': 'https://jinhae8971.github.io/global-market-orchestrator/',\n",
+              "    // Cycle Intelligence ecosystem\n"
+              "    'crypto-cycle-intelligence': 'https://jinhae8971.github.io/crypto-cycle-intelligence/',\n"
+              "    'ai-semi-cycle-intelligence':'https://jinhae8971.github.io/ai-semi-cycle-intelligence/',\n"
+              "    'cycle-intelligence-hub':    'https://jinhae8971.github.io/cycle-intelligence-hub/',\n",
+          )
+
+          path.write_text(text, encoding='utf-8')
+          PY
+
       - name: Commit and push data
         run: |
           git config user.name  "orchestrator[bot]"
           git config user.email "orchestrator[bot]@users.noreply.github.com"
+          git add index.html
           git add data/workflows.json
           git add data/paused.json
           git add data/reports/ 2>/dev/null || true
