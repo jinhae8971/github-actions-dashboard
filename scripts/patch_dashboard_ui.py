@@ -15,10 +15,29 @@ def replace_between(src, start, end, replacement):
     return src[:start_idx] + replacement + src[end_idx:]
 
 
+def replace_between_any(src, starts, end, replacement):
+    for start in starts:
+        start_idx = src.find(start)
+        if start_idx != -1:
+            end_idx = src.find(end, start_idx)
+            if end_idx == -1:
+                raise SystemExit(f"end marker not found after {start}: {end}")
+            return src[:start_idx] + replacement + src[end_idx:]
+    raise SystemExit(f"start marker not found: {starts[0]}")
+
+
 def replace_once(src, old, new):
     if old not in src:
         raise SystemExit(f"marker not found: {old}")
     return src.replace(old, new, 1)
+
+
+def replace_once_or_present(src, old, new):
+    if old in src:
+        return src.replace(old, new, 1)
+    if new in src:
+        return src
+    raise SystemExit(f"marker not found: {old}")
 
 
 def insert_after_once(src, marker, addition):
@@ -400,9 +419,12 @@ async function fetchLatestData() {
 }""",
 )
 
-text = replace_between(
+text = replace_between_any(
     text,
-    "function syncPauseStateFromJson(wfData) {",
+    [
+        "function syncPauseStateFromJson(wfData) {",
+        "function syncPauseStateFromJson(wfData, snapshotUpdatedAt = 0) {",
+    ],
     "\n\n// ── Data Load",
     """function syncPauseStateFromJson(wfData, snapshotUpdatedAt = 0) {
   let changed = false;
@@ -447,7 +469,7 @@ text = replace_between(
 }""",
 )
 
-text = replace_once(
+text = replace_once_or_present(
     text,
     "    syncPauseStateFromJson(allWorkflows);  // Then sync GitHub actual disabled state",
     "    syncPauseStateFromJson(allWorkflows, Date.parse(data.updated_at || '') || 0);  // Then sync GitHub actual disabled state",
