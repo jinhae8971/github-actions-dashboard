@@ -20,6 +20,7 @@ on:
       - 'scripts/ops_health.py'
       - 'scripts/patch_dashboard_ui.py'
       - 'scripts/patch_ops_health_ui.py'
+      - 'scripts/patch_theme_ui.py'
 
 permissions:
   contents: write
@@ -57,6 +58,7 @@ jobs:
         run: |
           python scripts/patch_dashboard_ui.py
           python scripts/patch_ops_health_ui.py
+          python scripts/patch_theme_ui.py
 
       - name: Commit and push data
         run: |
