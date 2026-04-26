@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-04-26T03:56:38.383505+00:00",
+  "updated_at": "2026-04-26T04:02:13.994663+00:00",
   "orchestrator": {
     "version": "3.2",
-    "synced_at": "2026-04-26T03:56:38.383505+00:00",
+    "synced_at": "2026-04-26T04:02:13.994663+00:00",
     "has_pat": true,
-    "paused_count": 3,
+    "paused_count": 9,
     "monitored_repos": [
       "crypto-monitor",
       "korean-stock-agent",
@@ -52,7 +52,33 @@
       }
     ],
     "sync_log": {
-      "added": [],
+      "added": [
+        {
+          "wf_id": "266479653",
+          "repo": "kospi-research-agent",
+          "name": "Daily KOSPI Research"
+        },
+        {
+          "wf_id": "266479747",
+          "repo": "sp500-research-agent",
+          "name": "Daily S&P 500 Research"
+        },
+        {
+          "wf_id": "266479834",
+          "repo": "nasdaq-research-agent",
+          "name": "Daily NASDAQ-100 Research"
+        },
+        {
+          "wf_id": "266479971",
+          "repo": "dow30-research-agent",
+          "name": "Daily Dow 30 Research"
+        },
+        {
+          "wf_id": "266480070",
+          "repo": "global-market-orchestrator",
+          "name": "Daily Global Orchestrator"
+        }
+      ],
       "removed": []
     }
   },
@@ -187,7 +213,7 @@
         "id": 266479575,
         "name": "Daily Crypto Research",
         "path": ".github/workflows/daily-active.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/crypto-research-agent/blob/main/.github/workflows/daily-active.yml"
       },
       "cron": "0 21 * * *",
@@ -199,7 +225,7 @@
         "id": 266479653,
         "name": "Daily KOSPI Research",
         "path": ".github/workflows/daily-active.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/kospi-research-agent/blob/main/.github/workflows/daily-active.yml"
       },
       "cron": "0 21 * * *",
@@ -211,7 +237,7 @@
         "id": 266479747,
         "name": "Daily S&P 500 Research",
         "path": ".github/workflows/daily-active.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/sp500-research-agent/blob/main/.github/workflows/daily-active.yml"
       },
       "cron": "0 21 * * *",
@@ -223,7 +249,7 @@
         "id": 266479834,
         "name": "Daily NASDAQ-100 Research",
         "path": ".github/workflows/daily-active.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/blob/main/.github/workflows/daily-active.yml"
       },
       "cron": "0 21 * * *",
@@ -235,7 +261,7 @@
         "id": 266479971,
         "name": "Daily Dow 30 Research",
         "path": ".github/workflows/daily-active.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/dow30-research-agent/blob/main/.github/workflows/daily-active.yml"
       },
       "cron": "0 21 * * *",
@@ -247,7 +273,7 @@
         "id": 266480070,
         "name": "Daily Global Orchestrator",
         "path": ".github/workflows/daily-active.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/global-market-orchestrator/blob/main/.github/workflows/daily-active.yml"
       },
       "cron": "0 22 * * *",
