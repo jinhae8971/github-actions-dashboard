@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-04-26T04:15:29.032719+00:00",
+  "updated_at": "2026-04-26T10:59:15.431996+00:00",
   "orchestrator": {
-    "version": "3.2",
-    "synced_at": "2026-04-26T04:15:29.032719+00:00",
+    "version": "4.0",
+    "synced_at": "2026-04-26T10:59:15.431996+00:00",
     "has_pat": true,
     "paused_count": 9,
     "monitored_repos": [
@@ -54,7 +54,14 @@
     "sync_log": {
       "added": [],
       "removed": []
-    }
+    },
+    "config_version": 1,
+    "health_counts": {
+      "ok": 5,
+      "paused_unexpected": 6,
+      "paused_expected": 3
+    },
+    "systems_manifest": "config/systems.yaml"
   },
   "workflows": [
     {
@@ -117,7 +124,45 @@
           "created_at": "2026-04-16T10:45:31Z",
           "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/24505992874"
         }
-      ]
+      ],
+      "ops": {
+        "system_id": "crypto-monitor",
+        "label": "Crypto Monitor",
+        "group": "core",
+        "role": "producer",
+        "expected_state": "active",
+        "schedule_kst": "18:30 weekdays",
+        "telegram_policy": "weekday",
+        "freshness_sla_hours": 80,
+        "dependency_min_fresh": null,
+        "depends_on": [],
+        "dashboard_url": "https://jinhae8971.github.io/crypto-monitor/",
+        "report_keys": [
+          "crypto-monitor/239770946"
+        ],
+        "workflow_path": ".github/workflows/crypto_monitor.yml"
+      },
+      "health": {
+        "state": "ok",
+        "label": "정상",
+        "severity": 0,
+        "reason": "Workflow is active and recent.",
+        "last_run_at": "2026-04-24T10:51:16Z",
+        "age_hours": 48.13744570611111,
+        "sla_hours": 80.0
+      },
+      "report": {
+        "key": "crypto-monitor/239770946",
+        "repo": "crypto-monitor",
+        "system_id": "crypto-monitor",
+        "label": "리포트 최신",
+        "sla_hours": 80.0,
+        "state": "fresh",
+        "severity": 0,
+        "reason": "Report is 48.1h old; SLA is 80h.",
+        "report_at": "2026-04-24T10:51:28+00:00",
+        "age_hours": 48.13
+      }
     },
     {
       "repo": "korean-stock-agent",
@@ -179,7 +224,45 @@
           "created_at": "2026-04-16T09:10:25Z",
           "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24501975050"
         }
-      ]
+      ],
+      "ops": {
+        "system_id": "korean-stock-agent",
+        "label": "KOSPI Foreign Flow",
+        "group": "core",
+        "role": "producer",
+        "expected_state": "active",
+        "schedule_kst": "17:00 weekdays",
+        "telegram_policy": "weekday",
+        "freshness_sla_hours": 80,
+        "dependency_min_fresh": null,
+        "depends_on": [],
+        "dashboard_url": "https://jinhae8971.github.io/korean-stock-agent/",
+        "report_keys": [
+          "korean-stock-agent/242830429"
+        ],
+        "workflow_path": ".github/workflows/foreign_flow.yml"
+      },
+      "health": {
+        "state": "ok",
+        "label": "정상",
+        "severity": 0,
+        "reason": "Workflow is active and recent.",
+        "last_run_at": "2026-04-24T09:48:23Z",
+        "age_hours": 49.185501261666666,
+        "sla_hours": 80.0
+      },
+      "report": {
+        "key": "korean-stock-agent/242830429",
+        "repo": "korean-stock-agent",
+        "system_id": "korean-stock-agent",
+        "label": "리포트 최신",
+        "sla_hours": 80.0,
+        "state": "fresh",
+        "severity": 0,
+        "reason": "Report is 59.0h old; SLA is 80h.",
+        "report_at": "2026-04-24T00:00:00+00:00",
+        "age_hours": 58.99
+      }
     },
     {
       "repo": "crypto-research-agent",
@@ -191,7 +274,42 @@
         "html_url": "https://github.com/jinhae8971/crypto-research-agent/blob/main/.github/workflows/daily-active.yml"
       },
       "cron": "0 21 * * *",
-      "runs": []
+      "runs": [],
+      "ops": {
+        "system_id": "crypto-research-agent",
+        "label": "Daily Crypto Research",
+        "group": "global-market",
+        "role": "producer",
+        "expected_state": "active",
+        "schedule_kst": "06:00 daily",
+        "telegram_policy": "saturday_0600_kst",
+        "freshness_sla_hours": 30,
+        "dependency_min_fresh": null,
+        "depends_on": [],
+        "dashboard_url": "https://jinhae8971.github.io/crypto-research-agent/",
+        "report_keys": [
+          "crypto-research-agent/latest"
+        ],
+        "workflow_path": ".github/workflows/daily-active.yml"
+      },
+      "health": {
+        "state": "paused_unexpected",
+        "label": "정책 불일치",
+        "severity": 2,
+        "reason": "Workflow is disabled, but manifest expects active."
+      },
+      "report": {
+        "key": "crypto-research-agent/latest",
+        "repo": "crypto-research-agent",
+        "system_id": "crypto-research-agent",
+        "label": "리포트 최신",
+        "sla_hours": 30.0,
+        "state": "fresh",
+        "severity": 0,
+        "reason": "Report is 12.2h old; SLA is 30h.",
+        "report_at": "2026-04-25T22:49:12.281569+00:00",
+        "age_hours": 12.17
+      }
     },
     {
       "repo": "kospi-research-agent",
@@ -203,7 +321,42 @@
         "html_url": "https://github.com/jinhae8971/kospi-research-agent/blob/main/.github/workflows/daily-active.yml"
       },
       "cron": "0 21 * * *",
-      "runs": []
+      "runs": [],
+      "ops": {
+        "system_id": "kospi-research-agent",
+        "label": "Daily KOSPI Research",
+        "group": "global-market",
+        "role": "producer",
+        "expected_state": "active",
+        "schedule_kst": "06:00 daily",
+        "telegram_policy": "saturday_0600_kst",
+        "freshness_sla_hours": 30,
+        "dependency_min_fresh": null,
+        "depends_on": [],
+        "dashboard_url": "https://jinhae8971.github.io/kospi-research-agent/",
+        "report_keys": [
+          "kospi-research-agent/latest"
+        ],
+        "workflow_path": ".github/workflows/daily-active.yml"
+      },
+      "health": {
+        "state": "paused_unexpected",
+        "label": "정책 불일치",
+        "severity": 2,
+        "reason": "Workflow is disabled, but manifest expects active."
+      },
+      "report": {
+        "key": "kospi-research-agent/latest",
+        "repo": "kospi-research-agent",
+        "system_id": "kospi-research-agent",
+        "label": "리포트 지연",
+        "sla_hours": 30.0,
+        "state": "stale",
+        "severity": 2,
+        "reason": "Report is 60.1h old; SLA is 30h.",
+        "report_at": "2026-04-23T22:51:43.241441+00:00",
+        "age_hours": 60.13
+      }
     },
     {
       "repo": "sp500-research-agent",
@@ -215,7 +368,42 @@
         "html_url": "https://github.com/jinhae8971/sp500-research-agent/blob/main/.github/workflows/daily-active.yml"
       },
       "cron": "0 21 * * *",
-      "runs": []
+      "runs": [],
+      "ops": {
+        "system_id": "sp500-research-agent",
+        "label": "Daily S&P 500 Research",
+        "group": "global-market",
+        "role": "producer",
+        "expected_state": "active",
+        "schedule_kst": "06:00 daily",
+        "telegram_policy": "saturday_0600_kst",
+        "freshness_sla_hours": 30,
+        "dependency_min_fresh": null,
+        "depends_on": [],
+        "dashboard_url": "https://jinhae8971.github.io/sp500-research-agent/",
+        "report_keys": [
+          "sp500-research-agent/latest"
+        ],
+        "workflow_path": ".github/workflows/daily-active.yml"
+      },
+      "health": {
+        "state": "paused_unexpected",
+        "label": "정책 불일치",
+        "severity": 2,
+        "reason": "Workflow is disabled, but manifest expects active."
+      },
+      "report": {
+        "key": "sp500-research-agent/latest",
+        "repo": "sp500-research-agent",
+        "system_id": "sp500-research-agent",
+        "label": "리포트 지연",
+        "sla_hours": 30.0,
+        "state": "stale",
+        "severity": 2,
+        "reason": "Report is 60.3h old; SLA is 30h.",
+        "report_at": "2026-04-23T22:42:56.537873+00:00",
+        "age_hours": 60.28
+      }
     },
     {
       "repo": "nasdaq-research-agent",
@@ -227,7 +415,42 @@
         "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/blob/main/.github/workflows/daily-active.yml"
       },
       "cron": "0 21 * * *",
-      "runs": []
+      "runs": [],
+      "ops": {
+        "system_id": "nasdaq-research-agent",
+        "label": "Daily NASDAQ-100 Research",
+        "group": "global-market",
+        "role": "producer",
+        "expected_state": "active",
+        "schedule_kst": "06:00 daily",
+        "telegram_policy": "saturday_0600_kst",
+        "freshness_sla_hours": 30,
+        "dependency_min_fresh": null,
+        "depends_on": [],
+        "dashboard_url": "https://jinhae8971.github.io/nasdaq-research-agent/",
+        "report_keys": [
+          "nasdaq-research-agent/latest"
+        ],
+        "workflow_path": ".github/workflows/daily-active.yml"
+      },
+      "health": {
+        "state": "paused_unexpected",
+        "label": "정책 불일치",
+        "severity": 2,
+        "reason": "Workflow is disabled, but manifest expects active."
+      },
+      "report": {
+        "key": "nasdaq-research-agent/latest",
+        "repo": "nasdaq-research-agent",
+        "system_id": "nasdaq-research-agent",
+        "label": "리포트 지연",
+        "sla_hours": 30.0,
+        "state": "stale",
+        "severity": 2,
+        "reason": "Report is 60.3h old; SLA is 30h.",
+        "report_at": "2026-04-23T22:42:41.632567+00:00",
+        "age_hours": 60.28
+      }
     },
     {
       "repo": "dow30-research-agent",
@@ -239,7 +462,42 @@
         "html_url": "https://github.com/jinhae8971/dow30-research-agent/blob/main/.github/workflows/daily-active.yml"
       },
       "cron": "0 21 * * *",
-      "runs": []
+      "runs": [],
+      "ops": {
+        "system_id": "dow30-research-agent",
+        "label": "Daily Dow 30 Research",
+        "group": "global-market",
+        "role": "producer",
+        "expected_state": "active",
+        "schedule_kst": "06:00 daily",
+        "telegram_policy": "saturday_0600_kst",
+        "freshness_sla_hours": 30,
+        "dependency_min_fresh": null,
+        "depends_on": [],
+        "dashboard_url": "https://jinhae8971.github.io/dow30-research-agent/",
+        "report_keys": [
+          "dow30-research-agent/latest"
+        ],
+        "workflow_path": ".github/workflows/daily-active.yml"
+      },
+      "health": {
+        "state": "paused_unexpected",
+        "label": "정책 불일치",
+        "severity": 2,
+        "reason": "Workflow is disabled, but manifest expects active."
+      },
+      "report": {
+        "key": "dow30-research-agent/latest",
+        "repo": "dow30-research-agent",
+        "system_id": "dow30-research-agent",
+        "label": "리포트 지연",
+        "sla_hours": 30.0,
+        "state": "stale",
+        "severity": 2,
+        "reason": "Report is 60.1h old; SLA is 30h.",
+        "report_at": "2026-04-23T22:51:07.964045+00:00",
+        "age_hours": 60.14
+      }
     },
     {
       "repo": "global-market-orchestrator",
@@ -251,7 +509,96 @@
         "html_url": "https://github.com/jinhae8971/global-market-orchestrator/blob/main/.github/workflows/daily-active.yml"
       },
       "cron": "0 22 * * *",
-      "runs": []
+      "runs": [],
+      "ops": {
+        "system_id": "global-market-orchestrator",
+        "label": "Daily Global Orchestrator",
+        "group": "global-market",
+        "role": "hub",
+        "expected_state": "active",
+        "schedule_kst": "07:00 daily",
+        "telegram_policy": "daily_0700_kst",
+        "freshness_sla_hours": 30,
+        "dependency_min_fresh": 4,
+        "depends_on": [
+          "crypto-research-agent",
+          "kospi-research-agent",
+          "sp500-research-agent",
+          "nasdaq-research-agent",
+          "dow30-research-agent"
+        ],
+        "dashboard_url": "https://jinhae8971.github.io/global-market-orchestrator/",
+        "report_keys": [
+          "global-market-orchestrator/latest"
+        ],
+        "workflow_path": ".github/workflows/daily-active.yml"
+      },
+      "health": {
+        "state": "paused_unexpected",
+        "label": "정책 불일치",
+        "severity": 2,
+        "reason": "Workflow is disabled, but manifest expects active."
+      },
+      "report": {
+        "key": "global-market-orchestrator/latest",
+        "repo": "global-market-orchestrator",
+        "system_id": "global-market-orchestrator",
+        "label": "리포트 최신",
+        "sla_hours": 30.0,
+        "state": "fresh",
+        "severity": 0,
+        "reason": "Report is 11.0h old; SLA is 30h.",
+        "report_at": "2026-04-26T00:02:05.517021+00:00",
+        "age_hours": 10.96
+      },
+      "upstream": {
+        "ok": false,
+        "fresh_count": 0,
+        "required_fresh_count": 4,
+        "total_count": 5,
+        "dependencies": [
+          {
+            "repo": "crypto-research-agent",
+            "workflow_state": "paused_unexpected",
+            "workflow_label": "정책 불일치",
+            "report_state": "fresh",
+            "report_at": "2026-04-25T22:49:12.281569+00:00",
+            "fresh": false
+          },
+          {
+            "repo": "kospi-research-agent",
+            "workflow_state": "paused_unexpected",
+            "workflow_label": "정책 불일치",
+            "report_state": "stale",
+            "report_at": "2026-04-23T22:51:43.241441+00:00",
+            "fresh": false
+          },
+          {
+            "repo": "sp500-research-agent",
+            "workflow_state": "paused_unexpected",
+            "workflow_label": "정책 불일치",
+            "report_state": "stale",
+            "report_at": "2026-04-23T22:42:56.537873+00:00",
+            "fresh": false
+          },
+          {
+            "repo": "nasdaq-research-agent",
+            "workflow_state": "paused_unexpected",
+            "workflow_label": "정책 불일치",
+            "report_state": "stale",
+            "report_at": "2026-04-23T22:42:41.632567+00:00",
+            "fresh": false
+          },
+          {
+            "repo": "dow30-research-agent",
+            "workflow_state": "paused_unexpected",
+            "workflow_label": "정책 불일치",
+            "report_state": "stale",
+            "report_at": "2026-04-23T22:51:07.964045+00:00",
+            "fresh": false
+          }
+        ]
+      }
     },
     {
       "repo": "crypto-cycle-intelligence",
@@ -313,7 +660,45 @@
           "created_at": "2026-04-25T00:07:20Z",
           "html_url": "https://github.com/jinhae8971/crypto-cycle-intelligence/actions/runs/24917503042"
         }
-      ]
+      ],
+      "ops": {
+        "system_id": "crypto-cycle-intelligence",
+        "label": "Crypto Cycle Intelligence",
+        "group": "cycle-intelligence",
+        "role": "producer",
+        "expected_state": "active",
+        "schedule_kst": "06:00 daily",
+        "telegram_policy": "saturday_0600_kst",
+        "freshness_sla_hours": 30,
+        "dependency_min_fresh": null,
+        "depends_on": [],
+        "dashboard_url": "https://jinhae8971.github.io/crypto-cycle-intelligence/",
+        "report_keys": [
+          "crypto-cycle-intelligence/latest"
+        ],
+        "workflow_path": ".github/workflows/pipeline.yml"
+      },
+      "health": {
+        "state": "ok",
+        "label": "정상",
+        "severity": 0,
+        "reason": "Workflow is active and recent.",
+        "last_run_at": "2026-04-26T02:14:02Z",
+        "age_hours": 8.758001261666667,
+        "sla_hours": 30.0
+      },
+      "report": {
+        "key": "crypto-cycle-intelligence/latest",
+        "repo": "crypto-cycle-intelligence",
+        "system_id": "crypto-cycle-intelligence",
+        "label": "리포트 최신",
+        "sla_hours": 30.0,
+        "state": "fresh",
+        "severity": 0,
+        "reason": "Report is 8.7h old; SLA is 30h.",
+        "report_at": "2026-04-26T02:14:35.661434+00:00",
+        "age_hours": 8.75
+      }
     },
     {
       "repo": "ai-semi-cycle-intelligence",
@@ -375,7 +760,45 @@
           "created_at": "2026-04-23T21:56:42Z",
           "html_url": "https://github.com/jinhae8971/ai-semi-cycle-intelligence/actions/runs/24860896409"
         }
-      ]
+      ],
+      "ops": {
+        "system_id": "ai-semi-cycle-intelligence",
+        "label": "AI/Semi Cycle Intelligence",
+        "group": "cycle-intelligence",
+        "role": "producer",
+        "expected_state": "active",
+        "schedule_kst": "06:00 daily",
+        "telegram_policy": "saturday_0600_kst",
+        "freshness_sla_hours": 30,
+        "dependency_min_fresh": null,
+        "depends_on": [],
+        "dashboard_url": "https://jinhae8971.github.io/ai-semi-cycle-intelligence/",
+        "report_keys": [
+          "ai-semi-cycle-intelligence/latest"
+        ],
+        "workflow_path": ".github/workflows/pipeline.yml"
+      },
+      "health": {
+        "state": "ok",
+        "label": "정상",
+        "severity": 0,
+        "reason": "Workflow is active and recent.",
+        "last_run_at": "2026-04-25T22:47:47Z",
+        "age_hours": 12.195501261666665,
+        "sla_hours": 30.0
+      },
+      "report": {
+        "key": "ai-semi-cycle-intelligence/latest",
+        "repo": "ai-semi-cycle-intelligence",
+        "system_id": "ai-semi-cycle-intelligence",
+        "label": "리포트 최신",
+        "sla_hours": 30.0,
+        "state": "fresh",
+        "severity": 0,
+        "reason": "Report is 12.2h old; SLA is 30h.",
+        "report_at": "2026-04-25T22:48:19.591518+00:00",
+        "age_hours": 12.19
+      }
     },
     {
       "repo": "cycle-intelligence-hub",
@@ -437,7 +860,72 @@
           "created_at": "2026-04-25T01:04:58Z",
           "html_url": "https://github.com/jinhae8971/cycle-intelligence-hub/actions/runs/24918811715"
         }
-      ]
+      ],
+      "ops": {
+        "system_id": "cycle-intelligence-hub",
+        "label": "Cycle Intelligence Hub",
+        "group": "cycle-intelligence",
+        "role": "hub",
+        "expected_state": "active",
+        "schedule_kst": "07:00 daily",
+        "telegram_policy": "daily_0700_kst",
+        "freshness_sla_hours": 30,
+        "dependency_min_fresh": 2,
+        "depends_on": [
+          "crypto-cycle-intelligence",
+          "ai-semi-cycle-intelligence"
+        ],
+        "dashboard_url": "https://jinhae8971.github.io/cycle-intelligence-hub/",
+        "report_keys": [
+          "cycle-intelligence-hub/latest"
+        ],
+        "workflow_path": ".github/workflows/hub-pipeline.yml"
+      },
+      "health": {
+        "state": "ok",
+        "label": "정상",
+        "severity": 0,
+        "reason": "Workflow is active and recent.",
+        "last_run_at": "2026-04-26T02:04:58Z",
+        "age_hours": 8.909112372777779,
+        "sla_hours": 30.0
+      },
+      "report": {
+        "key": "cycle-intelligence-hub/latest",
+        "repo": "cycle-intelligence-hub",
+        "system_id": "cycle-intelligence-hub",
+        "label": "리포트 최신",
+        "sla_hours": 30.0,
+        "state": "fresh",
+        "severity": 0,
+        "reason": "Report is 8.9h old; SLA is 30h.",
+        "report_at": "2026-04-26T02:05:08.193237+00:00",
+        "age_hours": 8.91
+      },
+      "upstream": {
+        "ok": true,
+        "fresh_count": 2,
+        "required_fresh_count": 2,
+        "total_count": 2,
+        "dependencies": [
+          {
+            "repo": "crypto-cycle-intelligence",
+            "workflow_state": "ok",
+            "workflow_label": "정상",
+            "report_state": "fresh",
+            "report_at": "2026-04-26T02:14:35.661434+00:00",
+            "fresh": true
+          },
+          {
+            "repo": "ai-semi-cycle-intelligence",
+            "workflow_state": "ok",
+            "workflow_label": "정상",
+            "report_state": "fresh",
+            "report_at": "2026-04-25T22:48:19.591518+00:00",
+            "fresh": true
+          }
+        ]
+      }
     },
     {
       "repo": "trendline-detector",
@@ -464,7 +952,28 @@
           "created_at": "2026-04-18T02:55:39Z",
           "html_url": "https://github.com/jinhae8971/trendline-detector/actions/runs/24595337607"
         }
-      ]
+      ],
+      "ops": {
+        "system_id": "trendline-detector",
+        "label": "Trendline Detector",
+        "group": "trendspider-clone",
+        "role": "tool",
+        "expected_state": "paused",
+        "schedule_kst": "08:00 Sunday",
+        "telegram_policy": "silent",
+        "freshness_sla_hours": 240,
+        "dependency_min_fresh": null,
+        "depends_on": [],
+        "dashboard_url": "https://github.com/jinhae8971/trendline-detector",
+        "report_keys": [],
+        "workflow_path": ".github/workflows/ci.yml"
+      },
+      "health": {
+        "state": "paused_expected",
+        "label": "의도 정지",
+        "severity": 0,
+        "reason": "Manifest marks this workflow as intentionally paused."
+      }
     },
     {
       "repo": "chart-analyzer",
@@ -512,7 +1021,28 @@
           "created_at": "2026-04-20T23:43:09Z",
           "html_url": "https://github.com/jinhae8971/chart-analyzer/actions/runs/24696121615"
         }
-      ]
+      ],
+      "ops": {
+        "system_id": "chart-analyzer",
+        "label": "Chart Analyzer",
+        "group": "trendspider-clone",
+        "role": "tool",
+        "expected_state": "paused",
+        "schedule_kst": "08:00 weekdays",
+        "telegram_policy": "silent",
+        "freshness_sla_hours": 120,
+        "dependency_min_fresh": null,
+        "depends_on": [],
+        "dashboard_url": "https://github.com/jinhae8971/chart-analyzer",
+        "report_keys": [],
+        "workflow_path": ".github/workflows/daily_pipeline.yml"
+      },
+      "health": {
+        "state": "paused_expected",
+        "label": "의도 정지",
+        "severity": 0,
+        "reason": "Manifest marks this workflow as intentionally paused."
+      }
     },
     {
       "repo": "backtest-lab",
@@ -532,7 +1062,360 @@
           "created_at": "2026-04-19T23:39:07Z",
           "html_url": "https://github.com/jinhae8971/backtest-lab/actions/runs/24641946583"
         }
-      ]
+      ],
+      "ops": {
+        "system_id": "backtest-lab",
+        "label": "Backtest Lab",
+        "group": "trendspider-clone",
+        "role": "tool",
+        "expected_state": "paused",
+        "schedule_kst": "08:00 Sunday",
+        "telegram_policy": "silent",
+        "freshness_sla_hours": 240,
+        "dependency_min_fresh": null,
+        "depends_on": [],
+        "dashboard_url": "https://github.com/jinhae8971/backtest-lab",
+        "report_keys": [],
+        "workflow_path": ".github/workflows/weekly_backtest.yml"
+      },
+      "health": {
+        "state": "paused_expected",
+        "label": "의도 정지",
+        "severity": 0,
+        "reason": "Manifest marks this workflow as intentionally paused."
+      }
     }
-  ]
+  ],
+  "systems": [
+    {
+      "repo": "crypto-monitor",
+      "system_id": "crypto-monitor",
+      "label": "Crypto Monitor",
+      "group": "core",
+      "role": "producer",
+      "expected_state": "active",
+      "workflow_state": "active",
+      "health_state": "ok",
+      "health_label": "정상",
+      "severity": 0,
+      "report_state": "fresh",
+      "upstream_ok": null
+    },
+    {
+      "repo": "korean-stock-agent",
+      "system_id": "korean-stock-agent",
+      "label": "KOSPI Foreign Flow",
+      "group": "core",
+      "role": "producer",
+      "expected_state": "active",
+      "workflow_state": "active",
+      "health_state": "ok",
+      "health_label": "정상",
+      "severity": 0,
+      "report_state": "fresh",
+      "upstream_ok": null
+    },
+    {
+      "repo": "crypto-research-agent",
+      "system_id": "crypto-research-agent",
+      "label": "Daily Crypto Research",
+      "group": "global-market",
+      "role": "producer",
+      "expected_state": "active",
+      "workflow_state": "disabled_manually",
+      "health_state": "paused_unexpected",
+      "health_label": "정책 불일치",
+      "severity": 2,
+      "report_state": "fresh",
+      "upstream_ok": null
+    },
+    {
+      "repo": "kospi-research-agent",
+      "system_id": "kospi-research-agent",
+      "label": "Daily KOSPI Research",
+      "group": "global-market",
+      "role": "producer",
+      "expected_state": "active",
+      "workflow_state": "disabled_manually",
+      "health_state": "paused_unexpected",
+      "health_label": "정책 불일치",
+      "severity": 2,
+      "report_state": "stale",
+      "upstream_ok": null
+    },
+    {
+      "repo": "sp500-research-agent",
+      "system_id": "sp500-research-agent",
+      "label": "Daily S&P 500 Research",
+      "group": "global-market",
+      "role": "producer",
+      "expected_state": "active",
+      "workflow_state": "disabled_manually",
+      "health_state": "paused_unexpected",
+      "health_label": "정책 불일치",
+      "severity": 2,
+      "report_state": "stale",
+      "upstream_ok": null
+    },
+    {
+      "repo": "nasdaq-research-agent",
+      "system_id": "nasdaq-research-agent",
+      "label": "Daily NASDAQ-100 Research",
+      "group": "global-market",
+      "role": "producer",
+      "expected_state": "active",
+      "workflow_state": "disabled_manually",
+      "health_state": "paused_unexpected",
+      "health_label": "정책 불일치",
+      "severity": 2,
+      "report_state": "stale",
+      "upstream_ok": null
+    },
+    {
+      "repo": "dow30-research-agent",
+      "system_id": "dow30-research-agent",
+      "label": "Daily Dow 30 Research",
+      "group": "global-market",
+      "role": "producer",
+      "expected_state": "active",
+      "workflow_state": "disabled_manually",
+      "health_state": "paused_unexpected",
+      "health_label": "정책 불일치",
+      "severity": 2,
+      "report_state": "stale",
+      "upstream_ok": null
+    },
+    {
+      "repo": "global-market-orchestrator",
+      "system_id": "global-market-orchestrator",
+      "label": "Daily Global Orchestrator",
+      "group": "global-market",
+      "role": "hub",
+      "expected_state": "active",
+      "workflow_state": "disabled_manually",
+      "health_state": "paused_unexpected",
+      "health_label": "정책 불일치",
+      "severity": 2,
+      "report_state": "fresh",
+      "upstream_ok": false
+    },
+    {
+      "repo": "crypto-cycle-intelligence",
+      "system_id": "crypto-cycle-intelligence",
+      "label": "Crypto Cycle Intelligence",
+      "group": "cycle-intelligence",
+      "role": "producer",
+      "expected_state": "active",
+      "workflow_state": "active",
+      "health_state": "ok",
+      "health_label": "정상",
+      "severity": 0,
+      "report_state": "fresh",
+      "upstream_ok": null
+    },
+    {
+      "repo": "ai-semi-cycle-intelligence",
+      "system_id": "ai-semi-cycle-intelligence",
+      "label": "AI/Semi Cycle Intelligence",
+      "group": "cycle-intelligence",
+      "role": "producer",
+      "expected_state": "active",
+      "workflow_state": "active",
+      "health_state": "ok",
+      "health_label": "정상",
+      "severity": 0,
+      "report_state": "fresh",
+      "upstream_ok": null
+    },
+    {
+      "repo": "cycle-intelligence-hub",
+      "system_id": "cycle-intelligence-hub",
+      "label": "Cycle Intelligence Hub",
+      "group": "cycle-intelligence",
+      "role": "hub",
+      "expected_state": "active",
+      "workflow_state": "active",
+      "health_state": "ok",
+      "health_label": "정상",
+      "severity": 0,
+      "report_state": "fresh",
+      "upstream_ok": true
+    },
+    {
+      "repo": "trendline-detector",
+      "system_id": "trendline-detector",
+      "label": "Trendline Detector",
+      "group": "trendspider-clone",
+      "role": "tool",
+      "expected_state": "paused",
+      "workflow_state": "disabled_manually",
+      "health_state": "paused_expected",
+      "health_label": "의도 정지",
+      "severity": 0,
+      "report_state": null,
+      "upstream_ok": null
+    },
+    {
+      "repo": "chart-analyzer",
+      "system_id": "chart-analyzer",
+      "label": "Chart Analyzer",
+      "group": "trendspider-clone",
+      "role": "tool",
+      "expected_state": "paused",
+      "workflow_state": "disabled_manually",
+      "health_state": "paused_expected",
+      "health_label": "의도 정지",
+      "severity": 0,
+      "report_state": null,
+      "upstream_ok": null
+    },
+    {
+      "repo": "backtest-lab",
+      "system_id": "backtest-lab",
+      "label": "Backtest Lab",
+      "group": "trendspider-clone",
+      "role": "tool",
+      "expected_state": "paused",
+      "workflow_state": "disabled_manually",
+      "health_state": "paused_expected",
+      "health_label": "의도 정지",
+      "severity": 0,
+      "report_state": null,
+      "upstream_ok": null
+    }
+  ],
+  "reports": {
+    "crypto-monitor/239770946": {
+      "key": "crypto-monitor/239770946",
+      "repo": "crypto-monitor",
+      "system_id": "crypto-monitor",
+      "label": "리포트 최신",
+      "sla_hours": 80.0,
+      "state": "fresh",
+      "severity": 0,
+      "reason": "Report is 48.1h old; SLA is 80h.",
+      "report_at": "2026-04-24T10:51:28+00:00",
+      "age_hours": 48.13411237277778
+    },
+    "korean-stock-agent/242830429": {
+      "key": "korean-stock-agent/242830429",
+      "repo": "korean-stock-agent",
+      "system_id": "korean-stock-agent",
+      "label": "리포트 최신",
+      "sla_hours": 80.0,
+      "state": "fresh",
+      "severity": 0,
+      "reason": "Report is 59.0h old; SLA is 80h.",
+      "report_at": "2026-04-24T00:00:00+00:00",
+      "age_hours": 58.991890150555555
+    },
+    "crypto-research-agent/latest": {
+      "key": "crypto-research-agent/latest",
+      "repo": "crypto-research-agent",
+      "system_id": "crypto-research-agent",
+      "label": "리포트 최신",
+      "sla_hours": 30.0,
+      "state": "fresh",
+      "severity": 0,
+      "reason": "Report is 12.2h old; SLA is 30h.",
+      "report_at": "2026-04-25T22:49:12.281569+00:00",
+      "age_hours": 12.171811936944444
+    },
+    "kospi-research-agent/latest": {
+      "key": "kospi-research-agent/latest",
+      "repo": "kospi-research-agent",
+      "system_id": "kospi-research-agent",
+      "label": "리포트 지연",
+      "sla_hours": 30.0,
+      "state": "stale",
+      "severity": 2,
+      "reason": "Report is 60.1h old; SLA is 30h.",
+      "report_at": "2026-04-23T22:51:43.241441+00:00",
+      "age_hours": 60.12987863916667
+    },
+    "sp500-research-agent/latest": {
+      "key": "sp500-research-agent/latest",
+      "repo": "sp500-research-agent",
+      "system_id": "sp500-research-agent",
+      "label": "리포트 지연",
+      "sla_hours": 30.0,
+      "state": "stale",
+      "severity": 2,
+      "reason": "Report is 60.3h old; SLA is 30h.",
+      "report_at": "2026-04-23T22:42:56.537873+00:00",
+      "age_hours": 60.276185185833334
+    },
+    "nasdaq-research-agent/latest": {
+      "key": "nasdaq-research-agent/latest",
+      "repo": "nasdaq-research-agent",
+      "system_id": "nasdaq-research-agent",
+      "label": "리포트 지연",
+      "sla_hours": 30.0,
+      "state": "stale",
+      "severity": 2,
+      "reason": "Report is 60.3h old; SLA is 30h.",
+      "report_at": "2026-04-23T22:42:41.632567+00:00",
+      "age_hours": 60.28032554861111
+    },
+    "dow30-research-agent/latest": {
+      "key": "dow30-research-agent/latest",
+      "repo": "dow30-research-agent",
+      "system_id": "dow30-research-agent",
+      "label": "리포트 지연",
+      "sla_hours": 30.0,
+      "state": "stale",
+      "severity": 2,
+      "reason": "Report is 60.1h old; SLA is 30h.",
+      "report_at": "2026-04-23T22:51:07.964045+00:00",
+      "age_hours": 60.13967791583333
+    },
+    "global-market-orchestrator/latest": {
+      "key": "global-market-orchestrator/latest",
+      "repo": "global-market-orchestrator",
+      "system_id": "global-market-orchestrator",
+      "label": "리포트 최신",
+      "sla_hours": 30.0,
+      "state": "fresh",
+      "severity": 0,
+      "reason": "Report is 11.0h old; SLA is 30h.",
+      "report_at": "2026-04-26T00:02:05.517021+00:00",
+      "age_hours": 10.957024311388889
+    },
+    "crypto-cycle-intelligence/latest": {
+      "key": "crypto-cycle-intelligence/latest",
+      "repo": "crypto-cycle-intelligence",
+      "system_id": "crypto-cycle-intelligence",
+      "label": "리포트 최신",
+      "sla_hours": 30.0,
+      "state": "fresh",
+      "severity": 0,
+      "reason": "Report is 8.7h old; SLA is 30h.",
+      "report_at": "2026-04-26T02:14:35.661434+00:00",
+      "age_hours": 8.748650863333333
+    },
+    "ai-semi-cycle-intelligence/latest": {
+      "key": "ai-semi-cycle-intelligence/latest",
+      "repo": "ai-semi-cycle-intelligence",
+      "system_id": "ai-semi-cycle-intelligence",
+      "label": "리포트 최신",
+      "sla_hours": 30.0,
+      "state": "fresh",
+      "severity": 0,
+      "reason": "Report is 12.2h old; SLA is 30h.",
+      "report_at": "2026-04-25T22:48:19.591518+00:00",
+      "age_hours": 12.18644806222222
+    },
+    "cycle-intelligence-hub/latest": {
+      "key": "cycle-intelligence-hub/latest",
+      "repo": "cycle-intelligence-hub",
+      "system_id": "cycle-intelligence-hub",
+      "label": "리포트 최신",
+      "sla_hours": 30.0,
+      "state": "fresh",
+      "severity": 0,
+      "reason": "Report is 8.9h old; SLA is 30h.",
+      "report_at": "2026-04-26T02:05:08.193237+00:00",
+      "age_hours": 8.906280918055556
+    }
+  }
 }
