@@ -1,0 +1,715 @@
+{
+  "generated_at": "2026-04-26T02:14:35.661434+00:00",
+  "ccs": {
+    "composite": 27.76,
+    "phase": "Accumulation",
+    "emoji": "🌱",
+    "color": "#3a8891",
+    "dimensions": {
+      "valuation": 26.49,
+      "onchain": 15.29,
+      "sentiment": 28.75,
+      "derivatives": null,
+      "macro": null,
+      "technical": 45.5
+    },
+    "indicators": [
+      {
+        "metric": "pi_cycle_ratio",
+        "raw": 0.388798641221793,
+        "score": 23.59983015272412,
+        "dimension": "valuation",
+        "bottom": 0.2,
+        "top": 1.0
+      },
+      {
+        "metric": "mvrv_zscore",
+        "raw": 0.8254,
+        "score": 22.817500000000003,
+        "dimension": "valuation",
+        "bottom": -1.0,
+        "top": 7.0
+      },
+      {
+        "metric": "mayer_multiple",
+        "raw": 0.9125101527092807,
+        "score": 7.031884544330041,
+        "dimension": "valuation",
+        "bottom": 0.8,
+        "top": 2.4
+      },
+      {
+        "metric": "nupl",
+        "raw": 0.3081183701443415,
+        "score": 55.811837014434154,
+        "dimension": "valuation",
+        "bottom": -0.25,
+        "top": 0.75
+      },
+      {
+        "metric": "puell_multiple",
+        "raw": 0.8296,
+        "score": 14.313513513513515,
+        "dimension": "onchain",
+        "bottom": 0.3,
+        "top": 4.0
+      },
+      {
+        "metric": "sopr",
+        "raw": 0.9834,
+        "score": 16.750000000000085,
+        "dimension": "onchain",
+        "bottom": 0.97,
+        "top": 1.05
+      },
+      {
+        "metric": "fear_greed_index",
+        "raw": 33,
+        "score": 28.749999999999996,
+        "dimension": "sentiment",
+        "bottom": 10,
+        "top": 90
+      },
+      {
+        "metric": "funding_rate",
+        "raw": null,
+        "score": null,
+        "dimension": "derivatives",
+        "bottom": -0.0002,
+        "top": 0.0005
+      },
+      {
+        "metric": "weekly_rsi",
+        "raw": 45.378936801599224,
+        "score": 27.961703275634953,
+        "dimension": "technical",
+        "bottom": 30,
+        "top": 85
+      },
+      {
+        "metric": "daily_rsi",
+        "raw": 62.30995171719692,
+        "score": 71.79989270488204,
+        "dimension": "technical",
+        "bottom": 30,
+        "top": 75
+      }
+    ],
+    "weights_used": {
+      "valuation": 0.333,
+      "onchain": 0.267,
+      "sentiment": 0.2,
+      "technical": 0.2
+    }
+  },
+  "global_market": {
+    "total_mcap_usd": 2669116389731.6245,
+    "total_vol_24h": 48739326854.31569,
+    "btc_dominance": 58.149073537674,
+    "eth_dominance": 10.470679962359046,
+    "mcap_change_24h": -0.2185828363515812,
+    "active_cryptos": 17540
+  },
+  "fear_greed": {
+    "value": 33,
+    "classification": "Fear",
+    "history": [
+      {
+        "ts": 1769472000,
+        "value": 29,
+        "classification": "Fear"
+      },
+      {
+        "ts": 1769558400,
+        "value": 29,
+        "classification": "Fear"
+      },
+      {
+        "ts": 1769644800,
+        "value": 26,
+        "classification": "Fear"
+      },
+      {
+        "ts": 1769731200,
+        "value": 16,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1769817600,
+        "value": 20,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1769904000,
+        "value": 14,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1769990400,
+        "value": 14,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1770076800,
+        "value": 17,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1770163200,
+        "value": 14,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1770249600,
+        "value": 12,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1770336000,
+        "value": 9,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1770422400,
+        "value": 6,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1770508800,
+        "value": 7,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1770595200,
+        "value": 14,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1770681600,
+        "value": 9,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1770768000,
+        "value": 11,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1770854400,
+        "value": 5,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1770940800,
+        "value": 9,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1771027200,
+        "value": 9,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1771113600,
+        "value": 8,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1771200000,
+        "value": 12,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1771286400,
+        "value": 10,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1771372800,
+        "value": 8,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1771459200,
+        "value": 9,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1771545600,
+        "value": 7,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1771632000,
+        "value": 8,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1771718400,
+        "value": 9,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1771804800,
+        "value": 5,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1771891200,
+        "value": 8,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1771977600,
+        "value": 11,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1772064000,
+        "value": 11,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1772150400,
+        "value": 13,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1772236800,
+        "value": 11,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1772323200,
+        "value": 14,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1772409600,
+        "value": 10,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1772496000,
+        "value": 14,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1772582400,
+        "value": 10,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1772668800,
+        "value": 22,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1772755200,
+        "value": 18,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1772841600,
+        "value": 12,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1772928000,
+        "value": 12,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1773014400,
+        "value": 8,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1773100800,
+        "value": 13,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1773187200,
+        "value": 15,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1773273600,
+        "value": 18,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1773360000,
+        "value": 15,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1773446400,
+        "value": 16,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1773532800,
+        "value": 15,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1773619200,
+        "value": 23,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1773705600,
+        "value": 28,
+        "classification": "Fear"
+      },
+      {
+        "ts": 1773792000,
+        "value": 26,
+        "classification": "Fear"
+      },
+      {
+        "ts": 1773878400,
+        "value": 23,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1773964800,
+        "value": 11,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1774051200,
+        "value": 12,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1774137600,
+        "value": 10,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1774224000,
+        "value": 8,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1774310400,
+        "value": 11,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1774396800,
+        "value": 14,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1774483200,
+        "value": 10,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1774569600,
+        "value": 13,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1774656000,
+        "value": 12,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1774742400,
+        "value": 9,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1774828800,
+        "value": 8,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1774915200,
+        "value": 11,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1775001600,
+        "value": 8,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1775088000,
+        "value": 12,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1775174400,
+        "value": 9,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1775260800,
+        "value": 11,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1775347200,
+        "value": 12,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1775433600,
+        "value": 13,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1775520000,
+        "value": 11,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1775606400,
+        "value": 17,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1775692800,
+        "value": 14,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1775779200,
+        "value": 16,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1775865600,
+        "value": 15,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1775952000,
+        "value": 16,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1776038400,
+        "value": 12,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1776124800,
+        "value": 21,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1776211200,
+        "value": 23,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1776297600,
+        "value": 23,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1776384000,
+        "value": 21,
+        "classification": "Extreme Fear"
+      },
+      {
+        "ts": 1776470400,
+        "value": 26,
+        "classification": "Fear"
+      },
+      {
+        "ts": 1776556800,
+        "value": 27,
+        "classification": "Fear"
+      },
+      {
+        "ts": 1776643200,
+        "value": 29,
+        "classification": "Fear"
+      },
+      {
+        "ts": 1776729600,
+        "value": 33,
+        "classification": "Fear"
+      },
+      {
+        "ts": 1776816000,
+        "value": 32,
+        "classification": "Fear"
+      },
+      {
+        "ts": 1776902400,
+        "value": 46,
+        "classification": "Fear"
+      },
+      {
+        "ts": 1776988800,
+        "value": 39,
+        "classification": "Fear"
+      },
+      {
+        "ts": 1777075200,
+        "value": 31,
+        "classification": "Fear"
+      },
+      {
+        "ts": 1777161600,
+        "value": 33,
+        "classification": "Fear"
+      }
+    ]
+  },
+  "pi_cycle": {
+    "ma111": 75101.32990990994,
+    "ma350x2": 193162.53182857152,
+    "ratio": 0.388798641221793,
+    "crosses": []
+  },
+  "technicals": {
+    "current_price": 77538.16157709267,
+    "change_24h_pct": -0.10433073509952262,
+    "sma_200": 84972.38233117586,
+    "mayer_multiple": 0.9125101527092807,
+    "sma_111": 75104.8823525312,
+    "sma_350_x2": 193149.10291521664,
+    "pi_cycle_ratio": 0.38884406512360925,
+    "daily_rsi": 62.30995171719692,
+    "weekly_rsi": 45.378936801599224
+  },
+  "funding_rate": null,
+  "bgeometrics": {
+    "mvrv_zscore": 0.8254,
+    "puell_multiple": 0.8296,
+    "nupl": 0.3081183701443415,
+    "sopr": 0.9834
+  },
+  "btc_price_30d": [
+    {
+      "ts": "2026-03-29T00:00:00+00:00",
+      "price": 66321.06539994745
+    },
+    {
+      "ts": "2026-03-30T00:00:00+00:00",
+      "price": 65970.42899513361
+    },
+    {
+      "ts": "2026-03-31T00:00:00+00:00",
+      "price": 66699.27436893585
+    },
+    {
+      "ts": "2026-04-01T00:00:00+00:00",
+      "price": 68231.83047993251
+    },
+    {
+      "ts": "2026-04-02T00:00:00+00:00",
+      "price": 68089.0553821667
+    },
+    {
+      "ts": "2026-04-03T00:00:00+00:00",
+      "price": 66891.6645686824
+    },
+    {
+      "ts": "2026-04-04T00:00:00+00:00",
+      "price": 66939.69121715311
+    },
+    {
+      "ts": "2026-04-05T00:00:00+00:00",
+      "price": 67304.24955635444
+    },
+    {
+      "ts": "2026-04-06T00:00:00+00:00",
+      "price": 68985.52642694542
+    },
+    {
+      "ts": "2026-04-07T00:00:00+00:00",
+      "price": 68864.23452757328
+    },
+    {
+      "ts": "2026-04-08T00:00:00+00:00",
+      "price": 71975.62171045873
+    },
+    {
+      "ts": "2026-04-09T00:00:00+00:00",
+      "price": 71117.07713411814
+    },
+    {
+      "ts": "2026-04-10T00:00:00+00:00",
+      "price": 71770.7468500515
+    },
+    {
+      "ts": "2026-04-11T00:00:00+00:00",
+      "price": 72972.70823557042
+    },
+    {
+      "ts": "2026-04-12T00:00:00+00:00",
+      "price": 73053.88808483821
+    },
+    {
+      "ts": "2026-04-13T00:00:00+00:00",
+      "price": 70756.75105500016
+    },
+    {
+      "ts": "2026-04-14T00:00:00+00:00",
+      "price": 74514.63006655
+    },
+    {
+      "ts": "2026-04-15T00:00:00+00:00",
+      "price": 74181.10807228928
+    },
+    {
+      "ts": "2026-04-16T00:00:00+00:00",
+      "price": 74833.50639132406
+    },
+    {
+      "ts": "2026-04-17T00:00:00+00:00",
+      "price": 75149.1930221427
+    },
+    {
+      "ts": "2026-04-18T00:00:00+00:00",
+      "price": 77128.44334858148
+    },
+    {
+      "ts": "2026-04-19T00:00:00+00:00",
+      "price": 75728.45681761758
+    },
+    {
+      "ts": "2026-04-20T00:00:00+00:00",
+      "price": 73856.05501487634
+    },
+    {
+      "ts": "2026-04-21T00:00:00+00:00",
+      "price": 75874.54629352967
+    },
+    {
+      "ts": "2026-04-22T00:00:00+00:00",
+      "price": 76350.25202878818
+    },
+    {
+      "ts": "2026-04-23T00:00:00+00:00",
+      "price": 78194.78334884858
+    },
+    {
+      "ts": "2026-04-24T00:00:00+00:00",
+      "price": 78260.61998045091
+    },
+    {
+      "ts": "2026-04-25T00:00:00+00:00",
+      "price": 77444.79563692068
+    },
+    {
+      "ts": "2026-04-26T00:00:00+00:00",
+      "price": 77619.14219872655
+    },
+    {
+      "ts": "2026-04-26T02:13:51+00:00",
+      "price": 77538.16157709267
+    }
+  ]
+}

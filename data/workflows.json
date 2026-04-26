@@ -1,512 +1,154 @@
 {
-  "updated_at": "2026-04-25T23:49:32.657449+00:00",
+  "updated_at": "2026-04-26T03:34:46.632608+00:00",
   "orchestrator": {
-    "version": "3.0",
-    "synced_at": "2026-04-25T23:49:32.657449+00:00",
+    "version": "3.2",
+    "synced_at": "2026-04-26T03:34:46.632608+00:00",
     "has_pat": true,
-    "paused_count": 15,
+    "paused_count": 3,
+    "monitored_repos": [
+      "crypto-monitor",
+      "korean-stock-agent",
+      "crypto-research-agent",
+      "kospi-research-agent",
+      "sp500-research-agent",
+      "nasdaq-research-agent",
+      "dow30-research-agent",
+      "global-market-orchestrator",
+      "crypto-cycle-intelligence",
+      "ai-semi-cycle-intelligence",
+      "cycle-intelligence-hub",
+      "trendline-detector",
+      "chart-analyzer",
+      "backtest-lab"
+    ],
+    "excluded_workflows": [
+      {
+        "repo": "crypto-research-agent",
+        "path": ".github/workflows/daily.yml"
+      },
+      {
+        "repo": "dow30-research-agent",
+        "path": ".github/workflows/daily.yml"
+      },
+      {
+        "repo": "global-market-orchestrator",
+        "path": ".github/workflows/daily.yml"
+      },
+      {
+        "repo": "korean-stock-agent",
+        "path": ".github/workflows/main.yml"
+      },
+      {
+        "repo": "kospi-research-agent",
+        "path": ".github/workflows/daily.yml"
+      },
+      {
+        "repo": "nasdaq-research-agent",
+        "path": ".github/workflows/daily.yml"
+      },
+      {
+        "repo": "sp500-research-agent",
+        "path": ".github/workflows/daily.yml"
+      }
+    ],
     "sync_log": {
-      "added": [],
-      "removed": []
+      "added": [
+        {
+          "wf_id": "262628164",
+          "repo": "backtest-lab",
+          "name": "Weekly Backtest"
+        },
+        {
+          "wf_id": "262631015",
+          "repo": "chart-analyzer",
+          "name": "Daily Pipeline"
+        },
+        {
+          "wf_id": "262632168",
+          "repo": "trendline-detector",
+          "name": "CI"
+        }
+      ],
+      "removed": [
+        {
+          "wf_id": "236541757",
+          "repo": "korean-market-bot",
+          "name": "📊 한국 증시 일일 마감 리포트"
+        },
+        {
+          "wf_id": "236553677",
+          "repo": "korean-market-bot",
+          "name": "🇺🇸 US Market Daily Report"
+        },
+        {
+          "wf_id": "236636495",
+          "repo": "korean-market-bot",
+          "name": "🗂 주간 국내 공시 리포트"
+        },
+        {
+          "wf_id": "236642604",
+          "repo": "memory-price-tracker",
+          "name": "💾 메모리 가격 주간 리포트"
+        },
+        {
+          "wf_id": "236653953",
+          "repo": "realestate-permit-tracker",
+          "name": "재개발/재건축 주간 인허가 리포트"
+        },
+        {
+          "wf_id": "236850987",
+          "repo": "livebench-notify",
+          "name": "LiveBench Leaderboard Notify"
+        },
+        {
+          "wf_id": "236856279",
+          "repo": "lgd-news-monitor",
+          "name": "LGD News Monitor & Fact-Check"
+        },
+        {
+          "wf_id": "237174445",
+          "repo": "competitor-ai-tracker",
+          "name": "Competitor AI R&D Tracker"
+        },
+        {
+          "wf_id": "239711242",
+          "repo": "gmail-auto-cleanup",
+          "name": "Gmail 자동 정리"
+        },
+        {
+          "wf_id": "240033808",
+          "repo": "kospi-peak-detector",
+          "name": "📈 코스피 고점 판독기"
+        },
+        {
+          "wf_id": "240094820",
+          "repo": "korean-stock-agent",
+          "name": "Korean Stock Agent — Daily Report"
+        },
+        {
+          "wf_id": "240126478",
+          "repo": "us-market-agent",
+          "name": "US Market Agent — Daily Report"
+        },
+        {
+          "wf_id": "240142776",
+          "repo": "etf-strategist",
+          "name": "ETF 매매전략가 — 매일 09:00 KST"
+        },
+        {
+          "wf_id": "243217019",
+          "repo": "kospi-strategy",
+          "name": "KOSPI Strategy — Daily Report"
+        },
+        {
+          "wf_id": "262221769",
+          "repo": "personal-terminal",
+          "name": ".github/workflows/nightly-backfill.yml"
+        }
+      ]
     }
   },
   "workflows": [
-    {
-      "repo": "korean-market-bot",
-      "wf": {
-        "id": 236541757,
-        "name": "📊 한국 증시 일일 마감 리포트",
-        "path": ".github/workflows/daily-report.yml",
-        "state": "disabled_manually",
-        "html_url": "https://github.com/jinhae8971/korean-market-bot/blob/main/.github/workflows/daily-report.yml"
-      },
-      "cron": "0 8 * * 1-5",
-      "runs": [
-        {
-          "run_number": 26,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-17T09:14:43Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/24557502647"
-        },
-        {
-          "run_number": 25,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-16T09:16:05Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/24502215736"
-        },
-        {
-          "run_number": 24,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-15T09:16:50Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/24446470689"
-        },
-        {
-          "run_number": 23,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-14T09:15:20Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/24390975737"
-        },
-        {
-          "run_number": 22,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-13T09:52:28Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/24337067444"
-        },
-        {
-          "run_number": 18,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-11T09:33:35Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/22945967363"
-        },
-        {
-          "run_number": 21,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-11T08:28:18Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/22943555022"
-        }
-      ]
-    },
-    {
-      "repo": "korean-market-bot",
-      "wf": {
-        "id": 236636495,
-        "name": "🗂 주간 국내 공시 리포트",
-        "path": ".github/workflows/dart-weekly-report.yml",
-        "state": "disabled_manually",
-        "html_url": "https://github.com/jinhae8971/korean-market-bot/blob/main/.github/workflows/dart-weekly-report.yml"
-      },
-      "cron": "0 22 * * 5",
-      "runs": [
-        {
-          "run_number": 26,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-17T09:14:43Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/24557502647"
-        },
-        {
-          "run_number": 25,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-16T09:16:05Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/24502215736"
-        },
-        {
-          "run_number": 24,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-15T09:16:50Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/24446470689"
-        },
-        {
-          "run_number": 23,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-14T09:15:20Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/24390975737"
-        },
-        {
-          "run_number": 22,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-13T09:52:28Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/24337067444"
-        },
-        {
-          "run_number": 18,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-11T09:33:35Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/22945967363"
-        },
-        {
-          "run_number": 21,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-11T08:28:18Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/22943555022"
-        }
-      ]
-    },
-    {
-      "repo": "korean-market-bot",
-      "wf": {
-        "id": 236553677,
-        "name": "🇺🇸 US Market Daily Report",
-        "path": ".github/workflows/us-daily-report.yml",
-        "state": "disabled_manually",
-        "html_url": "https://github.com/jinhae8971/korean-market-bot/blob/main/.github/workflows/us-daily-report.yml"
-      },
-      "cron": "0 9 * * 1-5",
-      "runs": [
-        {
-          "run_number": 26,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-17T09:14:43Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/24557502647"
-        },
-        {
-          "run_number": 25,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-16T09:16:05Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/24502215736"
-        },
-        {
-          "run_number": 24,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-15T09:16:50Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/24446470689"
-        },
-        {
-          "run_number": 23,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-14T09:15:20Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/24390975737"
-        },
-        {
-          "run_number": 22,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-13T09:52:28Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/24337067444"
-        },
-        {
-          "run_number": 18,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-11T09:33:35Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/22945967363"
-        },
-        {
-          "run_number": 21,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-11T08:28:18Z",
-          "html_url": "https://github.com/jinhae8971/korean-market-bot/actions/runs/22943555022"
-        }
-      ]
-    },
-    {
-      "repo": "lgd-news-monitor",
-      "wf": {
-        "id": 236856279,
-        "name": "LGD News Monitor & Fact-Check",
-        "path": ".github/workflows/monitor.yml",
-        "state": "disabled_manually",
-        "html_url": "https://github.com/jinhae8971/lgd-news-monitor/blob/main/.github/workflows/monitor.yml"
-      },
-      "cron": "30 21 * * *",
-      "runs": [
-        {
-          "run_number": 11,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-28T21:41:55Z",
-          "html_url": "https://github.com/jinhae8971/lgd-news-monitor/actions/runs/22529620365"
-        },
-        {
-          "run_number": 10,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-27T21:50:38Z",
-          "html_url": "https://github.com/jinhae8971/lgd-news-monitor/actions/runs/22505159959"
-        },
-        {
-          "run_number": 9,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-26T21:53:12Z",
-          "html_url": "https://github.com/jinhae8971/lgd-news-monitor/actions/runs/22462815039"
-        },
-        {
-          "run_number": 8,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-25T21:55:44Z",
-          "html_url": "https://github.com/jinhae8971/lgd-news-monitor/actions/runs/22417664379"
-        },
-        {
-          "run_number": 7,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-24T21:58:01Z",
-          "html_url": "https://github.com/jinhae8971/lgd-news-monitor/actions/runs/22371831495"
-        },
-        {
-          "run_number": 6,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-23T22:07:19Z",
-          "html_url": "https://github.com/jinhae8971/lgd-news-monitor/actions/runs/22326844868"
-        },
-        {
-          "run_number": 5,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-22T21:46:17Z",
-          "html_url": "https://github.com/jinhae8971/lgd-news-monitor/actions/runs/22286010290"
-        }
-      ]
-    },
-    {
-      "repo": "livebench-notify",
-      "wf": {
-        "id": 236850987,
-        "name": "LiveBench Leaderboard Notify",
-        "path": ".github/workflows/livebench.yml",
-        "state": "disabled_manually",
-        "html_url": "https://github.com/jinhae8971/livebench-notify/blob/main/.github/workflows/livebench.yml"
-      },
-      "cron": "0 0 * * *",
-      "runs": [
-        {
-          "run_number": 13,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T01:55:34Z",
-          "html_url": "https://github.com/jinhae8971/livebench-notify/actions/runs/22533638201"
-        },
-        {
-          "run_number": 12,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-28T01:25:59Z",
-          "html_url": "https://github.com/jinhae8971/livebench-notify/actions/runs/22510340708"
-        },
-        {
-          "run_number": 11,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-27T01:44:06Z",
-          "html_url": "https://github.com/jinhae8971/livebench-notify/actions/runs/22469181931"
-        },
-        {
-          "run_number": 10,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-26T01:45:22Z",
-          "html_url": "https://github.com/jinhae8971/livebench-notify/actions/runs/22424223957"
-        },
-        {
-          "run_number": 9,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-25T01:49:57Z",
-          "html_url": "https://github.com/jinhae8971/livebench-notify/actions/runs/22378512413"
-        },
-        {
-          "run_number": 8,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-24T01:47:28Z",
-          "html_url": "https://github.com/jinhae8971/livebench-notify/actions/runs/22333080797"
-        },
-        {
-          "run_number": 7,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-23T01:49:56Z",
-          "html_url": "https://github.com/jinhae8971/livebench-notify/actions/runs/22290174690"
-        }
-      ]
-    },
-    {
-      "repo": "memory-price-tracker",
-      "wf": {
-        "id": 236642604,
-        "name": "💾 메모리 가격 주간 리포트",
-        "path": ".github/workflows/memory-weekly-report.yml",
-        "state": "disabled_manually",
-        "html_url": "https://github.com/jinhae8971/memory-price-tracker/blob/main/.github/workflows/memory-weekly-report.yml"
-      },
-      "cron": "0 22 * * 6",
-      "runs": [
-        {
-          "run_number": 14,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-07T22:30:33Z",
-          "html_url": "https://github.com/jinhae8971/memory-price-tracker/actions/runs/22808609868"
-        },
-        {
-          "run_number": 13,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T05:17:04Z",
-          "html_url": "https://github.com/jinhae8971/memory-price-tracker/actions/runs/22536634865"
-        },
-        {
-          "run_number": 12,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T05:11:20Z",
-          "html_url": "https://github.com/jinhae8971/memory-price-tracker/actions/runs/22536548832"
-        },
-        {
-          "run_number": 11,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T05:07:41Z",
-          "html_url": "https://github.com/jinhae8971/memory-price-tracker/actions/runs/22536492221"
-        },
-        {
-          "run_number": 10,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-28T22:13:03Z",
-          "html_url": "https://github.com/jinhae8971/memory-price-tracker/actions/runs/22530136207"
-        },
-        {
-          "run_number": 9,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-28T03:11:42Z",
-          "html_url": "https://github.com/jinhae8971/memory-price-tracker/actions/runs/22512130823"
-        },
-        {
-          "run_number": 8,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-28T02:52:22Z",
-          "html_url": "https://github.com/jinhae8971/memory-price-tracker/actions/runs/22511808686"
-        }
-      ]
-    },
-    {
-      "repo": "realestate-permit-tracker",
-      "wf": {
-        "id": 236653953,
-        "name": "재개발/재건축 주간 인허가 리포트",
-        "path": ".github/workflows/realestate-weekly.yml",
-        "state": "disabled_manually",
-        "html_url": "https://github.com/jinhae8971/realestate-permit-tracker/blob/main/.github/workflows/realestate-weekly.yml"
-      },
-      "cron": "0 23 * * 6",
-      "runs": [
-        {
-          "run_number": 7,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-28T23:13:08Z",
-          "html_url": "https://github.com/jinhae8971/realestate-permit-tracker/actions/runs/22531106609"
-        },
-        {
-          "run_number": 6,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-24T09:49:46Z",
-          "html_url": "https://github.com/jinhae8971/realestate-permit-tracker/actions/runs/22345467751"
-        },
-        {
-          "run_number": 5,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-21T23:15:03Z",
-          "html_url": "https://github.com/jinhae8971/realestate-permit-tracker/actions/runs/22266231876"
-        },
-        {
-          "run_number": 4,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-21T13:06:27Z",
-          "html_url": "https://github.com/jinhae8971/realestate-permit-tracker/actions/runs/22257341203"
-        },
-        {
-          "run_number": 3,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-21T04:30:54Z",
-          "html_url": "https://github.com/jinhae8971/realestate-permit-tracker/actions/runs/22250348953"
-        },
-        {
-          "run_number": 2,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-02-21T04:28:59Z",
-          "html_url": "https://github.com/jinhae8971/realestate-permit-tracker/actions/runs/22250319648"
-        },
-        {
-          "run_number": 1,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-20T15:15:51Z",
-          "html_url": "https://github.com/jinhae8971/realestate-permit-tracker/actions/runs/22229578070"
-        }
-      ]
-    },
-    {
-      "repo": "competitor-ai-tracker",
-      "wf": {
-        "id": 237174445,
-        "name": "Competitor AI R&D Tracker",
-        "path": ".github/workflows/competitor-ai-tracker.yml",
-        "state": "disabled_manually",
-        "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/blob/main/.github/workflows/competitor-ai-tracker.yml"
-      },
-      "cron": "10 22 * * 0-4",
-      "runs": [
-        {
-          "run_number": 12,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-26T22:49:05Z",
-          "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22464580515"
-        },
-        {
-          "run_number": 11,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-25T22:48:18Z",
-          "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22419378438"
-        },
-        {
-          "run_number": 10,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-24T22:48:17Z",
-          "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22373441613"
-        },
-        {
-          "run_number": 9,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-24T22:02:35Z",
-          "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22371979909"
-        },
-        {
-          "run_number": 8,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-23T23:32:18Z",
-          "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22329474752"
-        },
-        {
-          "run_number": 7,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-23T23:27:47Z",
-          "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22329341191"
-        },
-        {
-          "run_number": 6,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-02-23T22:55:38Z",
-          "html_url": "https://github.com/jinhae8971/competitor-ai-tracker/actions/runs/22328383622"
-        }
-      ]
-    },
     {
       "repo": "crypto-monitor",
       "wf": {
@@ -570,123 +212,6 @@
       ]
     },
     {
-      "repo": "kospi-peak-detector",
-      "wf": {
-        "id": 240033808,
-        "name": "📈 코스피 고점 판독기",
-        "path": ".github/workflows/kospi-peak-detector.yml",
-        "state": "disabled_manually",
-        "html_url": "https://github.com/jinhae8971/kospi-peak-detector/blob/main/.github/workflows/kospi-peak-detector.yml"
-      },
-      "cron": "0 22 * * 6",
-      "runs": [
-        {
-          "run_number": 22,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-11T22:20:29Z",
-          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/24292892443"
-        },
-        {
-          "run_number": 19,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-11T22:19:55Z",
-          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/24292883537"
-        },
-        {
-          "run_number": 21,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-10T23:55:01Z",
-          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/24269507366"
-        },
-        {
-          "run_number": 18,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-10T23:54:26Z",
-          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/24269491643"
-        },
-        {
-          "run_number": 20,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-04T22:18:22Z",
-          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/23988763740"
-        },
-        {
-          "run_number": 17,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-04T22:17:48Z",
-          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/23988756207"
-        },
-        {
-          "run_number": 19,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-28T22:18:00Z",
-          "html_url": "https://github.com/jinhae8971/kospi-peak-detector/actions/runs/23695558612"
-        }
-      ]
-    },
-    {
-      "repo": "gmail-auto-cleanup",
-      "wf": {
-        "id": 239711242,
-        "name": "Gmail 자동 정리",
-        "path": ".github/workflows/gmail-cleanup.yml",
-        "state": "disabled_manually",
-        "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/blob/main/.github/workflows/gmail-cleanup.yml"
-      },
-      "cron": "30 9 * * 1-5",
-      "runs": [
-        {
-          "run_number": 5,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-03-11T10:08:21Z",
-          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22947309420"
-        },
-        {
-          "run_number": 4,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-03-10T10:07:40Z",
-          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22897319367"
-        },
-        {
-          "run_number": 1,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-09T10:29:28Z",
-          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22849178189"
-        },
-        {
-          "run_number": 3,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-03-09T10:25:04Z",
-          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22849011958"
-        },
-        {
-          "run_number": 2,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-02T02:33:33Z",
-          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22559029483"
-        },
-        {
-          "run_number": 1,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-02-28T01:31:43Z",
-          "html_url": "https://github.com/jinhae8971/gmail-auto-cleanup/actions/runs/22510447721"
-        }
-      ]
-    },
-    {
       "repo": "korean-stock-agent",
       "wf": {
         "id": 242830429,
@@ -698,25 +223,11 @@
       "cron": "0 8 * * 1-5",
       "runs": [
         {
-          "run_number": 75,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-24T09:48:59Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24883294808"
-        },
-        {
           "run_number": 39,
           "conclusion": "success",
           "status": "completed",
           "created_at": "2026-04-24T09:48:23Z",
           "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24883270375"
-        },
-        {
-          "run_number": 74,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-23T09:48:55Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24828574391"
         },
         {
           "run_number": 38,
@@ -726,13 +237,6 @@
           "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24828550319"
         },
         {
-          "run_number": 73,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-22T09:26:28Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24770812397"
-        },
-        {
           "run_number": 37,
           "conclusion": "success",
           "status": "completed",
@@ -740,332 +244,239 @@
           "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24770786060"
         },
         {
-          "run_number": 72,
+          "run_number": 36,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-04-21T09:44:48Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24715557048"
-        }
-      ]
-    },
-    {
-      "repo": "korean-stock-agent",
-      "wf": {
-        "id": 240094820,
-        "name": "Korean Stock Agent — Daily Report",
-        "path": ".github/workflows/main.yml",
-        "state": "disabled_manually",
-        "html_url": "https://github.com/jinhae8971/korean-stock-agent/blob/main/.github/workflows/main.yml"
-      },
-      "cron": "0 23 * * 0-4",
-      "runs": [
-        {
-          "run_number": 75,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-24T09:48:59Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24883294808"
+          "created_at": "2026-04-21T09:44:13Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24715531630"
         },
         {
-          "run_number": 39,
+          "run_number": 35,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-04-24T09:48:23Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24883270375"
+          "created_at": "2026-04-20T10:02:47Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24660477438"
         },
         {
-          "run_number": 74,
+          "run_number": 34,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-04-23T09:48:55Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24828574391"
+          "created_at": "2026-04-17T09:09:41Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24557297617"
         },
-        {
-          "run_number": 38,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-23T09:48:20Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24828550319"
-        },
-        {
-          "run_number": 73,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-22T09:26:28Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24770812397"
-        },
-        {
-          "run_number": 37,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-22T09:25:51Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24770786060"
-        },
-        {
-          "run_number": 72,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-21T09:44:48Z",
-          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24715557048"
-        }
-      ]
-    },
-    {
-      "repo": "us-market-agent",
-      "wf": {
-        "id": 240126478,
-        "name": "US Market Agent — Daily Report",
-        "path": ".github/workflows/main.yml",
-        "state": "disabled_manually",
-        "html_url": "https://github.com/jinhae8971/us-market-agent/blob/main/.github/workflows/main.yml"
-      },
-      "cron": "0 23 * * 0-4",
-      "runs": [
-        {
-          "run_number": 22,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-13T23:26:02Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/23074588940"
-        },
-        {
-          "run_number": 8,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-13T23:22:48Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/23074504092"
-        },
-        {
-          "run_number": 21,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-05T23:53:53Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22742120025"
-        },
-        {
-          "run_number": 7,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-05T23:50:38Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22742027739"
-        },
-        {
-          "run_number": 20,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-04T23:33:00Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22694554798"
-        },
-        {
-          "run_number": 6,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-04T23:29:54Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22694455819"
-        },
-        {
-          "run_number": 19,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-03T23:30:41Z",
-          "html_url": "https://github.com/jinhae8971/us-market-agent/actions/runs/22647635702"
-        }
-      ]
-    },
-    {
-      "repo": "etf-strategist",
-      "wf": {
-        "id": 240142776,
-        "name": "ETF 매매전략가 — 매일 09:00 KST",
-        "path": ".github/workflows/etf-strategist.yml",
-        "state": "disabled_manually",
-        "html_url": "https://github.com/jinhae8971/etf-strategist/blob/main/.github/workflows/etf-strategist.yml"
-      },
-      "cron": "0 0 * * *",
-      "runs": [
-        {
-          "run_number": 27,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T15:15:48Z",
-          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546243754"
-        },
-        {
-          "run_number": 8,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T15:13:35Z",
-          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546204742"
-        },
-        {
-          "run_number": 26,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T15:12:42Z",
-          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546188292"
-        },
-        {
-          "run_number": 25,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T15:05:39Z",
-          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546057978"
-        },
-        {
-          "run_number": 7,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T15:03:14Z",
-          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546012582"
-        },
-        {
-          "run_number": 24,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T15:03:14Z",
-          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22546012569"
-        },
-        {
-          "run_number": 23,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-03-01T14:33:26Z",
-          "html_url": "https://github.com/jinhae8971/etf-strategist/actions/runs/22545502393"
-        }
-      ]
-    },
-    {
-      "repo": "kospi-strategy",
-      "wf": {
-        "id": 243217019,
-        "name": "KOSPI Strategy — Daily Report",
-        "path": ".github/workflows/daily-strategy.yml",
-        "state": "disabled_manually",
-        "html_url": "https://github.com/jinhae8971/kospi-strategy/blob/main/.github/workflows/daily-strategy.yml"
-      },
-      "cron": "0 12 * * 0-4",
-      "runs": [
         {
           "run_number": 33,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-04-16T13:20:31Z",
-          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/24512572408"
-        },
-        {
-          "run_number": 32,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-16T13:19:11Z",
-          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/24512510599"
-        },
-        {
-          "run_number": 32,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-15T13:16:07Z",
-          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/24456664083"
-        },
-        {
-          "run_number": 31,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-15T13:12:48Z",
-          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/24456503915"
-        },
-        {
-          "run_number": 31,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-14T13:16:20Z",
-          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/24401093749"
-        },
-        {
-          "run_number": 30,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-14T13:14:59Z",
-          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/24401028655"
-        },
-        {
-          "run_number": 30,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-13T13:15:42Z",
-          "html_url": "https://github.com/jinhae8971/kospi-strategy/actions/runs/24345406340"
-        }
-      ]
-    },
-    {
-      "repo": "personal-terminal",
-      "wf": {
-        "id": 262221769,
-        "name": ".github/workflows/nightly-backfill.yml",
-        "path": ".github/workflows/nightly-backfill.yml",
-        "state": "disabled_manually",
-        "html_url": "https://github.com/jinhae8971/personal-terminal/blob/main/.github/workflows/nightly-backfill.yml"
-      },
-      "cron": "0 9 * * 0-4",
-      "runs": [
-        {
-          "run_number": 11,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-04-17T12:38:54Z",
-          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24565475721"
-        },
-        {
-          "run_number": 10,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-04-17T11:51:05Z",
-          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24563610205"
-        },
-        {
-          "run_number": 9,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-04-17T11:13:36Z",
-          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24562220739"
-        },
-        {
-          "run_number": 8,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-04-17T11:00:50Z",
-          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24561741690"
-        },
-        {
-          "run_number": 7,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-04-17T10:53:40Z",
-          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24561471055"
-        },
-        {
-          "run_number": 6,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-04-17T10:47:56Z",
-          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24561253368"
-        },
-        {
-          "run_number": 5,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-04-17T10:37:05Z",
-          "html_url": "https://github.com/jinhae8971/personal-terminal/actions/runs/24560843829"
+          "created_at": "2026-04-16T09:10:25Z",
+          "html_url": "https://github.com/jinhae8971/korean-stock-agent/actions/runs/24501975050"
         }
       ]
     },
     {
       "repo": "crypto-research-agent",
       "wf": {
-        "id": 261744569,
+        "id": 266479575,
         "name": "Daily Crypto Research",
-        "path": ".github/workflows/daily.yml",
+        "path": ".github/workflows/daily-active.yml",
         "state": "active",
-        "html_url": "https://github.com/jinhae8971/crypto-research-agent/blob/main/.github/workflows/daily.yml"
+        "html_url": "https://github.com/jinhae8971/crypto-research-agent/blob/main/.github/workflows/daily-active.yml"
+      },
+      "cron": "0 21 * * *",
+      "runs": []
+    },
+    {
+      "repo": "kospi-research-agent",
+      "wf": {
+        "id": 266479653,
+        "name": "Daily KOSPI Research",
+        "path": ".github/workflows/daily-active.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/kospi-research-agent/blob/main/.github/workflows/daily-active.yml"
+      },
+      "cron": "0 21 * * *",
+      "runs": []
+    },
+    {
+      "repo": "sp500-research-agent",
+      "wf": {
+        "id": 266479747,
+        "name": "Daily S&P 500 Research",
+        "path": ".github/workflows/daily-active.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/sp500-research-agent/blob/main/.github/workflows/daily-active.yml"
+      },
+      "cron": "0 21 * * *",
+      "runs": []
+    },
+    {
+      "repo": "nasdaq-research-agent",
+      "wf": {
+        "id": 266479834,
+        "name": "Daily NASDAQ-100 Research",
+        "path": ".github/workflows/daily-active.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/blob/main/.github/workflows/daily-active.yml"
+      },
+      "cron": "0 21 * * *",
+      "runs": []
+    },
+    {
+      "repo": "dow30-research-agent",
+      "wf": {
+        "id": 266479971,
+        "name": "Daily Dow 30 Research",
+        "path": ".github/workflows/daily-active.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/dow30-research-agent/blob/main/.github/workflows/daily-active.yml"
+      },
+      "cron": "0 21 * * *",
+      "runs": []
+    },
+    {
+      "repo": "global-market-orchestrator",
+      "wf": {
+        "id": 266480070,
+        "name": "Daily Global Orchestrator",
+        "path": ".github/workflows/daily-active.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/global-market-orchestrator/blob/main/.github/workflows/daily-active.yml"
+      },
+      "cron": "0 22 * * *",
+      "runs": []
+    },
+    {
+      "repo": "crypto-cycle-intelligence",
+      "wf": {
+        "id": 264528338,
+        "name": "pipeline",
+        "path": ".github/workflows/pipeline.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/crypto-cycle-intelligence/blob/main/.github/workflows/pipeline.yml"
+      },
+      "cron": "0 21 * * *",
+      "runs": [
+        {
+          "run_number": 22,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-26T02:14:02Z",
+          "html_url": "https://github.com/jinhae8971/crypto-cycle-intelligence/actions/runs/24946051689"
+        },
+        {
+          "run_number": 21,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-26T00:05:41Z",
+          "html_url": "https://github.com/jinhae8971/crypto-cycle-intelligence/actions/runs/24943869258"
+        },
+        {
+          "run_number": 20,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-25T18:42:43Z",
+          "html_url": "https://github.com/jinhae8971/crypto-cycle-intelligence/actions/runs/24937939991"
+        },
+        {
+          "run_number": 19,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-25T12:54:44Z",
+          "html_url": "https://github.com/jinhae8971/crypto-cycle-intelligence/actions/runs/24931378209"
+        },
+        {
+          "run_number": 18,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-25T07:08:00Z",
+          "html_url": "https://github.com/jinhae8971/crypto-cycle-intelligence/actions/runs/24925364879"
+        },
+        {
+          "run_number": 17,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-25T02:00:22Z",
+          "html_url": "https://github.com/jinhae8971/crypto-cycle-intelligence/actions/runs/24919914671"
+        },
+        {
+          "run_number": 16,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-25T00:07:20Z",
+          "html_url": "https://github.com/jinhae8971/crypto-cycle-intelligence/actions/runs/24917503042"
+        }
+      ]
+    },
+    {
+      "repo": "ai-semi-cycle-intelligence",
+      "wf": {
+        "id": 264902668,
+        "name": "pipeline",
+        "path": ".github/workflows/pipeline.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/ai-semi-cycle-intelligence/blob/main/.github/workflows/pipeline.yml"
+      },
+      "cron": "0 21 * * *",
+      "runs": [
+        {
+          "run_number": 12,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-25T22:47:47Z",
+          "html_url": "https://github.com/jinhae8971/ai-semi-cycle-intelligence/actions/runs/24942514452"
+        },
+        {
+          "run_number": 11,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-24T22:49:44Z",
+          "html_url": "https://github.com/jinhae8971/ai-semi-cycle-intelligence/actions/runs/24915370241"
+        },
+        {
+          "run_number": 10,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-24T21:57:08Z",
+          "html_url": "https://github.com/jinhae8971/ai-semi-cycle-intelligence/actions/runs/24913702680"
+        },
+        {
+          "run_number": 9,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-24T18:04:21Z",
+          "html_url": "https://github.com/jinhae8971/ai-semi-cycle-intelligence/actions/runs/24904449102"
+        },
+        {
+          "run_number": 8,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-24T15:42:46Z",
+          "html_url": "https://github.com/jinhae8971/ai-semi-cycle-intelligence/actions/runs/24898251765"
+        },
+        {
+          "run_number": 7,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-23T22:56:03Z",
+          "html_url": "https://github.com/jinhae8971/ai-semi-cycle-intelligence/actions/runs/24862978595"
+        },
+        {
+          "run_number": 6,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-04-23T21:56:42Z",
+          "html_url": "https://github.com/jinhae8971/ai-semi-cycle-intelligence/actions/runs/24860896409"
+        }
+      ]
+    },
+    {
+      "repo": "cycle-intelligence-hub",
+      "wf": {
+        "id": 264913768,
+        "name": "hub-pipeline",
+        "path": ".github/workflows/hub-pipeline.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/cycle-intelligence-hub/blob/main/.github/workflows/hub-pipeline.yml"
       },
       "cron": "0 22 * * *",
       "runs": [
@@ -1073,360 +484,50 @@
           "run_number": 18,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-04-25T22:47:41Z",
-          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24942512814"
+          "created_at": "2026-04-26T02:04:58Z",
+          "html_url": "https://github.com/jinhae8971/cycle-intelligence-hub/actions/runs/24945887014"
         },
         {
           "run_number": 17,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-04-24T22:49:37Z",
-          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24915367366"
+          "created_at": "2026-04-26T01:12:40Z",
+          "html_url": "https://github.com/jinhae8971/cycle-intelligence-hub/actions/runs/24944984724"
         },
         {
           "run_number": 16,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-04-23T22:56:01Z",
-          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24862977684"
+          "created_at": "2026-04-25T18:40:23Z",
+          "html_url": "https://github.com/jinhae8971/cycle-intelligence-hub/actions/runs/24937893403"
         },
         {
           "run_number": 15,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-04-22T22:54:48Z",
-          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24806876028"
+          "created_at": "2026-04-25T12:47:13Z",
+          "html_url": "https://github.com/jinhae8971/cycle-intelligence-hub/actions/runs/24931244654"
         },
         {
           "run_number": 14,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-04-21T22:47:39Z",
-          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24750425801"
+          "created_at": "2026-04-25T07:06:08Z",
+          "html_url": "https://github.com/jinhae8971/cycle-intelligence-hub/actions/runs/24925333055"
         },
         {
           "run_number": 13,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-04-20T22:54:08Z",
-          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24694514071"
+          "created_at": "2026-04-25T01:51:31Z",
+          "html_url": "https://github.com/jinhae8971/cycle-intelligence-hub/actions/runs/24919749968"
         },
         {
           "run_number": 12,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-04-19T22:45:36Z",
-          "html_url": "https://github.com/jinhae8971/crypto-research-agent/actions/runs/24640983727"
-        }
-      ]
-    },
-    {
-      "repo": "kospi-research-agent",
-      "wf": {
-        "id": 261744576,
-        "name": "Daily KOSPI Research",
-        "path": ".github/workflows/daily.yml",
-        "state": "active",
-        "html_url": "https://github.com/jinhae8971/kospi-research-agent/blob/main/.github/workflows/daily.yml"
-      },
-      "cron": "0 22 * * 0-4",
-      "runs": [
-        {
-          "run_number": 24,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-23T22:49:58Z",
-          "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24862770302"
-        },
-        {
-          "run_number": 23,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-22T22:50:50Z",
-          "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24806743856"
-        },
-        {
-          "run_number": 22,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-21T22:40:02Z",
-          "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24750149431"
-        },
-        {
-          "run_number": 21,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-20T22:47:16Z",
-          "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24694277897"
-        },
-        {
-          "run_number": 20,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-19T22:38:26Z",
-          "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24640855591"
-        },
-        {
-          "run_number": 19,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-18T01:05:56Z",
-          "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24593305679"
-        },
-        {
-          "run_number": 18,
-          "conclusion": "failure",
-          "status": "completed",
-          "created_at": "2026-04-18T00:29:53Z",
-          "html_url": "https://github.com/jinhae8971/kospi-research-agent/actions/runs/24592554291"
-        }
-      ]
-    },
-    {
-      "repo": "sp500-research-agent",
-      "wf": {
-        "id": 261744581,
-        "name": "Daily S&P 500 Research",
-        "path": ".github/workflows/daily.yml",
-        "state": "active",
-        "html_url": "https://github.com/jinhae8971/sp500-research-agent/blob/main/.github/workflows/daily.yml"
-      },
-      "cron": "0 22 * * 0-4",
-      "runs": [
-        {
-          "run_number": 22,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-23T22:40:30Z",
-          "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24862460413"
-        },
-        {
-          "run_number": 21,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-22T22:43:46Z",
-          "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24806501817"
-        },
-        {
-          "run_number": 20,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-21T22:35:49Z",
-          "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24749998340"
-        },
-        {
-          "run_number": 19,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-20T22:40:06Z",
-          "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24694027401"
-        },
-        {
-          "run_number": 18,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-19T22:31:40Z",
-          "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24640735555"
-        },
-        {
-          "run_number": 17,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-18T01:05:57Z",
-          "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24593306070"
-        },
-        {
-          "run_number": 16,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-18T00:29:54Z",
-          "html_url": "https://github.com/jinhae8971/sp500-research-agent/actions/runs/24592554669"
-        }
-      ]
-    },
-    {
-      "repo": "nasdaq-research-agent",
-      "wf": {
-        "id": 261744653,
-        "name": "Daily NASDAQ-100 Research",
-        "path": ".github/workflows/daily.yml",
-        "state": "active",
-        "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/blob/main/.github/workflows/daily.yml"
-      },
-      "cron": "0 22 * * 0-4",
-      "runs": [
-        {
-          "run_number": 23,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-23T22:40:30Z",
-          "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24862460541"
-        },
-        {
-          "run_number": 22,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-22T22:43:41Z",
-          "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24806498025"
-        },
-        {
-          "run_number": 21,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-21T22:35:50Z",
-          "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24749998546"
-        },
-        {
-          "run_number": 20,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-20T22:40:06Z",
-          "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24694027561"
-        },
-        {
-          "run_number": 19,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-19T22:31:40Z",
-          "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24640735605"
-        },
-        {
-          "run_number": 18,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-18T01:05:58Z",
-          "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24593306402"
-        },
-        {
-          "run_number": 17,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-18T00:29:55Z",
-          "html_url": "https://github.com/jinhae8971/nasdaq-research-agent/actions/runs/24592554997"
-        }
-      ]
-    },
-    {
-      "repo": "dow30-research-agent",
-      "wf": {
-        "id": 261744669,
-        "name": "Daily Dow 30 Research",
-        "path": ".github/workflows/daily.yml",
-        "state": "active",
-        "html_url": "https://github.com/jinhae8971/dow30-research-agent/blob/main/.github/workflows/daily.yml"
-      },
-      "cron": "0 22 * * 0-4",
-      "runs": [
-        {
-          "run_number": 22,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-23T22:49:25Z",
-          "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24862751996"
-        },
-        {
-          "run_number": 21,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-22T22:50:36Z",
-          "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24806735753"
-        },
-        {
-          "run_number": 20,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-21T22:39:12Z",
-          "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24750119789"
-        },
-        {
-          "run_number": 19,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-20T22:45:54Z",
-          "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24694229193"
-        },
-        {
-          "run_number": 18,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-19T22:38:15Z",
-          "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24640852498"
-        },
-        {
-          "run_number": 17,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-18T00:56:02Z",
-          "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24593098475"
-        },
-        {
-          "run_number": 16,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-18T00:29:56Z",
-          "html_url": "https://github.com/jinhae8971/dow30-research-agent/actions/runs/24592555293"
-        }
-      ]
-    },
-    {
-      "repo": "global-market-orchestrator",
-      "wf": {
-        "id": 261744682,
-        "name": "Daily Global Orchestrator",
-        "path": ".github/workflows/daily.yml",
-        "state": "active",
-        "html_url": "https://github.com/jinhae8971/global-market-orchestrator/blob/main/.github/workflows/daily.yml"
-      },
-      "cron": "30 23 * * *",
-      "runs": [
-        {
-          "run_number": 16,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-25T00:00:47Z",
-          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24917344138"
-        },
-        {
-          "run_number": 15,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-24T00:06:41Z",
-          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24865175574"
-        },
-        {
-          "run_number": 14,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-23T00:06:34Z",
-          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24809162941"
-        },
-        {
-          "run_number": 13,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-21T23:57:47Z",
-          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24752721811"
-        },
-        {
-          "run_number": 12,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-21T00:03:16Z",
-          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24696758983"
-        },
-        {
-          "run_number": 11,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-19T23:59:41Z",
-          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24642315333"
-        },
-        {
-          "run_number": 10,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-04-18T23:57:51Z",
-          "html_url": "https://github.com/jinhae8971/global-market-orchestrator/actions/runs/24616755691"
+          "created_at": "2026-04-25T01:04:58Z",
+          "html_url": "https://github.com/jinhae8971/cycle-intelligence-hub/actions/runs/24918811715"
         }
       ]
     },
@@ -1436,7 +537,7 @@
         "id": 262632168,
         "name": "CI",
         "path": ".github/workflows/ci.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/trendline-detector/blob/main/.github/workflows/ci.yml"
       },
       "cron": "0 23 * * 0",
@@ -1463,7 +564,7 @@
         "id": 262631015,
         "name": "Daily Pipeline",
         "path": ".github/workflows/daily_pipeline.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/chart-analyzer/blob/main/.github/workflows/daily_pipeline.yml"
       },
       "cron": "0 23 * * 1-5",
@@ -1511,7 +612,7 @@
         "id": 262628164,
         "name": "Weekly Backtest",
         "path": ".github/workflows/weekly_backtest.yml",
-        "state": "active",
+        "state": "disabled_manually",
         "html_url": "https://github.com/jinhae8971/backtest-lab/blob/main/.github/workflows/weekly_backtest.yml"
       },
       "cron": "0 23 * * 0",

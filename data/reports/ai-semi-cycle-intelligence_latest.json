@@ -1,0 +1,2806 @@
+{
+  "generated_at": "2026-04-25T22:48:19.591518+00:00",
+  "ascs": {
+    "composite": 77.21,
+    "phase": "Late Bull",
+    "emoji": "🔥",
+    "color": "#e76f51",
+    "dimensions": {
+      "valuation": 56.85,
+      "earnings": 82.86,
+      "capital": 73.36,
+      "sentiment": 85.07,
+      "macro": null,
+      "technical": 99.58
+    },
+    "indicators": [
+      {
+        "metric": "nvda_forward_pe",
+        "raw": 18.530712,
+        "score": 0.0,
+        "dimension": "valuation",
+        "bottom": 25,
+        "top": 70
+      },
+      {
+        "metric": "nvda_price_to_sales",
+        "raw": 23.441925,
+        "score": 57.192314814814814,
+        "dimension": "valuation",
+        "bottom": 8,
+        "top": 35
+      },
+      {
+        "metric": "sox_avg_pe_pctl",
+        "raw": 52.60264827272727,
+        "score": 46.57521181818181,
+        "dimension": "valuation",
+        "bottom": 20,
+        "top": 90
+      },
+      {
+        "metric": "top10_mcap_to_gdp_pct",
+        "raw": 40.58316477781334,
+        "score": 100.0,
+        "dimension": "valuation",
+        "bottom": 5,
+        "top": 18
+      },
+      {
+        "metric": "kr_semi_avg_pe",
+        "raw": 25.582104616666665,
+        "score": 100.0,
+        "dimension": "valuation",
+        "bottom": 5,
+        "top": 25
+      },
+      {
+        "metric": "kr_us_pe_spread",
+        "raw": 3.7767693133333324,
+        "score": 84.89292274666667,
+        "dimension": "valuation",
+        "bottom": 25,
+        "top": 0
+      },
+      {
+        "metric": "nvda_revenue_growth_pct",
+        "raw": 73.2,
+        "score": 75.63636363636364,
+        "dimension": "earnings",
+        "bottom": -10,
+        "top": 100
+      },
+      {
+        "metric": "semi_avg_revenue_growth_pct",
+        "raw": 41.75,
+        "score": 75.66666666666667,
+        "dimension": "earnings",
+        "bottom": -15,
+        "top": 60
+      },
+      {
+        "metric": "hyperscaler_capex_yoy_pct",
+        "raw": 94.81365068614464,
+        "score": 100.0,
+        "dimension": "earnings",
+        "bottom": -5,
+        "top": 50
+      },
+      {
+        "metric": "samsung_revenue_growth_pct",
+        "raw": 23.799999999999997,
+        "score": 62.57142857142857,
+        "dimension": "earnings",
+        "bottom": -20,
+        "top": 50
+      },
+      {
+        "metric": "skhynix_revenue_growth_pct",
+        "raw": 198.10000000000002,
+        "score": 100.0,
+        "dimension": "earnings",
+        "bottom": -30,
+        "top": 80
+      },
+      {
+        "metric": "memory_capex_yoy_pct",
+        "raw": 89.08895778678749,
+        "score": 100.0,
+        "dimension": "capital",
+        "bottom": -30,
+        "top": 50
+      },
+      {
+        "metric": "semi_capex_to_revenue_pct",
+        "raw": 18.276575666020957,
+        "score": 46.71170757282253,
+        "dimension": "capital",
+        "bottom": 8,
+        "top": 30
+      },
+      {
+        "metric": "vix",
+        "raw": 18.709999084472656,
+        "score": 67.87500381469727,
+        "dimension": "sentiment",
+        "bottom": 35,
+        "top": 11
+      },
+      {
+        "metric": "sox_above_sma200_pct",
+        "raw": 48.284521271246476,
+        "score": 100.0,
+        "dimension": "sentiment",
+        "bottom": -20,
+        "top": 35
+      },
+      {
+        "metric": "nvda_short_pct",
+        "raw": 1.2200001,
+        "score": 83.99999777777778,
+        "dimension": "sentiment",
+        "bottom": 5,
+        "top": 0.5
+      },
+      {
+        "metric": "kospi_above_sma200_pct",
+        "raw": 50.521409385326365,
+        "score": 100.0,
+        "dimension": "sentiment",
+        "bottom": -15,
+        "top": 25
+      },
+      {
+        "metric": "us_10y_yield",
+        "raw": null,
+        "score": null,
+        "dimension": "macro",
+        "bottom": 5.5,
+        "top": 2.5
+      },
+      {
+        "metric": "dxy",
+        "raw": null,
+        "score": null,
+        "dimension": "macro",
+        "bottom": 110,
+        "top": 95
+      },
+      {
+        "metric": "ism_pmi",
+        "raw": null,
+        "score": null,
+        "dimension": "macro",
+        "bottom": 42,
+        "top": 58
+      },
+      {
+        "metric": "m2_yoy_pct",
+        "raw": null,
+        "score": null,
+        "dimension": "macro",
+        "bottom": -3,
+        "top": 8
+      },
+      {
+        "metric": "sox_weekly_rsi",
+        "raw": 81.08978778873433,
+        "score": 100.0,
+        "dimension": "technical",
+        "bottom": 30,
+        "top": 80
+      },
+      {
+        "metric": "sox_daily_rsi",
+        "raw": 85.1074702350403,
+        "score": 100.0,
+        "dimension": "technical",
+        "bottom": 30,
+        "top": 75
+      },
+      {
+        "metric": "nvda_wk52_pos_pct",
+        "raw": 100.0,
+        "score": 100.0,
+        "dimension": "technical",
+        "bottom": 10,
+        "top": 95
+      },
+      {
+        "metric": "sox_dist_sma200_pct",
+        "raw": 48.284521271246476,
+        "score": 100.0,
+        "dimension": "technical",
+        "bottom": -25,
+        "top": 35
+      },
+      {
+        "metric": "kospi_weekly_rsi",
+        "raw": 73.20688531366066,
+        "score": 96.0153006970237,
+        "dimension": "technical",
+        "bottom": 30,
+        "top": 75
+      },
+      {
+        "metric": "samsung_wk52_pos_pct",
+        "raw": 97.08326499134573,
+        "score": 100.0,
+        "dimension": "technical",
+        "bottom": 10,
+        "top": 95
+      },
+      {
+        "metric": "skhynix_wk52_pos_pct",
+        "raw": 99.71488483374273,
+        "score": 100.0,
+        "dimension": "technical",
+        "bottom": 10,
+        "top": 95
+      }
+    ],
+    "weights_used": {
+      "valuation": 0.278,
+      "earnings": 0.222,
+      "capital": 0.167,
+      "sentiment": 0.167,
+      "technical": 0.167
+    }
+  },
+  "leaders": {
+    "NVDA": {
+      "name": "Nvidia",
+      "region": "US",
+      "trailingPE": 42.591003,
+      "forwardPE": 18.530712,
+      "priceToSales": 23.441925,
+      "priceToBook": 32.18016,
+      "marketCap": 5062002737152,
+      "enterpriseValue": 5009817206784,
+      "evToRevenue": 23.2,
+      "evToEbitda": 37.603,
+      "profitMargins": 0.55603004,
+      "operatingMargins": 0.65024,
+      "revenueGrowth": 0.732,
+      "earningsGrowth": 0.956,
+      "freeCashflow": 58128998400,
+      "operatingCashflow": 102717997056,
+      "totalCash": 62556000256,
+      "totalDebt": 11411999744,
+      "shortRatio": 1.68,
+      "shortPercentOfFloat": 0.012200001,
+      "beta": 2.335,
+      "fiftyTwoWeekHigh": 212.19,
+      "fiftyTwoWeekLow": 104.08,
+      "fiftyDayAverage": 185.0252,
+      "twoHundredDayAverage": 182.84685,
+      "averageVolume": 173868400,
+      "currentPrice": 208.27,
+      "currency": "USD",
+      "current": 208.27000427246094,
+      "chg_1d_pct": 4.322783464835034,
+      "chg_1w_pct": 3.0733479109670947,
+      "chg_1m_pct": 21.624619009239133,
+      "sma_200": 182.8311908721924,
+      "dist_from_sma200_pct": 13.91382579685294,
+      "sma_50": 185.0215884399414,
+      "dist_from_sma50_pct": 12.565244968732948,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 208.27000427246094,
+      "wk52_low": 106.40492248535156,
+      "daily_rsi": 71.49829504035523,
+      "weekly_rsi": 65.11650680667839,
+      "realized_vol_21d": 35.482645113685045
+    },
+    "AVGO": {
+      "name": "Broadcom",
+      "region": "US",
+      "trailingPE": 82.57031,
+      "forwardPE": 23.333765,
+      "priceToSales": 29.314144,
+      "priceToBook": 25.0673,
+      "marketCap": 2001628430336,
+      "enterpriseValue": 2053511315456,
+      "evToRevenue": 30.074,
+      "evToEbitda": 55.175,
+      "profitMargins": 0.36571997,
+      "operatingMargins": 0.44943002,
+      "revenueGrowth": 0.295,
+      "earningsGrowth": 0.316,
+      "freeCashflow": 25503750144,
+      "operatingCashflow": 29684000768,
+      "totalCash": 14174000128,
+      "totalDebt": 66056998912,
+      "shortRatio": 2.11,
+      "shortPercentOfFloat": 0.0117999995,
+      "beta": 1.253,
+      "fiftyTwoWeekHigh": 429.31,
+      "fiftyTwoWeekLow": 184.02,
+      "fiftyDayAverage": 341.3594,
+      "twoHundredDayAverage": 336.71246,
+      "averageVolume": 25720906,
+      "currentPrice": 422.76,
+      "currency": "USD",
+      "current": 422.760009765625,
+      "chg_1d_pct": 0.67152624370721,
+      "chg_1w_pct": 5.787854915847768,
+      "chg_1m_pct": 36.62982076767358,
+      "sma_200": 335.5974385070801,
+      "dist_from_sma200_pct": 25.97235892094154,
+      "sma_50": 341.0030181884766,
+      "dist_from_sma50_pct": 23.975445147514883,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 422.760009765625,
+      "wk52_low": 186.6377410888672,
+      "daily_rsi": 77.81499627982825,
+      "weekly_rsi": 69.02234228006543,
+      "realized_vol_21d": 44.56769091331622
+    },
+    "TSM": {
+      "name": "TSMC ADR",
+      "region": "US",
+      "trailingPE": 34.486717,
+      "forwardPE": 20.861303,
+      "priceToSales": 0.5086179,
+      "priceToBook": 61.563137,
+      "marketCap": 2087318585344,
+      "enterpriseValue": 8110899986432,
+      "evToRevenue": 1.976,
+      "evToEbitda": 2.839,
+      "profitMargins": 0.46505,
+      "operatingMargins": 0.58105,
+      "revenueGrowth": 0.351,
+      "earningsGrowth": 0.584,
+      "freeCashflow": 721560469504,
+      "operatingCashflow": 2348377702400,
+      "totalCash": 3383600873472,
+      "totalDebt": 1016267997184,
+      "shortRatio": 2.0,
+      "shortPercentOfFloat": 0.0053,
+      "beta": 1.251,
+      "fiftyTwoWeekHigh": 409.49,
+      "fiftyTwoWeekLow": 160.5,
+      "fiftyDayAverage": 357.0002,
+      "twoHundredDayAverage": 301.3683,
+      "averageVolume": 13456068,
+      "currentPrice": 402.46,
+      "currency": "USD",
+      "current": 402.4599914550781,
+      "chg_1d_pct": 5.174302933016284,
+      "chg_1w_pct": 9.889690417893515,
+      "chg_1m_pct": 23.41234845084752,
+      "sma_200": 300.0963346099854,
+      "dist_from_sma200_pct": 34.110265617914926,
+      "sma_50": 356.5548474121094,
+      "dist_from_sma50_pct": 12.874637485971729,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 402.4599914550781,
+      "wk52_low": 161.4009552001953,
+      "daily_rsi": 68.35971591494108,
+      "weekly_rsi": 73.85388258075265,
+      "realized_vol_21d": 50.73936751926054
+    },
+    "AMD": {
+      "name": "AMD",
+      "region": "US",
+      "trailingPE": 133.26054,
+      "forwardPE": 31.595423,
+      "priceToSales": 16.370945,
+      "priceToBook": 8.998964,
+      "marketCap": 567073177600,
+      "enterpriseValue": 560527179776,
+      "evToRevenue": 16.182,
+      "evToEbitda": 83.103,
+      "profitMargins": 0.12515001,
+      "operatingMargins": 0.17059,
+      "revenueGrowth": 0.341,
+      "earningsGrowth": 2.171,
+      "freeCashflow": 4587250176,
+      "operatingCashflow": 7709000192,
+      "totalCash": 10552000512,
+      "totalDebt": 4006000128,
+      "shortRatio": 1.08,
+      "shortPercentOfFloat": 0.022,
+      "beta": 1.963,
+      "fiftyTwoWeekHigh": 352.99,
+      "fiftyTwoWeekLow": 91.87,
+      "fiftyDayAverage": 221.5738,
+      "twoHundredDayAverage": 206.59525,
+      "averageVolume": 37876941,
+      "currentPrice": 347.81,
+      "currency": "USD",
+      "current": 347.80999755859375,
+      "chg_1d_pct": 13.91281985212871,
+      "chg_1w_pct": 26.499357016467616,
+      "chg_1m_pct": 70.68753509644966,
+      "sma_200": 206.59524978637694,
+      "dist_from_sma200_pct": 68.3533372225331,
+      "sma_50": 221.57379974365233,
+      "dist_from_sma50_pct": 56.97252922547214,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 347.80999755859375,
+      "wk52_low": 94.47000122070312,
+      "daily_rsi": 88.94485586890107,
+      "weekly_rsi": 77.5790299647233,
+      "realized_vol_21d": 67.33918500737884
+    },
+    "MU": {
+      "name": "Micron",
+      "region": "US",
+      "trailingPE": 23.419144,
+      "forwardPE": 4.9144373,
+      "priceToSales": 9.638294,
+      "priceToBook": 7.7326155,
+      "marketCap": 560168042496,
+      "enterpriseValue": 556377047040,
+      "evToRevenue": 9.573,
+      "evToEbitda": 15.118,
+      "profitMargins": 0.41486,
+      "operatingMargins": 0.67624,
+      "revenueGrowth": 1.963,
+      "earningsGrowth": 7.56,
+      "freeCashflow": 2893499904,
+      "operatingCashflow": 30652999680,
+      "totalCash": 14588999680,
+      "totalDebt": 10798000128,
+      "shortRatio": 0.69,
+      "shortPercentOfFloat": 0.0323,
+      "beta": 1.606,
+      "fiftyTwoWeekHigh": 506.99,
+      "fiftyTwoWeekLow": 73.5,
+      "fiftyDayAverage": 414.8054,
+      "twoHundredDayAverage": 266.9975,
+      "averageVolume": 41416403,
+      "currentPrice": 496.72,
+      "currency": "USD",
+      "current": 496.7200012207031,
+      "chg_1d_pct": 3.113842058039773,
+      "chg_1w_pct": 10.771149000188984,
+      "chg_1m_pct": 39.7987618465695,
+      "sma_200": 266.8348393249512,
+      "dist_from_sma200_pct": 86.15260378941673,
+      "sma_50": 414.69859313964844,
+      "dist_from_sma50_pct": 19.77855952200789,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 496.7200012207031,
+      "wk52_low": 76.69641876220703,
+      "daily_rsi": 68.91211856921831,
+      "weekly_rsi": 71.62775432695796,
+      "realized_vol_21d": 76.88879471716761
+    },
+    "ASML": {
+      "name": "ASML",
+      "region": "US",
+      "trailingPE": 48.077175,
+      "forwardPE": 30.721357,
+      "priceToSales": 16.674927,
+      "priceToBook": 1271.5887,
+      "marketCap": 561823285248,
+      "enterpriseValue": 556126896128,
+      "evToRevenue": 16.506,
+      "evToEbitda": 43.774,
+      "profitMargins": 0.29713,
+      "operatingMargins": 0.36020002,
+      "revenueGrowth": 0.132,
+      "earningsGrowth": 0.192,
+      "freeCashflow": 8243274752,
+      "operatingCashflow": 10531500032,
+      "totalCash": 8376300032,
+      "totalDebt": 2705600000,
+      "shortRatio": 0.41,
+      "shortPercentOfFloat": 0.0019,
+      "beta": 1.382,
+      "fiftyTwoWeekHigh": 1547.22,
+      "fiftyTwoWeekLow": 651.46,
+      "fiftyDayAverage": 1403.1823,
+      "twoHundredDayAverage": 1100.7983,
+      "averageVolume": 1812668,
+      "currentPrice": 1457.7,
+      "currency": "USD",
+      "current": 1457.699951171875,
+      "chg_1d_pct": 2.814212228073276,
+      "chg_1w_pct": -1.273284715755163,
+      "chg_1m_pct": 9.642719155462576,
+      "sma_200": 1099.123492126465,
+      "dist_from_sma200_pct": 32.62385542789876,
+      "sma_50": 1403.18220703125,
+      "dist_from_sma50_pct": 3.8852932903111315,
+      "wk52_position_pct": 92.03712388755474,
+      "wk52_high": 1526.510009765625,
+      "wk52_low": 662.374267578125,
+      "daily_rsi": 54.746657834943434,
+      "weekly_rsi": 66.85307879643685,
+      "realized_vol_21d": 53.83937276904332
+    },
+    "AMAT": {
+      "name": "Applied Materials",
+      "region": "US",
+      "trailingPE": 42.729507,
+      "forwardPE": 29.638412,
+      "priceToSales": 11.730597,
+      "priceToBook": 15.239905,
+      "marketCap": 330967056384,
+      "enterpriseValue": 329646047232,
+      "evToRevenue": 11.684,
+      "evToEbitda": 37.085,
+      "profitMargins": 0.27784002,
+      "operatingMargins": 0.29892,
+      "revenueGrowth": -0.021,
+      "earningsGrowth": 0.752,
+      "freeCashflow": 4341749760,
+      "operatingCashflow": 8718999552,
+      "totalCash": 8511000064,
+      "totalDebt": 7190000128,
+      "shortRatio": 2.15,
+      "shortPercentOfFloat": 0.0172,
+      "beta": 1.637,
+      "fiftyTwoWeekHigh": 420.5,
+      "fiftyTwoWeekLow": 144.71,
+      "fiftyDayAverage": 366.0362,
+      "twoHundredDayAverage": 264.51694,
+      "averageVolume": 7093398,
+      "currentPrice": 417.04,
+      "currency": "USD",
+      "current": 417.0400085449219,
+      "chg_1d_pct": 3.2507253506393496,
+      "chg_1w_pct": 6.490989669750591,
+      "chg_1m_pct": 23.18417473993577,
+      "sma_200": 264.0317115020752,
+      "dist_from_sma200_pct": 57.95072727150203,
+      "sma_50": 366.0010302734375,
+      "dist_from_sma50_pct": 13.945036775812735,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 417.0400085449219,
+      "wk52_low": 147.63925170898438,
+      "daily_rsi": 69.3438376693952,
+      "weekly_rsi": 73.93788715872492,
+      "realized_vol_21d": 55.04493607397822
+    },
+    "KLAC": {
+      "name": "KLA",
+      "region": "US",
+      "trailingPE": 56.18467,
+      "forwardPE": 40.09706,
+      "priceToSales": 19.94915,
+      "priceToBook": 46.427372,
+      "marketCap": 254244175872,
+      "enterpriseValue": 254535254016,
+      "evToRevenue": 19.972,
+      "evToEbitda": 44.328,
+      "profitMargins": 0.35764,
+      "operatingMargins": 0.41313,
+      "revenueGrowth": 0.072,
+      "earningsGrowth": 0.409,
+      "freeCashflow": 3222999808,
+      "operatingCashflow": 4766347776,
+      "totalCash": 5207463936,
+      "totalDebt": 6109477888,
+      "shortRatio": 3.57,
+      "shortPercentOfFloat": 0.028399998,
+      "beta": 1.435,
+      "fiftyTwoWeekHigh": 1939.36,
+      "fiftyTwoWeekLow": 674.2,
+      "fiftyDayAverage": 1557.2048,
+      "twoHundredDayAverage": 1238.87,
+      "averageVolume": 1038811,
+      "currentPrice": 1935.0,
+      "currency": "USD",
+      "current": 1935.0,
+      "chg_1d_pct": 6.586315239446905,
+      "chg_1w_pct": 7.183217245092877,
+      "chg_1m_pct": 33.34435877481996,
+      "sma_200": 1236.7113595581054,
+      "dist_from_sma200_pct": 56.46334814062055,
+      "sma_50": 1557.1291430664062,
+      "dist_from_sma50_pct": 24.267149492139396,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 1935.0,
+      "wk52_low": 671.2208251953125,
+      "daily_rsi": 75.73460552171686,
+      "weekly_rsi": 75.99402418677622,
+      "realized_vol_21d": 53.638635652863975
+    },
+    "LRCX": {
+      "name": "Lam Research",
+      "region": "US",
+      "trailingPE": 50.524525,
+      "forwardPE": 34.51369,
+      "priceToSales": 15.445085,
+      "priceToBook": 33.022568,
+      "marketCap": 334877917184,
+      "enterpriseValue": 333861453824,
+      "evToRevenue": 15.398,
+      "evToEbitda": 42.542,
+      "profitMargins": 0.30938998,
+      "operatingMargins": 0.35042998,
+      "revenueGrowth": 0.238,
+      "earningsGrowth": 0.408,
+      "freeCashflow": 4352341504,
+      "operatingCashflow": 6954616832,
+      "totalCash": 4750936064,
+      "totalDebt": 3734479104,
+      "shortRatio": 2.54,
+      "shortPercentOfFloat": 0.0233,
+      "beta": 1.79,
+      "fiftyTwoWeekHigh": 275.84,
+      "fiftyTwoWeekLow": 68.53,
+      "fiftyDayAverage": 235.247,
+      "twoHundredDayAverage": 170.39314,
+      "averageVolume": 10682171,
+      "currentPrice": 267.78,
+      "currency": "USD",
+      "current": 267.7799987792969,
+      "chg_1d_pct": 3.5659039711329443,
+      "chg_1w_pct": 1.7555840754279073,
+      "chg_1m_pct": 26.538136734673866,
+      "sma_200": 170.08181156158446,
+      "dist_from_sma200_pct": 57.44187830592171,
+      "sma_50": 235.1732357788086,
+      "dist_from_sma50_pct": 13.864997389055134,
+      "wk52_position_pct": 97.70821007953424,
+      "wk52_high": 272.4100036621094,
+      "wk52_low": 70.38429260253906,
+      "daily_rsi": 61.20554594348478,
+      "weekly_rsi": 70.54262973168697,
+      "realized_vol_21d": 66.88986725976139
+    },
+    "INTC": {
+      "name": "Intel",
+      "region": "US",
+      "trailingPE": null,
+      "forwardPE": 59.38258,
+      "priceToSales": 7.7161994,
+      "priceToBook": 3.6068869,
+      "marketCap": 414846025728,
+      "enterpriseValue": 440683036672,
+      "evToRevenue": 8.197,
+      "evToEbitda": 31.091,
+      "profitMargins": -0.05904,
+      "operatingMargins": 0.06879,
+      "revenueGrowth": 0.072,
+      "earningsGrowth": null,
+      "freeCashflow": -8301250048,
+      "operatingCashflow": 9980000256,
+      "totalCash": 32789000192,
+      "totalDebt": 45030998016,
+      "shortRatio": 1.38,
+      "shortPercentOfFloat": 0.0287,
+      "beta": 1.349,
+      "fiftyTwoWeekHigh": 85.22,
+      "fiftyTwoWeekLow": 18.97,
+      "fiftyDayAverage": 51.0316,
+      "twoHundredDayAverage": 38.4479,
+      "averageVolume": 102671584,
+      "currentPrice": 82.54,
+      "currency": "USD",
+      "current": 82.54000091552734,
+      "chg_1d_pct": 23.59988383395475,
+      "chg_1w_pct": 25.631666285390466,
+      "chg_1m_pct": 87.16554143185229,
+      "sma_200": 38.44790002822876,
+      "dist_from_sma200_pct": 114.68012779612363,
+      "sma_50": 51.03159996032715,
+      "dist_from_sma50_pct": 61.742921992834574,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 82.54000091552734,
+      "wk52_low": 19.309999465942383,
+      "daily_rsi": 82.1670208985083,
+      "weekly_rsi": 82.76009695373205,
+      "realized_vol_21d": 103.91874913224932
+    }
+  },
+  "kr_leaders": {
+    "005930.KS": {
+      "name": "삼성전자 (Samsung Electronics)",
+      "region": "KR",
+      "trailingPE": null,
+      "forwardPE": 5.390407,
+      "priceToSales": 4.3414526,
+      "priceToBook": null,
+      "marketCap": 1448334376042496,
+      "enterpriseValue": 1366843142963200,
+      "evToRevenue": 4.097,
+      "evToEbitda": 15.313,
+      "profitMargins": 0.13267,
+      "operatingMargins": 0.21322,
+      "revenueGrowth": 0.238,
+      "earningsGrowth": 1.622,
+      "freeCashflow": 23944373469184,
+      "operatingCashflow": 85315146481664,
+      "totalCash": 125847113564160,
+      "totalDebt": 25239138336768,
+      "shortRatio": null,
+      "shortPercentOfFloat": null,
+      "beta": 1.211,
+      "fiftyTwoWeekHigh": 229500.0,
+      "fiftyTwoWeekLow": 53700.0,
+      "fiftyDayAverage": 195537.0,
+      "twoHundredDayAverage": 124833.75,
+      "averageVolume": 30089819,
+      "currentPrice": 219500.0,
+      "currency": "KRW",
+      "current": 219500.0,
+      "chg_1d_pct": -2.2271714922049046,
+      "chg_1w_pct": 2.331002331002341,
+      "chg_1m_pct": 21.87673514714048,
+      "sma_200": 121459.49001953125,
+      "dist_from_sma200_pct": 80.71869062244816,
+      "sma_50": 194909.0,
+      "dist_from_sma50_pct": 12.61665700403778,
+      "wk52_position_pct": 97.08326499134573,
+      "wk52_high": 224500.0,
+      "wk52_low": 53075.4453125,
+      "daily_rsi": 60.778346767070744,
+      "weekly_rsi": 72.44705713431307,
+      "realized_vol_21d": 68.29545477235402
+    },
+    "000660.KS": {
+      "name": "SK하이닉스 (SK Hynix)",
+      "region": "KR",
+      "trailingPE": null,
+      "forwardPE": 3.7777247,
+      "priceToSales": 6.556624,
+      "priceToBook": null,
+      "marketCap": 866022978486272,
+      "enterpriseValue": 826498005073920,
+      "evToRevenue": 6.257,
+      "evToEbitda": 9.026,
+      "profitMargins": 0.56901,
+      "operatingMargins": 0.71535003,
+      "revenueGrowth": 1.981,
+      "earningsGrowth": 3.966,
+      "freeCashflow": null,
+      "operatingCashflow": 70728128921600,
+      "totalCash": 54329998311424,
+      "totalDebt": 19317999534080,
+      "shortRatio": null,
+      "shortPercentOfFloat": null,
+      "beta": 1.751,
+      "fiftyTwoWeekHigh": 1267000.0,
+      "fiftyTwoWeekLow": 176700.0,
+      "fiftyDayAverage": 985680.0,
+      "twoHundredDayAverage": 618492.5,
+      "averageVolume": 4637231,
+      "currentPrice": 1222000.0,
+      "currency": "KRW",
+      "current": 1222000.0,
+      "chg_1d_pct": -0.2448979591836764,
+      "chg_1w_pct": 4.80274442538593,
+      "chg_1m_pct": 30.9753483386924,
+      "sma_200": 602458.195078125,
+      "dist_from_sma200_pct": 102.83565066975888,
+      "sma_50": 985053.48,
+      "dist_from_sma50_pct": 24.05417825639273,
+      "wk52_position_pct": 99.71488483374273,
+      "wk52_high": 1225000.0,
+      "wk52_low": 172793.609375,
+      "daily_rsi": 67.92799006591028,
+      "weekly_rsi": 73.47588301604034,
+      "realized_vol_21d": 83.57958985559793
+    },
+    "042700.KS": {
+      "name": "한미반도체 (Hanmi Semi)",
+      "region": "KR",
+      "trailingPE": null,
+      "forwardPE": 55.66939,
+      "priceToSales": 48.603794,
+      "priceToBook": null,
+      "marketCap": 28029061431296,
+      "enterpriseValue": 27754397433856,
+      "evToRevenue": 48.128,
+      "evToEbitda": 105.636,
+      "profitMargins": 0.3711,
+      "operatingMargins": 0.33280998,
+      "revenueGrowth": -0.445,
+      "earningsGrowth": -0.482,
+      "freeCashflow": 124737929216,
+      "operatingCashflow": 228626759680,
+      "totalCash": 277218230272,
+      "totalDebt": 2554319872,
+      "shortRatio": null,
+      "shortPercentOfFloat": null,
+      "beta": 2.245,
+      "fiftyTwoWeekHigh": 335500.0,
+      "fiftyTwoWeekLow": 74300.0,
+      "fiftyDayAverage": 274570.0,
+      "twoHundredDayAverage": 161731.5,
+      "averageVolume": 1507932,
+      "currentPrice": 295500.0,
+      "currency": "KRW",
+      "current": 295500.0,
+      "chg_1d_pct": 0.6814310051107331,
+      "chg_1w_pct": 2.961672473867605,
+      "chg_1m_pct": 6.294964028776984,
+      "sma_200": 159339.8091796875,
+      "dist_from_sma200_pct": 85.4527136195856,
+      "sma_50": 274134.6528125,
+      "dist_from_sma50_pct": 7.7937418594479,
+      "wk52_position_pct": 85.87359794769866,
+      "wk52_high": 333500.0,
+      "wk52_low": 64500.15234375,
+      "daily_rsi": 57.0701952490662,
+      "weekly_rsi": 70.66786726545037,
+      "realized_vol_21d": 66.1571489722745
+    },
+    "058470.KQ": {
+      "name": "리노공업 (Leeno Industrial)",
+      "region": "KR",
+      "trailingPE": null,
+      "forwardPE": 40.42517,
+      "priceToSales": 62.939983,
+      "priceToBook": null,
+      "marketCap": 9441412907008,
+      "enterpriseValue": 1732866998272,
+      "evToRevenue": 11.552,
+      "evToEbitda": 29.585,
+      "profitMargins": 0.29223,
+      "operatingMargins": 0.32919,
+      "revenueGrowth": -0.03,
+      "earningsGrowth": -0.236,
+      "freeCashflow": 14388182016,
+      "operatingCashflow": 48561029120,
+      "totalCash": 146558238720,
+      "totalDebt": 0,
+      "shortRatio": null,
+      "shortPercentOfFloat": null,
+      "beta": 0.321,
+      "fiftyTwoWeekHigh": 129000.0,
+      "fiftyTwoWeekLow": 35650.0,
+      "fiftyDayAverage": 109236.0,
+      "twoHundredDayAverage": 70660.5,
+      "averageVolume": 1093530,
+      "currentPrice": 124400.0,
+      "currency": "KRW",
+      "current": 124400.0,
+      "chg_1d_pct": 0.8921330089213253,
+      "chg_1w_pct": 6.689536878216118,
+      "chg_1m_pct": 18.589132507149664,
+      "sma_200": 69067.6513671875,
+      "dist_from_sma200_pct": 80.11326219657681,
+      "sma_50": 109236.0,
+      "dist_from_sma50_pct": 13.88187044564062,
+      "wk52_position_pct": 97.24085179249498,
+      "wk52_high": 127000.0,
+      "wk52_low": 32768.01953125,
+      "daily_rsi": 64.47431252038118,
+      "weekly_rsi": 75.33835552552364,
+      "realized_vol_21d": 73.02432754520659
+    },
+    "240810.KQ": {
+      "name": "원익IPS (Wonik IPS)",
+      "region": "KR",
+      "trailingPE": null,
+      "forwardPE": 29.078266,
+      "priceToSales": 6.209004,
+      "priceToBook": null,
+      "marketCap": 5648925327360,
+      "enterpriseValue": 5353648422912,
+      "evToRevenue": 5.884,
+      "evToEbitda": 47.235,
+      "profitMargins": 0.09236,
+      "operatingMargins": 0.06257,
+      "revenueGrowth": -0.067,
+      "earningsGrowth": 0.192,
+      "freeCashflow": 115917381632,
+      "operatingCashflow": 156607021056,
+      "totalCash": 301436567552,
+      "totalDebt": 6159232000,
+      "shortRatio": null,
+      "shortPercentOfFloat": null,
+      "beta": 1.751,
+      "fiftyTwoWeekHigh": 143000.0,
+      "fiftyTwoWeekLow": 20900.0,
+      "fiftyDayAverage": 119668.0,
+      "twoHundredDayAverage": 71871.25,
+      "averageVolume": 747975,
+      "currentPrice": 116100.0,
+      "currency": "KRW",
+      "current": 116100.0,
+      "chg_1d_pct": 2.5618374558303847,
+      "chg_1w_pct": -5.147058823529416,
+      "chg_1m_pct": -4.049586776859504,
+      "sma_200": 71849.65955078125,
+      "dist_from_sma200_pct": 61.58740448581235,
+      "sma_50": 119668.0,
+      "dist_from_sma50_pct": -2.9815823779122286,
+      "wk52_position_pct": 81.4316339884661,
+      "wk52_high": 137800.0,
+      "wk52_low": 20934.57421875,
+      "daily_rsi": 47.56963832262345,
+      "weekly_rsi": 66.1392604439456,
+      "realized_vol_21d": 64.38951535242344
+    },
+    "357780.KQ": {
+      "name": "솔브레인 (Soulbrain)",
+      "region": "KR",
+      "trailingPE": null,
+      "forwardPE": 19.15167,
+      "priceToSales": 3.8899498,
+      "priceToBook": null,
+      "marketCap": 3591909670912,
+      "enterpriseValue": 3468663980032,
+      "evToRevenue": 3.756,
+      "evToEbitda": 17.496,
+      "profitMargins": 0.08562,
+      "operatingMargins": 0.17527,
+      "revenueGrowth": 0.127,
+      "earningsGrowth": null,
+      "freeCashflow": -28530817024,
+      "operatingCashflow": 146921897984,
+      "totalCash": 335936061440,
+      "totalDebt": 117262032896,
+      "shortRatio": null,
+      "shortPercentOfFloat": null,
+      "beta": 1.484,
+      "fiftyTwoWeekHigh": 530000.0,
+      "fiftyTwoWeekLow": 155000.0,
+      "fiftyDayAverage": 420820.0,
+      "twoHundredDayAverage": 303892.0,
+      "averageVolume": 63483,
+      "currentPrice": 469000.0,
+      "currency": "KRW",
+      "current": 469000.0,
+      "chg_1d_pct": 1.9565217391304346,
+      "chg_1w_pct": 8.064516129032251,
+      "chg_1m_pct": 19.141369236631522,
+      "sma_200": 302334.04109375,
+      "dist_from_sma200_pct": 55.12642847074207,
+      "sma_50": 419304.4825,
+      "dist_from_sma50_pct": 11.85189273525118,
+      "wk52_position_pct": 91.5361855948678,
+      "wk52_high": 498026.875,
+      "wk52_low": 155074.234375,
+      "daily_rsi": 63.352579009001836,
+      "weekly_rsi": 66.91369840907936,
+      "realized_vol_21d": 63.45912691623096
+    }
+  },
+  "hyperscalers": {
+    "MSFT": {
+      "name": "Microsoft",
+      "trailingPE": 26.588602,
+      "forwardPE": 22.445658,
+      "priceToSales": 10.331985,
+      "priceToBook": 8.070322,
+      "marketCap": 3155936149504,
+      "enterpriseValue": 3186886705152,
+      "evToRevenue": 10.433,
+      "evToEbitda": 18.184,
+      "profitMargins": 0.39044,
+      "operatingMargins": 0.47094002,
+      "revenueGrowth": 0.167,
+      "earningsGrowth": 0.598,
+      "freeCashflow": 53640626176,
+      "operatingCashflow": 160506003456,
+      "totalCash": 89461997568,
+      "totalDebt": 123278000128,
+      "shortRatio": 2.53,
+      "shortPercentOfFloat": 0.0112,
+      "beta": 1.107,
+      "fiftyTwoWeekHigh": 555.45,
+      "fiftyTwoWeekLow": 356.28,
+      "fiftyDayAverage": 394.057,
+      "twoHundredDayAverage": 470.09515,
+      "averageVolume": 37687631,
+      "currentPrice": 424.62,
+      "currency": "USD",
+      "capex_latest": 64551000000.0,
+      "capex_yoy_pct": 45.13343975537918,
+      "current": 424.6199951171875,
+      "chg_1d_pct": 2.1334925116506254,
+      "chg_1w_pct": 1.5667203287054177,
+      "chg_1m_pct": 16.02590204138472,
+      "sma_200": 468.65505905151366,
+      "dist_from_sma200_pct": -9.396050055118666,
+      "sma_50": 393.98414428710936,
+      "dist_from_sma50_pct": 7.7759095827350855,
+      "wk52_position_pct": 37.06532443155646,
+      "wk52_high": 539.8251953125,
+      "wk52_low": 356.7699890136719,
+      "daily_rsi": 63.48111835961805,
+      "weekly_rsi": 48.786428367698925,
+      "realized_vol_21d": 32.51115470153758
+    },
+    "AMZN": {
+      "name": "Amazon",
+      "trailingPE": 36.76741,
+      "forwardPE": 27.862535,
+      "priceToSales": 3.959994,
+      "priceToBook": 6.8916097,
+      "marketCap": 2839014801408,
+      "enterpriseValue": 2889429811200,
+      "evToRevenue": 4.03,
+      "evToEbitda": 19.827,
+      "profitMargins": 0.108339995,
+      "operatingMargins": 0.10533,
+      "revenueGrowth": 0.136,
+      "earningsGrowth": 0.05,
+      "freeCashflow": 23793125376,
+      "operatingCashflow": 139514003456,
+      "totalCash": 123028996096,
+      "totalDebt": 178546999296,
+      "shortRatio": 2.02,
+      "shortPercentOfFloat": 0.0095,
+      "beta": 1.383,
+      "fiftyTwoWeekHigh": 264.5,
+      "fiftyTwoWeekLow": 178.85,
+      "fiftyDayAverage": 218.641,
+      "twoHundredDayAverage": 226.4041,
+      "averageVolume": 51525785,
+      "currentPrice": 263.99,
+      "currency": "USD",
+      "capex_latest": 131819000000.0,
+      "capex_yoy_pct": 58.81998578296124,
+      "current": 263.989990234375,
+      "chg_1d_pct": 3.4930172257179093,
+      "chg_1w_pct": 6.327530019461292,
+      "chg_1m_pct": 27.199575394808505,
+      "sma_200": 226.40409996032716,
+      "dist_from_sma200_pct": 16.601241002541034,
+      "sma_50": 218.64099975585938,
+      "dist_from_sma50_pct": 20.74130219362038,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 263.989990234375,
+      "wk52_low": 184.4199981689453,
+      "daily_rsi": 80.36710230104399,
+      "weekly_rsi": 66.10605488417193,
+      "realized_vol_21d": 34.39521017779346
+    },
+    "GOOGL": {
+      "name": "Alphabet",
+      "trailingPE": 31.859388,
+      "forwardPE": 25.513605,
+      "priceToSales": 10.342191,
+      "priceToBook": 10.025325,
+      "marketCap": 4166206881792,
+      "enterpriseValue": 4106359930880,
+      "evToRevenue": 10.194,
+      "evToEbitda": 27.344,
+      "profitMargins": 0.32810003,
+      "operatingMargins": 0.31568,
+      "revenueGrowth": 0.18,
+      "earningsGrowth": 0.311,
+      "freeCashflow": 38088376320,
+      "operatingCashflow": 164713005056,
+      "totalCash": 126843002880,
+      "totalDebt": 66995998720,
+      "shortRatio": 2.72,
+      "shortPercentOfFloat": 0.0134000005,
+      "beta": 1.128,
+      "fiftyTwoWeekHigh": 349.0,
+      "fiftyTwoWeekLow": 147.84,
+      "fiftyDayAverage": 309.5592,
+      "twoHundredDayAverage": 276.5518,
+      "averageVolume": 32171493,
+      "currentPrice": 344.4,
+      "currency": "USD",
+      "capex_latest": 91447000000.0,
+      "capex_yoy_pct": 74.06871609403257,
+      "current": 344.3999938964844,
+      "chg_1d_pct": 1.6258901147509164,
+      "chg_1w_pct": 2.068632621356037,
+      "chg_1m_pct": 22.597172659284382,
+      "sma_200": 276.2752584838867,
+      "dist_from_sma200_pct": 24.65828311461735,
+      "sma_50": 309.4901904296875,
+      "dist_from_sma50_pct": 11.279777048289974,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 344.3999938964844,
+      "wk52_low": 150.85691833496094,
+      "daily_rsi": 69.03749352413172,
+      "weekly_rsi": 65.6538938996004,
+      "realized_vol_21d": 34.11436692188569
+    },
+    "META": {
+      "name": "Meta",
+      "trailingPE": 28.736912,
+      "forwardPE": 18.719633,
+      "priceToSales": 8.526378,
+      "priceToBook": 7.8613443,
+      "marketCap": 1713511989248,
+      "enterpriseValue": 1711014805504,
+      "evToRevenue": 8.514,
+      "evToEbitda": 16.792,
+      "profitMargins": 0.30084,
+      "operatingMargins": 0.41314998,
+      "revenueGrowth": 0.238,
+      "earningsGrowth": 0.107,
+      "freeCashflow": 23432374272,
+      "operatingCashflow": 115799998464,
+      "totalCash": 81592000512,
+      "totalDebt": 85080997888,
+      "shortRatio": 1.48,
+      "shortPercentOfFloat": 0.0121,
+      "beta": 1.309,
+      "fiftyTwoWeekHigh": 796.25,
+      "fiftyTwoWeekLow": 520.26,
+      "fiftyDayAverage": 629.8572,
+      "twoHundredDayAverage": 679.97705,
+      "averageVolume": 15726200,
+      "currentPrice": 675.03,
+      "currency": "USD",
+      "capex_latest": 69691000000.0,
+      "capex_yoy_pct": 87.05980244792786,
+      "current": 675.030029296875,
+      "chg_1d_pct": 2.4091639679341137,
+      "chg_1w_pct": 0.6140997029800088,
+      "chg_1m_pct": 23.28415392221177,
+      "sma_200": 679.0257043457032,
+      "dist_from_sma200_pct": -0.58844238491359,
+      "sma_50": 629.6245544433593,
+      "dist_from_sma50_pct": 7.211515899925147,
+      "wk52_position_pct": 56.89540768209037,
+      "wk52_high": 788.1489868164062,
+      "wk52_low": 525.719970703125,
+      "daily_rsi": 61.53972524419221,
+      "weekly_rsi": 53.59699014551621,
+      "realized_vol_21d": 51.95863027859509
+    },
+    "ORCL": {
+      "name": "Oracle",
+      "trailingPE": 31.165468,
+      "forwardPE": 21.701694,
+      "priceToSales": 7.777659,
+      "priceToBook": 14.853419,
+      "marketCap": 498361270272,
+      "enterpriseValue": 626904268800,
+      "evToRevenue": 9.784,
+      "evToEbitda": 22.846,
+      "profitMargins": 0.25298,
+      "operatingMargins": 0.32676,
+      "revenueGrowth": 0.217,
+      "earningsGrowth": 0.245,
+      "freeCashflow": -22298499072,
+      "operatingCashflow": 23513999360,
+      "totalCash": 39132000256,
+      "totalDebt": 162164998144,
+      "shortRatio": 1.14,
+      "shortPercentOfFloat": 0.0171,
+      "beta": 1.597,
+      "fiftyTwoWeekHigh": 345.72,
+      "fiftyTwoWeekLow": 134.57,
+      "fiftyDayAverage": 154.4264,
+      "twoHundredDayAverage": 214.00255,
+      "averageVolume": 30206312,
+      "currentPrice": 173.28,
+      "currency": "USD",
+      "capex_latest": 21215000000.0,
+      "capex_yoy_pct": 208.98630935042237,
+      "current": 173.27999877929688,
+      "chg_1d_pct": -1.7018379968087083,
+      "chg_1w_pct": -2.421445549847856,
+      "chg_1m_pct": 21.759818292196243,
+      "sma_200": 212.74084266662598,
+      "dist_from_sma200_pct": -18.548786115868655,
+      "sma_50": 154.02909057617188,
+      "dist_from_sma50_pct": 12.498228828797032,
+      "wk52_position_pct": 19.643823395807296,
+      "wk52_high": 325.75933837890625,
+      "wk52_low": 136.00498962402344,
+      "daily_rsi": 59.03411796863072,
+      "weekly_rsi": 48.72665941414834,
+      "realized_vol_21d": 64.90409012350354
+    }
+  },
+  "indices": {
+    "^SOX": {
+      "name": "PHLX Semiconductor (SOX)",
+      "current": 10513.66015625,
+      "chg_1d_pct": 4.3169797923657605,
+      "chg_1w_pct": 9.526306842268406,
+      "chg_1m_pct": 38.595309355863236,
+      "sma_200": 7090.193950195313,
+      "dist_from_sma200_pct": 48.284521271246476,
+      "sma_50": 8289.60935546875,
+      "dist_from_sma50_pct": 26.82938007584179,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 10513.66015625,
+      "wk52_low": 4196.75,
+      "daily_rsi": 85.1074702350403,
+      "weekly_rsi": 81.08978778873433,
+      "realized_vol_21d": 43.065229799430426
+    },
+    "SOXX": {
+      "name": "iShares Semi ETF (SOXX)",
+      "current": 461.6000061035156,
+      "chg_1d_pct": 4.6712031980761015,
+      "chg_1w_pct": 10.549639467930705,
+      "chg_1m_pct": 40.36794816364178,
+      "sma_200": 304.0223798370361,
+      "dist_from_sma200_pct": 51.83092979896586,
+      "sma_50": 359.84397216796873,
+      "dist_from_sma50_pct": 28.27782089067452,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 461.6000061035156,
+      "wk52_low": 181.3512725830078,
+      "daily_rsi": 85.73889171435597,
+      "weekly_rsi": 81.26936817528724,
+      "realized_vol_21d": 43.35580513374565
+    },
+    "SMH": {
+      "name": "VanEck Semi ETF (SMH)",
+      "current": 506.44000244140625,
+      "chg_1d_pct": 5.103247074071415,
+      "chg_1w_pct": 9.155964257414029,
+      "chg_1m_pct": 32.979730939835484,
+      "sma_200": 356.7567448425293,
+      "dist_from_sma200_pct": 41.956672091776824,
+      "sma_50": 413.15580017089843,
+      "dist_from_sma50_pct": 22.57845641569636,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 506.44000244140625,
+      "wk52_low": 208.32179260253906,
+      "daily_rsi": 84.1617484396159,
+      "weekly_rsi": 79.53691926746599,
+      "realized_vol_21d": 40.1156853826423
+    },
+    "^GSPC": {
+      "name": "S&P 500",
+      "current": 7165.080078125,
+      "chg_1d_pct": 0.7973689797975636,
+      "chg_1w_pct": 0.7868735224013879,
+      "chg_1m_pct": 10.62070267339623,
+      "sma_200": 6705.587541503906,
+      "dist_from_sma200_pct": 6.852382938513402,
+      "sma_50": 6789.265205078125,
+      "dist_from_sma50_pct": 5.535427792182568,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 7165.080078125,
+      "wk52_low": 5484.77001953125,
+      "daily_rsi": 70.07599198309701,
+      "weekly_rsi": 64.17550756407846,
+      "realized_vol_21d": 17.88721507111968
+    },
+    "^NDX": {
+      "name": "Nasdaq 100",
+      "current": 27303.669921875,
+      "chg_1d_pct": 1.9454364481061193,
+      "chg_1w_pct": 2.682666270219425,
+      "chg_1m_pct": 15.757329148690701,
+      "sma_200": 24711.629052734374,
+      "dist_from_sma200_pct": 10.489154169517656,
+      "sma_50": 24921.7086328125,
+      "dist_from_sma50_pct": 9.557776812807916,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 27303.669921875,
+      "wk52_low": 19214.400390625,
+      "daily_rsi": 74.77651682791081,
+      "weekly_rsi": 66.91407330410487,
+      "realized_vol_21d": 22.64001549465972
+    },
+    "^VIX": {
+      "name": "VIX",
+      "current": 18.709999084472656,
+      "chg_1d_pct": -3.107200404267052,
+      "chg_1w_pct": -0.8479159917580747,
+      "chg_1m_pct": -31.81487346820411,
+      "sma_200": 18.256100063323974,
+      "dist_from_sma200_pct": 2.4862868825995976,
+      "sma_50": 22.50520015716553,
+      "dist_from_sma50_pct": -16.86366282543149,
+      "wk52_position_pct": 29.80659342686177,
+      "wk52_high": 31.049999237060547,
+      "wk52_low": 13.470000267028809,
+      "daily_rsi": 41.923198210368575,
+      "weekly_rsi": 47.60579570828611,
+      "realized_vol_21d": 117.77766386134749
+    },
+    "DX-Y.NYB": {
+      "name": "DXY (USD Index)",
+      "current": 98.51000213623047,
+      "chg_1d_pct": -0.29352318478717,
+      "chg_1w_pct": 0.4691474453395239,
+      "chg_1m_pct": -1.3913907591766805,
+      "sma_200": 98.52785018920899,
+      "dist_from_sma200_pct": -0.018114728926132972,
+      "sma_50": 98.81640014648437,
+      "dist_from_sma50_pct": -0.31006797434403044,
+      "wk52_position_pct": 41.11312461390742,
+      "wk52_high": 101.79000091552734,
+      "wk52_low": 96.22000122070312,
+      "daily_rsi": 45.90344036383328,
+      "weekly_rsi": 48.285598858760125,
+      "realized_vol_21d": 4.718801919880162
+    },
+    "^KS11": {
+      "name": "KOSPI",
+      "current": 6475.6298828125,
+      "chg_1d_pct": -0.0027822894683393606,
+      "chg_1w_pct": 4.125041533534279,
+      "chg_1m_pct": 19.062043095103732,
+      "sma_200": 4302.1321081542965,
+      "dist_from_sma200_pct": 50.521409385326365,
+      "sma_50": 5728.78279296875,
+      "dist_from_sma50_pct": 13.036749983965112,
+      "wk52_position_pct": 99.99552733913951,
+      "wk52_high": 6475.81005859375,
+      "wk52_low": 2447.429931640625,
+      "daily_rsi": 68.19790777263752,
+      "weekly_rsi": 73.20688531366066,
+      "realized_vol_21d": 49.0348364031499
+    },
+    "^KQ11": {
+      "name": "KOSDAQ",
+      "current": 1203.8399658203125,
+      "chg_1d_pct": 2.514660162404203,
+      "chg_1w_pct": 2.46754826886868,
+      "chg_1m_pct": 5.460307445528678,
+      "sma_200": 945.2073001098632,
+      "dist_from_sma200_pct": 27.36253366646533,
+      "sma_50": 1129.3126013183594,
+      "dist_from_sma50_pct": 6.599356494822595,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 1203.8399658203125,
+      "wk52_low": 699.1099853515625,
+      "daily_rsi": 62.92737230730044,
+      "weekly_rsi": 67.10357322276857,
+      "realized_vol_21d": 43.695446808082636
+    },
+    "KRW=X": {
+      "name": "USD/KRW",
+      "current": 1476.3199462890625,
+      "chg_1d_pct": -0.2452788947314155,
+      "chg_1w_pct": 0.4805096767428907,
+      "chg_1m_pct": -2.037137718431681,
+      "sma_200": 1440.0879992675782,
+      "dist_from_sma200_pct": 2.5159536806022675,
+      "sma_50": 1477.0149951171875,
+      "dist_from_sma50_pct": -0.04705766904349318,
+      "wk52_position_pct": 76.25123341040252,
+      "wk52_high": 1516.1300048828125,
+      "wk52_low": 1348.5,
+      "daily_rsi": 47.24383750748398,
+      "weekly_rsi": 53.95285675217202,
+      "realized_vol_21d": 9.462022130323868
+    }
+  },
+  "macro": {},
+  "sox_90d": [
+    {
+      "ts": "2025-12-15T05:00:00+00:00",
+      "close": 6990.41015625
+    },
+    {
+      "ts": "2025-12-16T05:00:00+00:00",
+      "close": 6958.43994140625
+    },
+    {
+      "ts": "2025-12-17T05:00:00+00:00",
+      "close": 6695.31005859375
+    },
+    {
+      "ts": "2025-12-18T05:00:00+00:00",
+      "close": 6863.6298828125
+    },
+    {
+      "ts": "2025-12-19T05:00:00+00:00",
+      "close": 7067.8701171875
+    },
+    {
+      "ts": "2025-12-22T05:00:00+00:00",
+      "close": 7145.56982421875
+    },
+    {
+      "ts": "2025-12-23T05:00:00+00:00",
+      "close": 7184.5400390625
+    },
+    {
+      "ts": "2025-12-24T05:00:00+00:00",
+      "close": 7204.3701171875
+    },
+    {
+      "ts": "2025-12-26T05:00:00+00:00",
+      "close": 7207.64013671875
+    },
+    {
+      "ts": "2025-12-29T05:00:00+00:00",
+      "close": 7178.27001953125
+    },
+    {
+      "ts": "2025-12-30T05:00:00+00:00",
+      "close": 7169.10009765625
+    },
+    {
+      "ts": "2025-12-31T05:00:00+00:00",
+      "close": 7083.1298828125
+    },
+    {
+      "ts": "2026-01-02T05:00:00+00:00",
+      "close": 7367.47021484375
+    },
+    {
+      "ts": "2026-01-05T05:00:00+00:00",
+      "close": 7446.4501953125
+    },
+    {
+      "ts": "2026-01-06T05:00:00+00:00",
+      "close": 7650.93017578125
+    },
+    {
+      "ts": "2026-01-07T05:00:00+00:00",
+      "close": 7574.8701171875
+    },
+    {
+      "ts": "2026-01-08T05:00:00+00:00",
+      "close": 7436.10009765625
+    },
+    {
+      "ts": "2026-01-09T05:00:00+00:00",
+      "close": 7638.77978515625
+    },
+    {
+      "ts": "2026-01-12T05:00:00+00:00",
+      "close": 7674.83984375
+    },
+    {
+      "ts": "2026-01-13T05:00:00+00:00",
+      "close": 7747.990234375
+    },
+    {
+      "ts": "2026-01-14T05:00:00+00:00",
+      "close": 7701.47021484375
+    },
+    {
+      "ts": "2026-01-15T05:00:00+00:00",
+      "close": 7837.2998046875
+    },
+    {
+      "ts": "2026-01-16T05:00:00+00:00",
+      "close": 7927.41015625
+    },
+    {
+      "ts": "2026-01-20T05:00:00+00:00",
+      "close": 7794.18994140625
+    },
+    {
+      "ts": "2026-01-21T05:00:00+00:00",
+      "close": 8042.06982421875
+    },
+    {
+      "ts": "2026-01-22T05:00:00+00:00",
+      "close": 8055.169921875
+    },
+    {
+      "ts": "2026-01-23T05:00:00+00:00",
+      "close": 7957.93017578125
+    },
+    {
+      "ts": "2026-01-26T05:00:00+00:00",
+      "close": 7927.0400390625
+    },
+    {
+      "ts": "2026-01-27T05:00:00+00:00",
+      "close": 8117.18017578125
+    },
+    {
+      "ts": "2026-01-28T05:00:00+00:00",
+      "close": 8306.740234375
+    },
+    {
+      "ts": "2026-01-29T05:00:00+00:00",
+      "close": 8320.3896484375
+    },
+    {
+      "ts": "2026-01-30T05:00:00+00:00",
+      "close": 7998.47021484375
+    },
+    {
+      "ts": "2026-02-02T05:00:00+00:00",
+      "close": 8134.490234375
+    },
+    {
+      "ts": "2026-02-03T05:00:00+00:00",
+      "close": 7966.330078125
+    },
+    {
+      "ts": "2026-02-04T05:00:00+00:00",
+      "close": 7619.16015625
+    },
+    {
+      "ts": "2026-02-05T05:00:00+00:00",
+      "close": 7614.64013671875
+    },
+    {
+      "ts": "2026-02-06T05:00:00+00:00",
+      "close": 8048.6201171875
+    },
+    {
+      "ts": "2026-02-09T05:00:00+00:00",
+      "close": 8162.580078125
+    },
+    {
+      "ts": "2026-02-10T05:00:00+00:00",
+      "close": 8107.1298828125
+    },
+    {
+      "ts": "2026-02-11T05:00:00+00:00",
+      "close": 8291.8603515625
+    },
+    {
+      "ts": "2026-02-12T05:00:00+00:00",
+      "close": 8084.7001953125
+    },
+    {
+      "ts": "2026-02-13T05:00:00+00:00",
+      "close": 8137.85986328125
+    },
+    {
+      "ts": "2026-02-17T05:00:00+00:00",
+      "close": 8136.0498046875
+    },
+    {
+      "ts": "2026-02-18T05:00:00+00:00",
+      "close": 8214.349609375
+    },
+    {
+      "ts": "2026-02-19T05:00:00+00:00",
+      "close": 8173.2998046875
+    },
+    {
+      "ts": "2026-02-20T05:00:00+00:00",
+      "close": 8260.419921875
+    },
+    {
+      "ts": "2026-02-23T05:00:00+00:00",
+      "close": 8213.4599609375
+    },
+    {
+      "ts": "2026-02-24T05:00:00+00:00",
+      "close": 8332.33984375
+    },
+    {
+      "ts": "2026-02-25T05:00:00+00:00",
+      "close": 8467.4296875
+    },
+    {
+      "ts": "2026-02-26T05:00:00+00:00",
+      "close": 8197.259765625
+    },
+    {
+      "ts": "2026-02-27T05:00:00+00:00",
+      "close": 8098.3701171875
+    },
+    {
+      "ts": "2026-03-02T05:00:00+00:00",
+      "close": 8137.35986328125
+    },
+    {
+      "ts": "2026-03-03T05:00:00+00:00",
+      "close": 7764.8798828125
+    },
+    {
+      "ts": "2026-03-04T05:00:00+00:00",
+      "close": 7914.47998046875
+    },
+    {
+      "ts": "2026-03-05T05:00:00+00:00",
+      "close": 7821.759765625
+    },
+    {
+      "ts": "2026-03-06T05:00:00+00:00",
+      "close": 7514.740234375
+    },
+    {
+      "ts": "2026-03-09T04:00:00+00:00",
+      "close": 7810.39990234375
+    },
+    {
+      "ts": "2026-03-10T04:00:00+00:00",
+      "close": 7865.1201171875
+    },
+    {
+      "ts": "2026-03-11T04:00:00+00:00",
+      "close": 7914.56982421875
+    },
+    {
+      "ts": "2026-03-12T04:00:00+00:00",
+      "close": 7643.169921875
+    },
+    {
+      "ts": "2026-03-13T04:00:00+00:00",
+      "close": 7646.64013671875
+    },
+    {
+      "ts": "2026-03-16T04:00:00+00:00",
+      "close": 7796.240234375
+    },
+    {
+      "ts": "2026-03-17T04:00:00+00:00",
+      "close": 7836.830078125
+    },
+    {
+      "ts": "2026-03-18T04:00:00+00:00",
+      "close": 7795.1298828125
+    },
+    {
+      "ts": "2026-03-19T04:00:00+00:00",
+      "close": 7863.2998046875
+    },
+    {
+      "ts": "2026-03-20T04:00:00+00:00",
+      "close": 7670.60986328125
+    },
+    {
+      "ts": "2026-03-23T04:00:00+00:00",
+      "close": 7773.1298828125
+    },
+    {
+      "ts": "2026-03-24T04:00:00+00:00",
+      "close": 7872.7099609375
+    },
+    {
+      "ts": "2026-03-25T04:00:00+00:00",
+      "close": 7967.75
+    },
+    {
+      "ts": "2026-03-26T04:00:00+00:00",
+      "close": 7585.8701171875
+    },
+    {
+      "ts": "2026-03-27T04:00:00+00:00",
+      "close": 7457.669921875
+    },
+    {
+      "ts": "2026-03-30T04:00:00+00:00",
+      "close": 7142.330078125
+    },
+    {
+      "ts": "2026-03-31T04:00:00+00:00",
+      "close": 7588.2001953125
+    },
+    {
+      "ts": "2026-04-01T04:00:00+00:00",
+      "close": 7802.31005859375
+    },
+    {
+      "ts": "2026-04-02T04:00:00+00:00",
+      "close": 7833.39013671875
+    },
+    {
+      "ts": "2026-04-06T04:00:00+00:00",
+      "close": 7916.10986328125
+    },
+    {
+      "ts": "2026-04-07T04:00:00+00:00",
+      "close": 8003.8701171875
+    },
+    {
+      "ts": "2026-04-08T04:00:00+00:00",
+      "close": 8510.919921875
+    },
+    {
+      "ts": "2026-04-09T04:00:00+00:00",
+      "close": 8689.5302734375
+    },
+    {
+      "ts": "2026-04-10T04:00:00+00:00",
+      "close": 8889.830078125
+    },
+    {
+      "ts": "2026-04-13T04:00:00+00:00",
+      "close": 9039.51953125
+    },
+    {
+      "ts": "2026-04-14T04:00:00+00:00",
+      "close": 9224.1201171875
+    },
+    {
+      "ts": "2026-04-15T04:00:00+00:00",
+      "close": 9239.2900390625
+    },
+    {
+      "ts": "2026-04-16T04:00:00+00:00",
+      "close": 9329.349609375
+    },
+    {
+      "ts": "2026-04-17T04:00:00+00:00",
+      "close": 9555.8798828125
+    },
+    {
+      "ts": "2026-04-20T04:00:00+00:00",
+      "close": 9599.2099609375
+    },
+    {
+      "ts": "2026-04-21T04:00:00+00:00",
+      "close": 9647.2099609375
+    },
+    {
+      "ts": "2026-04-22T04:00:00+00:00",
+      "close": 9909.26953125
+    },
+    {
+      "ts": "2026-04-23T04:00:00+00:00",
+      "close": 10078.5703125
+    },
+    {
+      "ts": "2026-04-24T04:00:00+00:00",
+      "close": 10513.66015625
+    }
+  ],
+  "nvda_90d": [
+    {
+      "ts": "2025-12-15T05:00:00+00:00",
+      "close": 176.28045654296875
+    },
+    {
+      "ts": "2025-12-16T05:00:00+00:00",
+      "close": 177.71038818359375
+    },
+    {
+      "ts": "2025-12-17T05:00:00+00:00",
+      "close": 170.93075561523438
+    },
+    {
+      "ts": "2025-12-18T05:00:00+00:00",
+      "close": 174.1305694580078
+    },
+    {
+      "ts": "2025-12-19T05:00:00+00:00",
+      "close": 180.98020935058594
+    },
+    {
+      "ts": "2025-12-22T05:00:00+00:00",
+      "close": 183.6800537109375
+    },
+    {
+      "ts": "2025-12-23T05:00:00+00:00",
+      "close": 189.19976806640625
+    },
+    {
+      "ts": "2025-12-24T05:00:00+00:00",
+      "close": 188.59979248046875
+    },
+    {
+      "ts": "2025-12-26T05:00:00+00:00",
+      "close": 190.51968383789062
+    },
+    {
+      "ts": "2025-12-29T05:00:00+00:00",
+      "close": 188.20980834960938
+    },
+    {
+      "ts": "2025-12-30T05:00:00+00:00",
+      "close": 187.52984619140625
+    },
+    {
+      "ts": "2025-12-31T05:00:00+00:00",
+      "close": 186.4899139404297
+    },
+    {
+      "ts": "2026-01-02T05:00:00+00:00",
+      "close": 188.83978271484375
+    },
+    {
+      "ts": "2026-01-05T05:00:00+00:00",
+      "close": 188.1098175048828
+    },
+    {
+      "ts": "2026-01-06T05:00:00+00:00",
+      "close": 187.22987365722656
+    },
+    {
+      "ts": "2026-01-07T05:00:00+00:00",
+      "close": 189.09976196289062
+    },
+    {
+      "ts": "2026-01-08T05:00:00+00:00",
+      "close": 185.0299835205078
+    },
+    {
+      "ts": "2026-01-09T05:00:00+00:00",
+      "close": 184.84999084472656
+    },
+    {
+      "ts": "2026-01-12T05:00:00+00:00",
+      "close": 184.92999267578125
+    },
+    {
+      "ts": "2026-01-13T05:00:00+00:00",
+      "close": 185.79994201660156
+    },
+    {
+      "ts": "2026-01-14T05:00:00+00:00",
+      "close": 183.1300811767578
+    },
+    {
+      "ts": "2026-01-15T05:00:00+00:00",
+      "close": 187.03988647460938
+    },
+    {
+      "ts": "2026-01-16T05:00:00+00:00",
+      "close": 186.21990966796875
+    },
+    {
+      "ts": "2026-01-20T05:00:00+00:00",
+      "close": 178.06036376953125
+    },
+    {
+      "ts": "2026-01-21T05:00:00+00:00",
+      "close": 183.31008911132812
+    },
+    {
+      "ts": "2026-01-22T05:00:00+00:00",
+      "close": 184.82998657226562
+    },
+    {
+      "ts": "2026-01-23T05:00:00+00:00",
+      "close": 187.6598358154297
+    },
+    {
+      "ts": "2026-01-26T05:00:00+00:00",
+      "close": 186.4599151611328
+    },
+    {
+      "ts": "2026-01-27T05:00:00+00:00",
+      "close": 188.50979614257812
+    },
+    {
+      "ts": "2026-01-28T05:00:00+00:00",
+      "close": 191.5096435546875
+    },
+    {
+      "ts": "2026-01-29T05:00:00+00:00",
+      "close": 192.49957275390625
+    },
+    {
+      "ts": "2026-01-30T05:00:00+00:00",
+      "close": 191.11965942382812
+    },
+    {
+      "ts": "2026-02-02T05:00:00+00:00",
+      "close": 185.59996032714844
+    },
+    {
+      "ts": "2026-02-03T05:00:00+00:00",
+      "close": 180.33023071289062
+    },
+    {
+      "ts": "2026-02-04T05:00:00+00:00",
+      "close": 174.18057250976562
+    },
+    {
+      "ts": "2026-02-05T05:00:00+00:00",
+      "close": 171.87069702148438
+    },
+    {
+      "ts": "2026-02-06T05:00:00+00:00",
+      "close": 185.39996337890625
+    },
+    {
+      "ts": "2026-02-09T05:00:00+00:00",
+      "close": 190.0297088623047
+    },
+    {
+      "ts": "2026-02-10T05:00:00+00:00",
+      "close": 188.52978515625
+    },
+    {
+      "ts": "2026-02-11T05:00:00+00:00",
+      "close": 190.0397186279297
+    },
+    {
+      "ts": "2026-02-12T05:00:00+00:00",
+      "close": 186.9298858642578
+    },
+    {
+      "ts": "2026-02-13T05:00:00+00:00",
+      "close": 182.80010986328125
+    },
+    {
+      "ts": "2026-02-17T05:00:00+00:00",
+      "close": 184.95999145507812
+    },
+    {
+      "ts": "2026-02-18T05:00:00+00:00",
+      "close": 187.96981811523438
+    },
+    {
+      "ts": "2026-02-19T05:00:00+00:00",
+      "close": 187.88983154296875
+    },
+    {
+      "ts": "2026-02-20T05:00:00+00:00",
+      "close": 189.8097381591797
+    },
+    {
+      "ts": "2026-02-23T05:00:00+00:00",
+      "close": 191.53964233398438
+    },
+    {
+      "ts": "2026-02-24T05:00:00+00:00",
+      "close": 192.83956909179688
+    },
+    {
+      "ts": "2026-02-25T05:00:00+00:00",
+      "close": 195.54940795898438
+    },
+    {
+      "ts": "2026-02-26T05:00:00+00:00",
+      "close": 184.87998962402344
+    },
+    {
+      "ts": "2026-02-27T05:00:00+00:00",
+      "close": 177.180419921875
+    },
+    {
+      "ts": "2026-03-02T05:00:00+00:00",
+      "close": 182.47012329101562
+    },
+    {
+      "ts": "2026-03-03T05:00:00+00:00",
+      "close": 180.04025268554688
+    },
+    {
+      "ts": "2026-03-04T05:00:00+00:00",
+      "close": 183.03009033203125
+    },
+    {
+      "ts": "2026-03-05T05:00:00+00:00",
+      "close": 183.330078125
+    },
+    {
+      "ts": "2026-03-06T05:00:00+00:00",
+      "close": 177.8103790283203
+    },
+    {
+      "ts": "2026-03-09T04:00:00+00:00",
+      "close": 182.64010620117188
+    },
+    {
+      "ts": "2026-03-10T04:00:00+00:00",
+      "close": 184.760009765625
+    },
+    {
+      "ts": "2026-03-11T04:00:00+00:00",
+      "close": 186.02999877929688
+    },
+    {
+      "ts": "2026-03-12T04:00:00+00:00",
+      "close": 183.13999938964844
+    },
+    {
+      "ts": "2026-03-13T04:00:00+00:00",
+      "close": 180.25
+    },
+    {
+      "ts": "2026-03-16T04:00:00+00:00",
+      "close": 183.22000122070312
+    },
+    {
+      "ts": "2026-03-17T04:00:00+00:00",
+      "close": 181.92999267578125
+    },
+    {
+      "ts": "2026-03-18T04:00:00+00:00",
+      "close": 180.39999389648438
+    },
+    {
+      "ts": "2026-03-19T04:00:00+00:00",
+      "close": 178.55999755859375
+    },
+    {
+      "ts": "2026-03-20T04:00:00+00:00",
+      "close": 172.6999969482422
+    },
+    {
+      "ts": "2026-03-23T04:00:00+00:00",
+      "close": 175.63999938964844
+    },
+    {
+      "ts": "2026-03-24T04:00:00+00:00",
+      "close": 175.1999969482422
+    },
+    {
+      "ts": "2026-03-25T04:00:00+00:00",
+      "close": 178.67999267578125
+    },
+    {
+      "ts": "2026-03-26T04:00:00+00:00",
+      "close": 171.24000549316406
+    },
+    {
+      "ts": "2026-03-27T04:00:00+00:00",
+      "close": 167.52000427246094
+    },
+    {
+      "ts": "2026-03-30T04:00:00+00:00",
+      "close": 165.1699981689453
+    },
+    {
+      "ts": "2026-03-31T04:00:00+00:00",
+      "close": 174.39999389648438
+    },
+    {
+      "ts": "2026-04-01T04:00:00+00:00",
+      "close": 175.75
+    },
+    {
+      "ts": "2026-04-02T04:00:00+00:00",
+      "close": 177.38999938964844
+    },
+    {
+      "ts": "2026-04-06T04:00:00+00:00",
+      "close": 177.63999938964844
+    },
+    {
+      "ts": "2026-04-07T04:00:00+00:00",
+      "close": 178.10000610351562
+    },
+    {
+      "ts": "2026-04-08T04:00:00+00:00",
+      "close": 182.0800018310547
+    },
+    {
+      "ts": "2026-04-09T04:00:00+00:00",
+      "close": 183.91000366210938
+    },
+    {
+      "ts": "2026-04-10T04:00:00+00:00",
+      "close": 188.6300048828125
+    },
+    {
+      "ts": "2026-04-13T04:00:00+00:00",
+      "close": 189.30999755859375
+    },
+    {
+      "ts": "2026-04-14T04:00:00+00:00",
+      "close": 196.50999450683594
+    },
+    {
+      "ts": "2026-04-15T04:00:00+00:00",
+      "close": 198.8699951171875
+    },
+    {
+      "ts": "2026-04-16T04:00:00+00:00",
+      "close": 198.35000610351562
+    },
+    {
+      "ts": "2026-04-17T04:00:00+00:00",
+      "close": 201.67999267578125
+    },
+    {
+      "ts": "2026-04-20T04:00:00+00:00",
+      "close": 202.05999755859375
+    },
+    {
+      "ts": "2026-04-21T04:00:00+00:00",
+      "close": 199.8800048828125
+    },
+    {
+      "ts": "2026-04-22T04:00:00+00:00",
+      "close": 202.5
+    },
+    {
+      "ts": "2026-04-23T04:00:00+00:00",
+      "close": 199.63999938964844
+    },
+    {
+      "ts": "2026-04-24T04:00:00+00:00",
+      "close": 208.27000427246094
+    }
+  ],
+  "samsung_90d": [
+    {
+      "ts": "2025-12-10T15:00:00+00:00",
+      "close": 106780.921875
+    },
+    {
+      "ts": "2025-12-11T15:00:00+00:00",
+      "close": 108373.1796875
+    },
+    {
+      "ts": "2025-12-14T15:00:00+00:00",
+      "close": 104293.015625
+    },
+    {
+      "ts": "2025-12-15T15:00:00+00:00",
+      "close": 102302.6953125
+    },
+    {
+      "ts": "2025-12-16T15:00:00+00:00",
+      "close": 107378.015625
+    },
+    {
+      "ts": "2025-12-17T15:00:00+00:00",
+      "close": 107079.46875
+    },
+    {
+      "ts": "2025-12-18T15:00:00+00:00",
+      "close": 105785.7578125
+    },
+    {
+      "ts": "2025-12-21T15:00:00+00:00",
+      "close": 109965.4453125
+    },
+    {
+      "ts": "2025-12-22T15:00:00+00:00",
+      "close": 110960.6015625
+    },
+    {
+      "ts": "2025-12-23T15:00:00+00:00",
+      "close": 110562.5390625
+    },
+    {
+      "ts": "2025-12-25T15:00:00+00:00",
+      "close": 116434.0
+    },
+    {
+      "ts": "2025-12-28T15:00:00+00:00",
+      "close": 119500.0
+    },
+    {
+      "ts": "2025-12-29T15:00:00+00:00",
+      "close": 119900.0
+    },
+    {
+      "ts": "2026-01-01T15:00:00+00:00",
+      "close": 128500.0
+    },
+    {
+      "ts": "2026-01-04T15:00:00+00:00",
+      "close": 138100.0
+    },
+    {
+      "ts": "2026-01-05T15:00:00+00:00",
+      "close": 138900.0
+    },
+    {
+      "ts": "2026-01-06T15:00:00+00:00",
+      "close": 141000.0
+    },
+    {
+      "ts": "2026-01-07T15:00:00+00:00",
+      "close": 138800.0
+    },
+    {
+      "ts": "2026-01-08T15:00:00+00:00",
+      "close": 139000.0
+    },
+    {
+      "ts": "2026-01-11T15:00:00+00:00",
+      "close": 138800.0
+    },
+    {
+      "ts": "2026-01-12T15:00:00+00:00",
+      "close": 137600.0
+    },
+    {
+      "ts": "2026-01-13T15:00:00+00:00",
+      "close": 140300.0
+    },
+    {
+      "ts": "2026-01-14T15:00:00+00:00",
+      "close": 143900.0
+    },
+    {
+      "ts": "2026-01-15T15:00:00+00:00",
+      "close": 148900.0
+    },
+    {
+      "ts": "2026-01-18T15:00:00+00:00",
+      "close": 149300.0
+    },
+    {
+      "ts": "2026-01-19T15:00:00+00:00",
+      "close": 145200.0
+    },
+    {
+      "ts": "2026-01-20T15:00:00+00:00",
+      "close": 149500.0
+    },
+    {
+      "ts": "2026-01-21T15:00:00+00:00",
+      "close": 152300.0
+    },
+    {
+      "ts": "2026-01-22T15:00:00+00:00",
+      "close": 152100.0
+    },
+    {
+      "ts": "2026-01-25T15:00:00+00:00",
+      "close": 152100.0
+    },
+    {
+      "ts": "2026-01-26T15:00:00+00:00",
+      "close": 159500.0
+    },
+    {
+      "ts": "2026-01-27T15:00:00+00:00",
+      "close": 162400.0
+    },
+    {
+      "ts": "2026-01-28T15:00:00+00:00",
+      "close": 160700.0
+    },
+    {
+      "ts": "2026-01-29T15:00:00+00:00",
+      "close": 160500.0
+    },
+    {
+      "ts": "2026-02-01T15:00:00+00:00",
+      "close": 150400.0
+    },
+    {
+      "ts": "2026-02-02T15:00:00+00:00",
+      "close": 167500.0
+    },
+    {
+      "ts": "2026-02-03T15:00:00+00:00",
+      "close": 169100.0
+    },
+    {
+      "ts": "2026-02-04T15:00:00+00:00",
+      "close": 159300.0
+    },
+    {
+      "ts": "2026-02-05T15:00:00+00:00",
+      "close": 158600.0
+    },
+    {
+      "ts": "2026-02-08T15:00:00+00:00",
+      "close": 166400.0
+    },
+    {
+      "ts": "2026-02-09T15:00:00+00:00",
+      "close": 165800.0
+    },
+    {
+      "ts": "2026-02-10T15:00:00+00:00",
+      "close": 167800.0
+    },
+    {
+      "ts": "2026-02-11T15:00:00+00:00",
+      "close": 178600.0
+    },
+    {
+      "ts": "2026-02-12T15:00:00+00:00",
+      "close": 181200.0
+    },
+    {
+      "ts": "2026-02-18T15:00:00+00:00",
+      "close": 190000.0
+    },
+    {
+      "ts": "2026-02-19T15:00:00+00:00",
+      "close": 190100.0
+    },
+    {
+      "ts": "2026-02-22T15:00:00+00:00",
+      "close": 193000.0
+    },
+    {
+      "ts": "2026-02-23T15:00:00+00:00",
+      "close": 200000.0
+    },
+    {
+      "ts": "2026-02-24T15:00:00+00:00",
+      "close": 203500.0
+    },
+    {
+      "ts": "2026-02-25T15:00:00+00:00",
+      "close": 218000.0
+    },
+    {
+      "ts": "2026-02-26T15:00:00+00:00",
+      "close": 216500.0
+    },
+    {
+      "ts": "2026-03-02T15:00:00+00:00",
+      "close": 195100.0
+    },
+    {
+      "ts": "2026-03-03T15:00:00+00:00",
+      "close": 172200.0
+    },
+    {
+      "ts": "2026-03-04T15:00:00+00:00",
+      "close": 191600.0
+    },
+    {
+      "ts": "2026-03-05T15:00:00+00:00",
+      "close": 188200.0
+    },
+    {
+      "ts": "2026-03-08T15:00:00+00:00",
+      "close": 173500.0
+    },
+    {
+      "ts": "2026-03-09T15:00:00+00:00",
+      "close": 187900.0
+    },
+    {
+      "ts": "2026-03-10T15:00:00+00:00",
+      "close": 190000.0
+    },
+    {
+      "ts": "2026-03-11T15:00:00+00:00",
+      "close": 187900.0
+    },
+    {
+      "ts": "2026-03-12T15:00:00+00:00",
+      "close": 183500.0
+    },
+    {
+      "ts": "2026-03-15T15:00:00+00:00",
+      "close": 188700.0
+    },
+    {
+      "ts": "2026-03-16T15:00:00+00:00",
+      "close": 193900.0
+    },
+    {
+      "ts": "2026-03-17T15:00:00+00:00",
+      "close": 208500.0
+    },
+    {
+      "ts": "2026-03-18T15:00:00+00:00",
+      "close": 200500.0
+    },
+    {
+      "ts": "2026-03-19T15:00:00+00:00",
+      "close": 199400.0
+    },
+    {
+      "ts": "2026-03-22T15:00:00+00:00",
+      "close": 186300.0
+    },
+    {
+      "ts": "2026-03-23T15:00:00+00:00",
+      "close": 189700.0
+    },
+    {
+      "ts": "2026-03-24T15:00:00+00:00",
+      "close": 189000.0
+    },
+    {
+      "ts": "2026-03-25T15:00:00+00:00",
+      "close": 180100.0
+    },
+    {
+      "ts": "2026-03-26T15:00:00+00:00",
+      "close": 180100.0
+    },
+    {
+      "ts": "2026-03-29T15:00:00+00:00",
+      "close": 176300.0
+    },
+    {
+      "ts": "2026-03-30T15:00:00+00:00",
+      "close": 167200.0
+    },
+    {
+      "ts": "2026-03-31T15:00:00+00:00",
+      "close": 189650.0
+    },
+    {
+      "ts": "2026-04-01T15:00:00+00:00",
+      "close": 178400.0
+    },
+    {
+      "ts": "2026-04-02T15:00:00+00:00",
+      "close": 186200.0
+    },
+    {
+      "ts": "2026-04-05T15:00:00+00:00",
+      "close": 193100.0
+    },
+    {
+      "ts": "2026-04-06T15:00:00+00:00",
+      "close": 196500.0
+    },
+    {
+      "ts": "2026-04-07T15:00:00+00:00",
+      "close": 210500.0
+    },
+    {
+      "ts": "2026-04-08T15:00:00+00:00",
+      "close": 204000.0
+    },
+    {
+      "ts": "2026-04-09T15:00:00+00:00",
+      "close": 206000.0
+    },
+    {
+      "ts": "2026-04-12T15:00:00+00:00",
+      "close": 201000.0
+    },
+    {
+      "ts": "2026-04-13T15:00:00+00:00",
+      "close": 206500.0
+    },
+    {
+      "ts": "2026-04-14T15:00:00+00:00",
+      "close": 211000.0
+    },
+    {
+      "ts": "2026-04-15T15:00:00+00:00",
+      "close": 217500.0
+    },
+    {
+      "ts": "2026-04-16T15:00:00+00:00",
+      "close": 216000.0
+    },
+    {
+      "ts": "2026-04-19T15:00:00+00:00",
+      "close": 214500.0
+    },
+    {
+      "ts": "2026-04-20T15:00:00+00:00",
+      "close": 219000.0
+    },
+    {
+      "ts": "2026-04-21T15:00:00+00:00",
+      "close": 217500.0
+    },
+    {
+      "ts": "2026-04-22T15:00:00+00:00",
+      "close": 224500.0
+    },
+    {
+      "ts": "2026-04-23T15:00:00+00:00",
+      "close": 219500.0
+    }
+  ],
+  "skhynix_90d": [
+    {
+      "ts": "2025-12-10T15:00:00+00:00",
+      "close": 563959.375
+    },
+    {
+      "ts": "2025-12-11T15:00:00+00:00",
+      "close": 569948.3125
+    },
+    {
+      "ts": "2025-12-14T15:00:00+00:00",
+      "close": 552979.625
+    },
+    {
+      "ts": "2025-12-15T15:00:00+00:00",
+      "close": 529023.8125
+    },
+    {
+      "ts": "2025-12-16T15:00:00+00:00",
+      "close": 549985.125
+    },
+    {
+      "ts": "2025-12-17T15:00:00+00:00",
+      "close": 550983.3125
+    },
+    {
+      "ts": "2025-12-18T15:00:00+00:00",
+      "close": 545992.5
+    },
+    {
+      "ts": "2025-12-21T15:00:00+00:00",
+      "close": 578931.75
+    },
+    {
+      "ts": "2025-12-22T15:00:00+00:00",
+      "close": 582924.375
+    },
+    {
+      "ts": "2025-12-23T15:00:00+00:00",
+      "close": 586917.0
+    },
+    {
+      "ts": "2025-12-25T15:00:00+00:00",
+      "close": 597896.75
+    },
+    {
+      "ts": "2025-12-28T15:00:00+00:00",
+      "close": 638821.25
+    },
+    {
+      "ts": "2025-12-29T15:00:00+00:00",
+      "close": 649800.9375
+    },
+    {
+      "ts": "2026-01-01T15:00:00+00:00",
+      "close": 675753.0625
+    },
+    {
+      "ts": "2026-01-04T15:00:00+00:00",
+      "close": 694718.0625
+    },
+    {
+      "ts": "2026-01-05T15:00:00+00:00",
+      "close": 724662.8125
+    },
+    {
+      "ts": "2026-01-06T15:00:00+00:00",
+      "close": 740633.375
+    },
+    {
+      "ts": "2026-01-07T15:00:00+00:00",
+      "close": 754607.5625
+    },
+    {
+      "ts": "2026-01-08T15:00:00+00:00",
+      "close": 742629.6875
+    },
+    {
+      "ts": "2026-01-11T15:00:00+00:00",
+      "close": 747620.4375
+    },
+    {
+      "ts": "2026-01-12T15:00:00+00:00",
+      "close": 736640.75
+    },
+    {
+      "ts": "2026-01-13T15:00:00+00:00",
+      "close": 740633.375
+    },
+    {
+      "ts": "2026-01-14T15:00:00+00:00",
+      "close": 747620.4375
+    },
+    {
+      "ts": "2026-01-15T15:00:00+00:00",
+      "close": 754607.5625
+    },
+    {
+      "ts": "2026-01-18T15:00:00+00:00",
+      "close": 762592.8125
+    },
+    {
+      "ts": "2026-01-19T15:00:00+00:00",
+      "close": 741631.5
+    },
+    {
+      "ts": "2026-01-20T15:00:00+00:00",
+      "close": 738637.0625
+    },
+    {
+      "ts": "2026-01-21T15:00:00+00:00",
+      "close": 753609.4375
+    },
+    {
+      "ts": "2026-01-22T15:00:00+00:00",
+      "close": 765587.3125
+    },
+    {
+      "ts": "2026-01-25T15:00:00+00:00",
+      "close": 734644.375
+    },
+    {
+      "ts": "2026-01-26T15:00:00+00:00",
+      "close": 798526.5
+    },
+    {
+      "ts": "2026-01-27T15:00:00+00:00",
+      "close": 839451.0
+    },
+    {
+      "ts": "2026-01-28T15:00:00+00:00",
+      "close": 859414.1875
+    },
+    {
+      "ts": "2026-01-29T15:00:00+00:00",
+      "close": 907325.75
+    },
+    {
+      "ts": "2026-02-01T15:00:00+00:00",
+      "close": 828471.25
+    },
+    {
+      "ts": "2026-02-02T15:00:00+00:00",
+      "close": 905329.4375
+    },
+    {
+      "ts": "2026-02-03T15:00:00+00:00",
+      "close": 898342.3125
+    },
+    {
+      "ts": "2026-02-04T15:00:00+00:00",
+      "close": 840449.1875
+    },
+    {
+      "ts": "2026-02-05T15:00:00+00:00",
+      "close": 837454.6875
+    },
+    {
+      "ts": "2026-02-08T15:00:00+00:00",
+      "close": 885366.3125
+    },
+    {
+      "ts": "2026-02-09T15:00:00+00:00",
+      "close": 874386.5625
+    },
+    {
+      "ts": "2026-02-10T15:00:00+00:00",
+      "close": 858416.0
+    },
+    {
+      "ts": "2026-02-11T15:00:00+00:00",
+      "close": 886364.4375
+    },
+    {
+      "ts": "2026-02-12T15:00:00+00:00",
+      "close": 878379.1875
+    },
+    {
+      "ts": "2026-02-18T15:00:00+00:00",
+      "close": 892353.375
+    },
+    {
+      "ts": "2026-02-19T15:00:00+00:00",
+      "close": 947252.0625
+    },
+    {
+      "ts": "2026-02-22T15:00:00+00:00",
+      "close": 949248.4375
+    },
+    {
+      "ts": "2026-02-23T15:00:00+00:00",
+      "close": 1003148.9375
+    },
+    {
+      "ts": "2026-02-24T15:00:00+00:00",
+      "close": 1016125.0
+    },
+    {
+      "ts": "2026-02-25T15:00:00+00:00",
+      "close": 1099000.0
+    },
+    {
+      "ts": "2026-02-26T15:00:00+00:00",
+      "close": 1061000.0
+    },
+    {
+      "ts": "2026-03-02T15:00:00+00:00",
+      "close": 939000.0
+    },
+    {
+      "ts": "2026-03-03T15:00:00+00:00",
+      "close": 849000.0
+    },
+    {
+      "ts": "2026-03-04T15:00:00+00:00",
+      "close": 941000.0
+    },
+    {
+      "ts": "2026-03-05T15:00:00+00:00",
+      "close": 924000.0
+    },
+    {
+      "ts": "2026-03-08T15:00:00+00:00",
+      "close": 836000.0
+    },
+    {
+      "ts": "2026-03-09T15:00:00+00:00",
+      "close": 938000.0
+    },
+    {
+      "ts": "2026-03-10T15:00:00+00:00",
+      "close": 955000.0
+    },
+    {
+      "ts": "2026-03-11T15:00:00+00:00",
+      "close": 930000.0
+    },
+    {
+      "ts": "2026-03-12T15:00:00+00:00",
+      "close": 910000.0
+    },
+    {
+      "ts": "2026-03-15T15:00:00+00:00",
+      "close": 974000.0
+    },
+    {
+      "ts": "2026-03-16T15:00:00+00:00",
+      "close": 970000.0
+    },
+    {
+      "ts": "2026-03-17T15:00:00+00:00",
+      "close": 1056000.0
+    },
+    {
+      "ts": "2026-03-18T15:00:00+00:00",
+      "close": 1013000.0
+    },
+    {
+      "ts": "2026-03-19T15:00:00+00:00",
+      "close": 1007000.0
+    },
+    {
+      "ts": "2026-03-22T15:00:00+00:00",
+      "close": 933000.0
+    },
+    {
+      "ts": "2026-03-23T15:00:00+00:00",
+      "close": 986000.0
+    },
+    {
+      "ts": "2026-03-24T15:00:00+00:00",
+      "close": 995000.0
+    },
+    {
+      "ts": "2026-03-25T15:00:00+00:00",
+      "close": 933000.0
+    },
+    {
+      "ts": "2026-03-26T15:00:00+00:00",
+      "close": 933000.0
+    },
+    {
+      "ts": "2026-03-29T15:00:00+00:00",
+      "close": 873000.0
+    },
+    {
+      "ts": "2026-03-30T15:00:00+00:00",
+      "close": 807000.0
+    },
+    {
+      "ts": "2026-03-31T15:00:00+00:00",
+      "close": 897000.0
+    },
+    {
+      "ts": "2026-04-01T15:00:00+00:00",
+      "close": 830000.0
+    },
+    {
+      "ts": "2026-04-02T15:00:00+00:00",
+      "close": 876000.0
+    },
+    {
+      "ts": "2026-04-05T15:00:00+00:00",
+      "close": 886000.0
+    },
+    {
+      "ts": "2026-04-06T15:00:00+00:00",
+      "close": 916000.0
+    },
+    {
+      "ts": "2026-04-07T15:00:00+00:00",
+      "close": 1033000.0
+    },
+    {
+      "ts": "2026-04-08T15:00:00+00:00",
+      "close": 998000.0
+    },
+    {
+      "ts": "2026-04-09T15:00:00+00:00",
+      "close": 1027000.0
+    },
+    {
+      "ts": "2026-04-12T15:00:00+00:00",
+      "close": 1040000.0
+    },
+    {
+      "ts": "2026-04-13T15:00:00+00:00",
+      "close": 1103000.0
+    },
+    {
+      "ts": "2026-04-14T15:00:00+00:00",
+      "close": 1136000.0
+    },
+    {
+      "ts": "2026-04-15T15:00:00+00:00",
+      "close": 1155000.0
+    },
+    {
+      "ts": "2026-04-16T15:00:00+00:00",
+      "close": 1128000.0
+    },
+    {
+      "ts": "2026-04-19T15:00:00+00:00",
+      "close": 1166000.0
+    },
+    {
+      "ts": "2026-04-20T15:00:00+00:00",
+      "close": 1224000.0
+    },
+    {
+      "ts": "2026-04-21T15:00:00+00:00",
+      "close": 1223000.0
+    },
+    {
+      "ts": "2026-04-22T15:00:00+00:00",
+      "close": 1225000.0
+    },
+    {
+      "ts": "2026-04-23T15:00:00+00:00",
+      "close": 1222000.0
+    }
+  ]
+}
