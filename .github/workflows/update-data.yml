@@ -14,8 +14,6 @@ on:
 permissions:
   contents: write
 
-groups: {}
-
 jobs:
   orchestrate:
     name: "오케스트레이터 — 운영 대시보드 데이터 갱신"
