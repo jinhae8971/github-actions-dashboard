@@ -28,7 +28,6 @@ if not GH_TOKEN:
 HAS_PAT = bool(GH_PAT)
 GH_USER = "jinhae8971"
 
-# Operational dashboard scope. Legacy disabled repositories are deliberately omitted.
 REPOS = [
     "crypto-monitor",
     "korean-stock-agent",
@@ -49,13 +48,17 @@ REPOS = [
     "backtest-lab",
 ]
 
-# Keep korean-stock-agent only for the active foreign-flow monitor.
 EXCLUDED_WORKFLOWS = {
     ("korean-stock-agent", ".github/workflows/main.yml"),
+    # Retired disabled paths. Active replacements live at .github/workflows/daily-active.yml.
+    ("crypto-research-agent", ".github/workflows/daily.yml"),
+    ("kospi-research-agent", ".github/workflows/daily.yml"),
+    ("sp500-research-agent", ".github/workflows/daily.yml"),
+    ("nasdaq-research-agent", ".github/workflows/daily.yml"),
+    ("dow30-research-agent", ".github/workflows/daily.yml"),
+    ("global-market-orchestrator", ".github/workflows/daily.yml"),
 }
 
-# Report files to mirror into data/reports/.
-# Keys become output names: <repo>_<workflow-id-or-latest>.json
 REPORT_MAP = {
     "crypto-monitor/239770946": "reports/latest.json",
     "korean-stock-agent/242830429": "docs/data/foreign_flow.json",
@@ -123,8 +126,8 @@ def sync_paused_json(workflows):
     new_ids = set(new_paused.keys())
     added = sorted(new_ids - old_ids)
     removed = sorted(old_ids - new_ids)
-
     sync_log = {"added": [], "removed": []}
+
     for workflow_id in added:
         info = new_paused[workflow_id]
         print(f"  + paused: [{info['repo']}] {info['name']}")
@@ -203,7 +206,6 @@ def fetch_all_workflow_data():
 
                 cron = get_cron(repo, workflow["path"])
                 runs = fetch_workflow_runs(repo, workflow_id)
-
                 workflows.append(
                     {
                         "repo": repo,
@@ -317,7 +319,7 @@ def main():
     result = {
         "updated_at": timestamp.isoformat(),
         "orchestrator": {
-            "version": "3.1",
+            "version": "3.2",
             "synced_at": timestamp.isoformat(),
             "has_pat": HAS_PAT,
             "paused_count": len(disabled),
