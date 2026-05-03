@@ -205,3 +205,16 @@ systems:
     expected_state: paused
     freshness_sla_hours: 240
     dashboard_url: "https://github.com/jinhae8971/backtest-lab"
+
+  - id: leading-stocks-calendar
+    label: Leading Stocks Calendar
+    group: core
+    role: producer
+    repo: leading-stocks-calendar
+    schedule_kst: "16:30 weekdays"
+    telegram_policy: weekday
+    freshness_sla_hours: 80
+    dashboard_url: "https://jinhae8971.github.io/leading-stocks-calendar/"
+    reports:
+      - key: leading-stocks-calendar/daily
+        path: docs/data/monthly
