@@ -1,25 +1,31 @@
 {
-  "date": "2026-05-11",
-  "collected_at": "2026-05-11T20:29:21.441435",
+  "date": "2026-05-12",
+  "collected_at": "2026-05-12T19:36:40.274315",
   "source": "naver_mobile",
   "analysis": {
     "status": "OK",
-    "date": "2026.05.11",
-    "today_foreign": -28147,
-    "today_institution": -458,
-    "today_individual": 28669,
+    "date": "2026.05.12",
+    "today_foreign": -56090,
+    "today_institution": -12138,
+    "today_individual": 66818,
     "direction": "NET_SELL",
     "direction_kr": "순매도",
     "turned_to_buy": false,
     "turned_to_sell": false,
     "consecutive_buy_days": 0,
-    "consecutive_sell_days": 3,
-    "five_day_total": -87708,
+    "consecutive_sell_days": 4,
+    "five_day_total": -173106,
     "signal": "STRONG_SELL",
-    "signal_kr": "3일 연속 순매도",
-    "message": "외국인 28,147억원 순매도"
+    "signal_kr": "4일 연속 순매도",
+    "message": "외국인 56,090억원 순매도"
   },
   "daily_trend": [
+    {
+      "date": "2026.05.12",
+      "foreign": -56090,
+      "institution": -12138,
+      "individual": 66818
+    },
     {
       "date": "2026.05.11",
       "foreign": -28147,
@@ -61,97 +67,91 @@
       "foreign": -6071,
       "institution": 4771,
       "individual": 1681
-    },
-    {
-      "date": "2026.04.28",
-      "foreign": -1843,
-      "institution": 3532,
-      "individual": -1306
     }
   ],
   "foreign_detail": {
     "buy_top": [
       {
-        "name": "현대차",
-        "amount": 189
+        "name": "삼성전자우",
+        "amount": 257
       },
       {
-        "name": "대한전선",
-        "amount": 168
+        "name": "기아",
+        "amount": 132
       },
       {
-        "name": "현대오토에버",
-        "amount": 46
+        "name": "삼성SDI",
+        "amount": 111
       },
       {
-        "name": "NAVER",
-        "amount": 42
+        "name": "한화오션",
+        "amount": 90
       },
       {
-        "name": "삼양식품",
-        "amount": 38
+        "name": "에이피알",
+        "amount": 69
       },
       {
-        "name": "LG전자",
-        "amount": 37
+        "name": "삼성중공업",
+        "amount": 59
       },
       {
-        "name": "KB금융",
-        "amount": 34
+        "name": "한화에어로스페이스",
+        "amount": 57
       },
       {
-        "name": "HD현대마린솔루션",
-        "amount": 32
+        "name": "한온시스템",
+        "amount": 55
       },
       {
-        "name": "금호석유화학",
-        "amount": 26
+        "name": "현대건설",
+        "amount": 44
       },
       {
-        "name": "한화엔진",
-        "amount": 25
+        "name": "하나금융지주",
+        "amount": 41
       }
     ],
     "sell_top": [
       {
         "name": "삼성전자",
-        "amount": 2538
+        "amount": 2278
       },
       {
         "name": "SK하이닉스",
-        "amount": 1755
+        "amount": 866
       },
       {
-        "name": "두산에너빌리티",
-        "amount": 254
-      },
-      {
-        "name": "삼성전자우",
-        "amount": 221
+        "name": "현대모비스",
+        "amount": 134
       },
       {
         "name": "SK스퀘어",
-        "amount": 133
+        "amount": 109
       },
       {
-        "name": "삼성중공업",
-        "amount": 115
-      },
-      {
-        "name": "LS ELECTRIC",
-        "amount": 102
-      },
-      {
-        "name": "효성중공업",
-        "amount": 94
+        "name": "대한전선",
+        "amount": 93
       },
       {
         "name": "삼성E&A",
-        "amount": 82
+        "amount": 83
       },
       {
-        "name": "HD현대중공업",
+        "name": "미래에셋증권",
         "amount": 66
+      },
+      {
+        "name": "삼성물산",
+        "amount": 64
+      },
+      {
+        "name": "LS ELECTRIC",
+        "amount": 57
+      },
+      {
+        "name": "HD현대일렉트릭",
+        "amount": 43
       }
     ]
   }
