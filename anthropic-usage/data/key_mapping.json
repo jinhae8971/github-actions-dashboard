@@ -1,0 +1,78 @@
+{
+  "__instructions__": [
+    "이 파일은 영길님의 13개 Anthropic API 사용 레포를 자동 스캔하여 사전 작성되었습니다.",
+    "사용 방법:",
+    "  1. console.anthropic.com/settings/keys 접속",
+    "  2. 각 API Key의 id 클릭하여 'apikey_01...' 형식의 ID 복사",
+    "  3. 아래 placeholder 키('__REPLACE_WITH_apikey_01..._for_<repo>')를 실제 ID로 교체",
+    "  4. 사용하지 않는 레포 항목은 통째로 삭제",
+    "  5. 동일한 키를 여러 레포에서 공유 중이면 한 항목만 남기고 나머지는 삭제",
+    "  6. 파일 저장 후 git push 하면 다음 실행부터 자동 매핑됨"
+  ],
+
+  "__REPLACE_WITH_apikey_01_for_kospi-strategy": {
+    "repo": "kospi-strategy",
+    "workflow": "KOSPI Strategy — Daily Report",
+    "schedule": "21:00 KST daily"
+  },
+  "__REPLACE_WITH_apikey_01_for_kospi-morning-briefing": {
+    "repo": "kospi-morning-briefing",
+    "workflow": "KOSPI 모닝브리핑",
+    "schedule": "morning"
+  },
+  "__REPLACE_WITH_apikey_01_for_nasdaq-quant-analyzer": {
+    "repo": "nasdaq-quant-analyzer",
+    "workflow": "NASDAQ Quant Analyzer — Daily Report",
+    "schedule": "daily"
+  },
+  "__REPLACE_WITH_apikey_01_for_stock-dashboard": {
+    "repo": "stock-dashboard",
+    "workflow": "Hourly Market Data Update",
+    "schedule": "hourly"
+  },
+  "__REPLACE_WITH_apikey_01_for_multi-agent-researcher": {
+    "repo": "multi-agent-researcher",
+    "workflow": "Multi-Agent Research",
+    "schedule": "on-demand"
+  },
+  "__REPLACE_WITH_apikey_01_for_global-market-orchestrator": {
+    "repo": "global-market-orchestrator",
+    "workflow": "Daily Global Orchestrator",
+    "schedule": "daily (currently paused)"
+  },
+  "__REPLACE_WITH_apikey_01_for_kospi-research-agent": {
+    "repo": "kospi-research-agent",
+    "workflow": "Daily KOSPI Research",
+    "schedule": "daily (currently paused)"
+  },
+  "__REPLACE_WITH_apikey_01_for_nasdaq-research-agent": {
+    "repo": "nasdaq-research-agent",
+    "workflow": "Daily NASDAQ-100 Research",
+    "schedule": "daily (currently paused)"
+  },
+  "__REPLACE_WITH_apikey_01_for_sp500-research-agent": {
+    "repo": "sp500-research-agent",
+    "workflow": "Daily S&P 500 Research",
+    "schedule": "daily (currently paused)"
+  },
+  "__REPLACE_WITH_apikey_01_for_dow30-research-agent": {
+    "repo": "dow30-research-agent",
+    "workflow": "Daily Dow 30 Research",
+    "schedule": "daily (currently paused)"
+  },
+  "__REPLACE_WITH_apikey_01_for_crypto-research-agent": {
+    "repo": "crypto-research-agent",
+    "workflow": "Daily Crypto Research",
+    "schedule": "daily (currently paused)"
+  },
+  "__REPLACE_WITH_apikey_01_for_korean-stock-agent": {
+    "repo": "korean-stock-agent",
+    "workflow": "Korean Stock Agent — Daily Report",
+    "schedule": "weekdays (currently paused)"
+  },
+  "__REPLACE_WITH_apikey_01_for_us-market-agent": {
+    "repo": "us-market-agent",
+    "workflow": "US Market Agent — Daily Report",
+    "schedule": "daily (currently paused)"
+  }
+}

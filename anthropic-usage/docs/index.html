@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anthropic API Usage Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, "Segoe UI", "Noto Sans KR", sans-serif;
+      background: #0b1020;
+      color: #e6e9f2;
+    }
+    .card {
+      background: linear-gradient(180deg, #131a30 0%, #0f1428 100%);
+      border: 1px solid #24304f;
+      border-radius: 14px;
+    }
+    .kpi-value {
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+    }
+    .ranking-bar {
+      background: linear-gradient(90deg, #3b82f6 0%, #6366f1 100%);
+      height: 8px;
+      border-radius: 4px;
+    }
+    .pill {
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.35);
+      color: #c7d2fe;
+    }
+    .updated-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #10b981; box-shadow: 0 0 8px #10b981;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <div class="max-w-7xl mx-auto px-6 py-8">
+    <!-- Header -->
+    <header class="flex items-end justify-between mb-8 flex-wrap gap-3">
+      <div>
+        <p class="text-xs uppercase tracking-widest text-indigo-300">Anthropic Console · Workflow Attribution</p>
+        <h1 class="text-3xl font-bold mt-1">API Usage Dashboard</h1>
+        <p class="text-sm text-slate-400 mt-1">GitHub Actions 워크플로우별 Anthropic API 사용량 모니터링</p>
+      </div>
+      <div class="flex items-center gap-3 text-xs text-slate-400">
+        <span class="updated-dot"></span>
+        <span id="last-updated">로딩 중…</span>
+        <button onclick="loadAll()" class="pill px-3 py-1 rounded-full text-xs hover:bg-indigo-500/20 transition">
+          ↻ 새로고침
+        </button>
+      </div>
+    </header>
+
+    <!-- KPI cards -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      <div class="card p-5">
+        <p class="text-xs text-slate-400">최근 30일 누적 토큰</p>
+        <p id="kpi-tokens" class="kpi-value text-2xl font-bold mt-1">–</p>
+        <p class="text-xs text-emerald-400 mt-2">input + output + cache 합산</p>
+      </div>
+      <div class="card p-5">
+        <p class="text-xs text-slate-400">최근 30일 비용</p>
+        <p id="kpi-usd" class="kpi-value text-2xl font-bold mt-1">–</p>
+        <p class="text-xs text-emerald-400 mt-2">USD · Cost API 기준</p>
+      </div>
+      <div class="card p-5">
+        <p class="text-xs text-slate-400">이번 달 토큰 (MTD)</p>
+        <p id="kpi-mtd-tokens" class="kpi-value text-2xl font-bold mt-1">–</p>
+        <p class="text-xs text-slate-400 mt-2"><span id="kpi-month">–</span></p>
+      </div>
+      <div class="card p-5">
+        <p class="text-xs text-slate-400">이번 달 비용 (MTD)</p>
+        <p id="kpi-mtd-usd" class="kpi-value text-2xl font-bold mt-1">–</p>
+        <p class="text-xs text-slate-400 mt-2">월 누적</p>
+      </div>
+    </section>
+
+    <!-- Main grid -->
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
+      <!-- TOP workflows ranking -->
+      <div class="card p-5 lg:col-span-2">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-lg font-semibold">🏆 워크플로우별 TOP 랭킹</h2>
+          <span class="text-xs text-slate-400" id="ranking-meta">–</span>
+        </div>
+        <div id="ranking" class="space-y-3"></div>
+      </div>
+
+      <!-- Model breakdown donut -->
+      <div class="card p-5">
+        <h2 class="text-lg font-semibold mb-4">🧩 모델별 비중</h2>
+        <div id="model-donut" style="height: 320px;"></div>
+      </div>
+    </section>
+
+    <!-- Daily trend -->
+    <section class="card p-5 mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-semibold">📈 일자별 토큰 · 비용 추세</h2>
+        <div class="flex gap-2 text-xs">
+          <span class="pill px-2 py-1 rounded">Input</span>
+          <span class="pill px-2 py-1 rounded">Output</span>
+          <span class="pill px-2 py-1 rounded">Cache</span>
+          <span class="pill px-2 py-1 rounded">USD</span>
+        </div>
+      </div>
+      <div id="daily-chart" style="height: 380px;"></div>
+    </section>
+
+    <!-- Per-model table -->
+    <section class="card p-5">
+      <h2 class="text-lg font-semibold mb-4">📊 모델별 상세</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-slate-400 border-b border-slate-700">
+              <th class="py-2 pr-4">Model</th>
+              <th class="py-2 pr-4 text-right">Input Tokens</th>
+              <th class="py-2 pr-4 text-right">Output Tokens</th>
+              <th class="py-2 pr-4 text-right">Total Tokens</th>
+              <th class="py-2 pr-4 text-right">USD</th>
+            </tr>
+          </thead>
+          <tbody id="model-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="text-center text-xs text-slate-500 mt-8">
+      Data source: <code class="text-indigo-300">api.anthropic.com/v1/organizations/usage_report</code> ·
+      Updated via GitHub Actions · Refresh ≤ 24h
+    </footer>
+  </div>
+
+  <script>
+    const COLORS = ['#6366f1', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981', '#3b82f6', '#14b8a6', '#f43f5e', '#a855f7', '#06b6d4'];
+
+    function fmt(n) {
+      if (n == null) return '–';
+      if (typeof n !== 'number') n = Number(n) || 0;
+      if (n >= 1e9) return (n / 1e9).toFixed(2) + 'B';
+      if (n >= 1e6) return (n / 1e6).toFixed(2) + 'M';
+      if (n >= 1e3) return (n / 1e3).toFixed(1) + 'K';
+      return n.toLocaleString();
+    }
+    function fmtUSD(n) {
+      if (n == null) return '–';
+      return '$' + Number(n).toLocaleString(undefined, { maximumFractionDigits: 2 });
+    }
+
+    async function loadJSON(path) {
+      const r = await fetch(path + '?t=' + Date.now());
+      if (!r.ok) throw new Error(path + ' ' + r.status);
+      return r.json();
+    }
+
+    function renderKPI(summary) {
+      document.getElementById('kpi-tokens').textContent = fmt(summary.totals.tokens);
+      document.getElementById('kpi-usd').textContent = fmtUSD(summary.totals.usd);
+      document.getElementById('kpi-mtd-tokens').textContent = fmt(summary.mtd.tokens);
+      document.getElementById('kpi-mtd-usd').textContent = fmtUSD(summary.mtd.usd);
+      document.getElementById('kpi-month').textContent = summary.mtd.month;
+      const t = new Date(summary.generated_at);
+      document.getElementById('last-updated').textContent = '마지막 업데이트: ' + t.toLocaleString('ko-KR');
+    }
+
+    function renderRanking(rows) {
+      const el = document.getElementById('ranking');
+      const top = rows.slice(0, 10);
+      const max = top[0]?.tokens || 1;
+      document.getElementById('ranking-meta').textContent = `총 ${rows.length}개 키 · TOP 10 표시`;
+      el.innerHTML = top.map((r, i) => {
+        const pct = (r.tokens / max) * 100;
+        return `
+          <div class="flex items-center gap-3">
+            <span class="w-6 text-right text-slate-500 text-sm">${i + 1}</span>
+            <div class="flex-1">
+              <div class="flex justify-between text-sm mb-1">
+                <span class="font-medium truncate" title="${r.api_key_id}">${r.label}</span>
+                <span class="text-slate-400 tabular-nums">${fmt(r.tokens)} tok · ${fmtUSD(r.usd)}</span>
+              </div>
+              <div class="bg-slate-800 rounded h-2 overflow-hidden">
+                <div class="ranking-bar" style="width: ${pct}%; height: 100%;"></div>
+              </div>
+            </div>
+          </div>`;
+      }).join('') || '<p class="text-slate-500 text-sm">데이터가 아직 없습니다.</p>';
+    }
+
+    function renderModelDonut(rows) {
+      const top = rows.slice(0, 8);
+      const data = [{
+        type: 'pie',
+        hole: 0.55,
+        labels: top.map(r => r.model.replace(/-2025\d{4}$/, '').replace(/-2024\d{4}$/, '')),
+        values: top.map(r => r.tokens),
+        marker: { colors: COLORS },
+        textinfo: 'percent',
+        textfont: { color: '#e6e9f2', size: 11 },
+        hovertemplate: '%{label}<br>%{value:,} tokens<br>%{percent}<extra></extra>',
+      }];
+      Plotly.newPlot('model-donut', data, {
+        paper_bgcolor: 'rgba(0,0,0,0)',
+        plot_bgcolor: 'rgba(0,0,0,0)',
+        font: { color: '#cbd5e1', size: 11 },
+        showlegend: true,
+        legend: { orientation: 'v', x: 1, y: 0.5 },
+        margin: { l: 10, r: 10, t: 10, b: 10 },
+      }, { displayModeBar: false, responsive: true });
+    }
+
+    function renderDailyChart(rows) {
+      const dates = rows.map(r => r.date);
+      const traces = [
+        { x: dates, y: rows.map(r => r.input), name: 'Input', type: 'bar', marker: { color: '#6366f1' } },
+        { x: dates, y: rows.map(r => r.output), name: 'Output', type: 'bar', marker: { color: '#ec4899' } },
+        { x: dates, y: rows.map(r => (r.cache_read || 0) + (r.cache_create || 0)), name: 'Cache', type: 'bar', marker: { color: '#10b981' } },
+        { x: dates, y: rows.map(r => r.usd), name: 'USD', type: 'scatter', mode: 'lines+markers', yaxis: 'y2', line: { color: '#f59e0b', width: 2 }, marker: { size: 5 } },
+      ];
+      Plotly.newPlot('daily-chart', traces, {
+        paper_bgcolor: 'rgba(0,0,0,0)',
+        plot_bgcolor: 'rgba(0,0,0,0)',
+        font: { color: '#cbd5e1', size: 11 },
+        barmode: 'stack',
+        xaxis: { gridcolor: '#1e293b' },
+        yaxis: { title: 'Tokens', gridcolor: '#1e293b', tickformat: '.2s' },
+        yaxis2: { title: 'USD', overlaying: 'y', side: 'right', showgrid: false, tickprefix: '$' },
+        legend: { orientation: 'h', y: 1.15 },
+        margin: { l: 60, r: 60, t: 40, b: 40 },
+      }, { displayModeBar: false, responsive: true });
+    }
+
+    function renderModelTable(rows) {
+      const tbody = document.getElementById('model-table');
+      tbody.innerHTML = rows.map(r => `
+        <tr class="border-b border-slate-800 hover:bg-slate-800/30">
+          <td class="py-2 pr-4 font-mono text-xs">${r.model}</td>
+          <td class="py-2 pr-4 text-right tabular-nums">${fmt(r.input)}</td>
+          <td class="py-2 pr-4 text-right tabular-nums">${fmt(r.output)}</td>
+          <td class="py-2 pr-4 text-right tabular-nums font-semibold">${fmt(r.tokens)}</td>
+          <td class="py-2 pr-4 text-right tabular-nums">${fmtUSD(r.usd)}</td>
+        </tr>`).join('') || '<tr><td colspan="5" class="text-center text-slate-500 py-4">데이터 없음</td></tr>';
+    }
+
+    async function loadAll() {
+      try {
+        const base = '../data/';
+        const [summary, top, daily, models] = await Promise.all([
+          loadJSON(base + 'summary.json'),
+          loadJSON(base + 'top_workflows.json'),
+          loadJSON(base + 'daily.json'),
+          loadJSON(base + 'model_breakdown.json'),
+        ]);
+        renderKPI(summary);
+        renderRanking(top);
+        renderDailyChart(daily);
+        renderModelDonut(models);
+        renderModelTable(models);
+      } catch (e) {
+        console.error(e);
+        document.getElementById('last-updated').textContent = '⏳ 데이터 준비 중';
+        document.getElementById('ranking').innerHTML = `
+          <div class="text-slate-400 text-sm leading-relaxed p-4 border border-dashed border-slate-700 rounded">
+            <p class="font-semibold text-indigo-300 mb-2">🔑 데이터 수집 대기 중</p>
+            <p class="mb-1">대시보드를 활성화하려면 다음 두 단계가 필요합니다:</p>
+            <ol class="list-decimal ml-5 mt-2 space-y-1">
+              <li><code class="text-emerald-300">console.anthropic.com/settings/keys</code>에서 <b>Admin API Key</b> 발급</li>
+              <li>레포 → Settings → Secrets → Actions에서 <code class="text-emerald-300">ANTHROPIC_ADMIN_API_KEY</code> 등록</li>
+              <li>Actions → "Anthropic Usage Tracker" → <b>Run workflow</b> 클릭</li>
+            </ol>
+            <p class="mt-3 text-xs text-slate-500">자세한 가이드: <a href="https://github.com/jinhae8971/github-actions-dashboard/blob/main/anthropic-usage/README.md" class="text-indigo-400 hover:underline">README.md</a></p>
+          </div>`;
+      }
+    }
+    loadAll();
+  </script>
+</body>
+</html>
