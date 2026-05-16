@@ -1,10 +1,10 @@
 {
   "audit_date": "2026-05-16",
-  "generated_at": "2026-05-16T08:17:47.459496+00:00",
+  "generated_at": "2026-05-16T08:29:16.736819+00:00",
   "repos_scanned": 34,
   "total_workflows": 36,
-  "claude_workflow_count": 25,
-  "reporter_wired_count": 21,
+  "claude_workflow_count": 26,
+  "reporter_wired_count": 22,
   "inventory": [
     {
       "repo": "gcp",
@@ -22,7 +22,8 @@
       "estimated_calls_per_run": "1회이지만 agentic web search loop + adaptive thinking으로 대량 토큰 소비",
       "token_intensity": "CRITICAL",
       "notes": "✅ 2026-05-16: max_tokens 32000 → 8000 축소. ★ Opus 4.7 + 32k max_tokens + web search agentic loop = 매우 비싼 단일 호출. 매일.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "active"
     },
     {
       "repo": "sp500-research-agent",
@@ -40,7 +41,8 @@
       "estimated_calls_per_run": null,
       "token_intensity": "CRITICAL",
       "notes": "S&P 500종목. 종목 수 기준 최대 리서치 부하.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "disabled_manually"
     },
     {
       "repo": "chart-analyzer",
@@ -59,7 +61,8 @@
       "estimated_calls_per_run": null,
       "token_intensity": "CRITICAL",
       "notes": "Opus 모델 + 매일 5종목 차트 분석 (Vision API 추정). 토큰 소비 최고치.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "disabled_manually"
     },
     {
       "repo": "codex/global-money-flow-system",
@@ -78,7 +81,8 @@
       "estimated_calls_per_run": null,
       "token_intensity": "DUPLICATE_RISK",
       "notes": "★ codex/global-money-flow-system은 gcp 레포의 워크플로우와 100% 동일. 두 레포가 동시에 GitHub에 등록되어 있다면 토큰 2배 소비. 로컬 디렉토리는 같아도 GitHub 실제 활성화 여부 확인 필요.",
-      "reporter_wired": false
+      "reporter_wired": false,
+      "github_state": "NOT_FOUND"
     },
     {
       "repo": "crypto-research-agent",
@@ -96,7 +100,8 @@
       "estimated_calls_per_run": null,
       "token_intensity": "HIGH",
       "notes": "Sonnet, daily research, Telegram은 토요일만.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "disabled_manually"
     },
     {
       "repo": "dow30-research-agent",
@@ -114,7 +119,8 @@
       "estimated_calls_per_run": null,
       "token_intensity": "HIGH",
       "notes": "Sonnet, 30 종목 리서치 (Dow Jones).",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "disabled_manually"
     },
     {
       "repo": "kospi-research-agent",
@@ -132,7 +138,8 @@
       "estimated_calls_per_run": null,
       "token_intensity": "HIGH",
       "notes": "KOSPI 종목 리서치 (sonnet-4-6).",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "disabled_manually"
     },
     {
       "repo": "nasdaq-research-agent",
@@ -150,7 +157,8 @@
       "estimated_calls_per_run": null,
       "token_intensity": "HIGH",
       "notes": "NASDAQ-100 100종목 리서치.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "disabled_manually"
     },
     {
       "repo": "us-market-agent",
@@ -168,7 +176,8 @@
       "estimated_calls_per_run": "약 11회 (5 agent × Phase1 + 5 cross debate + 1 moderator)",
       "token_intensity": "HIGH",
       "notes": "✅ 2026-05-16: Opus 4.5 → Sonnet 4.5 다운그레이드. Opus 4.5를 5-에이전트(macro_fed/news/sector_rotation/tech_momentum/value_fundamental) 멀티에이전트로 매일 호출. 가장 비싼 워크플로우 중 하나.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "disabled_manually"
     },
     {
       "repo": "korean-stock-agent",
@@ -186,7 +195,8 @@
       "estimated_calls_per_run": "약 11회 (5 agent × Phase1 + 5 cross debate + 1 moderator)",
       "token_intensity": "HIGH",
       "notes": "✅ 2026-05-16: 동시점화 회피 위해 23:10으로 분산. Quartet 멀티에이전트 토론 (quant/macro/sector/value/news). Sonnet 4.5 사용",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "disabled_manually"
     },
     {
       "repo": "nasdaq-quant-analyzer",
@@ -204,7 +214,8 @@
       "estimated_calls_per_run": "TOP_N=10 × N agent + 1 synthesizer (대략 11~30회)",
       "token_intensity": "HIGH",
       "notes": "✅ 2026-05-16: TOP_N 10→5 + cron 23:20 분산. Sonnet 4. TOP_N=10 종목 분석",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "active"
     },
     {
       "repo": "ai-news-report",
@@ -222,7 +233,8 @@
       "estimated_calls_per_run": 1,
       "token_intensity": "MEDIUM-HIGH",
       "notes": "Opus 4.5 1회 호출이지만 매일 실행 → 월 30회.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "disabled_manually"
     },
     {
       "repo": "global-market-orchestrator",
@@ -240,7 +252,8 @@
       "estimated_calls_per_run": null,
       "token_intensity": "MEDIUM",
       "notes": "5개 시장 리서치 결과를 종합하는 orchestrator. agent들 1시간 뒤 실행.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "disabled_manually"
     },
     {
       "repo": "gcp",
@@ -258,7 +271,8 @@
       "estimated_calls_per_run": 1,
       "token_intensity": "MEDIUM",
       "notes": "✅ 2026-05-16: cron 23:30 분산. 이름이 'weekly_report'지만 실제로는 평일 매일 실행. Sonnet 4.6, max_tokens=8000으로 큰 출력.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "active"
     },
     {
       "repo": "kospi-morning-briefing",
@@ -276,7 +290,8 @@
       "estimated_calls_per_run": null,
       "token_intensity": "MEDIUM",
       "notes": "KOSPI 모닝브리핑, 멀티에이전트 토론 구조 가능성.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "active"
     },
     {
       "repo": "kospi-strategy",
@@ -294,7 +309,8 @@
       "estimated_calls_per_run": null,
       "token_intensity": "MEDIUM",
       "notes": "내일 코스피 대응전략 리포트.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "disabled_manually"
     },
     {
       "repo": "portfolio-council-ai (Documents/dispatch)",
@@ -312,7 +328,8 @@
       "estimated_calls_per_run": null,
       "token_intensity": "LOW-MEDIUM",
       "notes": "★ 숨은 트리거: data/portfolio.json 푸시 시마다 자동 실행. 사용자 모르게 추가 실행될 수 있음.",
-      "reporter_wired": false
+      "reporter_wired": false,
+      "github_state": "active"
     },
     {
       "repo": "lgd-news-monitor",
@@ -330,7 +347,8 @@
       "estimated_calls_per_run": "뉴스당 1회 (수개~수십회 가능)",
       "token_intensity": "LOW",
       "notes": "Haiku, 뉴스 fact-check. 매일 실행.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "disabled_manually"
     },
     {
       "repo": "etf-strategist",
@@ -348,7 +366,8 @@
       "estimated_calls_per_run": "약 5~10회 (4 agent + moderator, cross-debate 가능)",
       "token_intensity": "LOW",
       "notes": "✅ 2026-05-16: cron 평일만으로 제한. Haiku 4.5 사용 — 가장 저렴. 매일 (주말 포함) 실행.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "disabled_manually"
     },
     {
       "repo": "competitor-ai-tracker",
@@ -366,7 +385,8 @@
       "estimated_calls_per_run": 1,
       "token_intensity": "LOW",
       "notes": "Haiku 사용 — 저렴.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "disabled_manually"
     },
     {
       "repo": "gcp",
@@ -384,7 +404,8 @@
       "estimated_calls_per_run": 1,
       "token_intensity": "LOW",
       "notes": "주 1회만 — 저비용.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "disabled_manually"
     },
     {
       "repo": "crypto-trader-agent",
@@ -402,7 +423,8 @@
       "estimated_calls_per_run": "max-iter 2 (제한됨)",
       "token_intensity": "LOW",
       "notes": "TRADING_MODE=testnet, dry-run으로 제한. iter 2회 cap.",
-      "reporter_wired": false
+      "reporter_wired": false,
+      "github_state": "NOT_FOUND"
     },
     {
       "repo": "multi-agent-researcher",
@@ -418,7 +440,8 @@
       "estimated_calls_per_run": null,
       "token_intensity": "ZERO_IDLE",
       "notes": "수동 실행만 — 가만히 두면 비용 0. mars/debate 모드 선택 가능.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "active"
     },
     {
       "repo": "gcp",
@@ -436,7 +459,8 @@
       "estimated_calls_per_run": 0,
       "token_intensity": "ZERO (현재)",
       "notes": "ANTHROPIC_API_KEY 환경변수는 전달되지만 실제 코드에서 호출 안 함 (주석: '선택, 향후 서버사이드 AI 사용 시'). 그러나 미래에 활성화되면 월 220회 폭증 위험.",
-      "reporter_wired": true
+      "reporter_wired": true,
+      "github_state": "active"
     },
     {
       "repo": "stock-dashboard",
@@ -454,7 +478,28 @@
       "estimated_calls_per_run": 1,
       "token_intensity": "KILLED",
       "notes": "✅ 2026-05-16: ANTHROPIC_API_KEY Secret 제거됨. 월 720회 Opus 호출 차단. ★ 가장 위험. Opus 4.5를 매시간 호출 (월 720회). ANTHROPIC_API_KEY가 있으면 무조건 호출함. 24시간 작동 — 장 마감 후/주말에도 실행.",
-      "reporter_wired": false
+      "reporter_wired": false,
+      "github_state": "active"
+    },
+    {
+      "repo": "IPAD",
+      "workflow_file": ".github/workflows/daily-analysis.yml",
+      "workflow_name": "Daily Stock Market Analysis (IPAD)",
+      "cron": [
+        "0 0 * * *"
+      ],
+      "cron_human_kst": "매일 09:00 KST (주말 포함)",
+      "models": [
+        "claude-haiku-4-5-20251001"
+      ],
+      "max_tokens": 4000,
+      "monthly_runs": 30,
+      "estimated_calls_per_run": 6,
+      "token_intensity": "MEDIUM",
+      "notes": "✅ 2026-05-16: 신규 발견. 6개 LLM 에이전트 (bear/bull/news/news_collector/synthesis/technical). reporter 패치 완료(commit 108950c). ANTHROPIC_API_KEY secret 미설정 상태라 현재 실제 호출 안 됨.",
+      "reporter_wired": true,
+      "github_state": "active",
+      "has_anthropic_secret": false
     }
   ],
   "hidden_active_warnings": [
@@ -530,5 +575,7 @@
       "detail": "사용자 결정에 따라 키 회전은 보류. 필요 시 secrets-vault/scripts/sync_secrets.py 로 일괄 재배포 가능.",
       "action": "보류 (사용자 선택)"
     }
-  ]
+  ],
+  "github_active_count": 9,
+  "github_disabled_count": 15
 }

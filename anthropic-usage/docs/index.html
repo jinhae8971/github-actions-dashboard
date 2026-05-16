@@ -156,11 +156,11 @@
           <p id="audit-total" class="text-xl font-bold">–</p>
         </div>
         <div class="bg-slate-800/40 rounded p-3">
-          <p class="text-xs text-slate-400">Claude API 사용</p>
+          <p class="text-xs text-slate-400">Claude API (활성/총)</p>
           <p id="audit-claude" class="text-xl font-bold text-amber-400">–</p>
         </div>
         <div class="bg-slate-800/40 rounded p-3">
-          <p class="text-xs text-slate-400">Reporter 미패치</p>
+          <p class="text-xs text-slate-400">Reporter 패치 (✓/총)</p>
           <p id="audit-unwired" class="text-xl font-bold text-rose-400">–</p>
         </div>
       </div>
@@ -173,12 +173,13 @@
 
       <!-- Inventory table -->
       <div>
-        <h3 class="text-sm font-semibold text-indigo-300 mb-2">📦 Claude API 워크플로우 인벤토리 (16개)</h3>
+        <h3 class="text-sm font-semibold text-indigo-300 mb-2">📦 Claude API 워크플로우 인벤토리 (실제 GitHub 상태 반영)</h3>
         <div class="overflow-x-auto">
           <table class="w-full text-xs">
             <thead>
               <tr class="text-left text-slate-400 border-b border-slate-700">
                 <th class="py-2 pr-2">Repo / Workflow</th>
+                <th class="py-2 pr-2 text-center">GitHub 상태</th>
                 <th class="py-2 pr-2">Cron (KST)</th>
                 <th class="py-2 pr-2">Model</th>
                 <th class="py-2 pr-2 text-right">월간 실행</th>
@@ -349,7 +350,7 @@
       document.getElementById('audit-repos').textContent = a.repos_scanned;
       document.getElementById('audit-total').textContent = a.total_workflows;
       document.getElementById('audit-claude').textContent = a.claude_workflow_count;
-      document.getElementById('audit-unwired').textContent = (a.claude_workflow_count - a.reporter_wired_count) + ' / ' + a.claude_workflow_count;
+      document.getElementById('audit-unwired').textContent = a.reporter_wired_count + ' / ' + a.claude_workflow_count;
 
       const sevColor = { CRITICAL: 'bg-rose-900/40 border-rose-700', HIGH: 'bg-orange-900/40 border-orange-700', MEDIUM: 'bg-amber-900/30 border-amber-700' };
       const sevBadge = { CRITICAL: 'bg-rose-600', HIGH: 'bg-orange-600', MEDIUM: 'bg-amber-600' };
@@ -375,29 +376,44 @@
         'ZERO_IDLE': 'text-slate-500',
         'ZERO (현재)': 'text-slate-500',
       };
+      // Update KPI cards with GitHub state
+      if (typeof a.github_active_count !== 'undefined') {
+        document.getElementById('audit-claude').textContent = a.github_active_count + ' / ' + a.claude_workflow_count;
+      }
       document.getElementById('audit-inventory').innerHTML = (a.inventory || []).map(w => {
         const models = (w.models || []).join(', ') || '<span class="text-slate-500">—</span>';
         const cron = (w.cron || []).join(', ') || '<span class="text-slate-500">—</span>';
         const intensity = w.token_intensity || '?';
         const wired = w.reporter_wired
-          ? '<span class="text-emerald-400">✓</span>'
+          ? '<span class="text-emerald-400" title="reporter 패치됨">✓</span>'
           : '<span class="text-rose-400" title="대시보드에 보고되지 않음">✗</span>';
+        const ghState = w.github_state || 'unknown';
+        const stateBadge = {
+          'active':              '<span class="px-1.5 py-0.5 rounded text-[9px] bg-emerald-700/40 text-emerald-200 border border-emerald-600/50">ACTIVE</span>',
+          'disabled_manually':   '<span class="px-1.5 py-0.5 rounded text-[9px] bg-slate-700/40 text-slate-400 border border-slate-600/50" title="GitHub UI 또는 모바일 대시보드에서 사용자가 일시정지함">DISABLED</span>',
+          'disabled_inactivity': '<span class="px-1.5 py-0.5 rounded text-[9px] bg-amber-700/40 text-amber-300 border border-amber-600/50">AUTO-PAUSED</span>',
+          'NOT_FOUND':           '<span class="px-1.5 py-0.5 rounded text-[9px] bg-fuchsia-900/40 text-fuchsia-300 border border-fuchsia-600/50" title="GitHub에 해당 워크플로우 없음">MISSING</span>',
+          'unknown':             '<span class="px-1.5 py-0.5 rounded text-[9px] bg-slate-700/40 text-slate-400">?</span>',
+        }[ghState] || ghState;
         const cronKst = w.cron_human_kst ? `<div class="text-[10px] text-slate-500">${w.cron_human_kst}</div>` : '';
         const monthly = (typeof w.monthly_runs === 'number') ? w.monthly_runs.toLocaleString() : (w.monthly_runs || '?');
+        // Dim rows for disabled
+        const rowClass = (ghState === 'active') ? '' : 'opacity-60';
         return `
-          <tr class="border-b border-slate-800 hover:bg-slate-800/30 align-top">
+          <tr class="border-b border-slate-800 hover:bg-slate-800/30 align-top ${rowClass}">
             <td class="py-2 pr-2">
               <div class="font-medium">${w.repo}</div>
               <div class="text-[10px] text-slate-500">${w.workflow_file}</div>
               <div class="text-[10px] text-slate-400 mt-0.5">${w.workflow_name || ''}</div>
             </td>
+            <td class="py-2 pr-2 text-center">${stateBadge}</td>
             <td class="py-2 pr-2 font-mono text-[10px]">${cron}${cronKst}</td>
             <td class="py-2 pr-2 font-mono text-[10px]">${models}</td>
             <td class="py-2 pr-2 text-right tabular-nums">${monthly}</td>
             <td class="py-2 pr-2 text-center font-semibold ${intensityColor[intensity] || ''}">${intensity}</td>
             <td class="py-2 pr-2 text-center">${wired}</td>
           </tr>
-          ${w.notes ? `<tr class="border-b border-slate-800/30"><td colspan="6" class="pl-2 pb-2 text-[10px] text-slate-500">↳ ${w.notes}</td></tr>` : ''}
+          ${w.notes ? `<tr class="border-b border-slate-800/30 ${rowClass}"><td colspan="7" class="pl-2 pb-2 text-[10px] text-slate-500">↳ ${w.notes}</td></tr>` : ''}
         `;
       }).join('');
 
