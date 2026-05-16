@@ -1,0 +1,353 @@
+{
+  "audit_date": "2026-05-16",
+  "generated_at": "2026-05-16T07:30:00+00:00",
+  "repos_scanned": 34,
+  "total_workflows": 36,
+  "claude_workflow_count": 16,
+  "reporter_wired_count": 1,
+  "inventory": [
+    {
+      "repo": "stock-dashboard",
+      "workflow_file": ".github/workflows/update-data.yml",
+      "workflow_name": "Hourly Market Data Update",
+      "cron": [
+        "5 * * * *"
+      ],
+      "cron_human_kst": "매시간 5분 (24시간 × 7일)",
+      "models": [
+        "claude-opus-4-5-20251101"
+      ],
+      "max_tokens": 1000,
+      "monthly_runs": 720,
+      "estimated_calls_per_run": 1,
+      "token_intensity": "CRITICAL",
+      "notes": "★ 가장 위험. Opus 4.5를 매시간 호출 (월 720회). ANTHROPIC_API_KEY가 있으면 무조건 호출함. 24시간 작동 — 장 마감 후/주말에도 실행.",
+      "reporter_wired": false
+    },
+    {
+      "repo": "gcp",
+      "workflow_file": ".github/workflows/global_flow_data.yml",
+      "workflow_name": "Global Money Flow Data Refresh",
+      "cron": [
+        "0 22 * * *"
+      ],
+      "cron_human_kst": "매일 07:00 KST",
+      "models": [
+        "claude-opus-4-7"
+      ],
+      "max_tokens": 32000,
+      "monthly_runs": 30,
+      "estimated_calls_per_run": "1회이지만 agentic web search loop + adaptive thinking으로 대량 토큰 소비",
+      "token_intensity": "CRITICAL",
+      "notes": "★ Opus 4.7 + 32k max_tokens + web search agentic loop = 매우 비싼 단일 호출. 매일.",
+      "reporter_wired": false
+    },
+    {
+      "repo": "us-market-agent",
+      "workflow_file": ".github/workflows/main.yml",
+      "workflow_name": "US Market Agent — Daily Report",
+      "cron": [
+        "0 23 * * 0-4"
+      ],
+      "cron_human_kst": "평일 08:00 KST (월~금) — korean-stock-agent와 동시 실행",
+      "models": [
+        "claude-opus-4-5-20251101"
+      ],
+      "max_tokens": 2048,
+      "monthly_runs": 22,
+      "estimated_calls_per_run": "약 11회 (5 agent × Phase1 + 5 cross debate + 1 moderator)",
+      "token_intensity": "CRITICAL",
+      "notes": "Opus 4.5를 5-에이전트(macro_fed/news/sector_rotation/tech_momentum/value_fundamental) 멀티에이전트로 매일 호출. 가장 비싼 워크플로우 중 하나.",
+      "reporter_wired": false
+    },
+    {
+      "repo": "codex/global-money-flow-system",
+      "workflow_file": ".github/workflows/*.yml (5개)",
+      "workflow_name": "(gcp 미러)",
+      "cron": [
+        "gcp 5개 워크플로우와 동일"
+      ],
+      "cron_human_kst": "gcp와 100% 중복",
+      "models": [
+        "claude-sonnet-4-6",
+        "claude-opus-4-7"
+      ],
+      "max_tokens": null,
+      "monthly_runs": null,
+      "estimated_calls_per_run": null,
+      "token_intensity": "DUPLICATE_RISK",
+      "notes": "★ codex/global-money-flow-system은 gcp 레포의 워크플로우와 100% 동일. 두 레포가 동시에 GitHub에 등록되어 있다면 토큰 2배 소비. 로컬 디렉토리는 같아도 GitHub 실제 활성화 여부 확인 필요.",
+      "reporter_wired": false
+    },
+    {
+      "repo": "korean-stock-agent",
+      "workflow_file": ".github/workflows/main.yml",
+      "workflow_name": "Korean Stock Agent — Daily Report",
+      "cron": [
+        "0 23 * * 0-4"
+      ],
+      "cron_human_kst": "평일 08:00 KST (월~금)",
+      "models": [
+        "claude-sonnet-4-5-20250929"
+      ],
+      "max_tokens": 2048,
+      "monthly_runs": 22,
+      "estimated_calls_per_run": "약 11회 (5 agent × Phase1 + 5 cross debate + 1 moderator)",
+      "token_intensity": "HIGH",
+      "notes": "Quartet 멀티에이전트 토론 (quant/macro/sector/value/news). Sonnet 4.5 사용",
+      "reporter_wired": false
+    },
+    {
+      "repo": "nasdaq-quant-analyzer",
+      "workflow_file": ".github/workflows/main.yml",
+      "workflow_name": "NASDAQ Quant Analyzer — Daily Report",
+      "cron": [
+        "0 23 * * 0-4"
+      ],
+      "cron_human_kst": "평일 08:00 KST",
+      "models": [
+        "claude-sonnet-4-20250514"
+      ],
+      "max_tokens": "1500 (agent) / 800 (synthesizer)",
+      "monthly_runs": 22,
+      "estimated_calls_per_run": "TOP_N=10 × N agent + 1 synthesizer (대략 11~30회)",
+      "token_intensity": "HIGH",
+      "notes": "Sonnet 4. TOP_N=10 종목 분석",
+      "reporter_wired": false
+    },
+    {
+      "repo": "ai-news-report",
+      "workflow_file": ".github/workflows/ai_news_daily.yml",
+      "workflow_name": "AI 뉴스 일일 리포트",
+      "cron": [
+        "30 21 * * *"
+      ],
+      "cron_human_kst": "매일 06:30 KST",
+      "models": [
+        "claude-opus-4-5-20251101"
+      ],
+      "max_tokens": 2000,
+      "monthly_runs": 30,
+      "estimated_calls_per_run": 1,
+      "token_intensity": "MEDIUM-HIGH",
+      "notes": "Opus 4.5 1회 호출이지만 매일 실행 → 월 30회.",
+      "reporter_wired": false
+    },
+    {
+      "repo": "gcp",
+      "workflow_file": ".github/workflows/weekly_report.yml",
+      "workflow_name": "Daily Korea Market Report",
+      "cron": [
+        "0 23 * * 0-4"
+      ],
+      "cron_human_kst": "평일 08:00 KST",
+      "models": [
+        "claude-sonnet-4-6"
+      ],
+      "max_tokens": 8000,
+      "monthly_runs": 22,
+      "estimated_calls_per_run": 1,
+      "token_intensity": "MEDIUM",
+      "notes": "이름이 'weekly_report'지만 실제로는 평일 매일 실행. Sonnet 4.6, max_tokens=8000으로 큰 출력.",
+      "reporter_wired": false
+    },
+    {
+      "repo": "portfolio-council-ai (Documents/dispatch)",
+      "workflow_file": ".github/workflows/portfolio-review.yml",
+      "workflow_name": "Portfolio Review",
+      "cron": [
+        "0 23 * * 0"
+      ],
+      "cron_human_kst": "매주 월요일 08:00 KST",
+      "models": [
+        "claude-sonnet-4-6"
+      ],
+      "max_tokens": null,
+      "monthly_runs": 4,
+      "estimated_calls_per_run": null,
+      "token_intensity": "LOW-MEDIUM",
+      "notes": "★ 숨은 트리거: data/portfolio.json 푸시 시마다 자동 실행. 사용자 모르게 추가 실행될 수 있음.",
+      "reporter_wired": false
+    },
+    {
+      "repo": "etf-strategist",
+      "workflow_file": ".github/workflows/etf-strategist.yml",
+      "workflow_name": "ETF 매매전략가 — 매일 09:00 KST",
+      "cron": [
+        "0 0 * * *"
+      ],
+      "cron_human_kst": "매일 09:00 KST (주말 포함)",
+      "models": [
+        "claude-haiku-4-5-20251001"
+      ],
+      "max_tokens": "512 (agent) / 2048 (moderator)",
+      "monthly_runs": 30,
+      "estimated_calls_per_run": "약 5~10회 (4 agent + moderator, cross-debate 가능)",
+      "token_intensity": "LOW",
+      "notes": "Haiku 4.5 사용 — 가장 저렴. 매일 (주말 포함) 실행.",
+      "reporter_wired": false
+    },
+    {
+      "repo": "lgd-news-monitor",
+      "workflow_file": ".github/workflows/monitor.yml",
+      "workflow_name": "LGD News Monitor & Fact-Check",
+      "cron": [
+        "30 21 * * *"
+      ],
+      "cron_human_kst": "매일 06:30 KST",
+      "models": [
+        "claude-haiku-4-5-20251001"
+      ],
+      "max_tokens": null,
+      "monthly_runs": 30,
+      "estimated_calls_per_run": "뉴스당 1회 (수개~수십회 가능)",
+      "token_intensity": "LOW",
+      "notes": "Haiku, 뉴스 fact-check. 매일 실행.",
+      "reporter_wired": false
+    },
+    {
+      "repo": "competitor-ai-tracker",
+      "workflow_file": ".github/workflows/competitor-ai-tracker.yml",
+      "workflow_name": "Competitor AI R&D Tracker",
+      "cron": [
+        "10 22 * * 0-4"
+      ],
+      "cron_human_kst": "평일 07:10 KST",
+      "models": [
+        "claude-haiku-4-5-20251001"
+      ],
+      "max_tokens": null,
+      "monthly_runs": 22,
+      "estimated_calls_per_run": 1,
+      "token_intensity": "LOW",
+      "notes": "Haiku 사용 — 저렴.",
+      "reporter_wired": false
+    },
+    {
+      "repo": "gcp",
+      "workflow_file": ".github/workflows/weekly_finance.yml",
+      "workflow_name": "Weekly Savings & Deposit Report",
+      "cron": [
+        "0 20 * * 5"
+      ],
+      "cron_human_kst": "매주 토요일 05:00 KST",
+      "models": [
+        "claude-sonnet-4-6"
+      ],
+      "max_tokens": 4000,
+      "monthly_runs": 4,
+      "estimated_calls_per_run": 1,
+      "token_intensity": "LOW",
+      "notes": "주 1회만 — 저비용.",
+      "reporter_wired": false
+    },
+    {
+      "repo": "crypto-trader-agent",
+      "workflow_file": ".github/workflows/weekly-agent.yml",
+      "workflow_name": "Weekly Agent Cycle",
+      "cron": [
+        "0 0 * * 1"
+      ],
+      "cron_human_kst": "매주 월요일 09:00 KST",
+      "models": [
+        "(anthropic SDK 사용, 모델은 코드 내부 결정)"
+      ],
+      "max_tokens": null,
+      "monthly_runs": 4,
+      "estimated_calls_per_run": "max-iter 2 (제한됨)",
+      "token_intensity": "LOW",
+      "notes": "TRADING_MODE=testnet, dry-run으로 제한. iter 2회 cap.",
+      "reporter_wired": false
+    },
+    {
+      "repo": "multi-agent-researcher",
+      "workflow_file": ".github/workflows/research.yml",
+      "workflow_name": "Multi-Agent Research",
+      "cron": [],
+      "cron_human_kst": "수동 트리거 전용",
+      "models": [
+        "claude-sonnet-4-5-20250929"
+      ],
+      "max_tokens": null,
+      "monthly_runs": null,
+      "estimated_calls_per_run": null,
+      "token_intensity": "ZERO_IDLE",
+      "notes": "수동 실행만 — 가만히 두면 비용 0. mars/debate 모드 선택 가능.",
+      "reporter_wired": true
+    },
+    {
+      "repo": "gcp",
+      "workflow_file": ".github/workflows/dashboard_data.yml",
+      "workflow_name": "KOSPI Dashboard Data",
+      "cron": [
+        "0 0-7 * * 1-5",
+        "30 4 * * 1-5",
+        "20 6 * * 1-5"
+      ],
+      "cron_human_kst": "평일 09:00~16:00 KST 매 정시 (10회/일)",
+      "models": [],
+      "max_tokens": null,
+      "monthly_runs": 220,
+      "estimated_calls_per_run": 0,
+      "token_intensity": "ZERO (현재)",
+      "notes": "ANTHROPIC_API_KEY 환경변수는 전달되지만 실제 코드에서 호출 안 함 (주석: '선택, 향후 서버사이드 AI 사용 시'). 그러나 미래에 활성화되면 월 220회 폭증 위험.",
+      "reporter_wired": false
+    }
+  ],
+  "hidden_active_warnings": [
+    "★ CRITICAL: stock-dashboard/update-data.yml — '시간당 마켓 데이터 업데이트'라는 이름이지만 ANTHROPIC_API_KEY가 있을 때 Claude Opus 4.5를 매시간(24/7) 호출. 월 720회 호출. 사용자가 모르고 ANTHROPIC_API_KEY를 secret에 등록한 상태면 가장 비싼 워크플로우. 코드에 if not api_key: return 분기가 있으므로 시크릿을 제거하면 즉시 중단됨.",
+    "★ DUPLICATE: gcp와 codex/global-money-flow-system이 동일한 5개 워크플로우를 보유 — GitHub에 둘 다 활성화되어 있다면 토큰 2배 소비. gcp에는 Opus 4.7 + max_tokens=32000짜리 global_flow_data.yml이 매일 돈다.",
+    "★ DUPLICATE: dart-weekly-report 레포와 korean-market-bot/dart-weekly-report.yml이 동일 작업을 동일 시각(금 22:00 UTC)에 실행 — 둘 다 활성화 시 중복 실행.",
+    "★ MISLEADING_NAME: gcp/weekly_report.yml — 이름은 'weekly'지만 cron은 '0 23 * * 0-4'로 평일 매일 실행 (월 22회).",
+    "★ MISLEADING_NAME: gcp/weekly_kosdaq.yml — 이름은 'weekly'지만 평일 매시간(8회/일, 월 160회) 실행. Anthropic 미사용이라 비용은 GitHub Actions 분당 사용량만.",
+    "★ HIDDEN_TRIGGER: portfolio-council-ai의 portfolio-review.yml은 data/portfolio.json 푸시 시 자동 실행 — schedule 외 추가 실행.",
+    "★ HIDDEN_TRIGGER: gcp/codex의 dashboard_data.yml은 push (generate_dashboard_data.py 변경 시)도 트리거 — 평일 시간당 10회 외 추가 실행 가능.",
+    "★ MISMATCH: secrets-vault/secrets-manifest.json은 ANTHROPIC_API_KEY를 'nasdaq-quant-analyzer'에만 명시했지만, 실제로 ANTHROPIC_API_KEY를 사용하는 워크플로우가 있는 레포는 korean-stock-agent, us-market-agent, etf-strategist, ai-news-report, competitor-ai-tracker, lgd-news-monitor, stock-dashboard, multi-agent-researcher, gcp, codex/global-money-flow-system, crypto-trader-agent, portfolio-council-ai 등 12개 이상 — manifest와 GitHub 실제 secret 배포 상태 불일치 의심. 시크릿이 수동으로 추가되어 있을 가능성 높음.",
+    "★ HIDDEN_DUPLICATE: gcp 디렉토리와 codex/global-money-flow-system 디렉토리는 다른 GitHub 레포가 아닐 수 있음 — 동일 레포의 두 로컬 클론일 가능성. GitHub에서 레포 목록 확인 필요.",
+    "★ DOUBLE_DAILY: korean-stock-agent와 us-market-agent가 동일 cron '0 23 * * 0-4'로 동시 실행 — 그 시각 us-market-agent(Opus)+korean-stock-agent(Sonnet)+nasdaq-quant-analyzer(Sonnet)+gcp/weekly_report(Sonnet) 4개가 동시 점화."
+  ],
+  "critical_findings": [
+    {
+      "title": "stock-dashboard · update-data.yml: 매시간 Opus 4.5 (월 720회)",
+      "severity": "CRITICAL",
+      "detail": "워크플로우 이름이 \"Hourly Market Data Update\"라 단순 데이터 수집처럼 보이지만 내부에서 매시간 Claude Opus 4.5를 호출. 24/7 가동. ANTHROPIC_API_KEY Secret 즉시 제거 또는 워크플로우 비활성화 권장.",
+      "action": "GitHub Settings → Secrets → ANTHROPIC_API_KEY 제거 (코드의 if not api_key: return 분기로 자동 중단)"
+    },
+    {
+      "title": "gcp ↔ codex/global-money-flow-system 100% 중복",
+      "severity": "CRITICAL",
+      "detail": "두 레포의 워크플로우 5개가 완전히 동일 (Opus 4.7 + Sonnet 4.6 포함). 두 레포 모두 GitHub에서 활성화돼 있으면 토큰 2배 소비.",
+      "action": "둘 중 하나 비활성화 또는 Archive"
+    },
+    {
+      "title": "gcp / global_flow_data.yml: Opus 4.7 + max_tokens=32000 + web_search agentic loop",
+      "severity": "CRITICAL",
+      "detail": "매일 1회 호출이지만 호출당 토큰 소비량이 일반의 10배 이상. agentic web search loop는 thinking 토큰까지 누적됨.",
+      "action": "max_tokens 하향 또는 빈도 조정 검토"
+    },
+    {
+      "title": "평일 08:00 KST 동시 점화 (4개 동시 시작)",
+      "severity": "HIGH",
+      "detail": "cron 0 23 * * 0-4 한 시점에 us-market-agent(Opus×11) + korean-stock-agent(Sonnet×11) + nasdaq-quant-analyzer(Sonnet×10+) + gcp/weekly_report(Sonnet×1, 8k) 시작. 30+ API 호출이 동시 발생 → rate limit 위험.",
+      "action": "워크플로우별로 5~10분씩 분산 (예: cron 5/10/15/20 ...)."
+    },
+    {
+      "title": "dart-weekly-report ↔ korean-market-bot/dart-weekly-report.yml 중복",
+      "severity": "MEDIUM",
+      "detail": "동일 작업이 동일 시각(금 22:00 UTC) 두 곳에서 실행됨.",
+      "action": "둘 중 하나만 활성화"
+    },
+    {
+      "title": "secrets-manifest 불일치 (실제 ANTHROPIC_API_KEY 분산)",
+      "severity": "HIGH",
+      "detail": "secrets-vault/secrets-manifest.json은 ANTHROPIC_API_KEY를 nasdaq-quant-analyzer 한 곳에만 명시하지만, 실제로는 12개+ 레포가 사용. 수동으로 추가된 키가 분산돼 있어 회전/회수 추적 어려움.",
+      "action": "manifest를 SoT로 삼고 모든 레포 Secret 회수 → 일괄 회전 → manifest 기반 재배포"
+    },
+    {
+      "title": "stock-dashboard 등 reporter 미패치 워크플로우 다수",
+      "severity": "HIGH",
+      "detail": "현재 대시보드에 보고하는 워크플로우는 3개뿐 (multi-agent-researcher · kospi-strategy · diagnostic-test). 16개 중 13개는 reporter 모듈이 패치되지 않아 토큰 소비가 보이지 않음 → 이 대시보드만으로는 실제 비용을 추적할 수 없음.",
+      "action": "README B-2/B-3/B-4 단계를 13개 운영 레포에 일괄 적용 (또는 secrets-vault 패턴으로 자동 배포)"
+    }
+  ]
+}

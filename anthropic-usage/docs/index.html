@@ -137,6 +137,69 @@
       </div>
     </section>
 
+
+    <!-- ★ Audit Inventory & Hidden Warnings -->
+    <section class="card p-5 mb-6 mt-6" style="border-color: #b45309;">
+      <div class="flex items-center justify-between mb-1 flex-wrap gap-2">
+        <h2 class="text-lg font-semibold">📋 워크플로우 인벤토리 & 보안 감사</h2>
+        <span class="text-xs text-slate-400" id="audit-meta">–</span>
+      </div>
+      <p class="text-xs text-slate-400 mb-4">전체 레포의 .github/workflows를 전수 조사한 결과. 위 대시보드는 reporter 패치된 워크플로우만 보여주므로, 이 표가 <b>실제 활성 워크플로우의 전체 그림</b>입니다.</p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+        <div class="bg-slate-800/40 rounded p-3">
+          <p class="text-xs text-slate-400">스캔 레포</p>
+          <p id="audit-repos" class="text-xl font-bold">–</p>
+        </div>
+        <div class="bg-slate-800/40 rounded p-3">
+          <p class="text-xs text-slate-400">총 워크플로우</p>
+          <p id="audit-total" class="text-xl font-bold">–</p>
+        </div>
+        <div class="bg-slate-800/40 rounded p-3">
+          <p class="text-xs text-slate-400">Claude API 사용</p>
+          <p id="audit-claude" class="text-xl font-bold text-amber-400">–</p>
+        </div>
+        <div class="bg-slate-800/40 rounded p-3">
+          <p class="text-xs text-slate-400">Reporter 미패치</p>
+          <p id="audit-unwired" class="text-xl font-bold text-rose-400">–</p>
+        </div>
+      </div>
+
+      <!-- Critical findings (red box) -->
+      <div class="mb-5">
+        <h3 class="text-sm font-semibold text-rose-300 mb-2">🚨 즉시 조치 권장 (Critical Findings)</h3>
+        <div id="audit-critical" class="space-y-2"></div>
+      </div>
+
+      <!-- Inventory table -->
+      <div>
+        <h3 class="text-sm font-semibold text-indigo-300 mb-2">📦 Claude API 워크플로우 인벤토리 (16개)</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="text-left text-slate-400 border-b border-slate-700">
+                <th class="py-2 pr-2">Repo / Workflow</th>
+                <th class="py-2 pr-2">Cron (KST)</th>
+                <th class="py-2 pr-2">Model</th>
+                <th class="py-2 pr-2 text-right">월간 실행</th>
+                <th class="py-2 pr-2 text-center">강도</th>
+                <th class="py-2 pr-2 text-center">Reporter</th>
+              </tr>
+            </thead>
+            <tbody id="audit-inventory"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Hidden warnings -->
+      <div class="mt-5">
+        <h3 class="text-sm font-semibold text-amber-300 mb-2">🕵️ 숨겨진 활성 워크플로우 경고</h3>
+        <ul id="audit-warnings" class="space-y-1 text-xs text-slate-300 list-disc ml-5"></ul>
+      </div>
+
+      <p class="text-xs text-slate-500 mt-4">데이터: <code class="text-indigo-300">data/audit_inventory.json</code> · 감사일 <span id="audit-date">–</span></p>
+    </section>
+
     <footer class="text-center text-xs text-slate-500 mt-8">
       Data source: <code class="text-indigo-300">api.anthropic.com/v1/organizations/usage_report</code> ·
       Updated via GitHub Actions · Refresh ≤ 24h
@@ -279,15 +342,78 @@
       }).join('');
     }
 
+
+    function renderAudit(a) {
+      document.getElementById('audit-meta').textContent = '감사일: ' + a.audit_date;
+      document.getElementById('audit-date').textContent = a.audit_date;
+      document.getElementById('audit-repos').textContent = a.repos_scanned;
+      document.getElementById('audit-total').textContent = a.total_workflows;
+      document.getElementById('audit-claude').textContent = a.claude_workflow_count;
+      document.getElementById('audit-unwired').textContent = (a.claude_workflow_count - a.reporter_wired_count) + ' / ' + a.claude_workflow_count;
+
+      const sevColor = { CRITICAL: 'bg-rose-900/40 border-rose-700', HIGH: 'bg-orange-900/40 border-orange-700', MEDIUM: 'bg-amber-900/30 border-amber-700' };
+      const sevBadge = { CRITICAL: 'bg-rose-600', HIGH: 'bg-orange-600', MEDIUM: 'bg-amber-600' };
+      document.getElementById('audit-critical').innerHTML = (a.critical_findings || []).map(f => `
+        <div class="rounded border p-3 ${sevColor[f.severity] || 'bg-slate-800/40 border-slate-700'}">
+          <div class="flex items-center justify-between mb-1">
+            <span class="font-semibold text-sm">${f.title}</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold text-white ${sevBadge[f.severity] || 'bg-slate-600'}">${f.severity}</span>
+          </div>
+          <p class="text-xs text-slate-300 mb-1">${f.detail}</p>
+          <p class="text-xs text-emerald-300">→ ${f.action}</p>
+        </div>
+      `).join('');
+
+      const intensityColor = {
+        'CRITICAL': 'text-rose-400',
+        'HIGH': 'text-orange-400',
+        'MEDIUM-HIGH': 'text-amber-400',
+        'MEDIUM': 'text-amber-300',
+        'LOW-MEDIUM': 'text-yellow-300',
+        'LOW': 'text-emerald-400',
+        'DUPLICATE_RISK': 'text-fuchsia-400',
+        'ZERO_IDLE': 'text-slate-500',
+        'ZERO (현재)': 'text-slate-500',
+      };
+      document.getElementById('audit-inventory').innerHTML = (a.inventory || []).map(w => {
+        const models = (w.models || []).join(', ') || '<span class="text-slate-500">—</span>';
+        const cron = (w.cron || []).join(', ') || '<span class="text-slate-500">—</span>';
+        const intensity = w.token_intensity || '?';
+        const wired = w.reporter_wired
+          ? '<span class="text-emerald-400">✓</span>'
+          : '<span class="text-rose-400" title="대시보드에 보고되지 않음">✗</span>';
+        const cronKst = w.cron_human_kst ? `<div class="text-[10px] text-slate-500">${w.cron_human_kst}</div>` : '';
+        const monthly = (typeof w.monthly_runs === 'number') ? w.monthly_runs.toLocaleString() : (w.monthly_runs || '?');
+        return `
+          <tr class="border-b border-slate-800 hover:bg-slate-800/30 align-top">
+            <td class="py-2 pr-2">
+              <div class="font-medium">${w.repo}</div>
+              <div class="text-[10px] text-slate-500">${w.workflow_file}</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">${w.workflow_name || ''}</div>
+            </td>
+            <td class="py-2 pr-2 font-mono text-[10px]">${cron}${cronKst}</td>
+            <td class="py-2 pr-2 font-mono text-[10px]">${models}</td>
+            <td class="py-2 pr-2 text-right tabular-nums">${monthly}</td>
+            <td class="py-2 pr-2 text-center font-semibold ${intensityColor[intensity] || ''}">${intensity}</td>
+            <td class="py-2 pr-2 text-center">${wired}</td>
+          </tr>
+          ${w.notes ? `<tr class="border-b border-slate-800/30"><td colspan="6" class="pl-2 pb-2 text-[10px] text-slate-500">↳ ${w.notes}</td></tr>` : ''}
+        `;
+      }).join('');
+
+      document.getElementById('audit-warnings').innerHTML = (a.hidden_active_warnings || []).map(w => `<li>${w}</li>`).join('');
+    }
+
     async function loadAll() {
       try {
         const base = '../data/';
-        const [summary, top, daily, models, sources] = await Promise.all([
+        const [summary, top, daily, models, sources, audit] = await Promise.all([
           loadJSON(base + 'summary.json'),
           loadJSON(base + 'top_workflows.json'),
           loadJSON(base + 'daily.json'),
           loadJSON(base + 'model_breakdown.json'),
           loadJSON(base + 'source_breakdown.json').catch(() => []),
+          loadJSON(base + 'audit_inventory.json').catch(() => null),
         ]);
         renderKPI(summary);
         renderRanking(top);
@@ -295,6 +421,7 @@
         renderModelDonut(models);
         renderModelTable(models);
         renderSourceList(sources);
+        if (audit) renderAudit(audit);
       } catch (e) {
         console.error(e);
         document.getElementById('last-updated').textContent = '⏳ 데이터 준비 중';
