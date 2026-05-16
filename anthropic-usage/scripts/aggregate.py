@@ -157,6 +157,31 @@ def aggregate(events: list[dict[str, Any]]) -> dict[str, Any]:
         reverse=True,
     )
 
+    # -------- Source breakdown (github-actions vs docker) --------
+    source_totals: dict[str, dict[str, float]] = defaultdict(
+        lambda: {"tokens": 0, "usd": 0.0, "events": 0}
+    )
+    for e in recent:
+        tag = (e.get("tag") or "").lower()
+        # Classify by tag prefix
+        if tag.startswith("docker") or tag == "docker":
+            src = "docker"
+        else:
+            src = "github-actions"
+        slot = source_totals[src]
+        slot["tokens"] += (
+            e.get("input_tokens", 0) + e.get("output_tokens", 0)
+            + e.get("cache_read_tokens", 0) + e.get("cache_create_tokens", 0)
+        )
+        slot["usd"] += float(e.get("estimated_usd", 0.0))
+        slot["events"] += 1
+
+    source_breakdown = [
+        {"source": s, **{k: (round(v, 4) if isinstance(v, float) else v) for k, v in vals.items()}}
+        for s, vals in source_totals.items()
+    ]
+    source_breakdown.sort(key=lambda x: x["tokens"], reverse=True)
+
     # -------- Summary KPIs --------
     total_tokens = sum(d["tokens"] for d in daily_list)
     total_usd = round(sum(d["usd"] for d in daily_list), 4)
@@ -172,6 +197,7 @@ def aggregate(events: list[dict[str, Any]]) -> dict[str, Any]:
         "all_time_events": len(events),
         "workflow_count": len(top_workflows),
         "model_count": len(model_breakdown),
+        "source_count": len(source_breakdown),
         "data_source": "self-report (repository_dispatch)",
     }
 
@@ -180,6 +206,7 @@ def aggregate(events: list[dict[str, Any]]) -> dict[str, Any]:
         "daily": daily_list,
         "top_workflows": top_workflows,
         "model_breakdown": model_breakdown,
+        "source_breakdown": source_breakdown,
     }
 
 
@@ -198,6 +225,9 @@ def main() -> None:
     )
     (DATA_DIR / "model_breakdown.json").write_text(
         json.dumps(payload["model_breakdown"], indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    (DATA_DIR / "source_breakdown.json").write_text(
+        json.dumps(payload["source_breakdown"], indent=2, ensure_ascii=False), encoding="utf-8"
     )
 
     log.info(

@@ -43,9 +43,9 @@
     <!-- Header -->
     <header class="flex items-end justify-between mb-8 flex-wrap gap-3">
       <div>
-        <p class="text-xs uppercase tracking-widest text-indigo-300">Self-Report · Workflow-Level Attribution</p>
+        <p class="text-xs uppercase tracking-widest text-indigo-300">Self-Report · GitHub Actions + Docker</p>
         <h1 class="text-3xl font-bold mt-1">API Usage Dashboard</h1>
-        <p class="text-sm text-slate-400 mt-1">각 워크플로우가 호출 직후 토큰 사용량을 직접 보고 → 100% 정확</p>
+        <p class="text-sm text-slate-400 mt-1">각 워크플로우/컨테이너가 호출 직후 토큰 사용량을 직접 보고 → 100% 정확</p>
       </div>
       <div class="flex items-center gap-3 text-xs text-slate-400">
         <span class="updated-dot"></span>
@@ -91,10 +91,16 @@
         <div id="ranking" class="space-y-3"></div>
       </div>
 
-      <!-- Model breakdown donut -->
-      <div class="card p-5">
-        <h2 class="text-lg font-semibold mb-4">🧩 모델별 비중</h2>
-        <div id="model-donut" style="height: 320px;"></div>
+      <!-- Source + Model donuts stacked -->
+      <div class="space-y-4">
+        <div class="card p-5">
+          <h2 class="text-base font-semibold mb-3">🌐 출처별 분포</h2>
+          <div id="source-list" class="space-y-2"></div>
+        </div>
+        <div class="card p-5">
+          <h2 class="text-base font-semibold mb-3">🧩 모델별 비중</h2>
+          <div id="model-donut" style="height: 220px;"></div>
+        </div>
       </div>
     </section>
 
@@ -249,20 +255,46 @@
         </tr>`).join('') || '<tr><td colspan="5" class="text-center text-slate-500 py-4">데이터 없음</td></tr>';
     }
 
+    function renderSourceList(rows) {
+      const el = document.getElementById('source-list');
+      if (!rows || rows.length === 0) {
+        el.innerHTML = '<p class="text-slate-500 text-xs">데이터 없음</p>';
+        return;
+      }
+      const total = rows.reduce((s, r) => s + (r.tokens || 0), 0) || 1;
+      const icons = { 'github-actions': '⚙️', 'docker': '🐳' };
+      el.innerHTML = rows.map(r => {
+        const pct = ((r.tokens / total) * 100).toFixed(1);
+        return `
+          <div class="flex items-center justify-between text-sm">
+            <span class="flex items-center gap-2">
+              <span>${icons[r.source] || '📦'}</span>
+              <span>${r.source}</span>
+            </span>
+            <div class="text-right">
+              <div class="text-slate-200 tabular-nums">${fmt(r.tokens)} tok</div>
+              <div class="text-xs text-slate-500">${pct}% · ${fmtUSD(r.usd)} · ${r.events} events</div>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
     async function loadAll() {
       try {
         const base = '../data/';
-        const [summary, top, daily, models] = await Promise.all([
+        const [summary, top, daily, models, sources] = await Promise.all([
           loadJSON(base + 'summary.json'),
           loadJSON(base + 'top_workflows.json'),
           loadJSON(base + 'daily.json'),
           loadJSON(base + 'model_breakdown.json'),
+          loadJSON(base + 'source_breakdown.json').catch(() => []),
         ]);
         renderKPI(summary);
         renderRanking(top);
         renderDailyChart(daily);
         renderModelDonut(models);
         renderModelTable(models);
+        renderSourceList(sources);
       } catch (e) {
         console.error(e);
         document.getElementById('last-updated').textContent = '⏳ 데이터 준비 중';
