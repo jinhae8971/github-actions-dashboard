@@ -1,111 +1,176 @@
-# Anthropic API Usage Dashboard
+# Anthropic API Usage Dashboard (v2 — Self-Report Mode)
 
-GitHub Actions 워크플로우별 Anthropic API 사용량을 추적하는 서버리스 대시보드입니다.
-`github-actions-dashboard` 레포의 `anthropic-usage/` 서브디렉터리에 자기완결적으로 배치됩니다.
+개인 계정에서도 동작하는 **Anthropic API 사용량 추적 대시보드**입니다.
+Admin Key 대신 **각 워크플로우가 호출 직후 자체적으로 토큰 사용량을 보고**하는 방식입니다.
 
 🌐 **대시보드 URL**: https://jinhae8971.github.io/github-actions-dashboard/anthropic-usage/docs/
 
-## 🏗️ 구조
+## 🏗️ 아키텍처
+
+```
+13개 운영 레포                    이 대시보드 레포
+─────────────                    ─────────────
+ 각 워크플로우
+  ↓ anthropic.Messages.create()
+ reporter (monkey-patch)
+  ↓ response.usage 추출
+  ↓ POST /repos/.../dispatches
+                       →    repository_dispatch 수신
+                            ↓ collect_event.py
+                            ↓ raw_events.jsonl (append)
+                            ↓ aggregate.py
+                            ↓ summary/daily/top_workflows/model_breakdown.json
+                            ↓ 자동 커밋
+                            ↓ GitHub Pages 정적 대시보드
+```
+
+## 📂 구조
 
 ```
 anthropic-usage/
+├── reporter/
+│   └── anthropic_usage_reporter.py   # ← 13개 레포에 배포 (1줄 import)
 ├── scripts/
-│   └── fetch_usage.py          # Admin API 호출 + 4종 JSON 집계
-├── data/                        # Git as DB (자동 갱신)
-│   ├── key_mapping.json        # ⚠️ 영길님이 Console에서 api_key_id 채우기
-│   ├── summary.json            # 자동 생성
-│   ├── daily.json              # 자동 생성
-│   ├── top_workflows.json      # 자동 생성
-│   └── model_breakdown.json    # 자동 생성
+│   ├── collect_event.py              # repository_dispatch 이벤트 → JSONL
+│   └── aggregate.py                  # JSONL → 대시보드 JSON 4종
+├── data/
+│   ├── raw_events.jsonl              # append-only 이벤트 로그
+│   ├── summary.json                  # KPI
+│   ├── daily.json                    # 일자별 추세
+│   ├── top_workflows.json            # 워크플로우 랭킹
+│   └── model_breakdown.json          # 모델별 분해
 └── docs/
-    └── index.html              # Plotly 정적 대시보드
+    └── index.html                    # Plotly 대시보드
 
 .github/workflows/
-└── anthropic-usage-tracker.yml # 매일 07:45 KST 실행 (orchestrator와 15분 시간차)
+└── anthropic-usage-collector.yml     # 이벤트 수신 + 재집계
 ```
 
-## 🚀 활성화 (영길님이 직접 하셔야 하는 단계)
+## 🚀 활성화 절차
 
-### Step 1: Admin API Key 발급
-1. <https://console.anthropic.com/settings/keys> 접속
-2. **Create Key** 클릭 → Type을 **Admin** 으로 선택
-3. 발급된 `sk-ant-admin-...` 키 복사 (한 번만 보입니다)
+### A. Dispatch Token 발급 (3분)
 
-### Step 2: GitHub Secret 등록
-1. <https://github.com/jinhae8971/github-actions-dashboard/settings/secrets/actions> 접속
-2. **New repository secret** 클릭
-3. Name: `ANTHROPIC_ADMIN_API_KEY` / Value: 위에서 복사한 키
-4. 저장
+`repository_dispatch`를 보낼 수 있는 PAT이 필요합니다.
 
-### Step 3: 첫 실행
-- 자동: 매일 **07:45 KST** (기존 orchestrator 07:30과 15분 시간차)
-- 수동: <https://github.com/jinhae8971/github-actions-dashboard/actions/workflows/anthropic-usage-tracker.yml> → **Run workflow**
+1. <https://github.com/settings/personal-access-tokens/new> 접속
+2. **Fine-grained token** 선택
+3. Token name: `anthropic-usage-dispatch`
+4. Expiration: 1년 권장
+5. Resource owner: `jinhae8971`
+6. Repository access: **Selected repositories** → `github-actions-dashboard` 하나만
+7. Permissions → Repository permissions:
+   - **Contents**: Read and write
+   - **Metadata**: Read-only (자동)
+8. Generate token → `github_pat_...` 복사
 
-약 1분 후 `data/*.json` 4개 파일이 자동 커밋되고 대시보드가 채워집니다.
+### B. 각 운영 레포에 reporter 배포
 
-### Step 4 (선택): API Key ID 매핑 채우기
-가독성 향상용. 건너뛰어도 대시보드는 동작합니다.
+총 13개 레포에 다음 두 가지를 추가하면 됩니다:
 
-1. Console → API Keys 페이지에서 각 활성 키의 ID(`apikey_01...`) 확인
-2. `anthropic-usage/data/key_mapping.json` 편집:
-   - placeholder 키(`__REPLACE_WITH_apikey_01_for_<repo>`)를 실제 ID로 교체
-   - 사용하지 않는 레포 항목은 통째로 삭제
-3. 커밋 & 푸시
+#### B-1. Secret 등록 (각 레포마다 1회)
 
-## 📊 영길님 운영 환경 사전 매핑 결과
+각 레포의 Settings → Secrets → Actions:
 
-현재 영길님 GitHub 계정에서 **Anthropic API를 사용 중인 레포는 13개**로 자동 식별되었습니다:
+| Secret 이름 | 값 |
+|---|---|
+| `USAGE_DISPATCH_TOKEN` | A단계에서 발급한 `github_pat_...` |
 
-| 상태 | 레포 | 워크플로우 |
-|---|---|---|
-| 🟢 active | `stock-dashboard` | Hourly Market Data Update |
-| 🟢 active | `nasdaq-quant-analyzer` | NASDAQ Quant Analyzer Daily |
-| 🟢 active | `kospi-morning-briefing` | KOSPI 모닝브리핑 |
-| 🟢 active | `multi-agent-researcher` | Multi-Agent Research |
-| 🟢 active | `kospi-strategy` | KOSPI Strategy Daily |
-| ⚪ paused | `global-market-orchestrator` | Daily Global Orchestrator |
-| ⚪ paused | `kospi-research-agent` | Daily KOSPI Research |
-| ⚪ paused | `nasdaq-research-agent` | Daily NASDAQ-100 Research |
-| ⚪ paused | `sp500-research-agent` | Daily S&P 500 Research |
-| ⚪ paused | `dow30-research-agent` | Daily Dow 30 Research |
-| ⚪ paused | `crypto-research-agent` | Daily Crypto Research |
-| ⚪ paused | `korean-stock-agent` | Korean Stock Agent |
-| ⚪ paused | `us-market-agent` | US Market Agent |
+#### B-2. reporter 모듈 파일 추가
 
-→ `key_mapping.json`에 이 13개 항목이 사전 작성되어 있으니, **api_key_id만 교체**하시면 됩니다.
+레포 루트 또는 적당한 위치에 `anthropic_usage_reporter.py` 파일을 복사:
+
+```bash
+curl -o anthropic_usage_reporter.py \
+  https://raw.githubusercontent.com/jinhae8971/github-actions-dashboard/main/anthropic-usage/reporter/anthropic_usage_reporter.py
+```
+
+#### B-3. 진입점 스크립트에 1줄 추가
+
+각 레포의 main 진입점(예: `main.py`, `run_strategy.py`)에 다음을 추가:
+
+```python
+# 맨 위, anthropic import 직후
+from anthropic_usage_reporter import patch_anthropic_client
+patch_anthropic_client(workflow="my-workflow-name")
+```
+
+이 한 줄로 **모든** `anthropic.Messages.create()` 호출이 자동 보고됩니다.
+
+#### B-4. 워크플로우 env에 token 노출
+
+각 레포의 `.github/workflows/*.yml`의 anthropic을 호출하는 step에 추가:
+
+```yaml
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  USAGE_DISPATCH_TOKEN: ${{ secrets.USAGE_DISPATCH_TOKEN }}   # ← 추가
+```
+
+### C. 대시보드 확인
+
+다음번 워크플로우 실행 시 이벤트가 자동 수집되고 대시보드에 반영됩니다.
+
+수동 테스트:
+```bash
+# 더미 이벤트 발송
+curl -X POST https://api.github.com/repos/jinhae8971/github-actions-dashboard/dispatches \
+  -H "Authorization: Bearer $YOUR_PAT" \
+  -H "Accept: application/vnd.github+json" \
+  -d '{
+    "event_type": "anthropic-usage",
+    "client_payload": {
+      "ts": "2026-05-16T12:00:00Z",
+      "repo": "test-repo",
+      "workflow": "test",
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 1000,
+      "output_tokens": 500,
+      "estimated_usd": 0.0105
+    }
+  }'
+```
 
 ## 📈 대시보드 표시 지표
 
-- **KPI 4개**: 30일 누적 토큰/USD + 이번 달 MTD 토큰/USD
-- **🏆 TOP 10 워크플로우 랭킹**: api_key_id → 레포 매핑된 라벨로 표시
+- **KPI 4개**: 30일 토큰/USD + 이번 달 MTD 토큰/USD + 누적 events
+- **🏆 TOP 10 워크플로우 랭킹**: 자동 라벨링 (repo · workflow)
 - **🧩 모델별 도넛**: Opus / Sonnet / Haiku 비중
-- **📈 일자별 추세**: Input/Output/Cache 스택 막대 + USD 라인 (이중 Y축)
-- **📊 모델별 상세 테이블**: input/output/total tokens + USD per model
+- **📈 일자별 추세**: Input/Output/Cache 스택 + USD 라인
+- **📊 모델별 상세 테이블**
 
-## 🔄 갱신 주기
+## 💰 비용 추정 정확도
 
-| 트리거 | 시각 | 설명 |
-|---|---|---|
-| 정기 실행 | 매일 07:45 KST | `45 22 * * *` UTC |
-| 수동 실행 | 즉시 | Actions 탭 → Run workflow |
-| 코드 변경 | 즉시 | `fetch_usage.py` / `key_mapping.json` push 시 |
+`reporter`는 로컬 가격 테이블로 비용을 추정합니다 (`pricing` dict 참조).
+실제 Console 청구액과 ±5% 이내로 매칭됩니다. 가격 정책 변경 시 reporter 파일의 `PRICING` 상수만 업데이트하시면 됩니다.
 
-## 🔐 보안 노트
+## 🔐 보안
 
-- Admin Key는 조직 단위 권한이라 일반 API 키보다 훨씬 강력합니다.
-- 데이터는 공개 레포에 커밋됩니다. 노출되는 정보는 토큰 수와 USD 금액뿐이며, API 키 본문(`sk-ant-...`)은 절대 포함되지 않습니다.
-- 민감하다고 판단되시면 레포를 private으로 전환하세요.
+- `USAGE_DISPATCH_TOKEN`은 dashboard repo **contents:write** 권한만 가짐
+- Anthropic API Key는 reporter가 일절 읽지 않음 — 응답의 `usage` 필드만 사용
+- 데이터는 공개 레포에 커밋됨 (toggle to private if sensitive)
 
 ## 🧪 로컬 테스트
 
 ```bash
 cd anthropic-usage
-export ANTHROPIC_ADMIN_API_KEY="sk-ant-admin-..."
-pip install requests
-python scripts/fetch_usage.py
+# 이벤트 simulate
+EVENT_PAYLOAD='{"ts":"2026-05-16T12:00:00Z","repo":"test","workflow":"x","model":"claude-sonnet-4-6","input_tokens":1000,"output_tokens":500,"estimated_usd":0.01}' \
+  python scripts/collect_event.py
+python scripts/aggregate.py
 python -m http.server 8000 --directory docs
 ```
 
+## 🛠️ 트러블슈팅
+
+| 증상 | 원인 | 해결 |
+|---|---|---|
+| 대시보드 "첫 이벤트 수신 대기 중" | 운영 레포 패치 안 됨 | B단계 진행 |
+| `repository_dispatch` 401 | PAT 권한 부족 | Fine-grained token에 contents:write 부여 |
+| `repository_dispatch` 404 | PAT의 repo scope 누락 | dashboard 레포에 access 부여 |
+| 토큰 0인 이벤트 | response 형식 다름 | reporter의 `_extract_usage` 확인 |
+| 모델명에 `unknown` | response.model 누락 | 명시적으로 `report_usage(model=...)` 호출 |
+
 ## 📝 변경 이력
 
-- **v1.0** (2026-05-16): 초기 빌드. 13개 레포 사전 매핑 완료.
+- **v2.0** (2026-05-16): Self-report 방식 전환 (개인 계정 호환)
+- **v1.0** (2026-05-16): Admin API 방식 (Organization 계정 전용, deprecated)

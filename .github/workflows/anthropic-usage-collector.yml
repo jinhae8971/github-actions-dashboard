@@ -1,0 +1,82 @@
+name: Anthropic Usage Collector
+
+# 13개 레포에서 anthropic API 호출 시 repository_dispatch 이벤트가 들어옴
+# 이벤트 1건당:
+#   1. raw_events.jsonl에 append
+#   2. 4개 대시보드 JSON 재집계
+#   3. 커밋 & 푸시
+
+on:
+  repository_dispatch:
+    types: [anthropic-usage]
+  workflow_dispatch:    # 수동 재집계
+  schedule:
+    # 매일 23:30 UTC (08:30 KST) — 데이터 무결성 검증용 재집계
+    - cron: '30 23 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: anthropic-usage-collector
+  cancel-in-progress: false   # 이벤트 순서 보존
+
+jobs:
+  collect:
+    name: "사용량 이벤트 수집"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Append event to JSONL (if dispatched)
+        if: github.event_name == 'repository_dispatch'
+        working-directory: anthropic-usage
+        env:
+          EVENT_PAYLOAD: ${{ toJson(github.event.client_payload) }}
+        run: python scripts/collect_event.py
+
+      - name: Re-aggregate dashboard data
+        working-directory: anthropic-usage
+        run: python scripts/aggregate.py
+
+      - name: Commit updates
+        run: |
+          git config user.name  "anthropic-usage[bot]"
+          git config user.email "anthropic-usage[bot]@users.noreply.github.com"
+          git add anthropic-usage/data/
+          if git diff --staged --quiet; then
+            echo "변경 없음 — 커밋 스킵"
+          else
+            TIMESTAMP=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+            EVENT_INFO=""
+            if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+              EVENT_INFO=" from ${{ github.event.client_payload.repo }}"
+            fi
+            git commit -m "chore(anthropic-usage): event${EVENT_INFO} @ ${TIMESTAMP}"
+            git pull --rebase origin main || true
+            git push
+          fi
+
+      - name: Job summary
+        if: always()
+        working-directory: anthropic-usage
+        run: |
+          echo "## 🤖 Usage Collector" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Trigger**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          if [ -f data/summary.json ]; then
+            echo '```json' >> $GITHUB_STEP_SUMMARY
+            cat data/summary.json >> $GITHUB_STEP_SUMMARY
+            echo '' >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📊 [대시보드 열기](https://jinhae8971.github.io/github-actions-dashboard/anthropic-usage/docs/)" >> $GITHUB_STEP_SUMMARY
