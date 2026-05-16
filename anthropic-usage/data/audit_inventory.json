@@ -1,6 +1,6 @@
 {
   "audit_date": "2026-05-16",
-  "generated_at": "2026-05-16T08:29:16.736819+00:00",
+  "generated_at": "2026-05-16T08:45:23.559095+00:00",
   "repos_scanned": 34,
   "total_workflows": 36,
   "claude_workflow_count": 26,
@@ -23,7 +23,7 @@
       "token_intensity": "CRITICAL",
       "notes": "✅ 2026-05-16: max_tokens 32000 → 8000 축소. ★ Opus 4.7 + 32k max_tokens + web search agentic loop = 매우 비싼 단일 호출. 매일.",
       "reporter_wired": true,
-      "github_state": "active"
+      "github_state": "disabled_manually"
     },
     {
       "repo": "sp500-research-agent",
@@ -215,7 +215,7 @@
       "token_intensity": "HIGH",
       "notes": "✅ 2026-05-16: TOP_N 10→5 + cron 23:20 분산. Sonnet 4. TOP_N=10 종목 분석",
       "reporter_wired": true,
-      "github_state": "active"
+      "github_state": "disabled_manually"
     },
     {
       "repo": "ai-news-report",
@@ -272,7 +272,7 @@
       "token_intensity": "MEDIUM",
       "notes": "✅ 2026-05-16: cron 23:30 분산. 이름이 'weekly_report'지만 실제로는 평일 매일 실행. Sonnet 4.6, max_tokens=8000으로 큰 출력.",
       "reporter_wired": true,
-      "github_state": "active"
+      "github_state": "disabled_manually"
     },
     {
       "repo": "kospi-morning-briefing",
@@ -291,7 +291,7 @@
       "token_intensity": "MEDIUM",
       "notes": "KOSPI 모닝브리핑, 멀티에이전트 토론 구조 가능성.",
       "reporter_wired": true,
-      "github_state": "active"
+      "github_state": "disabled_manually"
     },
     {
       "repo": "kospi-strategy",
@@ -329,7 +329,7 @@
       "token_intensity": "LOW-MEDIUM",
       "notes": "★ 숨은 트리거: data/portfolio.json 푸시 시마다 자동 실행. 사용자 모르게 추가 실행될 수 있음.",
       "reporter_wired": false,
-      "github_state": "active"
+      "github_state": "disabled_manually"
     },
     {
       "repo": "lgd-news-monitor",
@@ -460,7 +460,7 @@
       "token_intensity": "ZERO (현재)",
       "notes": "ANTHROPIC_API_KEY 환경변수는 전달되지만 실제 코드에서 호출 안 함 (주석: '선택, 향후 서버사이드 AI 사용 시'). 그러나 미래에 활성화되면 월 220회 폭증 위험.",
       "reporter_wired": true,
-      "github_state": "active"
+      "github_state": "disabled_manually"
     },
     {
       "repo": "stock-dashboard",
@@ -479,7 +479,7 @@
       "token_intensity": "KILLED",
       "notes": "✅ 2026-05-16: ANTHROPIC_API_KEY Secret 제거됨. 월 720회 Opus 호출 차단. ★ 가장 위험. Opus 4.5를 매시간 호출 (월 720회). ANTHROPIC_API_KEY가 있으면 무조건 호출함. 24시간 작동 — 장 마감 후/주말에도 실행.",
       "reporter_wired": false,
-      "github_state": "active"
+      "github_state": "disabled_manually"
     },
     {
       "repo": "IPAD",
@@ -498,7 +498,7 @@
       "token_intensity": "MEDIUM",
       "notes": "✅ 2026-05-16: 신규 발견. 6개 LLM 에이전트 (bear/bull/news/news_collector/synthesis/technical). reporter 패치 완료(commit 108950c). ANTHROPIC_API_KEY secret 미설정 상태라 현재 실제 호출 안 됨.",
       "reporter_wired": true,
-      "github_state": "active",
+      "github_state": "disabled_manually",
       "has_anthropic_secret": false
     }
   ],
@@ -515,6 +515,12 @@
     "★ DOUBLE_DAILY: korean-stock-agent와 us-market-agent가 동일 cron '0 23 * * 0-4'로 동시 실행 — 그 시각 us-market-agent(Opus)+korean-stock-agent(Sonnet)+nasdaq-quant-analyzer(Sonnet)+gcp/weekly_report(Sonnet) 4개가 동시 점화."
   ],
   "critical_findings": [
+    {
+      "title": "✅ 2026-05-16 동기화: 미등록 스케줄 워크플로우 27개 일괄 비활성화 완료",
+      "severity": "CRITICAL",
+      "detail": "사용자가 dashboard에 등록하지 않은 schedule-trigger 워크플로우 27개를 GitHub API로 disable. kis-autotrade(7) + gcp(4) + IPAD + portfolio-council-ai(3) + valuation-radar(4) 등 포함. paused.json 11→56 entries로 동기화. workflows.json monitored_repos 14→35로 확장.",
+      "action": "완료. 다음 orchestrator run에서 dashboard에 자동 반영."
+    },
     {
       "title": "✅ stock-dashboard: 매시간 Opus 4.5 호출 차단됨",
       "severity": "CRITICAL",
@@ -576,6 +582,6 @@
       "action": "보류 (사용자 선택)"
     }
   ],
-  "github_active_count": 9,
-  "github_disabled_count": 15
+  "github_active_count": 1,
+  "github_disabled_count": 23
 }

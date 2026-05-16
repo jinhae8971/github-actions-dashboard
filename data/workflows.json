@@ -1,25 +1,46 @@
 {
-  "updated_at": "2026-05-16T07:06:24.562064+00:00",
+  "updated_at": "2026-05-16T08:45:01.452915+00:00",
   "orchestrator": {
     "version": "4.0",
-    "synced_at": "2026-05-16T07:06:24.562064+00:00",
+    "synced_at": "2026-05-16T08:45:01.452915+00:00",
     "has_pat": true,
-    "paused_count": 11,
+    "paused_count": 56,
     "monitored_repos": [
-      "crypto-monitor",
-      "korean-stock-agent",
-      "crypto-research-agent",
-      "kospi-research-agent",
-      "sp500-research-agent",
-      "nasdaq-research-agent",
-      "dow30-research-agent",
-      "global-market-orchestrator",
-      "crypto-cycle-intelligence",
+      "IPAD",
+      "ai-news-report",
       "ai-semi-cycle-intelligence",
-      "cycle-intelligence-hub",
-      "trendline-detector",
+      "backtest-lab",
       "chart-analyzer",
-      "backtest-lab"
+      "competitor-ai-tracker",
+      "crypto-cycle-intelligence",
+      "crypto-monitor",
+      "crypto-research-agent",
+      "cycle-intelligence-hub",
+      "dow30-research-agent",
+      "earnings-estimate-monitor",
+      "etf-strategist",
+      "gcp",
+      "global-market-orchestrator",
+      "kis-autotrade",
+      "korean-stock-agent",
+      "kospi-dashboard",
+      "kospi-morning-brief",
+      "kospi-morning-briefing",
+      "kospi-research-agent",
+      "kospi-strategy",
+      "kospi-valuation-radar",
+      "leading-stocks-calendar",
+      "lgd-news-monitor",
+      "multi-agent-researcher",
+      "nasdaq-quant-analyzer",
+      "nasdaq-research-agent",
+      "portfolio-council-ai",
+      "risk-regime-monitor",
+      "sp500-research-agent",
+      "stock-dashboard",
+      "trendline-detector",
+      "us-market-agent",
+      "us-valuation-radar"
     ],
     "excluded_workflows": [
       {
@@ -73,7 +94,8 @@
       "stale_run": 2,
       "paused_expected": 3
     },
-    "systems_manifest": "config/systems.yaml"
+    "systems_manifest": "config/systems.yaml",
+    "_manual_sync_note": "Added 21 repos via audit on 2026-05-16: gcp, IPAD, kis-autotrade, kospi-dashboard, kospi-morning-brief, kospi-morning-briefing, kospi-valuation-radar, us-valuation-radar, leading-stocks-calendar, nasdaq-quant-analyzer, portfolio-council-ai, risk-regime-monitor, earnings-estimate-monitor, stock-dashboard, multi-agent-researcher, kospi-strategy, us-market-agent, lgd-news-monitor, ai-news-report, etf-strategist, competitor-ai-tracker"
   },
   "workflows": [
     {
