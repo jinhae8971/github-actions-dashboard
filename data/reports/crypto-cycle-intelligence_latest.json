@@ -1,71 +1,71 @@
 {
-  "generated_at": "2026-05-20T22:18:56.183670+00:00",
+  "generated_at": "2026-05-21T22:09:54.891043+00:00",
   "ccs": {
-    "composite": 24.4,
+    "composite": 26.36,
     "phase": "Accumulation",
     "emoji": "🌱",
     "color": "#3a8891",
     "dimensions": {
-      "valuation": 26.42,
-      "onchain": 19.28,
-      "sentiment": 21.25,
+      "valuation": 26.61,
+      "onchain": 23.07,
+      "sentiment": 23.75,
       "derivatives": null,
       "macro": null,
-      "technical": 31.01
+      "technical": 32.93
     },
     "indicators": [
       {
         "metric": "pi_cycle_ratio",
-        "raw": 0.3826000995515279,
-        "score": 22.825012443940988,
+        "raw": 0.38257575670943106,
+        "score": 22.821969588678883,
         "dimension": "valuation",
         "bottom": 0.2,
         "top": 1.0
       },
       {
         "metric": "mvrv_zscore",
-        "raw": 0.7759,
-        "score": 22.19875,
+        "raw": 0.7722,
+        "score": 22.1525,
         "dimension": "valuation",
         "bottom": -1.0,
         "top": 7.0
       },
       {
         "metric": "mayer_multiple",
-        "raw": 0.9527630605568753,
-        "score": 9.547691284804706,
+        "raw": 0.9594722010685981,
+        "score": 9.96701256678738,
         "dimension": "valuation",
         "bottom": 0.8,
         "top": 2.4
       },
       {
         "metric": "nupl",
-        "raw": 0.3004,
-        "score": 55.04,
+        "raw": 0.3061,
+        "score": 55.61000000000001,
         "dimension": "valuation",
         "bottom": -0.25,
         "top": 0.75
       },
       {
         "metric": "puell_multiple",
-        "raw": 0.792,
-        "score": 13.297297297297298,
+        "raw": 0.8529,
+        "score": 14.94324324324324,
         "dimension": "onchain",
         "bottom": 0.3,
         "top": 4.0
       },
       {
         "metric": "sopr",
-        "raw": 0.9926,
-        "score": 28.250000000000053,
+        "raw": 0.9982,
+        "score": 35.24999999999997,
         "dimension": "onchain",
         "bottom": 0.97,
         "top": 1.05
       },
       {
         "metric": "fear_greed_index",
-        "raw": 27,
-        "score": 21.25,
+        "raw": 29,
+        "score": 23.75,
         "dimension": "sentiment",
         "bottom": 10,
         "top": 90
@@ -80,16 +80,16 @@
       },
       {
         "metric": "weekly_rsi",
-        "raw": 44.974430234131596,
-        "score": 27.226236789330173,
+        "raw": 45.40917338854222,
+        "score": 28.016678888258582,
         "dimension": "technical",
         "bottom": 30,
         "top": 85
       },
       {
         "metric": "daily_rsi",
-        "raw": 46.50433064555307,
-        "score": 36.67629032345126,
+        "raw": 48.13832334077042,
+        "score": 40.307385201712044,
         "dimension": "technical",
         "bottom": 30,
         "top": 75
@@ -103,22 +103,17 @@
     }
   },
   "global_market": {
-    "total_mcap_usd": 2659593477206.5513,
-    "total_vol_24h": 76480917021.99947,
-    "btc_dominance": 58.21900925300715,
-    "eth_dominance": 9.633233526649425,
-    "mcap_change_24h": 0.9207202960765515,
-    "active_cryptos": 17399
+    "total_mcap_usd": 2677152496516.1,
+    "total_vol_24h": 82183526394.7341,
+    "btc_dominance": 58.11022915281248,
+    "eth_dominance": 9.620024583587838,
+    "mcap_change_24h": 0.5154723712618579,
+    "active_cryptos": 17403
   },
   "fear_greed": {
-    "value": 27,
+    "value": 29,
     "classification": "Fear",
     "history": [
-      {
-        "ts": 1771545600,
-        "value": 7,
-        "classification": "Extreme Fear"
-      },
       {
         "ts": 1771632000,
         "value": 8,
@@ -563,38 +558,39 @@
         "ts": 1779235200,
         "value": 27,
         "classification": "Fear"
+      },
+      {
+        "ts": 1779321600,
+        "value": 29,
+        "classification": "Fear"
       }
     ]
   },
   "pi_cycle": {
-    "ma111": 72478.30013513514,
-    "ma350x2": 189436.1768857143,
-    "ratio": 0.3826000995515279,
+    "ma111": 72421.81909909911,
+    "ma350x2": 189300.5968857143,
+    "ratio": 0.38257575670943106,
     "crosses": []
   },
   "technicals": {
-    "current_price": 77273.65002331455,
-    "change_24h_pct": 0.6051902994614222,
-    "sma_200": 81104.79218007182,
-    "mayer_multiple": 0.9527630605568753,
-    "sma_111": 72479.64283359093,
-    "sma_350_x2": 189425.60357318216,
-    "pi_cycle_ratio": 0.382628543694144,
-    "daily_rsi": 46.50433064555307,
-    "weekly_rsi": 44.974430234131596
+    "current_price": 77660.42327839203,
+    "change_24h_pct": 0.25881626240689126,
+    "sma_200": 80940.7747216635,
+    "mayer_multiple": 0.9594722010685981,
+    "sma_111": 72422.93057260875,
+    "sma_350_x2": 189289.58059515993,
+    "pi_cycle_ratio": 0.3826038937003201,
+    "daily_rsi": 48.13832334077042,
+    "weekly_rsi": 45.40917338854222
   },
   "funding_rate": null,
   "bgeometrics": {
-    "mvrv_zscore": 0.7759,
-    "puell_multiple": 0.792,
-    "nupl": 0.3004,
-    "sopr": 0.9926
+    "mvrv_zscore": 0.7722,
+    "puell_multiple": 0.8529,
+    "nupl": 0.3061,
+    "sopr": 0.9982
   },
   "btc_price_30d": [
-    {
-      "ts": "2026-04-22T00:00:00+00:00",
-      "price": 76350.25202878818
-    },
     {
       "ts": "2026-04-23T00:00:00+00:00",
       "price": 78194.78334884858
@@ -708,8 +704,12 @@
       "price": 76808.8105527178
     },
     {
-      "ts": "2026-05-20T22:18:26+00:00",
-      "price": 77273.65002331455
+      "ts": "2026-05-21T00:00:00+00:00",
+      "price": 77459.94434557436
+    },
+    {
+      "ts": "2026-05-21T22:09:37+00:00",
+      "price": 77660.42327839203
     }
   ]
 }
