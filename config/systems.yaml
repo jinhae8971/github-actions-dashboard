@@ -218,3 +218,13 @@ systems:
     reports:
       - key: leading-stocks-calendar/daily
         path: docs/data/monthly
+
+  - id: korea-etf-calmar
+    label: Korea ETF Calmar Top10
+    group: core
+    role: producer
+    repo: korea-etf-calmar
+    schedule_kst: "07:00 weekdays"
+    telegram_policy: weekday
+    freshness_sla_hours: 30
+    dashboard_url: "https://github.com/jinhae8971/korea-etf-calmar/actions"

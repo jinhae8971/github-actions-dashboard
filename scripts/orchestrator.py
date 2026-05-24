@@ -46,6 +46,8 @@ REPOS = [
     "trendline-detector",
     "chart-analyzer",
     "backtest-lab",
+    # Korea ETF Calmar ratio top10 → Telegram (weekday 07:00 KST)
+    "korea-etf-calmar",
 ]
 
 EXCLUDED_WORKFLOWS = {
