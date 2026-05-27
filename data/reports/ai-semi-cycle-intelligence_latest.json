@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-05-26T22:25:31.145976+00:00",
+  "generated_at": "2026-05-27T22:46:11.096712+00:00",
   "ascs": {
-    "composite": 79.42,
+    "composite": 78.91,
     "phase": "Late Bull",
     "emoji": "🔥",
     "color": "#e76f51",
     "dimensions": {
-      "valuation": 57.8,
+      "valuation": 56.3,
       "earnings": 92.44,
-      "capital": 73.07,
-      "sentiment": 87.54,
+      "capital": 73.08,
+      "sentiment": 88.59,
       "macro": null,
-      "technical": 96.32
+      "technical": 94.68
     },
     "indicators": [
       {
         "metric": "nvda_forward_pe",
-        "raw": 16.990715,
+        "raw": 16.812,
         "score": 0.0,
         "dimension": "valuation",
         "bottom": 25,
@@ -24,23 +24,23 @@
       },
       {
         "metric": "nvda_price_to_sales",
-        "raw": 20.529818,
-        "score": 46.40673333333333,
+        "raw": 20.313875,
+        "score": 45.606944444444444,
         "dimension": "valuation",
         "bottom": 8,
         "top": 35
       },
       {
         "metric": "sox_avg_pe_pctl",
-        "raw": 64.37826151515151,
-        "score": 63.39751645021644,
+        "raw": 63.17031000000001,
+        "score": 61.671871428571436,
         "dimension": "valuation",
         "bottom": 20,
         "top": 90
       },
       {
         "metric": "top10_mcap_to_gdp_pct",
-        "raw": 44.83304123050667,
+        "raw": 44.77506830336001,
         "score": 100.0,
         "dimension": "valuation",
         "bottom": 5,
@@ -48,16 +48,16 @@
       },
       {
         "metric": "kr_semi_avg_pe",
-        "raw": 25.35106281666667,
-        "score": 100.0,
+        "raw": 24.073654533333336,
+        "score": 95.36827266666667,
         "dimension": "valuation",
         "bottom": 5,
         "top": 25
       },
       {
         "metric": "kr_us_pe_spread",
-        "raw": 7.8937634833333306,
-        "score": 68.42494606666668,
+        "raw": 8.772547766666666,
+        "score": 64.90980893333334,
         "dimension": "valuation",
         "bottom": 25,
         "top": 0
@@ -112,23 +112,23 @@
       },
       {
         "metric": "semi_capex_to_revenue_pct",
-        "raw": 18.15130200558836,
-        "score": 46.14228184358345,
+        "raw": 18.153416224093768,
+        "score": 46.15189192769895,
         "dimension": "capital",
         "bottom": 8,
         "top": 30
       },
       {
         "metric": "vix",
-        "raw": 17.010000228881836,
-        "score": 74.95833237965903,
+        "raw": 16.290000915527344,
+        "score": 77.95832951863608,
         "dimension": "sentiment",
         "bottom": 35,
         "top": 11
       },
       {
         "metric": "sox_above_sma200_pct",
-        "raw": 67.48178911284128,
+        "raw": 64.45810913761645,
         "score": 100.0,
         "dimension": "sentiment",
         "bottom": -20,
@@ -144,7 +144,7 @@
       },
       {
         "metric": "kospi_above_sma200_pct",
-        "raw": 67.70798006097034,
+        "raw": 71.09330234452396,
         "score": 100.0,
         "dimension": "sentiment",
         "bottom": -15,
@@ -184,7 +184,7 @@
       },
       {
         "metric": "sox_weekly_rsi",
-        "raw": 86.28024304662449,
+        "raw": 85.84471754521715,
         "score": 100.0,
         "dimension": "technical",
         "bottom": 30,
@@ -192,23 +192,23 @@
       },
       {
         "metric": "sox_daily_rsi",
-        "raw": 74.3300636187505,
-        "score": 98.51125248611223,
+        "raw": 71.02226986628905,
+        "score": 91.16059970286456,
         "dimension": "technical",
         "bottom": 30,
         "top": 75
       },
       {
         "metric": "nvda_wk52_pos_pct",
-        "raw": 80.01548940065541,
-        "score": 82.37116400077107,
+        "raw": 77.08043218375518,
+        "score": 78.91815551030021,
         "dimension": "technical",
         "bottom": 10,
         "top": 95
       },
       {
         "metric": "sox_dist_sma200_pct",
-        "raw": 67.48178911284128,
+        "raw": 64.45810913761645,
         "score": 100.0,
         "dimension": "technical",
         "bottom": -25,
@@ -216,7 +216,7 @@
       },
       {
         "metric": "kospi_weekly_rsi",
-        "raw": 77.50350883795889,
+        "raw": 78.59063706900443,
         "score": 100.0,
         "dimension": "technical",
         "bottom": 30,
@@ -224,7 +224,7 @@
       },
       {
         "metric": "samsung_wk52_pos_pct",
-        "raw": 99.7971883684804,
+        "raw": 100.0,
         "score": 100.0,
         "dimension": "technical",
         "bottom": 10,
@@ -251,14 +251,14 @@
     "NVDA": {
       "name": "Nvidia",
       "region": "US",
-      "trailingPE": 32.953987,
-      "forwardPE": 16.990715,
-      "priceToSales": 20.529818,
-      "priceToBook": 33.19839,
-      "marketCap": 5204124106752,
-      "enterpriseValue": 5170627870720,
-      "evToRevenue": 20.398,
-      "evToEbitda": 31.24,
+      "trailingPE": 32.557426,
+      "forwardPE": 16.812,
+      "priceToSales": 20.313875,
+      "priceToBook": 32.849197,
+      "marketCap": 5149384769536,
+      "enterpriseValue": 5159253966848,
+      "evToRevenue": 20.353,
+      "evToEbitda": 31.171,
       "profitMargins": 0.62966,
       "operatingMargins": 0.65596,
       "revenueGrowth": 0.852,
@@ -272,37 +272,37 @@
       "beta": 2.244,
       "fiftyTwoWeekHigh": 236.54,
       "fiftyTwoWeekLow": 132.92,
-      "fiftyDayAverage": 196.8078,
-      "twoHundredDayAverage": 187.0324,
-      "averageVolume": 166733948,
-      "currentPrice": 214.86,
+      "fiftyDayAverage": 197.5,
+      "twoHundredDayAverage": 187.20285,
+      "averageVolume": 164663923,
+      "currentPrice": 212.6,
       "currency": "USD",
-      "current": 214.86000061035156,
-      "chg_1d_pct": -0.21827019769956602,
-      "chg_1w_pct": -2.606409493718209,
-      "chg_1m_pct": -0.807903603281912,
-      "sma_200": 187.1902140045166,
-      "dist_from_sma200_pct": 14.781641632808507,
-      "sma_50": 197.5,
-      "dist_from_sma50_pct": 8.789873726760277,
-      "wk52_position_pct": 80.01548940065541,
+      "current": 212.60000610351562,
+      "chg_1d_pct": -1.0518451551782437,
+      "chg_1w_pct": -4.864185375133234,
+      "chg_1m_pct": -0.26738850228724687,
+      "sma_200": 187.33986572265624,
+      "dist_from_sma200_pct": 13.483590523255362,
+      "sma_50": 198.08760009765626,
+      "dist_from_sma50_pct": 7.326256665588771,
+      "wk52_position_pct": 77.08043218375518,
       "wk52_high": 235.74000549316406,
-      "wk52_low": 131.25906372070312,
-      "daily_rsi": 53.262225860603415,
-      "weekly_rsi": 61.81300766613193,
-      "realized_vol_21d": 42.375833816165915
+      "wk52_low": 134.7782440185547,
+      "daily_rsi": 51.04016983273817,
+      "weekly_rsi": 60.47778255622717,
+      "realized_vol_21d": 40.19308564764667
     },
     "AVGO": {
       "name": "Broadcom",
       "region": "US",
-      "trailingPE": 82.10312,
-      "forwardPE": 23.112387,
-      "priceToSales": 29.26214,
-      "priceToBook": 25.02283,
-      "marketCap": 1998077427712,
-      "enterpriseValue": 2012698509312,
-      "evToRevenue": 29.476,
-      "evToEbitda": 54.079,
+      "trailingPE": 81.91456,
+      "forwardPE": 23.056364,
+      "priceToSales": 29.251738,
+      "priceToBook": 25.013933,
+      "marketCap": 1997367148544,
+      "enterpriseValue": 2049960312832,
+      "evToRevenue": 30.022,
+      "evToEbitda": 55.08,
       "profitMargins": 0.36571997,
       "operatingMargins": 0.44943002,
       "revenueGrowth": 0.295,
@@ -315,38 +315,38 @@
       "shortPercentOfFloat": 0.011,
       "beta": 1.44,
       "fiftyTwoWeekHigh": 442.36,
-      "fiftyTwoWeekLow": 231.13,
-      "fiftyDayAverage": 377.0408,
-      "twoHundredDayAverage": 349.84494,
-      "averageVolume": 23781641,
-      "currentPrice": 422.01,
+      "fiftyTwoWeekLow": 234.43,
+      "fiftyDayAverage": 379.0378,
+      "twoHundredDayAverage": 350.4362,
+      "averageVolume": 23690805,
+      "currentPrice": 421.86,
       "currency": "USD",
-      "current": 422.010009765625,
-      "chg_1d_pct": 1.9003223158400528,
-      "chg_1w_pct": 2.6613477622992043,
-      "chg_1m_pct": 0.9110467353854679,
-      "sma_200": 349.49395217895506,
-      "dist_from_sma200_pct": 20.748873373791255,
-      "sma_50": 378.97112915039065,
-      "dist_from_sma50_pct": 11.35677029322062,
-      "wk52_position_pct": 91.64898847286206,
+      "current": 421.8599853515625,
+      "chg_1d_pct": -0.03554996578062353,
+      "chg_1w_pct": 0.9814188744963204,
+      "chg_1m_pct": 5.50984156244998,
+      "sma_200": 350.08709701538083,
+      "dist_from_sma200_pct": 20.50143777022104,
+      "sma_50": 380.9235314941406,
+      "dist_from_sma50_pct": 10.74663297823899,
+      "wk52_position_pct": 91.29754207416399,
       "wk52_high": 439.7900085449219,
-      "wk52_low": 226.88168334960938,
-      "daily_rsi": 56.46095970344692,
-      "weekly_rsi": 65.86883484001115,
-      "realized_vol_21d": 40.010277778657034
+      "wk52_low": 233.75599670410156,
+      "daily_rsi": 56.377696437489384,
+      "weekly_rsi": 65.84234839924963,
+      "realized_vol_21d": 39.81152972885861
     },
     "TSM": {
       "name": "TSMC ADR",
       "region": "US",
-      "trailingPE": 35.392277,
-      "forwardPE": 21.126492,
-      "priceToSales": 0.521086,
-      "priceToBook": 63.071396,
-      "marketCap": 2138486996992,
-      "enterpriseValue": 8242364678144,
-      "evToRevenue": 2.008,
-      "evToEbitda": 2.886,
+      "trailingPE": 36.099915,
+      "forwardPE": 21.65988,
+      "priceToSales": 0.53424203,
+      "priceToBook": 64.66378,
+      "marketCap": 2192478175232,
+      "enterpriseValue": 8444637085696,
+      "evToRevenue": 2.058,
+      "evToEbitda": 2.957,
       "profitMargins": 0.46505,
       "operatingMargins": 0.58105,
       "revenueGrowth": 0.351,
@@ -358,39 +358,39 @@
       "shortRatio": 1.93,
       "shortPercentOfFloat": 0.0055,
       "beta": 1.264,
-      "fiftyTwoWeekHigh": 421.97,
+      "fiftyTwoWeekHigh": 430.55,
       "fiftyTwoWeekLow": 190.56,
-      "fiftyDayAverage": 373.1106,
-      "twoHundredDayAverage": 317.84225,
-      "averageVolume": 13766381,
-      "currentPrice": 412.32,
+      "fiftyDayAverage": 374.5908,
+      "twoHundredDayAverage": 318.69073,
+      "averageVolume": 13781243,
+      "currentPrice": 422.73,
       "currency": "USD",
-      "current": 412.32000732421875,
-      "chg_1d_pct": 1.9282157921455045,
-      "chg_1w_pct": 5.020254886030706,
-      "chg_1m_pct": 1.812434228547244,
-      "sma_200": 317.6343231964111,
-      "dist_from_sma200_pct": 29.809651291764894,
-      "sma_50": 374.5716802978516,
-      "dist_from_sma50_pct": 10.07773118254709,
-      "wk52_position_pct": 96.87648090649151,
-      "wk52_high": 419.5,
-      "wk52_low": 189.6313018798828,
-      "daily_rsi": 58.79328971417061,
-      "weekly_rsi": 72.28619412261891,
-      "realized_vol_21d": 37.2765948012861
+      "current": 422.7300109863281,
+      "chg_1d_pct": 2.5247389108439933,
+      "chg_1w_pct": 5.256216355209364,
+      "chg_1m_pct": 7.745836502038661,
+      "sma_200": 318.54925048828125,
+      "dist_from_sma200_pct": 32.70475769079842,
+      "sma_50": 376.2408001708984,
+      "dist_from_sma50_pct": 12.356238556348242,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 422.7300109863281,
+      "wk52_low": 190.9549102783203,
+      "daily_rsi": 62.78598584718137,
+      "weekly_rsi": 74.13472353941245,
+      "realized_vol_21d": 38.1575993881542
     },
     "AMD": {
       "name": "AMD",
       "region": "US",
-      "trailingPE": 168.52509,
-      "forwardPE": 38.881783,
-      "priceToSales": 21.9374,
-      "priceToBook": 12.741549,
-      "marketCap": 821643378688,
-      "enterpriseValue": 753846124544,
-      "evToRevenue": 20.127,
-      "evToEbitda": 101.46,
+      "trailingPE": 164.08609,
+      "forwardPE": 38.23747,
+      "priceToSales": 21.573872,
+      "priceToBook": 12.530407,
+      "marketCap": 808027815936,
+      "enterpriseValue": 813167345664,
+      "evToRevenue": 21.711,
+      "evToEbitda": 109.444,
       "profitMargins": 0.13374,
       "operatingMargins": 0.14396,
       "revenueGrowth": 0.378,
@@ -402,39 +402,39 @@
       "shortRatio": 0.9,
       "shortPercentOfFloat": 0.0223,
       "beta": 2.399,
-      "fiftyTwoWeekHigh": 506.96,
+      "fiftyTwoWeekHigh": 510.21,
       "fiftyTwoWeekLow": 108.62,
-      "fiftyDayAverage": 303.1888,
-      "twoHundredDayAverage": 230.87634,
-      "averageVolume": 38154853,
-      "currentPrice": 503.89,
+      "fiftyDayAverage": 309.3988,
+      "twoHundredDayAverage": 232.5338,
+      "averageVolume": 38272625,
+      "currentPrice": 495.54,
       "currency": "USD",
-      "current": 503.8900146484375,
-      "chg_1d_pct": 7.78165261125654,
-      "chg_1w_pct": 21.69786970272538,
-      "chg_1m_pct": 50.581241160636466,
-      "sma_200": 232.53379997253418,
-      "dist_from_sma200_pct": 116.69538566348403,
-      "sma_50": 309.3988006591797,
-      "dist_from_sma50_pct": 62.861010958960016,
-      "wk52_position_pct": 100.0,
+      "current": 495.5400085449219,
+      "chg_1d_pct": -1.6571088651838872,
+      "chg_1w_pct": 10.715408063696508,
+      "chg_1m_pct": 53.31828274058641,
+      "sma_200": 234.1477000427246,
+      "dist_from_sma200_pct": 111.63565068309507,
+      "sma_50": 315.37800079345703,
+      "dist_from_sma50_pct": 57.12573714659763,
+      "wk52_position_pct": 97.87618123316092,
       "wk52_high": 503.8900146484375,
-      "wk52_low": 110.30999755859375,
-      "daily_rsi": 77.07048195389729,
-      "weekly_rsi": 81.89726976209036,
-      "realized_vol_21d": 94.62490918521603
+      "wk52_low": 110.7300033569336,
+      "daily_rsi": 74.07880900737261,
+      "weekly_rsi": 81.46643678203152,
+      "realized_vol_21d": 93.27659635365931
     },
     "MU": {
       "name": "Micron",
       "region": "US",
-      "trailingPE": 42.298393,
-      "forwardPE": 8.616474,
-      "priceToSales": 17.383547,
-      "priceToBook": 13.94648,
-      "marketCap": 1010314379264,
-      "enterpriseValue": 843137286144,
-      "evToRevenue": 14.507,
-      "evToEbitda": 22.909,
+      "trailingPE": 43.73104,
+      "forwardPE": 8.861931,
+      "priceToSales": 18.014755,
+      "priceToBook": 14.452885,
+      "marketCap": 1046999531520,
+      "enterpriseValue": 1006523383808,
+      "evToRevenue": 17.318,
+      "evToEbitda": 27.349,
       "profitMargins": 0.41486,
       "operatingMargins": 0.67624,
       "revenueGrowth": 1.963,
@@ -446,39 +446,39 @@
       "shortRatio": 0.84,
       "shortPercentOfFloat": 0.033099998,
       "beta": 1.919,
-      "fiftyTwoWeekHigh": 916.75,
+      "fiftyTwoWeekHigh": 956.16,
       "fiftyTwoWeekLow": 92.22,
-      "fiftyDayAverage": 519.0096,
-      "twoHundredDayAverage": 322.55576,
-      "averageVolume": 46357311,
-      "currentPrice": 895.88,
+      "fiftyDayAverage": 528.4046,
+      "twoHundredDayAverage": 326.4758,
+      "averageVolume": 47145753,
+      "currentPrice": 928.41,
       "currency": "USD",
-      "current": 895.8800048828125,
-      "chg_1d_pct": 19.291611835261314,
-      "chg_1w_pct": 28.213644188636145,
-      "chg_1m_pct": 70.78694697506779,
-      "sma_200": 326.330345954895,
-      "dist_from_sma200_pct": 174.5316260004333,
-      "sma_50": 528.3699420166016,
-      "dist_from_sma50_pct": 69.5554447067058,
+      "current": 928.4099731445312,
+      "chg_1d_pct": 3.6310630982297587,
+      "chg_1w_pct": 26.83369793721697,
+      "chg_1m_pct": 84.10239295110465,
+      "sma_200": 330.3788075256348,
+      "dist_from_sma200_pct": 181.013779333438,
+      "sma_50": 538.1058520507812,
+      "dist_from_sma50_pct": 72.53296346922407,
       "wk52_position_pct": 100.0,
-      "wk52_high": 895.8800048828125,
-      "wk52_low": 93.14704132080078,
-      "daily_rsi": 74.8587214102742,
-      "weekly_rsi": 85.69833092615238,
-      "realized_vol_21d": 106.50474000814253
+      "wk52_high": 928.4099731445312,
+      "wk52_low": 94.23443603515625,
+      "daily_rsi": 76.45446793220844,
+      "weekly_rsi": 86.38728059149857,
+      "realized_vol_21d": 106.12732138123721
     },
     "ASML": {
       "name": "ASML",
       "region": "US",
-      "trailingPE": 54.310486,
-      "forwardPE": 34.25997,
-      "priceToSales": 18.669125,
-      "priceToBook": 1445.4092,
-      "marketCap": 629013217280,
-      "enterpriseValue": 623648964608,
-      "evToRevenue": 18.51,
-      "evToEbitda": 49.089,
+      "trailingPE": 53.20912,
+      "forwardPE": 33.558155,
+      "priceToSales": 18.27836,
+      "priceToBook": 1411.5555,
+      "marketCap": 615847297024,
+      "enterpriseValue": 623313682432,
+      "evToRevenue": 18.5,
+      "evToEbitda": 49.063,
       "profitMargins": 0.29713,
       "operatingMargins": 0.36020002,
       "revenueGrowth": 0.132,
@@ -492,37 +492,37 @@
       "beta": 1.373,
       "fiftyTwoWeekHigh": 1653.53,
       "fiftyTwoWeekLow": 683.48,
-      "fiftyDayAverage": 1436.019,
-      "twoHundredDayAverage": 1177.5011,
-      "averageVolume": 1736705,
-      "currentPrice": 1632.03,
+      "fiftyDayAverage": 1441.7458,
+      "twoHundredDayAverage": 1182.0956,
+      "averageVolume": 1741583,
+      "currentPrice": 1597.87,
       "currency": "USD",
-      "current": 1632.030029296875,
-      "chg_1d_pct": -0.05327914166084469,
-      "chg_1w_pct": 11.825775285026463,
-      "chg_1m_pct": 13.933574603810905,
-      "sma_200": 1178.5530969238282,
-      "dist_from_sma200_pct": 38.477429108342974,
-      "sma_50": 1439.9833276367187,
-      "dist_from_sma50_pct": 13.33673091724894,
-      "wk52_position_pct": 99.90812141818401,
+      "current": 1597.8699951171875,
+      "chg_1d_pct": -2.093100835552919,
+      "chg_1w_pct": 3.079741059394836,
+      "chg_1m_pct": 15.406333239172664,
+      "sma_200": 1182.9498333740235,
+      "dist_from_sma200_pct": 35.075042917054546,
+      "sma_50": 1444.4894848632812,
+      "dist_from_sma50_pct": 10.618319611265537,
+      "wk52_position_pct": 96.30054313043233,
       "wk52_high": 1632.9000244140625,
       "wk52_low": 686.0034790039062,
-      "daily_rsi": 62.1284516237425,
-      "weekly_rsi": 69.10028309933062,
-      "realized_vol_21d": 53.9884049604063
+      "daily_rsi": 58.255049404342145,
+      "weekly_rsi": 66.25624774163288,
+      "realized_vol_21d": 54.30894205936417
     },
     "AMAT": {
       "name": "Applied Materials",
       "region": "US",
-      "trailingPE": 42.79304,
-      "forwardPE": 28.209322,
-      "priceToSales": 12.44364,
-      "priceToBook": 15.105599,
-      "marketCap": 361164210176,
-      "enterpriseValue": 342144516096,
-      "evToRevenue": 11.788,
-      "evToEbitda": 36.889,
+      "trailingPE": 42.128757,
+      "forwardPE": 27.721638,
+      "priceToSales": 12.262,
+      "priceToBook": 14.885103,
+      "marketCap": 355892297728,
+      "enterpriseValue": 360191197184,
+      "evToRevenue": 12.41,
+      "evToEbitda": 38.835,
       "profitMargins": 0.29314,
       "operatingMargins": 0.31896,
       "revenueGrowth": 0.114,
@@ -534,39 +534,39 @@
       "shortRatio": 2.77,
       "shortPercentOfFloat": 0.0201,
       "beta": 1.654,
-      "fiftyTwoWeekHigh": 456.77,
+      "fiftyTwoWeekHigh": 462.4,
       "fiftyTwoWeekLow": 153.47,
-      "fiftyDayAverage": 388.9844,
-      "twoHundredDayAverage": 287.2448,
-      "averageVolume": 6748505,
-      "currentPrice": 454.89,
+      "fiftyDayAverage": 391.2516,
+      "twoHundredDayAverage": 288.6035,
+      "averageVolume": 6731888,
+      "currentPrice": 448.25,
       "currency": "USD",
-      "current": 454.8900146484375,
-      "chg_1d_pct": 5.25962856204063,
-      "chg_1w_pct": 11.930280169694951,
-      "chg_1m_pct": 12.497045278558904,
-      "sma_200": 287.88835563659666,
-      "dist_from_sma200_pct": 58.009174647774955,
-      "sma_50": 390.7984509277344,
-      "dist_from_sma50_pct": 16.40015807855768,
-      "wk52_position_pct": 100.0,
+      "current": 448.25,
+      "chg_1d_pct": -1.459696725497317,
+      "chg_1w_pct": 5.144021462521553,
+      "chg_1m_pct": 17.76318627248972,
+      "sma_200": 289.21198692321775,
+      "dist_from_sma200_pct": 54.99011806830985,
+      "sma_50": 392.84844787597655,
+      "dist_from_sma50_pct": 14.10252539460557,
+      "wk52_position_pct": 97.78173226238383,
       "wk52_high": 454.8900146484375,
-      "wk52_low": 155.55670166015625,
-      "daily_rsi": 64.36163477443341,
-      "weekly_rsi": 73.02743802783223,
-      "realized_vol_21d": 55.642029089306
+      "wk52_low": 155.5566864013672,
+      "daily_rsi": 61.463418549687134,
+      "weekly_rsi": 72.2616694102994,
+      "realized_vol_21d": 54.74024885747504
     },
     "KLAC": {
       "name": "KLA",
       "region": "US",
-      "trailingPE": 56.96375,
-      "forwardPE": 40.344986,
-      "priceToSales": 20.061823,
-      "priceToBook": 45.092365,
-      "marketCap": 262742884352,
-      "enterpriseValue": 247861821440,
-      "evToRevenue": 18.926,
-      "evToEbitda": 42.368,
+      "trailingPE": 55.28785,
+      "forwardPE": 39.257828,
+      "priceToSales": 19.521225,
+      "priceToBook": 43.87728,
+      "marketCap": 255662866432,
+      "enterpriseValue": 263930314752,
+      "evToRevenue": 20.152,
+      "evToEbitda": 45.115,
       "profitMargins": 0.35661998,
       "operatingMargins": 0.41215,
       "revenueGrowth": 0.115,
@@ -578,39 +578,39 @@
       "shortRatio": 3.46,
       "shortPercentOfFloat": 0.0272,
       "beta": 1.501,
-      "fiftyTwoWeekHigh": 2022.8099,
+      "fiftyTwoWeekHigh": 2060.08,
       "fiftyTwoWeekLow": 740.44,
-      "fiftyDayAverage": 1692.272,
-      "twoHundredDayAverage": 1328.3375,
-      "averageVolume": 987936,
-      "currentPrice": 2011.39,
+      "fiftyDayAverage": 1704.127,
+      "twoHundredDayAverage": 1333.8342,
+      "averageVolume": 988660,
+      "currentPrice": 1957.19,
       "currency": "USD",
-      "current": 2011.3900146484375,
-      "chg_1d_pct": 6.514049579404357,
-      "chg_1w_pct": 15.558610660298866,
-      "chg_1m_pct": 5.997751425397779,
-      "sma_200": 1330.540337524414,
-      "dist_from_sma200_pct": 51.17091589953622,
-      "sma_50": 1702.2369091796875,
-      "dist_from_sma50_pct": 18.16157926088746,
-      "wk52_position_pct": 100.0,
+      "current": 1957.18994140625,
+      "chg_1d_pct": -2.6946575675260487,
+      "chg_1w_pct": 6.98125537715375,
+      "chg_1m_pct": 8.331702723856548,
+      "sma_200": 1335.7815783691406,
+      "dist_from_sma200_pct": 46.52020757733377,
+      "sma_50": 1712.6525756835938,
+      "dist_from_sma50_pct": 14.278282075105086,
+      "wk52_position_pct": 95.69621035971747,
       "wk52_high": 2011.3900146484375,
       "wk52_low": 752.0330810546875,
-      "daily_rsi": 66.26983946907097,
-      "weekly_rsi": 69.37131577468105,
-      "realized_vol_21d": 53.73910510397951
+      "daily_rsi": 61.22201032240043,
+      "weekly_rsi": 68.00438177005621,
+      "realized_vol_21d": 54.25080188928786
     },
     "LRCX": {
       "name": "Lam Research",
       "region": "US",
-      "trailingPE": 61.113632,
-      "forwardPE": 40.68376,
-      "priceToSales": 18.61162,
-      "priceToBook": 38.123817,
-      "marketCap": 403534249984,
-      "enterpriseValue": 380845391872,
-      "evToRevenue": 17.565,
-      "evToEbitda": 48.529,
+      "trailingPE": 60.289223,
+      "forwardPE": 40.210957,
+      "priceToSales": 18.395327,
+      "priceToBook": 37.680767,
+      "marketCap": 398844592128,
+      "enterpriseValue": 402517786624,
+      "evToRevenue": 18.565,
+      "evToEbitda": 51.291,
       "profitMargins": 0.30938998,
       "operatingMargins": 0.35042998,
       "revenueGrowth": 0.238,
@@ -622,39 +622,39 @@
       "shortRatio": 3.06,
       "shortPercentOfFloat": 0.0255,
       "beta": 1.819,
-      "fiftyTwoWeekHigh": 323.98,
+      "fiftyTwoWeekHigh": 333.33,
       "fiftyTwoWeekLow": 79.49,
-      "fiftyDayAverage": 255.8068,
-      "twoHundredDayAverage": 188.52464,
-      "averageVolume": 9899778,
-      "currentPrice": 322.68,
+      "fiftyDayAverage": 258.0164,
+      "twoHundredDayAverage": 189.6423,
+      "averageVolume": 9846023,
+      "currentPrice": 318.93,
       "currency": "USD",
-      "current": 322.67999267578125,
-      "chg_1d_pct": 5.675449885660266,
-      "chg_1w_pct": 18.033501687185115,
-      "chg_1m_pct": 24.36119441850706,
-      "sma_200": 189.38078765869142,
-      "dist_from_sma200_pct": 70.38686799493424,
-      "sma_50": 258.01639862060546,
-      "dist_from_sma50_pct": 25.061815605859582,
-      "wk52_position_pct": 100.0,
+      "current": 318.92999267578125,
+      "chg_1d_pct": -1.1621420866238519,
+      "chg_1w_pct": 9.188947473176047,
+      "chg_1m_pct": 26.947417943541808,
+      "sma_200": 190.4691314315796,
+      "dist_from_sma200_pct": 67.44445164351865,
+      "sma_50": 260.0069985961914,
+      "dist_from_sma50_pct": 22.662080020046417,
+      "wk52_position_pct": 98.45346563619334,
       "wk52_high": 322.67999267578125,
       "wk52_low": 80.20235443115234,
-      "daily_rsi": 68.77158160238828,
-      "weekly_rsi": 74.67062923828787,
-      "realized_vol_21d": 58.920206552189136
+      "daily_rsi": 66.57194202936728,
+      "weekly_rsi": 74.17573578270084,
+      "realized_vol_21d": 57.60392038714504
     },
     "INTC": {
       "name": "Intel",
       "region": "US",
       "trailingPE": null,
-      "forwardPE": 80.222374,
-      "priceToSales": 11.54719,
-      "priceToBook": 5.569734,
-      "marketCap": 620811517952,
-      "enterpriseValue": 628152860672,
-      "evToRevenue": 11.684,
-      "evToEbitda": 44.317,
+      "forwardPE": 79.0858,
+      "priceToSales": 11.383592,
+      "priceToBook": 5.4908237,
+      "marketCap": 612015996928,
+      "enterpriseValue": 646648496128,
+      "evToRevenue": 12.028,
+      "evToEbitda": 45.622,
       "profitMargins": -0.05904,
       "operatingMargins": 0.06879,
       "revenueGrowth": 0.072,
@@ -668,25 +668,25 @@
       "beta": 2.19,
       "fiftyTwoWeekHigh": 132.75,
       "fiftyTwoWeekLow": 18.97,
-      "fiftyDayAverage": 76.445,
-      "twoHundredDayAverage": 47.17355,
-      "averageVolume": 119821728,
-      "currentPrice": 123.52,
+      "fiftyDayAverage": 78.0,
+      "twoHundredDayAverage": 47.6923,
+      "averageVolume": 120303098,
+      "currentPrice": 121.77,
       "currency": "USD",
-      "current": 123.5199966430664,
-      "chg_1d_pct": 3.0707613631762554,
-      "chg_1w_pct": 11.480138304117848,
-      "chg_1m_pct": 45.33474496735088,
-      "sma_200": 47.69230002403259,
-      "dist_from_sma200_pct": 158.99358299101434,
-      "sma_50": 77.99999992370606,
-      "dist_from_sma50_pct": 58.35897021010861,
-      "wk52_position_pct": 94.62452952111626,
+      "current": 121.7699966430664,
+      "chg_1d_pct": -1.4167746499029965,
+      "chg_1w_pct": 2.3621364998484884,
+      "chg_1m_pct": 44.07241064775385,
+      "sma_200": 48.20140000343323,
+      "dist_from_sma200_pct": 152.62751006068936,
+      "sma_50": 79.52019989013672,
+      "dist_from_sma50_pct": 53.13089857834994,
+      "wk52_position_pct": 93.03549841903785,
       "wk52_high": 129.44000244140625,
       "wk52_low": 19.309999465942383,
-      "daily_rsi": 70.2284455291006,
-      "weekly_rsi": 79.36150128482129,
-      "realized_vol_21d": 92.64173270260481
+      "daily_rsi": 67.9867611952321,
+      "weekly_rsi": 78.99794484748718,
+      "realized_vol_21d": 93.36291637645408
     }
   },
   "kr_leaders": {
@@ -694,13 +694,13 @@
       "name": "삼성전자 (Samsung Electronics)",
       "region": "KR",
       "trailingPE": null,
-      "forwardPE": 5.6866627,
-      "priceToSales": 5.0559,
+      "forwardPE": 5.7734776,
+      "priceToSales": 5.191175,
       "priceToBook": null,
-      "marketCap": 1963402423435264,
-      "enterpriseValue": 1865436769550336,
-      "evToRevenue": 4.804,
-      "evToEbitda": 13.265,
+      "marketCap": 2015934973739008,
+      "enterpriseValue": 1918196282032128,
+      "evToRevenue": 4.939,
+      "evToEbitda": 13.64,
       "profitMargins": 0.21459,
       "operatingMargins": 0.42751,
       "revenueGrowth": 0.692,
@@ -712,39 +712,39 @@
       "shortRatio": null,
       "shortPercentOfFloat": null,
       "beta": 1.327,
-      "fiftyTwoWeekHigh": 300500.0,
+      "fiftyTwoWeekHigh": 302000.0,
       "fiftyTwoWeekLow": 0.0,
-      "fiftyDayAverage": 222269.0,
-      "twoHundredDayAverage": 142553.25,
-      "averageVolume": 30594625,
-      "currentPrice": 299000.0,
+      "fiftyDayAverage": 224491.0,
+      "twoHundredDayAverage": 143689.25,
+      "averageVolume": 30106118,
+      "currentPrice": 307000.0,
       "currency": "KRW",
-      "current": 299000.0,
-      "chg_1d_pct": 2.2222222222222143,
-      "chg_1w_pct": 8.529945553539008,
-      "chg_1m_pct": 33.184855233853014,
-      "sma_200": 140608.9915625,
-      "dist_from_sma200_pct": 112.64642941919965,
-      "sma_50": 224404.259375,
-      "dist_from_sma50_pct": 33.24167769041484,
-      "wk52_position_pct": 99.7971883684804,
-      "wk52_high": 299500.0,
-      "wk52_low": 52965.81640625,
-      "daily_rsi": 67.33697807003398,
-      "weekly_rsi": 81.91374116907227,
-      "realized_vol_21d": 76.13110422897729
+      "current": 307000.0,
+      "chg_1d_pct": 2.6755852842809347,
+      "chg_1w_pct": 11.231884057971019,
+      "chg_1m_pct": 39.8633257403189,
+      "sma_200": 141795.9706640625,
+      "dist_from_sma200_pct": 116.50826787407978,
+      "sma_50": 226881.84,
+      "dist_from_sma50_pct": 35.31272489680091,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 307000.0,
+      "wk52_low": 52965.8125,
+      "daily_rsi": 69.39507432846096,
+      "weekly_rsi": 82.71419701603095,
+      "realized_vol_21d": 76.01183537354224
     },
     "000660.KS": {
       "name": "SK하이닉스 (SK Hynix)",
       "region": "KR",
       "trailingPE": null,
-      "forwardPE": 5.3675632,
-      "priceToSales": 8.721195,
+      "forwardPE": 5.8671756,
+      "priceToSales": 9.532962,
       "priceToBook": null,
-      "marketCap": 1456622320746496,
-      "enterpriseValue": 1420985098043392,
-      "evToRevenue": 8.508,
-      "evToEbitda": 11.222,
+      "marketCap": 1592204506169344,
+      "enterpriseValue": 1556269856980992,
+      "evToRevenue": 9.318,
+      "evToEbitda": 12.29,
       "profitMargins": 0.65907997,
       "operatingMargins": 0.85767,
       "revenueGrowth": 1.981,
@@ -756,39 +756,39 @@
       "shortRatio": null,
       "shortPercentOfFloat": null,
       "beta": 2.027,
-      "fiftyTwoWeekHigh": 1995000.0,
+      "fiftyTwoWeekHigh": 2087000.0,
       "fiftyTwoWeekLow": 0.0,
-      "fiftyDayAverage": 1253100.0,
-      "twoHundredDayAverage": 745542.5,
-      "averageVolume": 4837602,
-      "currentPrice": 2052000.0,
+      "fiftyDayAverage": 1275540.0,
+      "twoHundredDayAverage": 754520.0,
+      "averageVolume": 4810887,
+      "currentPrice": 2243000.0,
       "currency": "KRW",
-      "current": 2052000.0,
-      "chg_1d_pct": 5.71870170015456,
-      "chg_1w_pct": 17.593123209169057,
-      "chg_1m_pct": 67.51020408163266,
-      "sma_200": 737486.908046875,
-      "dist_from_sma200_pct": 178.24222743620203,
-      "sma_50": 1275540.0,
-      "dist_from_sma50_pct": 60.87304200573875,
+      "current": 2242625.0,
+      "chg_1d_pct": 9.307995275769487,
+      "chg_1w_pct": 28.538682613554435,
+      "chg_1m_pct": 83.55154697501608,
+      "sma_200": 747272.183046875,
+      "dist_from_sma200_pct": 200.10818693345155,
+      "sma_50": 1301982.2875,
+      "dist_from_sma50_pct": 72.24696691582295,
       "wk52_position_pct": 100.0,
-      "wk52_high": 2052000.0,
-      "wk52_low": 195759.859375,
-      "daily_rsi": 75.20906111179647,
-      "weekly_rsi": 85.1754996651163,
-      "realized_vol_21d": 87.97328734195435
+      "wk52_high": 2242625.0,
+      "wk52_low": 195727.125,
+      "daily_rsi": 79.60040818166763,
+      "weekly_rsi": 86.95025481347517,
+      "realized_vol_21d": 90.40448004756664
     },
     "042700.KS": {
       "name": "한미반도체 (Hanmi Semi)",
       "region": "KR",
       "trailingPE": null,
-      "forwardPE": 59.652664,
-      "priceToSales": 64.987434,
+      "forwardPE": 57.839516,
+      "priceToSales": 63.012135,
       "priceToBook": null,
-      "marketCap": 31206636781568,
-      "enterpriseValue": 30978057699328,
-      "evToRevenue": 64.511,
-      "evToEbitda": 153.655,
+      "marketCap": 30258107514880,
+      "enterpriseValue": 30084691918848,
+      "evToRevenue": 62.651,
+      "evToEbitda": 149.224,
       "profitMargins": 0.37129003,
       "operatingMargins": 0.16613,
       "revenueGrowth": -0.655,
@@ -802,37 +802,37 @@
       "beta": null,
       "fiftyTwoWeekHigh": 426000.0,
       "fiftyTwoWeekLow": 0.0,
-      "fiftyDayAverage": 313630.0,
-      "twoHundredDayAverage": 186474.0,
-      "averageVolume": 1284190,
-      "currentPrice": 329000.0,
+      "fiftyDayAverage": 313870.0,
+      "twoHundredDayAverage": 187684.0,
+      "averageVolume": 1185921,
+      "currentPrice": 319000.0,
       "currency": "KRW",
-      "current": 329000.0,
-      "chg_1d_pct": 2.6521060842433775,
-      "chg_1w_pct": 14.236111111111116,
-      "chg_1m_pct": 12.0954003407155,
-      "sma_200": 184940.1479296875,
-      "dist_from_sma200_pct": 77.89539139175055,
-      "sma_50": 313870.0,
-      "dist_from_sma50_pct": 4.820467072354795,
-      "wk52_position_pct": 75.70487286827294,
+      "current": 319000.0,
+      "chg_1d_pct": -3.039513677811545,
+      "chg_1w_pct": 10.956521739130443,
+      "chg_1m_pct": 7.9526226734348615,
+      "sma_200": 186110.4637890625,
+      "dist_from_sma200_pct": 71.40358124170515,
+      "sma_50": 314140.0,
+      "dist_from_sma50_pct": 1.5470809193353308,
+      "wk52_position_pct": 72.68684465315157,
       "wk52_high": 409500.0,
       "wk52_low": 78157.8359375,
-      "daily_rsi": 48.844435724387274,
-      "weekly_rsi": 62.39647062006692,
-      "realized_vol_21d": 135.27616140369386
+      "daily_rsi": 46.76951289329335,
+      "weekly_rsi": 61.00745027501431,
+      "realized_vol_21d": 135.93098105359326
     },
     "058470.KQ": {
       "name": "리노공업 (Leeno Industrial)",
       "region": "KR",
       "trailingPE": null,
-      "forwardPE": 36.0057,
-      "priceToSales": 56.059086,
+      "forwardPE": 33.321632,
+      "priceToSales": 51.85971,
       "priceToBook": null,
-      "marketCap": 8409232441344,
-      "enterpriseValue": 1527399317504,
-      "evToRevenue": 10.182,
-      "evToEbitda": 26.077,
+      "marketCap": 7779298836480,
+      "enterpriseValue": 1402003521536,
+      "evToRevenue": 9.346,
+      "evToEbitda": 23.936,
       "profitMargins": 0.29223,
       "operatingMargins": 0.32919,
       "revenueGrowth": -0.03,
@@ -846,36 +846,36 @@
       "beta": 0.321,
       "fiftyTwoWeekHigh": 129000.0,
       "fiftyTwoWeekLow": 0.0,
-      "fiftyDayAverage": 110696.0,
-      "twoHundredDayAverage": 76048.25,
-      "averageVolume": 1027635,
-      "currentPrice": 110800.0,
+      "fiftyDayAverage": 110556.0,
+      "twoHundredDayAverage": 76365.5,
+      "averageVolume": 1024236,
+      "currentPrice": 102500.0,
       "currency": "KRW",
-      "current": 110800.0,
-      "chg_1d_pct": 4.037558685446019,
-      "chg_1w_pct": 15.296566077003115,
-      "chg_1m_pct": -10.137875101378746,
-      "sma_200": 75003.91173828125,
-      "dist_from_sma200_pct": 47.725628480052706,
-      "sma_50": 110556.0,
-      "dist_from_sma50_pct": 0.2207026303411741,
-      "wk52_position_pct": 82.01149889948822,
+      "current": 102500.0,
+      "chg_1d_pct": -7.490974729241873,
+      "chg_1w_pct": 5.997931747673224,
+      "chg_1m_pct": -17.604501607717037,
+      "sma_200": 76252.70931640625,
+      "dist_from_sma200_pct": 34.42145324264101,
+      "sma_50": 110282.0,
+      "dist_from_sma50_pct": -7.056455269218908,
+      "wk52_position_pct": 72.36593059380954,
       "wk52_high": 127000.0,
-      "wk52_low": 36942.46875,
-      "daily_rsi": 51.64752982150493,
-      "weekly_rsi": 60.05652062574972,
-      "realized_vol_21d": 80.16982273302055
+      "wk52_low": 38341.32421875,
+      "daily_rsi": 44.454994794802566,
+      "weekly_rsi": 55.05199012743327,
+      "realized_vol_21d": 83.20663500972532
     },
     "240810.KQ": {
       "name": "원익IPS (Wonik IPS)",
       "region": "KR",
       "trailingPE": null,
-      "forwardPE": 27.061432,
-      "priceToSales": 6.2451277,
+      "forwardPE": 24.909826,
+      "priceToSales": 5.7485886,
       "priceToBook": null,
-      "marketCap": 5935993978880,
-      "enterpriseValue": 5783094296576,
-      "evToRevenue": 6.084,
+      "marketCap": 5464033591296,
+      "enterpriseValue": 5311133908992,
+      "evToRevenue": 5.588,
       "evToEbitda": null,
       "profitMargins": 0.0787,
       "operatingMargins": 0.06489,
@@ -890,37 +890,37 @@
       "beta": 1.595,
       "fiftyTwoWeekHigh": 151500.0,
       "fiftyTwoWeekLow": 0.0,
-      "fiftyDayAverage": 121082.0,
-      "twoHundredDayAverage": 80456.5,
-      "averageVolume": 661172,
-      "currentPrice": 122000.0,
+      "fiftyDayAverage": 121052.0,
+      "twoHundredDayAverage": 80909.0,
+      "averageVolume": 654947,
+      "currentPrice": 112300.0,
       "currency": "KRW",
-      "current": 122000.0,
-      "chg_1d_pct": 0.24650780608053147,
-      "chg_1w_pct": 7.964601769911495,
-      "chg_1m_pct": 7.773851590106018,
-      "sma_200": 80889.39825195313,
-      "dist_from_sma200_pct": 50.82322607963552,
-      "sma_50": 121052.0,
-      "dist_from_sma50_pct": 0.7831345207018447,
-      "wk52_position_pct": 83.75673903846149,
+      "current": 112300.0,
+      "chg_1d_pct": -7.950819672131148,
+      "chg_1w_pct": 0.3574620196604039,
+      "chg_1m_pct": -3.273040482342804,
+      "sma_200": 81166.00319335937,
+      "dist_from_sma200_pct": 38.35842049838407,
+      "sma_50": 120910.0,
+      "dist_from_sma50_pct": -7.120999090232405,
+      "wk52_position_pct": 75.72729214042613,
       "wk52_high": 141600.0,
-      "wk52_low": 20934.57421875,
-      "daily_rsi": 50.191735634121855,
-      "weekly_rsi": 60.78216003246054,
-      "realized_vol_21d": 86.46799599268722
+      "wk52_low": 20888.29296875,
+      "daily_rsi": 43.549096038888806,
+      "weekly_rsi": 54.866539558117324,
+      "realized_vol_21d": 89.32002285826161
     },
     "357780.KQ": {
       "name": "솔브레인 (Soulbrain)",
       "region": "KR",
       "trailingPE": null,
-      "forwardPE": 18.332355,
-      "priceToSales": 3.7489495,
+      "forwardPE": 16.7303,
+      "priceToSales": 3.4213312,
       "priceToBook": null,
-      "marketCap": 3461712445440,
-      "enterpriseValue": 3337030467584,
-      "evToRevenue": 3.614,
-      "evToEbitda": 16.832,
+      "marketCap": 3159195648000,
+      "enterpriseValue": 3031176314880,
+      "evToRevenue": 3.283,
+      "evToEbitda": 15.289,
       "profitMargins": 0.08562,
       "operatingMargins": 0.17527,
       "revenueGrowth": 0.127,
@@ -934,38 +934,38 @@
       "beta": 1.49,
       "fiftyTwoWeekHigh": 530000.0,
       "fiftyTwoWeekLow": 0.0,
-      "fiftyDayAverage": 427990.0,
-      "twoHundredDayAverage": 326665.0,
-      "averageVolume": 53044,
-      "currentPrice": 452000.0,
+      "fiftyDayAverage": 428260.0,
+      "twoHundredDayAverage": 327762.5,
+      "averageVolume": 52856,
+      "currentPrice": 412500.0,
       "currency": "KRW",
-      "current": 452000.0,
-      "chg_1d_pct": 5.238649592549471,
-      "chg_1w_pct": 12.718204488778051,
-      "chg_1m_pct": -1.7391304347826098,
-      "sma_200": 326316.252265625,
-      "dist_from_sma200_pct": 38.51593258434063,
-      "sma_50": 427713.80125,
-      "dist_from_sma50_pct": 5.678142411823783,
-      "wk52_position_pct": 86.57923294711473,
+      "current": 412500.0,
+      "chg_1d_pct": -8.738938053097344,
+      "chg_1w_pct": 5.229591836734704,
+      "chg_1m_pct": -12.04690831556503,
+      "sma_200": 327021.852734375,
+      "dist_from_sma200_pct": 26.13835942488376,
+      "sma_50": 427385.015,
+      "dist_from_sma50_pct": -3.4828116282925814,
+      "wk52_position_pct": 75.06160767733554,
       "wk52_high": 498026.875,
       "wk52_low": 155074.234375,
-      "daily_rsi": 53.327258566520285,
-      "weekly_rsi": 59.624170582178344,
-      "realized_vol_21d": 87.65956225252523
+      "daily_rsi": 45.29402665496415,
+      "weekly_rsi": 54.3763222247784,
+      "realized_vol_21d": 92.76080680562919
     }
   },
   "hyperscalers": {
     "MSFT": {
       "name": "Microsoft",
-      "trailingPE": 24.793205,
-      "forwardPE": 21.5139,
-      "priceToSales": 9.710066,
-      "priceToBook": 7.458809,
-      "marketCap": 3090451791872,
-      "enterpriseValue": 3156523876352,
-      "evToRevenue": 9.918,
-      "evToEbitda": 17.113,
+      "trailingPE": 24.54908,
+      "forwardPE": 21.340147,
+      "priceToSales": 9.631644,
+      "priceToBook": 7.3985696,
+      "marketCap": 3065492275200,
+      "enterpriseValue": 3137655799808,
+      "evToRevenue": 9.858,
+      "evToEbitda": 17.01,
       "profitMargins": 0.39341998,
       "operatingMargins": 0.46326,
       "revenueGrowth": 0.183,
@@ -979,38 +979,38 @@
       "beta": 1.093,
       "fiftyTwoWeekHigh": 555.45,
       "fiftyTwoWeekLow": 356.28,
-      "fiftyDayAverage": 400.441,
-      "twoHundredDayAverage": 460.40125,
-      "averageVolume": 33764611,
-      "currentPrice": 416.03,
+      "fiftyDayAverage": 400.8506,
+      "twoHundredDayAverage": 459.8772,
+      "averageVolume": 33415241,
+      "currentPrice": 412.67,
       "currency": "USD",
       "capex_latest": 64551000000.0,
       "capex_yoy_pct": 45.13343975537918,
-      "current": 416.0299987792969,
-      "chg_1d_pct": -0.606830040489359,
-      "chg_1w_pct": -0.11713411141390795,
-      "chg_1m_pct": -1.857006884674517,
-      "sma_200": 457.7708525085449,
-      "dist_from_sma200_pct": -9.118285600865972,
-      "sma_50": 400.03847045898436,
-      "dist_from_sma50_pct": 3.99749761615793,
-      "wk52_position_pct": 32.86499841530768,
+      "current": 412.6700134277344,
+      "chg_1d_pct": -0.8076305462157207,
+      "chg_1w_pct": -1.7803119308369864,
+      "chg_1m_pct": -3.654323591325137,
+      "sma_200": 457.24468688964845,
+      "dist_from_sma200_pct": -9.748538307821109,
+      "sma_50": 400.3101580810547,
+      "dist_from_sma50_pct": 3.087569749898056,
+      "wk52_position_pct": 31.02551897629377,
       "wk52_high": 538.6585083007812,
       "wk52_low": 355.9989318847656,
-      "daily_rsi": 52.94638342349254,
-      "weekly_rsi": 47.02628102958159,
-      "realized_vol_21d": 22.877607408265526
+      "daily_rsi": 50.147756386916164,
+      "weekly_rsi": 46.03805770611941,
+      "realized_vol_21d": 23.010381385303326
     },
     "AMZN": {
       "name": "Amazon",
-      "trailingPE": 31.507126,
-      "forwardPE": 26.907345,
-      "priceToSales": 3.8420115,
-      "priceToBook": 6.4558444,
-      "marketCap": 2853753847808,
-      "enterpriseValue": 2957284474880,
-      "evToRevenue": 3.981,
-      "evToEbitda": 18.974,
+      "trailingPE": 32.440334,
+      "forwardPE": 27.5727,
+      "priceToSales": 3.9370153,
+      "priceToBook": 6.6154823,
+      "marketCap": 2924320391168,
+      "enterpriseValue": 2946204434432,
+      "evToRevenue": 3.966,
+      "evToEbitda": 18.903,
       "profitMargins": 0.12224,
       "operatingMargins": 0.1314,
       "revenueGrowth": 0.166,
@@ -1024,38 +1024,38 @@
       "beta": 1.468,
       "fiftyTwoWeekHigh": 278.56,
       "fiftyTwoWeekLow": 196.0,
-      "fiftyDayAverage": 241.9236,
-      "twoHundredDayAverage": 230.5546,
-      "averageVolume": 45200236,
-      "currentPrice": 265.29,
+      "fiftyDayAverage": 243.076,
+      "twoHundredDayAverage": 230.7654,
+      "averageVolume": 44877013,
+      "currentPrice": 271.85,
       "currency": "USD",
       "capex_latest": 131819000000.0,
       "capex_yoy_pct": 58.81998578296124,
-      "current": 265.2900085449219,
-      "chg_1d_pct": -0.3867523096163561,
-      "chg_1w_pct": 2.2942902333040305,
-      "chg_1m_pct": 1.5969720839887902,
-      "sma_200": 230.7654000091553,
-      "dist_from_sma200_pct": 14.96091204937866,
-      "sma_50": 243.07600006103516,
-      "dist_from_sma50_pct": 9.138709077946361,
-      "wk52_position_pct": 87.27036472712498,
+      "current": 271.8500061035156,
+      "chg_1d_pct": 2.472764652756587,
+      "chg_1w_pct": 2.581033200949623,
+      "chg_1m_pct": 4.678472593523986,
+      "sma_200": 231.01120002746583,
+      "dist_from_sma200_pct": 17.67827969864417,
+      "sma_50": 244.27820007324217,
+      "dist_from_sma50_pct": 11.287051411876536,
+      "wk52_position_pct": 95.8792857524756,
       "wk52_high": 274.989990234375,
       "wk52_low": 198.7899932861328,
-      "daily_rsi": 56.61286844541038,
-      "weekly_rsi": 63.69470294493524,
-      "realized_vol_21d": 19.43957243057531
+      "daily_rsi": 62.650352442893094,
+      "weekly_rsi": 66.07950161378673,
+      "realized_vol_21d": 20.729336695105932
     },
     "GOOGL": {
       "name": "Alphabet",
-      "trailingPE": 29.685495,
-      "forwardPE": 26.866783,
-      "priceToSales": 11.1514225,
-      "priceToBook": 9.841576,
-      "marketCap": 4711453818880,
-      "enterpriseValue": 4609100742656,
-      "evToRevenue": 10.909,
-      "evToEbitda": 28.572,
+      "trailingPE": 29.659039,
+      "forwardPE": 26.863327,
+      "priceToSales": 11.149988,
+      "priceToBook": 9.840309,
+      "marketCap": 4710847741952,
+      "enterpriseValue": 4680705900544,
+      "evToRevenue": 11.079,
+      "evToEbitda": 29.016,
       "profitMargins": 0.37919,
       "operatingMargins": 0.36121,
       "revenueGrowth": 0.218,
@@ -1069,38 +1069,38 @@
       "beta": 1.267,
       "fiftyTwoWeekHigh": 408.61,
       "fiftyTwoWeekLow": 162.0,
-      "fiftyDayAverage": 341.1402,
-      "twoHundredDayAverage": 296.19165,
-      "averageVolume": 28459205,
-      "currentPrice": 388.88,
+      "fiftyDayAverage": 342.8722,
+      "twoHundredDayAverage": 297.15344,
+      "averageVolume": 28177638,
+      "currentPrice": 388.83,
       "currency": "USD",
       "capex_latest": 91447000000.0,
       "capex_yoy_pct": 74.06871609403257,
-      "current": 388.8800048828125,
-      "chg_1d_pct": 1.5432027686950622,
-      "chg_1w_pct": 0.3147090773301775,
-      "chg_1m_pct": 11.000744690238395,
-      "sma_200": 296.9216450500488,
-      "dist_from_sma200_pct": 30.970581419641285,
-      "sma_50": 342.8722003173828,
-      "dist_from_sma50_pct": 13.418353696462448,
-      "wk52_position_pct": 94.22207620876047,
+      "current": 388.8299865722656,
+      "chg_1d_pct": -0.012862145113878842,
+      "chg_1w_pct": -0.020574705996323495,
+      "chg_1m_pct": 11.164156878394982,
+      "sma_200": 297.8609595489502,
+      "dist_from_sma200_pct": 30.54076880738903,
+      "sma_50": 344.53760009765625,
+      "dist_from_sma50_pct": 12.85560312199745,
+      "wk52_position_pct": 94.20104294243514,
       "wk52_high": 402.6199951171875,
-      "wk52_low": 164.8184814453125,
-      "daily_rsi": 61.01706240933582,
-      "weekly_rsi": 69.12097109351149,
-      "realized_vol_21d": 41.84135765519201
+      "wk52_low": 164.81846618652344,
+      "daily_rsi": 60.97098982711075,
+      "weekly_rsi": 69.11209598272765,
+      "realized_vol_21d": 41.69171737761535
     },
     "META": {
       "name": "Meta",
-      "trailingPE": 22.250727,
-      "forwardPE": 17.006153,
-      "priceToSales": 7.2309103,
-      "priceToBook": 6.3776784,
-      "marketCap": 1554378129408,
-      "enterpriseValue": 1554687197184,
-      "evToRevenue": 7.232,
-      "evToEbitda": 14.223,
+      "trailingPE": 23.108585,
+      "forwardPE": 17.566862,
+      "priceToSales": 7.5015054,
+      "priceToBook": 6.6163435,
+      "marketCap": 1612546048000,
+      "enterpriseValue": 1559967170560,
+      "evToRevenue": 7.257,
+      "evToEbitda": 14.271,
       "profitMargins": 0.32837,
       "operatingMargins": 0.40617,
       "revenueGrowth": 0.331,
@@ -1114,38 +1114,38 @@
       "beta": 1.243,
       "fiftyTwoWeekHigh": 796.25,
       "fiftyTwoWeekLow": 520.26,
-      "fiftyDayAverage": 617.814,
-      "twoHundredDayAverage": 669.4295,
-      "averageVolume": 15598348,
-      "currentPrice": 612.34,
+      "fiftyDayAverage": 617.7866,
+      "twoHundredDayAverage": 668.68207,
+      "averageVolume": 15540486,
+      "currentPrice": 635.255,
       "currency": "USD",
       "capex_latest": 69691000000.0,
       "capex_yoy_pct": 87.05980244792786,
-      "current": 612.3400268554688,
-      "chg_1d_pct": 0.3408411261689226,
-      "chg_1w_pct": 1.6146498963554023,
-      "chg_1m_pct": -9.76687523777916,
-      "sma_200": 667.9094012451172,
-      "dist_from_sma200_pct": -8.319897022868073,
-      "sma_50": 617.7865991210938,
-      "dist_from_sma50_pct": -0.8816268066309196,
-      "wk52_position_pct": 33.007042222401566,
+      "current": 635.2550048828125,
+      "chg_1d_pct": 3.742198292183896,
+      "chg_1w_pct": 4.990415404431792,
+      "chg_1m_pct": -5.37507381195147,
+      "sma_200": 667.2481851196289,
+      "dist_from_sma200_pct": -4.794794643177703,
+      "sma_50": 617.9426989746094,
+      "dist_from_sma50_pct": 2.801603763088467,
+      "wk52_position_pct": 41.73891889012956,
       "wk52_high": 788.1489868164062,
       "wk52_low": 525.719970703125,
-      "daily_rsi": 46.45718006763312,
-      "weekly_rsi": 46.629136254627376,
-      "realized_vol_21d": 33.16669485503853
+      "daily_rsi": 56.86320174794891,
+      "weekly_rsi": 49.80247993588815,
+      "realized_vol_21d": 36.08928729951331
     },
     "ORCL": {
       "name": "Oracle",
-      "trailingPE": 34.66068,
-      "forwardPE": 24.034828,
-      "priceToSales": 8.665482,
-      "priceToBook": 16.548944,
-      "marketCap": 555249434624,
-      "enterpriseValue": 680973893632,
-      "evToRevenue": 10.628,
-      "evToEbitda": 24.816,
+      "trailingPE": 34.222225,
+      "forwardPE": 23.773392,
+      "priceToSales": 8.571224,
+      "priceToBook": 16.368935,
+      "marketCap": 549209767936,
+      "enterpriseValue": 683792465920,
+      "evToRevenue": 10.672,
+      "evToEbitda": 24.919,
       "profitMargins": 0.25298,
       "operatingMargins": 0.32676,
       "revenueGrowth": 0.217,
@@ -1159,207 +1159,203 @@
       "beta": 1.544,
       "fiftyTwoWeekHigh": 345.72,
       "fiftyTwoWeekLow": 134.57,
-      "fiftyDayAverage": 167.2104,
-      "twoHundredDayAverage": 207.97925,
-      "averageVolume": 27356893,
-      "currentPrice": 193.06,
+      "fiftyDayAverage": 167.9694,
+      "twoHundredDayAverage": 207.6976,
+      "averageVolume": 26964136,
+      "currentPrice": 190.96,
       "currency": "USD",
       "capex_latest": 21215000000.0,
       "capex_yoy_pct": 208.98630935042237,
-      "current": 193.05999755859375,
-      "chg_1d_pct": 0.5102018524557383,
-      "chg_1w_pct": 6.392588127155663,
-      "chg_1m_pct": 11.62117834441263,
-      "sma_200": 206.63700531005858,
-      "dist_from_sma200_pct": -6.570462890271056,
-      "sma_50": 167.79478149414064,
-      "dist_from_sma50_pct": 15.05721205360333,
-      "wk52_position_pct": 30.067826275893005,
+      "current": 190.9600067138672,
+      "chg_1d_pct": -1.0877400141317328,
+      "chg_1w_pct": 1.4880968310278853,
+      "chg_1m_pct": 15.063870202839102,
+      "sma_200": 206.35134284973145,
+      "dist_from_sma200_pct": -7.458801054215813,
+      "sma_50": 168.50543853759766,
+      "dist_from_sma50_pct": 13.325723116799804,
+      "wk52_position_pct": 28.961137096695726,
       "wk52_high": 325.75933837890625,
       "wk52_low": 136.00498962402344,
-      "daily_rsi": 60.14267712504451,
-      "weekly_rsi": 54.92660522296469,
-      "realized_vol_21d": 46.66194041536236
+      "daily_rsi": 57.92049728836036,
+      "weekly_rsi": 54.13076908719154,
+      "realized_vol_21d": 46.946745268434405
     }
   },
   "indices": {
     "^SOX": {
       "name": "PHLX Semiconductor (SOX)",
-      "current": 12876.90625,
-      "chg_1d_pct": 5.526441288278794,
-      "chg_1w_pct": 13.899484764052893,
-      "chg_1m_pct": 23.72076012074875,
-      "sma_200": 7688.541135253906,
-      "dist_from_sma200_pct": 67.48178911284128,
-      "sma_50": 9696.27212890625,
-      "dist_from_sma50_pct": 32.8026490883206,
-      "wk52_position_pct": 100.0,
-      "wk52_high": 12876.90625,
-      "wk52_low": 4702.3798828125,
-      "daily_rsi": 74.3300636187505,
-      "weekly_rsi": 86.28024304662449,
-      "realized_vol_21d": 47.73767512508938
+      "current": 12702.1884765625,
+      "chg_1d_pct": -1.3568602837746413,
+      "chg_1w_pct": 7.524562882657726,
+      "chg_1m_pct": 26.571542229532152,
+      "sma_200": 7723.661997070312,
+      "dist_from_sma200_pct": 64.45810913761645,
+      "sma_50": 9794.391171875,
+      "dist_from_sma50_pct": 29.688392608183346,
+      "wk52_position_pct": 97.84795041679685,
+      "wk52_high": 12876.91015625,
+      "wk52_low": 4758.06005859375,
+      "daily_rsi": 71.02226986628905,
+      "weekly_rsi": 85.84471754521715,
+      "realized_vol_21d": 47.94046750354487
     },
     "SOXX": {
       "name": "iShares Semi ETF (SOXX)",
-      "current": 570.0900268554688,
-      "chg_1d_pct": 6.096813638488285,
-      "chg_1w_pct": 14.766283782887157,
-      "chg_1m_pct": 25.18170928859218,
-      "sma_200": 331.0534532165527,
-      "dist_from_sma200_pct": 72.20482714087701,
-      "sma_50": 423.9026403808594,
-      "dist_from_sma50_pct": 34.48607594028334,
-      "wk52_position_pct": 100.0,
+      "current": 563.97998046875,
+      "chg_1d_pct": -1.0717686854514685,
+      "chg_1w_pct": 8.393070114944013,
+      "chg_1m_pct": 28.55416823268293,
+      "sma_200": 332.6640699005127,
+      "dist_from_sma200_pct": 69.53438363133573,
+      "sma_50": 428.42980041503904,
+      "dist_from_sma50_pct": 31.638830894208915,
+      "wk52_position_pct": 98.33264364682132,
       "wk52_high": 570.0900268554688,
-      "wk52_low": 201.27398681640625,
-      "daily_rsi": 74.5786350518827,
-      "weekly_rsi": 85.65673701851154,
-      "realized_vol_21d": 50.45605946212943
+      "wk52_low": 203.63888549804688,
+      "daily_rsi": 72.0263095757434,
+      "weekly_rsi": 85.3189561080896,
+      "realized_vol_21d": 50.3031626798505
     },
     "SMH": {
       "name": "VanEck Semi ETF (SMH)",
-      "current": 602.1400146484375,
-      "chg_1d_pct": 4.480151130636223,
-      "chg_1w_pct": 10.695637606747832,
-      "chg_1m_pct": 18.938885756984945,
-      "sma_200": 383.73461654663083,
-      "dist_from_sma200_pct": 56.915740379983774,
-      "sma_50": 472.53460083007815,
-      "dist_from_sma50_pct": 27.427708699148788,
-      "wk52_position_pct": 100.0,
+      "current": 595.5,
+      "chg_1d_pct": -1.1027359894549282,
+      "chg_1w_pct": 5.4616987784212645,
+      "chg_1m_pct": 21.231247401135022,
+      "sma_200": 385.24901916503904,
+      "dist_from_sma200_pct": 54.575344874503195,
+      "sma_50": 476.56620056152343,
+      "dist_from_sma50_pct": 24.956406748598738,
+      "wk52_position_pct": 98.17146841095705,
       "wk52_high": 602.1400146484375,
-      "wk52_low": 236.70347595214844,
-      "daily_rsi": 73.64617839160869,
-      "weekly_rsi": 84.29452245419971,
-      "realized_vol_21d": 40.88272078141501
+      "wk52_low": 239.0063018798828,
+      "daily_rsi": 70.54564184078588,
+      "weekly_rsi": 83.86590022240038,
+      "realized_vol_21d": 41.34150237939272
     },
     "^GSPC": {
       "name": "S&P 500",
-      "current": 7519.1201171875,
-      "chg_1d_pct": 0.6108260424063872,
-      "chg_1w_pct": 2.2507347681400836,
-      "chg_1m_pct": 4.81201957396622,
-      "sma_200": 6813.5526953125,
-      "dist_from_sma200_pct": 10.355352830255615,
-      "sma_50": 7005.69603515625,
-      "dist_from_sma50_pct": 7.328666266060724,
+      "current": 7520.35986328125,
+      "chg_1d_pct": 0.016487914469087706,
+      "chg_1w_pct": 1.175702927787614,
+      "chg_1m_pct": 5.344876856515968,
+      "sma_200": 6819.207243652344,
+      "dist_from_sma200_pct": 10.282025381785754,
+      "sma_50": 7022.115634765625,
+      "dist_from_sma50_pct": 7.095357787172851,
       "wk52_position_pct": 100.0,
-      "wk52_high": 7519.1201171875,
-      "wk52_low": 5802.81982421875,
-      "daily_rsi": 70.47215018600853,
-      "weekly_rsi": 71.886051043608,
-      "realized_vol_21d": 10.495372665646688
+      "wk52_high": 7520.35986328125,
+      "wk52_low": 5888.5498046875,
+      "daily_rsi": 70.53522683257027,
+      "weekly_rsi": 71.91122805482348,
+      "realized_vol_21d": 10.515807057942475
     },
     "^NDX": {
       "name": "Nasdaq 100",
-      "current": 30001.318359375,
-      "chg_1d_pct": 1.7627164681409235,
-      "chg_1w_pct": 4.103144061440922,
-      "chg_1m_pct": 9.872080470895629,
-      "sma_200": 25291.390478515626,
-      "dist_from_sma200_pct": 18.622652972996214,
-      "sma_50": 26502.6116796875,
-      "dist_from_sma50_pct": 13.20136566906358,
-      "wk52_position_pct": 100.0,
-      "wk52_high": 30001.318359375,
-      "wk52_low": 20915.66015625,
-      "daily_rsi": 75.04204846487113,
-      "weekly_rsi": 76.12084878196927,
-      "realized_vol_21d": 16.6457700117687
+      "current": 29973.572265625,
+      "chg_1d_pct": -0.09248941908546193,
+      "chg_1w_pct": 2.3069150987885534,
+      "chg_1m_pct": 10.894082045672437,
+      "sma_200": 25323.202001953126,
+      "dist_from_sma200_pct": 18.364068901370366,
+      "sma_50": 26608.9763671875,
+      "dist_from_sma50_pct": 12.644589750496781,
+      "wk52_position_pct": 99.68043802506335,
+      "wk52_high": 30001.3203125,
+      "wk52_low": 21318.169921875,
+      "daily_rsi": 74.45726010980535,
+      "weekly_rsi": 76.03605778897703,
+      "realized_vol_21d": 16.683153120503867
     },
     "^VIX": {
       "name": "VIX",
-      "current": 17.010000228881836,
-      "chg_1d_pct": 2.5316460062143387,
-      "chg_1w_pct": -2.465598004633418,
-      "chg_1m_pct": -4.598988773600499,
-      "sma_200": 18.371300077438356,
-      "dist_from_sma200_pct": -7.409926585589455,
-      "sma_50": 20.435200119018553,
-      "dist_from_sma50_pct": -16.761274028087282,
-      "wk52_position_pct": 20.13651973408868,
+      "current": 16.290000915527344,
+      "chg_1d_pct": -4.232800139132165,
+      "chg_1w_pct": -2.804291807493897,
+      "chg_1m_pct": -13.397121860517746,
+      "sma_200": 18.37150008201599,
+      "dist_from_sma200_pct": -11.330044673522577,
+      "sma_50": 20.313600120544432,
+      "dist_from_sma50_pct": -19.80741562864461,
+      "wk52_position_pct": 16.04096026004172,
       "wk52_high": 31.049999237060547,
       "wk52_low": 13.470000267028809,
-      "daily_rsi": 43.09051703870739,
-      "weekly_rsi": 45.6545065784232,
-      "realized_vol_21d": 69.12711880977038
+      "daily_rsi": 39.63623394022285,
+      "weekly_rsi": 44.43414071996249,
+      "realized_vol_21d": 70.49480852922883
     },
     "DX-Y.NYB": {
       "name": "DXY (USD Index)",
-      "current": 99.14099884033203,
-      "chg_1d_pct": -0.1802263945249627,
-      "chg_1w_pct": -0.16012508211394882,
-      "chg_1m_pct": 0.6711976653805518,
-      "sma_200": 98.55590515136718,
-      "dist_from_sma200_pct": 0.5936668006510937,
-      "sma_50": 98.94302047729492,
-      "dist_from_sma50_pct": 0.20009330833248296,
-      "wk52_position_pct": 68.0885080713286,
+      "current": 99.21900177001953,
+      "chg_1d_pct": 0.04941373598770227,
+      "chg_1w_pct": 0.1099799808260471,
+      "chg_1m_pct": 0.6073808626599897,
+      "sma_200": 98.56124515533448,
+      "dist_from_sma200_pct": 0.6673582640402076,
+      "sma_50": 98.93378051757813,
+      "dist_from_sma50_pct": 0.28829511108263706,
+      "wk52_position_pct": 69.90675779256233,
       "wk52_high": 100.51000213623047,
       "wk52_low": 96.22000122070312,
-      "daily_rsi": 55.430683299053456,
-      "weekly_rsi": 52.067432362720965,
-      "realized_vol_21d": 5.194118912641379
+      "daily_rsi": 56.53996496518794,
+      "weekly_rsi": 52.54482129734322,
+      "realized_vol_21d": 5.17532293221494
     },
     "^KS11": {
       "name": "KOSPI",
-      "current": 7847.7099609375,
-      "chg_1d_pct": 0.410974959403565,
-      "chg_1w_pct": 4.412828033794902,
-      "chg_1m_pct": 22.27789561425393,
-      "sma_200": 4679.389709472656,
-      "dist_from_sma200_pct": 67.70798006097034,
-      "sma_50": 6333.352802734375,
-      "dist_from_sma50_pct": 23.910828993283207,
-      "wk52_position_pct": 97.5191639461636,
-      "wk52_high": 7981.41015625,
+      "current": 8047.509765625,
+      "chg_1d_pct": 2.545963162273024,
+      "chg_1w_pct": 10.66949764845868,
+      "chg_1m_pct": 24.270318196648155,
+      "sma_200": 4703.579658203125,
+      "dist_from_sma200_pct": 71.09330234452396,
+      "sma_50": 6382.637998046875,
+      "dist_from_sma50_pct": 26.084383417759028,
+      "wk52_position_pct": 100.0,
+      "wk52_high": 8047.509765625,
       "wk52_low": 2592.090087890625,
-      "daily_rsi": 66.62689965265304,
-      "weekly_rsi": 77.50350883795889,
-      "realized_vol_21d": 51.377233532287335
+      "daily_rsi": 69.20924778338907,
+      "weekly_rsi": 78.59063706900443,
+      "realized_vol_21d": 51.591663946112085
     },
     "^KQ11": {
       "name": "KOSDAQ",
-      "current": 1161.1300048828125,
-      "chg_1d_pct": 4.987480278928302,
-      "chg_1w_pct": 4.503689224261476,
-      "chg_1m_pct": -1.6924605727626885,
-      "sma_200": 978.4935998535157,
-      "dist_from_sma200_pct": 18.665058724618966,
-      "sma_50": 1142.9973999023437,
-      "dist_from_sma50_pct": 1.5864082439748461,
-      "wk52_position_pct": 87.30557500344821,
+      "current": 1172.52001953125,
+      "chg_1d_pct": 0.9809422373498133,
+      "chg_1w_pct": 8.130144543382878,
+      "chg_1m_pct": -0.1524332563959785,
+      "sma_200": 980.3341998291015,
+      "dist_from_sma200_pct": 19.604112529752783,
+      "sma_50": 1143.4797998046874,
+      "dist_from_sma50_pct": 2.539635569559051,
+      "wk52_position_pct": 89.52832024759478,
       "wk52_high": 1226.1800537109375,
       "wk52_low": 713.75,
-      "daily_rsi": 51.68966860198709,
-      "weekly_rsi": 58.39760746437035,
-      "realized_vol_21d": 38.35306162007298
+      "daily_rsi": 53.348835919663884,
+      "weekly_rsi": 59.29516423998342,
+      "realized_vol_21d": 38.51249074033247
     },
     "KRW=X": {
       "name": "USD/KRW",
-      "current": 1507.9000244140625,
-      "chg_1d_pct": -0.32587480310620753,
-      "chg_1w_pct": 0.0033192180213692524,
-      "chg_1m_pct": 2.369315981945852,
-      "sma_200": 1450.4311987304689,
-      "dist_from_sma200_pct": 3.9621890189548425,
-      "sma_50": 1487.7011962890624,
-      "dist_from_sma50_pct": 1.3577207691560789,
-      "wk52_position_pct": 95.09038941178612,
+      "current": 1500.3299560546875,
+      "chg_1d_pct": -0.9545932198472773,
+      "chg_1w_pct": 0.03733482574965752,
+      "chg_1m_pct": 1.9252825092784809,
+      "sma_200": 1451.0273986816405,
+      "dist_from_sma200_pct": 3.3977688786470672,
+      "sma_50": 1488.1481958007812,
+      "dist_from_sma50_pct": 0.8185851575992498,
+      "wk52_position_pct": 90.57445065448124,
       "wk52_high": 1516.1300048828125,
       "wk52_low": 1348.5,
-      "daily_rsi": 59.28405720350027,
-      "weekly_rsi": 59.46887384262683,
-      "realized_vol_21d": 11.836675733572417
+      "daily_rsi": 54.914963786445476,
+      "weekly_rsi": 57.47615309751793,
+      "realized_vol_21d": 12.29885647619386
     }
   },
   "macro": {},
   "sox_90d": [
-    {
-      "ts": "2026-01-15T05:00:00+00:00",
-      "close": 7837.2998046875
-    },
     {
       "ts": "2026-01-16T05:00:00+00:00",
       "close": 7927.41015625
@@ -1714,14 +1710,14 @@
     },
     {
       "ts": "2026-05-26T04:00:00+00:00",
-      "close": 12876.90625
+      "close": 12876.91015625
+    },
+    {
+      "ts": "2026-05-27T04:00:00+00:00",
+      "close": 12702.1884765625
     }
   ],
   "nvda_90d": [
-    {
-      "ts": "2026-01-15T05:00:00+00:00",
-      "close": 187.03988647460938
-    },
     {
       "ts": "2026-01-16T05:00:00+00:00",
       "close": 186.21990966796875
@@ -2077,13 +2073,13 @@
     {
       "ts": "2026-05-26T04:00:00+00:00",
       "close": 214.86000061035156
+    },
+    {
+      "ts": "2026-05-27T04:00:00+00:00",
+      "close": 212.60000610351562
     }
   ],
   "samsung_90d": [
-    {
-      "ts": "2026-01-11T15:00:00+00:00",
-      "close": 138513.296875
-    },
     {
       "ts": "2026-01-12T15:00:00+00:00",
       "close": 137315.78125
@@ -2439,368 +2435,372 @@
     {
       "ts": "2026-05-25T15:00:00+00:00",
       "close": 299000.0
+    },
+    {
+      "ts": "2026-05-26T15:00:00+00:00",
+      "close": 307000.0
     }
   ],
   "skhynix_90d": [
     {
-      "ts": "2026-01-11T15:00:00+00:00",
-      "close": 747620.4375
-    },
-    {
       "ts": "2026-01-12T15:00:00+00:00",
-      "close": 736640.75
+      "close": 736517.5625
     },
     {
       "ts": "2026-01-13T15:00:00+00:00",
-      "close": 740633.375
+      "close": 740509.5
     },
     {
       "ts": "2026-01-14T15:00:00+00:00",
-      "close": 747620.4375
+      "close": 747495.4375
     },
     {
       "ts": "2026-01-15T15:00:00+00:00",
-      "close": 754607.5625
+      "close": 754481.4375
     },
     {
       "ts": "2026-01-18T15:00:00+00:00",
-      "close": 762592.8125
+      "close": 762465.3125
     },
     {
       "ts": "2026-01-19T15:00:00+00:00",
-      "close": 741631.5
+      "close": 741507.5
     },
     {
       "ts": "2026-01-20T15:00:00+00:00",
-      "close": 738637.0625
+      "close": 738513.5
     },
     {
       "ts": "2026-01-21T15:00:00+00:00",
-      "close": 753609.4375
+      "close": 753483.375
     },
     {
       "ts": "2026-01-22T15:00:00+00:00",
-      "close": 765587.3125
+      "close": 765459.3125
     },
     {
       "ts": "2026-01-25T15:00:00+00:00",
-      "close": 734644.375
+      "close": 734521.5625
     },
     {
       "ts": "2026-01-26T15:00:00+00:00",
-      "close": 798526.5
+      "close": 798393.0
     },
     {
       "ts": "2026-01-27T15:00:00+00:00",
-      "close": 839451.0
+      "close": 839310.625
     },
     {
       "ts": "2026-01-28T15:00:00+00:00",
-      "close": 859414.1875
+      "close": 859270.5
     },
     {
       "ts": "2026-01-29T15:00:00+00:00",
-      "close": 907325.75
+      "close": 907174.0625
     },
     {
       "ts": "2026-02-01T15:00:00+00:00",
-      "close": 828471.25
+      "close": 828332.75
     },
     {
       "ts": "2026-02-02T15:00:00+00:00",
-      "close": 905329.4375
+      "close": 905178.125
     },
     {
       "ts": "2026-02-03T15:00:00+00:00",
-      "close": 898342.3125
+      "close": 898192.125
     },
     {
       "ts": "2026-02-04T15:00:00+00:00",
-      "close": 840449.1875
+      "close": 840308.6875
     },
     {
       "ts": "2026-02-05T15:00:00+00:00",
-      "close": 837454.6875
+      "close": 837314.6875
     },
     {
       "ts": "2026-02-08T15:00:00+00:00",
-      "close": 885366.3125
+      "close": 885218.25
     },
     {
       "ts": "2026-02-09T15:00:00+00:00",
-      "close": 874386.5625
+      "close": 874240.375
     },
     {
       "ts": "2026-02-10T15:00:00+00:00",
-      "close": 858416.0
+      "close": 858272.4375
     },
     {
       "ts": "2026-02-11T15:00:00+00:00",
-      "close": 886364.4375
+      "close": 886216.25
     },
     {
       "ts": "2026-02-12T15:00:00+00:00",
-      "close": 878379.1875
+      "close": 878232.3125
     },
     {
       "ts": "2026-02-18T15:00:00+00:00",
-      "close": 892353.375
+      "close": 892204.1875
     },
     {
       "ts": "2026-02-19T15:00:00+00:00",
-      "close": 947252.0625
+      "close": 947093.6875
     },
     {
       "ts": "2026-02-22T15:00:00+00:00",
-      "close": 949248.4375
+      "close": 949089.6875
     },
     {
       "ts": "2026-02-23T15:00:00+00:00",
-      "close": 1003148.9375
+      "close": 1002981.25
     },
     {
       "ts": "2026-02-24T15:00:00+00:00",
-      "close": 1016125.0
+      "close": 1015955.125
     },
     {
       "ts": "2026-02-25T15:00:00+00:00",
-      "close": 1099000.0
+      "close": 1098816.25
     },
     {
       "ts": "2026-02-26T15:00:00+00:00",
-      "close": 1061000.0
+      "close": 1060822.625
     },
     {
       "ts": "2026-03-02T15:00:00+00:00",
-      "close": 939000.0
+      "close": 938843.0
     },
     {
       "ts": "2026-03-03T15:00:00+00:00",
-      "close": 849000.0
+      "close": 848858.0625
     },
     {
       "ts": "2026-03-04T15:00:00+00:00",
-      "close": 941000.0
+      "close": 940842.6875
     },
     {
       "ts": "2026-03-05T15:00:00+00:00",
-      "close": 924000.0
+      "close": 923845.5
     },
     {
       "ts": "2026-03-08T15:00:00+00:00",
-      "close": 836000.0
+      "close": 835860.25
     },
     {
       "ts": "2026-03-09T15:00:00+00:00",
-      "close": 938000.0
+      "close": 937843.1875
     },
     {
       "ts": "2026-03-10T15:00:00+00:00",
-      "close": 955000.0
+      "close": 954840.3125
     },
     {
       "ts": "2026-03-11T15:00:00+00:00",
-      "close": 930000.0
+      "close": 929844.5
     },
     {
       "ts": "2026-03-12T15:00:00+00:00",
-      "close": 910000.0
+      "close": 909847.875
     },
     {
       "ts": "2026-03-15T15:00:00+00:00",
-      "close": 974000.0
+      "close": 973837.125
     },
     {
       "ts": "2026-03-16T15:00:00+00:00",
-      "close": 970000.0
+      "close": 969837.8125
     },
     {
       "ts": "2026-03-17T15:00:00+00:00",
-      "close": 1056000.0
+      "close": 1055823.5
     },
     {
       "ts": "2026-03-18T15:00:00+00:00",
-      "close": 1013000.0
+      "close": 1012830.625
     },
     {
       "ts": "2026-03-19T15:00:00+00:00",
-      "close": 1007000.0
+      "close": 1006831.625
     },
     {
       "ts": "2026-03-22T15:00:00+00:00",
-      "close": 933000.0
+      "close": 932844.0
     },
     {
       "ts": "2026-03-23T15:00:00+00:00",
-      "close": 986000.0
+      "close": 985835.125
     },
     {
       "ts": "2026-03-24T15:00:00+00:00",
-      "close": 995000.0
+      "close": 994833.625
     },
     {
       "ts": "2026-03-25T15:00:00+00:00",
-      "close": 933000.0
+      "close": 932844.0
     },
     {
       "ts": "2026-03-26T15:00:00+00:00",
-      "close": 933000.0
+      "close": 932844.0
     },
     {
       "ts": "2026-03-29T15:00:00+00:00",
-      "close": 873000.0
+      "close": 872854.0625
     },
     {
       "ts": "2026-03-30T15:00:00+00:00",
-      "close": 807000.0
+      "close": 806865.0625
     },
     {
       "ts": "2026-03-31T15:00:00+00:00",
-      "close": 897000.0
+      "close": 896850.0
     },
     {
       "ts": "2026-04-01T15:00:00+00:00",
-      "close": 830000.0
+      "close": 829861.25
     },
     {
       "ts": "2026-04-02T15:00:00+00:00",
-      "close": 876000.0
+      "close": 875853.5625
     },
     {
       "ts": "2026-04-05T15:00:00+00:00",
-      "close": 886000.0
+      "close": 885851.875
     },
     {
       "ts": "2026-04-06T15:00:00+00:00",
-      "close": 916000.0
+      "close": 915846.875
     },
     {
       "ts": "2026-04-07T15:00:00+00:00",
-      "close": 1033000.0
+      "close": 1032827.3125
     },
     {
       "ts": "2026-04-08T15:00:00+00:00",
-      "close": 998000.0
+      "close": 997833.125
     },
     {
       "ts": "2026-04-09T15:00:00+00:00",
-      "close": 1027000.0
+      "close": 1026828.3125
     },
     {
       "ts": "2026-04-12T15:00:00+00:00",
-      "close": 1040000.0
+      "close": 1039826.125
     },
     {
       "ts": "2026-04-13T15:00:00+00:00",
-      "close": 1103000.0
+      "close": 1102815.625
     },
     {
       "ts": "2026-04-14T15:00:00+00:00",
-      "close": 1136000.0
+      "close": 1135810.125
     },
     {
       "ts": "2026-04-15T15:00:00+00:00",
-      "close": 1155000.0
+      "close": 1154806.875
     },
     {
       "ts": "2026-04-16T15:00:00+00:00",
-      "close": 1128000.0
+      "close": 1127811.375
     },
     {
       "ts": "2026-04-19T15:00:00+00:00",
-      "close": 1166000.0
+      "close": 1165805.0
     },
     {
       "ts": "2026-04-20T15:00:00+00:00",
-      "close": 1224000.0
+      "close": 1223795.375
     },
     {
       "ts": "2026-04-21T15:00:00+00:00",
-      "close": 1223000.0
+      "close": 1222795.5
     },
     {
       "ts": "2026-04-22T15:00:00+00:00",
-      "close": 1225000.0
+      "close": 1224795.25
     },
     {
       "ts": "2026-04-23T15:00:00+00:00",
-      "close": 1222000.0
+      "close": 1221795.75
     },
     {
       "ts": "2026-04-26T15:00:00+00:00",
-      "close": 1292000.0
+      "close": 1291784.0
     },
     {
       "ts": "2026-04-27T15:00:00+00:00",
-      "close": 1300000.0
+      "close": 1299782.625
     },
     {
       "ts": "2026-04-28T15:00:00+00:00",
-      "close": 1293000.0
+      "close": 1292783.875
     },
     {
       "ts": "2026-04-29T15:00:00+00:00",
-      "close": 1286000.0
+      "close": 1285785.0
     },
     {
       "ts": "2026-05-03T15:00:00+00:00",
-      "close": 1447000.0
+      "close": 1446758.125
     },
     {
       "ts": "2026-05-05T15:00:00+00:00",
-      "close": 1601000.0
+      "close": 1600732.375
     },
     {
       "ts": "2026-05-06T15:00:00+00:00",
-      "close": 1654000.0
+      "close": 1653723.5
     },
     {
       "ts": "2026-05-07T15:00:00+00:00",
-      "close": 1686000.0
+      "close": 1685718.125
     },
     {
       "ts": "2026-05-10T15:00:00+00:00",
-      "close": 1880000.0
+      "close": 1879685.625
     },
     {
       "ts": "2026-05-11T15:00:00+00:00",
-      "close": 1835000.0
+      "close": 1834693.25
     },
     {
       "ts": "2026-05-12T15:00:00+00:00",
-      "close": 1976000.0
+      "close": 1975669.625
     },
     {
       "ts": "2026-05-13T15:00:00+00:00",
-      "close": 1970000.0
+      "close": 1969670.625
     },
     {
       "ts": "2026-05-14T15:00:00+00:00",
-      "close": 1819000.0
+      "close": 1818695.875
     },
     {
       "ts": "2026-05-17T15:00:00+00:00",
-      "close": 1840000.0
+      "close": 1839692.375
     },
     {
       "ts": "2026-05-18T15:00:00+00:00",
-      "close": 1745000.0
+      "close": 1744708.25
     },
     {
       "ts": "2026-05-19T15:00:00+00:00",
-      "close": 1745000.0
+      "close": 1744708.25
     },
     {
       "ts": "2026-05-20T15:00:00+00:00",
-      "close": 1940000.0
+      "close": 1939675.625
     },
     {
       "ts": "2026-05-21T15:00:00+00:00",
-      "close": 1941000.0
+      "close": 1940675.5
     },
     {
       "ts": "2026-05-25T15:00:00+00:00",
-      "close": 2052000.0
+      "close": 2051656.875
+    },
+    {
+      "ts": "2026-05-26T15:00:00+00:00",
+      "close": 2242625.0
     }
   ]
 }
