@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T12:07:09.803845+00:00",
+  "generated_at": "2026-05-29T23:15:45.529662+00:00",
   "version": "2.0",
   "systems": [
     {
@@ -12,23 +12,23 @@
       "dashboard_url": "https://jinhae8971.github.io/crypto-cycle-intelligence/",
       "data_url": "https://jinhae8971.github.io/crypto-cycle-intelligence/data/latest.json",
       "axis": "x",
-      "fetched_at": "2026-05-23T12:07:04.791091+00:00",
+      "fetched_at": "2026-05-29T23:15:45.131423+00:00",
       "status": "ok",
       "error": null,
-      "score": 23.89,
-      "phase": "Recovery",
-      "phase_color": "#3a8891",
-      "subsystem_phase": "Accumulation",
+      "score": 19.2,
+      "phase": "Capitulation",
+      "phase_color": "#0a4d68",
+      "subsystem_phase": "Deep Bottom",
       "dimensions": {
-        "valuation": 26.5,
-        "onchain": 20.66,
-        "sentiment": 22.5,
+        "valuation": 25.24,
+        "onchain": 15.73,
+        "sentiment": 16.25,
         "derivatives": null,
         "macro": null,
-        "technical": 25.22
+        "technical": 16.71
       },
-      "source_generated_at": "2026-05-22T21:56:30.324062+00:00",
-      "stale_hours": 14.18,
+      "source_generated_at": "2026-05-29T22:23:30.484887+00:00",
+      "stale_hours": 0.87,
       "metrics": {}
     },
     {
@@ -41,23 +41,23 @@
       "dashboard_url": "https://jinhae8971.github.io/ai-semi-cycle-intelligence/",
       "data_url": "https://jinhae8971.github.io/ai-semi-cycle-intelligence/data/latest.json",
       "axis": "y",
-      "fetched_at": "2026-05-23T12:07:06.102976+00:00",
+      "fetched_at": "2026-05-29T23:15:45.222607+00:00",
       "status": "ok",
       "error": null,
-      "score": 78.4,
+      "score": 78.09,
       "phase": "Late Bull",
       "phase_color": "#e76f51",
       "subsystem_phase": "Late Bull",
       "dimensions": {
-        "valuation": 56.32,
+        "valuation": 54.17,
         "earnings": 92.44,
         "capital": 73.07,
-        "sentiment": 85.25,
+        "sentiment": 87.33,
         "macro": null,
-        "technical": 94.93
+        "technical": 94.61
       },
-      "source_generated_at": "2026-05-22T22:13:33.588731+00:00",
-      "stale_hours": 13.89,
+      "source_generated_at": "2026-05-29T22:40:21.572380+00:00",
+      "stale_hours": 0.59,
       "metrics": {}
     },
     {
@@ -70,7 +70,7 @@
       "dashboard_url": "https://jinhae8971.github.io/kospi-valuation-radar/",
       "data_url": "https://jinhae8971.github.io/kospi-valuation-radar/data/latest.json",
       "axis": null,
-      "fetched_at": "2026-05-23T12:07:07.520087+00:00",
+      "fetched_at": "2026-05-29T23:15:45.302104+00:00",
       "status": "ok",
       "error": null,
       "score": null,
@@ -79,7 +79,7 @@
       "subsystem_phase": null,
       "dimensions": null,
       "source_generated_at": "2026-05-16T07:54:40.888779+09:00",
-      "stale_hours": 181.21,
+      "stale_hours": 336.35,
       "metrics": {
         "universe": 145,
         "market": "KOSPI/KOSDAQ"
@@ -95,7 +95,7 @@
       "dashboard_url": "https://jinhae8971.github.io/us-valuation-radar/",
       "data_url": "https://jinhae8971.github.io/us-valuation-radar/data/latest.json",
       "axis": null,
-      "fetched_at": "2026-05-23T12:07:08.855307+00:00",
+      "fetched_at": "2026-05-29T23:15:45.394036+00:00",
       "status": "ok",
       "error": null,
       "score": null,
@@ -104,34 +104,63 @@
       "subsystem_phase": null,
       "dimensions": null,
       "source_generated_at": "2026-05-16T07:51:56.242334+09:00",
-      "stale_hours": 181.25,
+      "stale_hours": 336.4,
       "metrics": {
         "universe": 108
       }
+    },
+    {
+      "id": "asts",
+      "name": "AI Semi Cycle-Top",
+      "asset_class": "Equities",
+      "description": "AI semiconductor rally cycle-top detection (composite top-proximity, decisive-trigger overlay).",
+      "label": "ASTS",
+      "color": "#ef4444",
+      "dashboard_url": "https://jinhae8971.github.io/ai-semi-top-monitor/",
+      "data_url": "https://jinhae8971.github.io/ai-semi-top-monitor/data/latest.json",
+      "axis": null,
+      "fetched_at": "2026-05-29T23:15:45.475830+00:00",
+      "status": "ok",
+      "error": null,
+      "score": 58.7,
+      "phase": "Expansion",
+      "phase_color": "#f6c945",
+      "subsystem_phase": "LATE_CYCLE",
+      "dimensions": {
+        "capex": 32.0,
+        "supply_demand": 57.0,
+        "financing": 76.2,
+        "valuation": 91.0,
+        "sentiment": 72.8,
+        "technical": 63.4
+      },
+      "source_generated_at": "2026-05-29T23:11:58.623135+00:00",
+      "stale_hours": 0.06,
+      "metrics": {}
     }
   ],
   "insights": {
-    "total_systems": 4,
-    "reachable_systems": 4,
-    "scored_systems": 2,
-    "avg_score": 51.15,
-    "spread": 54.51,
+    "total_systems": 5,
+    "reachable_systems": 5,
+    "scored_systems": 3,
+    "avg_score": 52.0,
+    "spread": 58.89,
     "stale_systems": 2,
     "narratives": [
       {
         "type": "divergence",
         "title": "Large cross-system divergence",
-        "detail": "AI / Semiconductor is at 78 while Crypto Cycle is at 24; spread is 55."
+        "detail": "AI / Semiconductor is at 78 while Crypto Cycle is at 19; spread is 59."
       },
       {
         "type": "stale_data",
         "title": "KOSPI Valuation Radar data is stale",
-        "detail": "Last source update was 181 hours ago."
+        "detail": "Last source update was 336 hours ago."
       },
       {
         "type": "stale_data",
         "title": "US Valuation Radar data is stale",
-        "detail": "Last source update was 181 hours ago."
+        "detail": "Last source update was 336 hours ago."
       }
     ]
   }
