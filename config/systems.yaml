@@ -228,3 +228,16 @@ systems:
     telegram_policy: weekday
     freshness_sla_hours: 30
     dashboard_url: "https://github.com/jinhae8971/korea-etf-calmar/actions"
+
+  - id: ai-semi-top-monitor
+    label: AI Semi Cycle-Top
+    group: cycle-intelligence
+    role: producer
+    repo: ai-semi-top-monitor
+    schedule_kst: "07:00 weekdays"
+    telegram_policy: weekday
+    freshness_sla_hours: 30
+    dashboard_url: "https://jinhae8971.github.io/ai-semi-top-monitor/"
+    reports:
+      - key: ai-semi-top-monitor/latest
+        path: data/latest.json
