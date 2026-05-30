@@ -17,6 +17,7 @@ import re
 from datetime import datetime, timezone
 
 import requests
+import yaml
 
 GH_PAT = os.environ.get("GH_PAT", "").strip()
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
@@ -28,54 +29,41 @@ if not GH_TOKEN:
 HAS_PAT = bool(GH_PAT)
 GH_USER = "jinhae8971"
 
-REPOS = [
-    "crypto-monitor",
-    "korean-stock-agent",
-    # Global Market Brief ecosystem
-    "crypto-research-agent",
-    "kospi-research-agent",
-    "sp500-research-agent",
-    "nasdaq-research-agent",
-    "dow30-research-agent",
-    "global-market-orchestrator",
-    # Cycle Intelligence ecosystem
-    "crypto-cycle-intelligence",
-    "ai-semi-cycle-intelligence",
-    "cycle-intelligence-hub",
-    # TrendSpider Free Clone ecosystem
-    "trendline-detector",
-    "chart-analyzer",
-    "backtest-lab",
-    # Korea ETF Calmar ratio top10 → Telegram (weekday 07:00 KST)
-    "korea-etf-calmar",
-]
+# ── 설정 단일 소스: config/systems.yaml ──────────────────────────────────────
+# REPOS / EXCLUDED_WORKFLOWS / REPORT_MAP 를 하드코딩하지 않고 systems.yaml 에서 로드한다.
+# systems.yaml 에 시스템을 추가하면 orchestrator 가 자동으로 수집 대상에 포함한다.
+SYSTEMS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "config", "systems.yaml")
 
-EXCLUDED_WORKFLOWS = {
-    ("korean-stock-agent", ".github/workflows/main.yml"),
-    # Retired disabled paths. Active replacements live at .github/workflows/daily-active.yml.
-    ("crypto-research-agent", ".github/workflows/daily.yml"),
-    ("kospi-research-agent", ".github/workflows/daily.yml"),
-    ("sp500-research-agent", ".github/workflows/daily.yml"),
-    ("nasdaq-research-agent", ".github/workflows/daily.yml"),
-    ("dow30-research-agent", ".github/workflows/daily.yml"),
-    ("global-market-orchestrator", ".github/workflows/daily.yml"),
-}
 
-REPORT_MAP = {
-    "crypto-monitor/239770946": "reports/latest.json",
-    "korean-stock-agent/242830429": "docs/data/foreign_flow.json",
-    # Global Market Brief ecosystem: docs/reports/index.json points to the latest daily file.
-    "crypto-research-agent/latest": "index:docs/reports",
-    "kospi-research-agent/latest": "index:docs/reports",
-    "sp500-research-agent/latest": "index:docs/reports",
-    "nasdaq-research-agent/latest": "index:docs/reports",
-    "dow30-research-agent/latest": "index:docs/reports",
-    "global-market-orchestrator/latest": "index:docs/reports",
-    # Cycle Intelligence ecosystem
-    "crypto-cycle-intelligence/latest": "data/latest.json",
-    "ai-semi-cycle-intelligence/latest": "data/latest.json",
-    "cycle-intelligence-hub/latest": "data/hub_summary.json",
-}
+def load_systems_manifest():
+    """config/systems.yaml 을 파싱해 (REPOS, EXCLUDED_WORKFLOWS, REPORT_MAP) 를 만든다."""
+    with open(SYSTEMS_PATH, "r", encoding="utf-8") as f:
+        manifest = yaml.safe_load(f) or {}
+
+    systems = manifest.get("systems") or []
+    repos = []
+    excluded = set()
+    report_map = {}
+
+    for system in systems:
+        repo = system.get("repo")
+        if repo and repo not in repos:
+            repos.append(repo)
+        for wf_path in (system.get("exclude_workflows") or []):
+            if repo and wf_path:
+                excluded.add((repo, wf_path))
+        for report in (system.get("reports") or []):
+            key = report.get("key")
+            path = report.get("path")
+            if key and path:
+                report_map[key] = path
+
+    if not repos:
+        raise RuntimeError("systems.yaml 에서 수집 대상 repo 를 찾지 못했습니다.")
+    return repos, excluded, report_map
+
+
+REPOS, EXCLUDED_WORKFLOWS, REPORT_MAP = load_systems_manifest()
 
 HEADERS = {
     "Authorization": f"Bearer {GH_TOKEN}",
