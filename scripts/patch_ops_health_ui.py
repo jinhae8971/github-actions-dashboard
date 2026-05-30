@@ -130,6 +130,7 @@ text = replace_between(
     "function renderSummary(wfData) {",
     "\n\nfunction renderWeekCalendar",
     """function renderSummary(wfData) {
+  wfData = foldEcosystems(wfData);
   const pausedCount  = Object.keys(pausedMap).length;
   const total        = wfData.length;
   const healthCounts = wfData.reduce((acc, d) => {
