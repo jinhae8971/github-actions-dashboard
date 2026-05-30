@@ -205,17 +205,6 @@ systems:
     freshness_sla_hours: 120
     dashboard_url: "https://github.com/jinhae8971/chart-analyzer"
 
-  - id: backtest-lab
-    label: Backtest Lab
-    group: trendspider-clone
-    role: tool
-    repo: backtest-lab
-    schedule_kst: "08:00 Sunday"
-    telegram_policy: silent
-    expected_state: paused
-    freshness_sla_hours: 240
-    dashboard_url: "https://github.com/jinhae8971/backtest-lab"
-
   - id: leading-stocks-calendar
     label: Leading Stocks Calendar
     group: core
