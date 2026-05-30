@@ -25,6 +25,11 @@ on:
 permissions:
   contents: write
 
+# 동시 실행 직렬화 — push 경합 방지 (스케줄·수동·push 트리거가 겹쳐도 한 번에 하나만)
+concurrency:
+  group: orchestrator-update-data
+  cancel-in-progress: false
+
 jobs:
   orchestrate:
     name: "오케스트레이터 — 운영 대시보드 데이터 갱신"
@@ -73,6 +78,12 @@ jobs:
           else
             TIMESTAMP=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
             git commit -m "chore(orchestrator): sync dashboard data ${TIMESTAMP}"
-            git pull --rebase origin main
-            git push
+            push_ok=false
+            for i in 1 2 3 4 5; do
+              git fetch origin main
+              git rebase origin/main || { echo "rebase 충돌 — abort"; git rebase --abort || true; }
+              if git push; then echo "push 성공 (시도 $i)"; push_ok=true; break; fi
+              echo "push 시도 $i 실패 — 재시도"; sleep $((2 ** i))
+            done
+            if [ "$push_ok" = false ]; then echo "::error::push 5회 재시도 실패"; exit 1; fi
           fi
