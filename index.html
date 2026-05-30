@@ -923,6 +923,13 @@
     .stat-card .val { font-size: 20px; }
     .summary { gap: 8px; }
   }
+
+    /* ── Ecosystem 통합 칩 ── */
+    .eco-members { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:8px 0 4px; }
+    .eco-title { font-size:11px; font-weight:600; color:var(--muted); margin-right:2px; }
+    .eco-chip { font-size:10px; padding:2px 8px; border-radius:999px; border:1px solid var(--border); }
+    .eco-chip.eco-on  { background:rgba(34,197,94,.12); color:#22c55e; border-color:rgba(34,197,94,.4); }
+    .eco-chip.eco-off { background:rgba(148,163,184,.12); color:var(--muted); }
 </style>
 </head>
 <body>
@@ -1931,6 +1938,26 @@ function renderCards(wfData) {
     return tb - ta;
   });
 
+  // ── Ecosystem 통합: 유사 워커들을 허브 카드 하나로 접어서 표시 ──
+  // (실제 워커 레포/정지 상태는 그대로. 대시보드 표현만 통합)
+  const ECOSYSTEMS = {
+    'global-market-orchestrator': {
+      members: ['crypto-research-agent','kospi-research-agent','sp500-research-agent','nasdaq-research-agent','dow30-research-agent'],
+      labels:  ['Crypto','KOSPI','S&P500','NASDAQ','Dow30'],
+    },
+    'cycle-intelligence-hub': {
+      members: ['crypto-cycle-intelligence','ai-semi-cycle-intelligence'],
+      labels:  ['Crypto','AI/Semi'],
+    },
+  };
+  const FOLDED_REPOS = new Set(Object.values(ECOSYSTEMS).flatMap(e => e.members));
+  const memberStatus = {};
+  wfData.forEach(it => {
+    if (FOLDED_REPOS.has(it.repo)) memberStatus[it.repo] = isPaused(it.wf.id) ? 'paused' : 'active';
+  });
+  // 멤버 카드는 숨기고 허브 카드만 남긴다
+  wfData = wfData.filter(it => !FOLDED_REPOS.has(it.repo));
+
   const REPO_ICONS = {
     'korean-market-bot':         '📊',
     'dart-weekly-report':        '🗂',
@@ -2013,6 +2040,15 @@ function renderCards(wfData) {
         최근 리포트
       </button>` : '';
 
+    const ECO = ECOSYSTEMS[repo];
+    const ecoHtml = ECO ? `
+      <div class="eco-members">
+        <span class="eco-title">🧩 통합 구성 ${ECO.members.length}개</span>
+        ${ECO.members.map((m, i) => {
+          const st = memberStatus[m] || 'paused';
+          return `<span class="eco-chip ${st === 'active' ? 'eco-on' : 'eco-off'}" title="${m} (${st})">${ECO.labels[i]}</span>`;
+        }).join('')}
+      </div>` : '';
     const pagesUrl = PAGES_URL_MAP[repo];
     const pagesBtn = pagesUrl ? `
       <a class="report-btn" href="${pagesUrl}" target="_blank" style="text-decoration:none">
@@ -2047,6 +2083,7 @@ function renderCards(wfData) {
         </div>
         <div class="wf-card-body">
           ${pausedBanner}
+          ${ecoHtml}
           ${schedule ? `
             <div class="schedule-chip">
               <span>🕐</span>
