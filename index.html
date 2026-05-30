@@ -1828,7 +1828,28 @@ function healthBannerHtml(item, paused) {
     </div>`;
 }
 
+// ── Ecosystem 통합 설정 (요약·캘린더·카드 공용) ──
+// 유사 워커들을 허브 카드 하나로 접어서 표시. 실제 워커 레포/정지 상태는 불변.
+const ECOSYSTEMS = {
+  'global-market-orchestrator': {
+    members: ['crypto-research-agent','kospi-research-agent','sp500-research-agent','nasdaq-research-agent','dow30-research-agent'],
+    labels:  ['Crypto','KOSPI','S&P500','NASDAQ','Dow30'],
+  },
+  'cycle-intelligence-hub': {
+    members: ['crypto-cycle-intelligence','ai-semi-cycle-intelligence'],
+    labels:  ['Crypto','AI/Semi'],
+  },
+};
+const FOLDED_REPOS = new Set(Object.values(ECOSYSTEMS).flatMap(e => e.members));
+function foldEcosystems(wfData) { return wfData.filter(it => !FOLDED_REPOS.has(it.repo)); }
+function ecoMemberStatus(wfData) {
+  const m = {};
+  wfData.forEach(it => { if (FOLDED_REPOS.has(it.repo)) m[it.repo] = isPaused(it.wf.id) ? 'paused' : 'active'; });
+  return m;
+}
+
 function renderSummary(wfData) {
+  wfData = foldEcosystems(wfData);
   const pausedCount  = Object.keys(pausedMap).length;
   const total        = wfData.length;
   const healthCounts = wfData.reduce((acc, d) => {
@@ -1856,6 +1877,7 @@ function renderSummary(wfData) {
 }
 
 function renderWeekCalendar(wfData) {
+  wfData = foldEcosystems(wfData);
   const DAY_KR  = ['일','월','화','수','목','금','토'];
   const nowKST  = new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Seoul'}));
   const todayDow = nowKST.getDay();
@@ -1938,25 +1960,9 @@ function renderCards(wfData) {
     return tb - ta;
   });
 
-  // ── Ecosystem 통합: 유사 워커들을 허브 카드 하나로 접어서 표시 ──
-  // (실제 워커 레포/정지 상태는 그대로. 대시보드 표현만 통합)
-  const ECOSYSTEMS = {
-    'global-market-orchestrator': {
-      members: ['crypto-research-agent','kospi-research-agent','sp500-research-agent','nasdaq-research-agent','dow30-research-agent'],
-      labels:  ['Crypto','KOSPI','S&P500','NASDAQ','Dow30'],
-    },
-    'cycle-intelligence-hub': {
-      members: ['crypto-cycle-intelligence','ai-semi-cycle-intelligence'],
-      labels:  ['Crypto','AI/Semi'],
-    },
-  };
-  const FOLDED_REPOS = new Set(Object.values(ECOSYSTEMS).flatMap(e => e.members));
-  const memberStatus = {};
-  wfData.forEach(it => {
-    if (FOLDED_REPOS.has(it.repo)) memberStatus[it.repo] = isPaused(it.wf.id) ? 'paused' : 'active';
-  });
-  // 멤버 카드는 숨기고 허브 카드만 남긴다
-  wfData = wfData.filter(it => !FOLDED_REPOS.has(it.repo));
+  // ── Ecosystem 통합: 멤버는 허브 카드로 접고, 칩 표시용 상태만 계산 ──
+  const memberStatus = ecoMemberStatus(wfData);
+  wfData = foldEcosystems(wfData);
 
   const REPO_ICONS = {
     'korean-market-bot':         '📊',
