@@ -240,3 +240,16 @@ systems:
     reports:
       - key: ai-semi-top-monitor/latest
         path: data/latest.json
+
+  - id: hyperliquid-kr-brief
+    label: HL KR Morning Brief (삼성·하이닉스 원화환산)
+    group: core
+    role: producer
+    repo: hyperliquid-kr-brief
+    schedule_kst: "06:30 weekdays"
+    telegram_policy: weekday
+    freshness_sla_hours: 30
+    dashboard_url: "https://github.com/jinhae8971/hyperliquid-kr-brief/actions"
+    reports:
+      - key: hyperliquid-kr-brief/latest
+        path: data/latest.json
