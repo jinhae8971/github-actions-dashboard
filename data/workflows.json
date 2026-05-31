@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-05-30T23:34:28.811037+00:00",
+  "updated_at": "2026-05-31T13:32:44.573286+00:00",
   "orchestrator": {
     "version": "4.0",
-    "synced_at": "2026-05-30T23:34:28.811037+00:00",
+    "synced_at": "2026-05-31T13:32:44.573286+00:00",
     "has_pat": true,
     "paused_count": 13,
     "monitored_repos": [
@@ -21,7 +21,8 @@
       "chart-analyzer",
       "leading-stocks-calendar",
       "korea-etf-calmar",
-      "ai-semi-top-monitor"
+      "ai-semi-top-monitor",
+      "hyperliquid-kr-brief"
     ],
     "excluded_workflows": [
       {
@@ -59,7 +60,7 @@
     },
     "config_version": 1,
     "health_counts": {
-      "ok": 3,
+      "ok": 4,
       "paused_expected": 12,
       "paused_unexpected": 1
     },
@@ -150,7 +151,7 @@
         "severity": 0,
         "reason": "Workflow is active and recent.",
         "last_run_at": "2026-05-30T07:02:05Z",
-        "age_hours": 16.54337250277778,
+        "age_hours": 30.51374891277778,
         "sla_hours": 80.0
       },
       "report": {
@@ -161,9 +162,9 @@
         "sla_hours": 80.0,
         "state": "fresh",
         "severity": 0,
-        "reason": "Report is 16.5h old; SLA is 80h.",
+        "reason": "Report is 30.5h old; SLA is 80h.",
         "report_at": "2026-05-30T07:02:14+00:00",
-        "age_hours": 16.54
+        "age_hours": 30.51
       }
     },
     {
@@ -258,9 +259,9 @@
         "sla_hours": 80.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 455.6h old; SLA is 80h.",
+        "reason": "Report is 469.5h old; SLA is 80h.",
         "report_at": "2026-05-12T00:00:00+00:00",
-        "age_hours": 455.58
+        "age_hours": 469.55
       }
     },
     {
@@ -305,9 +306,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 840.8h old; SLA is 30h.",
+        "reason": "Report is 854.7h old; SLA is 30h.",
         "report_at": "2026-04-25T22:49:12.281569+00:00",
-        "age_hours": 840.76
+        "age_hours": 854.73
       }
     },
     {
@@ -352,9 +353,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 888.7h old; SLA is 30h.",
+        "reason": "Report is 902.7h old; SLA is 30h.",
         "report_at": "2026-04-23T22:51:43.241441+00:00",
-        "age_hours": 888.72
+        "age_hours": 902.69
       }
     },
     {
@@ -399,9 +400,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 888.9h old; SLA is 30h.",
+        "reason": "Report is 902.8h old; SLA is 30h.",
         "report_at": "2026-04-23T22:42:56.537873+00:00",
-        "age_hours": 888.86
+        "age_hours": 902.83
       }
     },
     {
@@ -446,9 +447,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 888.9h old; SLA is 30h.",
+        "reason": "Report is 902.8h old; SLA is 30h.",
         "report_at": "2026-04-23T22:42:41.632567+00:00",
-        "age_hours": 888.87
+        "age_hours": 902.84
       }
     },
     {
@@ -493,9 +494,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 888.7h old; SLA is 30h.",
+        "reason": "Report is 902.7h old; SLA is 30h.",
         "report_at": "2026-04-23T22:51:07.964045+00:00",
-        "age_hours": 888.73
+        "age_hours": 902.7
       }
     },
     {
@@ -546,9 +547,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 839.5h old; SLA is 30h.",
+        "reason": "Report is 853.5h old; SLA is 30h.",
         "report_at": "2026-04-26T00:02:05.517021+00:00",
-        "age_hours": 839.54
+        "age_hours": 853.51
       },
       "upstream": {
         "ok": false,
@@ -687,13 +688,13 @@
         "key": "crypto-cycle-intelligence/latest",
         "repo": "crypto-cycle-intelligence",
         "system_id": "crypto-cycle-intelligence",
-        "label": "리포트 최신",
+        "label": "리포트 지연",
         "sla_hours": 30.0,
-        "state": "fresh",
-        "severity": 0,
-        "reason": "Report is 25.2h old; SLA is 30h.",
+        "state": "stale",
+        "severity": 2,
+        "reason": "Report is 39.2h old; SLA is 30h.",
         "report_at": "2026-05-29T22:23:30.484887+00:00",
-        "age_hours": 25.19
+        "age_hours": 39.16
       }
     },
     {
@@ -784,13 +785,13 @@
         "key": "ai-semi-cycle-intelligence/latest",
         "repo": "ai-semi-cycle-intelligence",
         "system_id": "ai-semi-cycle-intelligence",
-        "label": "리포트 최신",
+        "label": "리포트 지연",
         "sla_hours": 30.0,
-        "state": "fresh",
-        "severity": 0,
-        "reason": "Report is 24.9h old; SLA is 30h.",
+        "state": "stale",
+        "severity": 2,
+        "reason": "Report is 38.9h old; SLA is 30h.",
         "report_at": "2026-05-29T22:40:21.572380+00:00",
-        "age_hours": 24.91
+        "age_hours": 38.88
       }
     },
     {
@@ -884,13 +885,13 @@
         "key": "cycle-intelligence-hub/latest",
         "repo": "cycle-intelligence-hub",
         "system_id": "cycle-intelligence-hub",
-        "label": "리포트 최신",
+        "label": "리포트 지연",
         "sla_hours": 30.0,
-        "state": "fresh",
-        "severity": 0,
-        "reason": "Report is 24.3h old; SLA is 30h.",
+        "state": "stale",
+        "severity": 2,
+        "reason": "Report is 38.3h old; SLA is 30h.",
         "report_at": "2026-05-29T23:15:45.529662+00:00",
-        "age_hours": 24.32
+        "age_hours": 38.29
       },
       "upstream": {
         "ok": false,
@@ -902,7 +903,7 @@
             "repo": "crypto-cycle-intelligence",
             "workflow_state": "paused_expected",
             "workflow_label": "의도 정지",
-            "report_state": "fresh",
+            "report_state": "stale",
             "report_at": "2026-05-29T22:23:30.484887+00:00",
             "fresh": false
           },
@@ -910,7 +911,7 @@
             "repo": "ai-semi-cycle-intelligence",
             "workflow_state": "paused_expected",
             "workflow_label": "의도 정지",
-            "report_state": "fresh",
+            "report_state": "stale",
             "report_at": "2026-05-29T22:40:21.572380+00:00",
             "fresh": false
           }
@@ -1171,7 +1172,7 @@
         "severity": 0,
         "reason": "Workflow is active and recent.",
         "last_run_at": "2026-05-30T07:55:45Z",
-        "age_hours": 15.648928058333333,
+        "age_hours": 29.619304468333333,
         "sla_hours": 30.0
       }
     },
@@ -1259,7 +1260,7 @@
         "severity": 0,
         "reason": "Workflow is active and recent.",
         "last_run_at": "2026-05-30T11:27:26Z",
-        "age_hours": 12.120872502777777,
+        "age_hours": 26.09124891277778,
         "sla_hours": 30.0
       },
       "report": {
@@ -1270,9 +1271,67 @@
         "sla_hours": 30.0,
         "state": "fresh",
         "severity": 0,
-        "reason": "Report is 12.1h old; SLA is 30h.",
+        "reason": "Report is 26.1h old; SLA is 30h.",
         "report_at": "2026-05-30T11:27:54.332500+00:00",
-        "age_hours": 12.11
+        "age_hours": 26.08
+      }
+    },
+    {
+      "repo": "hyperliquid-kr-brief",
+      "wf": {
+        "id": 286389213,
+        "name": "HL KR Morning Brief",
+        "path": ".github/workflows/brief.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/hyperliquid-kr-brief/blob/main/.github/workflows/brief.yml"
+      },
+      "cron": "30 21 * * 0-4",
+      "runs": [
+        {
+          "run_number": 1,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-05-31T13:31:32Z",
+          "html_url": "https://github.com/jinhae8971/hyperliquid-kr-brief/actions/runs/26713999750"
+        }
+      ],
+      "ops": {
+        "system_id": "hyperliquid-kr-brief",
+        "label": "HL KR Morning Brief (삼성·하이닉스 원화환산)",
+        "group": "core",
+        "role": "producer",
+        "expected_state": "active",
+        "schedule_kst": "06:30 weekdays",
+        "telegram_policy": "weekday",
+        "freshness_sla_hours": 30,
+        "dependency_min_fresh": null,
+        "depends_on": [],
+        "dashboard_url": "https://github.com/jinhae8971/hyperliquid-kr-brief/actions",
+        "report_keys": [
+          "hyperliquid-kr-brief/latest"
+        ],
+        "workflow_path": ".github/workflows/brief.yml"
+      },
+      "health": {
+        "state": "ok",
+        "label": "정상",
+        "severity": 0,
+        "reason": "Workflow is active and recent.",
+        "last_run_at": "2026-05-31T13:31:32Z",
+        "age_hours": 0.022915579444444445,
+        "sla_hours": 30.0
+      },
+      "report": {
+        "key": "hyperliquid-kr-brief/latest",
+        "repo": "hyperliquid-kr-brief",
+        "system_id": "hyperliquid-kr-brief",
+        "label": "리포트 최신",
+        "sla_hours": 30.0,
+        "state": "fresh",
+        "severity": 0,
+        "reason": "Report is 0.0h old; SLA is 30h.",
+        "report_at": "2026-05-31T13:31:42.112410+00:00",
+        "age_hours": 0.02
       }
     }
   ],
@@ -1400,7 +1459,7 @@
       "health_state": "paused_expected",
       "health_label": "의도 정지",
       "severity": 0,
-      "report_state": "fresh",
+      "report_state": "stale",
       "upstream_ok": null
     },
     {
@@ -1414,7 +1473,7 @@
       "health_state": "paused_expected",
       "health_label": "의도 정지",
       "severity": 0,
-      "report_state": "fresh",
+      "report_state": "stale",
       "upstream_ok": null
     },
     {
@@ -1428,7 +1487,7 @@
       "health_state": "paused_expected",
       "health_label": "의도 정지",
       "severity": 0,
-      "report_state": "fresh",
+      "report_state": "stale",
       "upstream_ok": false
     },
     {
@@ -1500,6 +1559,20 @@
       "severity": 0,
       "report_state": "fresh",
       "upstream_ok": null
+    },
+    {
+      "repo": "hyperliquid-kr-brief",
+      "system_id": "hyperliquid-kr-brief",
+      "label": "HL KR Morning Brief (삼성·하이닉스 원화환산)",
+      "group": "core",
+      "role": "producer",
+      "expected_state": "active",
+      "workflow_state": "active",
+      "health_state": "ok",
+      "health_label": "정상",
+      "severity": 0,
+      "report_state": "fresh",
+      "upstream_ok": null
     }
   ],
   "reports": {
@@ -1511,9 +1584,9 @@
       "sla_hours": 80.0,
       "state": "fresh",
       "severity": 0,
-      "reason": "Report is 16.5h old; SLA is 80h.",
+      "reason": "Report is 30.5h old; SLA is 80h.",
       "report_at": "2026-05-30T07:02:14+00:00",
-      "age_hours": 16.540872502777777
+      "age_hours": 30.511248912777777
     },
     "korean-stock-agent/242830429": {
       "key": "korean-stock-agent/242830429",
@@ -1523,9 +1596,9 @@
       "sla_hours": 80.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 455.6h old; SLA is 80h.",
+      "reason": "Report is 469.5h old; SLA is 80h.",
       "report_at": "2026-05-12T00:00:00+00:00",
-      "age_hours": 455.57809472499997
+      "age_hours": 469.548471135
     },
     "crypto-research-agent/latest": {
       "key": "crypto-research-agent/latest",
@@ -1535,9 +1608,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 840.8h old; SLA is 30h.",
+      "reason": "Report is 854.7h old; SLA is 30h.",
       "report_at": "2026-04-25T22:49:12.281569+00:00",
-      "age_hours": 840.7580165113889
+      "age_hours": 854.728392921389
     },
     "kospi-research-agent/latest": {
       "key": "kospi-research-agent/latest",
@@ -1547,9 +1620,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 888.7h old; SLA is 30h.",
+      "reason": "Report is 902.7h old; SLA is 30h.",
       "report_at": "2026-04-23T22:51:43.241441+00:00",
-      "age_hours": 888.7160832136111
+      "age_hours": 902.6864596236112
     },
     "sp500-research-agent/latest": {
       "key": "sp500-research-agent/latest",
@@ -1559,9 +1632,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 888.9h old; SLA is 30h.",
+      "reason": "Report is 902.8h old; SLA is 30h.",
       "report_at": "2026-04-23T22:42:56.537873+00:00",
-      "age_hours": 888.8623897602778
+      "age_hours": 902.8327661702778
     },
     "nasdaq-research-agent/latest": {
       "key": "nasdaq-research-agent/latest",
@@ -1571,9 +1644,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 888.9h old; SLA is 30h.",
+      "reason": "Report is 902.8h old; SLA is 30h.",
       "report_at": "2026-04-23T22:42:41.632567+00:00",
-      "age_hours": 888.8665301230556
+      "age_hours": 902.8369065330555
     },
     "dow30-research-agent/latest": {
       "key": "dow30-research-agent/latest",
@@ -1583,9 +1656,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 888.7h old; SLA is 30h.",
+      "reason": "Report is 902.7h old; SLA is 30h.",
       "report_at": "2026-04-23T22:51:07.964045+00:00",
-      "age_hours": 888.7258824902779
+      "age_hours": 902.6962589002778
     },
     "global-market-orchestrator/latest": {
       "key": "global-market-orchestrator/latest",
@@ -1595,45 +1668,45 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 839.5h old; SLA is 30h.",
+      "reason": "Report is 853.5h old; SLA is 30h.",
       "report_at": "2026-04-26T00:02:05.517021+00:00",
-      "age_hours": 839.5432288858333
+      "age_hours": 853.5136052958334
     },
     "crypto-cycle-intelligence/latest": {
       "key": "crypto-cycle-intelligence/latest",
       "repo": "crypto-cycle-intelligence",
       "system_id": "crypto-cycle-intelligence",
-      "label": "리포트 최신",
+      "label": "리포트 지연",
       "sla_hours": 30.0,
-      "state": "fresh",
-      "severity": 0,
-      "reason": "Report is 25.2h old; SLA is 30h.",
+      "state": "stale",
+      "severity": 2,
+      "reason": "Report is 39.2h old; SLA is 30h.",
       "report_at": "2026-05-29T22:23:30.484887+00:00",
-      "age_hours": 25.1862933675
+      "age_hours": 39.1566697775
     },
     "ai-semi-cycle-intelligence/latest": {
       "key": "ai-semi-cycle-intelligence/latest",
       "repo": "ai-semi-cycle-intelligence",
       "system_id": "ai-semi-cycle-intelligence",
-      "label": "리포트 최신",
+      "label": "리포트 지연",
       "sla_hours": 30.0,
-      "state": "fresh",
-      "severity": 0,
-      "reason": "Report is 24.9h old; SLA is 30h.",
+      "state": "stale",
+      "severity": 2,
+      "reason": "Report is 38.9h old; SLA is 30h.",
       "report_at": "2026-05-29T22:40:21.572380+00:00",
-      "age_hours": 24.905435730555553
+      "age_hours": 38.87581214055555
     },
     "cycle-intelligence-hub/latest": {
       "key": "cycle-intelligence-hub/latest",
       "repo": "cycle-intelligence-hub",
       "system_id": "cycle-intelligence-hub",
-      "label": "리포트 최신",
+      "label": "리포트 지연",
       "sla_hours": 30.0,
-      "state": "fresh",
-      "severity": 0,
-      "reason": "Report is 24.3h old; SLA is 30h.",
+      "state": "stale",
+      "severity": 2,
+      "reason": "Report is 38.3h old; SLA is 30h.",
       "report_at": "2026-05-29T23:15:45.529662+00:00",
-      "age_hours": 24.31544759666667
+      "age_hours": 38.28582400666667
     },
     "leading-stocks-calendar/daily": {
       "key": "leading-stocks-calendar/daily",
@@ -1655,9 +1728,21 @@
       "sla_hours": 30.0,
       "state": "fresh",
       "severity": 0,
-      "reason": "Report is 12.1h old; SLA is 30h.",
+      "reason": "Report is 26.1h old; SLA is 30h.",
       "report_at": "2026-05-30T11:27:54.332500+00:00",
-      "age_hours": 12.11300236388889
+      "age_hours": 26.08337877388889
+    },
+    "hyperliquid-kr-brief/latest": {
+      "key": "hyperliquid-kr-brief/latest",
+      "repo": "hyperliquid-kr-brief",
+      "system_id": "hyperliquid-kr-brief",
+      "label": "리포트 최신",
+      "sla_hours": 30.0,
+      "state": "fresh",
+      "severity": 0,
+      "reason": "Report is 0.0h old; SLA is 30h.",
+      "report_at": "2026-05-31T13:31:42.112410+00:00",
+      "age_hours": 0.020106576666666664
     }
   }
 }
