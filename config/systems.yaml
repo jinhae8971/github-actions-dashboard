@@ -253,3 +253,15 @@ systems:
     reports:
       - key: hyperliquid-kr-brief/latest
         path: data/latest.json
+  - id: market-peak-signals
+    label: Market Peak Signals (BofA Exhibit 11)
+    group: cycle-intelligence
+    role: producer
+    repo: market-peak-signals
+    schedule_kst: "07:30 daily"
+    telegram_policy: daily_0730_kst
+    freshness_sla_hours: 30
+    dashboard_url: "https://jinhae8971.github.io/market-peak-signals/"
+    reports:
+      - key: market-peak-signals/latest
+        path: docs/data/history.json
