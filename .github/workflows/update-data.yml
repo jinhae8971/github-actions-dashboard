@@ -81,7 +81,7 @@ jobs:
             push_ok=false
             for i in 1 2 3 4 5; do
               git fetch origin main
-              git rebase origin/main || { echo "rebase 충돌 — abort"; git rebase --abort || true; }
+              git rebase -X theirs origin/main || { echo "rebase 충돌 — abort"; git rebase --abort || true; }
               if git push; then echo "push 성공 (시도 $i)"; push_ok=true; break; fi
               echo "push 시도 $i 실패 — 재시도"; sleep $((2 ** i))
             done
