@@ -271,6 +271,7 @@ systems:
     group: core
     role: producer
     repo: kospi-putcall-monitor
+    expected_state: paused
     schedule_kst: "06:00 weekdays"
     telegram_policy: weekday
     freshness_sla_hours: 80
