@@ -265,3 +265,16 @@ systems:
     reports:
       - key: market-peak-signals/latest
         path: docs/data/latest.json
+
+  - id: kospi-putcall-monitor
+    label: KOSPI200 Put/Call OI Ratio
+    group: core
+    role: producer
+    repo: kospi-putcall-monitor
+    schedule_kst: "06:00 weekdays"
+    telegram_policy: weekday
+    freshness_sla_hours: 80
+    dashboard_url: "https://jinhae8971.github.io/kospi-putcall-monitor/"
+    reports:
+      - key: kospi-putcall-monitor/latest
+        path: docs/data.json
