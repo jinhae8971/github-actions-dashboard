@@ -289,3 +289,13 @@ systems:
     telegram_policy: weekday
     freshness_sla_hours: 80
     dashboard_url: "https://github.com/jinhae8971/kospi-levels/actions"
+
+  - id: market-event-tracker
+    label: Market Event Tracker (이벤트 당일 국내/미국 등락 누적)
+    group: global-market
+    role: producer
+    repo: market-event-tracker
+    schedule_kst: "07:30 daily"
+    telegram_policy: silent
+    freshness_sla_hours: 720
+    dashboard_url: "https://github.com/jinhae8971/market-event-tracker"
