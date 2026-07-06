@@ -299,3 +299,13 @@ systems:
     telegram_policy: silent
     freshness_sla_hours: 720
     dashboard_url: "https://jinhae8971.github.io/market-event-tracker/"
+
+  - id: vkospi-monitor
+    label: VKOSPI 공포지수 (레짐·시나리오·VIX 교차검증)
+    group: core
+    role: producer
+    repo: vkospi-monitor
+    schedule_kst: "08:30 weekdays"
+    telegram_policy: weekday
+    freshness_sla_hours: 80
+    dashboard_url: "https://github.com/jinhae8971/vkospi-monitor/actions"
