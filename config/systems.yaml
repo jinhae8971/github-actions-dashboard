@@ -309,3 +309,13 @@ systems:
     telegram_policy: weekday
     freshness_sla_hours: 80
     dashboard_url: "https://github.com/jinhae8971/vkospi-monitor/actions"
+
+  - id: hynix-cycle-template-monitor
+    label: Hynix Cycle Template (Tesla vs Nvidia 교본 판정)
+    group: cycle-intelligence
+    role: producer
+    repo: hynix-cycle-template-monitor
+    schedule_kst: "08:00 / 17:00 weekdays"
+    telegram_policy: weekday
+    freshness_sla_hours: 30
+    dashboard_url: "https://github.com/jinhae8971/hynix-cycle-template-monitor/actions"
