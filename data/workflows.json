@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-26T04:17:24.069820+00:00",
+  "updated_at": "2026-11-27T04:26:57.355087+00:00",
   "orchestrator": {
     "version": "4.0",
-    "synced_at": "2026-11-26T04:17:24.069820+00:00",
+    "synced_at": "2026-11-27T04:26:57.355087+00:00",
     "has_pat": true,
     "paused_count": 24,
     "monitored_repos": [
@@ -66,7 +66,7 @@
     },
     "config_version": 1,
     "health_counts": {
-      "ok": 13,
+      "ok": 14,
       "stale_run": 7,
       "paused_expected": 14,
       "paused_unexpected": 10,
@@ -86,6 +86,13 @@
       },
       "cron": "47 9 * * 1-5",
       "runs": [
+        {
+          "run_number": 197,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T19:17:40Z",
+          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/45882554943"
+        },
         {
           "run_number": 196,
           "conclusion": "success",
@@ -127,13 +134,6 @@
           "status": "completed",
           "created_at": "2026-11-18T18:25:09Z",
           "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/44369493481"
-        },
-        {
-          "run_number": 190,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-17T18:46:02Z",
-          "html_url": "https://github.com/jinhae8971/crypto-monitor/actions/runs/44151371439"
         }
       ],
       "ops": {
@@ -158,8 +158,8 @@
         "label": "정상",
         "severity": 0,
         "reason": "Workflow is active and recent.",
-        "last_run_at": "2026-11-25T19:36:28Z",
-        "age_hours": 8.695893420277779,
+        "last_run_at": "2026-11-26T19:17:40Z",
+        "age_hours": 9.164790616388888,
         "sla_hours": 80.0
       },
       "report": {
@@ -170,9 +170,9 @@
         "sla_hours": 80.0,
         "state": "fresh",
         "severity": 0,
-        "reason": "Report is 8.7h old; SLA is 80h.",
-        "report_at": "2026-11-25T19:36:38+00:00",
-        "age_hours": 8.69
+        "reason": "Report is 9.2h old; SLA is 80h.",
+        "report_at": "2026-11-26T19:17:50+00:00",
+        "age_hours": 9.16
       }
     },
     {
@@ -215,9 +215,9 @@
         "state": "stale_run",
         "label": "실행 지연",
         "severity": 2,
-        "reason": "Last run is 2345.9h old; SLA is 80h.",
+        "reason": "Last run is 2370.1h old; SLA is 80h.",
         "last_run_at": "2026-08-20T10:23:13Z",
-        "age_hours": 2345.9167267536113,
+        "age_hours": 2370.0722906163887,
         "sla_hours": 80.0
       },
       "report": {
@@ -228,9 +228,9 @@
         "sla_hours": 80.0,
         "state": "fresh",
         "severity": 0,
-        "reason": "Report is 8.7h old; SLA is 80h.",
-        "report_at": "2026-11-25T19:36:38+00:00",
-        "age_hours": 8.69
+        "reason": "Report is 9.2h old; SLA is 80h.",
+        "report_at": "2026-11-26T19:17:50+00:00",
+        "age_hours": 9.16
       }
     },
     {
@@ -325,9 +325,9 @@
         "sla_hours": 80.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 4756.3h old; SLA is 80h.",
+        "reason": "Report is 4780.5h old; SLA is 80h.",
         "report_at": "2026-05-12T00:00:00+00:00",
-        "age_hours": 4756.3
+        "age_hours": 4780.46
       }
     },
     {
@@ -372,9 +372,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 5141.5h old; SLA is 30h.",
+        "reason": "Report is 5165.6h old; SLA is 30h.",
         "report_at": "2026-04-25T22:49:12.281569+00:00",
-        "age_hours": 5141.48
+        "age_hours": 5165.64
       }
     },
     {
@@ -419,9 +419,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 5189.4h old; SLA is 30h.",
+        "reason": "Report is 5213.6h old; SLA is 30h.",
         "report_at": "2026-04-23T22:51:43.241441+00:00",
-        "age_hours": 5189.44
+        "age_hours": 5213.6
       }
     },
     {
@@ -466,9 +466,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 5189.6h old; SLA is 30h.",
+        "reason": "Report is 5213.7h old; SLA is 30h.",
         "report_at": "2026-04-23T22:42:56.537873+00:00",
-        "age_hours": 5189.59
+        "age_hours": 5213.74
       }
     },
     {
@@ -513,9 +513,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 5189.6h old; SLA is 30h.",
+        "reason": "Report is 5213.7h old; SLA is 30h.",
         "report_at": "2026-04-23T22:42:41.632567+00:00",
-        "age_hours": 5189.59
+        "age_hours": 5213.75
       }
     },
     {
@@ -560,9 +560,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 5189.5h old; SLA is 30h.",
+        "reason": "Report is 5213.6h old; SLA is 30h.",
         "report_at": "2026-04-23T22:51:07.964045+00:00",
-        "age_hours": 5189.45
+        "age_hours": 5213.61
       }
     },
     {
@@ -613,9 +613,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 5140.3h old; SLA is 30h.",
+        "reason": "Report is 5164.4h old; SLA is 30h.",
         "report_at": "2026-04-26T00:02:05.517021+00:00",
-        "age_hours": 5140.27
+        "age_hours": 5164.42
       },
       "upstream": {
         "ok": false,
@@ -758,9 +758,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 4325.9h old; SLA is 30h.",
+        "reason": "Report is 4350.1h old; SLA is 30h.",
         "report_at": "2026-05-29T22:23:30.484887+00:00",
-        "age_hours": 4325.91
+        "age_hours": 4350.07
       }
     },
     {
@@ -855,9 +855,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 4325.6h old; SLA is 30h.",
+        "reason": "Report is 4349.8h old; SLA is 30h.",
         "report_at": "2026-05-29T22:40:21.572380+00:00",
-        "age_hours": 4325.63
+        "age_hours": 4349.79
       }
     },
     {
@@ -955,9 +955,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 4325.0h old; SLA is 30h.",
+        "reason": "Report is 4349.2h old; SLA is 30h.",
         "report_at": "2026-05-29T23:15:45.529662+00:00",
-        "age_hours": 4325.04
+        "age_hours": 4349.2
       },
       "upstream": {
         "ok": false,
@@ -1361,9 +1361,9 @@
         "state": "stale_run",
         "label": "실행 지연",
         "severity": 2,
-        "reason": "Last run is 92.9h old; SLA is 30h.",
+        "reason": "Last run is 117.1h old; SLA is 30h.",
         "last_run_at": "2026-11-22T07:23:55Z",
-        "age_hours": 92.90506008694445,
+        "age_hours": 117.06062394972223,
         "sla_hours": 30.0
       }
     },
@@ -1378,6 +1378,13 @@
       },
       "cron": "47 21 * * *",
       "runs": [
+        {
+          "run_number": 102,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-27T03:48:13Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45936270750"
+        },
         {
           "run_number": 101,
           "conclusion": "success",
@@ -1419,13 +1426,6 @@
           "status": "completed",
           "created_at": "2026-11-21T02:51:04Z",
           "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/44858088101"
-        },
-        {
-          "run_number": 95,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-20T02:39:15Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/44662328987"
         }
       ],
       "ops": {
@@ -1448,8 +1448,8 @@
         "label": "정상",
         "severity": 0,
         "reason": "Workflow is active and recent.",
-        "last_run_at": "2026-11-26T03:47:27Z",
-        "age_hours": 0.5128378647222221,
+        "last_run_at": "2026-11-27T03:48:13Z",
+        "age_hours": 0.6556239497222223,
         "sla_hours": 30.0
       }
     },
@@ -1465,6 +1465,41 @@
       "cron": "7 0 * * *",
       "runs": [
         {
+          "run_number": 16,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-27T00:01:19Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45914278959"
+        },
+        {
+          "run_number": 15,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T10:53:57Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45805574421"
+        },
+        {
+          "run_number": 14,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T09:39:00Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45793931661"
+        },
+        {
+          "run_number": 13,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T08:51:31Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45786725245"
+        },
+        {
+          "run_number": 12,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T08:04:27Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45780105465"
+        },
+        {
           "run_number": 11,
           "conclusion": "success",
           "status": "completed",
@@ -1477,41 +1512,6 @@
           "status": "completed",
           "created_at": "2026-11-25T11:17:16Z",
           "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45603030696"
-        },
-        {
-          "run_number": 9,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-25T09:54:12Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45589811675"
-        },
-        {
-          "run_number": 8,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-25T09:04:09Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45581887190"
-        },
-        {
-          "run_number": 7,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-25T08:19:05Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45575214357"
-        },
-        {
-          "run_number": 6,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-24T12:29:56Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45394074556"
-        },
-        {
-          "run_number": 5,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-24T11:03:51Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45380665814"
         }
       ],
       "ops": {
@@ -1534,8 +1534,59 @@
         "label": "정상",
         "severity": 0,
         "reason": "Workflow is active and recent.",
-        "last_run_at": "2026-11-26T04:13:11Z",
-        "age_hours": 0.08394897583333334,
+        "last_run_at": "2026-11-27T00:01:19Z",
+        "age_hours": 4.437290616388889,
+        "sla_hours": 30.0
+      }
+    },
+    {
+      "repo": "korea-etf-calmar",
+      "wf": {
+        "id": 431177104,
+        "name": "Brief Conductor",
+        "path": ".github/workflows/brief-conductor.yml",
+        "state": "active",
+        "html_url": "https://github.com/jinhae8971/korea-etf-calmar/blob/main/.github/workflows/brief-conductor.yml"
+      },
+      "cron": null,
+      "runs": [
+        {
+          "run_number": 2,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T22:41:45Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45906412096"
+        },
+        {
+          "run_number": 1,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T04:27:20Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45755302714"
+        }
+      ],
+      "ops": {
+        "system_id": "korea-etf-calmar",
+        "label": "Calmar Top10 (한국·코스피200·S&P500·美ETF 통합)",
+        "group": "core",
+        "role": "producer",
+        "expected_state": "active",
+        "schedule_kst": "07:00 weekdays",
+        "telegram_policy": "weekday",
+        "freshness_sla_hours": 30,
+        "dependency_min_fresh": null,
+        "depends_on": [],
+        "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/",
+        "report_keys": [],
+        "workflow_path": ".github/workflows/brief-conductor.yml"
+      },
+      "health": {
+        "state": "ok",
+        "label": "정상",
+        "severity": 0,
+        "reason": "Workflow is active and recent.",
+        "last_run_at": "2026-11-26T22:41:45Z",
+        "age_hours": 5.7634017275,
         "sla_hours": 30.0
       }
     },
@@ -1551,53 +1602,53 @@
       "cron": "17 22,23,0-12 * * *",
       "runs": [
         {
-          "run_number": 469,
+          "run_number": 498,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-11-26T04:14:56Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45753987555"
+          "created_at": "2026-11-27T04:18:01Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45939129600"
         },
         {
-          "run_number": 468,
+          "run_number": 497,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-11-26T04:11:04Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45753578983"
+          "created_at": "2026-11-27T04:17:27Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45939073974"
         },
         {
-          "run_number": 467,
+          "run_number": 496,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-11-26T04:10:32Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45753523690"
+          "created_at": "2026-11-27T03:48:15Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45936273711"
         },
         {
-          "run_number": 466,
+          "run_number": 495,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-11-26T03:48:12Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45751217150"
+          "created_at": "2026-11-27T03:40:11Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45935508898"
         },
         {
-          "run_number": 465,
+          "run_number": 494,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-11-26T03:37:35Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45750119418"
+          "created_at": "2026-11-27T03:16:17Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45933184442"
         },
         {
-          "run_number": 464,
+          "run_number": 493,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-11-26T03:05:44Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45746686222"
+          "created_at": "2026-11-27T00:05:51Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45914718970"
         },
         {
-          "run_number": 463,
+          "run_number": 492,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-11-25T22:42:35Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45715523387"
+          "created_at": "2026-11-26T23:50:47Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45913302109"
         }
       ],
       "ops": {
@@ -1620,8 +1671,8 @@
         "label": "정상",
         "severity": 0,
         "reason": "Workflow is active and recent.",
-        "last_run_at": "2026-11-26T04:14:56Z",
-        "age_hours": 0.05478230916666667,
+        "last_run_at": "2026-11-27T04:18:01Z",
+        "age_hours": 0.15895728305555556,
         "sla_hours": 30.0
       }
     },
@@ -1637,6 +1688,41 @@
       "cron": "36 22 * * 1-5",
       "runs": [
         {
+          "run_number": 111,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T22:43:06Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45906549004"
+        },
+        {
+          "run_number": 110,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T22:41:49Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45906417913"
+        },
+        {
+          "run_number": 109,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T10:02:07Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45797504056"
+        },
+        {
+          "run_number": 108,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T08:12:45Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45781253258"
+        },
+        {
+          "run_number": 107,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T04:20:35Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45754592315"
+        },
+        {
           "run_number": 106,
           "conclusion": "success",
           "status": "completed",
@@ -1649,41 +1735,6 @@
           "status": "completed",
           "created_at": "2026-11-25T10:29:11Z",
           "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45595429691"
-        },
-        {
-          "run_number": 104,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-25T08:28:51Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45576629205"
-        },
-        {
-          "run_number": 103,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-25T05:00:37Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45550590617"
-        },
-        {
-          "run_number": 102,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-24T22:41:17Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45503249123"
-        },
-        {
-          "run_number": 101,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-24T11:36:53Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45385790598"
-        },
-        {
-          "run_number": 100,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-24T09:50:53Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45369069567"
         }
       ],
       "ops": {
@@ -1706,8 +1757,8 @@
         "label": "정상",
         "severity": 0,
         "reason": "Workflow is active and recent.",
-        "last_run_at": "2026-11-25T22:41:34Z",
-        "age_hours": 5.610893420277778,
+        "last_run_at": "2026-11-26T22:43:06Z",
+        "age_hours": 5.7409017275,
         "sla_hours": 30.0
       }
     },
@@ -1791,9 +1842,9 @@
         "state": "stale_run",
         "label": "실행 지연",
         "severity": 2,
-        "reason": "Last run is 916.6h old; SLA is 30h.",
+        "reason": "Last run is 940.8h old; SLA is 30h.",
         "last_run_at": "2026-10-18T23:42:06Z",
-        "age_hours": 916.6020045313888,
+        "age_hours": 940.7575683941666,
         "sla_hours": 30.0
       }
     },
@@ -1808,6 +1859,13 @@
       },
       "cron": "52 21 * * *",
       "runs": [
+        {
+          "run_number": 83,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-27T03:49:31Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45936391252"
+        },
         {
           "run_number": 82,
           "conclusion": "success",
@@ -1849,13 +1907,6 @@
           "status": "completed",
           "created_at": "2026-11-21T02:52:10Z",
           "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/44858180057"
-        },
-        {
-          "run_number": 76,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-20T02:41:04Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/44662539104"
         }
       ],
       "ops": {
@@ -1878,8 +1929,8 @@
         "label": "정상",
         "severity": 0,
         "reason": "Workflow is active and recent.",
-        "last_run_at": "2026-11-26T03:48:07Z",
-        "age_hours": 0.5017267536111111,
+        "last_run_at": "2026-11-27T03:49:31Z",
+        "age_hours": 0.6339572830555555,
         "sla_hours": 30.0
       }
     },
@@ -1921,9 +1972,9 @@
         "state": "stale_run",
         "label": "실행 지연",
         "severity": 2,
-        "reason": "Last run is 1919.4h old; SLA is 30h.",
+        "reason": "Last run is 1943.6h old; SLA is 30h.",
         "last_run_at": "2026-09-07T04:51:31Z",
-        "age_hours": 1919.4450600869443,
+        "age_hours": 1943.6006239497221,
         "sla_hours": 30.0
       }
     },
@@ -1967,7 +2018,7 @@
         "severity": 3,
         "reason": "Last run concluded with failure.",
         "last_run_at": "2026-09-28T23:24:24Z",
-        "age_hours": 1396.8970045313888
+        "age_hours": 1421.0525683941667
       }
     },
     {
@@ -1981,6 +2032,20 @@
       },
       "cron": "10 22 * * *",
       "runs": [
+        {
+          "run_number": 92,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-27T04:10:28Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45938379108"
+        },
+        {
+          "run_number": 91,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T22:42:01Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45906437216"
+        },
         {
           "run_number": 90,
           "conclusion": "success",
@@ -2015,20 +2080,6 @@
           "status": "completed",
           "created_at": "2026-11-22T02:08:18Z",
           "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/44974663820"
-        },
-        {
-          "run_number": 85,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-21T03:09:39Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/44859656565"
-        },
-        {
-          "run_number": 84,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-20T03:04:46Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/44665224232"
         }
       ],
       "ops": {
@@ -2051,8 +2102,8 @@
         "label": "정상",
         "severity": 0,
         "reason": "Workflow is active and recent.",
-        "last_run_at": "2026-11-26T04:06:22Z",
-        "age_hours": 0.19756008694444444,
+        "last_run_at": "2026-11-27T04:10:28Z",
+        "age_hours": 0.2847906163888889,
         "sla_hours": 30.0
       }
     },
@@ -2067,6 +2118,20 @@
       },
       "cron": "43 21,3,9 * * *",
       "runs": [
+        {
+          "run_number": 239,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-27T03:47:19Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45936187147"
+        },
+        {
+          "run_number": 238,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T19:16:33Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45882415052"
+        },
         {
           "run_number": 237,
           "conclusion": "success",
@@ -2101,20 +2166,6 @@
           "status": "completed",
           "created_at": "2026-11-24T05:31:39Z",
           "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45333933078"
-        },
-        {
-          "run_number": 232,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-23T13:39:49Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45186138514"
-        },
-        {
-          "run_number": 231,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-23T01:58:12Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45097506229"
         }
       ],
       "ops": {
@@ -2137,8 +2188,8 @@
         "label": "정상",
         "severity": 0,
         "reason": "Workflow is active and recent.",
-        "last_run_at": "2026-11-26T03:46:12Z",
-        "age_hours": 0.5336711980555555,
+        "last_run_at": "2026-11-27T03:47:19Z",
+        "age_hours": 0.6706239497222223,
         "sla_hours": 30.0
       }
     },
@@ -2237,6 +2288,41 @@
       "cron": "43 20 * * 0-4",
       "runs": [
         {
+          "run_number": 111,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-27T04:17:28Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45939076038"
+        },
+        {
+          "run_number": 110,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-27T03:47:40Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45936220815"
+        },
+        {
+          "run_number": 109,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-27T03:39:26Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45935438359"
+        },
+        {
+          "run_number": 108,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-27T03:15:46Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45933133341"
+        },
+        {
+          "run_number": 107,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T22:41:58Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45906432522"
+        },
+        {
           "run_number": 106,
           "conclusion": "success",
           "status": "completed",
@@ -2249,41 +2335,6 @@
           "status": "completed",
           "created_at": "2026-11-26T03:47:37Z",
           "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45751156450"
-        },
-        {
-          "run_number": 104,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-26T03:37:00Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45750056890"
-        },
-        {
-          "run_number": 103,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-26T03:05:01Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45746600829"
-        },
-        {
-          "run_number": 102,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-25T04:55:06Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45549995101"
-        },
-        {
-          "run_number": 101,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-25T04:36:05Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45547896708"
-        },
-        {
-          "run_number": 100,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-25T04:16:35Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45545663150"
         }
       ],
       "ops": {
@@ -2306,8 +2357,8 @@
         "label": "정상",
         "severity": 0,
         "reason": "Workflow is active and recent.",
-        "last_run_at": "2026-11-26T04:10:30Z",
-        "age_hours": 0.12867119805555555,
+        "last_run_at": "2026-11-27T04:17:28Z",
+        "age_hours": 0.16812394972222222,
         "sla_hours": 30.0
       }
     },
@@ -2391,9 +2442,9 @@
         "state": "stale_run",
         "label": "실행 지연",
         "severity": 2,
-        "reason": "Last run is 92.8h old; SLA is 30h.",
+        "reason": "Last run is 116.9h old; SLA is 30h.",
         "last_run_at": "2026-11-22T07:31:31Z",
-        "age_hours": 92.77839342027778,
+        "age_hours": 116.93395728305556,
         "sla_hours": 30.0
       }
     },
@@ -2492,6 +2543,27 @@
       "cron": "46 22 * * *",
       "runs": [
         {
+          "run_number": 101,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T22:42:35Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45906495245"
+        },
+        {
+          "run_number": 100,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T22:41:49Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45906417909"
+        },
+        {
+          "run_number": 99,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T04:23:45Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45754928918"
+        },
+        {
           "run_number": 98,
           "conclusion": "success",
           "status": "completed",
@@ -2518,27 +2590,6 @@
           "status": "completed",
           "created_at": "2026-11-24T06:24:57Z",
           "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45340278182"
-        },
-        {
-          "run_number": 94,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-23T22:41:16Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45282034357"
-        },
-        {
-          "run_number": 93,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-23T03:08:12Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45104155587"
-        },
-        {
-          "run_number": 92,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-22T22:42:52Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45079248474"
         }
       ],
       "ops": {
@@ -2561,8 +2612,8 @@
         "label": "정상",
         "severity": 0,
         "reason": "Workflow is active and recent.",
-        "last_run_at": "2026-11-25T22:41:34Z",
-        "age_hours": 5.610893420277778,
+        "last_run_at": "2026-11-26T22:42:35Z",
+        "age_hours": 5.749512838611111,
         "sla_hours": 30.0
       }
     },
@@ -2661,53 +2712,53 @@
       "cron": "17,47 0-12,22-23 * * *",
       "runs": [
         {
-          "run_number": 970,
+          "run_number": 1002,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-11-26T04:07:58Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45753247491"
+          "created_at": "2026-11-27T04:12:14Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45938555200"
         },
         {
-          "run_number": 969,
+          "run_number": 1001,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-11-26T03:38:07Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45750176262"
+          "created_at": "2026-11-27T04:08:02Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45938135729"
         },
         {
-          "run_number": 968,
+          "run_number": 1000,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-11-26T03:08:15Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45746961031"
+          "created_at": "2026-11-27T03:38:11Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45935319637"
         },
         {
-          "run_number": 967,
+          "run_number": 999,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-11-26T02:38:07Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45743726497"
+          "created_at": "2026-11-27T03:08:03Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45932374926"
         },
         {
-          "run_number": 966,
+          "run_number": 998,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-11-26T02:08:16Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45740394003"
+          "created_at": "2026-11-27T02:38:12Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45929493426"
         },
         {
-          "run_number": 965,
+          "run_number": 997,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-11-26T01:38:07Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45737076589"
+          "created_at": "2026-11-27T02:08:05Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45926532666"
         },
         {
-          "run_number": 964,
+          "run_number": 996,
           "conclusion": "success",
           "status": "completed",
-          "created_at": "2026-11-26T01:08:15Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45733658426"
+          "created_at": "2026-11-27T01:38:12Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45923688549"
         }
       ],
       "ops": {
@@ -2730,8 +2781,8 @@
         "label": "정상",
         "severity": 0,
         "reason": "Workflow is active and recent.",
-        "last_run_at": "2026-11-26T04:07:58Z",
-        "age_hours": 0.1708934202777778,
+        "last_run_at": "2026-11-27T04:12:14Z",
+        "age_hours": 0.2553461719444444,
         "sla_hours": 30.0
       }
     },
@@ -2815,9 +2866,9 @@
         "state": "stale_run",
         "label": "실행 지연",
         "severity": 2,
-        "reason": "Last run is 72.7h old; SLA is 30h.",
+        "reason": "Last run is 96.9h old; SLA is 30h.",
         "last_run_at": "2026-11-23T03:35:57Z",
-        "age_hours": 72.70450453138889,
+        "age_hours": 96.86006839416667,
         "sla_hours": 30.0
       }
     },
@@ -2833,6 +2884,41 @@
       "cron": "48 22 * * *",
       "runs": [
         {
+          "run_number": 150,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T22:42:32Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45906490917"
+        },
+        {
+          "run_number": 149,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T22:41:49Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45906417854"
+        },
+        {
+          "run_number": 148,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T10:03:04Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45797649809"
+        },
+        {
+          "run_number": 147,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T08:09:52Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45780849462"
+        },
+        {
+          "run_number": 146,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-26T04:23:13Z",
+          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45754870571"
+        },
+        {
           "run_number": 145,
           "conclusion": "success",
           "status": "completed",
@@ -2845,41 +2931,6 @@
           "status": "completed",
           "created_at": "2026-11-25T10:30:06Z",
           "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45595571984"
-        },
-        {
-          "run_number": 143,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-25T08:24:49Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45576042175"
-        },
-        {
-          "run_number": 142,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-25T05:01:20Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45550683162"
-        },
-        {
-          "run_number": 141,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-24T22:41:17Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45503249159"
-        },
-        {
-          "run_number": 140,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-24T11:38:03Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45385970066"
-        },
-        {
-          "run_number": 139,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-24T09:48:38Z",
-          "html_url": "https://github.com/jinhae8971/korea-etf-calmar/actions/runs/45368711336"
         }
       ],
       "ops": {
@@ -2902,8 +2953,8 @@
         "label": "정상",
         "severity": 0,
         "reason": "Workflow is active and recent.",
-        "last_run_at": "2026-11-25T22:41:34Z",
-        "age_hours": 5.610893420277778,
+        "last_run_at": "2026-11-26T22:42:32Z",
+        "age_hours": 5.750346171944445,
         "sla_hours": 30.0
       }
     },
@@ -3072,9 +3123,9 @@
         "state": "stale_run",
         "label": "실행 지연",
         "severity": 2,
-        "reason": "Last run is 916.4h old; SLA is 30h.",
+        "reason": "Last run is 940.6h old; SLA is 30h.",
         "last_run_at": "2026-10-18T23:51:52Z",
-        "age_hours": 916.439226753611,
+        "age_hours": 940.5947906163889,
         "sla_hours": 30.0
       },
       "report": {
@@ -3085,9 +3136,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 916.4h old; SLA is 30h.",
+        "reason": "Report is 940.6h old; SLA is 30h.",
         "report_at": "2026-10-18T23:52:22.109520+00:00",
-        "age_hours": 916.43
+        "age_hours": 940.59
       }
     },
     {
@@ -3182,9 +3233,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 1252.7h old; SLA is 30h.",
+        "reason": "Report is 1276.8h old; SLA is 30h.",
         "report_at": "2026-10-04T23:37:38.512848+00:00",
-        "age_hours": 1252.68
+        "age_hours": 1276.83
       }
     },
     {
@@ -3279,9 +3330,9 @@
         "sla_hours": 30.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 1274.4h old; SLA is 30h.",
+        "reason": "Report is 1298.6h old; SLA is 30h.",
         "report_at": "2026-10-04T01:52:55.954611+00:00",
-        "age_hours": 1274.42
+        "age_hours": 1298.58
       }
     },
     {
@@ -3376,9 +3427,9 @@
         "sla_hours": 80.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 4036.3h old; SLA is 80h.",
+        "reason": "Report is 4060.5h old; SLA is 80h.",
         "report_at": "2026-06-11T00:00:00+00:00",
-        "age_hours": 4036.3
+        "age_hours": 4060.46
       }
     },
     {
@@ -3438,9 +3489,9 @@
         "sla_hours": 80.0,
         "state": "stale",
         "severity": 2,
-        "reason": "Report is 4036.3h old; SLA is 80h.",
+        "reason": "Report is 4060.5h old; SLA is 80h.",
         "report_at": "2026-06-11T00:00:00+00:00",
-        "age_hours": 4036.3
+        "age_hours": 4060.46
       }
     },
     {
@@ -3525,7 +3576,7 @@
         "severity": 3,
         "reason": "Last run concluded with failure.",
         "last_run_at": "2026-10-23T01:21:52Z",
-        "age_hours": 818.939226753611
+        "age_hours": 843.0947906163889
       }
     },
     {
@@ -3539,6 +3590,13 @@
       },
       "cron": "30 22 * * *",
       "runs": [
+        {
+          "run_number": 147,
+          "conclusion": "success",
+          "status": "completed",
+          "created_at": "2026-11-27T04:21:40Z",
+          "html_url": "https://github.com/jinhae8971/market-event-tracker/actions/runs/45939482667"
+        },
         {
           "run_number": 146,
           "conclusion": "success",
@@ -3580,13 +3638,6 @@
           "status": "completed",
           "created_at": "2026-11-21T03:18:28Z",
           "html_url": "https://github.com/jinhae8971/market-event-tracker/actions/runs/44860436237"
-        },
-        {
-          "run_number": 140,
-          "conclusion": "success",
-          "status": "completed",
-          "created_at": "2026-11-20T03:36:05Z",
-          "html_url": "https://github.com/jinhae8971/market-event-tracker/actions/runs/44668833950"
         }
       ],
       "ops": {
@@ -3609,8 +3660,8 @@
         "label": "정상",
         "severity": 0,
         "reason": "Workflow is active and recent.",
-        "last_run_at": "2026-11-26T04:13:40Z",
-        "age_hours": 0.07589342027777778,
+        "last_run_at": "2026-11-27T04:21:40Z",
+        "age_hours": 0.09812394972222221,
         "sla_hours": 720.0
       }
     },
@@ -4084,6 +4135,20 @@
       "role": "producer",
       "expected_state": "active",
       "workflow_state": "active",
+      "health_state": "ok",
+      "health_label": "정상",
+      "severity": 0,
+      "report_state": null,
+      "upstream_ok": null
+    },
+    {
+      "repo": "korea-etf-calmar",
+      "system_id": "korea-etf-calmar",
+      "label": "Calmar Top10 (한국·코스피200·S&P500·美ETF 통합)",
+      "group": "core",
+      "role": "producer",
+      "expected_state": "active",
+      "workflow_state": "active",
       "health_state": "stale_run",
       "health_label": "실행 지연",
       "severity": 2,
@@ -4436,9 +4501,9 @@
       "sla_hours": 80.0,
       "state": "fresh",
       "severity": 0,
-      "reason": "Report is 8.7h old; SLA is 80h.",
-      "report_at": "2026-11-25T19:36:38+00:00",
-      "age_hours": 8.6931156425
+      "reason": "Report is 9.2h old; SLA is 80h.",
+      "report_at": "2026-11-26T19:17:50+00:00",
+      "age_hours": 9.162012838611112
     },
     "korean-stock-agent/242830429": {
       "key": "korean-stock-agent/242830429",
@@ -4448,9 +4513,9 @@
       "sla_hours": 80.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 4756.3h old; SLA is 80h.",
+      "reason": "Report is 4780.5h old; SLA is 80h.",
       "report_at": "2026-05-12T00:00:00+00:00",
-      "age_hours": 4756.303671198056
+      "age_hours": 4780.459235060834
     },
     "crypto-research-agent/latest": {
       "key": "crypto-research-agent/latest",
@@ -4460,9 +4525,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 5141.5h old; SLA is 30h.",
+      "reason": "Report is 5165.6h old; SLA is 30h.",
       "report_at": "2026-04-25T22:49:12.281569+00:00",
-      "age_hours": 5141.483592984445
+      "age_hours": 5165.639156847223
     },
     "kospi-research-agent/latest": {
       "key": "kospi-research-agent/latest",
@@ -4472,9 +4537,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 5189.4h old; SLA is 30h.",
+      "reason": "Report is 5213.6h old; SLA is 30h.",
       "report_at": "2026-04-23T22:51:43.241441+00:00",
-      "age_hours": 5189.441659686667
+      "age_hours": 5213.597223549445
     },
     "sp500-research-agent/latest": {
       "key": "sp500-research-agent/latest",
@@ -4484,9 +4549,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 5189.6h old; SLA is 30h.",
+      "reason": "Report is 5213.7h old; SLA is 30h.",
       "report_at": "2026-04-23T22:42:56.537873+00:00",
-      "age_hours": 5189.587966233334
+      "age_hours": 5213.7435300961115
     },
     "nasdaq-research-agent/latest": {
       "key": "nasdaq-research-agent/latest",
@@ -4496,9 +4561,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 5189.6h old; SLA is 30h.",
+      "reason": "Report is 5213.7h old; SLA is 30h.",
       "report_at": "2026-04-23T22:42:41.632567+00:00",
-      "age_hours": 5189.592106596111
+      "age_hours": 5213.747670458888
     },
     "dow30-research-agent/latest": {
       "key": "dow30-research-agent/latest",
@@ -4508,9 +4573,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 5189.5h old; SLA is 30h.",
+      "reason": "Report is 5213.6h old; SLA is 30h.",
       "report_at": "2026-04-23T22:51:07.964045+00:00",
-      "age_hours": 5189.451458963334
+      "age_hours": 5213.607022826111
     },
     "global-market-orchestrator/latest": {
       "key": "global-market-orchestrator/latest",
@@ -4520,9 +4585,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 5140.3h old; SLA is 30h.",
+      "reason": "Report is 5164.4h old; SLA is 30h.",
       "report_at": "2026-04-26T00:02:05.517021+00:00",
-      "age_hours": 5140.268805358889
+      "age_hours": 5164.424369221667
     },
     "crypto-cycle-intelligence/latest": {
       "key": "crypto-cycle-intelligence/latest",
@@ -4532,9 +4597,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 4325.9h old; SLA is 30h.",
+      "reason": "Report is 4350.1h old; SLA is 30h.",
       "report_at": "2026-05-29T22:23:30.484887+00:00",
-      "age_hours": 4325.9118698405555
+      "age_hours": 4350.067433703333
     },
     "ai-semi-cycle-intelligence/latest": {
       "key": "ai-semi-cycle-intelligence/latest",
@@ -4544,9 +4609,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 4325.6h old; SLA is 30h.",
+      "reason": "Report is 4349.8h old; SLA is 30h.",
       "report_at": "2026-05-29T22:40:21.572380+00:00",
-      "age_hours": 4325.631012203611
+      "age_hours": 4349.786576066389
     },
     "cycle-intelligence-hub/latest": {
       "key": "cycle-intelligence-hub/latest",
@@ -4556,9 +4621,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 4325.0h old; SLA is 30h.",
+      "reason": "Report is 4349.2h old; SLA is 30h.",
       "report_at": "2026-05-29T23:15:45.529662+00:00",
-      "age_hours": 4325.041024069723
+      "age_hours": 4349.1965879325
     },
     "leading-stocks-calendar/daily": {
       "key": "leading-stocks-calendar/daily",
@@ -4580,9 +4645,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 916.4h old; SLA is 30h.",
+      "reason": "Report is 940.6h old; SLA is 30h.",
       "report_at": "2026-10-18T23:52:22.109520+00:00",
-      "age_hours": 916.4308629980555
+      "age_hours": 940.5864268608333
     },
     "hyperliquid-kr-brief/latest": {
       "key": "hyperliquid-kr-brief/latest",
@@ -4592,9 +4657,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 1252.7h old; SLA is 30h.",
+      "reason": "Report is 1276.8h old; SLA is 30h.",
       "report_at": "2026-10-04T23:37:38.512848+00:00",
-      "age_hours": 1252.6763065180555
+      "age_hours": 1276.8318703808334
     },
     "market-peak-signals/latest": {
       "key": "market-peak-signals/latest",
@@ -4604,9 +4669,9 @@
       "sla_hours": 30.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 1274.4h old; SLA is 30h.",
+      "reason": "Report is 1298.6h old; SLA is 30h.",
       "report_at": "2026-10-04T01:52:55.954611+00:00",
-      "age_hours": 1274.421461583889
+      "age_hours": 1298.5770254466668
     },
     "kospi-putcall-monitor/latest": {
       "key": "kospi-putcall-monitor/latest",
@@ -4616,9 +4681,9 @@
       "sla_hours": 80.0,
       "state": "stale",
       "severity": 2,
-      "reason": "Report is 4036.3h old; SLA is 80h.",
+      "reason": "Report is 4060.5h old; SLA is 80h.",
       "report_at": "2026-06-11T00:00:00+00:00",
-      "age_hours": 4036.303671198056
+      "age_hours": 4060.459235060833
     }
   }
 }
